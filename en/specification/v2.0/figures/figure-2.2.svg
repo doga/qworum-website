@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 600 400" lang="en" role="figure" id="figure-1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <desc>Figure for the Qworum specification v2.0</desc>
+  <title>Figure 2.2</title>
+  <defs>
+    <linearGradient id="color-0" bx:pinned="true">
+      <stop style="stop-color: #e4e3e3;"/>
+    </linearGradient>
+    <linearGradient id="color-1" bx:pinned="true">
+      <stop style="stop-color: #84a9ac;"/>
+    </linearGradient>
+    <linearGradient id="color-2" bx:pinned="true">
+      <stop style="stop-color: #3b6978;"/>
+    </linearGradient>
+    <linearGradient id="color-3" bx:pinned="true">
+      <stop style="stop-color: #204051;"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect x="140.705" y="57.171" width="86.428" height="30.577" style="stroke: rgb(0, 0, 0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="159.427" y="76.125">API client</text>
+  </g>
+  <g>
+    <rect x="332.513" y="57.275" width="86.428" height="30.577" style="stroke: rgb(0, 0, 0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="353.267" y="76.071">Web API</text>
+  </g>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="228.42" y="134.057"> </text>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="184.304" y1="88.291" x2="185.421" y2="302.271"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="377.483" y1="89.457" x2="378.6" y2="303.437"/>
+  <rect x="177.854" y="127.769" width="12.626" height="123.187" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <rect x="371.321" y="164.36" width="12.626" height="41.718" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="191.054" y1="134.271" x2="371.467" y2="167.32"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="371.932" y1="199.36" x2="191.161" y2="242.233"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="557.678 -73.154 572.481 -65.062 557.876 -58.668"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="355.903 158.009 370.706 166.101 356.101 172.495" transform="matrix(0.990122, 0.140211, -0.140211, 0.990122, 26.75904, -49.306935)"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="191.887 239.629 206.69 231.537 192.085 225.143" transform="matrix(-0.97357, 0.228388, -0.228388, -0.97357, 444.903161, 420.52934)" bx:origin="0.421 0.75"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="249.929" y="137.515">Service call</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="253.797" y="211.956">Call result</text>
+</svg>

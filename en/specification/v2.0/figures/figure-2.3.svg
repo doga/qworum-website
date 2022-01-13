@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 600 400" lang="en" role="figure" id="figure-1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <desc>Figure for the Qworum specification v2.0</desc>
+  <title>Figure 2.2</title>
+  <defs>
+    <linearGradient id="color-0" bx:pinned="true">
+      <stop style="stop-color: #e4e3e3;"/>
+    </linearGradient>
+    <linearGradient id="color-1" bx:pinned="true">
+      <stop style="stop-color: #84a9ac;"/>
+    </linearGradient>
+    <linearGradient id="color-2" bx:pinned="true">
+      <stop style="stop-color: #3b6978;"/>
+    </linearGradient>
+    <linearGradient id="color-3" bx:pinned="true">
+      <stop style="stop-color: #204051;"/>
+    </linearGradient>
+    <linearGradient id="comment-color-0">
+      <title>Comment 0</title>
+      <stop style="stop-color: #fdffbc;"/>
+    </linearGradient>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 20.176994, -37.764942)">
+    <rect x="140.705" y="57.171" width="86.428" height="30.577" style="stroke: rgb(0, 0, 0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="159.427" y="76.125">API client</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 20.176994, -37.764942)">
+    <rect x="332.513" y="57.275" width="86.428" height="30.577" style="stroke: rgb(0, 0, 0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="353.267" y="76.071">Web API</text>
+  </g>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="248.597" y="72.292"> </text>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="204.481" y1="50.684" x2="204.669" y2="382.438"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="395.498" y1="378.366" x2="397.66" y2="51.692" transform="matrix(-1, 0, 0, -1, 793.15799, 430.058014)"/>
+  <rect x="198.031" y="66.004" width="12.626" height="307.664" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <rect x="391.498" y="102.595" width="12.626" height="22.61" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="211.231" y1="72.506" x2="391.644" y2="105.555"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="392.109" y1="122.595" x2="211.338" y2="165.468"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="557.678 -73.154 572.481 -65.062 557.876 -58.668"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="376.081 96.244 390.884 104.336 376.279 110.73" transform="matrix(0.990122, 0.140211, -0.140211, 0.990122, 18.298181, -52.746159)"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="212.064 162.864 226.867 154.772 212.262 148.378" transform="matrix(-0.97357, 0.228388, -0.228388, -0.97357, 467.191683, 264.42004)" bx:origin="0.421 0.75"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="270.106" y="75.75">Service call</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="247.826" y="173.17"> </text>
+  <rect x="434.715" y="171.921" width="78.727" height="43.013" rx="15" ry="15" style="stroke: rgb(0, 0, 0); fill: url(#comment-color-0); stroke-opacity: 0.5;"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="402.702 213.802 436.561 193.84 402.568 200.649" transform="matrix(-1, 0, 0, -1, 839.128998, 407.641998)"/>
+  <rect x="390.727" y="203.473" width="12.626" height="22.61" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="210.46" y1="173.384" x2="390.873" y2="206.433"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="391.338" y1="223.473" x2="210.567" y2="266.346"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="375.31 197.122 390.113 205.214 375.508 211.608" transform="matrix(0.990122, 0.140211, -0.140211, 0.990122, 32.434763, -51.641549)"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="211.293 263.742 226.096 255.65 211.491 249.256" transform="matrix(-0.97357, 0.228388, -0.228388, -0.97357, 488.709385, 463.685945)" bx:origin="0.421 0.75"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="248.011" y="274.59"> </text>
+  <rect x="435.424" y="274.365" width="78.727" height="43.013" rx="15" ry="15" style="stroke: rgb(0, 0, 0); fill: url(#comment-color-0); stroke-opacity: 0.5;"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="403.411 316.246 437.27 296.284 403.277 303.093" transform="matrix(-1, 0, 0, -1, 840.546997, 612.529999)"/>
+  <rect x="390.912" y="304.893" width="12.626" height="22.61" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="210.645" y1="274.804" x2="391.058" y2="307.853"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="391.523" y1="324.893" x2="210.752" y2="367.766"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="375.495 298.542 390.298 306.634 375.693 313.028" transform="matrix(0.990122, 0.140211, -0.140211, 0.990122, 46.656784, -50.665626)"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="211.478 365.162 226.281 357.07 211.676 350.676" transform="matrix(-0.97357, 0.228388, -0.228388, -0.97357, 512.237615, 663.803154)" bx:origin="0.421 0.75"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="273.388" y="337.489">Call result</text>
+  <rect x="437.802" y="68.718" width="78.727" height="43.013" rx="15" ry="15" style="stroke: rgb(0, 0, 0); fill: url(#comment-color-0); stroke-opacity: 0.5;"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="405.789 110.599 439.648 90.637 405.655 97.446" transform="matrix(-1, 0, 0, -1, 845.303009, 201.236)"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="447.757" y="92.407">1st phase</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="446.349" y="197.077">2nd phase</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="449.53" y="296.968">3rd phase</text>
+</svg>

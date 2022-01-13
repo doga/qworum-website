@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 600 400" lang="en" role="figure" id="figure-1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <desc>Figure for the Qworum specification v2.0</desc>
+  <title>Figure 1.1</title>
+  <defs>
+    <linearGradient id="color-0" bx:pinned="true">
+      <stop style="stop-color: #e4e3e3;"/>
+    </linearGradient>
+    <linearGradient id="color-1" bx:pinned="true">
+      <stop style="stop-color: #84a9ac;"/>
+    </linearGradient>
+    <linearGradient id="color-2" bx:pinned="true">
+      <stop style="stop-color: #3b6978;"/>
+    </linearGradient>
+    <linearGradient id="color-3" bx:pinned="true">
+      <stop style="stop-color: #204051;"/>
+    </linearGradient>
+    <linearGradient id="comment-color-0">
+      <title>Comment 0</title>
+      <stop style="stop-color: #fdffbc;"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect x="140.705" y="57.171" width="86.428" height="30.577" style="stroke: rgb(0, 0, 0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="155.493" y="76.125">User agent</text>
+  </g>
+  <g>
+    <rect x="332.513" y="57.275" width="86.428" height="30.577" style="stroke: rgb(0, 0, 0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="358.827" y="76.071">Server</text>
+  </g>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="228.42" y="134.057"> </text>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="184.304" y1="88.291" x2="185.421" y2="302.271"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="377.483" y1="89.457" x2="378.6" y2="303.437"/>
+  <rect x="177.854" y="127.769" width="12.626" height="123.187" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <rect x="371.321" y="164.36" width="12.626" height="41.718" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="191.054" y1="134.271" x2="371.467" y2="167.32"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="371.932" y1="199.36" x2="191.161" y2="242.233"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="557.678 -73.154 572.481 -65.062 557.876 -58.668"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="355.903 158.009 370.706 166.101 356.101 172.495" transform="matrix(0.990122, 0.140211, -0.140211, 0.990122, 26.75904, -49.306935)"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="191.887 239.629 206.69 231.537 192.085 225.143" transform="matrix(-0.97357, 0.228388, -0.228388, -0.97357, 444.903161, 420.52934)" bx:origin="0.421 0.75"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="233.826" y="137.515">HTTP(S) Request</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="253.797" y="211.956">Response</text>
+  <rect x="417.261" y="141.516" width="78.727" height="43.013" rx="15" ry="15" style="stroke: rgb(0, 0, 0); fill: url(#comment-color-0); stroke-opacity: 0.5;"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="441.044" y="165.314">Phase</text>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="385.248 183.397 419.107 163.435 385.114 170.244" transform="matrix(-1, 0, 0, -1, 804.221008, 346.832001)"/>
+</svg>

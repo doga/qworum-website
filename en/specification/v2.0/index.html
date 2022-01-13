@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qworum specification, version 2.0</title>
+
+  <style>
+    /* h1, h2, h3, h4, h5, h6 { font-transform: capitalize;} */
+    img { height: 400px; width: 600px; }
+    figcaption { text-align: center; }
+    figcaption::before { content: "Figure "; }
+    figcaption::after { content: "."; }
+    pre>code { white-space: pre; }
+  </style>
+
+  <!-- highlight.js (code highlighting) -->
+  <!-- https://highlightjs.org/download/ -->
+  <!-- https://github.com/highlightjs/highlight.js -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+  <main>
+    <article>
+      <header>
+        <h1>Qworum specification, version 2.0</h1>
+        <h2>Summary</h2>
+        <p>Qworum is the "Service Web" that complements the World Wide Web (the "Document Web").</p>
+        <p>
+          More precisely,
+          Qworum is a Web-scale software platform that enables decentralized and modular Web applications.
+          It adds new functionality to Web browsers that allows Web applications to be composed of interactive services that may be located anywhere on the World Wide Web. 
+        </p>
+        <p>In other words, Qworum is a micro-frontend platform that works at Web-scale.</p>
+      </header>
+      <nav>
+        <h2>Table of Contents</h2>
+        <ol>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#terminology">Terminology</a>
+            <ol>
+              <li><a href="#phase">Phase</a></li>
+              <li><a href="#single-phase-service-call">Single-Phase Service Call</a></li>
+              <li><a href="#multi-phase-service-call">Multi-Phase Service Call</a></li>
+              <li><a href="#script">Qworum Script</a></li>
+              <li><a href="#service-composition">Service Composition</a></li>
+              <li><a href="#interactive-service">Interactive Service</a></li>
+              <li><a href="#execution-state">Execution State</a></li>
+              <li><a href="#object">Qworum Object</a></li>
+              <li><a href="#class">Qworum Class</a></li>
+            </ol>
+          </li>
+
+          <li>
+            <a href="#instructions">Script instructions</a>
+            <ol>
+              <li><a href="#variable"><code>variable</code></a></li>
+              <li><a href="#call"><code>call</code></a></li>
+              <li><a href="#return"><code>return</code></a></li>
+              <li><a href="#goto"><code>goto</code></a></li>
+              <li><a href="#sequence"><code>sequence</code></a></li>
+              <li><a href="#fault"><code>fault</code></a></li>
+              <li><a href="#try"><code>try</code></a></li>
+              <li><a href="#data-instruction">Data</a></li>
+            </ol>
+          </li>
+
+          <li>
+            <a href="#data">Data</a>
+            <ol>
+              <li><a href="#json"><code>json</code></a></li>
+              <li><a href="#linked-data"><code>linked-data</code></a></li>
+              <li><a href="#domain-specific-data">Domain-Specific Data</a></li>
+            </ol>
+          </li>
+
+          <!-- <li><a href="#7">Implementations</a></li> -->
+
+          <li>
+            <a href="#references">References</a>
+          </li>
+        </ol>
+      </nav>
+      <section id='introduction'>
+        <h2>
+          1. Introduction
+        </h2>
+        <p>
+          The World Wide Web was initially conceived as a decentralized information system consisting of interlinked documents, 
+          yet its potential as a medium for applications soon became apparent. The ongoing effort that has been undertaken by the ICT community since the Web's early days in order to better support Web applications has sofar produced various client-side and server-side upgrades to the initial Web, such as JavaScript and application servers. 
+        </p>
+        <p>
+          Yet there is room for improvement, particularly regarding the decentralisation of the front-ends of Web applications. In today's Web, an application is contained within a single Web origin (example: https://example.com), and frequently even within a single Web page. This limits the amount of functionality that can be shared amongst application developer teams, and results in considerable duplication of effort. (One notable exception to this picture is OAuth-based authentication services which can be called remotely by applications.)
+        </p>
+        <p>
+          Qworum enables new gains in productivity for the software community by making it possible to build Web applications that are composed of interactive services ("Qworum services") that are hosted anywhere on the Web and that are callable remotely.
+        </p>
+      </section>
+      <section id="terminology">
+        <h2>2. Terminology</h2>
+        <section id="phase">
+          <h3>2.1. <dfn>Phase</dfn></h3>
+          <p>An HTTP(S) request-response pair. </p>
+          <figure>
+            <img src="figures/figure-2.1.svg" alt="Phase">
+            <figcaption>2.1.1: Phase</figcaption>
+          </figure>
+        </section>
+
+        <section id="single-phase-service-call">
+          <h3>2.2. <dfn>Single-Phase Service Call</dfn></h3>
+          <p>A call to a Web API that consists of a single phase. Calls to Web APIs that conform to conventional specifications such as REST or XML-RPC are always single-phase calls.</p>
+          <figure>
+            <img src="figures/figure-2.2.svg" alt="Single-Phase Service Call">
+            <figcaption>2.2.1: Single-Phase Service Call</figcaption>
+          </figure>
+        </section>
+
+        <section id='multi-phase-service-call'>
+          <h3>2.3. <dfn>Multi-Phase Service Call</dfn></h3>
+          <p>A call to a Web API that consists of one or more phases. Calls to Web APIs that conform to the Qworum specification are multi-phase calls.</p>
+          <p>During a multi-phase call, the first request that is sent by the user agent to the server contains 0, 1 or more call parameters. The service then returns a response that:</p>
+          <ul>
+            <li>contains a <dfn>call result</dfn> (in which case the call is a single-phase call), or</li>
+            <li>allows the user agent to initiate a second phase for the current call.</li>
+          </ul>
+          <p>In this manner, each phase of a multi-phase call can choose to return a result or continue the current call with another phase.</p>
+          <figure>
+            <img src="figures/figure-2.3.svg" alt="">
+            <figcaption>2.3.1: Example of a Multi-Phase Service Call</figcaption>
+          </figure>
+          <p>Qworum mandates that each phase of a particular multi-phase call have the same Web origin, otherwise a <em>same-origin</em> <a href="#fault">fault</a> will be raised during run-time.</p>
+        </section>
+
+        <section id='script'>
+          <h3>2.4. <dfn>Qworum Script</dfn></h3>
+          <p>An XML document that is returned by a call phase, and that contains instructions that are to be performed by the user agent. The root element of a Qworum script must be an <a href="#instruction">instruction</a>.</p>
+          <figure>
+            <pre><code class="language-xml">
+  &lt;!-- Script received from an e-commerce site -->
+  &lt;sequence xmlns="https://qworum.net/v2.0/instruction/">
+
+  &lt;!-- Show the user's shopping cart-->
+  &nbsp;&nbsp;&lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example.com/view/" />
+
+  &nbsp;&nbsp;&lt;!-- Go back to the e-commerce site -->
+  &nbsp;&nbsp;&lt;goto href="/home/" />
+  &lt;/sequence>
+            </code></pre>
+            <figcaption>2.4.1: Example of a Qworum script</figcaption>
+          </figure>
+        </section>
+
+        <section id='service-composition'>
+          <h3>2.5. <dfn>Service Composition</dfn></h3>
+          <p>The name of the mechanism by which multi-phase calls perform other nested multi-phase calls during their execution. Nested calls are performed between two consecutive phases of the call that initiated the nested call.</p>
+          <p>When a call is to perform a nested call, one of its phases returns a <a href="#script">script</a> that contains a <a href="#call">call</a> instruction. These nested calls are then performed by the user agent between two consecutive phases of the call that initiated the nested call.</p>
+          <figure>
+            <img src="figures/figure-2.5.svg" alt="">
+            <figcaption>2.5.1: Example of a nested service call</figcaption>
+          </figure>
+        </section>
+
+        <section id='interactive-service'>
+          <h3>2.6. Interactive Service</h3>
+          <p>
+            A multi-phase service that can interact with the end-user through HTML pages during its execution.
+            <!-- When an interactive service send an HTML page as a response, it is effectively using the end-user as a resource that that helps it continue its execution by starting a new phase. We are naming this pattern an <dfn id='end-user-invocation'>end-user invocation</dfn>. -->
+          </p>
+          <figure>
+            <img src="figures/figure-2.6.svg" alt="">
+            <figcaption>2.6.1: An interactive service call</figcaption>
+          </figure>
+          <p>For example, a shopping cart service may provide a method that shows shopping cart contents to the end-user by offering this type of interactivity.</p>
+        </section>
+
+        <section id='execution-state'>
+          <h3>2.7. <dfn>Execution State</dfn></h3> 
+          <p>
+            In Qworum, each Web browser tab has its own execution state, which consists of:
+          </p>
+          <ul>
+            <li>A <dfn>call stack</dfn> that contains one or more <dfn>call frame</dfn>s. The topmost call frame pertains to the call currently being executed; the remaining call frames contain the states of calls whose executions are currently suspended. Call frames are used for storing call states in the form of <a href="#variable">variable</a>s (which point to data) and <a href="#object">object</a>s.</li>
+            <li>A <dfn id='main-object'>main <a href="#object">object</a></dfn> that is attached to the browser tab. The main object is the owner of the first call frame in the call stack.</li>
+          </ul>
+          <p>A regular browsing session on the World Wide Web can be thought of as a multi-phase service call that doesn't use the Qworum-related functionality that the user agent provides (except that browsing different Web origins within the same browser tab does not raise a <em>same-origin</em> <a href="#fault">fault</a>). In particular: </p>
+          <ul>
+            <li>regular Web browsing happens within the bounds of the first call frame in the call stack, and</li>
+            <li>the main object remains unused during a regular Web browsing session.</li>
+          </ul>
+          <figure>
+            <img src="figures/figure-2.7.svg" alt="">
+            <figcaption>2.7.1: The execution state of a browser tab</figcaption>
+          </figure>
+        </section>
+
+        <section id='object'>
+          <h3>2.8. <dfn>Qworum Object</dfn></h3>
+          <p>A container for run-time state that is shared between different calls. Qworum objects are used for storing <a href="#variable">variable</a>s (which point to data) and other Qworum objects.</p>
+          <p>Qworum objects are needed for storing the states of services such as shopping carts that must remember their contents across different calls incoming from an e-commerce site for example. In the absence of Qworum objects, Qworum would only have been able to support services where each incoming call is independent from one another, which is the case for user authentication services or payment processing services for instance.</p>
+          <p>Here is how Qworum objects are used in practice:</p>
+          <ul>
+            <li>Each multi-phase call has a Qworum object that is the owner of the call. When initiating a call, the call's owner object is created by the user agent if it does not already exist in the browser tab's execution state.</li>
+            <li>Each Qworum object has a Web origin which is determined when the object is first used as the owner of a call. All phases of all calls which are owned by a Qworum object must have the object's origin, otherwise a <em>same-origin</em> <a href="#fault">fault</a> will be raised during run-time.</li>
+            <li>Qworum objects can be stored in call frames, or as the main object of an execution state.</li>
+          </ul>
+          <figure>
+            <img src="figures/figure-2.8.svg" alt="">
+            <figcaption>2.8.1: The Qworum object</figcaption>
+          </figure>
+        </section>
+
+        <section id='class'>
+          <h3>2.9. <dfn>Qworum Class</dfn></h3>
+          <p>Qworum does not mandate that all Qworum objects stored in an execution state have different origins. It follows that calls to the same URL can be made using different owner objects, even within the same browser tab. This is how the concept of Qworum classes emerges; not as a browser feature, but rather as an aid for designing Qworum-based applications and services.</p>
+          <p>Formally, we can define Qworum objects to be instances of Qworum classes, and also that each Web origin can host any number of Qworum classes.</p>
+          <figure>
+            <img src="figures/figure-2.9.svg" alt="">
+            <figcaption>2.9.1: Qworum classes and objects</figcaption>
+          </figure>
+          <p>Going back to our shopping cart example, we can imagine an e-commerce site that allows its users to create several shopping carts on the same shopping cart service, for example one "Home" cart, one "Work" cart and one "New year's eve party" cart.</p>
+        </section>
+
+      </section>
+
+      <section id='instructions'>
+        <h2>3. Instructions</h2>
+        <p>This section lists the instructions that are available to Qworum scripts.</p>
+
+        <section id='variable'>
+          <h3>3.1. <code>variable</code></h3>
+          <p>The <code>variable</code> instruction allows the writing and reading of data to and from an execution state. The current call has read/write access to variables in two places:</p>
+          <ul>
+            <li>locally inside the current call frame, and</li>
+            <li>inside the current call's owner object.</li>
+          </ul>
+
+          <p>The location of the data that is being accessed is determined by <code>variable</code>'s <code>path</code> attribute. This attribute's value is a JSON-encoded array of strings.
+          Within this array, any string that starts with @ denotes the current call's owner object.</p>
+
+
+          <p>Here is an example of reading a variable:</p>
+
+          <figure>
+            <pre><code class="language-xml">
+&lt;!-- Read the "shopping cart line items" variable that is stored locally in the current call. -->
+&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/v2.0/instruction/' />
+            </code></pre>
+            <figcaption>3.1.1: Reading a variable stored in the current call</figcaption>
+          </figure>
+
+          <p>Another example:</p>
+
+          <figure>
+            <pre><code class="language-xml">
+&lt;!-- Read the "shopping cart line items" variable that is stored in the current call's owner object. -->
+&lt;variable path='["@", "shopping cart line items"]' xmlns='https://qworum.net/v2.0/instruction/' />
+            </code></pre>
+            <figcaption>3.1.2: Reading a variable stored in the current call's owner</figcaption>
+          </figure>
+
+          <p>And another:</p>
+
+          <figure>
+            <pre><code class="language-xml">
+&lt;!-- Read the "line items" variable that is stored in the "shopping cart" object -->
+&lt;!-- that is in turn stored in the current call's owner object. -->
+&lt;variable
+    path='["@", "shopping cart", "line items"]'
+    xmlns='https://qworum.net/v2.0/instruction/'
+/>
+            </code></pre>
+            <figcaption>3.1.3: Reading a variable stored in the current call's owner object</figcaption>
+          </figure>
+
+          <p>If a variable does not exist, then trying to read it will raise a <code>variable</code> <a href="#fault">fault</a>.</p>
+
+          <!-- <p>Data that is stored has two types of provenances:</p>
+          <ul>
+            <li>Service compositions — Service calls receive data as parameters, and they return data as a result.</li>
+            <li>Web pages — a Web page belonging to a Qworum service or Qworum application can produce data from user inputs or network requests.</li>
+          </ul> -->
+
+          <p>When writing to a variable, the <code>variable</code> instruction must contain one instruction or data. Here is an example:</p>
+            
+          <figure>
+            <pre><code class="language-xml">
+&lt;!-- Clear the "shopping cart line items" variable that is stored locally in the current call. -->
+&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/v2.0/instruction/'>
+  &lt;d:json xmlns:d="https://qworum.net/v2.0/data/">[]&lt;/d:json>
+&lt;/variable>
+            </code></pre>
+            <figcaption>3.1.4: Writing data to a variable</figcaption>
+          </figure>
+
+          <p>And another:</p>
+            
+          <figure>
+            <pre><code class="language-xml">
+&lt;!-- Write the line items received from the shopping cart service -->
+&lt;!-- to the "shopping cart line items" variable that is stored in the current call. -->
+&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/v2.0/instruction/'>
+  &lt;call object='["@", "shopping cart"]' href='https://shopping-cart.example.com/view/' />
+&lt;/variable>
+            </code></pre>
+            <figcaption>3.1.5: Writing a call result to a variable</figcaption>
+          </figure>
+
+          <p>When writing to a variable contained in an object, if the container object does not exist then a <code>variable</code> <a href="#fault">fault</a> will be raised at run-time.</p>
+
+        </section>
+      </section>
+
+      <section>
+        <h2></h2>
+        <p></p>
+      </section>
+
+      <section>
+        <h2></h2>
+        <p></p>
+      </section>
+      <footer>
+
+      </footer>
+    </article>
+  </main>
+</body>
+</html>

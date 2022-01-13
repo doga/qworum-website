@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 800 400" lang="en" role="figure" id="figure-1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <desc>Figure for the Qworum specification v2.0</desc>
+  <title>Figure 2.2</title>
+  <defs>
+    <linearGradient id="color-0" bx:pinned="true">
+      <stop style="stop-color: #e4e3e3;"/>
+    </linearGradient>
+    <linearGradient id="color-1" bx:pinned="true">
+      <stop style="stop-color: #84a9ac;"/>
+    </linearGradient>
+    <linearGradient id="color-2" bx:pinned="true">
+      <stop style="stop-color: #3b6978;"/>
+    </linearGradient>
+    <linearGradient id="color-3" bx:pinned="true">
+      <stop style="stop-color: #204051;"/>
+    </linearGradient>
+    <linearGradient id="comment-color-0" bx:pinned="true">
+      <title>Comment 0</title>
+      <stop style="stop-color: #fdffbc;"/>
+    </linearGradient>
+    <linearGradient id="comment-color-1" bx:pinned="true">
+      <title>Comment 1</title>
+      <stop style="stop-color: #ffeebb;"/>
+    </linearGradient>
+    <linearGradient id="comment-color-2" bx:pinned="true">
+      <title>Comment 2</title>
+      <stop style="stop-color: #ffdcb8;"/>
+    </linearGradient>
+    <linearGradient id="comment-color-3" bx:pinned="true">
+      <title>Comment 3</title>
+      <stop style="stop-color: #ffc1b6;"/>
+    </linearGradient>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 345.355927, -39.654884)">
+    <rect x="140.705" y="57.171" width="86.428" height="30.577" style="stroke: rgb(0, 0, 0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="159.427" y="76.125">API client</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 257.96759, -39.942043)">
+    <rect x="332.513" y="57.275" width="86.428" height="30.577" style="stroke: rgb(0, 0, 0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="353.267" y="76.071">Web API</text>
+  </g>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="501.765" y="70.978"> </text>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="529.66" y1="48.794" x2="529.848" y2="380.548"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="633.288" y1="376.189" x2="635.451" y2="49.515" transform="matrix(-1, 0, 0, -1, 1268.739014, 425.70401)"/>
+  <rect x="523.21" y="64.114" width="12.626" height="307.664" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <rect x="629.288" y="100.418" width="12.626" height="22.61" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="534.735" y1="69.271" x2="625.961" y2="102.057"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="629.31" y1="120.058" x2="538.699" y2="152.858"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="613.873 94.067 628.676 102.159 614.071 108.553" transform="matrix(0.990122, 0.140211, -0.140211, 0.990122, 20.341933, -86.108703)"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="536.75 151.598 551.553 143.506 536.948 137.112" transform="matrix(-0.97357, 0.228388, -0.228388, -0.97357, 1105.409256, 168.031409)" bx:origin="0.421 0.75"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="573.005" y="171.28"> </text>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="536.193" y1="161.804" x2="728.392" y2="202.547"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="730.163" y1="220.671" x2="536.726" y2="263.784"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="536.472 261.852 551.275 253.76 536.67 247.366" transform="matrix(-0.97357, 0.228388, -0.228388, -0.97357, 1130.041317, 385.688879)" bx:origin="0.421 0.75"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="501.179" y="273.276"> </text>
+  <rect x="628.702" y="302.716" width="12.626" height="22.61" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="536.053" y1="272.985" x2="625.229" y2="305.339"/>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="628.781" y1="321.851" x2="539.387" y2="351.228"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="613.287 296.366 628.09 304.458 613.485 310.852" transform="matrix(0.990122, 0.140211, -0.140211, 0.990122, 48.700675, -84.02816)"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="537.046 349.45 551.849 341.358 537.244 334.964" transform="matrix(-0.97357, 0.228388, -0.228388, -0.97357, 1151.180505, 558.438612)" bx:origin="0.421 0.75"/>
+  <g transform="matrix(1, 0, 0, 1, 361.5578, -40.594006)">
+    <rect x="332.513" y="57.275" width="86.428" height="30.577" style="stroke: rgb(0, 0, 0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="353.267" y="76.071">Web API</text>
+  </g>
+  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="736.878" y1="375.537" x2="739.04" y2="48.863" transform="matrix(-1, 0, 0, -1, 1475.917969, 424.399979)"/>
+  <rect x="732.107" y="200.644" width="12.626" height="22.61" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); fill-opacity: 0;" points="716.692 194.293 731.495 202.385 716.89 208.779" transform="matrix(0.990122, 0.140211, -0.140211, 0.990122, 35.410395, -99.534984)"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="652.027" y="183.521">Nested call</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="656.939" y="250.858">Call result</text>
+  <g transform="matrix(1, 0, 0, 1, 8.662951, 3.496066)">
+    <rect x="11.346" y="16.128" width="447.678" height="113.843" rx="15" ry="15" style="stroke: rgb(0, 0, 0); fill: url(#comment-color-0); stroke-opacity: 0.5;"/>
+    <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="458.121 95.995 575.711 132.837 457.656 120.271"/>
+  </g>
+  <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.2px; white-space: pre;" transform="matrix(1, 0, 0, 1, -210.216278, -138.396255)" y="162.46800231933594"><tspan x="239.43899536132812" dy="1em">​</tspan><tspan>&lt;!-- Script received from an e-commerce site --&gt;</tspan><tspan x="239.43899536132812" dy="1em">​</tspan><tspan>&lt;sequence xmlns="https://qworum.net/v2.0/instruction/"&gt;</tspan><tspan x="239.43899536132812" dy="1em">​</tspan><tspan x="239.43899536132812" dy="1em">​</tspan><tspan>  &lt;!-- Make a nested call to a shopping cart service --&gt;</tspan><tspan x="239.43899536132812" dy="1em">​</tspan><tspan>  &lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example.com/view/" /&gt;</tspan><tspan x="239.43899536132812" dy="1em">​</tspan><tspan x="239.43899536132812" dy="1em">​</tspan><tspan>  &lt;!-- Go back to the e-commerce site --&gt;</tspan><tspan x="239.43899536132812" dy="1em">​</tspan><tspan>  &lt;goto href="/home/" /&gt;</tspan><tspan x="239.43899536132812" dy="1em">​</tspan><tspan>&lt;/sequence&gt;</tspan></text>
+  <rect x="20.316" y="188.471" width="447.678" height="65.866" rx="15" ry="15" style="stroke: rgb(0, 0, 0); fill: url(#comment-color-0); stroke-opacity: 0.5;"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="467.091 214.875 584.681 251.717 466.626 239.151"/>
+  <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.2px; white-space: pre;" transform="matrix(1, 0, 0, 1, -193.365219, 35.31871)" y="162.46800231933594"><tspan x="239.43899536132812" dy="1em">​</tspan><tspan>&lt;!-- Return from shopping cart viewing --&gt;</tspan><tspan x="239.43899536132812" dy="1em">​</tspan><tspan>&lt;return xmlns="https://qworum.net/v2.0/instruction/"&gt;<tspan x="239.43899536132812" dy="1em">​</tspan></tspan>  &lt;d:json xmlns:d="https://qworum.net/v2.0/data/"&gt;0&lt;/d:json&gt;<tspan x="239.43899536132812" dy="1em">​</tspan><tspan>&lt;/return&gt;</tspan></text>
+</svg>

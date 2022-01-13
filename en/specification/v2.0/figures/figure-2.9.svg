@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 600 400" lang="en" role="figure" id="figure-1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <desc>Figure for the Qworum specification v2.0</desc>
+  <title>Figure 2.2</title>
+  <defs>
+    <linearGradient id="color-0" bx:pinned="true">
+      <stop style="stop-color: #e4e3e3;"/>
+    </linearGradient>
+    <linearGradient id="color-1" bx:pinned="true">
+      <stop style="stop-color: #84a9ac;"/>
+    </linearGradient>
+    <linearGradient id="color-2" bx:pinned="true">
+      <stop style="stop-color: #3b6978;"/>
+    </linearGradient>
+    <linearGradient id="color-3" bx:pinned="true">
+      <stop style="stop-color: #204051;"/>
+    </linearGradient>
+  </defs>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="557.678 -73.154 572.481 -65.062 557.876 -58.668"/>
+  <rect x="48.317" y="27.192" width="531.454" height="186.907" style="stroke: url(#color-0); fill: url(#color-2);"/>
+  <g transform="matrix(1, 0, 0, 1, 9.272053, -24.435654)">
+    <rect x="117.295" y="101.253" width="157.114" height="118.459" style="stroke: url(#color-0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" transform="matrix(0, -1, 1, 0, 244.920517, 249.892227)" x="37.539" y="-44.407">...</text>
+    <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="153.673" y="119.304" bx:origin="-5.593 -9.414">Qworum class C1</text>
+    <rect x="128.475" y="133.798" width="134.733" height="25.771" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="166.828" y="150.708">Method M1</text>
+    <rect x="127.942" y="166.348" width="134.733" height="25.771" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="166.295" y="183.258">Method M2</text>
+  </g>
+  <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="228.278" y="55.032" bx:origin="-5.593 -9.414">Web origin:</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="296.01" y="55.032">https://example.com</text>
+  <g transform="matrix(1, 0, 0, 1, 1.710398, -59.596115)"/>
+  <g>
+    <rect x="364.129" y="77.612" width="157.114" height="118.459" style="stroke: url(#color-0); fill: url(#color-3);"/>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" transform="matrix(0, -1, 1, 0, 491.754608, 226.250931)" x="37.539" y="-44.407">...</text>
+    <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="400.507" y="95.663" bx:origin="-5.593 -9.414">Qworum class C2</text>
+    <rect x="375.309" y="110.157" width="134.733" height="25.771" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="413.662" y="127.067">Method M1</text>
+    <rect x="374.776" y="142.707" width="134.733" height="25.771" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="413.129" y="159.617">Method M2</text>
+  </g>
+  <rect x="48.317" y="267.062" width="531.454" height="87.376" style="stroke: url(#color-0); fill: url(#color-2);"/>
+  <g transform="matrix(1, 0, 0, 1, 285.432404, 65.764328)">
+    <rect x="112.395" y="234.68" width="111.846" height="28.028" style="stroke: url(#color-0); fill: url(#color-3);"/>
+    <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="119.968" y="252.731" bx:origin="-5.593 -9.414">Qworum object O3</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 120.852264, 65.889603)">
+    <rect x="112.395" y="234.68" width="111.846" height="28.028" style="stroke: url(#color-0); fill: url(#color-3);"/>
+    <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="119.968" y="252.731" bx:origin="-5.593 -9.414">Qworum object O2</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, -23.324724, 66.081406)">
+    <rect x="112.395" y="234.68" width="111.846" height="28.028" style="stroke: url(#color-0); fill: url(#color-3);"/>
+    <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="119.968" y="252.731" bx:origin="-5.593 -9.414">Qworum object O1</text>
+  </g>
+  <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="253.244" y="282.322" bx:origin="-5.593 -9.414">Browser tab's execution state</text>
+  <path d="M 107.563 111.435 H 193.254 L 192.254 107.053 L 216.254 113.722 L 192.254 120.39 L 193.254 116.008 H 107.563 V 111.435 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.245283, -0.969452, 0.969452, 0.245283, -15.683909, 375.977386)" bx:shape="arrow 107.563 107.053 108.691 13.337 4.573 24 1 1@c79bce48"/>
+  <path d="M 107.563 111.435 H 193.254 L 192.254 107.053 L 216.254 113.722 L 192.254 120.39 L 193.254 116.008 H 107.563 V 111.435 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.19885, -0.98003, 0.98003, -0.19885, 149.063217, 428.032043)" bx:shape="arrow 107.563 107.053 108.691 13.337 4.573 24 1 1@c79bce48"/>
+  <path d="M 104.589 111.435 H 187.911 L 186.939 107.053 L 210.275 113.722 L 186.939 120.39 L 187.911 116.008 H 104.589 V 111.435 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.017859, -0.999841, 0.999841, -0.017859, 336.221527, 407.347382)" bx:shape="arrow 104.589 107.053 105.686 13.337 4.573 23.336 0.972 1@4d24e853"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="74.696" y="234.864" transform="matrix(1, 0, 0, 1, 9.439348, 0.888883)">Class<tspan x="74.69599914550781" dy="1em">​</tspan>of object</text>
+</svg>
