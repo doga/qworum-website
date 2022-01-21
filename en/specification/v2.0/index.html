@@ -121,10 +121,17 @@
           yet its potential as a medium for applications soon became apparent. The ongoing effort that has been undertaken by the ICT community since the Web's early days in order to better support Web applications has sofar produced various client-side and server-side upgrades to the initial Web, such as JavaScript and application servers. 
         </p>
         <p>
-          Yet there is room for improvement, particularly regarding the decentralisation of the front-ends of Web applications. In today's Web, an application is contained within a single Web origin (example: https://example.com), and frequently even within a single Web page. This limits the amount of functionality that can be shared amongst application developer teams, and results in considerable duplication of effort. (One notable exception to this picture is OAuth-based authentication services which can be called remotely by applications.)
+          Yet there is room for improvement, particularly regarding the decentralisation of the front-ends of Web applications. In today's Web, an application is contained within a single Web origin (example: https://example.com), and frequently even within a single Web page. This limits the amount of functionality that can be shared amongst application developer teams, and results in considerable duplication of effort. (One notable exception to this picture is OAuth-based services which can be called remotely by applications.)
         </p>
         <p>
-          Qworum enables new gains in productivity for the software community by making it possible to build Web applications that are composed of interactive services ("Qworum services") that are hosted anywhere on the Web and that are callable remotely. As a foretaste, here is how an e-commerce site might call a shopping cart service:
+          Qworum enables new gains in productivity for the software community by making it possible to build Web applications that are composed of interactive services ("Qworum services") that are hosted anywhere on the Web and that are callable remotely.
+        </p>
+        <p>
+          It is worth noting that Qworum services are of practical use even if the caller of the service has the same Web origin as the called service.
+          This is because Qworum services can be inserted in any user flow without disrupting it, similarly to functions in conventional programming. Remember having to pass a return path to your login dialog? You don't need to do that anymore; the Qworum runtime takes care of it for you.
+        </p>
+        <p>
+          As a foretaste, here is how an e-commerce site might call a remote shopping cart service:
         </p>
         <figure>
           <pre><code class="language-xml">
@@ -185,13 +192,13 @@
           </p>
           <figure>
             <pre><code class="language-xml">
-  &lt;!-- Script received from an e-commerce site -->
+  &lt;!-- Script received from an e-commerce site. -->
   &lt;sequence xmlns="https://qworum.net/v2.0/instruction/">
 
-  &nbsp;&nbsp;&lt;!-- Show the user's shopping cart-->
+  &nbsp;&nbsp;&lt;!-- Show the user's shopping cart. -->
   &nbsp;&nbsp;&lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example.com/view/" />
 
-  &nbsp;&nbsp;&lt;!-- Go back to the e-commerce site -->
+  &nbsp;&nbsp;&lt;!-- Go back to the e-commerce site. -->
   &nbsp;&nbsp;&lt;goto href="/home/" />
   &lt;/sequence>
             </code></pre>
@@ -517,10 +524,11 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;!-- a shopping cart service directs the user to the payment processor -->
+&lt;!-- A shopping cart service directs the user to a remote payment processor. -->
 &lt;sequence xmlns='https://qworum.net/v2.0/instruction/' xmlns:d='https://qworum.net/v2.0/data/'>
-  &lt;!-- 1. call the payment processing service -->
-  &lt;!-- 2. store the transaction id -->
+
+  &lt;!-- 1. Call the payment processing service. -->
+  &lt;!-- 2. Store the returned transaction details. -->
   &lt;variable path='["@","latest transaction"]'>
     &lt;call object='["@","payment service"]' href="https://payment-processor.example.com/pay/">
       &lt;parameters>
@@ -536,10 +544,13 @@
     &lt;/call>
   &lt;/variable>
 
-  &lt;!-- payment succeeded (otherwise a fault would have been raised); empty the shopping cart -->
+  &lt;!-- 3. Empty the shopping cart, because payment has succeeded (otherwise a fault would have been raised). -->
   &lt;variable path='["@","line items"]'>
     &lt;d:json>[]&lt;/d:json>
   &lt;/variable>
+  
+  &lt;!-- 4. Go to the next phase of the current shopping cart method. -->
+  &lt;goto href="paid.html" />
 &lt;/sequence>
             </code></pre>
             <figcaption>3.5.1: A <code>sequence</code> example</figcaption>
@@ -618,12 +629,12 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;!-- yield the value of a variable; initialise it if needed -->
+&lt;!-- Yield the value of a variable; initialise it if needed. -->
 &lt;try xmlns='https://qworum.net/v2.0/instruction/' xmlns:d='https://qworum.net/v2.0/data/'>
   &lt;variable path='["shopping cart line items"]' />
 
   &lt;catch faults='["variable"]'>
-    &lt;!-- initialise the variable -->
+    &lt;!-- Initialise the variable. -->
     &lt;variable path='["shopping cart line items"]'>
       &lt;d:json>[]&lt;/d:json>
     &lt;/variable>
