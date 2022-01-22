@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,33 +8,68 @@
   <title>Qworum specification, version 2.0</title>
 
   <style>
-    body {margin: 2em;}
-    h1 > .last-update {
-      color: #999; 
+    body {
+      margin: 2em;
+    }
+
+    h1>.last-update {
+      color: #999;
       white-space: pre;
       font-size: small;
     }
-    h1 > .last-update::before { content: "\ALast updated on "; }
-    h1 > .last-update::after { content: "."; }
+
+    h1>.last-update::before {
+      content: "\ALast updated on ";
+    }
+
+    h1>.last-update::after {
+      content: ".";
+    }
+
     /* h1, h2, h3, h4, h5, h6 { font-transform: capitalise;} */
-    img { height: 400px; width: 600px; }
-    figcaption { text-align: center; }
-    figcaption::before { content: "Figure "; }
-    figcaption::after { content: "."; }
-    pre>code { white-space: pre; }
+    img {
+      height: 400px;
+      width: 600px;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+
+    figcaption::before {
+      content: "Figure ";
+    }
+
+    figcaption::after {
+      content: ".";
+    }
+
+    pre>code {
+      white-space: pre;
+    }
+
     #references ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
     }
+
     #references ul li {
       padding-bottom: 1em;
     }
+
     #references ul li .reference {
-      font-weight: bold; white-space: pre;
+      font-weight: bold;
+      white-space: pre;
     }
-    #references ul li .reference::before { content: "["; }
-    #references ul li .reference::after { content: "] \A    "; }
+
+    #references ul li .reference::before {
+      content: "[";
+    }
+
+    #references ul li .reference::after {
+      content: "] \A    ";
+    }
   </style>
 
   <!-- highlight.js (code highlighting) -->
@@ -43,6 +79,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
 </head>
+
 <body>
   <main>
     <article>
@@ -56,7 +93,8 @@
         <p>
           More precisely,
           Qworum is a Web-scale software platform that enables decentralised and modular Web applications.
-          It adds new functionality to Web browsers that allows Web applications to be composed of interactive services that may be located anywhere on the World Wide Web. 
+          It adds new functionality to Web browsers that allows Web applications to be composed of interactive services
+          that may be located anywhere on the World Wide Web.
         </p>
         <p>In other words, Qworum is a micro-frontend platform that works at Web-scale.</p>
       </header>
@@ -117,18 +155,31 @@
           1. Introduction
         </h2>
         <p>
-          The World Wide Web <a href="#ref-www">♦︎</a> was initially conceived as a decentralised information system consisting of interlinked documents, 
-          yet its potential as a medium for applications soon became apparent. The ongoing effort that has been undertaken by the ICT community since the Web's early days in order to better support Web applications has sofar produced various client-side and server-side upgrades to the initial Web, such as JavaScript and application servers. 
+          The World Wide Web <a href="#ref-www">♦︎</a> was initially conceived as a decentralised information system
+          consisting of interlinked documents,
+          yet its potential as a medium for applications soon became apparent. The ongoing effort that has been
+          undertaken by the ICT community since the Web's early days in order to better support Web applications has
+          sofar produced various client-side and server-side upgrades to the initial Web, such as JavaScript and
+          application servers.
         </p>
         <p>
-          Yet there is room for improvement, particularly regarding the decentralisation of the front-ends of Web applications. In today's Web, an application is contained within a single Web origin (example: https://example.com), and frequently even within a single Web page. This limits the amount of functionality that can be shared amongst application developer teams, and results in considerable duplication of effort. (One notable exception to this picture is OAuth-based services which can be called remotely by applications.)
+          Yet there is room for improvement, particularly regarding the decentralisation of the front-ends of Web
+          applications. In today's Web, an application is contained within a single Web origin (example:
+          https://example.com), and frequently even within a single Web page. This limits the amount of functionality
+          that can be shared amongst application developer teams, and results in considerable duplication of effort.
+          (One notable exception to this picture is OAuth-based services which can be called remotely by applications.)
         </p>
         <p>
-          Qworum enables new gains in productivity for the software community by making it possible to build Web applications that are composed of interactive services ("Qworum services") that are hosted anywhere on the Web and that are callable remotely.
+          Qworum enables new gains in productivity for the software community by making it possible to build Web
+          applications that are composed of interactive services ("Qworum services") that are hosted anywhere on the Web
+          and that are callable remotely.
         </p>
         <p>
-          It is worth noting that Qworum services are of practical use even if the caller of the service has the same Web origin as the called service.
-          This is because Qworum services can be inserted in any user flow without disrupting it, similarly to functions in conventional programming. Remember having to pass a return path to your login dialog? You don't need to do that anymore; the Qworum runtime takes care of it for you.
+          It is worth noting that Qworum services are of practical use even if the caller of the service has the same
+          Web origin as the called service.
+          This is because Qworum services can be inserted in any user flow without disrupting it, similarly to functions
+          in conventional programming. Remember having to pass a return path to your login dialog? You don't need to do
+          that anymore; the Qworum runtime takes care of it for you.
         </p>
         <p>
           As a foretaste, here is how an e-commerce site might call a remote shopping cart service:
@@ -136,7 +187,7 @@
         <figure>
           <pre><code class="language-xml">
 &lt;!-- Qworum script received by the Web browser from an e-commerce site -->
-&lt;sequence xmlns="https://qworum.net/v2.0/instruction/">
+&lt;sequence xmlns="https://qworum.com/ns/2.0/instruction/">
   &lt;!-- 1. Show the user's shopping cart-->
   &lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example.com/view/" />
 
@@ -161,7 +212,9 @@
 
         <section id="single-phase-service-call">
           <h3>2.2. <dfn>Single-Phase Service Call</dfn></h3>
-          <p>A call to a Web API that consists of a single phase. Calls to Web APIs that conform to conventional specifications such as REST <a href="#ref-rest">♦︎</a> or XML-RPC <a href="#ref-xml-rpc">♦︎</a> are always single-phase calls.</p>
+          <p>A call to a Web API that consists of a single phase. Calls to Web APIs that conform to conventional
+            specifications such as REST <a href="#ref-rest">♦︎</a> or XML-RPC <a href="#ref-xml-rpc">♦︎</a> are always
+            single-phase calls.</p>
           <figure>
             <img src="figures/figure-2.2.svg" alt="Single-Phase Service Call">
             <figcaption>2.2.1: Single-Phase Service Call</figcaption>
@@ -170,30 +223,36 @@
 
         <section id='multi-phase-service-call'>
           <h3>2.3. <dfn>Multi-Phase Service Call</dfn></h3>
-          <p>A call to a Web API that consists of one or more phases. Calls to Web APIs that conform to the Qworum specification are multi-phase calls.</p>
-          <p>During a multi-phase call, the first request that is sent by the user agent to the server contains 0, 1 or more call parameters. The service then returns a response that:</p>
+          <p>A call to a Web API that consists of one or more phases. Calls to Web APIs that conform to the Qworum
+            specification are multi-phase calls.</p>
+          <p>During a multi-phase call, the first request that is sent by the user agent to the server contains 0, 1 or
+            more call parameters. The service then returns a response that:</p>
           <ul>
             <li>contains a <dfn>call result</dfn> (in which case the call is a single-phase call), or</li>
             <li>allows the user agent to initiate a second phase for the current call.</li>
           </ul>
-          <p>In this manner, each phase of a multi-phase call can choose to return a result or continue the current call with another phase.</p>
+          <p>In this manner, each phase of a multi-phase call can choose to return a result or continue the current call
+            with another phase.</p>
           <figure>
             <img src="figures/figure-2.3.svg" alt="">
             <figcaption>2.3.1: Example of a Multi-Phase Service Call</figcaption>
           </figure>
-          <p>Qworum mandates that each phase of a particular multi-phase call have the same Web origin, otherwise a <em>same-origin</em> <a href="#fault">fault</a> will be raised during run-time.</p>
+          <p>Qworum mandates that each phase of a particular multi-phase call have the same Web origin, otherwise a
+            <em>same-origin</em> <a href="#fault">fault</a> will be raised during run-time.
+          </p>
         </section>
 
         <section id='script'>
           <h3>2.4. <dfn>Qworum Script</dfn></h3>
           <p>
-            An XML <a href="#ref-xml">♦︎</a> document that is returned by a call phase, and that contains instructions that are to be performed by the user agent. 
+            An XML <a href="#ref-xml">♦︎</a> document that is returned by a call phase, and that contains instructions
+            that are to be performed by the user agent.
             The root element of a Qworum script must be an <a href="#instructions">instruction</a>.
           </p>
           <figure>
             <pre><code class="language-xml">
   &lt;!-- Script received from an e-commerce site. -->
-  &lt;sequence xmlns="https://qworum.net/v2.0/instruction/">
+  &lt;sequence xmlns="https://qworum.com/ns/2.0/instruction/">
 
   &nbsp;&nbsp;&lt;!-- Show the user's shopping cart. -->
   &nbsp;&nbsp;&lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example.com/view/" />
@@ -205,7 +264,8 @@
             <figcaption>2.4.1: Example of a Qworum script</figcaption>
           </figure>
           <p>
-            Qworum scripts have the same MIME type as regular XML documents, and must be served with one of the following content types in HTTP(S) responses:
+            Qworum scripts have the same MIME type as regular XML documents, and must be served with one of the
+            following content types in HTTP(S) responses:
           </p>
           <ul>
             <li> <code>application/xml</code></li>
@@ -215,8 +275,11 @@
 
         <section id='service-composition'>
           <h3>2.5. <dfn>Service Composition</dfn></h3>
-          <p>The mechanism by which multi-phase calls perform other nested multi-phase calls during their execution. Nested calls are performed between two consecutive phases of the call that initiated the nested call.</p>
-          <p>When a call is to perform a nested call, one of its phases returns a <a href="#script">script</a> that contains a <a href="#call">call</a> instruction. These nested calls are then performed by the user agent between two consecutive phases of the call that initiated the nested call.</p>
+          <p>The mechanism by which multi-phase calls perform other nested multi-phase calls during their execution.
+            Nested calls are performed between two consecutive phases of the call that initiated the nested call.</p>
+          <p>When a call is to perform a nested call, one of its phases returns a <a href="#script">script</a> that
+            contains a <a href="#call">call</a> instruction. These nested calls are then performed by the user agent
+            between two consecutive phases of the call that initiated the nested call.</p>
           <figure>
             <img src="figures/figure-2.5.svg" alt="">
             <figcaption>2.5.1: Example of a nested service call</figcaption>
@@ -226,26 +289,35 @@
         <section id='interactive-service'>
           <h3>2.6. Interactive Service</h3>
           <p>
-            A multi-phase service that can interact with the end-user through HTML <a href="#ref-html">♦︎</a> pages during its execution.
+            A multi-phase service that can interact with the end-user through HTML <a href="#ref-html">♦︎</a> pages
+            during its execution.
             <!-- When an interactive service send an HTML page as a response, it is effectively using the end-user as a resource that that helps it continue its execution by starting a new phase. We are naming this pattern an <dfn id='end-user-invocation'>end-user invocation</dfn>. -->
           </p>
           <figure>
             <img src="figures/figure-2.6.svg" alt="">
             <figcaption>2.6.1: An interactive service call</figcaption>
           </figure>
-          <p>For example, a shopping cart service may provide a method that shows shopping cart contents to the end-user by offering this type of interactivity.</p>
+          <p>For example, a shopping cart service may provide a method that shows shopping cart contents to the end-user
+            by offering this type of interactivity.</p>
         </section>
 
         <section id='execution-state'>
-          <h3>2.7. <dfn>Execution State</dfn></h3> 
+          <h3>2.7. <dfn>Execution State</dfn></h3>
           <p>
             In Qworum, each Web browser tab has its own execution state, which consists of:
           </p>
           <ul>
-            <li>A <dfn id='call-stack'>call stack</dfn> that contains one or more <dfn>call frame</dfn>s. The topmost call frame pertains to the call currently being executed; the remaining call frames contain the states of calls whose executions are currently suspended. Call frames are used for storing call states in the form of <a href="#variable">variable</a>s (which point to data) and <a href="#object">object</a>s.</li>
-            <li>A <dfn id='main-object'>main <a href="#object">object</a></dfn> that is attached to the browser tab. The main object is the owner of the first call frame in the call stack.</li>
+            <li>A <dfn id='call-stack'>call stack</dfn> that contains one or more <dfn>call frame</dfn>s. The topmost
+              call frame pertains to the call currently being executed; the remaining call frames contain the states of
+              calls whose executions are currently suspended. Call frames are used for storing call states in the form
+              of <a href="#variable">variable</a>s (which point to data) and <a href="#object">object</a>s.</li>
+            <li>A <dfn id='main-object'>main <a href="#object">object</a></dfn> that is attached to the browser tab. The
+              main object is the owner of the first call frame in the call stack.</li>
           </ul>
-          <p>A regular browsing session on the World Wide Web can be thought of as a multi-phase service call that doesn't use the Qworum-related functionality that the user agent provides (except that browsing different Web origins within the same browser tab does not raise a <em>same-origin</em> <a href="#fault">fault</a>). In particular: </p>
+          <p>A regular browsing session on the World Wide Web can be thought of as a multi-phase service call that
+            doesn't use the Qworum-related functionality that the user agent provides (except that browsing different
+            Web origins within the same browser tab does not raise a <em>same-origin</em> <a href="#fault">fault</a>).
+            In particular: </p>
           <ul>
             <li>regular Web browsing happens within the bounds of the first call frame in the call stack, and</li>
             <li>the main object remains unused during a regular Web browsing session.</li>
@@ -258,12 +330,22 @@
 
         <section id='object'>
           <h3>2.8. <dfn>Qworum Object</dfn></h3>
-          <p>A container for run-time state that is shared between different calls. Qworum objects are used for storing <a href="#variable">variable</a>s (which point to data) and other Qworum objects.</p>
-          <p>Qworum objects are needed for storing the states of services such as shopping carts that must remember their contents across different calls incoming from an e-commerce site for example. In the absence of Qworum objects, Qworum would only have been able to support services where each incoming call is independent from one another, which is the case for user authentication services or payment processing services for instance.</p>
+          <p>A container for run-time state that is shared between different calls. Qworum objects are used for storing
+            <a href="#variable">variable</a>s (which point to data) and other Qworum objects.
+          </p>
+          <p>Qworum objects are needed for storing the states of services such as shopping carts that must remember
+            their contents across different calls incoming from an e-commerce site for example. In the absence of Qworum
+            objects, Qworum would only have been able to support services where each incoming call is independent from
+            one another, which is the case for user authentication services or payment processing services for instance.
+          </p>
           <p>Here is how Qworum objects are used in practice:</p>
           <ul>
-            <li>Each multi-phase call has a Qworum object that is the owner of the call. When initiating a call, the call's owner object is created by the user agent if it does not already exist in the browser tab's execution state.</li>
-            <li>Each Qworum object has a Web origin which is determined when the object is first used as the owner of a call. All phases of all calls which are owned by a Qworum object must have the object's origin, otherwise a <em>same-origin</em> <a href="#fault">fault</a> will be raised during run-time.</li>
+            <li>Each multi-phase call has a Qworum object that is the owner of the call. When initiating a call, the
+              call's owner object is created by the user agent if it does not already exist in the browser tab's
+              execution state.</li>
+            <li>Each Qworum object has a Web origin which is determined when the object is first used as the owner of a
+              call. All phases of all calls which are owned by a Qworum object must have the object's origin, otherwise
+              a <em>same-origin</em> <a href="#fault">fault</a> will be raised during run-time.</li>
             <li>Qworum objects can be stored in call frames, or as the main object of an execution state.</li>
           </ul>
           <figure>
@@ -274,13 +356,19 @@
 
         <section id='class'>
           <h3>2.9. <dfn>Qworum Class</dfn></h3>
-          <p>Qworum does not mandate that all Qworum objects stored in an execution state have different origins. It follows that calls to the same URL can be made using different owner objects, even within the same browser tab. This is how the concept of Qworum classes emerges; not as a browser feature, but rather as an aid for designing Qworum-based applications and services.</p>
-          <p>Formally, we can define Qworum objects to be instances of Qworum classes, and also that each Web origin can host any number of Qworum classes.</p>
+          <p>Qworum does not mandate that all Qworum objects stored in an execution state have different origins. It
+            follows that calls to the same URL can be made using different owner objects, even within the same browser
+            tab. This is how the concept of Qworum classes emerges; not as a browser feature, but rather as an aid for
+            designing Qworum-based applications and services.</p>
+          <p>Formally, we can define Qworum objects to be instances of Qworum classes, and also that each Web origin can
+            host any number of Qworum classes.</p>
           <figure>
             <img src="figures/figure-2.9.svg" alt="">
             <figcaption>2.9.1: Qworum classes and objects</figcaption>
           </figure>
-          <p>Going back to our shopping cart example, we can imagine an e-commerce site that allows its users to create several shopping carts on the same shopping cart service, for example one "Home" cart, one "Work" cart and one "New year's eve party" cart.</p>
+          <p>Going back to our shopping cart example, we can imagine an e-commerce site that allows its users to create
+            several shopping carts on the same shopping cart service, for example one "Home" cart, one "Work" cart and
+            one "New year's eve party" cart.</p>
         </section>
 
       </section>
@@ -289,26 +377,33 @@
         <h2>3. Instructions</h2>
         <p>
           This section lists the instructions that are available to <a href="#script">Qworum script</a>s.
-          When evaluated by the user agent, all instructions will yield a value (which is <a href="#data"><code>data</code></a>), except for the <a href="#goto"><code>goto</code></a> and <a href="#fault"><code>fault</code></a> instructions.
+          When evaluated by the user agent, all instructions will yield a value (which is <a
+            href="#data"><code>data</code></a>), except for the <a href="#goto"><code>goto</code></a> and <a
+            href="#fault"><code>fault</code></a> instructions.
         </p>
-        <p>Qworum instructions that conform to this specification must have the XML namespace <a href="#ref-xmlns">♦︎</a>
-          <code>https://qworum.net/v2.0/instruction/</code>.</p>
+        <p>Qworum instructions that conform to this specification must have the XML namespace <a
+            href="#ref-xmlns">♦︎</a>
+          <code>https://qworum.com/ns/2.0/instruction/</code>.
+        </p>
 
         <section id='variable'>
           <h3>3.1. <code>variable</code></h3>
-          <p>The <code>variable</code> instruction allows the writing and reading of data to and from an execution state. The current call has read/write access to variables in two places:</p>
+          <p>The <code>variable</code> instruction allows the writing and reading of data to and from an execution
+            state. The current call has read/write access to variables in two places:</p>
           <ul>
             <li>locally inside the current call frame, and</li>
             <li>inside the current call's owner object.</li>
           </ul>
 
-          <p>The location of the data that is being accessed is determined by <code>variable</code>'s <code>path</code> attribute. This attribute's value is a JSON-encoded array of strings.
+          <p>The location of the data that is being accessed is determined by <code>variable</code>'s <code>path</code>
+            attribute. This attribute's value is a JSON-encoded array of strings.
           </p>
           <p id='reserved-path-prefixes'>
-          Within this array, some strings are treated differently by the user agent:</p>
+            Within this array, some strings are treated differently by the user agent:</p>
           <ul>
             <li>any string that starts with <code>@</code> denotes the current call's owner object, and</li>
-            <li>strings starting with <code>$</code> or <code>#</code> are reserved and should not be used at this time.</li>
+            <li>strings starting with <code>$</code> or <code>#</code> are reserved and should not be used at this time.
+            </li>
           </ul>
 
           <p>Here is an example of reading a variable:</p>
@@ -316,7 +411,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Read the "shopping cart line items" variable that is stored locally in the current call. -->
-&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/v2.0/instruction/' />
+&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.com/ns/2.0/instruction/' />
             </code></pre>
             <figcaption>3.1.1: Reading a variable stored in the current call</figcaption>
           </figure>
@@ -326,7 +421,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Read the "shopping cart line items" variable that is stored in the current call's owner object. -->
-&lt;variable path='["@", "shopping cart line items"]' xmlns='https://qworum.net/v2.0/instruction/' />
+&lt;variable path='["@", "shopping cart line items"]' xmlns='https://qworum.com/ns/2.0/instruction/' />
             </code></pre>
             <figcaption>3.1.2: Reading a variable stored in the current call's owner</figcaption>
           </figure>
@@ -339,13 +434,14 @@
 &lt;!-- that is in turn stored in the current call's owner object. -->
 &lt;variable
     path='["@", "shopping cart", "line items"]'
-    xmlns='https://qworum.net/v2.0/instruction/'
+    xmlns='https://qworum.com/ns/2.0/instruction/'
 />
             </code></pre>
             <figcaption>3.1.3: Reading a variable stored in the current call's owner object</figcaption>
           </figure>
 
-          <p>If a variable does not exist, then trying to read it will raise a "<code>variable</code> <a href="#fault">fault</a>".</p>
+          <p>If a variable does not exist, then trying to read it will raise a "<code>variable</code> <a
+              href="#fault">fault</a>".</p>
 
           <!-- <p>Data that is stored has two types of provenances:</p>
           <ul>
@@ -353,43 +449,49 @@
             <li>Web pages — a Web page belonging to a Qworum service or Qworum application can produce data from user inputs or network requests.</li>
           </ul> -->
 
-          <p>When writing to a variable, the <code>variable</code> instruction must contain one instruction or data. Here is an example:</p>
-            
+          <p>When writing to a variable, the <code>variable</code> instruction must contain one instruction or data.
+            Here is an example:</p>
+
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Clear the "shopping cart line items" variable that is stored locally in the current call. -->
-&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/v2.0/instruction/'>
-  &lt;d:json xmlns:d="https://qworum.net/v2.0/data/">[]&lt;/d:json>
+&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.com/ns/2.0/instruction/'>
+  &lt;d:json xmlns:d="https://qworum.com/ns/2.0/data/">[]&lt;/d:json>
 &lt;/variable>
             </code></pre>
             <figcaption>3.1.4: Writing data to a variable</figcaption>
           </figure>
 
           <p>And another:</p>
-            
+
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Write the line items received from the shopping cart service -->
 &lt;!-- to the "shopping cart line items" variable that is stored in the current call. -->
-&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/v2.0/instruction/'>
+&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.com/ns/2.0/instruction/'>
   &lt;call object='["@", "shopping cart"]' href='https://shopping-cart.example.com/view/' />
 &lt;/variable>
             </code></pre>
             <figcaption>3.1.5: Writing a call result to a variable</figcaption>
           </figure>
 
-          <p>When writing to a variable contained in an object, if the container object does not exist then a "<code>variable</code> <a href="#fault">fault</a>" will be raised at run-time.</p>
+          <p>When writing to a variable contained in an object, if the container object does not exist then a
+            "<code>variable</code> <a href="#fault">fault</a>" will be raised at run-time.</p>
 
         </section>
 
         <section id="call">
           <h3>3.2. <code>call</code></h3>
           <p>
-            The <code>call</code> instruction initiates a <a href="#multi-phase-service-call">multi-phase service call</a>. It has two optional attributes:</p>
+            The <code>call</code> instruction initiates a <a href="#multi-phase-service-call">multi-phase service
+              call</a>. It has two optional attributes:</p>
           <ul>
             <li>
-              The <dfn><code>object</code></dfn> attribute specifies the path of the <a href="#object">object</a> that owns the call within the <a href="#execution-state">execution state</a>.
-              The value of the <code>object</code> attribute is a JSON-encoded array of strings (some string values are <a href="#reserved-path-prefixes">reserved</a>). If this attribute is omitted, then the new call's owner will be the owner of the current call.
+              The <dfn><code>object</code></dfn> attribute specifies the path of the <a href="#object">object</a> that
+              owns the call within the <a href="#execution-state">execution state</a>.
+              The value of the <code>object</code> attribute is a JSON-encoded array of strings (some string values are
+              <a href="#reserved-path-prefixes">reserved</a>). If this attribute is omitted, then the new call's owner
+              will be the owner of the current call.
             </li>
             <li>
               The <dfn><code>href</code></dfn> attribute specifies the URL of the call's first phase.
@@ -399,23 +501,24 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;call object='["@", "shopping cart"]' href='view/' xmlns='https://qworum.net/v2.0/instruction/' />
+&lt;call object='["@", "shopping cart"]' href='view/' xmlns='https://qworum.com/ns/2.0/instruction/' />
             </code></pre>
             <figcaption>3.2.1: A <code>call</code> instruction that issues a GET request</figcaption>
           </figure>
 
-          <p>In order to issue a POST request instead of a GET request, the <code>call</code> instruction must contain one or more phase parameters, each parameter containing one instruction or data.</p>
+          <p>In order to issue a POST request instead of a GET request, the <code>call</code> instruction must contain
+            one or more phase parameters, each parameter containing one instruction or data.</p>
 
           <figure>
             <pre><code class="language-xml">
 &lt;call
   object='["@","shopping cart"]'
   href='/add-line-items/index.xml'
-  xmlns='https://qworum.net/v2.0/instruction/'
+  xmlns='https://qworum.com/ns/2.0/instruction/'
 >
   &lt;parameters>
     &lt;parameter name='line items'>
-      &lt;d:json xmlns:d='https://qworum.net/v2.0/data/'>
+      &lt;d:json xmlns:d='https://qworum.com/ns/2.0/data/'>
         [{
           "title": "Classic ankle boots",
           "price": {"EUR": 29.99},
@@ -429,17 +532,20 @@
             <figcaption>3.2.2: A <code>call</code> instruction that issues a POST request</figcaption>
           </figure>
 
-          <p>A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that contains an item named <code>qworum-phase-parameters</code>:</p>
+          <p>A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that
+            contains an item named <code>qworum-phase-parameters</code>:</p>
           <ul>
             <li>The content type of the request body will be <code>application/x-www-form-urlencoded</code>.</li>
-            <li>The value of <code>qworum-phase-parameters</code> will be an XML string that contains the <dfn id='phase-parameters'>phase parameters</dfn> document. Note that phase parameters documents have their own XML namespace.</li>
+            <li>The value of <code>qworum-phase-parameters</code> will be an XML string that contains the <dfn
+                id='phase-parameters'>phase parameters</dfn> document. Note that phase parameters documents have their
+              own XML namespace.</li>
           </ul>
 
           <figure>
             <pre><code class="language-xml">
-&lt;parameters xmlns='https://qworum.net/v2.0/phase-parameters/'>
+&lt;parameters xmlns='https://qworum.com/ns/2.0/phase-parameters/'>
   &lt;parameter name='line items'>
-    &lt;d:json xmlns:d='https://qworum.net/v2.0/data/'>
+    &lt;d:json xmlns:d='https://qworum.com/ns/2.0/data/'>
       [{
         "title": "Classic ankle boots",
         "price": {"EUR": 29.99},
@@ -449,35 +555,40 @@
   &lt;/parameter>
 &lt;/parameters>
           </code></pre>
-            <figcaption>3.2.3: Example of a phase parameters document that will be encoded in a POST request</figcaption>
+            <figcaption>3.2.3: Example of a phase parameters document that will be encoded in a POST request
+            </figcaption>
           </figure>
 
-          <p>In addition to being POSTed, the call parameters will be available to the new call as local variables that have the same names as the call parameters.</p>
+          <p>In addition to being POSTed, the call parameters will be available to the new call as local variables that
+            have the same names as the call parameters.</p>
 
         </section>
 
         <section id="return">
           <h3>3.3. <code>return</code></h3>
           <p>
-            The <code>return</code> instruction returns the current <a href="#multi-phase-service-call">multi-phase service call</a>. This instruction must contain one instruction or data element.
+            The <code>return</code> instruction returns the current <a href="#multi-phase-service-call">multi-phase
+              service call</a>. This instruction must contain one instruction or data element.
           </p>
 
           <figure>
             <pre><code class="language-xml">
-&lt;return xmlns='https://qworum.net/v2.0/instruction/'>
+&lt;return xmlns='https://qworum.com/ns/2.0/instruction/'>
   &lt;variable path='["@","line items"]' />
 &lt;/return>
             </code></pre>
             <figcaption>3.3.1: Returning data as a result of the current call</figcaption>
           </figure>
 
-          <p>If the current call is the main call of the current browser tab, then this instruction will terminate the tab's execution.</p>
+          <p>If the current call is the main call of the current browser tab, then this instruction will terminate the
+            tab's execution.</p>
         </section>
 
         <section id="goto">
           <h3>3.4. <code>goto</code></h3>
           <p>
-            The <code>goto</code> instruction starts a new phase for the current <a href="#multi-phase-service-call">multi-phase service call</a>. It has one optional attribute:
+            The <code>goto</code> instruction starts a new phase for the current <a
+              href="#multi-phase-service-call">multi-phase service call</a>. It has one optional attribute:
           </p>
           <ul>
             <li>
@@ -488,18 +599,20 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;goto href='return.xml' xmlns='https://qworum.net/v2.0/instruction/' />
+&lt;goto href='return.xml' xmlns='https://qworum.com/ns/2.0/instruction/' />
             </code></pre>
             <figcaption>3.4.1: A <code>goto</code> instruction that issues a GET request</figcaption>
           </figure>
 
-          <p>In order to issue a POST request instead of a GET request, the <code>goto</code> instruction must contain one or more phase parameters, similarly to <a href="#call"><code>call</code></a>.</p>
+          <p>In order to issue a POST request instead of a GET request, the <code>goto</code> instruction must contain
+            one or more phase parameters, similarly to <a href="#call"><code>call</code></a>.</p>
 
-          <p>One situation where <code>goto</code> needs to have parameters is when the internal state of a Qworum object is updated from the server side using new data.</p>
+          <p>One situation where <code>goto</code> needs to have parameters is when the internal state of a Qworum
+            object is updated from the server side using new data.</p>
 
           <figure>
             <pre><code class="language-xml">
-&lt;goto href="add-line-items-to-cart.xml" xmlns="https://qworum.net/v2.0/instruction/">
+&lt;goto href="add-line-items-to-cart.xml" xmlns="https://qworum.com/ns/2.0/instruction/">
   &lt;parameters>
     &lt;parameter name="line items to add">
       &lt;variable path='["line items to add"]' />
@@ -519,13 +632,15 @@
         <section id="sequence">
           <h3>3.5. <code>sequence</code></h3>
           <p>
-            The <code>sequence</code> instruction contains one or more instructions or data elements, each of which is evaluated in turn. This instruction will yield the evaluation result of the last instruction/data in the sequence.
+            The <code>sequence</code> instruction contains one or more instructions or data elements, each of which is
+            evaluated in turn. This instruction will yield the evaluation result of the last instruction/data in the
+            sequence.
           </p>
 
           <figure>
             <pre><code class="language-xml">
 &lt;!-- A shopping cart service directs the user to a remote payment processor. -->
-&lt;sequence xmlns='https://qworum.net/v2.0/instruction/' xmlns:d='https://qworum.net/v2.0/data/'>
+&lt;sequence xmlns='https://qworum.com/ns/2.0/instruction/' xmlns:d='https://qworum.com/ns/2.0/data/'>
 
   &lt;!-- 1. Call the payment processing service. -->
   &lt;!-- 2. Store the returned transaction details. -->
@@ -561,7 +676,8 @@
           </p>
           <ul>
             <li>the sequence contains a <a href="#goto"><code>goto</code></a>, or</li>
-            <li>a <a href="#fault"><code>fault</code></a> is raised when evaluating one of the sequence's instructions, or</li>
+            <li>a <a href="#fault"><code>fault</code></a> is raised when evaluating one of the sequence's instructions,
+              or</li>
             <li>the sequence contains a <a href="#fault"><code>fault</code></a> instruction.</li>
           </ul>
 
@@ -570,7 +686,8 @@
         <section id="fault">
           <h3>3.6. <code>fault</code></h3>
           <p>
-            The <code>fault</code> instruction ends the current call unless it is caught by an enclosing <a href="#try"><code>try</code></a> instruction.
+            The <code>fault</code> instruction ends the current call unless it is caught by an enclosing <a
+              href="#try"><code>try</code></a> instruction.
             It has one optional attribute:
           </p>
           <ul>
@@ -582,29 +699,33 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;fault type='same-origin' xmlns='https://qworum.net/v2.0/instruction/' />
+&lt;fault type='same-origin' xmlns='https://qworum.com/ns/2.0/instruction/' />
             </code></pre>
             <figcaption>3.6.1: A <code>fault</code></figcaption>
           </figure>
 
-          <p>A <code>service</code> fault is raised when a run-time error occurs in a Qworum application or service. This fault type has the following subtypes:</p>
+          <p>A <code>service</code> fault is raised when a run-time error occurs in a Qworum application or service.
+            This fault type has the following subtypes:</p>
           <ul>
             <li><code>script</code> (the Qworum script has syntax errors),</li>
             <li><code>same-origin</code> (a phase of a Qworum object did not conform to the same-origin policy),</li>
             <li><code>variable</code> (reading a variable did not succeed because the variable does not exist),</li>
             <li><code>service-specific</code> (the fault type is specific to the Qworum service or application).</li>
           </ul>
-          
-          <p>When a Qworum service or application wishes to define its own fault types, it prefixes the fault types with <code>*</code>. Such faults are subtypes of the <code>service-specific</code> type.</p>
+
+          <p>When a Qworum service or application wishes to define its own fault types, it prefixes the fault types with
+            <code>*</code>. Such faults are subtypes of the <code>service-specific</code> type.
+          </p>
 
           <figure>
             <pre><code class="language-xml">
-&lt;fault type='* blocked valve' xmlns='https://qworum.net/v2.0/instruction/' />
+&lt;fault type='* blocked valve' xmlns='https://qworum.com/ns/2.0/instruction/' />
             </code></pre>
             <figcaption>3.6.2: A service-specific fault</figcaption>
           </figure>
 
-          <p>A <code>user-agent</code> fault is raised when an unexpected run-time error occurs in the user agent. This fault type has the following subtype:</p>
+          <p>A <code>user-agent</code> fault is raised when an unexpected run-time error occurs in the user agent. This
+            fault type has the following subtype:</p>
           <ul>
             <li><code>runtime</code> (implementation error of the Qworum specification by the user agent),</li>
           </ul>
@@ -614,23 +735,27 @@
         <section id="try">
           <h3>3.7. <code>try</code></h3>
           <p>
-            The <code>try</code> instruction is used for catching <a href="#fault">fault</a>s that are raised when evaluating the instruction it contains (it can also contain a data element, which never raises a fault).
+            The <code>try</code> instruction is used for catching <a href="#fault">fault</a>s that are raised when
+            evaluating the instruction it contains (it can also contain a data element, which never raises a fault).
           </p>
 
           <p>
-            The <code>try</code> instruction contains one or more <dfn id="catch">catch</dfn> clauses, each of which contains one or more instructions or data elements. Catch clauses have one optional attribute:
+            The <code>try</code> instruction contains one or more <dfn id="catch">catch</dfn> clauses, each of which
+            contains one or more instructions or data elements. Catch clauses have one optional attribute:
           </p>
           <ul>
             <li>
-              The <code>faults</code> attribute is a JSON-encoded array of strings that indicate the fault types that are caught by the clause.
-              If this attribute is omitted or if the <code>faults</code> array is empty, then the clause will catch all faults.
+              The <code>faults</code> attribute is a JSON-encoded array of strings that indicate the fault types that
+              are caught by the clause.
+              If this attribute is omitted or if the <code>faults</code> array is empty, then the clause will catch all
+              faults.
             </li>
           </ul>
 
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Yield the value of a variable; initialise it if needed. -->
-&lt;try xmlns='https://qworum.net/v2.0/instruction/' xmlns:d='https://qworum.net/v2.0/data/'>
+&lt;try xmlns='https://qworum.com/ns/2.0/instruction/' xmlns:d='https://qworum.com/ns/2.0/data/'>
   &lt;variable path='["shopping cart line items"]' />
 
   &lt;catch faults='["variable"]'>
@@ -648,15 +773,16 @@
             The <code>try</code> instruction will yield the result of the last instruction or data it evaluates.
           </p>
         </section>
-  
+
       </section>
 
       <section id="data">
         <h2>4. Data</h2>
         <p>An XML element represents data if:</p>
         <ul>
-          <!-- <li>it has no namespace or its namespace is a URL that has a different origin than <code>https://qworum.net</code>, or</li> -->
-          <li>its namespace is <code>https://qworum.net/v2.0/data/</code>, and the XML element conforms to this specification.</li>
+          <!-- <li>it has no namespace or its namespace is a URL that has a different origin than <code>https://qworum.com</code>, or</li> -->
+          <li>its namespace is <code>https://qworum.com/ns/2.0/data/</code>, and the XML element conforms to this
+            specification.</li>
         </ul>
 
         <section id="json">
@@ -665,7 +791,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;json xmlns='https://qworum.net/v2.0/data/'>
+&lt;json xmlns='https://qworum.com/ns/2.0/data/'>
   {
     "@context": {
       "0": "#",
@@ -694,7 +820,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;linked-data xmlns='https://qworum.net/v2.0/data/'>&lt;![CDATA[
+&lt;linked-data xmlns='https://qworum.com/ns/2.0/data/'>&lt;![CDATA[
   @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
   @prefix schema: &lt;https://schema.org/> .
   @prefix : &lt;#> .
@@ -708,17 +834,26 @@
             <figcaption>4.2.1: Example of <code>linked-data</code> data</figcaption>
           </figure>
 
-          <p>The reason for including linked data as a first-class datatype in Qworum is the fact that ideally Web APIs should return data that is as short as possible for efficiency reasons, while at the same time providing the callers with all the data they may need. This is the promise of linked data:</p>
+          <p>The reason for including linked data as a first-class datatype in Qworum is the fact that ideally Web APIs
+            should return data that is as short as possible for efficiency reasons, while at the same time providing the
+            callers with all the data they may need. This is the promise of linked data:</p>
           <ul>
-            <li>A Web API can return <code>linked-data</code> that contains a concise amount of information. For example, the figure 4.2.1 shows a result that is an organisation with the name "The World Wide Web Consortium". 
+            <li>A Web API can return <code>linked-data</code> that contains a concise amount of information. For
+              example, the figure 4.2.1 shows a result that is an organisation with the name "The World Wide Web
+              Consortium".
             <li>
-              The caller program does not need to know the exact names of the returned properties as with a plain JSON object. Instead, the caller can search for the properties (example: <code>schema:name</code>) that have the semantics that it is looking for. 
+              The caller program does not need to know the exact names of the returned properties as with a plain JSON
+              object. Instead, the caller can search for the properties (example: <code>schema:name</code>) that have
+              the semantics that it is looking for.
             </li>
-            <li>While the received data may be concise, the caller nevertheless has access to additional machine-readable linked data that is available online about the organisation by following the provided link (<code>https://dbpedia.org/resource/World_Wide_Web_Consortium</code>).</li>
+            <li>While the received data may be concise, the caller nevertheless has access to additional
+              machine-readable linked data that is available online about the organisation by following the provided
+              link (<code>https://dbpedia.org/resource/World_Wide_Web_Consortium</code>).</li>
           </ul>
 
           <p>
-            For linked data that is represented in JSON-LD format <a href="#ref-json-ld">♦︎</a> rather than Turtle, <a href="#json"><code>json</code></a> can be used instead of <code>linked-data</code>.
+            For linked data that is represented in JSON-LD format <a href="#ref-json-ld">♦︎</a> rather than Turtle, <a
+              href="#json"><code>json</code></a> can be used instead of <code>linked-data</code>.
           </p>
 
         </section>
@@ -726,7 +861,7 @@
         <!-- <section id="domain-specific-data">
           <h3>4.3. Domain-Specific Data</h3>
           <p>
-            Domain specific data is represented by an XML element without namespace or with a namespace that is a URL that has a different origin than <code>https://qworum.net</code>.
+            Domain specific data is represented by an XML element without namespace or with a namespace that is a URL that has a different origin than <code>https://qworum.com</code>.
           </p>
 
           <figure>
@@ -822,4 +957,5 @@
     </article>
   </main>
 </body>
+
 </html>
