@@ -175,11 +175,10 @@
           and that are callable remotely.
         </p>
         <p>
-          It is worth noting that Qworum services are of practical use even if the caller of the service has the same
+          It is worth noting that Qworum services are of practical use even if the caller of a service has the same
           Web origin as the called service.
           This is because Qworum services can be inserted in any user flow without disrupting it, similarly to functions
-          in conventional programming. Remember having to pass a return path to your login dialog? You don't need to do
-          that anymore; the Qworum runtime takes care of it for you.
+          in conventional programming. For example, with Qworum an application no longer needs to pass a return path to the login dialog when it requires the end-user to sign in before accessing a restricted page. Again, this is similar to conventional programming where a function does not know how the execution proceeds when its own execution finishes.
         </p>
         <p>
           As a foretaste, here is how an e-commerce site might call a remote shopping cart service:
