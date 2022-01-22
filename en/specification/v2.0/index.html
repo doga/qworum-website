@@ -329,13 +329,16 @@
 
         <section id='object'>
           <h3>2.8. <dfn>Qworum Object</dfn></h3>
-          <p>A container for run-time state that is shared between different calls. Qworum objects are used for storing
+          <p>
+            In conventional object-oriented programming, objects are used for storing state that is shared between multiple calls to one or more functions, which are the object's methods. Qworum is porting this concept into the Web environment in the form of Qworum objects.
+          </p>
+          <p>A Qworum object, then, is a container for run-time state that is shared between different calls. Qworum objects are used for storing
             <a href="#variable">variable</a>s (which point to data) and other Qworum objects.
           </p>
           <p>Qworum objects are needed for storing the states of services such as shopping carts that must remember
             their contents across different calls incoming from an e-commerce site for example. In the absence of Qworum
-            objects, Qworum would only have been able to support services where each incoming call is independent from
-            one another, which is the case for user authentication services or payment processing services for instance.
+            objects, Qworum would only be able to support services where each incoming call is independent from
+            one another, which is the case for user authentication services and payment processing services among others.
           </p>
           <p>Here is how Qworum objects are used in practice:</p>
           <ul>
