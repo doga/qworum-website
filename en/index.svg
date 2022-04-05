@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="292.548" cy="201.058" rx="259.349" ry="180.066"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 14.9px; text-anchor: middle;" x="115.185" y="234.175" transform="matrix(0.581724, 0, 0, 0.581724, 224.401733, -88.067139)">The World Wide Web<tspan x="115.18499755859375" dy="1em">​</tspan>(Foundational technology: HTTP)</text>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="189.957" cy="273.521" rx="93.299" ry="65.645"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 14.9px; text-anchor: middle;" x="115.185" y="234.175" transform="matrix(0.581724, 0, 0, 0.581724, 121.007202, 98.136795)">The Document Web<tspan x="115.18499755859375" dy="1em">​</tspan>(Foundational technology: HTML)</text>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="391.259" cy="274.122" rx="94.832" ry="65.452"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 14.9px; text-anchor: middle;" x="115.185" y="234.175" transform="matrix(0.581724, 0, 0, 0.581724, 323.835266, 97.836777)">The Linked-Data Web<tspan x="115.18499755859375" dy="1em">​</tspan>(Foundational technology: RDF)</text>
+  <ellipse style="stroke: rgb(192, 192, 192); fill: rgb(190, 9, 9);" cx="293.854" cy="142.277" rx="157.087" ry="69.624"/>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 14.9px; text-anchor: middle; white-space: pre;" transform="matrix(0.607928, 0, 0, 0.607928, 215.991608, -43.091621)"><tspan x="115.185" y="234.175">Qworum - The Service Web</tspan><tspan x="115.18499755859375" dy="1em">​</tspan><tspan>(Foundational technology: Multi-phase services)</tspan></text>
+  <g transform="matrix(1, 0, 0, 1, 8, 11.537474)">
+    <g>
+      <rect x="177.365" y="133.558" width="42.569" height="22.959" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="198.649" y="148.099">Service</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 73.608612, -18.107874)">
+      <rect x="177.365" y="133.558" width="42.569" height="22.959" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="198.649" y="148.099">Service</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 103.887245, 22.724092)">
+      <rect x="177.365" y="133.558" width="42.569" height="22.959" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="198.649" y="148.099">Service</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 160.720413, -9.10717)">
+      <rect x="177.365" y="133.558" width="42.569" height="22.959" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="198.649" y="148.099">Service</text>
+    </g>
+    <path d="M 215.151 139.848 H 236.532 L 236.532 137.348 L 253.532 140.848 L 236.532 144.348 L 236.532 141.848 H 215.151 V 139.848 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.954261, -0.298976, 0.298976, 0.954261, -28.42515, 67.814133)" bx:shape="arrow 215.151 137.348 38.381 7 2 17 0 1@48880d89"/>
+    <path d="M 219.569 151.771 H 268.693 L 268.693 149.271 L 285.693 152.771 L 268.693 156.271 L 268.693 153.771 H 219.569 V 151.771 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.986249, 0.165269, -0.165269, 0.986249, 28.267702, -34.18718)" bx:shape="arrow 219.569 149.271 66.124 7 2 17 0 1@31890b85"/>
+    <path d="M 291.851 125.996 H 323.708 L 323.708 123.496 L 340.708 126.996 L 323.708 130.496 L 323.708 127.996 H 291.851 V 125.996 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.991119, 0.132979, -0.132979, 0.991119, 21.479742, -37.682217)" bx:shape="arrow 291.851 123.496 48.857 7 2 17 0 1@234971b8"/>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 6.203711, 9.227893)">
+    <g transform="matrix(1, 0, 0, 1, -2.702317, 0.537128)">
+      <rect x="108.782" y="268.194" width="33.454" height="18.043" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="126.066" y="279.819">Page</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 56.516628, -20.807364)">
+      <rect x="108.782" y="268.194" width="33.454" height="18.043" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="126.066" y="279.819">Page</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 114.010475, -10.717418)">
+      <rect x="108.782" y="268.194" width="33.454" height="18.043" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="126.066" y="279.819">Page</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 68.69899, 30.092281)">
+      <rect x="108.782" y="268.194" width="33.454" height="18.043" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="126.066" y="279.819">Page</text>
+    </g>
+    <path d="M 137.376 268.957 H 154.257 L 154.257 266.457 L 171.257 269.957 L 154.257 273.457 L 154.257 270.957 H 137.376 V 268.957 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.900354, -0.435157, 0.435157, 0.900354, -103.78495, 86.680077)" bx:shape="arrow 137.376 266.457 33.881 7 2 17 0 1@e00c0bcb"/>
+    <path d="M 198.737 255.129 H 211.461 L 211.461 252.629 L 228.461 256.129 L 211.461 259.629 L 211.461 257.129 H 198.737 V 255.129 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.945818, 0.324698, -0.324698, 0.945818, 93.932709, -50.651821)" bx:shape="arrow 198.737 252.629 29.724 7 2 17 0 1@8b60d744"/>
+    <path d="M 139.109 284.844 H 168.082 L 168.082 282.344 L 185.082 285.844 L 168.082 289.344 L 168.082 286.844 H 139.109 V 284.844 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.922188, 0.386742, -0.386742, 0.922188, 121.372147, -31.557072)" bx:shape="arrow 139.109 282.344 45.973 7 2 17 0 1@83d9bf78"/>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 4.905267, 10.41318)">
+    <g>
+      <rect x="308.974" y="274.314" width="33.454" height="18.043" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="326.258" y="285.939">Data</text>
+    </g>
+    <path d="M 137.376 268.957 H 154.257 L 154.257 266.457 L 171.257 269.957 L 154.257 273.457 L 154.257 270.957 H 137.376 V 268.957 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.900354, -0.435157, 0.435157, 0.900354, 99.109459, 92.263382)" bx:shape="arrow 137.376 266.457 33.881 7 2 17 0 1@e00c0bcb"/>
+    <path d="M 198.737 255.129 H 211.461 L 211.461 252.629 L 228.461 256.129 L 211.461 259.629 L 211.461 257.129 H 198.737 V 255.129 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.945818, 0.324698, -0.324698, 0.945818, 296.827118, -45.06852)" bx:shape="arrow 198.737 252.629 29.724 7 2 17 0 1@8b60d744"/>
+    <path d="M 139.109 284.844 H 168.082 L 168.082 282.344 L 185.082 285.844 L 168.082 289.344 L 168.082 286.844 H 139.109 V 284.844 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.922188, 0.386742, -0.386742, 0.922188, 324.266541, -25.973768)" bx:shape="arrow 139.109 282.344 45.973 7 2 17 0 1@83d9bf78"/>
+    <g transform="matrix(1, 0, 0, 1, 59.031631, -22.501173)">
+      <rect x="308.974" y="274.314" width="33.454" height="18.043" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="326.258" y="285.939">Data</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 119.714294, -11.846053)">
+      <rect x="308.974" y="274.314" width="33.454" height="18.043" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="326.258" y="285.939">Data</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 74.783905, 24.254456)">
+      <rect x="308.974" y="274.314" width="33.454" height="18.043" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="326.258" y="285.939">Data</text>
+    </g>
+  </g>
+</svg>

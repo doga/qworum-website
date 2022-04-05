@@ -12,17 +12,28 @@
       margin: 2em;
     }
 
-    h1>.last-update {
+    body>footer {
+      padding: 3em;
+      font-weight: bold;
+      color: #999;
+    }
+
+    h1>.status-notice {
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    h1>.metadata {
       color: #999;
       white-space: pre;
       font-size: small;
     }
 
-    h1>.last-update::before {
+    h1>.metadata::before {
       content: "\ALast updated on ";
     }
 
-    h1>.last-update::after {
+    h1>.metadata::after {
       content: ".";
     }
 
@@ -86,17 +97,20 @@
       <header>
         <h1>
           Qworum specification, version 2.0
-          <span class="last-update">2022.01.15</span>
+          <span class="status-notice">Draft</span>
+          <span class="metadata">2022.04.02. Author: Doğa Armangil. Twitter: @QworumNet</span>
         </h1>
         <h2>Summary</h2>
-        <p>Qworum is the "Service Web" that complements the World Wide Web (the "Document Web").</p>
+        <p>
+          Qworum is the <em>Service Web</em> that enables distributed web applications. 
+          It complements the HTML-based <em>Document Web</em> and the RDF-based <em>Linked-data Web</em>.</p>
         <p>
           More precisely,
-          Qworum is a Web-scale software platform that enables decentralised and modular Web applications.
+          Qworum is a Web-scale software platform that enables distributed and modular Web applications.
           It adds new functionality to Web browsers that allows Web applications to be composed of interactive services
           that may be located anywhere on the World Wide Web.
         </p>
-        <p>In other words, Qworum is a micro-frontend platform that works at Web-scale.</p>
+        <p>Qworum can also be characterised as a micro-frontend platform that works at Web-scale.</p>
       </header>
 
       <nav>
@@ -534,7 +548,7 @@
             <figcaption>3.2.2: A <code>call</code> instruction that issues a POST request</figcaption>
           </figure>
 
-          <p>A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that
+          <p id="phase-parameters">A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that
             contains an item named <code>qworum-phase-parameters</code>:</p>
           <ul>
             <li>The content type of the request body will be <code>application/x-www-form-urlencoded</code>.</li>
@@ -958,6 +972,9 @@
       </footer>
     </article>
   </main>
+  <footer>
+    © 2022 Doğa Armangil. Twitter: @QworumNet
+  </footer>
 </body>
 
 </html>
