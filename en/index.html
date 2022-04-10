@@ -49,17 +49,18 @@
       <li>
         Follow us on Twitter for the latest news and updates: <a href="https://twitter.com/QworumNet" target="_blank">@QworumNet</a>.
       </li>
-      <li>
+      <!-- <li>
         Activate Qworum for your website by DMing us on Twitter. 
         Remember to indicate the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin" target="_blank">origin</a> of your website.
         See the <a href="#deliverables">Deliverables</a> section below for more information about Qworum activations.
-      </li>
+      </li> -->
     </ul>
 
     <nav>
       <h2>Page contents</h2>
       <ul>
         <li><a href="#specification">Specification</a></li>
+        <li><a href="#IP">Intellectual property</a></li>
         <li><a href="#context">A platform for distributed web applications</a></li>
         <li><a href="#use-cases">Use cases</a></li>
         <li><a href="#deliverables">Deliverables</a></li>
@@ -72,6 +73,15 @@
       <p>
         You can either directly <a href="specification/v2.0/">jump to the Qworum specification</a>, 
         or first read the following in order to get some context about what Qworum is trying to achieve.
+      </p>
+    </section>
+
+    <section id="IP">
+      <h2>Intellectual property</h2>
+      <ul>
+        <li>The US patent <a href="https://patents.google.com/patent/US20080288624" target="_blank">US8266632B2 "Method and a system for the composition of services"</a> describes how simple interactive services such as payment processors or user authentifiers would work. This patent has since expired.</li>
+        <li>
+          Newly produced intellectual property describes how complex interactive services such as shopping carts would work. This IP asset is currently available under <a href="https://en.wikipedia.org/wiki/Non-disclosure_agreement" target="_blank">NDA</a> or once we have filed a <a href="https://www.patentattorneys.ch/en/our-services/patents/provisional-patent-application/" target="_blank">provisional patent</a> or have applied for a <a href="https://www.investopedia.com/terms/u/utility-patent.asp" target="_blank">utility patent</a>, which will require an external funding.
       </p>
     </section>
 
@@ -141,7 +151,9 @@
       <ul>
         <li>The <a href="specification/v2.0/index.html">Qworum Specification</a>.</li>
         <li><strong>Browser extension</strong>: Only Google Chrome is supported at this time, although adding support for all major browsers is on our roadmap.</li>
-        <li><strong>Client library in JavaScript</strong>: This library is intended for use in the Web pages of Qworum applications and services. ⚠️ For this library to work correctly, your website's origin must be explicitly supported by the Qworum browser extension. This is because this library communicates with the Qworum extension. If you DM us your Web origin on Twitter, we can activate Qworum for your website. Note that you do not need to DM us for developing Qworum applications and services on your local machine.</li>
+        <li><strong>Client library in JavaScript</strong>: This library is intended for use in the Web pages of Qworum applications and services. ⚠️ For this library to work correctly, your website's origin must be explicitly supported by the Qworum browser extension. This is because this library communicates with the Qworum extension. 
+        <!-- If you DM us your Web origin on Twitter, we can activate Qworum for your website. Note that you do not need to DM us for developing Qworum applications and services on your local machine. -->
+        </li>
         <li><strong>Server library in JavaScript</strong>: Suitable for Node.js (and also Deno) applications. Used for sending dynamic <a href="specification/v2.0/#script">Qworum scripts</a> to clients, and for parsing <a href="specification/v2.0/#phase-parameters">phase parameters</a> received from clients.</li>
         <li><strong>Server library in TypeScript</strong>: Suitable for Deno applications. Used for sending dynamic Qworum scripts to clients, and for parsing phase parameters received from clients.</li>
         <li><strong>Visual Studio Code extension</strong>: Provides XML snippets for writing static Qworum scripts. This VS Code extension is automatically activated for files that have the <code>.qrm.xml</code> extension.</li>
