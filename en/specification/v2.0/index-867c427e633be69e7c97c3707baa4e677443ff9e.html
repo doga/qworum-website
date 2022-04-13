@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+<!-- 
+  TODO What are the use cases & requirements for a Qworum service to persist its state? 
+
+  - per user? (Qworum can help this use case by providing user authentication)
+  - per caller URL? 
+-->
 
 <head>
   <meta charset="UTF-8">
@@ -103,7 +109,7 @@
         <h2>Summary</h2>
         <p>
           Qworum is the <em>Service Web</em> that enables distributed web applications. 
-          It complements the HTML-based <em>Document Web</em> and the RDF-based <em>Linked-data Web</em>.</p>
+          It complements the HTML-based <em>Document Web</em> and the RDF-based <em>semantic-data Web</em>.</p>
         <p>
           More precisely,
           Qworum is a Web-scale software platform that enables distributed and modular Web applications.
@@ -151,7 +157,7 @@
             <a href="#data">Data</a>
             <ol>
               <li><a href="#json"><code>json</code></a></li>
-              <li><a href="#linked-data"><code>linked-data</code></a></li>
+              <li><a href="#semantic-data"><code>semantic-data</code></a></li>
               <!-- <li><a href="#domain-specific-data">Domain-Specific Data</a></li> -->
             </ol>
           </li>
@@ -809,20 +815,9 @@
             <pre><code class="language-xml">
 &lt;json xmlns='https://qworum.net/ns/1.0/data/'>
   {
-    "@context": {
-      "0": "#",
-      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-      "schema": "https://schema.org/"
-    },
-    "@id": "0:result",
-    "@type": "schema:Organization",
-    "schema:name": {
-      "@value": "The World Wide Web Consortium",
-      "@language": "en"
-    },
-    "rdfs:isDefinedBy": {
-      "@id": "https://dbpedia.org/resource/World_Wide_Web_Consortium"
-    }
+    "firstName"  : "Claude",
+    "lastName"   : "Shannon",
+    "dateOfBirth": "1916-04-30"
   }
 &lt;/json>
             </code></pre>
@@ -830,48 +825,51 @@
           </figure>
         </section>
 
-        <section id="linked-data">
-          <h3>4.2. <code>linked-data</code></h3>
-          <p>Represents linked data in Turtle <a href="#ref-turtle">♦︎</a> format.</p>
+        <section id="semantic-data">
+          <h3>4.2. <code>semantic-data</code></h3>
+          <p>
+            Represents semantic data in JSON-LD format <a href="#ref-json-ld">♦︎</a>.
+          </p>
 
           <figure>
             <pre><code class="language-xml">
-&lt;linked-data xmlns='https://qworum.net/ns/1.0/data/'>&lt;![CDATA[
-  @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
-  @prefix schema: &lt;https://schema.org/> .
-  @prefix : &lt;#> .
-
-  :result
-    a                schema:Organization;
-    schema:name      "The World Wide Web Consortium"@en;
-    rdfs:isDefinedBy &lt;https://dbpedia.org/resource/World_Wide_Web_Consortium> .
-]]>&lt;/linked-data>
+&lt;semantic-data xmlns='https://qworum.net/ns/1.0/data/'>
+  {
+    "@context": {
+      "schema"     : "https://schema.org/",
+      "Person"     : "schema:Person",
+      "firstName"  : "schema:givenName",
+      "lastName"   : "schema:familyName",
+      "dateOfBirth": "schema:birthDate"
+    },
+    "@id"        : "https://www.wikidata.org/wiki/Q92760",
+    "@type"      : "Person",
+    "firstName"  : "Claude",
+    "lastName"   : "Shannon",
+    "dateOfBirth": "1916-04-30"
+  }
+&lt;/semantic-data>
 </code></pre>
-            <figcaption>4.2.1: Example of <code>linked-data</code> data</figcaption>
+            <figcaption>4.2.1: Example of <code>semantic-data</code> instance</figcaption>
           </figure>
 
-          <p>The reason for including linked data as a first-class datatype in Qworum is the fact that ideally Web APIs
-            should return data that is as short as possible for efficiency reasons, while at the same time providing the
-            callers with all the data they may need. This is the promise of linked data:</p>
-          <ul>
-            <li>A Web API can return <code>linked-data</code> that contains a concise amount of information. For
-              example, the figure 4.2.1 shows a result that is an organisation with the name "The World Wide Web
-              Consortium".
-            <li>
-              The caller program does not need to know the exact names of the returned properties as with a plain JSON
-              object. Instead, the caller can search for the properties (example: <code>schema:name</code>) that have
-              the semantics that it is looking for.
-            </li>
-            <li>While the received data may be concise, the caller nevertheless has access to additional
-              machine-readable linked data that is available online about the organisation by following the provided
-              link (<code>https://dbpedia.org/resource/World_Wide_Web_Consortium</code>).</li>
-          </ul>
-
           <p>
-            For linked data that is represented in JSON-LD format <a href="#ref-json-ld">♦︎</a> rather than Turtle, <a
-              href="#json"><code>json</code></a> can be used instead of <code>linked-data</code>.
+            Semantic data is data that uses the vocabularies that are defined by the <a href="https://www.w3.org/standards/semanticweb/" target="_blank">Semantic Web</a>.
+            In these vocabularies each term has a precise meaning that is understood by any software that understands that particular vocabulary.
           </p>
-
+          <p>
+            In effect, what the Semantic Web is trying to do is create a <strong>machine-understandable language that is understood by all software</strong>.
+            Compare that vision with the current situation where data is generally only understood by the software that created it, and if a second application has to use that data, than the second application's author (or a third-party data integration provider) first has to decipher the structure and meaning of the data.
+          </p>
+          <p>Here are a few reasons for using semantic data, both in-transit and at-rest:</p>
+          <ul>
+            <li>The "transform" step can be removed from <a href="https://en.wikipedia.org/wiki/Extract,_transform,_load" target="_blank">ETL</a> operations.</li>
+            <li>Application developers can write less one-off code for handling data, which improves productivity.</li>
+            <li>Applications can have access to as much additional information as they need about the data they are handling, because semantic data generally contains links to other data on the Web.</li>
+            <li>
+              AI inference engines can reason about semantic data much more readily than about other types of data such as JSON, relational or NoSQL data.
+            </li>
+          </ul>
         </section>
 
         <!-- <section id="domain-specific-data">
@@ -950,13 +948,13 @@
               Introducing JSON
             </a>
           </li>
-          <li id="ref-turtle">
+          <!-- <li id="ref-turtle">
             <span class="reference">Turtle</span>
             <a href="https://www.w3.org/TR/turtle/">
               RDF 1.1 Turtle,
               Terse RDF Triple Language
             </a>
-          </li>
+          </li> -->
           <li id="ref-json-ld">
             <span class="reference">JSON-LD</span>
             <a href="https://www.w3.org/TR/json-ld/">
