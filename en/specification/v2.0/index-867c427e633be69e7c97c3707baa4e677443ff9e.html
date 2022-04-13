@@ -200,7 +200,7 @@
         <figure>
           <pre><code class="language-xml">
 &lt;!-- Qworum script received by the Web browser from an e-commerce site -->
-&lt;sequence xmlns="https://qworum.com/ns/2.0/instruction/">
+&lt;sequence xmlns="https://qworum.net/ns/1.0/instruction/">
   &lt;!-- 1. Show the user's shopping cart-->
   &lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example.com/view/" />
 
@@ -265,7 +265,7 @@
           <figure>
             <pre><code class="language-xml">
   &lt;!-- Script received from an e-commerce site. -->
-  &lt;sequence xmlns="https://qworum.com/ns/2.0/instruction/">
+  &lt;sequence xmlns="https://qworum.net/ns/1.0/instruction/">
 
   &nbsp;&nbsp;&lt;!-- Show the user's shopping cart. -->
   &nbsp;&nbsp;&lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example.com/view/" />
@@ -399,7 +399,7 @@
         </p>
         <p>Qworum instructions that conform to this specification must have the XML namespace <a
             href="#ref-xmlns">♦︎</a>
-          <code>https://qworum.com/ns/2.0/instruction/</code>.
+          <code>https://qworum.net/ns/1.0/instruction/</code>.
         </p>
 
         <section id='variable'>
@@ -427,7 +427,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Read the "shopping cart line items" variable that is stored locally in the current call. -->
-&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.com/ns/2.0/instruction/' />
+&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/ns/1.0/instruction/' />
             </code></pre>
             <figcaption>3.1.1: Reading a variable stored in the current call</figcaption>
           </figure>
@@ -437,7 +437,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Read the "shopping cart line items" variable that is stored in the current call's owner object. -->
-&lt;variable path='["@", "shopping cart line items"]' xmlns='https://qworum.com/ns/2.0/instruction/' />
+&lt;variable path='["@", "shopping cart line items"]' xmlns='https://qworum.net/ns/1.0/instruction/' />
             </code></pre>
             <figcaption>3.1.2: Reading a variable stored in the current call's owner</figcaption>
           </figure>
@@ -450,7 +450,7 @@
 &lt;!-- that is in turn stored in the current call's owner object. -->
 &lt;variable
     path='["@", "shopping cart", "line items"]'
-    xmlns='https://qworum.com/ns/2.0/instruction/'
+    xmlns='https://qworum.net/ns/1.0/instruction/'
 />
             </code></pre>
             <figcaption>3.1.3: Reading a variable stored in the current call's owner object</figcaption>
@@ -471,8 +471,8 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Clear the "shopping cart line items" variable that is stored locally in the current call. -->
-&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.com/ns/2.0/instruction/'>
-  &lt;d:json xmlns:d="https://qworum.com/ns/2.0/data/">[]&lt;/d:json>
+&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/ns/1.0/instruction/'>
+  &lt;d:json xmlns:d="https://qworum.net/ns/1.0/data/">[]&lt;/d:json>
 &lt;/variable>
             </code></pre>
             <figcaption>3.1.4: Writing data to a variable</figcaption>
@@ -484,7 +484,7 @@
             <pre><code class="language-xml">
 &lt;!-- Write the line items received from the shopping cart service -->
 &lt;!-- to the "shopping cart line items" variable that is stored in the current call. -->
-&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.com/ns/2.0/instruction/'>
+&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/ns/1.0/instruction/'>
   &lt;call object='["@", "shopping cart"]' href='https://shopping-cart.example.com/view/' />
 &lt;/variable>
             </code></pre>
@@ -517,7 +517,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;call object='["@", "shopping cart"]' href='view/' xmlns='https://qworum.com/ns/2.0/instruction/' />
+&lt;call object='["@", "shopping cart"]' href='view/' xmlns='https://qworum.net/ns/1.0/instruction/' />
             </code></pre>
             <figcaption>3.2.1: A <code>call</code> instruction that issues a GET request</figcaption>
           </figure>
@@ -530,11 +530,11 @@
 &lt;call
   object='["@","shopping cart"]'
   href='/add-line-items/index.xml'
-  xmlns='https://qworum.com/ns/2.0/instruction/'
+  xmlns='https://qworum.net/ns/1.0/instruction/'
 >
   &lt;parameters>
     &lt;parameter name='line items'>
-      &lt;d:json xmlns:d='https://qworum.com/ns/2.0/data/'>
+      &lt;d:json xmlns:d='https://qworum.net/ns/1.0/data/'>
         [{
           "title": "Classic ankle boots",
           "price": {"EUR": 29.99},
@@ -559,9 +559,9 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;parameters xmlns='https://qworum.com/ns/2.0/phase-parameters/'>
+&lt;parameters xmlns='https://qworum.net/ns/1.0/phase-parameters/'>
   &lt;parameter name='line items'>
-    &lt;d:json xmlns:d='https://qworum.com/ns/2.0/data/'>
+    &lt;d:json xmlns:d='https://qworum.net/ns/1.0/data/'>
       [{
         "title": "Classic ankle boots",
         "price": {"EUR": 29.99},
@@ -589,7 +589,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;return xmlns='https://qworum.com/ns/2.0/instruction/'>
+&lt;return xmlns='https://qworum.net/ns/1.0/instruction/'>
   &lt;variable path='["@","line items"]' />
 &lt;/return>
             </code></pre>
@@ -615,7 +615,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;goto href='return.xml' xmlns='https://qworum.com/ns/2.0/instruction/' />
+&lt;goto href='return.xml' xmlns='https://qworum.net/ns/1.0/instruction/' />
             </code></pre>
             <figcaption>3.4.1: A <code>goto</code> instruction that issues a GET request</figcaption>
           </figure>
@@ -628,7 +628,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;goto href="add-line-items-to-cart.xml" xmlns="https://qworum.com/ns/2.0/instruction/">
+&lt;goto href="add-line-items-to-cart.xml" xmlns="https://qworum.net/ns/1.0/instruction/">
   &lt;parameters>
     &lt;parameter name="line items to add">
       &lt;variable path='["line items to add"]' />
@@ -656,7 +656,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- A shopping cart service directs the user to a remote payment processor. -->
-&lt;sequence xmlns='https://qworum.com/ns/2.0/instruction/' xmlns:d='https://qworum.com/ns/2.0/data/'>
+&lt;sequence xmlns='https://qworum.net/ns/1.0/instruction/' xmlns:d='https://qworum.net/ns/1.0/data/'>
 
   &lt;!-- 1. Call the payment processing service. -->
   &lt;!-- 2. Store the returned transaction details. -->
@@ -715,7 +715,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;fault type='same-origin' xmlns='https://qworum.com/ns/2.0/instruction/' />
+&lt;fault type='same-origin' xmlns='https://qworum.net/ns/1.0/instruction/' />
             </code></pre>
             <figcaption>3.6.1: A <code>fault</code></figcaption>
           </figure>
@@ -735,7 +735,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;fault type='* blocked valve' xmlns='https://qworum.com/ns/2.0/instruction/' />
+&lt;fault type='* blocked valve' xmlns='https://qworum.net/ns/1.0/instruction/' />
             </code></pre>
             <figcaption>3.6.2: A service-specific fault</figcaption>
           </figure>
@@ -771,7 +771,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Yield the value of a variable; initialise it if needed. -->
-&lt;try xmlns='https://qworum.com/ns/2.0/instruction/' xmlns:d='https://qworum.com/ns/2.0/data/'>
+&lt;try xmlns='https://qworum.net/ns/1.0/instruction/' xmlns:d='https://qworum.net/ns/1.0/data/'>
   &lt;variable path='["shopping cart line items"]' />
 
   &lt;catch faults='["variable"]'>
@@ -797,7 +797,7 @@
         <p>An XML element represents data if:</p>
         <ul>
           <!-- <li>it has no namespace or its namespace is a URL that has a different origin than <code>https://qworum.com</code>, or</li> -->
-          <li>its namespace is <code>https://qworum.com/ns/2.0/data/</code>, and the XML element conforms to this
+          <li>its namespace is <code>https://qworum.net/ns/1.0/data/</code>, and the XML element conforms to this
             specification.</li>
         </ul>
 
@@ -807,7 +807,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;json xmlns='https://qworum.com/ns/2.0/data/'>
+&lt;json xmlns='https://qworum.net/ns/1.0/data/'>
   {
     "@context": {
       "0": "#",
@@ -836,7 +836,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;linked-data xmlns='https://qworum.com/ns/2.0/data/'>&lt;![CDATA[
+&lt;linked-data xmlns='https://qworum.net/ns/1.0/data/'>&lt;![CDATA[
   @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
   @prefix schema: &lt;https://schema.org/> .
   @prefix : &lt;#> .
