@@ -39,28 +39,24 @@
       Qworum
     </h1>
     <p>
-      Qworum is the Service Web that enables distributed web applications.
+      Qworum is the Service Web that enables distributed Web applications.
+      It adds new functionality to Web browsers (currently in the form of a browser extension).
+    </p>
+    <p>
+      Qworum is suitable for all Web frontends, from JamStack-style static frontends to more traditional dynamic frontends.
     </p>
 
     <p>
-      If you are interested in what the future of Web development might look like:
+      Follow us on Twitter if you are interested in the future of Web development:
+      <a href="https://twitter.com/QworumNet" target="_blank">@QworumNet</a>.
     </p>
-    <ul>
-      <li>
-        Follow us on Twitter for the latest news and updates: <a href="https://twitter.com/QworumNet" target="_blank">@QworumNet</a>.
-      </li>
-      <!-- <li>
-        Activate Qworum for your website by DMing us on Twitter. 
-        Remember to indicate the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin" target="_blank">origin</a> of your website.
-        See the <a href="#deliverables">Deliverables</a> section below for more information about Qworum activations.
-      </li> -->
-    </ul>
 
     <nav>
       <h2>Page contents</h2>
       <ul>
-        <li><a href="#specification">Specification</a></li>
+        <li><a href="#pitch-deck">Pitch Deck</a></li>
         <li><a href="#IP">Intellectual property</a></li>
+        <li><a href="#specification">Specification</a></li>
         <li><a href="#context">A platform for distributed web applications</a></li>
         <li><a href="#use-cases">Use cases</a></li>
         <li><a href="#deliverables">Deliverables</a></li>
@@ -68,11 +64,10 @@
       </ul>
     </nav>
 
-    <section id="specification">
-      <h2>Specification</h2>
+    <section id="pitch-deck">
+      <h2>Pitch Deck</h2>
       <p>
-        You can either directly <a href="specification/v2.0/">jump to the Qworum specification</a>, 
-        or first read the following in order to get some context about what Qworum is trying to achieve.
+        Our <a href="/Qworum-pitch-deck.pdf">pitch deck</a> describes the type of business we want to build.
       </p>
     </section>
 
@@ -82,6 +77,14 @@
         <li>The US patent <a href="https://patents.google.com/patent/US20080288624" target="_blank">US8266632B2 "Method and a system for the composition of services"</a> describes how simple interactive services such as payment processors or user authentifiers would work. This patent has since expired.</li>
         <li>
           Newly produced intellectual property describes how complex interactive services such as shopping carts would work. This IP asset is currently available under <a href="https://en.wikipedia.org/wiki/Non-disclosure_agreement" target="_blank">NDA</a> or once we have filed a <a href="https://www.patentattorneys.ch/en/our-services/patents/provisional-patent-application/" target="_blank">provisional patent</a> or have applied for a <a href="https://www.investopedia.com/terms/u/utility-patent.asp" target="_blank">utility patent</a>, which will require an external funding.
+      </p>
+    </section>
+
+    <section id="specification">
+      <h2>Specification</h2>
+      <p>
+        You can either directly <a href="specification/v2.0/">jump to the Qworum specification</a>, 
+        or first read the following in order to get some context about what Qworum is trying to achieve.
       </p>
     </section>
 
@@ -145,8 +148,7 @@
     <section id="deliverables">
       <h2>Deliverables</h2>
       <p>
-        The status of all deliverables is late-alpha / pre-beta. 
-        Everything is already useable to a great extent, but none of the software is published yet.
+        The status of all deliverables is late-alpha / pre-beta, except for the Netlify build plugin which is on our roadmap. 
       </p>
       <ul>
         <li>The <a href="specification/v2.0/index.html">Qworum Specification</a>.</li>
@@ -158,6 +160,7 @@
         <li><strong>Server library in TypeScript</strong>: Suitable for Deno applications. Used for sending dynamic Qworum scripts to clients, and for parsing phase parameters received from clients.</li>
         <li><strong>Visual Studio Code extension</strong>: Provides XML snippets for writing static Qworum scripts. This VS Code extension is automatically activated for files that have the <code>.qrm.xml</code> extension.</li>
         <li><strong>Demo</strong>: Qworum application (e-commerce site) & 2 Qworum services (shopping cart, payment gateway).</li>
+        <li><strong>Netlify build plugin</strong>: Allows a build to complete if the website has the permission to use the features of the Qworum extension.</li>
       </ul>
     </section>
 
