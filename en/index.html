@@ -130,6 +130,14 @@
         <li><strong>Application integration</strong>: Different Web-based applications can provide Qworum services to each other and provide a seamless user experience that combines both applications.</li>
         <li><strong>Productivity gains when developing web applications</strong>: An interactive service needs to be implemented and made available on the Web only once. All Web applications can then leverage that service and spare countless development hours.</li>
       </ul>
+      <p>
+        Qworum is widely applicable. If an online service is interactive, then it can benefit from using Qworum. Here is a foretaste of the types of services that Qworum can enable:
+      </p>
+      <ul>
+        <li>User authentication</li>
+        <li>Payment processing</li>
+        <li>Collection management — shopping cart, addressbook/contacts, movies, files, customer information, supplier information, …</li>
+      </ul>
       <figure>
         <img src="use-case.svg" alt="Phase">
         <figcaption>2: Example of a Qworum application that depends on a Qworum service, which in turn depends on another Qworum service</figcaption>
@@ -148,7 +156,7 @@
     <section id="deliverables">
       <h2>Deliverables</h2>
       <p>
-        The status of all deliverables is late-alpha / pre-beta, except for the Netlify build plugin which is on our roadmap. 
+        Deliverables that are in late-alpha / pre-beta stage: 
       </p>
       <ul>
         <li>The <a href="specification/v2.0/index.html">Qworum Specification</a>.</li>
@@ -160,7 +168,14 @@
         <li><strong>Server library in TypeScript</strong>: Suitable for Deno applications. Used for sending dynamic Qworum scripts to clients, and for parsing phase parameters received from clients.</li>
         <li><strong>Visual Studio Code extension</strong>: Provides XML snippets for writing static Qworum scripts. This VS Code extension is automatically activated for files that have the <code>.qrm.xml</code> extension.</li>
         <li><strong>Demo</strong>: Qworum application (e-commerce site) & 2 Qworum services (shopping cart, payment gateway).</li>
-        <li><strong>Netlify build plugin</strong>: Allows a build to complete if the website has the permission to use the features of the Qworum extension.</li>
+      </ul>
+      <p>
+        Other planned deliverables:
+      </p>
+      <ul>
+        <li><strong>Chrome DevTools extension</strong>: For debugging Qworum applications and services.</li>
+        <li><strong>Netlify build plugin</strong>: Aims to ensure that Qworum applications and services will run without runtime errors. It does this by checking that the required Qworum resources are available for the website to use.</li>
+        <li><strong>Marketplace for Qworum services:</strong> For listing, selling and purchasing Qworum services.</li>
       </ul>
     </section>
 
