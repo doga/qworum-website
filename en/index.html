@@ -16,6 +16,13 @@
       color: #999;
     }
 
+    figure>img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
     figcaption {
       text-align: center;
     }
@@ -39,21 +46,24 @@
       Qworum
     </h1>
     <p>
-      Qworum defines the Service Web. It:
+      Qworum is the Service Web. It:
     </p>
     <ul>
       <li>
         enables <strong>distributed Web applications</strong> which are composed of interactive services that are located anywhere on the Web,
       </li>
       <li>
-        specifies a <strong>new type of Web API</strong> that supports interactive services and micro-frontends,
+        specifies a <strong>new type of Web API</strong> that supports interactive services, micro-frontends, and microservice composition,
       </li>
       <li>
-        adds new functionality to Web browsers in the form of a browser extension.
+        uses a <strong>new Web format</strong> called <dfn>the Qworum script</dfn> that is run by Web browsers and other API clients,
+      </li>
+      <li>
+        adds new functionality to Web browsers.
       </li>
     </ul>
     <p>
-      Qworum is suitable for all Web frontends, from Jamstack-style static frontends to more traditional dynamic frontends.
+      Qworum is suitable for all Web application frontends, from Jamstack-style static frontends to more traditional dynamic frontends.
     </p>
 
     <p>
@@ -64,9 +74,9 @@
     <nav>
       <h2>Page contents</h2>
       <ul>
-        <li><a href="#demo">Demo</a></li>
         <li><a href="#pitch-deck">Pitch Deck</a></li>
         <li><a href="#IP">Intellectual property</a></li>
+        <li><a href="#demo">Demo</a></li>
         <li><a href="#specification">Specification</a></li>
         <li><a href="#context">A platform for distributed web applications</a></li>
         <li><a href="#use-cases">Use cases</a></li>
@@ -75,20 +85,10 @@
       </ul>
     </nav>
 
-    <section id="demo">
-      <h2>Demo</h2>
-      <p>
-        A <a href="/Qworum-demo-alpha.mp4">demo</a> that shows a Qworum application that uses a third-party Qworum service, which in turn calls another third-party Qworum service. Demo status: alpha.
-      </p>
-      <p>
-        Note that with Qworum the user experience is the same as with the current Web.
-      </p>
-    </section>
-
     <section id="pitch-deck">
       <h2>Pitch Deck</h2>
       <p>
-        Our <a href="/Qworum-pitch-deck.pdf">pitch deck</a> describes the type of business we want to build.
+        We are always looking for investors and distribution partners. Pitch deck: <a href="/Qworum-pitch-deck.pdf">PDF</a>.
       </p>
     </section>
 
@@ -99,6 +99,20 @@
         <li>
           Newly produced intellectual property describes how complex interactive services such as shopping carts would work. This IP asset is currently available under <a href="https://en.wikipedia.org/wiki/Non-disclosure_agreement" target="_blank">NDA</a> or once we have filed a <a href="https://www.patentattorneys.ch/en/our-services/patents/provisional-patent-application/" target="_blank">provisional patent</a> or have applied for a <a href="https://www.investopedia.com/terms/u/utility-patent.asp" target="_blank">utility patent</a>, which will require an external funding.
       </p>
+    </section>
+
+    <section id="demo">
+      <h2>Demo</h2>
+      <p>
+        This <a href="/Qworum-demo-alpha.mp4">video demo</a> shows a Qworum application calling a third-party Qworum service, which in turn calls another Qworum service. Demo status: alpha.
+      </p>
+      <p>
+        Note that with Qworum the user experience remains the same as with the current Web.
+      </p>
+      <figure>
+        <img src="demo.svg" style="width: 900px" alt="Demo">
+        <figcaption>1: A Qworum application and two Qworum services</figcaption>
+      </figure>
     </section>
 
     <section id="specification">
@@ -121,9 +135,9 @@
           The primary type of content is the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML page</a>, and the primary content consumers are human users rather than machines. 
         </li>
         <li>
-          The <dfn>Linked-data Web</dfn>: 
+          The <dfn>Semantic Web</dfn>: 
           This the Web that is intended for machine consumption rather than human consumption. 
-          The primary type of content is <a href="https://www.w3.org/standards/semanticweb/data" target="_blank">RDF</a> and its various encodings such as JSON-LD, Turtle and N3.
+          The primary type of content is <a href="https://www.w3.org/standards/semanticweb/data" target="_blank">RDF</a> and its various encodings such as JSON-LD and Turtle.
         </li>
       </ul>
       <p>
@@ -133,14 +147,18 @@
         <li><strong>Interactive</strong>: They can interact with end-users through HTML pages.</li>
         <li><strong>Composable</strong>: They can call other Qworum services, and even themselves. And Qworum services can return data to their callers. A <dfn>Qworum application</dfn>, on the other hand, is simply a Qworum service that does not have a caller.</li>
       </ul>
+      <figure>
+        <img src="the-three-webs.svg"  style="width: 1000px" alt="The three Webs">
+        <figcaption>2: The three Webs</figcaption>
+      </figure>
       <p>Note that although Qworum is distinct from the two previous Webs, it builds on them:</p>
       <ul>
         <li>User interaction occurs through HTML pages. End-users will barely notice that they are using Qworum rather than the Document Web.</li>
-        <li>Qworum services can return linked-data to their callers (but they can also return conventional data such as XML-wrapped JSON, or any other XML data).</li>
+        <li>Qworum services can return semantic data to their callers, in addition to conventional data such as XML-wrapped JSON or any other XML data.</li>
       </ul>
       <figure>
-        <img src="index.svg" alt="Phase">
-        <figcaption>1: The three Webs</figcaption>
+        <img src="user-flow.png" style="width: 400px" alt="User flow">
+        <figcaption>3: The user flow when a Qworum application or service calls another Qworum service</figcaption>
       </figure>
     </section>
 
@@ -159,14 +177,8 @@
         <li>Payment processing</li>
         <li>Collection management — shopping cart, addressbook/contacts, movies, files, customer information, supplier information, …</li>
       </ul>
-      <figure>
-        <img src="use-case.svg" alt="Phase">
-        <figcaption>2: Example of a Qworum application that depends on a Qworum service, which in turn depends on another Qworum service</figcaption>
-      </figure>
       <p>
-        You may ask yourself: "But Web applications can already use third-party services through remote API calls, so why is Qworum better?"
-      </p>
-      <p>
+        You may ask yourself: "Web applications can already use third-party services through remote API calls, how is Qworum better?".
         The answer is that currently third-party services can only provide business logic through their APIs (whether they are REST-based or not), whereas Qworum services can also bring the UI that goes along with the business logic. This lightens the workload of Web application developers.
       </p>
       <p>
@@ -207,11 +219,11 @@
       </p>
       <ul>
         <li>In the Qworum specification, the domain of the Qworum namespaces will change from qworum.com to qworum.net.</li>
-        <li>JamStack support: Currently, Qworum services and applications are required to send dynamic Qworum scripts from servers to browsers. This means that a website's front-end cannot be wholly served to end-users through CDNs.
+        <li>Jamstack support: Currently, Qworum services and applications are required to send dynamic Qworum scripts from servers to browsers. This means that a website's front-end cannot be wholly served to end-users through CDNs.
           In order for Qworum services and applications to be CDN-friendly, the Qworum client library will have to be able to generate Qworum scripts on the client.
         </li>
         <li>
-          The default type for <code><a href="specification/v2.0/#linked-data">linked-data</a></code>
+          The default type for <code><a href="specification/v2.0/#semantic-data">semantic-data</a></code>
           should probably be JSON-LD rather than Turtle.
         </li>
         <li>
