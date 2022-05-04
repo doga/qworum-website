@@ -157,7 +157,7 @@
             <a href="#data">Data</a>
             <ol>
               <li><a href="#json"><code>json</code></a></li>
-              <li><a href="#semantic-data"><code>semantic-data</code></a></li>
+              <li><a href="#semantic"><code>semantic</code></a></li>
               <!-- <li><a href="#domain-specific-data">Domain-Specific Data</a></li> -->
             </ol>
           </li>
@@ -825,15 +825,15 @@
           </figure>
         </section>
 
-        <section id="semantic-data">
-          <h3>4.2. <code>semantic-data</code></h3>
+        <section id="semantic">
+          <h3>4.2. <code>semantic</code></h3>
           <p>
             Represents semantic data in JSON-LD format <a href="#ref-json-ld">♦︎</a>.
           </p>
 
           <figure>
             <pre><code class="language-xml">
-&lt;semantic-data xmlns='https://qworum.net/ns/1.0/data/'>
+&lt;semantic xmlns='https://qworum.net/ns/1.0/data/'>
   {
     "@context": {
       "schema"     : "https://schema.org/",
@@ -848,9 +848,9 @@
     "lastName"   : "Shannon",
     "dateOfBirth": "1916-04-30"
   }
-&lt;/semantic-data>
+&lt;/semantic>
 </code></pre>
-            <figcaption>4.2.1: Example of <code>semantic-data</code> instance</figcaption>
+            <figcaption>4.2.1: Example of <code>semantic</code> instance</figcaption>
           </figure>
 
           <p>
