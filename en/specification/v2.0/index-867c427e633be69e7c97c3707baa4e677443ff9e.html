@@ -407,6 +407,9 @@
             href="#ref-xmlns">♦︎</a>
           <code>https://qworum.net/ns/1.0/instruction/</code>.
         </p>
+        <p>
+          Unless otherwise stated, in the XML code examples below all elements whose tags don't have a prefix have the namespace <code>https://qworum.net/ns/1.0/instruction/</code>, and all elements whose tags have the prefix <code>data</code> have the namespace <code>https://qworum.net/ns/1.0/data/</code>.
+        </p>
 
         <section id='variable'>
           <h3>3.1. <code>variable</code></h3>
@@ -433,7 +436,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Read the "shopping cart line items" variable that is stored locally in the current call. -->
-&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/ns/1.0/instruction/' />
+&lt;variable path='["shopping cart line items"]' />
             </code></pre>
             <figcaption>3.1.1: Reading a variable stored in the current call</figcaption>
           </figure>
@@ -443,7 +446,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Read the "shopping cart line items" variable that is stored in the current call's owner object. -->
-&lt;variable path='["@", "shopping cart line items"]' xmlns='https://qworum.net/ns/1.0/instruction/' />
+&lt;variable path='["@", "shopping cart line items"]' />
             </code></pre>
             <figcaption>3.1.2: Reading a variable stored in the current call's owner</figcaption>
           </figure>
@@ -454,10 +457,7 @@
             <pre><code class="language-xml">
 &lt;!-- Read the "line items" variable that is stored in the "shopping cart" object -->
 &lt;!-- that is in turn stored in the current call's owner object. -->
-&lt;variable
-    path='["@", "shopping cart", "line items"]'
-    xmlns='https://qworum.net/ns/1.0/instruction/'
-/>
+&lt;variable path='["@", "shopping cart", "line items"]' />
             </code></pre>
             <figcaption>3.1.3: Reading a variable stored in the current call's owner object</figcaption>
           </figure>
@@ -477,8 +477,8 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Clear the "shopping cart line items" variable that is stored locally in the current call. -->
-&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/ns/1.0/instruction/'>
-  &lt;d:json xmlns:d="https://qworum.net/ns/1.0/data/">[]&lt;/d:json>
+&lt;variable path='["shopping cart line items"]'>
+  &lt;data:json>[]&lt;/data:json>
 &lt;/variable>
             </code></pre>
             <figcaption>3.1.4: Writing data to a variable</figcaption>
@@ -490,7 +490,7 @@
             <pre><code class="language-xml">
 &lt;!-- Write the line items received from the shopping cart service -->
 &lt;!-- to the "shopping cart line items" variable that is stored in the current call. -->
-&lt;variable path='["shopping cart line items"]' xmlns='https://qworum.net/ns/1.0/instruction/'>
+&lt;variable path='["shopping cart line items"]'>
   &lt;call object='["@", "shopping cart"]' href='https://shopping-cart.example.com/view/' />
 &lt;/variable>
             </code></pre>
@@ -523,7 +523,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;call object='["@", "shopping cart"]' href='view/' xmlns='https://qworum.net/ns/1.0/instruction/' />
+&lt;call object='["@", "shopping cart"]' href='view/' />
             </code></pre>
             <figcaption>3.2.1: A <code>call</code> instruction that issues a GET request</figcaption>
           </figure>
@@ -533,20 +533,16 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;call
-  object='["@","shopping cart"]'
-  href='/add-line-items/index.xml'
-  xmlns='https://qworum.net/ns/1.0/instruction/'
->
+&lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
   &lt;parameters>
     &lt;parameter name='line items'>
-      &lt;d:json xmlns:d='https://qworum.net/ns/1.0/data/'>
+      &lt;data:json>
         [{
           "title": "Classic ankle boots",
           "price": {"EUR": 29.99},
           "count": 1
         }]
-      &lt;/d:json>
+      &lt;/data:json>
     &lt;/parameter>
   &lt;/parameters>
 &lt;/call>
@@ -565,15 +561,18 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;parameters xmlns='https://qworum.net/ns/1.0/phase-parameters/'>
+&lt;parameters
+  xmlns='https://qworum.net/ns/1.0/phase-parameters/'
+  xmlns:data='https://qworum.net/ns/1.0/data/'
+>
   &lt;parameter name='line items'>
-    &lt;d:json xmlns:d='https://qworum.net/ns/1.0/data/'>
+    &lt;data:json>
       [{
         "title": "Classic ankle boots",
         "price": {"EUR": 29.99},
         "count": 1
       }]
-    &lt;/d:json>
+    &lt;/data:json>
   &lt;/parameter>
 &lt;/parameters>
           </code></pre>
@@ -595,7 +594,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;return xmlns='https://qworum.net/ns/1.0/instruction/'>
+&lt;return>
   &lt;variable path='["@","line items"]' />
 &lt;/return>
             </code></pre>
@@ -621,7 +620,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;goto href='return.xml' xmlns='https://qworum.net/ns/1.0/instruction/' />
+&lt;goto href='return.xml' />
             </code></pre>
             <figcaption>3.4.1: A <code>goto</code> instruction that issues a GET request</figcaption>
           </figure>
@@ -634,13 +633,13 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;goto href="add-line-items-to-cart.xml" xmlns="https://qworum.net/ns/1.0/instruction/">
+&lt;goto href='add-line-items-to-cart.xml'>
   &lt;parameters>
-    &lt;parameter name="line items to add">
+    &lt;parameter name='line items to add'>
       &lt;variable path='["line items to add"]' />
     &lt;/parameter>
 
-    &lt;parameter name="current line items">
+    &lt;parameter name='current line items'>
       &lt;variable path='["@","line items"]' />
     &lt;/parameter>
   &lt;/parameters>
@@ -662,7 +661,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- A shopping cart service directs the user to a remote payment processor. -->
-&lt;sequence xmlns='https://qworum.net/ns/1.0/instruction/' xmlns:d='https://qworum.net/ns/1.0/data/'>
+&lt;sequence>
 
   &lt;!-- 1. Call the payment processing service. -->
   &lt;!-- 2. Store the returned transaction details. -->
@@ -670,12 +669,12 @@
     &lt;call object='["@","payment service"]' href="https://payment-processor.example.com/pay/">
       &lt;parameters>
         &lt;parameter name="amount to pay">
-          &lt;d:json>
+          &lt;data:json>
             {
               "amount"  : 98.99,
               "currency": "EUR",
             }
-          &lt;/d:json>
+          &lt;/data:json>
         &lt;/parameter>
       &lt;/parameters>
     &lt;/call>
@@ -683,11 +682,12 @@
 
   &lt;!-- 3. Empty the shopping cart, because payment has succeeded (otherwise a fault would have been raised). -->
   &lt;variable path='["@","line items"]'>
-    &lt;d:json>[]&lt;/d:json>
+    &lt;data:json>[]&lt;/data:json>
   &lt;/variable>
   
   &lt;!-- 4. Go to the next phase of the current shopping cart method. -->
   &lt;goto href="paid.html" />
+
 &lt;/sequence>
             </code></pre>
             <figcaption>3.5.1: A <code>sequence</code> example</figcaption>
@@ -721,7 +721,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;fault type='same-origin' xmlns='https://qworum.net/ns/1.0/instruction/' />
+&lt;fault type='same-origin' />
             </code></pre>
             <figcaption>3.6.1: A <code>fault</code></figcaption>
           </figure>
@@ -741,7 +741,7 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;fault type='* blocked valve' xmlns='https://qworum.net/ns/1.0/instruction/' />
+&lt;fault type='* blocked valve' />
             </code></pre>
             <figcaption>3.6.2: A service-specific fault</figcaption>
           </figure>
@@ -777,13 +777,13 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Yield the value of a variable; initialise it if needed. -->
-&lt;try xmlns='https://qworum.net/ns/1.0/instruction/' xmlns:d='https://qworum.net/ns/1.0/data/'>
+&lt;try>
   &lt;variable path='["shopping cart line items"]' />
 
   &lt;catch faults='["variable"]'>
     &lt;!-- Initialise the variable. -->
     &lt;variable path='["shopping cart line items"]'>
-      &lt;d:json>[]&lt;/d:json>
+      &lt;data:json>[]&lt;/data:json>
     &lt;/variable>
   &lt;/catch>
 &lt;/try>
@@ -813,13 +813,13 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;json xmlns='https://qworum.net/ns/1.0/data/'>
+&lt;data:json>
   {
-    "firstName"  : "Claude",
-    "lastName"   : "Shannon",
-    "dateOfBirth": "1916-04-30"
+    "givenName" : "Claude",
+    "familyName": "Shannon",
+    "birthDate" : "1916-04-30"
   }
-&lt;/json>
+&lt;/data:json>
             </code></pre>
             <figcaption>4.1.1: Example of <code>json</code> data</figcaption>
           </figure>
@@ -828,29 +828,52 @@
         <section id="semantic">
           <h3>4.2. <code>semantic</code></h3>
           <p>
-            Represents semantic data in JSON-LD format <a href="#ref-json-ld">♦︎</a>.
+            Represents semantic data. This data can be specified in one of the following formats:
           </p>
+          <ul>
+            <li>
+              Turtle <a href="#ref-turtle">♦︎</a> is the default format. If this format is used, then the <code>type</code> attribute must either be omitted or have the value <code>turtle</code>.
+            </li>
+            <li>
+              JSON-LD <a href="#ref-json-ld">♦︎</a>. If this format is used, then the <code>type</code> attribute must have the value <code>json-ld</code>.
+            </li>
+          </ul>
 
           <figure>
             <pre><code class="language-xml">
-&lt;semantic xmlns='https://qworum.net/ns/1.0/data/'>
+&lt;data:semantic>
+  &lt;![CDATA[
+
+    @prefix schema: &lt;https://schema.org/> .
+
+    &lt;https://www.wikidata.org/wiki/Q92760>
+      a                 schema:Person ;
+      schema:givenName  "Claude" ;
+      schema:familyName "Shannon" ;
+      schema:birthDate  "1916-04-30" .
+
+  ]]>
+&lt;/data:semantic>
+</code></pre>
+            <figcaption>4.2.1: Example of semantic data written in Turtle</figcaption>
+          </figure>
+
+          <figure>
+            <pre><code class="language-xml">
+&lt;data:semantic type='json-ld'>
   {
     "@context": {
-      "schema"     : "https://schema.org/",
-      "Person"     : "schema:Person",
-      "firstName"  : "schema:givenName",
-      "lastName"   : "schema:familyName",
-      "dateOfBirth": "schema:birthDate"
+      "@vocab": "https://schema.org/"
     },
-    "@id"        : "https://www.wikidata.org/wiki/Q92760",
-    "@type"      : "Person",
-    "firstName"  : "Claude",
-    "lastName"   : "Shannon",
-    "dateOfBirth": "1916-04-30"
+    "@id"       : "https://www.wikidata.org/wiki/Q92760",
+    "@type"     : "Person",
+    "givenName" : "Claude",
+    "familyName": "Shannon",
+    "birthDate" : "1916-04-30"
   }
-&lt;/semantic>
+&lt;/data:semantic>
 </code></pre>
-            <figcaption>4.2.1: Example of <code>semantic</code> instance</figcaption>
+            <figcaption>4.2.2: Example of semantic data written in JSON-LD</figcaption>
           </figure>
 
           <p>
@@ -948,13 +971,13 @@
               Introducing JSON
             </a>
           </li>
-          <!-- <li id="ref-turtle">
+          <li id="ref-turtle">
             <span class="reference">Turtle</span>
             <a href="https://www.w3.org/TR/turtle/">
               RDF 1.1 Turtle,
               Terse RDF Triple Language
             </a>
-          </li> -->
+          </li>
           <li id="ref-json-ld">
             <span class="reference">JSON-LD</span>
             <a href="https://www.w3.org/TR/json-ld/">
