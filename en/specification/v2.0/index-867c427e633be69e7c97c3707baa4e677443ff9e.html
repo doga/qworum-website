@@ -131,7 +131,7 @@
               <li><a href="#phase">Phase</a></li>
               <li><a href="#single-phase-service-call">Single-Phase Service Call</a></li>
               <li><a href="#multi-phase-service-call">Multi-Phase Service Call</a></li>
-              <li><a href="#script">Qworum Script</a></li>
+              <li><a href="#script">The Qworum Script</a></li>
               <li><a href="#service-composition">Service Composition</a></li>
               <li><a href="#interactive-service">Interactive Service</a></li>
               <li><a href="#execution-state">Execution State</a></li>
@@ -184,8 +184,8 @@
         </p>
         <p>
           Yet there is room for improvement, particularly regarding the decentralisation of the front-ends of Web
-          applications. In today's Web, an application is contained within a single Web origin (example:
-          https://example.com), and frequently even within a single Web page. This limits the amount of functionality
+          applications. In today's Web, an application is contained within a single Web <dfn>origin</dfn> (example:
+          https://example.com) <a href="#ref-origin">♦︎</a>, and frequently even within a single Web page. This limits the amount of functionality
           that can be shared amongst application developer teams, and results in considerable duplication of effort.
           (One notable exception to this picture is OAuth-based services which can be called remotely by applications.)
         </p>
@@ -262,12 +262,24 @@
         </section>
 
         <section id='script'>
-          <h3>2.4. <dfn>Qworum Script</dfn></h3>
+          <h3>2.4. <dfn>The Qworum Script</dfn></h3>
           <p>
-            An XML <a href="#ref-xml">♦︎</a> document that is returned by a call phase, and that contains instructions
-            that are to be performed by the user agent.
-            The root element of a Qworum script must be an <a href="#instructions">instruction</a>.
+            Qworum scripts contain instructions that are to be performed by the user agent.
+            Qworum scripts are written in XML <a href="#ref-xml">♦︎</a>, and their root element must be an <a href="#instructions">instruction</a>.
           </p>
+          <p>
+            User agents receive Qworum scripts in one of two ways:
+          </p>
+          <ul>
+            <li>
+              A call phase can return a Qworum script to the user agent instead of an HTML document. This script takes the form of an XML document that has the content type <code>application/xml</code> or <code>text/xml</code>.
+            </li>
+            <li>
+              Qworum scripts can be generated on the client side (in the user agent) by running a JavaScript code. This is equivalent to the user agent receiving a Qworum script from the URL of the HTML page that has generated the script.
+              Client-side script generation is well-suited for Jamstack <a href="#ref-jamstack">♦︎</a> applications and services.
+            </li>
+          </ul>
+
           <figure>
             <pre><code class="language-xml">
   &lt;!-- Script received from an e-commerce site. -->
@@ -282,14 +294,6 @@
             </code></pre>
             <figcaption>2.4.1: Example of a Qworum script</figcaption>
           </figure>
-          <p>
-            Qworum scripts have the same MIME type as regular XML documents, and must be served with one of the
-            following content types in HTTP(S) responses:
-          </p>
-          <ul>
-            <li> <code>application/xml</code></li>
-            <li> <code>text/xml</code></li>
-          </ul>
         </section>
 
         <section id='service-composition'>
@@ -528,23 +532,36 @@
             <figcaption>3.2.1: A <code>call</code> instruction that issues a GET request</figcaption>
           </figure>
 
-          <p>In order to issue a POST request instead of a GET request, the <code>call</code> instruction must contain
-            one or more phase parameters, each parameter containing one instruction or data.</p>
+          <p>
+            Service calls can have named data parameters, each parameter containing one instruction or data.
+
+            If a data parameter contains an instruction, then the instruction will be evaluated before executing the call.
+          </p> 
+          <p>
+            Data parameters will be will be made available to the new call on the client side as local variables with the same names as the data parameters.
+          </p>
+          <p>
+            In addition, the data parameters can be POSTed to the call's first phase so that the data can be processed on the server side. Whether the data will indeed be sent to the server side depends on the value of the <code>send</code> attribute of the <code>data-parameters</code> element. If the value is <code>true</code>, then the data will be POSTed. If the <code>send</code> attribute is absent or if its value is <code>false</code>, then the data will not be sent to the server. 
+          </p>
+          <p>
+            In other words, by default the called service is assumed to be a Jamstack <a href="#ref-jamstack">♦︎</a> service which does not need to receive the data on the server side.
+          </p>
 
           <figure>
             <pre><code class="language-xml">
 &lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
-  &lt;parameters>
-    &lt;parameter name='line items'>
+  &lt;!-- Send the data to the server, in addition to making it available on the client. -->
+  &lt;data-parameters send='true'> <!-- BUG: name change and send attribute are not implemented -->
+    &lt;data-parameter name='line items'> <!-- BUG: name change not implemented -->
       &lt;data:json>
         [{
-          "title": "Classic ankle boots",
-          "price": {"EUR": 29.99},
-          "count": 1
+          "title"   : "Classic ankle boots",
+          "price"   : {"EUR": 29.99},
+          "quantity": 1
         }]
       &lt;/data:json>
-    &lt;/parameter>
-  &lt;/parameters>
+    &lt;/data-parameter>
+  &lt;/data-parameters>
 &lt;/call>
           </code></pre>
             <figcaption>3.2.2: A <code>call</code> instruction that issues a POST request</figcaption>
@@ -561,28 +578,32 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;parameters
+&lt;data-parameters <!-- BUG: name change not implemented -->
   xmlns='https://qworum.net/ns/1.0/phase-parameters/'
   xmlns:data='https://qworum.net/ns/1.0/data/'
 >
-  &lt;parameter name='line items'>
+  &lt;data-parameter name='line items'> <!-- BUG: name change not implemented -->
     &lt;data:json>
       [{
-        "title": "Classic ankle boots",
-        "price": {"EUR": 29.99},
-        "count": 1
+        "title"   : "Classic ankle boots",
+        "price"   : {"EUR": 29.99},
+        "quantity": 1
       }]
     &lt;/data:json>
-  &lt;/parameter>
-&lt;/parameters>
+  &lt;/data-parameter>
+&lt;/data-parameters> <!-- TODO: add objects-paramaters element for passing Qworum objects (but first find a use case !!) -->
           </code></pre>
             <figcaption>3.2.3: Example of a phase parameters document that will be encoded in a POST request
             </figcaption>
           </figure>
 
-          <p>In addition to being POSTed, the call parameters will be available to the new call as local variables that
-            have the same names as the call parameters.</p>
-
+          <p>
+            Even if a service hasn't received its data parameters on the server side during its first phase, the service nevertheless has the option of sending any and all of its data to the server side during any of its later phases by using the <a href="#goto"> <code>goto</code></a> instruction.
+          </p>
+          <p>
+            A service call will raise a <code>same-origin</code> <a href="#fault"><code>fault</code></a> if the <a href="#object">object</a> that the call belongs to is already defined, and if that object's origin <a href="#ref-origin">♦︎</a> is different from the call's origin.
+            This is because all phases of all service calls belonging to an object must have the same origin URL.
+          </p>
         </section>
 
         <section id="return">
@@ -625,29 +646,35 @@
             <figcaption>3.4.1: A <code>goto</code> instruction that issues a GET request</figcaption>
           </figure>
 
-          <p>In order to issue a POST request instead of a GET request, the <code>goto</code> instruction must contain
-            one or more phase parameters, similarly to <a href="#call"><code>call</code></a>.</p>
+          <p>
+            Similarly to <a href="#call"><code>call</code></a> instructions, <code>goto</code> instructions can also have named data parameters, each parameter containing one instruction or data. If a data parameter contains an instruction, then the instruction will be evaluated before executing the call.
+            The behavior of <code>goto</code> differs from <code>call</code> in that <code>goto</code>'s data parameters are always sent to the server side.
+          </p>
 
-          <p>One situation where <code>goto</code> needs to have parameters is when the internal state of a Qworum
-            object is updated from the server side using new data.</p>
+          <p>One situation where <code>goto</code> needs to have data parameters is when the internal state of a Qworum
+            object is updated from the server side using new data, as is shown in the next figure.</p>
 
           <figure>
             <pre><code class="language-xml">
 &lt;goto href='add-line-items-to-cart.xml'>
-  &lt;parameters>
-    &lt;parameter name='line items to add'>
+  &lt;data-parameters> &lt;!-- For goto's data-parameters element, "send" is not a valid attribute. --> <!-- BUG: name change not implemented -->
+    &lt;data-parameter name='line items to add'> <!-- BUG: name change not implemented -->
       &lt;variable path='["line items to add"]' />
-    &lt;/parameter>
+    &lt;/data-parameter>
 
-    &lt;parameter name='current line items'>
+    &lt;data-parameter name='current line items'>
       &lt;variable path='["@","line items"]' />
-    &lt;/parameter>
-  &lt;/parameters>
+    &lt;/data-parameter>
+  &lt;/data-parameters>
 &lt;/goto>
             </code></pre>
             <figcaption>3.4.2: A <code>goto</code> instruction that issues a POST request</figcaption>
           </figure>
 
+          <p>
+            The <code>goto</code> instruction will raise a <code>same-origin</code> <a href="#fault"><code>fault</code></a> if the <a href="#object">object</a> that the current call belongs to has a different origin <a href="#ref-origin">♦︎</a> than this <code>goto</code> phase's origin.
+            This is because all phases of all service calls belonging to an object must have the same origin URL.
+          </p>
         </section>
 
         <section id="sequence">
@@ -667,16 +694,16 @@
   &lt;!-- 2. Store the returned transaction details. -->
   &lt;variable path='["@","latest transaction"]'>
     &lt;call object='["@","payment service"]' href="https://payment-processor.example.com/pay/">
-      &lt;parameters>
-        &lt;parameter name="amount to pay">
+      &lt;data-parameters>
+        &lt;data-parameter name="amount to pay">
           &lt;data:json>
             {
               "amount"  : 98.99,
               "currency": "EUR",
             }
           &lt;/data:json>
-        &lt;/parameter>
-      &lt;/parameters>
+        &lt;/data-parameter>
+      &lt;/data-parameters>
     &lt;/call>
   &lt;/variable>
 
@@ -804,7 +831,7 @@
         <ul>
           <!-- <li>it has no namespace or its namespace is a URL that has a different origin than <code>https://qworum.com</code>, or</li> -->
           <li>its namespace is <code>https://qworum.net/ns/1.0/data/</code>, and the XML element conforms to this
-            specification.</li>
+            specification.</li> <!-- TODO: non-Qworum data namespaces -->
         </ul>
 
         <section id="json">
@@ -832,7 +859,8 @@
           </p>
           <ul>
             <li>
-              Turtle <a href="#ref-turtle">♦︎</a> is the default format. If this format is used, then the <code>type</code> attribute must either be omitted or have the value <code>turtle</code>.
+              Turtle <a href="#ref-turtle">♦︎</a> is the default format. If this format is used, then the <code>type</code> attribute <!-- BUG: type attribute not implemented -->
+              must either be omitted or have the value <code>turtle</code>.
             </li>
             <li>
               JSON-LD <a href="#ref-json-ld">♦︎</a>. If this format is used, then the <code>type</code> attribute must have the value <code>json-ld</code>.
@@ -844,13 +872,13 @@
 &lt;data:semantic>
   &lt;![CDATA[
 
-    @prefix schema: &lt;https://schema.org/> .
+    @prefix : &lt;https://schema.org/> .
 
     &lt;https://www.wikidata.org/wiki/Q92760>
-      a                 schema:Person ;
-      schema:givenName  "Claude" ;
-      schema:familyName "Shannon" ;
-      schema:birthDate  "1916-04-30" .
+      a           :Person ;
+      :givenName  "Claude" ;
+      :familyName "Shannon" ;
+      :birthDate  "1916-04-30" .
 
   ]]>
 &lt;/data:semantic>
@@ -884,7 +912,7 @@
             In effect, what the Semantic Web is trying to do is create a <strong>machine-understandable language that is understood by all software</strong>.
             Compare that vision with the current situation where data is generally only understood by the software that created it, and if a second application has to use that data, than the second application's author (or a third-party data integration provider) first has to decipher the structure and meaning of the data.
           </p>
-          <p>Here are a few reasons for using semantic data, both in-transit and at-rest:</p>
+          <p>Here are a few reasons for using semantic data, both in transit and at rest:</p>
           <ul>
             <li>The "transform" step can be removed from <a href="https://en.wikipedia.org/wiki/Extract,_transform,_load" target="_blank">ETL</a> operations.</li>
             <li>Application developers can write less one-off code for handling data, which improves productivity.</li>
@@ -923,10 +951,10 @@
       <section id="references">
         <h2>5. References</h2>
         <ul>
-          <li id="ref-www">
-            <span class="reference">WWW</span>
-            <a href="https://www.w3.org/TR/json-ld/">
-              World Wide Web
+          <li id="ref-html">
+            <span class="reference">HTML</span>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+              HTML: HyperText Markup Language
             </a>
           </li>
           <li id="ref-http">
@@ -935,16 +963,48 @@
               HTTP/3
             </a>
           </li>
+          <li id="ref-jamstack">
+            <span class="reference">Jamstack</span>
+            <a href="https://jamstack.org/">
+              Website
+            </a>
+          </li>
+          <li id="ref-json">
+            <span class="reference">JSON</span>
+            <a href="https://www.json.org/json-en.html">
+              Introducing JSON
+            </a>
+          </li>
+          <li id="ref-json-ld">
+            <span class="reference">JSON-LD</span>
+            <a href="https://www.w3.org/TR/json-ld/">
+              JSON-LD 1.1,
+              A JSON-based Serialization for Linked Data
+            </a>
+          </li>
+          <li id="ref-origin">
+            <span class="reference">Origin</span>
+            <a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin">
+              MDN Documentation
+            </a>
+          </li>
           <li id="ref-rest">
             <span class="reference">REST</span>
             <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">
               Representational state transfer
             </a>
           </li>
-          <li id="ref-xml-rpc">
-            <span class="reference">XML-RPC</span>
-            <a href="https://en.wikipedia.org/wiki/XML-RPC">
-              XML-RPC
+          <li id="ref-turtle">
+            <span class="reference">Turtle</span>
+            <a href="https://www.w3.org/TR/turtle/">
+              RDF 1.1 Turtle,
+              Terse RDF Triple Language
+            </a>
+          </li>
+          <li id="ref-www">
+            <span class="reference">WWW</span>
+            <a href="https://www.w3.org/TR/json-ld/">
+              World Wide Web
             </a>
           </li>
           <li id="ref-xml">
@@ -959,30 +1019,10 @@
               Namespaces in XML 1.0 (Third Edition)
             </a>
           </li>
-          <li id="ref-html">
-            <span class="reference">HTML</span>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
-              HTML: HyperText Markup Language
-            </a>
-          </li>
-          <li id="ref-json">
-            <span class="reference">JSON</span>
-            <a href="https://www.json.org/json-en.html">
-              Introducing JSON
-            </a>
-          </li>
-          <li id="ref-turtle">
-            <span class="reference">Turtle</span>
-            <a href="https://www.w3.org/TR/turtle/">
-              RDF 1.1 Turtle,
-              Terse RDF Triple Language
-            </a>
-          </li>
-          <li id="ref-json-ld">
-            <span class="reference">JSON-LD</span>
-            <a href="https://www.w3.org/TR/json-ld/">
-              JSON-LD 1.1,
-              A JSON-based Serialization for Linked Data
+          <li id="ref-xml-rpc">
+            <span class="reference">XML-RPC</span>
+            <a href="https://en.wikipedia.org/wiki/XML-RPC">
+              XML-RPC
             </a>
           </li>
         </ul>
