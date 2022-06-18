@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,36 +35,44 @@
     figcaption::after {
       content: ".";
     }
-
   </style>
 </head>
+
 <body>
   <header>
-    
+
   </header>
   <main>
     <h1>
       Qworum
     </h1>
-    <p>
-      Qworum is the Service Web. It:
-    </p>
+    <p>Qworum is:</p>
     <ul>
+      <li>the world's first distributed Web application technology.</li>
       <li>
-        enables <strong>distributed Web applications</strong> which are composed of interactive services that are located anywhere on the Web,
+        a module system for Web applications, where modules may be located anywhere on the Web.
       </li>
       <li>
-        specifies a <strong>new type of Web API</strong> that supports interactive services, micro-frontends, and microservice composition,
+        a <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontend</a> platform
+        that works at Web scale.
       </li>
       <li>
-        uses a <strong>new Web format</strong> called <dfn>the Qworum script</dfn> that is run by Web browsers and other API clients,
+        a new type of Web-based API that complements JSON-RPC, XML-RPC, gRPC, SOAP, REST.
+        Qworum APIs can interact with end-users, and they can consist of more than one request-response pair.
       </li>
       <li>
-        adds new functionality to Web browsers.
+        the <em>Service Web</em> that complements
+        the HTML-based <em>Document Web</em> and
+        the RDF-based <em>Semantic Web</em>.
+      </li>
+      <li>
+        an upgrade to the World Wide Web to make it provide better support for Web applications. This is needed because
+        the Web was initially conceived as a medium for content, not applications.
       </li>
     </ul>
     <p>
-      Qworum is suitable for all Web application frontends, from Jamstack-style static frontends to more traditional dynamic frontends.
+      Qworum is suitable for all Web application frontends, from the Jamstack-style static frontends to the traditional
+      dynamic frontends.
     </p>
 
     <p>
@@ -76,10 +85,10 @@
       <ul>
         <li><a href="#pitch-deck">Pitch Deck</a></li>
         <!-- <li><a href="#IP">Intellectual property</a></li> -->
-        <li><a href="#demo">Demo</a></li>
         <li><a href="#specification">Specification</a></li>
         <li><a href="#context">A platform for distributed web applications</a></li>
         <li><a href="#use-cases">Use cases</a></li>
+        <li><a href="#demo">Demo</a></li>
         <li><a href="#deliverables">Deliverables</a></li>
         <li><a href="#todo">To do</a></li>
       </ul>
@@ -88,7 +97,9 @@
     <section id="pitch-deck">
       <h2>Pitch Deck</h2>
       <p>
-        We are always looking for investors and distribution partners. Pitch deck: <a href="/Qworum-pitch-deck.pdf">PDF</a>.
+        <!-- We are always looking for investors and distribution partners. Pitch deck:  -->
+        <a href="/Qworum-pitch-deck.pdf">PDF</a>
+        <!-- . -->
       </p>
     </section>
 
@@ -101,24 +112,10 @@
       </p>
     </section> -->
 
-    <section id="demo">
-      <h2>Demo</h2>
-      <p>
-        This <a href="/Qworum-demo-alpha.mp4">video demo</a> shows a Qworum application calling a third-party Qworum service, which in turn calls another Qworum service. Demo status: alpha.
-      </p>
-      <p>
-        Note that with Qworum the user experience remains the same as with the current Web.
-      </p>
-      <figure>
-        <img src="demo.svg" style="width: 900px" alt="Demo">
-        <figcaption>1: A Qworum application and two Qworum services</figcaption>
-      </figure>
-    </section>
-
     <section id="specification">
       <h2>Specification</h2>
       <p>
-        You can either directly <a href="specification/v2.0/">jump to the Qworum specification</a>, 
+        You can either directly <a href="specification/v1.0/">jump to the Qworum specification</a>,
         or first read the following in order to get some context about what Qworum is trying to achieve.
       </p>
     </section>
@@ -130,31 +127,38 @@
       </p>
       <ul>
         <li>
-          The <dfn>Document Web</dfn>: 
-          This the Web that most Web developers will be familiar with. 
-          The primary type of content is the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML page</a>, and the primary content consumers are human users rather than machines. 
+          The <dfn>Document Web</dfn>:
+          This the Web that most Web developers will be familiar with.
+          The primary type of content is the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+            target="_blank">HTML page</a>, and the primary content consumers are human users rather than machines.
         </li>
         <li>
-          The <dfn>Semantic Web</dfn>: 
-          This the Web that is intended for machine consumption rather than human consumption. 
-          The primary type of content is <a href="https://www.w3.org/standards/semanticweb/data" target="_blank">RDF</a> and its various encodings such as JSON-LD and Turtle.
+          The <dfn>Semantic Web</dfn>:
+          This the Web that is intended for machine consumption rather than human consumption.
+          The primary type of content is <a href="https://www.w3.org/standards/semanticweb/data" target="_blank">RDF</a>
+          and its various encodings such as JSON-LD and Turtle.
         </li>
       </ul>
       <p>
-        Qworum adds another type of Web to the mix: the <dfn>Service Web</dfn>. Qworum is used for providing software rather than content. Qworum services are:
+        Qworum adds another type of Web to the mix: the <dfn>Service Web</dfn>. Qworum is used for providing software
+        rather than content. Qworum services are:
       </p>
       <ul>
         <li><strong>Interactive</strong>: They can interact with end-users through HTML pages.</li>
-        <li><strong>Composable</strong>: They can call other Qworum services, and even themselves. And Qworum services can return data to their callers. A <dfn>Qworum application</dfn>, on the other hand, is simply a Qworum service that does not have a caller.</li>
+        <li><strong>Composable</strong>: They can call other Qworum services, and even themselves. And Qworum services
+          can return data to their callers. A <dfn>Qworum application</dfn>, on the other hand, is simply a Qworum
+          service that does not have a caller.</li>
       </ul>
       <figure>
-        <img src="the-three-webs.svg"  style="width: 1000px" alt="The three Webs">
+        <img src="the-three-webs.svg" style="width: 1000px" alt="The three Webs">
         <figcaption>2: The three Webs</figcaption>
       </figure>
       <p>Note that although Qworum is distinct from the two previous Webs, it builds on them:</p>
       <ul>
-        <li>User interaction occurs through HTML pages. End-users will barely notice that they are using Qworum rather than the Document Web.</li>
-        <li>Qworum services can return semantic data to their callers, in addition to conventional data such as XML-wrapped JSON or any other XML data.</li>
+        <li>User interaction occurs through HTML pages. End-users will barely notice that they are using Qworum rather
+          than the Document Web.</li>
+        <li>Qworum services can return semantic data to their callers, in addition to conventional data such as
+          XML-wrapped JSON or any other XML data.</li>
       </ul>
       <figure>
         <img src="user-flow.png" style="width: 400px" alt="User flow">
@@ -166,48 +170,84 @@
       <h2>Use cases</h2>
       <p>The main use cases for Qworum are:</p>
       <ul>
-        <li><strong>Application integration</strong>: Different Web-based applications can provide Qworum services to each other and provide a seamless user experience that combines both applications.</li>
-        <li><strong>Productivity gains when developing web applications</strong>: An interactive service needs to be implemented and made available on the Web only once. All Web applications can then leverage that service and spare countless development hours.</li>
+        <li><strong>Application integration</strong>: Different Web-based applications can provide Qworum services to
+          each other and provide a seamless user experience that combines both applications.</li>
+        <li><strong>Productivity gains when developing web applications</strong>: An interactive service needs to be
+          implemented and made available on the Web only once. All Web applications can then leverage that service and
+          spare countless development hours.</li>
       </ul>
       <p>
-        Qworum is widely applicable. If an online service is interactive, then it can benefit from using Qworum. Here is a foretaste of the types of services that Qworum can enable:
+        Qworum is widely applicable. If an online service is interactive, then it can benefit from using Qworum. Here is
+        a foretaste of the types of services that Qworum can enable:
       </p>
       <ul>
         <li>User authentication</li>
         <li>Payment processing</li>
-        <li>Collection management — shopping cart, addressbook/contacts, movies, files, customer information, supplier information, …</li>
+        <li>Collection management — shopping cart, addressbook/contacts, movies, files, customer information, supplier
+          information, …</li>
       </ul>
       <p>
-        You may ask yourself: "Web applications can already use third-party services through remote API calls, how is Qworum better?".
-        The answer is that currently third-party services can only provide business logic through their APIs (whether they are REST-based or not), whereas Qworum services can also bring the UI that goes along with the business logic. This lightens the workload of Web application developers.
+        You may ask yourself: "Web applications can already use third-party services through remote API calls, how is
+        Qworum better?".
+        The answer is that currently third-party services can only provide business logic through their APIs (whether
+        they are REST-based or not), whereas Qworum services can also bring the UI that goes along with the business
+        logic. This lightens the workload of Web application developers.
       </p>
       <p>
-        Then you may ask yourself: "But aren't OpenID Connect-based services also interactive?". Indeed they are, but OpenID Connect is only applicable to a particular problem domain, whereas Qworum's interactivity concept applies to all Web-based services.
+        Then you may ask yourself: "But aren't OpenID Connect-based services also interactive?". Indeed they are, but
+        OpenID Connect is only applicable to a particular problem domain, whereas Qworum's interactivity concept applies
+        to all Web-based services.
       </p>
+    </section>
+
+    <section id="demo">
+      <h2>Demo</h2>
+      <p>
+        This <a href="/Qworum-demo-alpha.mp4">video demo</a> shows a Qworum application calling a third-party Qworum
+        service, which in turn calls another Qworum service. Demo status: alpha.
+      </p>
+      <p>
+        Note that with Qworum the user experience remains the same as with the current Web.
+      </p>
+      <figure>
+        <img src="demo.svg" style="width: 900px" alt="Demo">
+        <figcaption>1: A Qworum application and two Qworum services</figcaption>
+      </figure>
     </section>
 
     <section id="deliverables">
       <h2>Deliverables</h2>
       <p>
-        Deliverables that are in late-alpha / pre-beta stage: 
+        Deliverables that are in late-alpha / pre-beta stage:
       </p>
       <ul>
-        <li>The <a href="specification/v2.0/index.html">Qworum Specification</a>.</li>
-        <li><strong>Browser extension</strong>: Only Google Chrome is supported at this time, although adding support for all major browsers is on our roadmap.</li>
-        <li><strong>Client library in JavaScript</strong>: This library is intended for use in the Web pages of Qworum applications and services. ⚠️ For this library to work correctly, your website's origin must be explicitly supported by the Qworum browser extension. This is because this library communicates with the Qworum extension. 
-        <!-- If you DM us your Web origin on Twitter, we can activate Qworum for your website. Note that you do not need to DM us for developing Qworum applications and services on your local machine. -->
+        <li>The <a href="specification/v1.0/index.html">Qworum Specification</a>.</li>
+        <li><strong>Browser extension</strong>: Only Google Chrome is supported at this time, although adding support
+          for all major browsers is on our roadmap.</li>
+        <li><strong>Client library in JavaScript</strong>: This library is intended for use in the Web pages of Qworum
+          applications and services. ⚠️ For this library to work correctly, your website's origin must be explicitly
+          supported by the Qworum browser extension. This is because this library communicates with the Qworum
+          extension.
+          <!-- If you DM us your Web origin on Twitter, we can activate Qworum for your website. Note that you do not need to DM us for developing Qworum applications and services on your local machine. -->
         </li>
-        <li><strong>Server library in JavaScript</strong>: Suitable for Node.js (and also Deno) applications. Used for sending dynamic <a href="specification/v2.0/#script">Qworum scripts</a> to clients, and for parsing <a href="specification/v2.0/#phase-parameters">phase parameters</a> received from clients.</li>
-        <li><strong>Server library in TypeScript</strong>: Suitable for Deno applications. Used for sending dynamic Qworum scripts to clients, and for parsing phase parameters received from clients.</li>
-        <li><strong>Visual Studio Code extension</strong>: Provides XML snippets for writing static Qworum scripts. This VS Code extension is automatically activated for files that have the <code>.qrm.xml</code> extension.</li>
-        <li><strong>Demo</strong>: Qworum application (e-commerce site) & 2 Qworum services (shopping cart, payment gateway).</li>
+        <li><strong>Server library in JavaScript</strong>: Suitable for Node.js (and also Deno) applications. Used for
+          sending dynamic <a href="specification/v1.0/#script">Qworum scripts</a> to clients, and for parsing <a
+            href="specification/v1.0/#phase-parameters">phase parameters</a> received from clients.</li>
+        <li><strong>Server library in TypeScript</strong>: Suitable for Deno applications. Used for sending dynamic
+          Qworum scripts to clients, and for parsing phase parameters received from clients.</li>
+        <li><strong>Visual Studio Code extension</strong>: Provides XML snippets for writing static Qworum scripts. This
+          VS Code extension is automatically activated for files that have the <code>.qrm.xml</code> extension.</li>
+        <li><strong>Demo</strong>: Qworum application (e-commerce site) & 2 Qworum services (shopping cart, payment
+          gateway).</li>
       </ul>
       <p>
         Other planned deliverables:
       </p>
       <ul>
         <li><strong>Chrome DevTools extension</strong>: For debugging Qworum applications and services.</li>
-        <li><strong>Netlify build plugin</strong>: Aims to ensure that Qworum applications and services will run without runtime errors. It does this by checking that the required Qworum resources are available for the website to use.</li>
+        <li><strong>Netlify build plugin</strong>: Aims to ensure that Qworum applications and services will run without
+          runtime errors. It does this by checking that the required Qworum resources are available for the website to
+          use.</li>
         <li><strong>Marketplace for Qworum services:</strong> For listing, selling and purchasing Qworum services.</li>
       </ul>
     </section>
@@ -218,16 +258,11 @@
         To do in the near to medium term:
       </p>
       <ul>
-        <li>In the Qworum specification, the domain of the Qworum namespaces will change from qworum.com to qworum.net.</li>
-        <li>Jamstack support: Currently, Qworum services and applications are required to send dynamic Qworum scripts from servers to browsers. This means that a website's front-end cannot be wholly served to end-users through CDNs.
-          In order for Qworum services and applications to be CDN-friendly, the Qworum client library will have to be able to generate Qworum scripts on the client.
-        </li>
         <li>
-          The default datatype for <code><a href="specification/v2.0/#semantic">semantic</a></code>
-          should probably be JSON-LD rather than Turtle.
-        </li>
-        <li>
-          Client libraries for <dfn>opaque service calls</dfn>, which are service calls that execute without an end-user that services can interact with through HTML pages. Although opaque calls are not interactive, they still provide a high degree of composability without increasing the risk of network timeouts, which other API technologies do not provide.
+          Client libraries for <dfn>opaque service calls</dfn>, which are service calls that execute without an end-user
+          that services can interact with through HTML pages. Although opaque calls are not interactive, they still
+          provide a high degree of composability without increasing the risk of network timeouts, which other API
+          technologies do not provide.
         </li>
         <li>
           In addition to data, Qworum services should also be able to receive Qworum objects as call parameters.
@@ -239,4 +274,5 @@
     © 2022 Doğa Armangil. Twitter: @QworumNet
   </footer>
 </body>
+
 </html>
