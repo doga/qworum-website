@@ -58,7 +58,7 @@
       </li>
       <li>
         a new type of Web-based API that complements JSON-RPC, XML-RPC, gRPC, SOAP, REST.
-        Qworum APIs can interact with end-users, and they can consist of more than one request-response pair.
+        Qworum APIs can interact with the end-user, and calls can consist of more than one request-response pair.
       </li>
       <li>
         the <em>Service Web</em> that complements
@@ -70,8 +70,20 @@
         the Web was initially conceived as a medium for content, not applications.
       </li>
     </ul>
+
+    <p>Qworum defines:</p>
+    <ul>
+      <li>a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than content as HTML does.</li>
+      <li>
+        an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or as a browser extension.
+      </li>
+      <li>
+        a new client-side storage for storing the execution state of each browser tab. This storage can use IndexedDB behind the scenes.
+      </li>
+    </ul>
+
     <p>
-      Qworum is suitable for all Web application frontends, from the Jamstack-style static frontends to the traditional
+      Qworum is suitable for all Web application frontends, from Jamstack-style static frontends to traditional
       dynamic frontends.
     </p>
 
@@ -84,7 +96,7 @@
       <h2>Page contents</h2>
       <ul>
         <li><a href="#pitch-deck">Pitch Deck</a></li>
-        <!-- <li><a href="#IP">Intellectual property</a></li> -->
+        <li><a href="#IP">Intellectual property</a></li>
         <li><a href="#specification">Specification</a></li>
         <li><a href="#context">A platform for distributed web applications</a></li>
         <li><a href="#use-cases">Use cases</a></li>
@@ -103,14 +115,17 @@
       </p>
     </section>
 
-    <!-- <section id="IP">
+    <section id="IP">
       <h2>Intellectual property</h2>
-      <ul>
-        <li>The US patent <a href="https://patents.google.com/patent/US20080288624" target="_blank">US8266632B2 "Method and a system for the composition of services"</a> describes how simple interactive services such as payment processors or user authentifiers would work. This patent has since expired.</li>
+      <ol>
         <li>
-          Newly produced intellectual property describes how complex interactive services such as shopping carts would work. This IP asset is currently available under <a href="https://en.wikipedia.org/wiki/Non-disclosure_agreement" target="_blank">NDA</a> or once we have filed a <a href="https://www.patentattorneys.ch/en/our-services/patents/provisional-patent-application/" target="_blank">provisional patent</a> or have applied for a <a href="https://www.investopedia.com/terms/u/utility-patent.asp" target="_blank">utility patent</a>, which will require an external funding.
-      </p>
-    </section> -->
+          The US patent <a href="https://patents.google.com/patent/US20080288624" target="_blank">US8266632B2 "Method and a system for the composition of services"</a> describes how simple interactive services such as payment processors or user authentifiers would work. This patent has since expired.
+        </li>
+        <li>
+          Newly produced intellectual property may also be patentable. It describes how more complex interactive services such as shopping carts would work. This IP asset is currently available under <a href="https://en.wikipedia.org/wiki/Non-disclosure_agreement" target="_blank">NDA</a> or once we have filed a <a href="https://www.patentattorneys.ch/en/our-services/patents/provisional-patent-application/" target="_blank">provisional patent</a> or have applied for a <a href="https://www.investopedia.com/terms/u/utility-patent.asp" target="_blank">utility patent</a>, which will require an external funding.
+        </li>
+      </ol>
+    </section>
 
     <section id="specification">
       <h2>Specification</h2>
