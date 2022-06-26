@@ -11,11 +11,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qworum specification, version 1.0</title>
+  <title>Qworum specification, version 1</title>
 
   <style>
+    .note-to-editor {
+      /* display: none; */
+      background-color: red; color: white; padding: 0.2em;
+    } 
+
     body {
       margin: 2em;
+      /* max-width: 800px;
+      min-width: 20em; */
+    }
+
+    @media only screen and (min-width: 768px) {
+      main {
+        width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
     }
 
     body>footer {
@@ -102,9 +118,14 @@
     <article>
       <header>
         <h1>
-          Qworum specification, version 1.0
+          Qworum specification, version 1 
+          <!-- 
+            All non-breaking changes can be added without changing the version number. 
+            Browsers are supposed to be always up to date.
+            Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
+          -->
           <span class="status-notice">Draft</span>
-          <span class="metadata">2022.06.18. Author: Doğa Armangil. Twitter: @QworumNet</span>
+          <span class="metadata">2022.06.26. Author: Doğa Armangil. Twitter: @QworumNet</span>
         </h1>
         <h2>Summary</h2>
         <p>Qworum is:</p>
@@ -114,29 +135,34 @@
             a module system for Web applications, where modules may be located anywhere on the Web.
           </li>
           <li>
-            a <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontend</a> platform that works at Web scale.
+            a <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontend</a>
+            platform that works at Web scale.
           </li>
           <li>
             a new type of Web-based API that complements JSON-RPC, XML-RPC, gRPC, SOAP, REST.
             Qworum APIs can interact with the end-user, and calls can consist of more than one request-response pair.
           </li>
           <li>
-            the <em>Service Web</em> that complements 
-            the HTML-based <em>Document Web</em> and 
+            the <em>Service Web</em> that complements
+            the HTML-based <em>Document Web</em> and
             the RDF-based <em>Semantic Web</em>.
           </li>
           <li>
-            an upgrade to the World Wide Web to make it provide better support for Web applications. This is needed because the Web was initially conceived as a medium for content, not applications.
+            an upgrade to the World Wide Web to make it provide better support for Web applications. This is needed
+            because the Web was initially conceived as a medium for content, not applications.
           </li>
         </ul>
         <p>Qworum defines:</p>
         <ul>
-          <li>a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than content as HTML does.</li>
+          <li>a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than
+            content as HTML does.</li>
           <li>
-            an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or as a browser extension.
+            an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or
+            as a browser extension.
           </li>
           <li>
-            a new client-side storage for storing the execution state of each browser tab. This storage can use IndexedDB behind the scenes.
+            a new client-side storage for storing the execution state of each browser tab. This storage can use
+            IndexedDB behind the scenes.
           </li>
         </ul>
       </header>
@@ -207,7 +233,8 @@
         <p>
           Yet there is room for improvement, particularly regarding the decentralisation of the front-ends of Web
           applications. In today's Web, an application is contained within a single Web <dfn>origin</dfn> (example:
-          https://example.com) <a href="#ref-origin">♦︎</a>, and frequently even within a single Web page. This limits the amount of functionality
+          https://example.com) <a href="#ref-origin">♦︎</a>, and frequently even within a single Web page. This limits
+          the amount of functionality
           that can be shared amongst application developer teams, and results in considerable duplication of effort.
           (One notable exception to this picture is OAuth-based services which can be called remotely by applications.)
         </p>
@@ -220,7 +247,10 @@
           It is worth noting that Qworum services are of practical use even if the caller of a service has the same
           Web origin as the called service.
           This is because Qworum services can be inserted in any user flow without disrupting it, similarly to functions
-          in conventional programming. For example, with Qworum an application no longer needs to pass a return path to the login dialog when it requires the end-user to sign in before accessing a restricted page. Again, this is similar to conventional programming where a function does not know how the execution proceeds when its own execution finishes.
+          in conventional programming. For example, with Qworum an application no longer needs to pass a return path to
+          the login dialog when it requires the end-user to sign in before accessing a restricted page. Again, this is
+          similar to conventional programming where a function does not know how the execution proceeds when its own
+          execution finishes.
         </p>
         <p>
           As a foretaste, here is how an e-commerce site might call a remote shopping cart service:
@@ -228,7 +258,7 @@
         <figure>
           <pre><code class="language-xml">
 &lt;!-- Qworum script received by the Web browser from an e-commerce site -->
-&lt;sequence xmlns="https://qworum.net/ns/1.0/instruction/">
+&lt;sequence xmlns="https://qworum.net/ns/v1/instruction/">
   &lt;!-- 1. Show the user's shopping cart-->
   &lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example/view/" />
 
@@ -287,25 +317,31 @@
           <h3>2.4. <dfn>The Qworum Script</dfn></h3>
           <p>
             Qworum scripts contain instructions that are to be performed by the user agent.
-            Qworum scripts are written in XML <a href="#ref-xml">♦︎</a>, and their root element must be an <a href="#instructions">instruction</a>.
+            Qworum scripts are written in XML <a href="#ref-xml">♦︎</a>, and their root element must be an <a
+              href="#instructions">instruction</a>.
           </p>
           <p>
             User agents receive Qworum scripts in one of two ways:
           </p>
           <ul>
             <li>
-              A call phase can return a Qworum script to the user agent instead of an HTML document. This script takes the form of an XML document that has the content type <code>application/xml</code> or <code>text/xml</code>.
+              A call phase can return a Qworum script to the user agent instead of an HTML document. This script takes
+              the form of an XML document that has the content type <code>application/xml</code> or
+              <code>text/xml</code>.
             </li>
             <li>
-              Qworum scripts can be generated on the client side (in the user agent) by running a JavaScript code. This is equivalent to the user agent receiving a Qworum script from the URL of the HTML page that has generated the script.
-              Client-side script generation is well-suited for Jamstack <a href="#ref-jamstack">♦︎</a> applications and services.
+              Qworum scripts can be generated on the client side (in the user agent) by running a JavaScript code. This
+              is equivalent to the user agent receiving a Qworum script from the URL of the HTML page that has generated
+              the script.
+              Client-side script generation is well-suited for Jamstack <a href="#ref-jamstack">♦︎</a> applications and
+              services.
             </li>
           </ul>
 
           <figure>
             <pre><code class="language-xml">
   &lt;!-- Script received by the Web browser from an e-commerce site. -->
-  &lt;sequence xmlns="https://qworum.net/ns/1.0/instruction/">
+  &lt;sequence xmlns="https://qworum.net/ns/v1/instruction/">
 
   &nbsp;&nbsp;&lt;!-- Show the user's shopping cart. -->
   &nbsp;&nbsp;&lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example/view/" />
@@ -376,15 +412,19 @@
         <section id='object'>
           <h3>2.8. <dfn>Qworum Object</dfn></h3>
           <p>
-            In conventional object-oriented programming, objects are used for storing state that is shared between multiple calls to one or more functions, which are the object's methods. Qworum is porting this concept into the Web environment in the form of Qworum objects.
+            In conventional object-oriented programming, objects are used for storing state that is shared between
+            multiple calls to one or more functions, which are the object's methods. Qworum is porting this concept into
+            the Web environment in the form of Qworum objects.
           </p>
-          <p>A Qworum object, then, is a container for run-time state that is shared between different calls. Qworum objects are used for storing
+          <p>A Qworum object, then, is a container for run-time state that is shared between different calls. Qworum
+            objects are used for storing
             <a href="#variable">variable</a>s (which point to data) and other Qworum objects.
           </p>
           <p>Qworum objects are needed for storing the states of services such as shopping carts that must remember
             their contents across different calls incoming from an e-commerce site for example. In the absence of Qworum
             objects, Qworum would only be able to support services where each incoming call is independent from
-            one another, which is the case for user authentication services and payment processing services among others.
+            one another, which is the case for user authentication services and payment processing services among
+            others.
           </p>
           <p>Here is how Qworum objects are used in practice:</p>
           <ul>
@@ -431,10 +471,12 @@
         </p>
         <p>Qworum instructions that conform to this specification must have the XML namespace <a
             href="#ref-xmlns">♦︎</a>
-          <code>https://qworum.net/ns/1.0/instruction/</code>.
+          <code>https://qworum.net/ns/v1/instruction/</code>.
         </p>
         <p>
-          Unless otherwise stated, in the XML code examples below all elements whose tags don't have a prefix have the namespace <code>https://qworum.net/ns/1.0/instruction/</code>, and all elements whose tags have the prefix <code>data</code> have the namespace <code>https://qworum.net/ns/1.0/data/</code>.
+          Unless otherwise stated, in the XML code examples below all elements whose tags don't have a prefix have the
+          namespace <code>https://qworum.net/ns/v1/instruction/</code>, and all elements whose tags have the prefix
+          <code>data</code> have the namespace <code>https://qworum.net/ns/v1/data/</code>.
         </p>
 
         <section id='variable'>
@@ -555,18 +597,38 @@
           </figure>
 
           <p>
+            A service call will raise a <code>same-origin</code> <a href="#fault"><code>fault</code></a> if the <a
+              href="#object">object</a> that the call belongs to is already defined, and if that object's origin <a
+              href="#ref-origin">♦︎</a> is different from the call's origin.
+            This is because all phases of all service calls belonging to an object must have the same origin URL.
+          </p>
+
+          <p>
+            Service calls can have data parameters and/or object parameters.
+          </p>
+
+          <h4>3.2.1. Data parameters</h4>
+
+          <p>
             Service calls can have named data parameters, each parameter containing one instruction or data.
 
-            If a data parameter contains an instruction, then the instruction will be evaluated before executing the call.
-          </p> 
-          <p>
-            Data parameters will be will be made available to the new call on the client side as local variables with the same names as the data parameters.
+            If a data parameter contains an instruction, then the instruction will be evaluated before executing the
+            call.
           </p>
           <p>
-            In addition, the data parameters can be POSTed to the call's first phase so that the data can be processed on the server side. Whether the data will indeed be sent to the server side depends on the value of the <code>send</code> attribute of the <code>parameters</code> element. If the value is <code>true</code>, then the data will be POSTed. If the <code>send</code> attribute is absent or if its value is <code>false</code>, then the data will not be sent to the server. 
+            Data parameters will be will be made available to the new call on the client side as local variables with
+            the same names as the data parameters.
           </p>
           <p>
-            In other words, by default the called service is assumed to be a Jamstack <a href="#ref-jamstack">♦︎</a> service which does not need to receive the data on the server side.
+            In addition, the data parameters can be POSTed to the call's first phase so that the data can be processed
+            on the server side. Whether the data will indeed be sent to the server side depends on the value of the
+            <code>send</code> attribute of the <code>parameters</code> element. If the value is <code>true</code>, then
+            the data will be POSTed. If the <code>send</code> attribute is absent or if its value is <code>false</code>,
+            then the data will not be sent to the server.
+          </p>
+          <p>
+            In other words, by default the called service is assumed to be a Jamstack <a href="#ref-jamstack">♦︎</a>
+            service which does not need to receive the data on the server side.
           </p>
 
           <figure>
@@ -586,10 +648,11 @@
   &lt;/parameters>
 &lt;/call>
           </code></pre>
-            <figcaption>3.2.2: A <code>call</code> instruction that issues a POST request</figcaption>
+            <figcaption>3.2.1.1: A <code>call</code> instruction that issues a POST request</figcaption>
           </figure>
 
-          <p id="phase-parameters">A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that
+          <p id="phase-parameters">A <code>call</code> instruction that generates a POST request behaves similarly to an
+            HTML form that
             contains an item named <code>qworum-phase-parameters</code>:</p>
           <ul>
             <li>The content type of the request body will be <code>application/x-www-form-urlencoded</code>.</li>
@@ -601,8 +664,8 @@
           <figure>
             <pre><code class="language-xml">
 &lt;parameters 
-  xmlns='https://qworum.net/ns/1.0/phase-parameters/'
-  xmlns:data='https://qworum.net/ns/1.0/data/'
+  xmlns='https://qworum.net/ns/v1/phase-parameters/'
+  xmlns:data='https://qworum.net/ns/v1/data/'
 >
   &lt;parameter name='line items'> 
     &lt;data:json>
@@ -615,17 +678,33 @@
   &lt;/parameter>
 &lt;/parameters> <!-- TODO: add objects-paramaters element for passing Qworum objects (but first find a use case !!) -->
           </code></pre>
-            <figcaption>3.2.3: Example of a phase parameters document that will be encoded in a POST request
+            <figcaption>3.2.1.2: Example of a phase parameters document that will be encoded in a POST request
             </figcaption>
           </figure>
 
           <p>
-            Even if a service hasn't received its data parameters on the server side during its first phase, the service nevertheless has the option of sending any and all of its data to the server side during any of its later phases by using the <a href="#goto"> <code>goto</code></a> instruction.
+            Even if a service hasn't received its data parameters on the server side during its first phase, the service
+            nevertheless has the option of sending any and all of its data to the server side during any of its later
+            phases by using the <a href="#goto"> <code>goto</code></a> instruction.
           </p>
+
+          <h4>3.2.2. Object parameters</h4>
+          <p class="note-to-editor">Use cases?</p>
           <p>
-            A service call will raise a <code>same-origin</code> <a href="#fault"><code>fault</code></a> if the <a href="#object">object</a> that the call belongs to is already defined, and if that object's origin <a href="#ref-origin">♦︎</a> is different from the call's origin.
-            This is because all phases of all service calls belonging to an object must have the same origin URL.
+            Service calls can receive Qworum objects as parameters. These object parameters will be made available to the new call on the client side as call-local objects that have the same names as the object parameters.
           </p>
+          <figure>
+            <pre><code class="language-xml">
+&lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
+  &lt;object-parameters>
+    &lt;!-- The caller is making its logger available to the service it is calling. -->
+    &lt;object-parameter name='logger' object='["@","logger"]' /> 
+  &lt;/parameters>
+&lt;/call>
+          </code></pre>
+            <figcaption>3.2.2.1: A <code>call</code> instruction that contains object parameters</figcaption>
+          </figure>
+
         </section>
 
         <section id="return">
@@ -669,8 +748,11 @@
           </figure>
 
           <p>
-            Similarly to <a href="#call"><code>call</code></a> instructions, <code>goto</code> instructions can also have named data parameters, each parameter containing one instruction or data. If a data parameter contains an instruction, then the instruction will be evaluated before executing the call.
-            The behavior of <code>goto</code> differs from <code>call</code> in that <code>goto</code>'s data parameters are always sent to the server side.
+            Similarly to <a href="#call"><code>call</code></a> instructions, <code>goto</code> instructions can also
+            have named data parameters, each parameter containing one instruction or data. If a data parameter contains
+            an instruction, then the instruction will be evaluated before executing the call.
+            The behavior of <code>goto</code> differs from <code>call</code> in that <code>goto</code>'s data parameters
+            are always sent to the server side.
           </p>
 
           <p>One situation where <code>goto</code> needs to have data parameters is when the internal state of a Qworum
@@ -694,7 +776,9 @@
           </figure>
 
           <p>
-            The <code>goto</code> instruction will raise a <code>same-origin</code> <a href="#fault"><code>fault</code></a> if the <a href="#object">object</a> that the current call belongs to has a different origin <a href="#ref-origin">♦︎</a> than this <code>goto</code> phase's origin.
+            The <code>goto</code> instruction will raise a <code>same-origin</code> <a
+              href="#fault"><code>fault</code></a> if the <a href="#object">object</a> that the current call belongs to
+            has a different origin <a href="#ref-origin">♦︎</a> than this <code>goto</code> phase's origin.
             This is because all phases of all service calls belonging to an object must have the same origin URL.
           </p>
         </section>
@@ -852,7 +936,7 @@
         <p>An XML element represents data if:</p>
         <ul>
           <!-- <li>it has no namespace or its namespace is a URL that has a different origin than <code>https://qworum.com</code>, or</li> -->
-          <li>its namespace is <code>https://qworum.net/ns/1.0/data/</code>, and the XML element conforms to this
+          <li>its namespace is <code>https://qworum.net/ns/v1/data/</code>, and the XML element conforms to this
             specification.</li> <!-- TODO: Non-Qworum data namespaces. Also the null namespace? -->
         </ul>
 
@@ -881,10 +965,12 @@
           </p>
           <ul>
             <li>
-              <dfn>Turtle</dfn> <a href="#ref-turtle">♦︎</a> is the default format. If this format is used, then the <code>type</code> attribute must either be omitted or have the value <code>turtle</code>.
+              <dfn>Turtle</dfn> <a href="#ref-turtle">♦︎</a> is the default format. If this format is used, then the
+              <code>type</code> attribute must either be omitted or have the value <code>turtle</code>.
             </li>
             <li>
-              <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a>. If this format is used, then the <code>type</code> attribute must have the value <code>json-ld</code>.
+              <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a>. If this format is used, then the <code>type</code>
+              attribute must have the value <code>json-ld</code>.
             </li>
           </ul>
 
@@ -926,19 +1012,26 @@
           </figure>
 
           <p>
-            Semantic data is data that uses the vocabularies that are defined by the <dfn>Semantic Web</dfn> <a href="#ref-semanticweb">♦︎</a>.
-            In these vocabularies each term has a precise meaning that is understood by any software that understands that particular vocabulary.
+            Semantic data is data that uses the vocabularies that are defined by the <dfn>Semantic Web</dfn> <a
+              href="#ref-semanticweb">♦︎</a>.
+            In these vocabularies each term has a precise meaning that is understood by any software that understands
+            that particular vocabulary.
           </p>
           <p>
-            In effect, what the Semantic Web is trying to do is create a <strong>machine-understandable language that is understood by all software</strong>.
-            Compare that vision with the current situation where data is generally only understood by the software that created it, and if a second application has to use that data, than the second application's author (or a third-party data integration provider) first has to decipher the structure and meaning of the data.
+            In effect, what the Semantic Web is trying to do is create a <strong>machine-understandable language that is
+              understood by all software</strong>.
+            Compare that vision with the current situation where data is generally only understood by the software that
+            created it, and if a second application has to use that data, than the second application's author (or a
+            third-party data integration provider) first has to decipher the structure and meaning of the data.
           </p>
           <p>Here are a few reasons for using semantic data, both in transit and at rest:</p>
           <ul>
             <li>The "transform" step can be removed from <dfn>ETL</dfn> <a href="#ref-etl">♦︎</a> operations.</li>
-            <li>Applications can have access to as much additional information as they need about the data they are handling, because semantic data generally contains links to other data on the Web.</li>
+            <li>Applications can have access to as much additional information as they need about the data they are
+              handling, because semantic data generally contains links to other data on the Web.</li>
             <li>
-              AI inference engines can reason about semantic data much more readily than about other types of data such as JSON, relational or NoSQL data.
+              AI inference engines can reason about semantic data much more readily than about other types of data such
+              as JSON, relational or NoSQL data.
             </li>
             <li>Application developers can write less one-off code for handling data; this improves productivity.</li>
           </ul>
