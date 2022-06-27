@@ -191,7 +191,7 @@
           <li>
             <a href="#instructions">Instructions</a>
             <ol>
-              <li><a href="#variable"><code>variable</code></a></li>
+              <li><a href="#data"><code>data</code></a></li>
               <li><a href="#call"><code>call</code></a></li>
               <li><a href="#return"><code>return</code></a></li>
               <li><a href="#goto"><code>goto</code></a></li>
@@ -202,7 +202,7 @@
           </li>
 
           <li>
-            <a href="#data">Data</a>
+            <a href="#data-values">Data values</a>
             <ol>
               <li><a href="#json"><code>json</code></a></li>
               <li><a href="#semantic"><code>semantic</code></a></li>
@@ -308,8 +308,8 @@
             <img src="figures/figure-2.3.svg" alt="">
             <figcaption>2.3.1: Example of a Multi-Phase Service Call</figcaption>
           </figure>
-          <p>Qworum mandates that each phase of a particular multi-phase call have the same Web origin, otherwise a
-            <em>same-origin</em> <a href="#fault">fault</a> will be raised during run-time.
+          <p>Qworum mandates that each phase of a particular multi-phase call have the same Web origin, otherwise an
+            <em>origin</em> <a href="#fault">fault</a> will be raised during run-time.
           </p>
         </section>
 
@@ -391,13 +391,13 @@
             <li>A <dfn id='call-stack'>call stack</dfn> that contains one or more <dfn>call frame</dfn>s. The topmost
               call frame pertains to the call currently being executed; the remaining call frames contain the states of
               calls whose executions are currently suspended. Call frames are used for storing call states in the form
-              of <a href="#variable">variable</a>s (which point to data) and <a href="#object">object</a>s.</li>
+              of <a href="#data">data</a>s (which point to data) and <a href="#object">object</a>s.</li>
             <li>A <dfn id='main-object'>main <a href="#object">object</a></dfn> that is attached to the browser tab. The
               main object is the owner of the first call frame in the call stack.</li>
           </ul>
           <p>A regular browsing session on the World Wide Web can be thought of as a multi-phase service call that
             doesn't use the Qworum-related functionality that the user agent provides (except that browsing different
-            Web origins within the same browser tab does not raise a <em>same-origin</em> <a href="#fault">fault</a>).
+            Web origins within the same browser tab does not raise an <em>origin</em> <a href="#fault">fault</a>).
             In particular: </p>
           <ul>
             <li>regular Web browsing happens within the bounds of the first call frame in the call stack, and</li>
@@ -418,7 +418,7 @@
           </p>
           <p>A Qworum object, then, is a container for run-time state that is shared between different calls. Qworum
             objects are used for storing
-            <a href="#variable">variable</a>s (which point to data) and other Qworum objects.
+            <a href="#data">data</a>s (which point to data) and other Qworum objects.
           </p>
           <p>Qworum objects are needed for storing the states of services such as shopping carts that must remember
             their contents across different calls incoming from an e-commerce site for example. In the absence of Qworum
@@ -433,7 +433,7 @@
               execution state.</li>
             <li>Each Qworum object has a Web origin which is determined when the object is first used as the owner of a
               call. All phases of all calls which are owned by a Qworum object must have the object's origin, otherwise
-              a <em>same-origin</em> <a href="#fault">fault</a> will be raised during run-time.</li>
+              an <em>origin</em> <a href="#fault">fault</a> will be raised during run-time.</li>
             <li>Qworum objects can be stored in call frames, or as the main object of an execution state.</li>
           </ul>
           <figure>
@@ -444,6 +444,10 @@
 
         <section id='class'>
           <h3>2.9. <dfn>Qworum Class</dfn></h3>
+          <!-- 
+          BUG ????? Multiple classes per origin is probably incompatible with storing persistent class data on the server or even the client.
+          A Qworum class must be able to read/write persistent data based on: 1. the caller application (or service???) as identified by its origin URL, and 2. the end-user's ID. 
+          -->
           <p>Qworum does not mandate that all Qworum objects stored in an execution state have different origins. It
             follows that calls to the same URL can be made using different owner objects, even within the same browser
             tab. This is how the concept of Qworum classes emerges; not as a browser feature, but rather as an aid for
@@ -463,6 +467,7 @@
 
       <section id='instructions'>
         <h2>3. Instructions</h2>
+        <!-- TODO <script type='...'> instruction for non-XML script encodings, such as Ruby-like etc. -->
         <p>
           This section lists the instructions that are available to <a href="#script">Qworum script</a>s.
           When evaluated by the user agent, all instructions will yield a value (which is <a
@@ -479,17 +484,20 @@
           <code>data</code> have the namespace <code>https://qworum.net/ns/v1/data/</code>.
         </p>
 
-        <section id='variable'>
-          <h3>3.1. <code>variable</code></h3>
-          <p>The <code>variable</code> instruction allows the writing and reading of data to and from an execution
-            state. The current call has read/write access to variables in two places:</p>
+        <section id='data'>
+          <h3>3.1. <code>data</code></h3>
+          <p>
+            The <code>data</code> instruction allows writing to, and reading from, a data container that is stored in an <a href="#execution-state">execution state</a>. The current call has read/write access to data in the following locations:
+          </p>
           <ul>
-            <li>locally inside the current call frame, and</li>
-            <li>inside the current call's owner object.</li>
+            <li>the current call frame,</li>
+            <li>the current call's owner object,</li>
+            <li>nested objects contained in the current call's owner object.</li>
           </ul>
 
-          <p>The location of the data that is being accessed is determined by <code>variable</code>'s <code>path</code>
-            attribute. This attribute's value is a JSON-encoded array of strings.
+          <p>
+            The location of the data container that is being accessed is determined by <code>data</code>'s mandatory <code>path</code> attribute. 
+            This attribute's value is a JSON-encoded array of strings. In these strings, the leading and trailing whitespace characters are ignored.
           </p>
           <p id='reserved-path-prefixes'>
             Within this array, some strings are treated differently by the user agent:</p>
@@ -499,39 +507,48 @@
             </li>
           </ul>
 
-          <p>Here is an example of reading a variable:</p>
+          <h4>3.1.1. Reading from a data container</h4>
+
+          <p>Here is an example of reading data from a data container:</p>
 
           <figure>
             <pre><code class="language-xml">
-&lt;!-- Read the "shopping cart line items" variable that is stored locally in the current call. -->
-&lt;variable path='["shopping cart line items"]' />
+&lt;!-- Read the "shopping cart line items" data that is stored locally in the current call. -->
+&lt;data path='["shopping cart line items"]' />
             </code></pre>
-            <figcaption>3.1.1: Reading a variable stored in the current call</figcaption>
+            <figcaption>3.1.1.1: Reading data that is stored in the current call</figcaption>
           </figure>
 
           <p>Another example:</p>
 
           <figure>
             <pre><code class="language-xml">
-&lt;!-- Read the "shopping cart line items" variable that is stored in the current call's owner object. -->
-&lt;variable path='["@", "shopping cart line items"]' />
+&lt;!-- Read the "shopping cart line items" data that is stored in the current call's owner object. -->
+&lt;data path='["@", "shopping cart line items"]' />
             </code></pre>
-            <figcaption>3.1.2: Reading a variable stored in the current call's owner</figcaption>
+            <figcaption>3.1.1.2: Reading data that is stored in the current call's owner object</figcaption>
           </figure>
 
           <p>And another:</p>
 
           <figure>
             <pre><code class="language-xml">
-&lt;!-- Read the "line items" variable that is stored in the "shopping cart" object -->
+&lt;!-- Read the "line items" data that is stored in the "shopping cart" object -->
 &lt;!-- that is in turn stored in the current call's owner object. -->
-&lt;variable path='["@", "shopping cart", "line items"]' />
+&lt;data path='["@", "shopping cart", "line items"]' />
             </code></pre>
-            <figcaption>3.1.3: Reading a variable stored in the current call's owner object</figcaption>
+            <figcaption>3.1.1.3: Reading data that is stored in the current call's owner object</figcaption>
           </figure>
 
-          <p>If a variable does not exist, then trying to read it will raise a "<code>variable</code> <a
-              href="#fault">fault</a>".</p>
+          <p>
+            When trying to read from a data container that is located inside a Qworum object, 
+            if the Qworum object does not exist then a
+            <code>path</code> <a href="#fault">fault</a> will be raised at run-time.
+          </p>
+
+          <p>
+            If a data container does not contain a data value (that is, the container has not yet been initialised), then trying to read from it will raise a <code>data</code> <a href="#fault">fault</a>.
+          </p>
 
           <!-- <p>Data that is stored has two types of provenances:</p>
           <ul>
@@ -539,17 +556,18 @@
             <li>Web pages — a Web page belonging to a Qworum service or Qworum application can produce data from user inputs or network requests.</li>
           </ul> -->
 
-          <p>When writing to a variable, the <code>variable</code> instruction must contain one instruction or data.
-            Here is an example:</p>
+          <h4>3.1.2. Writing to a data container</h4>
+
+          <p>When writing to a data container, the <code>data</code> instruction must contain one instruction or data value. Here is an example:</p>
 
           <figure>
             <pre><code class="language-xml">
-&lt;!-- Clear the "shopping cart line items" variable that is stored locally in the current call. -->
-&lt;variable path='["shopping cart line items"]'>
+&lt;!-- Clear the "shopping cart line items" data that is stored locally in the current call. -->
+&lt;data path='["shopping cart line items"]'>
   &lt;data:json>[]&lt;/data:json>
-&lt;/variable>
+&lt;/data>
             </code></pre>
-            <figcaption>3.1.4: Writing data to a variable</figcaption>
+            <figcaption>3.1.2.1: Writing data to a data container</figcaption>
           </figure>
 
           <p>And another:</p>
@@ -557,16 +575,19 @@
           <figure>
             <pre><code class="language-xml">
 &lt;!-- Write the line items received from the shopping cart service -->
-&lt;!-- to the "shopping cart line items" variable that is stored in the current call. -->
-&lt;variable path='["shopping cart line items"]'>
+&lt;!-- to the "shopping cart line items" data that is stored in the current call. -->
+&lt;data path='["shopping cart line items"]'>
   &lt;call object='["@", "shopping cart"]' href='https://shopping-cart.example/view/' />
-&lt;/variable>
+&lt;/data>
             </code></pre>
-            <figcaption>3.1.5: Writing a call result to a variable</figcaption>
+            <figcaption>3.1.2.2: Writing a call result to a data</figcaption>
           </figure>
 
-          <p>When writing to a variable contained in an object, if the container object does not exist then a
-            "<code>variable</code> <a href="#fault">fault</a>" will be raised at run-time.</p>
+          <p>
+            When trying to write to a data container that is located in a Qworum object, 
+            if the Qworum object does not exist then a
+            <code>path</code> <a href="#fault">fault</a> will be raised at run-time.
+          </p>
 
         </section>
 
@@ -597,17 +618,14 @@
           </figure>
 
           <p>
-            A service call will raise a <code>same-origin</code> <a href="#fault"><code>fault</code></a> if the <a
-              href="#object">object</a> that the call belongs to is already defined, and if that object's origin <a
-              href="#ref-origin">♦︎</a> is different from the call's origin.
-            This is because all phases of all service calls belonging to an object must have the same origin URL.
+            Some of the <a href="#fault"><code>fault</code></a>s that service calls can raise are <code>origin</code> and <code>path</code>.
           </p>
 
           <p>
             Service calls can have data parameters and/or object parameters.
           </p>
 
-          <h4>3.2.1. Data parameters</h4>
+          <h4>3.2.1. The data parameters of service calls</h4>
 
           <p>
             Service calls can have named data parameters, each parameter containing one instruction or data.
@@ -616,7 +634,7 @@
             call.
           </p>
           <p>
-            Data parameters will be will be made available to the new call on the client side as local variables with
+            Data parameters will be will be made available to the new call on the client side as local datas with
             the same names as the data parameters.
           </p>
           <p>
@@ -688,7 +706,7 @@
             phases by using the <a href="#goto"> <code>goto</code></a> instruction.
           </p>
 
-          <h4>3.2.2. Object parameters</h4>
+          <h4>3.2.2. The object parameters of service calls</h4>
           <p class="note-to-editor">Use cases?</p>
           <p>
             Service calls can receive Qworum objects as parameters. These object parameters will be made available to the new call on the client side as call-local objects that have the same names as the object parameters.
@@ -717,7 +735,7 @@
           <figure>
             <pre><code class="language-xml">
 &lt;return>
-  &lt;variable path='["@","line items"]' />
+  &lt;data path='["@","line items"]' />
 &lt;/return>
             </code></pre>
             <figcaption>3.3.1: Returning data as a result of the current call</figcaption>
@@ -763,11 +781,11 @@
 &lt;goto href='add-line-items-to-cart.xml'>
   &lt;parameters> &lt;!-- For goto's parameters element, "send" is not a valid attribute. -->
     &lt;parameter name='line items to add'>
-      &lt;variable path='["line items to add"]' />
+      &lt;data path='["line items to add"]' />
     &lt;/parameter>
 
     &lt;parameter name='current line items'>
-      &lt;variable path='["@","line items"]' />
+      &lt;data path='["@","line items"]' />
     &lt;/parameter>
   &lt;/parameters>
 &lt;/goto>
@@ -776,7 +794,7 @@
           </figure>
 
           <p>
-            The <code>goto</code> instruction will raise a <code>same-origin</code> <a
+            The <code>goto</code> instruction will raise an <code>origin</code> <a
               href="#fault"><code>fault</code></a> if the <a href="#object">object</a> that the current call belongs to
             has a different origin <a href="#ref-origin">♦︎</a> than this <code>goto</code> phase's origin.
             This is because all phases of all service calls belonging to an object must have the same origin URL.
@@ -798,7 +816,7 @@
 
   &lt;!-- 1. Call the payment processing service. -->
   &lt;!-- 2. Store the returned transaction details. -->
-  &lt;variable path='["@","latest transaction"]'>
+  &lt;data path='["@","latest transaction"]'>
     &lt;call object='["@","payment service"]' href="https://payment-processor.example/pay/">
       &lt;parameters>
         &lt;parameter name="amount to pay">
@@ -811,12 +829,12 @@
         &lt;/parameter>
       &lt;/parameters>
     &lt;/call>
-  &lt;/variable>
+  &lt;/data>
 
   &lt;!-- 3. Empty the shopping cart, because payment has succeeded (otherwise a fault would have been raised). -->
-  &lt;variable path='["@","line items"]'>
+  &lt;data path='["@","line items"]'>
     &lt;data:json>[]&lt;/data:json>
-  &lt;/variable>
+  &lt;/data>
   
   &lt;!-- 4. Go to the next phase of the current shopping cart method. -->
   &lt;goto href="paid.html" />
@@ -841,9 +859,22 @@
         <section id="fault">
           <h3>3.6. <code>fault</code></h3>
           <p>
-            The <code>fault</code> instruction ends the current call unless it is caught by an enclosing <a
-              href="#try"><code>try</code></a> instruction.
-            It has one optional attribute:
+            In computer programming, exceptions are used for disrupting the normal course of execution, because 
+            an exceptional event has occurred which prevents the program to proceed as intended.
+          </p>
+          <p>
+            In Qworum, exceptions are called "faults".
+            A fault can be raised either explicitly by a Qworum application or service 
+            (that is, the current Qworum script contains a <code>fault</code> instruction which is evaluated), or implicitly by the Qworum runtime.
+          </p>
+          <p>
+            When a fault is raised during the execution of an instruction, the current call is terminated unless it is caught by an enclosing 
+            <a href="#try"><code>try</code></a> instruction in the current Qworum script.
+            When a fault terminates the current call, the parent call in turn has a chance of catching the fault.
+            If none of the calls in the call stack have caught the fault, then this will terminate the Qworum application.
+          </p>
+          <p>
+            <code>fault</code> has one optional attribute:
           </p>
           <ul>
             <li>
@@ -854,35 +885,40 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;fault type='same-origin' />
+&lt;fault type='origin' />
             </code></pre>
-            <figcaption>3.6.1: A <code>fault</code></figcaption>
+            <figcaption>3.6.1: A fault</figcaption>
           </figure>
 
-          <p>A <code>service</code> fault is raised when a run-time error occurs in a Qworum application or service.
+          <h4>3.6.1. Fault types</h4>
+
+          <p>
+            <code>service</code> faults are faults that are raised due to programming errors, or they are faults whose handling is the responsibility of Qworum applications and services.
             This fault type has the following subtypes:</p>
           <ul>
-            <li><code>script</code> (the Qworum script has syntax errors),</li>
-            <li><code>same-origin</code> (a phase of a Qworum object did not conform to the same-origin policy),</li>
-            <li><code>variable</code> (reading a variable did not succeed because the variable does not exist),</li>
-            <li><code>service-specific</code> (the fault type is specific to the Qworum service or application).</li>
+            <li><code>script</code> — The Qworum script has syntax errors.</li>
+            <li><code>origin</code> — A phase of a Qworum object does not have the same origin <a href="#ref-origin">♦︎</a> as the Qworum object itself. (The origin of a Qworum object is the origin of the first call that is performed on the Qworum object.)</li>
+            <li><code>data</code> — Reading data did not succeed because the data container has not yet been initialised; in this case the data container can be initialised by catching this fault.</li>
+            <li><code>path</code> — The path of a data container or a Qworum object could not be resolved, because one of the strings (except the last one) in the path points to a non-existing Qworum object. This could indicate that a Qworum service that should have been called beforehand wasn't (remember that Qworum objects are only created during service calls).</li>
+            <li>
+              <code>service-specific</code> — The fault type is specific to the current Qworum service or application.
+              Subtypes of this type are prefixed with <code>*</code>.
+            </li>
           </ul>
-
-          <p>When a Qworum service or application wishes to define its own fault types, it prefixes the fault types with
-            <code>*</code>. Such faults are subtypes of the <code>service-specific</code> type.
-          </p>
 
           <figure>
             <pre><code class="language-xml">
 &lt;fault type='* blocked valve' />
             </code></pre>
-            <figcaption>3.6.2: A service-specific fault</figcaption>
+            <figcaption>3.6.1.1: A service-specific fault</figcaption>
           </figure>
 
           <p>A <code>user-agent</code> fault is raised when an unexpected run-time error occurs in the user agent. This
             fault type has the following subtype:</p>
           <ul>
-            <li><code>runtime</code> (implementation error of the Qworum specification by the user agent),</li>
+            <li>
+              <code>runtime</code> — Implementation error of the Qworum specification by the user agent.
+            </li>
           </ul>
 
         </section>
@@ -909,19 +945,19 @@
 
           <figure>
             <pre><code class="language-xml">
-&lt;!-- Yield the value of a variable; initialise it if needed. -->
+&lt;!-- Yield the value of a data; initialise it if needed. -->
 &lt;try>
-  &lt;variable path='["shopping cart line items"]' />
+  &lt;data path='["shopping cart line items"]' />
 
-  &lt;catch faults='["variable"]'>
-    &lt;!-- Initialise the variable. -->
-    &lt;variable path='["shopping cart line items"]'>
+  &lt;catch faults='["data"]'>
+    &lt;!-- Initialise the data. -->
+    &lt;data path='["shopping cart line items"]'>
       &lt;data:json>[]&lt;/data:json>
-    &lt;/variable>
+    &lt;/data>
   &lt;/catch>
 &lt;/try>
             </code></pre>
-            <figcaption>3.7.1: A <code>try</code> instruction used to initialise a variable</figcaption>
+            <figcaption>3.7.1: A <code>try</code> instruction used to initialise a data</figcaption>
           </figure>
 
           <p>
@@ -931,9 +967,10 @@
 
       </section>
 
-      <section id="data">
-        <h2>4. Data</h2>
-        <p>An XML element represents data if:</p>
+      <section id="data-values">
+        <h2>4. Data values</h2>
+        <!-- WARNING do not allow XML with non-Qworum namespaces as data values, because we want Qworum scripts that have non-XML encodings.  -->
+        <p>An XML element represents a data value if:</p>
         <ul>
           <!-- <li>it has no namespace or its namespace is a URL that has a different origin than <code>https://qworum.com</code>, or</li> -->
           <li>its namespace is <code>https://qworum.net/ns/v1/data/</code>, and the XML element conforms to this
