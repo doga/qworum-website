@@ -857,7 +857,7 @@
         </section>
 
         <section id="fault">
-          <h3>3.6. <code>fault</code></h3>
+          <h3>3.6. <code>fault</code></h3> <!-- TODO human-readable i18'ed fault messages, the stack trace -->
           <p>
             In computer programming, exceptions are used for disrupting the normal course of execution, because 
             an exceptional event has occurred which prevents the program to proceed as intended.
@@ -893,16 +893,15 @@
           <h4>3.6.1. Fault types</h4>
 
           <p>
-            <code>service</code> faults are faults that are raised due to programming errors, or they are faults whose handling is the responsibility of Qworum applications and services.
+            <code>service</code> faults are faults that are raised due to programming errors in Qworum applications and services, or they are faults whose handling is the responsibility of Qworum applications and services.
             This fault type has the following subtypes:</p>
           <ul>
             <li><code>script</code> — The Qworum script has syntax errors.</li>
             <li><code>origin</code> — A phase of a Qworum object does not have the same origin <a href="#ref-origin">♦︎</a> as the Qworum object itself. (The origin of a Qworum object is the origin of the first call that is performed on the Qworum object.)</li>
             <li><code>data</code> — Reading data did not succeed because the data container has not yet been initialised; in this case the data container can be initialised by catching this fault.</li>
-            <li><code>path</code> — The path of a data container or a Qworum object could not be resolved, because one of the strings (except the last one) in the path points to a non-existing Qworum object. This could indicate that a Qworum service that should have been called beforehand wasn't (remember that Qworum objects are only created during service calls).</li>
+            <li><code>path</code> — The path of a data container or a Qworum object could not be resolved, because one of the strings (except the last one) in the path points to a non-existing Qworum object. This could indicate that a Qworum service that should have been called beforehand wasn't (remember that Qworum objects are only created when performing a service call).</li>
             <li>
-              <code>service-specific</code> — The fault type is specific to the current Qworum service or application.
-              Subtypes of this type are prefixed with <code>*</code>.
+              <code>service-specific</code> — Used for faults which are specific to a particular Qworum service or application. Subtypes of this type are prefixed with <code>*</code>.
             </li>
           </ul>
 
@@ -913,7 +912,7 @@
             <figcaption>3.6.1.1: A service-specific fault</figcaption>
           </figure>
 
-          <p>A <code>user-agent</code> fault is raised when an unexpected run-time error occurs in the user agent. This
+          <p><code>user-agent</code> faults are raised when an unexpected run-time error occurs in the user agent. This
             fault type has the following subtype:</p>
           <ul>
             <li>
