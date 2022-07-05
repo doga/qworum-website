@@ -5,66 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Qworum - The Service Web</title>
   <style>
-    body {
-      margin: 2em;
-      /* max-width: 800px;
-      min-width: 20em; */
-    }
 
-    /* @media (prefers-color-scheme: light) {
-      body {
-        background-color: white;
-        color: black;
-      }
-    } */
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #333;
-        color: white;
-      }
-
-      a {
-        color: lightskyblue;
-      }
-
-      a:visited {
-        color: white;
-      }
-    }
-
-    @media only screen and (min-width: 768px) {
-      main {
-        width: 768px;  margin-left: auto;  margin-right: auto;  text-align: left;
-      }
-    }
-
-    body>footer {
-      padding: 3em;
-      font-weight: bold;
-      color: #999;
-    }
-
-    figure>img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-    }
-
-    figcaption {
-      text-align: center;
-    }
-
-    figcaption::before {
-      content: "Figure ";
-    }
-
-    figcaption::after {
-      content: ".";
-    }
   </style>
 </head>
 
@@ -78,24 +22,26 @@
     </h1>
     <p>Qworum is:</p>
     <ul>
-      <li><strong>
-        the <em>Service Web</em> that complements
-        the HTML-based <em>Document Web</em> and
-        the RDF-based <em>Semantic Web</em>
-      </strong>.</li>
       <li>
-        the world's first distributed Web application technology.
-      </li>
-      <li>
-        a module system for Web applications, where modules may be located anywhere on the Web.
-      </li>
-      <li>
-        a <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontend</a> platform
+        the world's first 
+        <strong>
+          distributed Web application technology.
+        </strong>
+        Qworum defines a module system for Web applications, where modules may be located anywhere on the Web.
+        In other words, Qworum is a <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontend</a> platform
         that works at Web scale.
       </li>
-      <li>
-        a new type of Web-based API that complements JSON-RPC, XML-RPC, gRPC, SOAP, REST.
+      <!-- <li>
+        <strong>
+          the world's first distributed Web API technology,
+        </strong>
+        complementing JSON-RPC, XML-RPC, gRPC, SOAP, REST.
         Qworum APIs can interact with the end-user, and calls can consist of more than one request-response pair.
+      </li> -->
+      <li>
+        the <em>Service Web</em> that complements
+        the HTML-based <em>Document Web</em> and
+        the RDF-based <em>Semantic Web</em>.
       </li>
       <li>
         an upgrade to the World Wide Web to make it provide better support for Web applications. This is needed because
@@ -205,7 +151,7 @@
       </ul>
       <figure>
         <img src="the-three-webs.svg" style="width: 1000px" alt="The three Webs">
-        <figcaption>2: The three Webs</figcaption>
+        <figcaption>1: The three Webs</figcaption>
       </figure>
       <p>Note that although Qworum is distinct from the two previous Webs, it builds on them:</p>
       <ul>
@@ -216,7 +162,7 @@
       </ul>
       <figure>
         <img src="user-flow.png" style="width: 400px" alt="User flow">
-        <figcaption>3: The user flow when a Qworum application or service calls another Qworum service</figcaption>
+        <figcaption>2: The user flow when a Qworum application or service calls another Qworum service</figcaption>
       </figure>
     </section>
 
@@ -265,7 +211,7 @@
       </p>
       <figure>
         <img src="demo.svg" style="width: 900px" alt="Demo">
-        <figcaption>1: A Qworum application and two Qworum services</figcaption>
+        <figcaption>3: A Qworum application and two Qworum services</figcaption>
       </figure>
     </section>
 

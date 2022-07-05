@@ -1,0 +1,59 @@
+body {
+  margin: 2em;
+  /* max-width: 800px;
+  min-width: 20em; */
+}
+
+/* @media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+} */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+    color: white;
+  }
+
+  a {
+    color: lightskyblue;
+  }
+
+  a:visited {
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    width: 768px;  margin-left: auto;  margin-right: auto;  text-align: left;
+  }
+}
+
+body>footer {
+  padding: 3em;
+  font-weight: bold;
+  color: #999;
+}
+
+figure>img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 35em;
+}
+
+figcaption {
+  text-align: center;
+}
+
+figcaption::before {
+  content: "Figure ";
+}
+
+figcaption::after {
+  content: ".";
+}
