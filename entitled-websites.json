@@ -1,0 +1,7 @@
+[
+  "http://127.0.0.1:8080/*",
+
+  "https://e-commerce.demo.qworum.com/*",
+  "https://cart.demo.qworum.com/*",
+  "https://payment.demo.qworum.com/*"
+]
