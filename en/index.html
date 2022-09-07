@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Qworum - The Service Web</title>
+  <title>Distributed Web Applications, Micro-frontends, Micro-services — Qworum</title>
   <style>
 
   </style>
@@ -25,15 +25,28 @@
     <ul>
       <li>
         the world's first
-        <strong>distributed Web application technology</strong>.
+        <strong>platform for distributed Web applications</strong>.
         Qworum defines a module system for Web applications, where modules may be located anywhere on the Web.
         In other words, Qworum is a <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontend</a> platform
         that works at Web scale.
       </li>
       <li>
-        a platform for radically
+        an
         <strong>
-          improving 
+          advanced Web browser feature 
+        </strong>
+        that websites can use.
+      </li>
+      <li>
+        a
+        <strong>
+          Web browser extension
+        </strong>.
+      </li>
+      <li>
+        a technology that radically
+        <strong>
+          improves
           Web developer productivity
         </strong>
         through modularity and third-party full-page interactive services. Build your Web application by mixing and matching remote or local services and cut development time.
@@ -58,7 +71,10 @@
 
     <p>Qworum defines:</p>
     <ul>
-      <li>a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than content as HTML does.</li>
+      <li>
+        a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than content as HTML does.
+        Web browsers can receive Qworum scripts from Web servers in an XML document. Web pages can also generate Qworum scripts using JavaScript.
+      </li>
       <li>
         an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or as a browser extension.
       </li>
@@ -79,21 +95,22 @@
     </p>
 
     <p>
-      Follow us on Twitter if you are interested in the future of Web development:
+      Follow us on Twitter:
       <a href="https://twitter.com/QworumNet" target="_blank">@QworumNet</a>.
-    </p>
+    <p>
 
     <nav>
       <h2>Table of contents</h2>
       <ul>
         <!-- <li><a href="#pitch-deck">Pitch Deck</a></li>
         <li><a href="#IP">Intellectual property</a></li> -->
+        <li><a href="#entitlement">How to enable Qworum for your website</a></li>
         <li><a href="#specification">Specification</a></li>
         <li><a href="#context">A platform for distributed web applications</a></li>
         <li><a href="#use-cases">Use cases</a></li>
         <li><a href="#demo">Demo</a></li>
         <li><a href="#deliverables">Deliverables</a></li>
-        <li><a href="#todo">To do</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
@@ -117,6 +134,19 @@
         </li>
       </ol>
     </section> -->
+
+    <section id="entitlement">
+      <h2>How to enable Qworum for your website</h2>
+      <p>
+        In order to enable Qworum for your website, simply send us an email by using <a href="mailto:entitlement@qworum.net?subject=EnableQworumForWebsite:+https://site.example">this link</a>. Be sure to set the URL in the subject line to your own website URL. You can leave the email body empty, we don't read it.
+      </p>
+      <p>
+        If you don't enable Qworum for your website, you will get JavaScript run-time errors on your website if you try to use Qworum.
+      </p>
+      <p>
+        Enabling Qworum for your website is FREE and always will be.
+      </p>
+    </section>
 
     <section id="specification">
       <h2>Specification</h2>
@@ -254,30 +284,25 @@
         <li><strong>Netlify build plugin</strong>: Aims to ensure that Qworum applications and services will run without
           runtime errors. It does this by checking that the required Qworum resources are available for the website to
           use.</li>
-        <li><strong>Marketplace for Qworum services:</strong> For listing, selling and purchasing Qworum services.</li>
+        <!-- <li><strong>Marketplace for Qworum services:</strong> For listing, selling and purchasing Qworum services.</li> -->
       </ul>
     </section>
 
-    <section id="todo">
-      <h2>To do</h2>
-      <p>
-        To do in the near to medium term:
+    <section id="contact">
+      <h2>Contact</h2>
       </p>
-      <ul>
-        <li>
-          Client libraries for <dfn>opaque service calls</dfn>, which are service calls that execute without an end-user
-          that services can interact with through HTML pages. Although opaque calls are not interactive, they still
-          provide a high degree of composability without increasing the risk of network timeouts, which other API
-          technologies do not provide.
-        </li>
-        <li>
-          In addition to data, Qworum services should also be able to receive Qworum objects as call parameters.
-        </li>
-      </ul>
-    </section>
+        General inquiries: 
+        <a href="mailto:info@qworum.com">info@qworum.com</a>.
+      </p>
+
+      </p>
+        Developer questions: 
+        <a href="mailto:support@qworum.com">support@qworum.com</a>.
+      </p>
+  </section>
   </main>
   <footer>
-    © 2022 Doğa Armangil. Twitter: @QworumNet
+    © 2022 Doğa Armangil
   </footer>
 </body>
 
