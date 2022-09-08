@@ -353,55 +353,56 @@
           </figure>
 
           <h4>
-            2.4.2 Scripts generated using JavaScript
+            2.4.2 Generating Qworum scripts on the client
           </h4>
           <p>
-            Qworum scripts can also be generated on the client side (in the user agent) by JavaScript. This
-            is equivalent to the user agent receiving a Qworum script from the URL of the HTML page that has generated
-            the script.
+            Web pages can also use JavaScript for generating and executing Qworum scripts. 
+            To this end, Qworum makes the <em>qworum-for-web-pages.mjs</em> <a href="#ref-qworum-for-web-pages">♦︎</a> JavaScript library available to Web developers.
+          </p>
+          <p>
+            Generating and executing Qworum scripts on the client in this way is equivalent to the user agent receiving an XML Qworum script from the URL of the HTML page.
           </p>
 
           <figure>
             <pre><code class="language-js">
-// TODO verify this code when js library is finalized.
-// Import the Qworum modules (?)
-import * as instructions from '…';
-import * as data from '…';
-import * as script from '…';
-
-// Create shortcuts for Qworum utility methods
+// Use Qworum
+import { Qworum } from "path/to/qworum-for-web-pages.mjs";
 const
-Script = script.Script.build,
-Return = instructions.Return.build,
-Json   = data.Json.build,
+// Qworum script
+Script       = Qworum.Script,
+// Qworum instructions
+Call         = Qworum.Call,
+Goto         = Qworum.Goto,
+Return       = Qworum.Return,
+Sequence     = Qworum.Sequence,
+Fault        = Qworum.Fault,
+Try          = Qworum.Try,
+Data         = Qworum.Data,
+// Qworum data value types
+Json         = Qworum.Json,
+SemanticData = Qworum.SemanticData;
 
-// Generate the Qworum script
-script =
-Script(
-  Return(
-    Json(['a', 'b'])
-  )
+// Example 1: Call the `home` end-point
+Qworum.eval(
+  Script(Call('@', 'home/'))
 );
 
-/*
-
-script contains:
-
-&lt;return
-  xmlns="https://qworum.net/ns/v1/instruction/"
-  xmlns:data="https://qworum.net/ns/v1/data/"
->
-&nbsp;&nbsp;&lt;data:json>["a", "b"]&lt;/data:json>
-&lt;/return>
-
+// Example 2: Return from the current call
+/* 
+Qworum.eval(
+  Script(
+    Return(Json(['a', 'b']))
+  )
+);
 */
             </code></pre>
-            <figcaption>2.4.2.1: Using JavaScript for generating a Qworum script</figcaption>
+            <figcaption>2.4.2.1: Using JavaScript for generating a Qworum script in a Web page</figcaption>
           </figure>
 
           <p>
-            Client-side script generation is well-suited for Jamstack <a href="#ref-jamstack">♦︎</a> applications and
-            services.
+            Using client-side script generation is to be preferred over XML scripts wherever possible, 
+            because XML scripts require additional round-trips to web servers.
+            Client-side script generation is more scalable and well-suited for Jamstack <a href="#ref-jamstack">♦︎</a> applications and services.
           </p>
         </section>
 
@@ -1203,6 +1204,12 @@ script contains:
               MDN Documentation
             </a>
           </li>
+          <li id="ref-qworum-for-web-pages">
+            <span class="reference">qworum-for-web-pages.mjs</span>
+            <a href="https://github.com/doga/qworum-for-web-pages">
+              Qworum for web pages on GitHub
+            </a>
+          </li>
           <li id="ref-rest">
             <span class="reference">REST</span>
             <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">
@@ -1247,6 +1254,8 @@ script contains:
             </a>
           </li>
         </ul>
+
+        <p>∎</p>
       </section>
 
       <footer>
