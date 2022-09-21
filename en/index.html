@@ -24,32 +24,15 @@
     <p>Qworum is:</p>
     <ul>
       <li>
-        the world's first
-        <strong>platform for distributed Web applications</strong>.
-        Qworum defines a module system for Web applications, where modules may be located anywhere on the Web.
-        In other words, Qworum is a <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontend</a> platform
-        that works at Web scale.
+        a <strong>module system for Web applications</strong>, where modules may be located anywhere on the Web.
       </li>
       <li>
-        an
-        <strong>
-          advanced Web browser feature 
-        </strong>
-        that websites can use.
+        a distributed Web application technology.
       </li>
       <li>
-        a
-        <strong>
-          Web browser extension
-        </strong>.
-      </li>
-      <li>
-        a technology that 
-        <strong>
-          increases the  productivity of
-          Web developers
-        </strong>
-        through modularity and third-party full-page interactive services. Build your Web application by mixing and matching remote and local services and cut development time.
+        a platform for 
+        interactive <a href="https://microservices.io" target="_blank">microservices</a>;
+        these are microservices that bring their own <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontends</a>.
       </li>
       <!-- <li>
         <strong>
@@ -64,8 +47,12 @@
         the RDF-based <em>Semantic Web</em>.
       </li>
       <li>
-        an upgrade to the World Wide Web to make it provide better support for Web applications. This is needed because
-        the Web was initially conceived as a medium for content, not applications.
+        an upgrade to the World Wide Web for improved application support.
+      </li>
+      <li>
+        an
+          advanced Web browser feature 
+        that websites can use.
       </li>
     </ul>
 
@@ -254,16 +241,19 @@
 
     <section id="developer-resources">
       <h2>Developer Resources</h2>
+      <p>
+        Work in progress.
+      </p>
       <ul>
-        <li>
-          <a href="https://github.com/doga/qworum-demo" target="_blank">
-            Demo
-          </a>: A Jamstack implementation of a Qworum application and two Qworum services. Shows how to use the <em>Qworum for Web Pages</em> library and how to have the Qworum browser extension installed on your users' browsers.
-        </li>
         <li>
           <a href="http://qworum.net/en/docs/qworum-for-web-pages/v0.9.0/" target="_blank">
             Qworum for Web Pages
           </a>: With this JavaScript ES module, websites can use the advanced browser functionality that is provided by the Qworum browser extension.
+        </li>
+        <li>
+          <a href="https://github.com/doga/qworum-demo" target="_blank">
+            Demo
+          </a>: A Jamstack implementation of a Qworum application and two Qworum services. Shows how to use the <em>Qworum for Web Pages</em> library and how to have the Qworum browser extension installed on your users' browsers.
         </li>
         <li>
           <a href="https://chrome.google.com/webstore/search/qworum" target="_blank">
@@ -276,16 +266,14 @@
     <section id="deliverables">
       <h2>Deliverables</h2>
       <p>
-        Deliverables that are in late-alpha / pre-beta stage:
+        Work in progress.
       </p>
       <ul>
-        <li>The <a href="specification/v1.0/index.html">Qworum Specification</a>.</li>
+        <li>The <a href="specification/v1/">Qworum Specification</a>.</li>
         <li><strong>Browser extension</strong>: Only Google Chrome is supported at this time, although adding support
           for all major browsers is on our roadmap.</li>
         <li><strong>Client library in JavaScript</strong>: This library is intended for use in the Web pages of Qworum
-          applications and services. ⚠️ For this library to work correctly, your website's origin must be explicitly
-          supported by the Qworum browser extension. This is because this library communicates with the Qworum
-          extension.
+          applications and services. See <a href="#entitlement">"How to enable Qworum for your website"</a>.
           <!-- If you DM us your Web origin on Twitter, we can activate Qworum for your website. Note that you do not need to DM us for developing Qworum applications and services on your local machine. -->
         </li>
         <li><strong>Server library in JavaScript</strong>: Suitable for Node.js (and also Deno) applications. Used for
@@ -295,17 +283,12 @@
           Qworum scripts to clients, and for parsing phase parameters received from clients.</li>
         <li><strong>Visual Studio Code extension</strong>: Provides XML snippets for writing static Qworum scripts. This
           VS Code extension is automatically activated for files that have the <code>.qrm.xml</code> extension.</li>
-        <li><strong>Demo</strong>: Qworum application (e-commerce site) & 2 Qworum services (shopping cart, payment
-          gateway).</li>
       </ul>
       <p>
         Other planned deliverables:
       </p>
       <ul>
         <li><strong>Chrome DevTools extension</strong>: For debugging Qworum applications and services.</li>
-        <li><strong>Netlify build plugin</strong>: Aims to ensure that Qworum applications and services will run without
-          runtime errors. It does this by checking that the required Qworum resources are available for the website to
-          use.</li>
         <!-- <li><strong>Marketplace for Qworum services:</strong> For listing, selling and purchasing Qworum services.</li> -->
       </ul>
     </section>

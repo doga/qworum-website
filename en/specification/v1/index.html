@@ -94,38 +94,21 @@
             Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
           -->
           <!-- <span class="status-notice">Draft</span> -->
-          <span class="metadata">2022.09.12. Author: Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+          <span class="metadata">2022.09.21 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
         </h1>
         <h2>Summary</h2>
         <p>Qworum is:</p>
         <ul>
           <li>
-            the world's first
-            <strong>platform for distributed Web applications</strong>.
-            Qworum defines a module system for Web applications, where modules may be located anywhere on the Web.
-            In other words, Qworum is a <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontend</a> platform
-            that works at Web scale.
+            a <strong>module system for Web applications</strong>, where modules may be located anywhere on the Web.
           </li>
           <li>
-            an
-            <strong>
-              advanced Web browser feature 
-            </strong>
-            that websites can use.
+            a distributed Web application technology.
           </li>
           <li>
-            a
-            <strong>
-              Web browser extension
-            </strong>.
-          </li>
-          <li>
-            a technology that radically
-            <strong>
-              improves
-              Web developer productivity
-            </strong>
-            through modularity and third-party full-page interactive services. Build your Web application by mixing and matching remote or local services and cut development time.
+            a platform for 
+            interactive <a href="https://microservices.io" target="_blank">microservices</a>;
+            these are microservices that bring their own <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontends</a>.
           </li>
           <!-- <li>
             <strong>
@@ -140,13 +123,13 @@
             the RDF-based <em>Semantic Web</em>.
           </li>
           <li>
-            an upgrade to the World Wide Web to make it provide better support for Web applications. This is needed because
-            the Web was initially conceived as a medium for content, not applications.
+            an upgrade to the World Wide Web for improved application support.
           </li>
-          <!-- <li>
-            a new type of Web-based API that complements JSON-RPC, XML-RPC, gRPC, SOAP, REST.
-            Qworum APIs can interact with the end-user, and calls can consist of more than one request-response pair.
-          </li> -->
+          <li>
+            an
+              advanced Web browser feature 
+            that websites can use.
+          </li>
         </ul>
     
         <p>Qworum defines:</p>
@@ -173,7 +156,6 @@
         <p>
           Qworum is suitable for all Web application frontends, from Jamstack-style static frontends that are executed on the client to traditional dynamic frontends that are generated on the server for each user.
         </p>
-
       </header>
 
       <nav>
@@ -1092,11 +1074,9 @@ Qworum.eval(
             <pre><code class="language-xml">
 &lt;data:semantic><!-- &lt;data:semantic type='json-ld'> -->
   {
-    "@context": {
-      "@vocab": "https://schema.org/"
-    },
-    "@id"       : "https://www.wikidata.org/wiki/Q92760",
+    "@context"  : "https://schema.org",
     "@type"     : "Person",
+    "@id"       : "https://www.wikidata.org/wiki/Q92760",
     "givenName" : "Claude",
     "familyName": "Shannon",
     "birthDate" : "1916-04-30"
