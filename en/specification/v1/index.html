@@ -154,9 +154,17 @@
         </ul> -->
     
         <p>
-          Qworum is suitable for all Web application frontends, from Jamstack-style static frontends that are executed on the client to traditional dynamic frontends that are generated on the server for each user.
+          Qworum is suitable for both:
         </p>
-      </header>
+        <ul>
+          <li>
+            Jamstack <a href="#ref-jamstack">♦︎</a> frontends that are made up of static files, and 
+          </li>
+          <li>
+            the more legacy Web frontends that are dynamically generated on the server for each user.
+          </li>
+        </ul>
+    </header>
 
       <nav>
         <h2>Table of Contents</h2>
@@ -381,11 +389,6 @@ Qworum.eval(
             <figcaption>2.4.2.1: Using JavaScript for generating a Qworum script in a Web page</figcaption>
           </figure>
 
-          <p>
-            Using client-side script generation is to be preferred over XML scripts wherever possible, 
-            because XML scripts require additional round-trips to web servers.
-            Client-side script generation is more scalable and well-suited for Jamstack <a href="#ref-jamstack">♦︎</a> applications and services.
-          </p>
         </section>
 
         <section id='service-composition'>
@@ -677,10 +680,6 @@ Qworum.eval(
             <code>send</code> attribute of the <code>parameters</code> element. If the value is <code>true</code>, then
             the data will be POSTed. If the <code>send</code> attribute is absent or if its value is <code>false</code>,
             then the data will not be sent to the server.
-          </p>
-          <p>
-            In other words, by default the called service is assumed to be a Jamstack <a href="#ref-jamstack">♦︎</a>
-            service which does not need to receive the data on the server side.
           </p>
 
           <figure>
