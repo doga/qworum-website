@@ -11,15 +11,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/en/style.css">
+  <link rel="stylesheet" href="/_assets/style/style.css">
 
   <title>Qworum specification, version 1</title>
 
   <style>
     .note-to-editor {
       /* display: none; */
-      background-color: red; color: white; padding: 0.2em;
-    } 
+      background-color: red;
+      color: white;
+      padding: 0.2em;
+    }
 
     h1>.status-notice {
       text-transform: uppercase;
@@ -87,7 +89,7 @@
     <article>
       <header>
         <h1>
-          Qworum specification, version 1 
+          Qworum specification, version 1
           <!-- 
             All non-breaking changes can be added without changing the version number. 
             Browsers are supposed to be always up to date.
@@ -106,9 +108,10 @@
             a distributed Web application technology.
           </li>
           <li>
-            a platform for 
+            a platform for
             interactive <a href="https://microservices.io" target="_blank">microservices</a>;
-            these are microservices that bring their own <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontends</a>.
+            these are microservices that bring their own <a
+              href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontends</a>.
           </li>
           <!-- <li>
             <strong>
@@ -127,44 +130,48 @@
           </li>
           <li>
             an
-              advanced Web browser feature 
+            advanced Web browser feature
             that websites can use.
           </li>
         </ul>
-    
+
         <p>Qworum defines:</p>
         <ul>
           <li>
-            a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than content as HTML does.
-            Web browsers can receive Qworum scripts from Web servers in an XML document. Web pages can also generate Qworum scripts using JavaScript.
+            a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than
+            content as HTML does.
+            Web browsers can receive Qworum scripts from Web servers in an XML document. Web pages can also generate
+            Qworum scripts using JavaScript.
           </li>
           <li>
-            an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or as a browser extension.
+            an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or
+            as a browser extension.
           </li>
           <li>
-            a new client-side storage for storing the execution state of each browser tab. This storage can use IndexedDB behind the scenes.
+            a new client-side storage for storing the execution state of each browser tab. This storage can use
+            IndexedDB behind the scenes.
           </li>
         </ul>
-    
+
         <!-- <p>Qworum is used for:</p>
         <ul>
           <li><strong>application integration</strong>. Web applications can offer Qworum services to other Web applications.</li>
           <li>enhancing <strong>developer productivity</strong>. Applications can use Qworum services remotely without having to implement them themselves.</li>
           <li>improving the <strong> user experience</strong>. Qworum applications can offer dynamic user experiences more easily than other Web applications, because Qworum services can easily be combined to offer dynamic user flows.</li>
         </ul> -->
-    
+
         <p>
           Qworum is suitable for both:
         </p>
         <ul>
           <li>
-            Jamstack <a href="#ref-jamstack">♦︎</a> frontends that are made up of static files, and 
+            Jamstack <a href="#ref-jamstack">♦︎</a> frontends that are made up of static files, and
           </li>
           <li>
             the more legacy Web frontends that are dynamically generated on the server for each user.
           </li>
         </ul>
-    </header>
+      </header>
 
       <nav>
         <h2>Table of Contents</h2>
@@ -319,12 +326,13 @@
             The root element of Qworum scripts must be an <a href="#instructions">instruction</a>.
             Qworum scripts can also contain <a href="#data-values">data values</a>.
           </p>
-          
+
           <h4>
             2.4.1 XML scripts
           </h4>
           <p>
-            Users agents can receive Qworum scripts from Web servers in XML documents <a href="#ref-xml">♦︎</a> that have the content type <code>application/xml</code> or <code>text/xml</code>.
+            Users agents can receive Qworum scripts from Web servers in XML documents <a href="#ref-xml">♦︎</a> that
+            have the content type <code>application/xml</code> or <code>text/xml</code>.
           </p>
 
           <figure>
@@ -346,11 +354,13 @@
             2.4.2 Generating Qworum scripts on the client
           </h4>
           <p>
-            Web pages can also use JavaScript for generating and executing Qworum scripts. 
-            To this end, Qworum makes the <em>qworum-for-web-pages.mjs</em> <a href="#ref-qworum-for-web-pages">♦︎</a> JavaScript library available to Web developers.
+            Web pages can also use JavaScript for generating and executing Qworum scripts.
+            To this end, Qworum makes the <em>qworum-for-web-pages.mjs</em> <a href="#ref-qworum-for-web-pages">♦︎</a>
+            JavaScript library available to Web developers.
           </p>
           <p>
-            Generating and executing Qworum scripts on the client in this way is equivalent to the user agent receiving an XML Qworum script from the URL of the HTML page.
+            Generating and executing Qworum scripts on the client in this way is equivalent to the user agent receiving
+            an XML Qworum script from the URL of the HTML page.
           </p>
 
           <figure>
@@ -524,7 +534,9 @@ Qworum.eval(
         <section id='data'>
           <h3>3.1. <code>data</code></h3>
           <p>
-            The <code>data</code> instruction allows writing to, and reading from, a data container that is stored in an <a href="#execution-state">execution state</a>. The current call has read/write access to data in the following locations:
+            The <code>data</code> instruction allows writing to, and reading from, a data container that is stored in an
+            <a href="#execution-state">execution state</a>. The current call has read/write access to data in the
+            following locations:
           </p>
           <ul>
             <li>the current call frame,</li>
@@ -533,8 +545,10 @@ Qworum.eval(
           </ul>
 
           <p>
-            The location of the data container that is being accessed is determined by <code>data</code>'s mandatory <code>path</code> attribute. 
-            This attribute's value is a JSON-encoded array of strings. In these strings, the leading and trailing whitespace characters are ignored.
+            The location of the data container that is being accessed is determined by <code>data</code>'s mandatory
+            <code>path</code> attribute.
+            This attribute's value is a JSON-encoded array of strings. In these strings, the leading and trailing
+            whitespace characters are ignored.
           </p>
           <p id='reserved-path-prefixes'>
             Within this array, some strings are treated differently by the user agent:</p>
@@ -578,13 +592,14 @@ Qworum.eval(
           </figure>
 
           <p>
-            When trying to read from a data container that is located inside a Qworum object, 
+            When trying to read from a data container that is located inside a Qworum object,
             if the Qworum object does not exist then a
             <code>path</code> <a href="#fault">fault</a> will be raised at run-time.
           </p>
 
           <p>
-            If a data container does not contain a data value (that is, the container has not yet been initialised), then trying to read from it will raise a <code>data</code> <a href="#fault">fault</a>.
+            If a data container does not contain a data value (that is, the container has not yet been initialised),
+            then trying to read from it will raise a <code>data</code> <a href="#fault">fault</a>.
           </p>
 
           <!-- <p>Data that is stored has two types of provenances:</p>
@@ -595,7 +610,8 @@ Qworum.eval(
 
           <h4>3.1.2. Writing to a data container</h4>
 
-          <p>When writing to a data container, the <code>data</code> instruction must contain one instruction or data value. Here is an example:</p>
+          <p>When writing to a data container, the <code>data</code> instruction must contain one instruction or data
+            value. Here is an example:</p>
 
           <figure>
             <pre><code class="language-xml">
@@ -621,7 +637,7 @@ Qworum.eval(
           </figure>
 
           <p>
-            When trying to write to a data container that is located in a Qworum object, 
+            When trying to write to a data container that is located in a Qworum object,
             if the Qworum object does not exist then a
             <code>path</code> <a href="#fault">fault</a> will be raised at run-time.
           </p>
@@ -655,7 +671,8 @@ Qworum.eval(
           </figure>
 
           <p>
-            Some of the <a href="#fault"><code>fault</code></a>s that service calls can raise are <code>origin</code> and <code>path</code>.
+            Some of the <a href="#fault"><code>fault</code></a>s that service calls can raise are <code>origin</code>
+            and <code>path</code>.
           </p>
 
           <p>
@@ -742,7 +759,8 @@ Qworum.eval(
           <h4>3.2.2. The object parameters of service calls</h4>
           <p class="note-to-editor">Use cases?</p>
           <p>
-            Service calls can receive Qworum objects as parameters. These object parameters will be made available to the new call on the client side as call-local objects that have the same names as the object parameters.
+            Service calls can receive Qworum objects as parameters. These object parameters will be made available to
+            the new call on the client side as call-local objects that have the same names as the object parameters.
           </p>
           <figure>
             <pre><code class="language-xml">
@@ -830,8 +848,8 @@ Qworum.eval(
           </figure>
 
           <p>
-            The <code>goto</code> instruction will raise an <code>origin</code> <a
-              href="#fault"><code>fault</code></a> if the <a href="#object">object</a> that the current call belongs to
+            The <code>goto</code> instruction will raise an <code>origin</code> <a href="#fault"><code>fault</code></a>
+            if the <a href="#object">object</a> that the current call belongs to
             has a different origin <a href="#ref-origin">♦︎</a> than this <code>goto</code> phase's origin.
             This is because all phases of all service calls belonging to an object must have the same origin URL.
           </p>
@@ -895,19 +913,22 @@ Qworum.eval(
         <section id="fault">
           <h3>3.6. <code>fault</code></h3> <!-- TODO human-readable i18'ed fault messages, the stack trace -->
           <p>
-            In computer programming, exceptions are used for disrupting the normal course of execution, because 
+            In computer programming, exceptions are used for disrupting the normal course of execution, because
             an exceptional event has occurred which prevents the program to proceed as intended.
           </p>
           <p>
             In Qworum, exceptions are called "faults".
-            A fault can be raised either explicitly by a Qworum application or service 
-            (that is, the current Qworum script contains a <code>fault</code> instruction which is evaluated), or implicitly by the Qworum runtime.
+            A fault can be raised either explicitly by a Qworum application or service
+            (that is, the current Qworum script contains a <code>fault</code> instruction which is evaluated), or
+            implicitly by the Qworum runtime.
           </p>
           <p>
-            When a fault is raised during the execution of an instruction, the current call is terminated unless it is caught by an enclosing 
+            When a fault is raised during the execution of an instruction, the current call is terminated unless it is
+            caught by an enclosing
             <a href="#try"><code>try</code></a> instruction in the current Qworum script.
             When a fault terminates the current call, the parent call in turn has a chance of catching the fault.
-            If none of the calls in the call stack have caught the fault, then this will terminate the Qworum application.
+            If none of the calls in the call stack have caught the fault, then this will terminate the Qworum
+            application.
           </p>
           <p>
             <code>fault</code> has one optional attribute:
@@ -929,15 +950,24 @@ Qworum.eval(
           <h4>3.6.1. Fault types</h4>
 
           <p>
-            <code>service</code> faults are faults that are raised due to programming errors in Qworum applications and services, or they are faults whose handling is the responsibility of Qworum applications and services.
-            This fault type has the following subtypes:</p>
+            <code>service</code> faults are faults that are raised due to programming errors in Qworum applications and
+            services, or they are faults whose handling is the responsibility of Qworum applications and services.
+            This fault type has the following subtypes:
+          </p>
           <ul>
             <li><code>script</code> — The Qworum script has syntax errors.</li>
-            <li><code>origin</code> — A phase of a Qworum object does not have the same origin <a href="#ref-origin">♦︎</a> as the Qworum object itself. (The origin of a Qworum object is the origin of the first call that is performed on the Qworum object.)</li>
-            <li><code>data</code> — Reading data did not succeed because the data container has not yet been initialised; in this case the data container can be initialised by catching this fault.</li>
-            <li><code>path</code> — The path of a data container or a Qworum object could not be resolved, because one of the strings (except the last one) in the path points to a non-existing Qworum object. This could indicate that a Qworum service that should have been called beforehand wasn't (remember that Qworum objects are only created when performing a service call).</li>
+            <li><code>origin</code> — A phase of a Qworum object does not have the same origin <a
+                href="#ref-origin">♦︎</a> as the Qworum object itself. (The origin of a Qworum object is the origin of
+              the first call that is performed on the Qworum object.)</li>
+            <li><code>data</code> — Reading data did not succeed because the data container has not yet been
+              initialised; in this case the data container can be initialised by catching this fault.</li>
+            <li><code>path</code> — The path of a data container or a Qworum object could not be resolved, because one
+              of the strings (except the last one) in the path points to a non-existing Qworum object. This could
+              indicate that a Qworum service that should have been called beforehand wasn't (remember that Qworum
+              objects are only created when performing a service call).</li>
             <li>
-              <code>service-specific</code> — Used for faults which are specific to a particular Qworum service or application. Subtypes of this type are prefixed with <code>*</code>.
+              <code>service-specific</code> — Used for faults which are specific to a particular Qworum service or
+              application. Subtypes of this type are prefixed with <code>*</code>.
             </li>
           </ul>
 
@@ -1035,8 +1065,8 @@ Qworum.eval(
           <p>
             Represents semantic data, encoded as <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a>.
             </li>
-          </ul>
-          <!-- <p>
+            </ul>
+            <!-- <p>
             Represents semantic data. This data can be specified in one of the following formats:
           </p>
           <ul>
@@ -1050,7 +1080,7 @@ Qworum.eval(
             </li>
           </ul> -->
 
-          <!-- <figure>
+            <!-- <figure>
             <pre><code class="language-xml">
 &lt;data:semantic>
   &lt;![CDATA[

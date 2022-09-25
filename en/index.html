@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <!-- TODO sitemap -->
+<!-- TODO sitemap -->
 
 <head>
   <meta charset="UTF-8">
@@ -8,8 +8,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Distributed Web Applications, Micro-frontends, Micro-services — Qworum</title>
+  <link rel="stylesheet" href="/_assets/style/style.css">
   <style>
+    /* aside {float: right; margin: 2em;} */
+    h1 {
+      color: #0D498B;
+    }
 
+    #downloads {
+      display: flex;
+      flex-direction: row;
+      font-size: 17px;
+    }
+
+    #downloads>a {
+      text-decoration: none;
+    }
+
+    /* #downloads > p {margin: 2em; padding: 2em;} */
+    /* #downloads > img {width: 2em; height: 2em;} */
   </style>
 </head>
 
@@ -30,9 +47,10 @@
         a distributed Web application technology.
       </li>
       <li>
-        a platform for 
+        a platform for
         interactive <a href="https://microservices.io" target="_blank">microservices</a>;
-        these are microservices that bring their own <a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank">micro-frontends</a>.
+        these are microservices that bring their own <a href="https://martinfowler.com/articles/micro-frontends.html"
+          target="_blank">micro-frontends</a>.
       </li>
       <!-- <li>
         <strong>
@@ -51,7 +69,7 @@
       </li>
       <li>
         an
-          advanced Web browser feature 
+        advanced Web browser feature
         that websites can use.
       </li>
     </ul>
@@ -59,23 +77,20 @@
     <p>Qworum defines:</p>
     <ul>
       <li>
-        a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than content as HTML does.
-        Web browsers can receive Qworum scripts from Web servers in an XML document. Web pages can also generate Qworum scripts using JavaScript.
+        a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than
+        content as HTML does.
+        Web browsers can receive Qworum scripts from Web servers in an XML document. Web pages can also generate Qworum
+        scripts using JavaScript.
       </li>
       <li>
-        an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or as a browser extension.
+        an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or as a
+        browser extension.
       </li>
       <li>
-        a new client-side storage for storing the execution state of each browser tab. This storage can use IndexedDB behind the scenes.
+        a new client-side storage for storing the execution state of each browser tab. This storage can use IndexedDB
+        behind the scenes.
       </li>
     </ul>
-
-    <!-- <p>Qworum is used for:</p>
-    <ul>
-      <li><strong>application integration</strong>. Web applications can offer Qworum services to other Web applications.</li>
-      <li>enhancing <strong>developer productivity</strong>. Applications can use Qworum services remotely without having to implement them themselves.</li>
-      <li>improving the <strong> user experience</strong>. Qworum applications can offer dynamic user experiences more easily than other Web applications, because Qworum services can easily be combined to offer dynamic user flows.</li>
-    </ul> -->
 
     <p>
       Qworum is suitable for both:
@@ -83,7 +98,7 @@
     <ul>
       <li>
         <a href="https://jamstack.org/" target="_blank">Jamstack</a>
-        frontends that are made up of static files, and 
+        frontends that are made up of static files, and
       </li>
       <li>
         the more legacy Web frontends that are dynamically generated on the server for each user.
@@ -94,6 +109,63 @@
       Follow us on Twitter:
       <a href="https://twitter.com/QworumNet" target="_blank">@QworumNet</a>.
     <p>
+
+    <section>
+      <h2>Downloads</h2>
+
+      <div id="downloads">
+        <!-- order browsers by market share: Browser Market Share Worldwide https://gs.statcounter.com/browser-market-share -->
+        <p>
+          <!-- <a href="https://chrome.google.com/webstore/search/qworum" target="_blank" style="text-decoration: none; "> -->
+            <img src="/_assets/images/Google_Chrome_icon_(February_2022).svg" width="80px" alt=""> <br>
+            Qworum for <br> Google Chrome
+          <!-- </a> -->
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p>
+          <!-- <a href="https://www.apple.com/app-store/" target="_blank" style="text-decoration: none; "> -->
+            <img src="/_assets/images/Safari_browser_logo.svg" width="80px" alt=""> <br>
+            Qworum for <br> Safari
+          <!-- </a> -->
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p>
+          <!-- <a href="https://chrome.google.com/webstore/search/qworum" target="_blank" style="text-decoration: none; "> -->
+            <img src="/_assets/images/Microsoft_Edge_logo_(2019).svg" width="80px" alt=""> <br>
+            Qworum for <br> Microsoft Edge
+          <!-- </a> -->
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p>
+          <!-- <a href="https://chrome.google.com/webstore/search/qworum" target="_blank" style="text-decoration: none;"> -->
+            <img src="/_assets/images/Brave-logo-color-RGB_reversed-cropped.svg" width="80px" alt=""> <br>
+            Qworum for <br> Brave Browser
+          <!-- </a> -->
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p>
+          <!-- <a href="https://chrome.google.com/webstore/search/qworum" target="_blank" style="text-decoration: none;"> -->
+            <img src="/_assets/images/Opera_2015_logo-cropped.svg" width="80px" alt=""> <br>
+            Qworum for <br> Opera Browser
+          <!-- </a> -->
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p>
+          <a href="https://github.com/doga/qworum-for-web-pages" target="_blank" style="text-decoration: none;">
+            <img src="/_assets/images/Unofficial_JavaScript_logo_2.svg" width="80px" alt=""> <br>
+            Qworum for <br> Web Pages
+          </a>
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p>
+          <a href="https://marketplace.visualstudio.com/items?itemName=qworum.qworum" target="_blank"
+            style="text-decoration: none;">
+            <img src="/_assets/images/Visual_Studio_Code_1.35_icon.svg" width="80px" alt=""> <br>
+            Qworum for <br> Visual Studio Code
+          </a>
+        </p>
+      </div>
+    </section>
 
     <nav>
       <h2>Table of contents</h2>
@@ -135,10 +207,14 @@
     <section id="entitlement">
       <h2>How to enable Qworum for your website</h2>
       <p>
-        In order to enable Qworum for your website, simply send us an email by using <a href="mailto:entitlement@qworum.net?subject=EnableQworumForWebsite:+https://site.example">this link</a>. Be sure to set the URL in the subject line to your own website URL. You can leave the email body empty, we don't read it.
+        In order to enable Qworum for your website, simply send us an email by using <a
+          href="mailto:entitlement@qworum.net?subject=EnableQworumForWebsite:+https://site.example">this link</a>. Be
+        sure to set the URL in the subject line to your own website URL. You can leave the email body empty, we will not
+        read it.
       </p>
       <p>
-        If you don't enable Qworum for your website, you will get JavaScript run-time errors on your website if you try to use Qworum.
+        If you don't enable Qworum for your website, you will get JavaScript run-time errors on your website if you try
+        to use Qworum.
       </p>
       <p>
         Enabling Qworum for your website is FREE and always will be.
@@ -236,7 +312,8 @@
     <section id="demo">
       <h2>Demo</h2>
       <p>
-        This <a href="/Qworum-demo-alpha.mp4">video demo</a> shows a Qworum application calling a third-party Qworum
+        This <a href="/_assets/video/Qworum-demo-alpha.mp4">video demo</a> shows a Qworum application calling a
+        third-party Qworum
         service, which in turn calls another Qworum service. Demo status: alpha.
       </p>
       <p>
@@ -257,17 +334,21 @@
         <li>
           <a href="http://qworum.net/en/docs/qworum-for-web-pages/v0.9.1/" target="_blank">
             Qworum for Web Pages
-          </a>: With this JavaScript ES module, websites can use the advanced browser functionality that is provided by the Qworum browser extension.
+          </a>: With this JavaScript ES module, websites can use the advanced browser functionality that is provided by
+          the Qworum browser extension.
         </li>
         <li>
           <a href="https://github.com/doga/qworum-demo" target="_blank">
             Demo
-          </a>: A Jamstack implementation of a Qworum application and two Qworum services. Shows how to use the <em>Qworum for Web Pages</em> library and how to have the Qworum browser extension installed on your users' browsers.
+          </a>: A Jamstack implementation of a Qworum application and two Qworum services. Shows how to use the
+          <em>Qworum for Web Pages</em> library and how to have the Qworum browser extension installed on your users'
+          browsers.
         </li>
         <li>
           <a href="https://chrome.google.com/webstore/search/qworum" target="_blank">
             Browser extension
-          </a>: Qworum applications must make sure that the user has installed and activated the Qworum extension. The demo linked above shows how this is done.
+          </a>: Qworum applications must make sure that the user has installed and activated the Qworum extension. The
+          demo linked above shows how this is done.
         </li>
       </ul>
     </section>
@@ -286,8 +367,8 @@
           <!-- If you DM us your Web origin on Twitter, we can activate Qworum for your website. Note that you do not need to DM us for developing Qworum applications and services on your local machine. -->
         </li>
         <li><strong>Server library in JavaScript</strong>: Suitable for Node.js (and also Deno) applications. Used for
-          sending dynamic <a href="specification/v1.0/#script">Qworum scripts</a> to clients, and for parsing <a
-            href="specification/v1.0/#phase-parameters">phase parameters</a> received from clients.</li>
+          sending dynamic <a href="specification/v1/#script">Qworum scripts</a> to clients, and for parsing <a
+            href="specification/v1/#phase-parameters">phase parameters</a> received from clients.</li>
         <li><strong>Server library in TypeScript</strong>: Suitable for Deno applications. Used for sending dynamic
           Qworum scripts to clients, and for parsing phase parameters received from clients.</li>
         <li><strong>Visual Studio Code extension</strong>: Provides XML snippets for writing static Qworum scripts. This
@@ -305,15 +386,15 @@
     <section id="contact">
       <h2>Contact</h2>
       </p>
-        General inquiries: 
-        <a href="mailto:info@qworum.com">info@qworum.com</a>.
+      General inquiries:
+      <a href="mailto:info@qworum.com">info@qworum.com</a>.
       </p>
 
       </p>
-        Developer questions: 
-        <a href="mailto:support@qworum.com">support@qworum.com</a>.
+      Developer questions:
+      <a href="mailto:support@qworum.com">support@qworum.com</a>.
       </p>
-  </section>
+    </section>
   </main>
   <footer>
     © 2022 Doğa Armangil
