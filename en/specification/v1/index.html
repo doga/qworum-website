@@ -282,7 +282,7 @@
           <h3>2.1. <dfn>Phase</dfn></h3>
           <p>An HTTP(S) <a href="#ref-http">♦︎</a> request-response pair. </p>
           <figure>
-            <img src="figures/figure-2.1.svg" alt="Phase">
+            <img src="figures/figure-2.1.svg" style="width: 600px; height: auto;" alt="Phase">
             <figcaption>2.1.1: Phase</figcaption>
           </figure>
         </section>
@@ -293,7 +293,7 @@
             specifications such as REST <a href="#ref-rest">♦︎</a> or XML-RPC <a href="#ref-xml-rpc">♦︎</a> are always
             single-phase calls.</p>
           <figure>
-            <img src="figures/figure-2.2.svg" alt="Single-Phase Service Call">
+            <img src="figures/figure-2.2.svg" style="width: 600px; height: auto;" alt="Single-Phase Service Call">
             <figcaption>2.2.1: Single-Phase Service Call</figcaption>
           </figure>
         </section>
@@ -311,7 +311,7 @@
           <p>In this manner, each phase of a multi-phase call can choose to return a result or continue the current call
             with another phase.</p>
           <figure>
-            <img src="figures/figure-2.3.svg" alt="">
+            <img src="figures/figure-2.3.svg" style="width: 600px; height: auto;" alt="">
             <figcaption>2.3.1: Example of a Multi-Phase Service Call</figcaption>
           </figure>
           <p>Qworum mandates that each phase of a particular multi-phase call have the same Web origin, otherwise an
@@ -409,7 +409,7 @@ Qworum.eval(
             contains a <a href="#call">call</a> instruction. These nested calls are then performed by the user agent
             between two consecutive phases of the call that initiated the nested call.</p>
           <figure>
-            <img src="figures/figure-2.5.svg" alt="">
+            <img src="figures/figure-2.5.svg" style="width: 600px; height: auto;" alt="">
             <figcaption>2.5.1: Example of a nested service call</figcaption>
           </figure>
         </section>
@@ -422,7 +422,7 @@ Qworum.eval(
             <!-- When an interactive service send an HTML page as a response, it is effectively using the end-user as a resource that that helps it continue its execution by starting a new phase. We are naming this pattern an <dfn id='end-user-invocation'>end-user invocation</dfn>. -->
           </p>
           <figure>
-            <img src="figures/figure-2.6.svg" alt="">
+            <img src="figures/figure-2.6.svg" style="width: 500px; height: auto;" alt="">
             <figcaption>2.6.1: An interactive service call</figcaption>
           </figure>
           <p>For example, a shopping cart service may provide a method that shows shopping cart contents to the end-user
@@ -451,7 +451,7 @@ Qworum.eval(
             <li>the main object remains unused during a regular Web browsing session.</li>
           </ul>
           <figure>
-            <img src="figures/figure-2.7.svg" alt="">
+            <img src="figures/figure-2.7.svg" style="width: 600px; height: auto;" alt="">
             <figcaption>2.7.1: The execution state of a browser tab</figcaption>
           </figure>
         </section>
@@ -484,7 +484,7 @@ Qworum.eval(
             <li>Qworum objects can be stored in call frames, or as the main object of an execution state.</li>
           </ul>
           <figure>
-            <img src="figures/figure-2.8.svg" alt="">
+            <img src="figures/figure-2.8.svg" style="width: 600px; height: auto;" alt="">
             <figcaption>2.8.1: The Qworum object</figcaption>
           </figure>
         </section>
@@ -502,7 +502,7 @@ Qworum.eval(
           <p>Formally, we can define Qworum objects to be instances of Qworum classes, and also that each Web origin can
             host any number of Qworum classes.</p>
           <figure>
-            <img src="figures/figure-2.9.svg" alt="">
+            <img src="figures/figure-2.9.svg" style="width: 600px; height: auto;" alt="">
             <figcaption>2.9.1: Qworum classes and objects</figcaption>
           </figure>
           <p>Going back to our shopping cart example, we can imagine an e-commerce site that allows its users to create
@@ -757,7 +757,7 @@ Qworum.eval(
           </p>
 
           <h4>3.2.2. The object parameters of service calls</h4>
-          <p class="note-to-editor">Use cases?</p>
+          <!-- <p class="note-to-editor">Use cases?</p> -->
           <p>
             Service calls can receive Qworum objects as parameters. These object parameters will be made available to
             the new call on the client side as call-local objects that have the same names as the object parameters.

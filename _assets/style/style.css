@@ -3,12 +3,26 @@
   src: url("/_assets/fonts/Avenir-Next-Regular/8b1d5802-f86f-4cc1-95a8-261eabda1d22.woff2") format("woff2");
 }
 
+:root {
+  --accent-color: #0D498B;
+}
+
 
 body {
   font-family: "Avenir Next Regular", sans-serif;
   margin: 2em;
   /* max-width: 800px;
   min-width: 20em; */
+  background-color: white;
+  color: black;
+}
+
+a {
+  color: var(--accent-color);
+}
+
+a:visited {
+  color: var(--accent-color);
 }
 
 /* @media (prefers-color-scheme: light) {
@@ -19,17 +33,21 @@ body {
 } */
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: lightskyblue;
+  }
+
   body {
     background-color: #333;
     color: white;
   }
 
   a {
-    color: lightskyblue;
+    color: var(--accent-color);
   }
 
   a:visited {
-    color: lightskyblue;
+    color: var(--accent-color);
   }
 }
 
