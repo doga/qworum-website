@@ -96,7 +96,7 @@
             Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
           -->
           <!-- <span class="status-notice">Draft</span> -->
-          <span class="metadata">2022.09.21 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+          <span class="metadata">2022.09.28 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
         </h1>
         <h2>Summary</h2>
         <p>Qworum is:</p>
@@ -303,7 +303,7 @@
           <p>A call to a Web API that consists of one or more phases. Calls to Web APIs that conform to the Qworum
             specification are multi-phase calls.</p>
           <p>During a multi-phase call, the first request that is sent by the user agent to the server contains 0, 1 or
-            more call parameters. The service then returns a response that:</p>
+            more call arguments. The service then returns a response that:</p>
           <ul>
             <li>contains a <dfn>call result</dfn> (in which case the call is a single-phase call), or</li>
             <li>allows the user agent to initiate a second phase for the current call.</li>
@@ -604,7 +604,7 @@ Qworum.eval(
 
           <!-- <p>Data that is stored has two types of provenances:</p>
           <ul>
-            <li>Service compositions — Service calls receive data as parameters, and they return data as a result.</li>
+            <li>Service compositions — Service calls receive data as arguments, and they return data as a result.</li>
             <li>Web pages — a Web page belonging to a Qworum service or Qworum application can produce data from user inputs or network requests.</li>
           </ul> -->
 
@@ -676,25 +676,25 @@ Qworum.eval(
           </p>
 
           <p>
-            Service calls can have data parameters and/or object parameters.
+            Service calls can have data arguments and/or object arguments.
           </p>
 
-          <h4>3.2.1. The data parameters of service calls</h4>
+          <h4>3.2.1. The data arguments of service calls</h4>
 
           <p>
-            Service calls can have named data parameters, each parameter containing one instruction or data.
+            Service calls can have named data arguments, each argument containing one instruction or data.
 
-            If a data parameter contains an instruction, then the instruction will be evaluated before executing the
+            If a data argument contains an instruction, then the instruction will be evaluated before executing the
             call.
           </p>
           <p>
-            Data parameters will be will be made available to the new call on the client side as local datas with
-            the same names as the data parameters.
+            Data arguments will be will be made available to the new call on the client side as local datas with
+            the same names as the data arguments.
           </p>
           <p>
-            In addition, the data parameters can be POSTed to the call's first phase so that the data can be processed
+            In addition, the data arguments can be POSTed to the call's first phase so that the data can be processed
             on the server side. Whether the data will indeed be sent to the server side depends on the value of the
-            <code>send</code> attribute of the <code>parameters</code> element. If the value is <code>true</code>, then
+            <code>send</code> attribute of the <code>arguments</code> element. If the value is <code>true</code>, then
             the data will be POSTed. If the <code>send</code> attribute is absent or if its value is <code>false</code>,
             then the data will not be sent to the server.
           </p>
@@ -703,8 +703,8 @@ Qworum.eval(
             <pre><code class="language-xml">
 &lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
   &lt;!-- Send the data to the server, in addition to making it available on the client. -->
-  &lt;parameters send='true'>
-    &lt;parameter name='line items'> 
+  &lt;data-args send='true'>
+    &lt;data-arg name='line items'> 
       &lt;data:json>
         [{
           "title"   : "Classic ankle boots",
@@ -712,30 +712,30 @@ Qworum.eval(
           "quantity": 1
         }]
       &lt;/data:json>
-    &lt;/parameter>
-  &lt;/parameters>
+    &lt;/data-arg>
+  &lt;/data-args>
 &lt;/call>
           </code></pre>
             <figcaption>3.2.1.1: A <code>call</code> instruction that issues a POST request</figcaption>
           </figure>
 
-          <p id="phase-parameters">A <code>call</code> instruction that generates a POST request behaves similarly to an
-            HTML form that
-            contains an item named <code>qworum-phase-parameters</code>:</p>
+          <p id="phase-arguments">
+            A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that contains an item named <code>qworum-arguments</code>:
+          </p>
           <ul>
             <li>The content type of the request body will be <code>application/x-www-form-urlencoded</code>.</li>
-            <li>The value of <code>qworum-phase-parameters</code> will be an XML string that contains the <dfn
-                id='phase-parameters'>phase parameters</dfn> document. Note that phase parameters documents have their
+            <li>The value of <code>qworum-arguments</code> will be an XML string that contains the <dfn
+                id='phase-arguments'>phase arguments</dfn> document. Note that phase arguments documents have their
               own XML namespace.</li>
           </ul>
 
           <figure>
             <pre><code class="language-xml">
-&lt;parameters 
-  xmlns='https://qworum.net/ns/v1/phase-parameters/'
+&lt;data-args 
+  xmlns='https://qworum.net/ns/v1/phase-arguments/'
   xmlns:data='https://qworum.net/ns/v1/data/'
 >
-  &lt;parameter name='line items'> 
+  &lt;data-arg name='line items'> 
     &lt;data:json>
       [{
         "title"   : "Classic ankle boots",
@@ -743,38 +743,38 @@ Qworum.eval(
         "quantity": 1
       }]
     &lt;/data:json>
-  &lt;/parameter>
-&lt;/parameters> <!-- TODO: add objects-paramaters element for passing Qworum objects (but first find a use case !!) -->
+  &lt;/data-arg>
+&lt;/data-args> <!-- TODO: add objects-paramaters element for passing Qworum objects (but first find a use case !!) -->
           </code></pre>
-            <figcaption>3.2.1.2: Example of a phase parameters document that will be encoded in a POST request
+            <figcaption>3.2.1.2: Example of a phase arguments document that will be encoded in a POST request
             </figcaption>
           </figure>
 
           <p>
-            Even if a service hasn't received its data parameters on the server side during its first phase, the service
+            Even if a service hasn't received its data arguments on the server side during its first phase, the service
             nevertheless has the option of sending any and all of its data to the server side during any of its later
             phases by using the <a href="#goto"> <code>goto</code></a> instruction.
           </p>
 
-          <h4>3.2.2. The object parameters of service calls</h4>
+          <h4>3.2.2. The object arguments of service calls</h4>
           <!-- <p class="note-to-editor">Use cases?</p> -->
           <p>
-            Service calls can receive Qworum objects as parameters. These object parameters will be made available to
-            the new call on the client side as call-local objects that have the same names as the object parameters.
+            Service calls can receive Qworum objects as arguments. These object arguments will be made available to
+            the new call on the client side as call-local objects that have the same names as the object arguments.
           </p>
           <figure>
             <pre><code class="language-xml">
 &lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
-  &lt;parameters>
+  &lt;data-args>
     …
-  &lt;/parameters>
-  &lt;object-parameters>
+  &lt;/data-args>
+  &lt;object-args>
     &lt;!-- The caller is making its logger available to the service it is calling. -->
-    &lt;object-parameter name='logger' object='["@","logger"]' /> 
-  &lt;/object-parameters>
+    &lt;object-arg name='logger' object='["@","logger"]' /> 
+  &lt;/object-args>
 &lt;/call>
           </code></pre>
-            <figcaption>3.2.2.1: A <code>call</code> instruction that contains object parameters</figcaption>
+            <figcaption>3.2.2.1: A <code>call</code> instruction that contains object arguments</figcaption>
           </figure>
 
         </section>
@@ -821,27 +821,27 @@ Qworum.eval(
 
           <p>
             Similarly to <a href="#call"><code>call</code></a> instructions, <code>goto</code> instructions can also
-            have named data parameters, each parameter containing one instruction or data. If a data parameter contains
+            have named data arguments, each argument containing one instruction or data. If a data argument contains
             an instruction, then the instruction will be evaluated before executing the call.
-            The behavior of <code>goto</code> differs from <code>call</code> in that <code>goto</code>'s data parameters
+            The behavior of <code>goto</code> differs from <code>call</code> in that <code>goto</code>'s data arguments
             are always sent to the server side.
           </p>
 
-          <p>One situation where <code>goto</code> needs to have data parameters is when the internal state of a Qworum
+          <p>One situation where <code>goto</code> needs to have data arguments is when the internal state of a Qworum
             object is updated from the server side using new data, as is shown in the next figure.</p>
 
           <figure>
             <pre><code class="language-xml">
 &lt;goto href='add-line-items-to-cart.xml'>
-  &lt;parameters> &lt;!-- For goto's parameters element, "send" is not a valid attribute. -->
-    &lt;parameter name='line items to add'>
+  &lt;data-args> &lt;!-- For goto's arguments element, "send" is not a valid attribute. -->
+    &lt;data-arg name='line items to add'>
       &lt;data path='["line items to add"]' />
-    &lt;/parameter>
+    &lt;/data-arg>
 
-    &lt;parameter name='current line items'>
+    &lt;data-arg name='current line items'>
       &lt;data path='["@","line items"]' />
-    &lt;/parameter>
-  &lt;/parameters>
+    &lt;/data-arg>
+  &lt;/data-args>
 &lt;/goto>
             </code></pre>
             <figcaption>3.4.2: A <code>goto</code> instruction that issues a POST request</figcaption>
@@ -872,16 +872,16 @@ Qworum.eval(
   &lt;!-- 2. Store the returned transaction details. -->
   &lt;data path='["@","latest transaction"]'>
     &lt;call object='["@","payment service"]' href="https://payment-processor.example/pay/">
-      &lt;parameters>
-        &lt;parameter name="amount to pay">
+      &lt;data-args>
+        &lt;data-arg name="amount to pay">
           &lt;data:json>
             {
               "amount"  : 98.99,
               "currency": "EUR",
             }
           &lt;/data:json>
-        &lt;/parameter>
-      &lt;/parameters>
+        &lt;/data-arg>
+      &lt;/data-args>
     &lt;/call>
   &lt;/data>
 
@@ -1132,8 +1132,8 @@ Qworum.eval(
           <p>Here are a few reasons for using semantic data, both in transit and at rest:</p>
           <ul>
             <li>The "transform" step can be removed from <dfn>ETL</dfn> <a href="#ref-etl">♦︎</a> operations.</li>
-            <li>Applications can have access to as much additional information as they need about the data they are
-              handling, because semantic data generally contains links to other data on the Web.</li>
+            <li>Applications can have access to additional information about the data they are
+              handling, because semantic data generally contains links to other data on the Web, although this isn't mandatory (for example, @id can be omitted in the example above).</li>
             <li>
               AI inference engines can reason about semantic data much more readily than about other types of data such
               as JSON, relational or NoSQL data.
