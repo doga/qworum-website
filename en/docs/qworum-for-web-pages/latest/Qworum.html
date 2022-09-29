@@ -99,7 +99,7 @@ and the 🚀 sign is for functions that call the Qworum browser extension.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2275">line 2275</a>
+        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2276">line 2276</a>
     </li></ul></dd>
     
 
@@ -193,7 +193,7 @@ and the 🚀 sign is for functions that call the Qworum browser extension.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2292">line 2292</a>
+        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2293">line 2293</a>
     </li></ul></dd>
     
 
@@ -255,7 +255,7 @@ and the 🚀 sign is for functions that call the Qworum browser extension.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2286">line 2286</a>
+        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2287">line 2287</a>
     </li></ul></dd>
     
 
@@ -283,7 +283,7 @@ and the 🚀 sign is for functions that call the Qworum browser extension.</div>
     
 
     
-    <h4 class="name" id=".Call"><span class="type-signature">(static) </span>Call<span class="signature">(object, href, arguments, sendArguments, objectArguments)</span><span class="type-signature"> &rarr; {Qworum.message.Call}</span></h4>
+    <h4 class="name" id=".Call"><span class="type-signature">(static) </span>Call<span class="signature">(object, href, arguments, objectArguments)</span><span class="type-signature"> &rarr; {Qworum.message.Call}</span></h4>
     
 
     
@@ -420,29 +420,6 @@ and the 🚀 sign is for functions that call the Qworum browser extension.</div>
 
         <tr>
             
-                <td class="name"><code>sendArguments</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">If true, send arguments in the HTTP(S) request's body. Default is false.</td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>objectArguments</code></td>
             
 
@@ -509,7 +486,7 @@ and the 🚀 sign is for functions that call the Qworum browser extension.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2319">line 2319</a>
+        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2320">line 2320</a>
     </li></ul></dd>
     
 
@@ -581,14 +558,16 @@ and the 🚀 sign is for functions that call the Qworum browser extension.</div>
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>// Example 1
-const call1 = Qworum.Call(
+const call1 = Qworum.Call('@', 'home/');
+// Example 2
+const call2 = Qworum.Call(
   '@', 'home/', 
   {name: 'current year', value: Qworum.Json(2022)}
 );
-// Example 2
-const call2 = Qworum.Call(
+// Example 3
+const call3 = Qworum.Call(
   ['@'], 'home/',
-  [{name: 'current year', value: Qworum.Json(2022)}], false,
+  [{name: 'current year', value: Qworum.Json(2022)}],
   [{name: , object: ['@', 'a Qworum object']}]
 );</code></pre>
 
@@ -1380,7 +1359,7 @@ data2 = Qworum.Data('data1');</code></pre>
     
 
     
-    <h4 class="name" id=".Goto"><span class="type-signature">(static) </span>Goto<span class="signature">(href, arguments)</span><span class="type-signature"> &rarr; {Qworum.message.Goto}</span></h4>
+    <h4 class="name" id=".Goto"><span class="type-signature">(static) </span>Goto<span class="signature">(href)</span><span class="type-signature"> &rarr; {Qworum.message.Goto}</span></h4>
     
 
     
@@ -1450,38 +1429,6 @@ data2 = Qworum.Data('data1');</code></pre>
         </tr>
 
     
-
-        <tr>
-            
-                <td class="name"><code>arguments</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-|
-
-<span class="param-type">Array.&lt;object></span>
-|
-
-<span class="param-type">null</span>
-|
-
-<span class="param-type">undefined</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Named data value arguments.</td>
-        </tr>
-
-    
     </tbody>
 </table>
 
@@ -1519,7 +1466,7 @@ data2 = Qworum.Data('data1');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2348">line 2348</a>
+        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2350">line 2350</a>
     </li></ul></dd>
     
 
@@ -1591,8 +1538,7 @@ data2 = Qworum.Data('data1');</code></pre>
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>const goto = Qworum.Goto(
-  ['@'], 'home/',
-  [{name: 'current year', value: Qworum.Json(2022)}]
+  ['@'], 'home/'
 );</code></pre>
 
 
@@ -2218,7 +2164,7 @@ data2 = Qworum.Data('data1');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2299">line 2299</a>
+        <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2300">line 2300</a>
     </li></ul></dd>
     
 
@@ -3090,7 +3036,7 @@ data2 = Qworum.Data('data1');</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Wed Sep 28 2022 08:44:01 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Sep 29 2022 16:11:27 GMT+0200 (Central European Summer Time)
 </footer>
 
 <script> prettyPrint(); </script>

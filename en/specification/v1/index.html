@@ -96,7 +96,7 @@
             Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
           -->
           <!-- <span class="status-notice">Draft</span> -->
-          <span class="metadata">2022.09.28 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+          <span class="metadata">2022.09.29 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
         </h1>
         <h2>Summary</h2>
         <p>Qworum is:</p>
@@ -212,11 +212,16 @@
             <ol>
               <li><a href="#json"><code>json</code></a></li>
               <li><a href="#semantic"><code>semantic</code></a></li>
-              <!-- <li><a href="#domain-specific-data">Domain-Specific Data</a></li> -->
             </ol>
           </li>
 
-          <!-- <li><a href="#7">Implementations</a></li> -->
+          <li>
+            <a href="#browser-workarounds">Workarounds for browser limitations</a>
+            <ol>
+              <li><a href="#hyperlinks">Hyperlinks</a></li>
+              <li><a href="#using-only-get-requests">Forms</a></li>
+            </ol>
+          </li>
 
           <li>
             <a href="#references">References</a>
@@ -691,19 +696,19 @@ Qworum.eval(
             Data arguments will be will be made available to the new call on the client side as local datas with
             the same names as the data arguments.
           </p>
-          <p>
+          <!-- <p>
             In addition, the data arguments can be POSTed to the call's first phase so that the data can be processed
             on the server side. Whether the data will indeed be sent to the server side depends on the value of the
             <code>send</code> attribute of the <code>arguments</code> element. If the value is <code>true</code>, then
             the data will be POSTed. If the <code>send</code> attribute is absent or if its value is <code>false</code>,
             then the data will not be sent to the server.
-          </p>
+          </p> -->
 
           <figure>
             <pre><code class="language-xml">
 &lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
   &lt;!-- Send the data to the server, in addition to making it available on the client. -->
-  &lt;data-args send='true'>
+  &lt;data-args>
     &lt;data-arg name='line items'> 
       &lt;data:json>
         [{
@@ -819,7 +824,7 @@ Qworum.eval(
             <figcaption>3.4.1: A <code>goto</code> instruction that issues a GET request</figcaption>
           </figure>
 
-          <p>
+          <!-- <p>
             Similarly to <a href="#call"><code>call</code></a> instructions, <code>goto</code> instructions can also
             have named data arguments, each argument containing one instruction or data. If a data argument contains
             an instruction, then the instruction will be evaluated before executing the call.
@@ -833,7 +838,7 @@ Qworum.eval(
           <figure>
             <pre><code class="language-xml">
 &lt;goto href='add-line-items-to-cart.xml'>
-  &lt;data-args> &lt;!-- For goto's arguments element, "send" is not a valid attribute. -->
+  &lt;data-args>
     &lt;data-arg name='line items to add'>
       &lt;data path='["line items to add"]' />
     &lt;/data-arg>
@@ -845,7 +850,7 @@ Qworum.eval(
 &lt;/goto>
             </code></pre>
             <figcaption>3.4.2: A <code>goto</code> instruction that issues a POST request</figcaption>
-          </figure>
+          </figure> -->
 
           <p>
             The <code>goto</code> instruction will raise an <code>origin</code> <a href="#fault"><code>fault</code></a>
@@ -1167,8 +1172,96 @@ Qworum.eval(
         </section> -->
       </section>
 
+      <section id="browser-workarounds">
+        <h2>5. Workarounds for browser limitations</h2>
+        <p>
+          Qworum is currently implemented as a browser extension, and
+          Web browsers impose constraints on how extensions can change the behavior of browsers. 
+        </p>
+        <p>
+          As a consequence, the developers of Qworum applications and services must observe the following rules.
+        </p>
+        <h3 id="hyperlinks">5.1. Hyperlinks</h3>
+        <p>
+          Use <code>window.location.replace()</code> for hyperlinks. 
+        </p>
+        <figure>
+          <pre><code class="language-html">
+&lt;button onclick="window.location.replace('new_url')">
+&nbsp;&nbsp;A hyperlink
+&lt;button />
+</code></pre>
+          <figcaption>5.1.1: Correct way of implementing hyperlinks in a Qworum session</figcaption>
+        </figure>
+        <figure>
+          <pre><code class="language-html">
+&lt;a href="new_url">
+&nbsp;&nbsp;A hyperlink
+&lt;a/>
+</code></pre>
+          <figcaption>5.1.2: Incorrect way of implementing hyperlinks in a Qworum session</figcaption>
+        </figure>
+        <p>
+          This rule is due to the fact that Qworum only works correctly when only the last page in a tab's history is accessible to the end-user during a Qworum session. Otherwise the web page in use will be out of sync with the session state, and this will result in runtime errors.
+        </p>
+        <p>
+          But because browsers do not (yet) allow extensions to disable the back button, the only alternative is preventing the tab history to grow. And that's exactly what <code>window.location.replace()</code> does.
+        </p>
+
+        <h3 id="using-only-get-requests">5.2. Forms</h3>
+        <p>
+          Use AJAX for sending forms to the servers, because the normal way of sending forms grows the tab history.
+        </p>
+        <figure>
+          <pre><code class="language-html">
+&lt;ul>
+  &lt;li>
+    &lt;label for="name">Name:&lt;/label>
+    &lt;input type="text" id="name" name="user_name" />
+  &lt;/li>
+  &lt;li>
+    &lt;label for="mail">E-mail:&lt;/label>
+    &lt;input type="email" id="mail" name="user_email" />
+  &lt;/li>
+  &lt;li>
+    &lt;label for="msg">Message:&lt;/label>
+    &lt;textarea id="msg" name="user_message">&lt;/textarea>
+  &lt;/li>
+  &lt;li class="button">
+    &lt;button onclick="submit()">Send your message&lt;/button>
+  &lt;/li>
+&lt;/ul></code></pre>
+          <figcaption>5.2.1: Correct way of sending forms during a Qworum session</figcaption>
+        </figure>
+        <figure>
+          <pre><code class="language-html">
+&lt;form action="/my-handling-form-page" method="post">
+  &lt;ul>
+    &lt;li>
+      &lt;label for="name">Name:&lt;/label>
+      &lt;input type="text" id="name" name="user_name" />
+    &lt;/li>
+    &lt;li>
+      &lt;label for="mail">E-mail:&lt;/label>
+      &lt;input type="email" id="mail" name="user_email" />
+    &lt;/li>
+    &lt;li>
+      &lt;label for="msg">Message:&lt;/label>
+      &lt;textarea id="msg" name="user_message">&lt;/textarea>
+    &lt;/li>
+    &lt;li class="button">
+      &lt;button type="submit">Send your message&lt;/button>
+    &lt;/li>
+  &lt;/ul>
+&lt;/form>
+</code></pre>
+          <figcaption>5.2.2: Incorrect way of sending forms during a Qworum session</figcaption>
+        </figure>
+
+      </section>
+
       <section id="references">
-        <h2>5. References</h2>
+        <h2>6. References</h2>
         <ul>
           <li id="ref-etl">
             <span class="reference">ETL</span>
