@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
   <ellipse style="stroke: rgb(192, 192, 192); fill: rgb(190, 9, 9);" cx="292.581" cy="98.362" rx="265.065" ry="92.363"/>
-  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 14.9px; text-anchor: middle; white-space: pre;" transform="matrix(0.756947, 0, 0, 0.756947, 186.39978, -140.556854)"><tspan x="115.185" y="234.175">Qworum - The Service Web</tspan><tspan x="115.18499755859375" dy="1em">​</tspan></text>
-  <g transform="matrix(1.245126, 0, 0, 1.245126, -140.307236, -112.357773)" style="">
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 14.9px; text-anchor: middle; white-space: pre;" transform="matrix(0.756947, 0, 0, 0.756947, 207.621674, -152.888718)"><tspan x="115.185" y="234.175">Qworum - The Service Web</tspan><tspan x="115.18499755859375" dy="1em">​</tspan></text>
+  <g transform="matrix(1.245126, 0, 0, 1.245126, 25.242861, -137.671371)" style="">
     <rect x="183.2" y="151.105" width="56.953" height="32.455" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
     <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="212.147" y="165.646" transform="matrix(1, 0, 0, 1, 0, 0)">E-commerce<tspan x="212.14700317382812" dy="1em">​</tspan>application</text>
   </g>
-  <g transform="matrix(1.245126, 0, 0, 1.245126, 26.929121, -113.331497)" style="">
+  <g transform="matrix(1.245126, 0, 0, 1.245126, -104.346962, -80.644455)" style="">
     <rect x="183.2" y="151.105" width="60.517" height="32.455" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
     <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="212.147" y="165.646" transform="matrix(1, 0, 0, 1, 1.311485, 0.398262)">Shopping cart<tspan x="212.14700317382812" dy="1em">​</tspan>service</text>
   </g>
-  <g transform="matrix(1.245126, 0, 0, 1.245126, 66.926567, -114.316856)" style="">
+  <g transform="matrix(1.245126, 0, 0, 1.245126, 24.161448, -81.419029)" style="">
     <rect x="280.096" y="151.952" width="87.157" height="32.455" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
     <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 8.7px; text-anchor: middle;" x="212.147" y="165.646" transform="matrix(1, 0, 0, 1, 110.132698, 1.24502)">Payment processing<tspan x="212.14700317382812" dy="1em">​</tspan>service</text>
   </g>
-  <path d="M 241.415 167.287 H 320.948 L 320.948 164.174 L 342.115 168.532 L 320.948 172.89 L 320.948 169.777 H 241.415 V 167.287 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.999966, 0.008222, -0.008222, 0.999966, -81.143204, -85.146164)" bx:shape="arrow 241.415 164.174 100.7 8.716 2.49 21.167 0 1@ae6501d1"/>
-  <path d="M 241.681 192.998 H 319.209 L 319.209 189.885 L 340.376 194.243 L 319.209 198.601 L 319.209 195.488 H 241.681 V 192.998 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.999965, 0.008334, -0.008334, 0.999965, -80.909706, -88.909889)" bx:shape="arrow 241.681 189.885 98.695 8.716 2.49 21.167 0 1@c3c4ff72"/>
-  <path d="M 412.501 179.176 H 479.262 L 479.262 176.063 L 500.429 180.421 L 479.262 184.779 L 479.262 181.666 H 412.501 V 179.176 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.999998, 0.00179, -0.00179, 0.999998, -82.213348, -87.640564)" bx:shape="arrow 412.501 176.063 87.928 8.716 2.49 21.167 0 1@a8a07d4c"/>
-  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" y="76.174" x="204.161">Add items</text>
-  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" y="124.048" x="204.152">Show cart</text>
-  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" y="84.572" x="372.335" transform="matrix(1, 0, 0, 1, -0.203711, -10.859848)">Process <tspan x="372.3349914550781" dy="1em">​</tspan>payment</text>
+  <path d="M 229.198 167.287 H 269.657 L 269.657 164.174 L 290.825 168.532 L 269.657 172.89 L 269.657 169.777 H 229.198 V 167.287 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.936938, 0.349495, -0.349495, -0.936938, 527.365479, 167.488174)" bx:shape="arrow 229.198 164.174 61.626 8.716 2.49 21.167 0 1@bba66258"/>
+  <path d="M 405.36 179.176 H 439.774 L 439.774 176.063 L 460.941 180.421 L 439.774 184.779 L 439.774 181.666 H 405.36 V 179.176 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.908086, 0.418785, -0.418785, 0.908086, 31.307579, -243.895325)" bx:shape="arrow 405.36 176.063 55.581 8.716 2.49 21.167 0 1@55865e59"/>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" y="88.507" x="217.477">Add items</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" y="116.455" x="245.548">Show cart</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" y="88.109" x="385.67">Process payment</text>
 </svg>

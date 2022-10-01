@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/_assets/style/style.css">
 
-  <title>Qworum specification, version 1</title>
+  <title>Qworum script specification, version 1</title>
 
   <style>
     .note-to-editor {
@@ -89,7 +89,7 @@
     <article>
       <header>
         <h1>
-          Qworum specification, version 1
+          Qworum script specification, version 1
           <!-- 
             All non-breaking changes can be added without changing the version number. 
             Browsers are supposed to be always up to date.
@@ -1053,11 +1053,15 @@ Qworum.eval(
 
           <figure>
             <pre><code class="language-xml">
+&lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
 &lt;data:json>
   {
-    "givenName" : "Claude",
-    "familyName": "Shannon",
-    "birthDate" : "1916-04-30"
+    "productID": "2",
+    "name": "XYZ Boots",
+    "offers": {
+      "price": "75.95",
+      "priceCurrency": "EUR"
+    }
   }
 &lt;/data:json>
             </code></pre>
@@ -1068,22 +1072,19 @@ Qworum.eval(
         <section id="semantic">
           <h3>4.2. <code>semantic</code></h3>
           <p>
-            Represents semantic data, encoded as <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a>.
-            </li>
-            </ul>
-            <!-- <p>
-            Represents semantic data. This data can be specified in one of the following formats:
+            Represents semantic data. This data can be specified in one of the following equivalent formats:
           </p>
           <ul>
             <li>
-              <dfn>Turtle</dfn> <a href="#ref-turtle">♦︎</a> is the default format. If this format is used, then the
-              <code>type</code> attribute must either be omitted or have the value <code>turtle</code>.
+              <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a> is the default format. If this format is used, then the <code>type</code> attribute must be omitted or have the value <code>json-ld</code>.
+              JSON-LD is the recommended semantic format for call arguments and values returned from calls, because this format is concise (which can reduce network traffic) and human-readable.
             </li>
             <li>
-              <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a>. If this format is used, then the <code>type</code>
-              attribute must have the value <code>json-ld</code>.
+              <dfn>N-Quads</dfn> <a href="#ref-n-quads">♦︎</a>. If this format is used, then the
+              <code>type</code> attribute must have the value <code>n-quads</code>.
+              N-Quads is the recommended semantic format for storing session data, because this format allows database-like queries to be performed on data.
             </li>
-          </ul> -->
+          </ul> 
 
             <!-- <figure>
             <pre><code class="language-xml">
@@ -1106,19 +1107,53 @@ Qworum.eval(
 
           <figure>
             <pre><code class="language-xml">
-&lt;data:semantic><!-- &lt;data:semantic type='json-ld'> -->
+&lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
+&lt;data:semantic>
   {
-    "@context"  : "https://schema.org",
-    "@type"     : "Person",
-    "@id"       : "https://www.wikidata.org/wiki/Q92760",
-    "givenName" : "Claude",
-    "familyName": "Shannon",
-    "birthDate" : "1916-04-30"
+    "@context": {"@vocab":"http://schema.org/"},
+    "@type": "ItemList",
+    "itemListElement": {
+      "@type": "Product",
+      "productID": "2",
+      "name": "XYZ Boots",
+      "offers": {
+        "@type": "Offer",
+        "price": "75.95",
+        "priceCurrency": "EUR"
+      }
+    }
   }
 &lt;/data:semantic>
 </code></pre>
             <figcaption>4.2.1: Example of semantic data written in JSON-LD</figcaption>
-            <!-- <figcaption>4.2.2: Example of semantic data written in JSON-LD</figcaption> -->
+          </figure>
+
+          <figure>
+            <pre><code class="language-xml">
+&lt;!-- The end-user's shopping cart contents (2 items). -->
+&lt;data:semantic type='n-quads'>
+  &lt;![CDATA[
+    _:c14n0 &lt;http://schema.org/price> '75.95' .
+    _:c14n0 &lt;http://schema.org/priceCurrency> 'EUR' .
+    _:c14n0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/Offer> .
+    _:c14n1 &lt;http://schema.org/itemListElement> _:c14n3 .
+    _:c14n1 &lt;http://schema.org/itemListElement> _:c14n4 .
+    _:c14n1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/ItemList> .
+    _:c14n2 &lt;http://schema.org/price> '45.95' .
+    _:c14n2 &lt;http://schema.org/priceCurrency> 'EUR' .
+    _:c14n2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/Offer> .
+    _:c14n3 &lt;http://schema.org/name> 'Alpha trainers' .
+    _:c14n3 &lt;http://schema.org/offers> _:c14n2 .
+    _:c14n3 &lt;http://schema.org/productID> '1' .
+    _:c14n3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/Product> .
+    _:c14n4 &lt;http://schema.org/name> 'XYZ Boots' .
+    _:c14n4 &lt;http://schema.org/offers> _:c14n0 .
+    _:c14n4 &lt;http://schema.org/productID> '2' .
+    _:c14n4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/Product> .
+  ]]>
+&lt;/data:semantic>
+</code></pre>
+            <figcaption>4.2.1: Example of semantic data written in N-Quads</figcaption>
           </figure>
 
           <p>
@@ -1127,7 +1162,7 @@ Qworum.eval(
             In these vocabularies each term has a precise meaning that is understood by any software that understands
             that particular vocabulary.
           </p>
-          <p>
+          <!-- <p>
             In effect, what the Semantic Web is trying to do is create a <strong>machine-understandable language that is
               understood by all software</strong>.
             Compare that vision with the current situation where data is generally only understood by the software that
@@ -1144,7 +1179,7 @@ Qworum.eval(
               as JSON, relational or NoSQL data.
             </li>
             <li>Application developers can write less one-off code for handling data, which improves productivity.</li>
-          </ul>
+          </ul> -->
         </section>
 
         <!-- <section id="domain-specific-data">
@@ -1284,13 +1319,13 @@ Qworum.eval(
           <li id="ref-jamstack">
             <span class="reference">Jamstack</span>
             <a href="https://jamstack.org/">
-              Website
+              Jamstack.org website
             </a>
           </li>
           <li id="ref-json">
             <span class="reference">JSON</span>
             <a href="https://www.json.org/json-en.html">
-              Introducing JSON
+              JSON.org website
             </a>
           </li>
           <li id="ref-json-ld">
@@ -1300,10 +1335,16 @@ Qworum.eval(
               A JSON-based Serialization for Linked Data
             </a>
           </li>
+          <li id="ref-n-quads">
+            <span class="reference">N-Quads</span>
+            <a href="https://www.w3.org/TR/json-ld/">
+              RDF 1.1 N-Quads, W3C Recommendation 25 February 2014
+            </a>
+          </li>
           <li id="ref-origin">
             <span class="reference">Origin</span>
             <a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin">
-              MDN Documentation
+              Mozilla Developer Network Documentation
             </a>
           </li>
           <li id="ref-qworum-for-web-pages">
@@ -1333,8 +1374,8 @@ Qworum.eval(
           </li>
           <li id="ref-www">
             <span class="reference">WWW</span>
-            <a href="https://www.w3.org/TR/json-ld/">
-              World Wide Web
+            <a href="https://en.wikipedia.org/wiki/World_Wide_Web">
+              World Wide Web (Wikipedia)
             </a>
           </li>
           <li id="ref-xml">

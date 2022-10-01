@@ -167,7 +167,8 @@
         <li><a href="#IP">Intellectual property</a></li> -->
         <li><a href="#specification">Specification</a></li>
         <li><a href="#demo">Demonstration</a></li>
-        <li><a href="#context">A platform for distributed web applications</a></li>
+        <li><a href="#platform">A platform for distributed web applications</a></li>
+        <li><a href="#security">A secure computing environment</a></li>
         <li><a href="#use-cases">Use cases</a></li>
         <li><a href="#entitlement">How to enable Qworum for your website</a></li>
         <li><a href="#developer-resources">Developer resources</a></li>
@@ -247,7 +248,7 @@
       </figure>
     </section>
 
-    <section id="context">
+    <section id="platform">
       <h2>A platform for distributed web applications</h2>
       <p>
         There are currently two different Webs that exist on the World Wide Web:
@@ -291,6 +292,14 @@
         <img src="user-flow.png" style="width: 400px; height: auto;" alt="User flow">
         <figcaption>2: The user flow when a Qworum application or service calls another Qworum service</figcaption>
       </figure>
+    </section>
+
+    <section id="security">
+      <h2>A secure computing environment</h2>
+      <p>
+        The Qworum platform conforms to the <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank">same-origin policy</a> that is the prevalent security mechanism for browser standards. In particular
+        all <a href="specification/v1/#phase">phases</a> of a given <a href="specification/v1/#object">Qworum object</a> are contained in the object's web origin. This ensures that data belonging to one web origin is unable to accidentally leak to another origin.
+      </p>
     </section>
 
     <section id="use-cases">
