@@ -725,7 +725,8 @@ Qworum.eval(
           </figure>
 
           <p id="phase-arguments">
-            A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that contains an item named <code>qworum-arguments</code>:
+            A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that
+            contains an item named <code>qworum-arguments</code>:
           </p>
           <ul>
             <li>The content type of the request body will be <code>application/x-www-form-urlencoded</code>.</li>
@@ -1076,17 +1077,20 @@ Qworum.eval(
           </p>
           <ul>
             <li>
-              <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a> is the default format. If this format is used, then the <code>type</code> attribute must be omitted or have the value <code>json-ld</code>.
-              JSON-LD is the recommended semantic format for call arguments and values returned from calls, because this format is concise (which can reduce network traffic) and human-readable.
+              <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a> is the default format. If this format is used, then the
+              <code>type</code> attribute must be omitted or have the value <code>json-ld</code>.
+              JSON-LD is the recommended semantic format for call arguments and values returned from calls, because this
+              format is concise (which can reduce network traffic) and human-readable.
             </li>
             <li>
               <dfn>N-Quads</dfn> <a href="#ref-n-quads">♦︎</a>. If this format is used, then the
               <code>type</code> attribute must have the value <code>n-quads</code>.
-              N-Quads is the recommended semantic format for storing session data, because this format allows database-like queries to be performed on data.
+              N-Quads is the recommended semantic format for storing session data, because this format allows
+              database-like queries to be performed on data.
             </li>
-          </ul> 
+          </ul>
 
-            <!-- <figure>
+          <!-- <figure>
             <pre><code class="language-xml">
 &lt;data:semantic>
   &lt;![CDATA[
@@ -1110,7 +1114,7 @@ Qworum.eval(
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
 &lt;data:semantic>
   {
-    "@context": {"@vocab":"http://schema.org/"},
+    "@context": {"@vocab":"https://schema.org/"},
     "@type": "ItemList",
     "itemListElement": {
       "@type": "Product",
@@ -1133,23 +1137,23 @@ Qworum.eval(
 &lt;!-- The end-user's shopping cart contents (2 items). -->
 &lt;data:semantic type='n-quads'>
   &lt;![CDATA[
-    _:c14n0 &lt;http://schema.org/price> '75.95' .
-    _:c14n0 &lt;http://schema.org/priceCurrency> 'EUR' .
-    _:c14n0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/Offer> .
-    _:c14n1 &lt;http://schema.org/itemListElement> _:c14n3 .
-    _:c14n1 &lt;http://schema.org/itemListElement> _:c14n4 .
-    _:c14n1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/ItemList> .
-    _:c14n2 &lt;http://schema.org/price> '45.95' .
-    _:c14n2 &lt;http://schema.org/priceCurrency> 'EUR' .
-    _:c14n2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/Offer> .
-    _:c14n3 &lt;http://schema.org/name> 'Alpha trainers' .
-    _:c14n3 &lt;http://schema.org/offers> _:c14n2 .
-    _:c14n3 &lt;http://schema.org/productID> '1' .
-    _:c14n3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/Product> .
-    _:c14n4 &lt;http://schema.org/name> 'XYZ Boots' .
-    _:c14n4 &lt;http://schema.org/offers> _:c14n0 .
-    _:c14n4 &lt;http://schema.org/productID> '2' .
-    _:c14n4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://schema.org/Product> .
+    _:c14n0 &lt;https://schema.org/price> '75.95' .
+    _:c14n0 &lt;https://schema.org/priceCurrency> 'EUR' .
+    _:c14n0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
+    _:c14n1 &lt;https://schema.org/itemListElement> _:c14n3 .
+    _:c14n1 &lt;https://schema.org/itemListElement> _:c14n4 .
+    _:c14n1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/ItemList> .
+    _:c14n2 &lt;https://schema.org/price> '45.95' .
+    _:c14n2 &lt;https://schema.org/priceCurrency> 'EUR' .
+    _:c14n2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
+    _:c14n3 &lt;https://schema.org/name> 'Alpha trainers' .
+    _:c14n3 &lt;https://schema.org/offers> _:c14n2 .
+    _:c14n3 &lt;https://schema.org/productID> '1' .
+    _:c14n3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
+    _:c14n4 &lt;https://schema.org/name> 'XYZ Boots' .
+    _:c14n4 &lt;https://schema.org/offers> _:c14n0 .
+    _:c14n4 &lt;https://schema.org/productID> '2' .
+    _:c14n4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
   ]]>
 &lt;/data:semantic>
 </code></pre>
@@ -1160,7 +1164,7 @@ Qworum.eval(
             Semantic data is data that uses the vocabularies that are defined by the <dfn>Semantic Web</dfn> <a
               href="#ref-semanticweb">♦︎</a>.
             In these vocabularies each term has a precise meaning that is understood by any software that understands
-            that particular vocabulary.
+            those particular vocabularies.
           </p>
           <!-- <p>
             In effect, what the Semantic Web is trying to do is create a <strong>machine-understandable language that is
@@ -1211,14 +1215,14 @@ Qworum.eval(
         <h2>5. Workarounds for browser limitations</h2>
         <p>
           Qworum is currently implemented as a browser extension, and
-          Web browsers impose constraints on how extensions can change the behavior of browsers. 
+          Web browsers impose constraints on how extensions can change the behavior of browsers.
         </p>
         <p>
           As a consequence, the developers of Qworum applications and services must observe the following rules.
         </p>
         <h3 id="hyperlinks">5.1. Hyperlinks</h3>
         <p>
-          Use <code>window.location.replace()</code> for hyperlinks. 
+          Use <code>window.location.replace()</code> for hyperlinks.
         </p>
         <figure>
           <pre><code class="language-html">
@@ -1237,10 +1241,13 @@ Qworum.eval(
           <figcaption>5.1.2: Incorrect way of implementing hyperlinks in a Qworum session</figcaption>
         </figure>
         <p>
-          This rule is due to the fact that Qworum only works correctly when only the last page in a tab's history is accessible to the end-user during a Qworum session. Otherwise the web page in use will be out of sync with the session state, and this will result in runtime errors.
+          This rule is due to the fact that Qworum only works correctly when only the last page in a tab's history is
+          accessible to the end-user during a Qworum session. Otherwise the web page in use will be out of sync with the
+          session state, and this will result in runtime errors.
         </p>
         <p>
-          But because browsers do not (yet) allow extensions to disable the back button, the only alternative is preventing the tab history to grow. And that's exactly what <code>window.location.replace()</code> does.
+          But because browsers do not (yet) allow extensions to disable the back button, the only alternative is
+          preventing the tab history to grow. And that's exactly what <code>window.location.replace()</code> does.
         </p>
 
         <h3 id="using-only-get-requests">5.2. Forms</h3>
