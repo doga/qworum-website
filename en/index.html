@@ -43,7 +43,8 @@
       <li>
         a platform for
         interactive <a href="https://microservices.io" target="_blank">microservices</a>;
-        these are microservices that bring their own <a href="https://martinfowler.com/articles/micro-frontends.html"
+        Qworum solves the "UI-monolith problem" for microservice architectures through
+        services that are microservices which bring their own full-page <a href="https://martinfowler.com/articles/micro-frontends.html"
           target="_blank">micro-frontends</a>.
       </li>
       <!-- <li>
@@ -65,24 +66,6 @@
         an
         advanced Web browser feature
         that websites can use.
-      </li>
-    </ul>
-
-    <p>Qworum defines:</p>
-    <ul>
-      <li>
-        a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than
-        content as HTML does.
-        Web browsers can receive Qworum scripts from Web servers in an XML document. Web pages can also generate Qworum
-        scripts using JavaScript.
-      </li>
-      <li>
-        an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or as a
-        browser extension.
-      </li>
-      <li>
-        a new client-side storage for storing the execution state of each browser tab. This storage can use IndexedDB
-        behind the scenes.
       </li>
     </ul>
 
@@ -162,20 +145,20 @@
 
     <nav>
       <h2>Table of contents</h2>
-      <ul>
+      <ol>
         <!-- <li><a href="#pitch-deck">Pitch Deck</a></li>
         <li><a href="#IP">Intellectual property</a></li> -->
         <li><a href="#specification">Specification</a></li>
-        <li><a href="#demo">Demonstration</a></li>
+        <li><a href="#ui-bottleneck">Solving the UI bottleneck for microservice architectures</a></li>
         <li><a href="#platform">A platform for distributed web applications</a></li>
+        <li><a href="#demo">Demonstration</a></li>
         <li><a href="#security">A secure computing environment</a></li>
         <li><a href="#use-cases">Use cases</a></li>
         <li><a href="#entitlement">How to enable Qworum for your website</a></li>
         <li><a href="#developer-resources">Developer resources</a></li>
-        <li><a href="#deliverables">Deliverables</a></li>
         <li><a href="#privacy-policy">Privacy Policy</a></li>
         <li><a href="#contact">Contact</a></li>
-      </ul>
+      </ol>
     </nav>
 
     <!-- <section id="pitch-deck">
@@ -199,55 +182,56 @@
       </ol>
     </section> -->
 
-
     <section id="specification">
-      <h2>Specification</h2>
+      <h2>1. Specification</h2>
       <p>
         You can either directly jump to the <a href="specification/v1/">Qworum specification</a>,
         or first read the following in order to get some context about what Qworum is trying to achieve.
       </p>
     </section>
 
-    <section id="demo">
-      <h2>Demonstration</h2>
+    <section id="ui-bottleneck">
+      <h2>2. Solving the UI bottleneck for microservice architectures</h2>
       <p>
-        <a href="/_assets/video/Qworum-demo-online-shop.mp4" target="_blank">This video</a> 
-        shows an online shop calling a remote shopping cart service.
-        See this demo live at <a href="https://shop.demo.qworum.net" target="_blank">shop.demo.qworum.net</a>. 
+        Microservice architectures enable rapid software delivery by allowing different parts of a software system to be developed, deployed and updated in parallel by different teams within an organization and also across organizations.
       </p>
       <p>
-        Visit the 
-        <a href="https://github.com/doga/qworum-demo" target="_blank">GitHub repository</a> 
-        as a starting point for your project. This code base uses the JSON format for data that is received and returned by service end-points, and also for storing session data in the browser.
-        <a href="https://github.com/doga/qworum-demo-semantic" target="_blank">This GitHub repository</a> 
-        implements the same demonstration, but uses semantic data instead of JSON.
+        Microservice architectures organise developer teams around vertical slices of software systems rather than the horizontal UI, business logic, and data layers. In order words, microservice teams are responsible for all of these 3 layers within the boundaries of a particular slice.
+      </p>
+      <h3>2.1. What Qworum is solving</h3>
+      <p>
+        One problem that was unsolved until Qworum is the <em id="ui-monolith">UI monolith</em> issue for microservice architectures. 
       </p>
       <p>
-        In this demonstration, the e-shop is a Qworum application and the shopping cart is a remote Qworum service.
+        Indeed, without Qworum current microservice architectures are unable to slice the UI layer into microservices completely. Web applications still must have a monolithic component at the UI layer. This monolithic component acts as a container for the different microfrontends which constitute parts of the monolith's web pages.
+      </p>
+      <p>
+        Having a monolithic component at the UI layer represents a bottleneck for the software development and delivery processes, because the team responsible for the UI monolith cannot scale with the number of microservices.
+        In addition, microfrontends are frequently tied to a particular web application or frontend framework, which limits their reusability. Also, the mechanisms by which microfrontends exchange data with their container is ad hoc at best.
+      </p>
+      <p>
+        The <em id="interactive-service">interactive service</em> concept that Qworum defines solves all above-mentioned issues. Qworum services receive and return data through a well-defined mechanism, and they can interact with the end-user during their execution. Applications are the same as the services they are calling, in the sense that both types of entities are implemented as Qworum services. The only difference between an application and other services is that applications frequently run indefinitely without returning a result, and they are made for being directly accessed by the end-user rather than being called by another service.
       </p>
       <figure>
-        <img src="/_assets/images/Qworum-demo-online-shop.png" style="width: 700px; height: auto;" alt="Video of demo">
-        <figcaption>3: A screenshot of an e-shop Qworum application</figcaption>
+        <img src="ui-bottleneck-issue.svg" style="width: 700px; height: auto;" alt="Video of demo">
+        <figcaption>2.1.1: From UI monolith to interactive microservices</figcaption>
       </figure>
+
       <p>
-        Note that:
+        Qworum is also solving the <em id="nesting">nesting</em> issue that the current microfrontend solutions are facing. Indeed, microfrontends frequently do not contain other microfrontends nested in them, because the screen area allocated to nested elements quickly becomes vanishingly small.
       </p>
-      <ul>
-        <li>
-          with Qworum the user experience is similar to the current Web, with the exception that the browser's back button will be disabled.
-        </li>
-        <li>
-          search engines can't peek inside Qworum services, so if search engine optimization (SEO) is important for you then you might want to carefully consider which parts of your application will be implemented as Qworum services. For enterprise and business applications SEO is generally not an issue, but consumer applications such as an online shop might want to only use remote Qworum services and limit the use of internal Qworum services to the parts that should remain out of reach for search engines.
-        </li>
-      </ul>
+      <p>
+        In contrast, the nesting depth of Qworum services is unbounded, because Qworum allocates a full page to each Qworum service regardless of the nesting depth.
+      </p>
+  
       <figure>
-        <img src="demo.svg" style="width: 700px; height: auto;" alt="Schematics of demo">
-        <figcaption>4: A Qworum application and two Qworum services</figcaption>
+        <img src="bounded-nesting-issue.svg" style="width: 700px; height: auto;" alt="Video of demo">
+        <figcaption>2.1.2: From 1-level microfrontend nesting to unbounded service nesting</figcaption>
       </figure>
     </section>
 
     <section id="platform">
-      <h2>A platform for distributed web applications</h2>
+      <h2>3. A platform for distributed web applications</h2>
       <p>
         There are currently two different Webs that exist on the World Wide Web:
       </p>
@@ -292,16 +276,49 @@
       </figure>
     </section>
 
+    <section id="demo">
+      <h2>4. Demonstration</h2>
+      <p>
+        <a href="/_assets/video/Qworum-demo-online-shop.mp4" target="_blank">This video</a> 
+        shows an online shop calling a remote shopping cart service.
+      </p>
+      <p>
+        See this demo live at <a href="https://shop.demo.qworum.net" target="_blank">shop.demo.qworum.net</a>. 
+      </p>
+      <p>
+        In this demonstration, the e-shop is a Qworum application and the shopping cart is a remote Qworum service.
+      </p>
+      <figure>
+        <img src="/_assets/images/Qworum-demo-online-shop.png" style="width: 700px; height: auto;" alt="Video of demo">
+        <figcaption>3: A screenshot of an e-shop Qworum application</figcaption>
+      </figure>
+      <p>
+        Note that:
+      </p>
+      <ul>
+        <li>
+          with Qworum the user experience is similar to the current Web, with the exception that the browser's back button will be disabled.
+        </li>
+        <li>
+          search engines can't peek inside Qworum services, so if search engine optimization (SEO) is important for you then you might want to carefully consider which parts of your application will be implemented as Qworum services. For enterprise and business applications SEO is generally not an issue, but consumer applications such as an online shop might want to only use remote Qworum services and limit the use of internal Qworum services to the parts that should remain out of reach for search engines.
+        </li>
+      </ul>
+      <figure>
+        <img src="demo.svg" style="width: 700px; height: auto;" alt="Schematics of demo">
+        <figcaption>4: A Qworum application and two Qworum services</figcaption>
+      </figure>
+    </section>
+    
     <section id="security">
-      <h2>A secure computing environment</h2>
+      <h2>5. A secure computing environment</h2>
       <p>
         The Qworum platform conforms to the <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank">same-origin policy</a> that is the prevalent security mechanism for browser standards. In particular
-        all <a href="specification/v1/#phase">phases</a> of a given <a href="specification/v1/#object">Qworum object</a> are contained in the object's web origin. This ensures that data belonging to one web origin is unable to accidentally leak to another origin.
+        all phases of a given Qworum object are contained in the object's web origin. This ensures that data belonging to one web origin is unable to accidentally leak to another origin.
       </p>
     </section>
 
     <section id="use-cases">
-      <h2>Use cases</h2>
+      <h2>6. Use cases</h2>
       <p>The main use cases for Qworum are:</p>
       <ul>
         <li><strong>Application integration</strong>: Different Web-based applications can provide Qworum services to
@@ -320,22 +337,11 @@
         <li>Collection management — shopping cart, addressbook/contacts, movies, files, customer information, supplier
           information, …</li>
       </ul>
-      <p>
-        You may ask yourself: "Web applications can already use third-party services through remote API calls, how is
-        Qworum better?".
-        The answer is that currently third-party services can only provide business logic through their APIs (whether
-        they are REST-based or not), whereas Qworum services can also bring the UI that goes along with the business
-        logic. This lightens the workload of Web application developers.
-      </p>
-      <p>
-        Then you may ask yourself: "But aren't OpenID Connect-based services also interactive?". Indeed they are, but
-        OpenID Connect is only applicable to a particular problem domain, whereas Qworum's interactivity concept applies
-        to all Web-based services.
-      </p>
+
     </section>
 
     <section id="entitlement">
-      <h2>How to enable Qworum for your website</h2>
+      <h2>7. How to enable Qworum for your website</h2>
       <p>
         In order to enable Qworum for your website, simply send us an email by using <a
           href="mailto:entitlement@qworum.net?subject=EnableQworumForWebsite:+https://site.example">this link</a>. Be
@@ -352,79 +358,54 @@
     </section>
 
     <section id="developer-resources">
-      <h2>Developer Resources</h2>
-      <p>
-        Work in progress.
-      </p>
+      <h2>8. Developer Resources</h2>
       <ul>
-        <li>
-          <a href="docs/qworum-for-web-pages/latest/" target="_blank">
-            Qworum for Web Pages
-          </a>: With this JavaScript ES module, websites can use the advanced browser functionality that is provided by
-          the Qworum browser extension.
-        </li>
-        <li>
-          <a href="https://github.com/doga/qworum-demo" target="_blank">
-            Demo
-          </a>: A Jamstack implementation of a Qworum application and two Qworum services. Shows how to use the
-          <em>Qworum for Web Pages</em> library and how to have the Qworum browser extension installed on your users'
-          browsers.
-        </li>
         <li>
           <a href="https://chrome.google.com/webstore/search/qworum" target="_blank">
             Browser extension
           </a>: Qworum applications must make sure that the user has installed and activated the Qworum extension. The
           demo linked above shows how this is done.
         </li>
-      </ul>
-    </section>
-
-    <section id="deliverables">
-      <h2>Deliverables</h2>
-      <p>
-        Work in progress.
-      </p>
-      <ul>
-        <li>The <a href="specification/v1/">Qworum Specification</a>.</li>
-        <li><strong>Browser extension</strong>: Only Google Chrome is supported at this time, although adding support
-          for all major browsers is on our roadmap.</li>
-        <li><strong>Client library in JavaScript</strong>: This library is intended for use in the Web pages of Qworum
-          applications and services. See <a href="#entitlement">"How to enable Qworum for your website"</a>.
-          <!-- If you DM us your Web origin on Twitter, we can activate Qworum for your website. Note that you do not need to DM us for developing Qworum applications and services on your local machine. -->
+        <li>
+          <a href="docs/qworum-for-web-pages/latest/" target="_blank">
+            JavaScript library for Web Pages
+          </a>: With this JavaScript ES module, websites can use the advanced browser functionality that is provided by
+          Qworum's browser extension.
         </li>
-        <li><strong>Server library in JavaScript</strong>: Suitable for Node.js (and also Deno) applications. Used for
-          sending dynamic <a href="specification/v1/#script">Qworum scripts</a> to clients, and for parsing <a
-            href="specification/v1/#phase-parameters">phase parameters</a> received from clients.</li>
-        <li><strong>Server library in TypeScript</strong>: Suitable for Deno applications. Used for sending dynamic
-          Qworum scripts to clients, and for parsing phase parameters received from clients.</li>
-        <li><strong>Visual Studio Code extension</strong>: Provides XML snippets for writing static Qworum scripts. This
-          VS Code extension is automatically activated for files that have the <code>.qrm.xml</code> extension.</li>
-      </ul>
-      <p>
-        Other planned deliverables:
-      </p>
-      <ul>
-        <li><strong>Chrome DevTools extension</strong>: For debugging Qworum applications and services.</li>
-        <!-- <li><strong>Marketplace for Qworum services:</strong> For listing, selling and purchasing Qworum services.</li> -->
+        <li>
+          <a href="https://github.com/doga/qworum-demo" target="_blank">Demo project 1</a>:
+          This GitHub repository contains the code base for the demonstration shown above.
+          This project uses the JSON format for data that is received and returned by service end-points, and also for storing session data in the browser.
+        </li>
+        <li>
+          <a href="https://github.com/doga/qworum-demo-semantic" target="_blank">Demo project 2</a>:
+          This GitHub repository contains the code base for the demonstration shown above.
+          This project uses semantic data instead of JSON for data that is received and returned by service end-points, and also for storing session data in the browser.
+        </li>
+        <li>
+          <a href="https://marketplace.visualstudio.com/items?itemName=qworum.qworum" target="_blank">
+          Visual Studio Code extension</a>: Provides XML snippets for writing static Qworum scripts. This
+          VS Code extension is automatically activated for files that have the <code>.qrm.xml</code> extension.
+        </li>
       </ul>
     </section>
 
     <section id="privacy-policy">
-      <h2>Privacy Policy</h2>
+      <h2>9. Privacy Policy</h2>
       </p>
-        Qworum respects the privacy of end-users. The Qworum browser extension only has access to data that websites send it, and this data is deleted when you close the website's tab. Your data does not leave your computer.
+        Qworum respects the privacy of end-users. Qworum's browser extension only has access to data that websites send it, and this data is deleted when you close the website's tab. Your data does not leave your computer.
       </p>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h2>10. Contact</h2>
       </p>
         General inquiries:
         <a href="mailto:info@qworum.com">info@qworum.com</a>.
       </p>
 
       </p>
-        Developer questions:
+      Support for developers and end-users:
         <a href="mailto:support@qworum.com">support@qworum.com</a>.
       </p>
     </section>

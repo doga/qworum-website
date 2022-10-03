@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 511 200" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <linearGradient id="color-1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.622818, 0, 0, 5.824354, 102.963409, -876.467285)" bx:pinned="true">
+      <stop style="stop-color: rgb(190, 9, 9)"/>
+    </linearGradient>
+    <linearGradient id="color-2" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1, 0, 0, 1, 248.067993, -13.898388)" bx:pinned="true">
+      <stop style="stop-color: rgb(255, 255, 255);"/>
+    </linearGradient>
+    <linearGradient id="color-0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1, 0, 0, 2.547859, 519.542053, -450.205078)" bx:pinned="true">
+      <stop style="stop-color: #d8d8d8;"/>
+    </linearGradient>
+    <linearGradient id="color-3" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1, 0, 0, 1, -80.795662, -55.218643)" bx:pinned="true">
+      <stop style="stop-color: #d8d8d8;"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.026" y="5.251" width="248.454" height="189.031" rx="3" ry="3" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+  <text style="fill: url(#color-2); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" x="127.681" y="19.288">Without Qworum</text>
+  <g transform="matrix(1, 0, 0, 1, -8.999828, -45.232616)">
+    <rect x="17.658" y="157.413" width="71.33" height="21.163" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="53.323" y="171.742">Microfrontend</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 71.399025, -44.771679)">
+    <rect x="17.658" y="157.413" width="71.33" height="21.163" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="53.323" y="171.742">Microfrontend</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 151.289581, -44.902775)">
+    <rect x="17.658" y="157.413" width="71.33" height="21.163" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="53.323" y="171.742">Microfrontend</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, -4.466251, 32.209259)">
+    <rect x="12.924" y="33.472" width="232.72" height="26.575" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="129.284" y="51.507">Web application</text>
+  </g>
+  <path d="M 76.688 167.266 H 90.226 L 90.226 164.153 L 97.308 168.511 L 90.226 172.868 L 90.226 169.756 H 76.688 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 212.275467, 13.746721)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@b786adda"/>
+  <path d="M 76.688 167.266 H 90.226 L 90.226 164.153 L 97.308 168.511 L 90.226 172.868 L 90.226 169.756 H 76.688 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 295.155487, 14.19243)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@b786adda"/>
+  <path d="M 76.688 167.266 H 90.226 L 90.226 164.153 L 97.308 168.511 L 90.226 172.868 L 90.226 169.756 H 76.688 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 375.091309, 14.171587)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@b786adda"/>
+  <g transform="matrix(1, 0, 0, 1, 0.101616, -63.675369)"/>
+  <rect x="261.094" y="5.353" width="248.454" height="189.031" rx="3" ry="3" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+  <rect x="276.077" y="26.241" width="213.483" height="26.592" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+  <text style="fill: url(#color-2); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" x="387.749" y="19.39">With Qworum</text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="127.821" y="50.53" transform="matrix(1, 0, 0, 1, 258.025604, -13.728467)">Qworum-based web application <tspan x="127.82099914550781" dy="1em">​</tspan>(also a Qworum service)</text>
+  <g transform="matrix(1, 0, 0, 1, 157.065414, -151.488297)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 225.181305, -151.865677)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 75.711678, -107.588333)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 107.795425, -65.16082)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 205.659531, -65.21907)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 191.676025, -106.518913)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <path d="M 60.846 167.266 H 71.587 L 71.587 164.153 L 77.206 168.511 L 71.587 172.868 L 71.587 169.756 H 60.846 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.68738, 0.726298, -0.737229, -0.67583, 469.839539, 163.220886)" bx:shape="arrow 60.846 164.153 16.36 8.715 2.49 5.619 0 1@e7bb6a88"/>
+  <path d="M 60.202 167.266 H 70.829 L 70.829 164.153 L 76.389 168.511 L 70.829 172.868 L 70.829 169.756 H 60.202 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 552.961792, -10.553207)" bx:shape="arrow 60.202 164.153 16.187 8.715 2.49 5.56 0 1@f3d9f7c9"/>
+  <path d="M 62.252 167.265 H 73.241 L 73.241 164.153 L 78.99 168.51 L 73.241 172.868 L 73.241 169.755 H 62.252 V 167.265 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.653828, 0.756643, -0.746246, 0.66586, 454.632446, -22.770605)" bx:shape="arrow 62.252 164.153 16.738 8.715 2.49 5.749 0 1@c011557b" bx:origin="0.777 0.522"/>
+  <path d="M 76.688 167.266 H 90.226 L 90.226 164.153 L 97.308 168.511 L 90.226 172.868 L 90.226 169.756 H 76.688 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.344829, 0.938665, -0.933182, 0.359756, 532.659119, -41.651474)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@b786adda"/>
+  <path d="M 88.918 167.18 H 104.615 L 104.615 164.069 L 112.827 168.424 L 104.615 172.78 L 104.615 169.669 H 88.918 V 167.18 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.675736, 0.737144, -0.761336, -0.649345, 554.859497, 134.971252)" bx:shape="arrow 88.918 164.069 23.909 8.711 2.489 8.212 0 1@f28e6897"/>
+  <g transform="matrix(1, 0, 0, 1, 59.279827, -64.964767)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <path d="M 76.688 167.266 H 90.226 L 90.226 164.153 L 97.308 168.511 L 90.226 172.868 L 90.226 169.756 H 76.688 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.999964, 0.008536, -0.024436, -0.999828, 441.300018, 247.703705)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@b786adda" bx:origin="0.206 -0.374"/>
+  <g transform="matrix(1, 0, 0, 1, 131.386612, -106.928642)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 157.032822, -65.079674)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 253.726959, -65.356888)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 247.817932, -107.034805)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <path d="M 66.832 167.265 H 78.629 L 78.629 164.153 L 84.801 168.51 L 78.629 172.868 L 78.629 169.755 H 66.832 V 167.265 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.654611, 0.755966, -0.766375, -0.64259, 495.730255, 234.993423)" bx:shape="arrow 66.832 164.153 17.969 8.715 2.49 6.172 0 1@b56ca15f" bx:origin="0.206 -0.374"/>
+  <path d="M 55.106 167.266 H 64.834 L 64.834 164.153 L 69.923 168.511 L 64.834 172.868 L 64.834 169.756 H 55.106 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 456.834564, 119.172478)" bx:shape="arrow 55.106 164.153 14.817 8.715 2.49 5.089 0 1@0e2855f0"/>
+  <path d="M 76.688 167.265 H 90.226 L 90.226 164.153 L 97.308 168.51 L 90.226 172.868 L 90.226 169.755 H 76.688 V 167.265 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.654611, 0.755966, -0.766375, -0.64259, 559.559631, 227.954422)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@95575620" bx:origin="0.206 -0.374"/>
+  <path d="M 55.106 167.266 H 64.834 L 64.834 164.153 L 69.923 168.511 L 64.834 172.868 L 64.834 169.756 H 55.106 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 565.961975, 121.126251)" bx:shape="arrow 55.106 164.153 14.817 8.715 2.49 5.089 0 1@0e2855f0"/>
+  <path d="M 55.106 167.266 H 64.834 L 64.834 164.153 L 69.923 168.511 L 64.834 172.868 L 64.834 169.756 H 55.106 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 605.925049, 121.198288)" bx:shape="arrow 55.106 164.153 14.817 8.715 2.49 5.089 0 1@0e2855f0"/>
+  <path d="M 55.106 167.266 H 64.834 L 64.834 164.153 L 69.923 168.511 L 64.834 172.868 L 64.834 169.756 H 55.106 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 653.506456, 120.184076)" bx:shape="arrow 55.106 164.153 14.817 8.715 2.49 5.089 0 1@0e2855f0"/>
+  <path d="M 60.202 167.266 H 70.829 L 70.829 164.153 L 76.389 168.511 L 70.829 172.868 L 70.829 169.756 H 60.202 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 484.123352, -11.033793)" bx:shape="arrow 60.202 164.153 16.187 8.715 2.49 5.56 0 1@f3d9f7c9"/>
+  <path d="M 60.202 167.266 H 70.829 L 70.829 164.153 L 76.389 168.511 L 70.829 172.868 L 70.829 169.756 H 60.202 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 622.107849, -10.835035)" bx:shape="arrow 60.202 164.153 16.187 8.715 2.49 5.56 0 1@f3d9f7c9" bx:origin="0.438 -0.301"/>
+  <path d="M 60.846 167.266 H 71.587 L 71.587 164.153 L 77.206 168.511 L 71.587 172.868 L 71.587 169.756 H 60.846 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.68738, 0.726298, -0.737229, -0.67583, 456.609918, 208.668641)" bx:shape="arrow 60.846 164.153 16.36 8.715 2.49 5.619 0 1@e7bb6a88"/>
+  <path d="M 60.846 167.266 H 71.587 L 71.587 164.153 L 77.206 168.511 L 71.587 172.868 L 71.587 169.756 H 60.846 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.68738, 0.726298, -0.737229, -0.67583, 517.034042, 208.611977)" bx:shape="arrow 60.846 164.153 16.36 8.715 2.49 5.619 0 1@e7bb6a88"/>
+  <path d="M 60.846 167.266 H 71.587 L 71.587 164.153 L 77.206 168.511 L 71.587 172.868 L 71.587 169.756 H 60.846 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.68738, 0.726298, -0.737229, -0.67583, 572.539246, 207.695404)" bx:shape="arrow 60.846 164.153 16.36 8.715 2.49 5.619 0 1@e7bb6a88"/>
+  <path d="M 55.106 167.266 H 64.834 L 64.834 164.153 L 69.923 168.511 L 64.834 172.868 L 64.834 169.756 H 55.106 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 645.190677, 79.114881)" bx:shape="arrow 55.106 164.153 14.817 8.715 2.49 5.089 0 1@0e2855f0"/>
+  <path d="M 62.252 167.265 H 73.241 L 73.241 164.153 L 78.99 168.51 L 73.241 172.868 L 73.241 169.755 H 62.252 V 167.265 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.653828, 0.756643, -0.746246, 0.66586, 515.376526, -21.890291)" bx:shape="arrow 62.252 164.153 16.738 8.715 2.49 5.749 0 1@c011557b" bx:origin="0.777 0.522"/>
+  <path d="M 76.688 167.266 H 90.226 L 90.226 164.153 L 97.308 168.511 L 90.226 172.868 L 90.226 169.756 H 76.688 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.344829, 0.938665, -0.933182, 0.359756, 594.353943, -42.839363)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@b786adda"/>
+  <path d="M 62.252 167.265 H 73.241 L 73.241 164.153 L 78.99 168.51 L 73.241 172.868 L 73.241 169.755 H 62.252 V 167.265 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.653828, 0.756643, -0.746246, 0.66586, 428.471405, 17.561293)" bx:shape="arrow 62.252 164.153 16.738 8.715 2.49 5.749 0 1@c011557b" bx:origin="0.777 0.522"/>
+  <path d="M 76.688 167.266 H 90.226 L 90.226 164.153 L 97.308 168.511 L 90.226 172.868 L 90.226 169.756 H 76.688 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.344829, 0.938665, -0.933182, 0.359756, 461.929169, -42.254242)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@b786adda"/>
+  <g transform="matrix(1, 0, 0, 1, 86.307297, -151.28183)">
+    <rect x="205.745" y="217.063" width="44.933" height="25.788" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="228.133" y="227.614">Qworum<tspan x="228.13299560546875" dy="1em">​</tspan>service</text>
+  </g>
+  <path d="M 76.688 167.266 H 90.226 L 90.226 164.153 L 97.308 168.511 L 90.226 172.868 L 90.226 169.756 H 76.688 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(0.999871, -0.01605, 0.031948, 0.999616, 299.193878, -43.18219)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@b786adda" bx:origin="0.206 -0.374"/>
+</svg>
