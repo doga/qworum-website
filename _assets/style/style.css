@@ -7,7 +7,6 @@
   --accent-color: #0D498B;
 }
 
-
 body {
   font-family: "Avenir Next Regular", sans-serif;
   margin: 2em;
@@ -45,13 +44,6 @@ a:visited {
   color: var(--accent-color);
 }
 
-/* @media (prefers-color-scheme: light) {
-  body {
-    background-color: white;
-    color: black;
-  }
-} */
-
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-color: lightskyblue;
@@ -71,12 +63,6 @@ a:visited {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  main {
-    width: 768px;  margin-left: auto;  margin-right: auto;  text-align: left;
-  }
-}
-
 body>footer {
   padding: 3em;
   font-weight: bold;
@@ -87,8 +73,8 @@ figure>img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: auto;
-  height: 35em;
+  width: 400px;
+  /* height: 35em; */
 }
 
 figcaption {
@@ -101,4 +87,34 @@ figcaption::before {
 
 figcaption::after {
   content: ".";
+}
+
+
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  figure>img {width: 500px;}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  figure>img {width: 700px;}
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  figure>img {width: 700px;}
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  figure>img {width: 700px;}
+
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  figure>img {width: 700px;}
 }

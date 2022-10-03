@@ -18,6 +18,7 @@
     #downloads-list {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       font-size: 17px;
     }
 
@@ -213,7 +214,7 @@
         The <em id="interactive-service">interactive service</em> concept that Qworum defines solves all above-mentioned issues. Qworum services receive and return data through a well-defined mechanism, and they can interact with the end-user during their execution. Applications are the same as the services they are calling, in the sense that both types of entities are implemented as Qworum services. The only difference between an application and other services is that applications frequently run indefinitely without returning a result, and they are made for being directly accessed by the end-user rather than being called by another service.
       </p>
       <figure>
-        <img src="ui-bottleneck-issue.svg" style="width: 700px; height: auto;" alt="Video of demo">
+        <img src="ui-bottleneck-issue.svg" alt="Video of demo">
         <figcaption>2.1.1: From UI monolith to interactive microservices</figcaption>
       </figure>
 
@@ -225,7 +226,7 @@
       </p>
   
       <figure>
-        <img src="bounded-nesting-issue.svg" style="width: 700px; height: auto;" alt="Video of demo">
+        <img src="bounded-nesting-issue.svg" alt="Video of demo">
         <figcaption>2.1.2: From 1-level microfrontend nesting to unbounded service nesting</figcaption>
       </figure>
     </section>
@@ -260,7 +261,7 @@
           service that does not have a caller.</li>
       </ul>
       <figure>
-        <img src="the-three-webs.svg" style="width: 700px" alt="The three Webs">
+        <img src="the-three-webs.svg" alt="The three Webs">
         <figcaption>1: The three Webs</figcaption>
       </figure>
       <p>Note that although Qworum is distinct from the two previous Webs, it builds on them:</p>
@@ -289,7 +290,7 @@
         In this demonstration, the e-shop is a Qworum application and the shopping cart is a remote Qworum service.
       </p>
       <figure>
-        <img src="/_assets/images/Qworum-demo-online-shop.png" style="width: 700px; height: auto;" alt="Video of demo">
+        <img src="/_assets/images/Qworum-demo-online-shop.png" alt="Video of demo">
         <figcaption>3: A screenshot of an e-shop Qworum application</figcaption>
       </figure>
       <p>
@@ -304,7 +305,7 @@
         </li>
       </ul>
       <figure>
-        <img src="demo.svg" style="width: 700px; height: auto;" alt="Schematics of demo">
+        <img src="demo.svg" alt="Schematics of demo">
         <figcaption>4: A Qworum application and two Qworum services</figcaption>
       </figure>
     </section>
