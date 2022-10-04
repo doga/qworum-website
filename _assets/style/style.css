@@ -44,6 +44,12 @@ a:visited {
   color: var(--accent-color);
 }
 
+nav#table-of-contents li {
+  margin-top: 1em;
+}
+
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-color: lightskyblue;
@@ -69,6 +75,8 @@ body>footer {
   color: #999;
 }
 
+/* general figure setup */
+figure {padding: 1em; margin:0;}
 figure>img {
   display: block;
   margin-left: auto;
@@ -89,6 +97,11 @@ figcaption::after {
   content: ".";
 }
 
+/* download figures */
+#downloads-list > figure > img {width: 50px;}
+#downloads-list > figure > figcaption {font-size: 15px;}
+#downloads-list > figure > figcaption::before {content: "";}
+#downloads-list > figure > figcaption::after {content: "";}
 
 /* // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap */
@@ -96,25 +109,34 @@ figcaption::after {
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   figure>img {width: 500px;}
+  #downloads-list > figure > img {width: 55px;}
+  #downloads-list > figure > figcaption {font-size: 15px;}
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   figure>img {width: 700px;}
+  #downloads-list > figure > img {width: 60px;}
+  #downloads-list > figure > figcaption {font-size: 15px;}
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   figure>img {width: 700px;}
+  #downloads-list > figure > img {width: 65px;}
+  #downloads-list > figure > figcaption {font-size: 16px;}
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   figure>img {width: 700px;}
-
+  #downloads-list > figure > img {width: 70px;}
+  #downloads-list > figure > figcaption {font-size: 17px;}
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
   figure>img {width: 700px;}
+  #downloads-list > figure > img {width: 75px;}
+  #downloads-list > figure > figcaption {font-size: 18px;}
 }

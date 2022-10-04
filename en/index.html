@@ -45,8 +45,7 @@
         a platform for
         interactive <a href="https://microservices.io" target="_blank">microservices</a>;
         Qworum solves the "UI-monolith problem" for microservice architectures through
-        services that are microservices which bring their own full-page <a href="https://martinfowler.com/articles/micro-frontends.html"
-          target="_blank">micro-frontends</a>.
+        microservices which bring their own full-page UIs.
       </li>
       <!-- <li>
         <strong>
@@ -93,58 +92,56 @@
 
       <div id="downloads-list">
         <!-- order browsers by market share: Browser Market Share Worldwide https://gs.statcounter.com/browser-market-share -->
-        <p>
-          <!-- <a href="https://chrome.google.com/webstore/search/qworum" target="_blank"> -->
-            <img src="/_assets/images/logos/Google_Chrome_icon_(February_2022).svg" width="80px" alt=""> <br>
+        <figure class="download">
+          <img src="/_assets/images/logos/Google_Chrome_icon_(February_2022).svg" alt="Google Chrome icon">
+          <figcaption>
             Qworum for <br> Google Chrome
-          <!-- </a> -->
-        </p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p>
-          <!-- <a href="https://www.apple.com/app-store/" target="_blank"> -->
-            <img src="/_assets/images/logos/Safari_browser_logo.svg" width="80px" alt=""> <br>
+          </figcaption>
+        </figure>
+        <figure class="download">
+          <img src="/_assets/images/logos/Safari_browser_logo.svg" alt="Safari icon">
+          <figcaption>
             Qworum for <br> Safari
-          <!-- </a> -->
-        </p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p>
-          <!-- <a href="https://chrome.google.com/webstore/search/qworum" target="_blank"> -->
-            <img src="/_assets/images/logos/Microsoft_Edge_logo_(2019).svg" width="80px" alt=""> <br>
+          </figcaption>
+        </figure>
+        <figure class="download">
+          <img src="/_assets/images/logos/Microsoft_Edge_logo_(2019).svg" alt="Google Chrome icon">
+          <figcaption>
             Qworum for <br> Microsoft Edge
-          <!-- </a> -->
-        </p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p>
-          <!-- <a href="https://chrome.google.com/webstore/search/qworum" target="_blank"> -->
-            <img src="/_assets/images/logos/Brave-logo-color-RGB_reversed-cropped.svg" width="80px" alt=""> <br>
+          </figcaption>
+        </figure>
+        <figure class="download">
+          <img src="/_assets/images/logos/Brave-logo-color-RGB_reversed-cropped.svg" alt="Google Chrome icon">
+          <figcaption>
             Qworum for <br> Brave Browser
-          <!-- </a> -->
-        </p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p>
-          <!-- <a href="https://chrome.google.com/webstore/search/qworum" target="_blank"> -->
-            <img src="/_assets/images/logos/Opera_2015_logo-cropped.svg" width="80px" alt=""> <br>
+          </figcaption>
+        </figure>
+        <figure class="download">
+          <img src="/_assets/images/logos/Opera_2015_logo-cropped.svg" alt="Google Chrome icon">
+          <figcaption>
             Qworum for <br> Opera Browser
-          <!-- </a> -->
-        </p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p>
-          <a href="https://github.com/doga/qworum-for-web-pages" target="_blank">
-            <img src="/_assets/images/logos/Unofficial_JavaScript_logo_2.svg" width="80px" alt=""> <br>
-            Qworum for <br> Web Pages
-          </a>
-        </p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p>
-          <a href="https://marketplace.visualstudio.com/items?itemName=qworum.qworum" target="_blank">
-            <img src="/_assets/images/logos/Visual_Studio_Code_1.35_icon.svg" width="80px" alt=""> <br>
-            Qworum for <br> Visual Studio Code
-          </a>
-        </p>
+          </figcaption>
+        </figure>
+        <figure class="download">
+          <img src="/_assets/images/logos/Unofficial_JavaScript_logo_2.svg" alt="Google Chrome icon">
+          <figcaption>
+            <a href="https://github.com/doga/qworum-for-web-pages">
+              Qworum for <br> Web Pages
+            </a>
+          </figcaption>
+        </figure>
+        <figure class="download">
+          <img src="/_assets/images/logos/Visual_Studio_Code_1.35_icon.svg" alt="Google Chrome icon">
+          <figcaption>
+            <a href="https://marketplace.visualstudio.com/items?itemName=qworum.qworum">
+              Qworum for <br> Visual Studio Code
+            </a>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <nav>
+    <nav id="table-of-contents">
       <h2>Table of contents</h2>
       <ol>
         <!-- <li><a href="#pitch-deck">Pitch Deck</a></li>
@@ -204,7 +201,8 @@
         One problem that was unsolved until Qworum is the <em id="ui-monolith">UI monolith</em> issue for microservice architectures. 
       </p>
       <p>
-        Indeed, without Qworum current microservice architectures are unable to slice the UI layer into microservices completely. Web applications still must have a monolithic component at the UI layer. This monolithic component acts as a container for the different microfrontends which constitute parts of the monolith's web pages.
+        Indeed, without Qworum current microservice architectures are unable to slice the UI layer into microservices completely. Web applications still must have a monolithic component at the UI layer. This monolithic component acts as a container for the different  <a href="https://martinfowler.com/articles/micro-frontends.html"
+        target="_blank">micro-frontends</a> which constitute parts of the monolith's web pages.
       </p>
       <p>
         Having a monolithic component at the UI layer represents a bottleneck for the software development and delivery processes, because the team responsible for the UI monolith cannot scale with the number of microservices.
@@ -219,7 +217,7 @@
       </figure>
 
       <p>
-        Qworum is also solving the <em id="nesting">nesting</em> issue that the current microfrontend solutions are facing. Indeed, microfrontends frequently do not contain other microfrontends nested in them, because the screen area allocated to nested elements quickly becomes vanishingly small.
+        Qworum is also solving the <em id="nesting">nesting</em> issue that the current microfrontend solutions are facing. Indeed, microfrontends often cannot contain other microfrontends because the screen area allocated to nested elements quickly becomes vanishingly small.
       </p>
       <p>
         In contrast, the nesting depth of Qworum services is unbounded, because Qworum allocates a full page to each Qworum service regardless of the nesting depth.
