@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-<!-- TODO sitemap -->
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +20,7 @@
     }
 
   </style>
+  <script type="module" src="/_assets/js/homepage.js"></script>
 </head>
 
 <body>
@@ -91,7 +90,7 @@
 
       <div id="downloads-list">
         <!-- order browsers by market share: Browser Market Share Worldwide https://gs.statcounter.com/browser-market-share -->
-        <figure class="download">
+        <figure class="download" id="chrome">
           <img src="/_assets/images/logos/Google_Chrome_icon_(February_2022).svg" alt="Google Chrome icon">
           <figcaption>
             <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
@@ -99,13 +98,14 @@
             </a>
           </figcaption>
         </figure>
-        <figure class="download">
+        <figure class="download" id="safari">
           <img src="/_assets/images/logos/Safari_browser_logo.svg" alt="Safari icon">
           <figcaption>
             Qworum for <br> Safari
           </figcaption>
         </figure>
-        <figure class="download">
+        <figure class="download" id="edge">
+          <!-- TODO use the [Microsoft Edge add-ons store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home) -->
           <img src="/_assets/images/logos/Microsoft_Edge_logo_(2019).svg" alt="Microsoft Edge icon">
           <figcaption>
             <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
@@ -113,13 +113,14 @@
             </a>
           </figcaption>
         </figure>
-        <figure class="download">
+        <figure class="download" id="firefox">
           <img src="/_assets/images/logos/Firefox_logo_2019.svg" alt="Firefox icon">
           <figcaption>
             Qworum for <br> Firefox
           </figcaption>
         </figure>
-        <figure class="download">
+        <figure class="download" id="opera">
+          <!-- TODO use the [Opera addons store](https://addons.opera.com/en-gb/extensions/?ref=menu) -->
           <img src="/_assets/images/logos/Opera_2015_logo-cropped.svg" alt="Opera Browser icon">
           <figcaption>
             <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
@@ -127,7 +128,7 @@
             </a>
           </figcaption>
         </figure>
-        <figure class="download">
+        <figure class="download" id="brave">
           <img src="/_assets/images/logos/Brave-logo-color-RGB_reversed-cropped.svg" alt="Brave Browser icon">
           <figcaption>
             <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
@@ -135,7 +136,7 @@
             </a>
           </figcaption>
         </figure>
-        <figure class="download">
+        <figure class="download selected">
           <img src="/_assets/images/logos/Unofficial_JavaScript_logo_2.svg" alt="JavaScript icon">
           <figcaption>
             <a href="https://github.com/doga/qworum-for-web-pages" target="_blank">
@@ -143,7 +144,7 @@
             </a>
           </figcaption>
         </figure>
-        <figure class="download">
+        <figure class="download selected">
           <img src="/_assets/images/logos/Visual_Studio_Code_1.35_icon.svg" alt="Visual Studio Code icon">
           <figcaption>
             <a href="https://marketplace.visualstudio.com/items?itemName=qworum.qworum" target="_blank">

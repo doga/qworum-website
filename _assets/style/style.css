@@ -5,6 +5,7 @@
 
 :root {
   --accent-color: #0D498B;
+  --accent-background-color: #eee;
 }
 
 body {
@@ -48,11 +49,24 @@ nav#table-of-contents li {
   margin-top: 1em;
 }
 
+.download {
+  opacity: .3;
+}
+
+.download:hover {
+  opacity: 1;
+}
+
+.download.selected {
+  opacity: 1;
+}
+
 
 
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-color: lightskyblue;
+    --accent-background-color: darkgray;
   }
 
   body {
