@@ -8,8 +8,8 @@ function highlightUsersBrowserForDownload() {
   browser     = bowser.getParser(window.navigator.userAgent),
   browserName = browser.getBrowserName();
 
-  console.log(`user-agent: "${window.navigator.userAgent}"`);
-  console.log(`browser name: "${browserName}"`);
+  // console.log(`user-agent: "${window.navigator.userAgent}"`);
+  // console.log(`browser name: "${browserName}"`);
   // The current browser name is "Internet Explorer"
 
   switch (browserName) {

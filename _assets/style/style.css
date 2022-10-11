@@ -45,6 +45,8 @@ a:visited {
   color: var(--accent-color);
 }
 
+strong {font-weight: bold;}
+
 nav#table-of-contents li {
   margin-top: 1em;
 }
