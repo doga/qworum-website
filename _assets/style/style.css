@@ -45,7 +45,12 @@ a:visited {
   color: var(--accent-color);
 }
 
-strong {font-weight: bold;}
+aside.twitter-timeline  {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  display: none;
+}
 
 nav#table-of-contents li {
   margin-top: 1em;
@@ -134,6 +139,9 @@ figcaption::after {
   figure>img {width: 700px;}
   #downloads-list > figure > img {width: 60px;}
   #downloads-list > figure > figcaption {font-size: 15px;}
+  aside.twitter-timeline  {
+    display: block;
+  }
 }
 
 /* // Large devices (desktops, 992px and up) */
