@@ -9,12 +9,13 @@
 }
 
 body {
-  font-family: "Avenir Next Regular", sans-serif;
-  margin: 2em;
-  /* max-width: 800px;
-  min-width: 20em; */
+  font-family     : "Avenir Next Regular", sans-serif;
+  padding          : 2em;
+  min-width       : 20em;
+  max-width       : 800px;
+  margin          : auto;
   background-color: white;
-  color: black;
+  color           : black;
 }
 
 h2 {
