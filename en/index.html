@@ -35,68 +35,71 @@
       <a class="twitter-timeline" data-width="300" data-height="300" data-theme="light" href="https://twitter.com/QworumNet?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </aside>
 
-    <p>
-      Qworum is the Service Web that enables modular and distributed Web applications. Qworum is suitable for both enterprise and consumer software.
-    </p>
+    <section id="summary">
+      <p>
+        Qworum is the Service Web that enables modular and distributed Web applications. Qworum is suitable for both enterprise and consumer software.
+      </p>
 
-    <p>
-      Qworum is a deep-tech invention in the microservices realm.
-      Depending on the problem you are trying to solve,
-      Qworum can be described as:
-    </p>
+      <p>
+        Qworum is a deep-tech invention in the microservices realm.
+        Depending on the problem you are trying to solve,
+        Qworum can be described as:
+      </p>
 
-    <ul>
-      <li>
-        the world's first and only <strong>module system for Web applications</strong>.
-      </li>
-      <li>
-        a distributed Web application technology.
-      </li>
-      <li>
-        a platform for
-        interactive <a href="https://microservices.io" target="_blank">microservices</a>;
-        Qworum solves the "UI-monolith problem" for microservice architectures through
-        microservices which contain their own full-page UIs.
-      </li>
-      <!-- <li>
-        <strong>
-          the world's first distributed Web API technology,
-        </strong>
-        complementing JSON-RPC, XML-RPC, gRPC, SOAP, REST.
-        Qworum APIs can interact with the end-user, and calls can consist of more than one request-response pair.
-      </li> -->
-      <li>
-        the <em>Service Web</em> that complements
-        the HTML-based <em>Document Web</em> and
-        the RDF-based <em>Semantic Web</em>.
-      </li>
-      <!-- <li>
-        an upgrade to the World Wide Web that improves application support.
-      </li>
-      <li>
-        an
-        advanced Web browser feature
-        that websites can use.
-      </li> -->
-    </ul>
+      <ul>
+        <li>
+          the world's first and only <strong>module system for Web applications</strong>.
+        </li>
+        <li>
+          a distributed Web application technology.
+        </li>
+        <li>
+          a platform for
+          interactive <a href="https://microservices.io" target="_blank">microservices</a>;
+          Qworum solves the "UI-monolith problem" for microservice architectures through
+          microservices which contain their own full-page UIs.
+        </li>
+        <!-- <li>
+          <strong>
+            the world's first distributed Web API technology,
+          </strong>
+          complementing JSON-RPC, XML-RPC, gRPC, SOAP, REST.
+          Qworum APIs can interact with the end-user, and calls can consist of more than one request-response pair.
+        </li> -->
+        <li>
+          the <em>Service Web</em> that complements
+          the HTML-based <em>Document Web</em> and
+          the RDF-based <em>Semantic Web</em>.
+        </li>
+        <!-- <li>
+          an upgrade to the World Wide Web that improves application support.
+        </li>
+        <li>
+          an
+          advanced Web browser feature
+          that websites can use.
+        </li> -->
+      </ul>
 
-    <p>
-      Qworum is suitable for both of these frontend types:
-    </p>
-    <ul>
-      <li>
-        <a href="https://jamstack.org/" target="_blank">Jamstack</a>
-        frontends that consist of static files.
-      </li>
-      <li>
-        frontends that are dynamically generated server-side for each user.
-      </li>
-    </ul>
+      <p>
+        Qworum is suitable for both of these frontend types:
+      </p>
+      <ul>
+        <li>
+          <a href="https://jamstack.org/" target="_blank">Jamstack</a>
+          frontends that consist of static files.
+        </li>
+        <li>
+          frontends that are dynamically generated server-side for each user.
+        </li>
+      </ul>
 
-    <p>
-      Follow us on Twitter:
-      <a href="https://twitter.com/QworumNet" target="_blank">@QworumNet</a>.
-    <p>
+      <p>
+        Follow us on Twitter:
+        <a href="https://twitter.com/QworumNet" target="_blank">@QworumNet</a>.
+      <p>
+    </section>
+
 
     <section id="downloads">
       <h2>Downloads</h2>
@@ -216,14 +219,16 @@
     </section>
 
     <section id="ui-bottleneck">
-      <h2>2. Solving the UI bottleneck for microservice architectures</h2>
+      <h2>2. Solving the UI-monolith bottleneck for microservice architectures</h2>
+      <h3>2.1. What are microservice architectures?</h3>
       <p>
         Microservice architectures enable rapid software delivery by allowing different parts of a software system to be developed, deployed and updated in parallel by different teams within an organization and also across organizations.
       </p>
       <p>
         Microservice architectures organise developer teams around vertical slices of software systems rather than the horizontal UI, business logic, and data layers. In order words, microservice teams are responsible for all of these 3 layers within the boundaries of a particular slice.
       </p>
-      <h3>2.1. What Qworum is solving</h3>
+
+      <h3>2.2. What is wrong with monolithic user interfaces?</h3>
       <p>
         One problem that was unsolved until Qworum is the <em id="ui-monolith">UI monolith</em> issue for microservice architectures. 
       </p>
@@ -249,6 +254,14 @@
         </li>
       </ul>
       <p>
+        Also, the data exchange mechanism between a micro-frontend and its caller, which is generally a UI monolith, is ad hoc at best. 
+        For example, if a micro-frontend is implemented as a React.js component, then the micro-frontend can use React.js's built-in mechanism for receiving data from its caller.
+        On the other hand, how and if a React.js component can return a result to its caller is an implementation detail
+        that needs to be resolved on a case by case basis.
+      </p>
+
+      <h3>2.3. The Qworum solution</h3>
+      <p>
         The <em id="interactive-service">interactive service</em> concept defined by Qworum solves all above-mentioned issues:
       </p>
       <ul>
@@ -260,6 +273,9 @@
         </li>
         <li>
           Qworum is independent from any particular web framework.
+        </li>
+        <li>
+          Qworum defines a general data exhange mechanism for exchanging data between Qworum services and their callers. This obviates the need for developing data exchange solutions that are specific to a given application or organization.
         </li>
       </ul>
       <figure>
