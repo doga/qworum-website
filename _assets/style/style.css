@@ -18,6 +18,10 @@ body {
   color           : black;
 }
 
+h1 {
+  text-transform: capitalize;
+}
+
 h2 {
   padding-top: 1em;
 }
@@ -44,6 +48,10 @@ a {
 
 a:visited {
   color: var(--accent-color);
+}
+
+strong {
+  font-weight: bold;
 }
 
 aside.twitter-timeline  {

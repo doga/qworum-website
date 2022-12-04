@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Distributed Web Applications, Micro-frontends, Micro-services — Qworum</title>
+  <title>The UI Layer for Microservices architectures — Qworum</title>
   <link rel="stylesheet" href="/_assets/style/style.css">
   <style>
     /* aside {float: right; margin: 2em;} */
@@ -12,8 +13,8 @@
       color: var(--accent-color);
     }
 
-    section#summary > h2 {
-      display:none;
+    section#summary>h2 {
+      display: none;
     }
 
     #downloads-list {
@@ -23,6 +24,15 @@
       font-size: 17px;
     }
 
+    .usp {
+      color: green;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .usp {
+        color: lightgreen;
+      }
+    }
   </style>
   <script type="module" src="/_assets/js/homepage.js"></script>
 </head>
@@ -32,69 +42,40 @@
   </header>
   <main>
     <h1>
-      Qworum — The Service Web
+      Qworum — The UI layer for microservices architectures
     </h1>
     <aside class="twitter-timeline">
-      <a class="twitter-timeline" data-width="300" data-height="300" data-theme="light" href="https://twitter.com/QworumNet?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a class="twitter-timeline" data-width="300" data-height="300" data-theme="light"
+        href="https://twitter.com/QworumNet?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </aside>
 
     <section id="summary">
       <h2>Summary</h2>
       <p>
-        Qworum is the Service Web that enables modular and distributed Web applications. Qworum is suitable for both enterprise and consumer software.
+        <a href="#platform">Qworum is a foundational Web technology</a> that makes Web-based user interfaces fully compatible with microservices architectures.
       </p>
-
       <p>
-        Qworum is a deep-tech invention in the microservices realm.
-        Depending on the problem you are trying to solve,
-        Qworum can be described as:
+        To this end
+        Qworum defines a new type of microservice / Web API: the Qworum service. Qworum services are interactive
+        microservices that serve as building blocks for modular and distributed Web applications.
+        Qworum's browser technology is implemented by the <a href="#downloads">Qworum browser extension</a>.
       </p>
-
-      <ul>
-        <li>
-          the world's first and only <strong>module system for Web applications</strong>.
-        </li>
-        <li>
-          a distributed Web application technology.
-        </li>
-        <li>
-          a platform for
-          interactive <a href="https://microservices.io" target="_blank">microservices</a>;
-          Qworum solves the "UI-monolith problem" for microservice architectures through
-          microservices which contain their own full-page UIs.
-        </li>
-        <!-- <li>
-          <strong>
-            the world's first distributed Web API technology,
-          </strong>
-          complementing JSON-RPC, XML-RPC, gRPC, SOAP, REST.
-          Qworum APIs can interact with the end-user, and calls can consist of more than one request-response pair.
-        </li> -->
-        <li>
-          the <em>Service Web</em> that complements
-          the HTML-based <em>Document Web</em> and
-          the RDF-based <em>Semantic Web</em>.
-        </li>
-        <!-- <li>
-          an upgrade to the World Wide Web that improves application support.
-        </li>
-        <li>
-          an
-          advanced Web browser feature
-          that websites can use.
-        </li> -->
-      </ul>
-
       <p>
-        Qworum is suitable for both of these frontend types:
+        While micro frontends are also used for the same purpose of breaking Web UIs into manageable pieces, 
+        Qworum offers a complementary approach with features that cannot be matched by micro frontends.
+        Here is a brief comparison (see below for a more <a href="#ui-bottleneck"> detailed comparison with micro frontends</a>):
       </p>
       <ul>
         <li>
-          <a href="https://jamstack.org/" target="_blank">Jamstack</a>
-          frontends that consist of static files.
+          Qworum offers <strong class="usp">unbounded composability and cross-organisational applicability</strong>.
         </li>
         <li>
-          frontends that are dynamically generated server-side for each user.
+          Whereas the UIs of micro frontends can only occupy a predefined display area within a web page,
+          Qworum services can use a sequence of full-page UIs for interacting with the end-user.
+        </li>
+        <li>
+          Whereas micro frontends are Web page parts that are implemented with existing Web technologies, Qworum defines an entirely novel foundational Web technology and Web browser capability targeting microservices architectures specifically.
         </li>
       </ul>
 
@@ -104,7 +85,6 @@
       <p>
     </section>
 
-
     <section id="downloads">
       <h2>Downloads</h2>
 
@@ -113,7 +93,8 @@
         <figure class="download" id="chrome">
           <img src="/_assets/images/logos/Google_Chrome_icon_(February_2022).svg" alt="Google Chrome icon">
           <figcaption>
-            <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
+            <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
+              target="_blank">
               Qworum for <br> Google Chrome
             </a>
           </figcaption>
@@ -128,7 +109,8 @@
           <!-- TODO use the [Microsoft Edge add-ons store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home) -->
           <img src="/_assets/images/logos/Microsoft_Edge_logo_(2019).svg" alt="Microsoft Edge icon">
           <figcaption>
-            <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
+            <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
+              target="_blank">
               Qworum for <br> Microsoft Edge
             </a>
           </figcaption>
@@ -143,7 +125,8 @@
           <!-- TODO use the [Opera addons store](https://addons.opera.com/en-gb/extensions/?ref=menu) -->
           <img src="/_assets/images/logos/Opera_2015_logo-cropped.svg" alt="Opera Browser icon">
           <figcaption>
-            <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
+            <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
+              target="_blank">
               Qworum for <br> Opera Browser
             </a>
           </figcaption>
@@ -151,7 +134,8 @@
         <figure class="download" id="brave">
           <img src="/_assets/images/logos/Brave-logo-color-RGB_reversed-cropped.svg" alt="Brave Browser icon">
           <figcaption>
-            <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
+            <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
+              target="_blank">
               Qworum for <br> Brave Browser
             </a>
           </figcaption>
@@ -181,7 +165,7 @@
         <!-- <li><a href="#pitch-deck">Pitch Deck</a></li>
         <li><a href="#IP">Intellectual property</a></li> -->
         <li><a href="#specification">Specification</a></li>
-        <li><a href="#ui-bottleneck">Solving the UI bottleneck for microservice architectures</a></li>
+        <li><a href="#ui-bottleneck">Solving the UI bottleneck for microservices architectures</a></li>
         <li><a href="#platform">A platform for distributed web applications</a></li>
         <li><a href="#demo">Demonstration — application spanning several DNS domains</a></li>
         <li><a href="#security">A secure computing environment</a></li>
@@ -223,63 +207,79 @@
     </section>
 
     <section id="ui-bottleneck">
-      <h2>2. Solving the UI-monolith bottleneck for microservice architectures</h2>
+      <h2>2. Solving the UI-monolith bottleneck for microservices architectures</h2>
 
       <section>
-        <h3>2.1. What are microservice architectures?</h3>
+        <h3>2.1. What are microservices architectures?</h3>
         <p>
-          Microservice architectures enable rapid software delivery by allowing different parts of a software system to be developed, deployed and updated in parallel by different teams within an organization and also across organizations.
+          Microservices architectures enable rapid software delivery by allowing different parts of a software system to
+          be developed, deployed and updated in parallel by different teams within an organization and also across
+          organizations.
         </p>
         <p>
-          Microservice architectures organise developer teams around vertical slices of software systems rather than the horizontal UI, business logic, and data layers. In order words, microservice teams are responsible for all of these 3 layers within the boundaries of a particular slice.
+          Microservices architectures organise developer teams around vertical slices of software systems rather than the
+          horizontal UI, business logic, and data layers. In order words, microservice teams are responsible for all of
+          these 3 layers within the boundaries of a particular slice.
         </p>
       </section>
 
       <section>
         <h3>2.2. What is wrong with monolithic user interfaces?</h3>
         <!-- <p>
-          One problem that was unsolved until Qworum is the <em id="ui-monolith">UI monolith</em> issue for microservice architectures. 
+          One problem that was unsolved until Qworum is the <em id="ui-monolith">UI monolith</em> issue for microservices architectures. 
         </p>
         <p>
-          Indeed, without Qworum current microservice architectures are unable to slice the UI layer into microservices completely. Web applications still must have a monolithic component at the UI layer. This monolithic component acts as a container for the different  <a href="https://martinfowler.com/articles/micro-frontends.html"
-          target="_blank">micro-frontends</a> which constitute parts of the monolith's web pages.
+          Indeed, without Qworum current microservices architectures are unable to slice the UI layer into microservices completely. Web applications still must have a monolithic component at the UI layer. This monolithic component acts as a container for the different  <a href="https://martinfowler.com/articles/micro frontends.html"
+          target="_blank">micro frontends</a> which constitute parts of the monolith's web pages.
         </p> -->
         <p>
-          For microservice architectures,
-          having a monolithic component at the UI layer represents a bottleneck for the software development lifecycle, because the team responsible for the UI monolith cannot scale with the number of microservices.
+          For microservices architectures,
+          having a monolithic component at the UI layer represents a bottleneck for the software development lifecycle,
+          because the team responsible for the UI monolith cannot scale with the number of microservices.
         </p>
 
-        <h3>2.3. Are micro-frontends the right solution?</h3>
+        <h3>2.3. Are micro frontends the right solution?</h3>
         <p>
-          Today, the only solution that software developers have at their disposal for breaking UI monoliths into smaller parts involves micro-frontends.
+          Today, the only solution that software developers have at their disposal for breaking UI monoliths into
+          smaller parts involves micro frontends.
         </p>
         <p>
-          Micro-frontends are UI components that are plugged into dashboard-style web pages for building web applications. In this case web applications become simple containers for micro-frontends.
+          Micro frontends are UI components that are plugged into dashboard-style web pages for building web
+          applications. In this case web applications become simple containers for micro frontends.
         </p>
         <p>
-          Micro-frontends are implemented using various technologies such as <a href="https://reactjs.org/docs/components-and-props.html" target="_blank">React.js components</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">web components</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" target="_blank">iframes</a>, none of which are specific to microservice architectures.
+          Micro frontends are implemented using various technologies such as <a
+            href="https://reactjs.org/docs/components-and-props.html" target="_blank">React.js components</a>, <a
+            href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">web components</a> or <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" target="_blank">iframes</a>, none of
+          which are specific to microservices architectures.
         </p>
         <p>
-          Besides being only suitable for dashboard-style applications, other limiting factors for micro-frontends include:
+          Besides being only suitable for dashboard-style applications, other limiting factors for micro frontends
+          include:
         </p>
         <ul>
           <li>
             <em>Bounding context —</em>
-            Micro-frontend solutions are typically only usable within a particular context rather than being universally applicable. This limiting context can be
+            Micro-frontend solutions are typically only usable within a particular context rather than being universally
+            applicable. This limiting context can be
             a particular organization (which precludes cross-organization applications),
             a particular web application, or
             a particular frontend framework such as React.js or Angular for example.
           </li>
           <li>
             <em>Data exchange —</em>
-            The data exchange mechanism between a micro-frontend and its container is ad hoc at best. 
-            For example, if a micro-frontend is implemented as a React.js component, then the micro-frontend can use React.js's built-in mechanism for receiving data from its container.
-            On the other hand, how and if a React.js component can return a result to its container is an implementation detail that needs to be resolved on a case by case basis. 
-            This is because micro-frontends are conceived as UI components rather than full-blown services.
+            The data exchange mechanism between a micro-frontend and its container is ad hoc at best.
+            For example, if a micro-frontend is implemented as a React.js component, then the micro-frontend can use
+            React.js's built-in mechanism for receiving data from its container.
+            On the other hand, how and if a React.js component can return a result to its container is an implementation
+            detail that needs to be resolved on a case by case basis.
+            This is because micro frontends are conceived as UI components rather than full-blown services.
           </li>
           <li id="nesting">
             <em>Nesting —</em>
-            Micro-frontends typically cannot be nested beyond 1 or 2 levels, because the allocated screen area becomes significantly smaller with each nesting level.
+            Micro frontends typically cannot be nested beyond 1 or 2 levels, because the allocated screen area becomes
+            significantly smaller with each nesting level.
           </li>
         </ul>
       </section>
@@ -287,38 +287,45 @@
       <section>
         <h3>2.3. Qworum</h3>
         <p>
-          Qworum is a UI technology that was made specifically for microservice architectures.
-          In contrast to micro-frontends, which are parts of web pages, 
-          Qworum takes the web-API approach to user interaction. 
+          Qworum is a UI technology that was made specifically for microservices architectures.
+          In contrast to micro frontends, which are parts of web pages,
+          Qworum takes the web-API approach to user interaction.
         </p>
         <p id="interactive-service">
-          In effect, Qworum defines a new type of web API where each end-point can receive data, interact with the end-user if needed, and then return a result. Note that Qworum services are not components embedded in web pages. Rather, they offer full-page UIs to end-users.
+          In effect, Qworum defines a new type of web API where each end-point can receive data, interact with the
+          end-user if needed, and then return a result. Note that Qworum services are not components embedded in web
+          pages. Rather, they offer full-page UIs to end-users.
         </p>
         <p>
-          Also, in contrast to micro-frontend solutions where there are two types of entities (micro-frontends and container applications), with Qworum everything is a Qworum service, including applications.
+          Also, in contrast to micro-frontend solutions where there are two types of entities (micro frontends and
+          container applications), with Qworum everything is a Qworum service, including applications.
         </p>
         <figure>
           <img src="ui-bottleneck-issue.svg" alt="With Qworum everything is a Qworum service, including applications">
           <figcaption>2.3.1: With Qworum everything is a Qworum service, including applications</figcaption>
         </figure>
         <p>
-          So, while Qworum complements micro-frontends rather than making them obsolete, by the same token Qworum does not have many of the limitations that micro-frontends are burdened with:
+          So, while Qworum complements micro frontends rather than making them obsolete, by the same token Qworum does
+          not have many of the limitations that micro frontends are burdened with:
         </p>
         <ul>
           <li>
             <em>Bounding context —</em>
-            Qworum is a web-scale microservices platform that is usable both within organizations and across organizations. Qworum is also independent from any particular application or web framework.
+            Qworum is a web-scale microservices platform that is usable both within organizations and across
+            organizations. Qworum is also independent from any particular application or web framework.
           </li>
           <li>
             <em>Data exchange —</em>
-            Qworum defines a standard mechanism for exchanging data between Qworum services and their callers. This obviates the need for developing ad hoc data exchange solutions that are specific to a given application, framework or organization.
+            Qworum defines a standard mechanism for exchanging data between Qworum services and their callers. This
+            obviates the need for developing ad hoc data exchange solutions that are specific to a given application,
+            framework or organization.
           </li>
           <li>
             <em>Nesting —</em>
             Qworum allows for unbounded nesting levels.
           </li>
         </ul>
-    
+
         <figure>
           <img src="bounded-nesting-issue.svg" alt="Qworum allows for unbounded nesting levels">
           <figcaption>2.3.2: Qworum allows for unbounded nesting levels</figcaption>
@@ -376,16 +383,18 @@
     <section id="demo">
       <h2>4. Demonstration — application spanning several DNS domains</h2>
       <p>
-        <a href="/_assets/video/Qworum-demo-online-shop.mp4" target="_blank">This video</a> 
-        shows an online shop calling a remote shopping cart service. 
+        <a href="/_assets/video/Qworum-demo-online-shop.mp4" target="_blank">This video</a>
+        shows an online shop calling a remote shopping cart service.
       </p>
       <p>
-        See this demo live at <a href="https://shop.demo.qworum.net" target="_blank">shop.demo.qworum.net</a>. 
+        See this demo live at <a href="https://shop.demo.qworum.net" target="_blank">shop.demo.qworum.net</a>.
         Be sure to <a href="#downloads">install</a> the Qworum extension for your desktop browser beforehand.
       </p>
       <p>
         In this demonstration, the e-shop is a Qworum application and the shopping cart is a remote Qworum service.
-        Thanks to Qworum, the shopping cart service integrates with the e-shop seamlessly, despite being hosted on another DNS domain. (The e-shop is hosted on <code>shop.demo.qworum.net</code> while the shopping cart is hosted on <code>cart.demo.qworum.net</code>)
+        Thanks to Qworum, the shopping cart service integrates with the e-shop seamlessly, despite being hosted on
+        another DNS domain. (The e-shop is hosted on <code>shop.demo.qworum.net</code> while the shopping cart is hosted
+        on <code>cart.demo.qworum.net</code>)
       </p>
       <figure>
         <img src="/_assets/images/Qworum-demo-online-shop.png" alt="Video of demo">
@@ -396,10 +405,15 @@
       </p>
       <ul>
         <li>
-          with Qworum the user experience is similar to the current Web, with the exception that the browser's back button will be disabled.
+          with Qworum the user experience is similar to the current Web, with the exception that the browser's back
+          button will be disabled.
         </li>
         <li>
-          search engines can't peek inside Qworum services, so if search engine optimization (SEO) is important for you then you might want to carefully consider which parts of your application will be implemented as Qworum services. For enterprise and business applications SEO is generally not an issue, but consumer applications such as an online shop might want to only use remote Qworum services and limit the use of internal Qworum services to the parts that should remain out of reach for search engines.
+          search engines can't peek inside Qworum services, so if search engine optimization (SEO) is important for you
+          then you might want to carefully consider which parts of your application will be implemented as Qworum
+          services. For enterprise and business applications SEO is generally not an issue, but consumer applications
+          such as an online shop might want to only use remote Qworum services and limit the use of internal Qworum
+          services to the parts that should remain out of reach for search engines.
         </li>
       </ul>
       <figure>
@@ -407,12 +421,15 @@
         <figcaption>4: A Qworum application using Qworum services that are hosted on other DNS domains</figcaption>
       </figure>
     </section>
-    
+
     <section id="security">
       <h2>5. A secure computing environment</h2>
       <p>
-        The Qworum platform conforms to the <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank">same-origin policy</a> that is the prevalent security mechanism for browser standards. In particular
-        all phases of a given Qworum object are contained in the object's web origin. This ensures that data belonging to one web origin is unable to accidentally leak to another origin.
+        The Qworum platform conforms to the <a
+          href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank">same-origin
+          policy</a> that is the prevalent security mechanism for browser standards. In particular
+        all phases of a given Qworum object are contained in the object's web origin. This ensures that data belonging
+        to one web origin is unable to accidentally leak to another origin.
       </p>
     </section>
 
@@ -460,7 +477,8 @@
       <h2>8. Developer Resources</h2>
       <ul>
         <li>
-          <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
+          <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
+            target="_blank">
             Browser extension
           </a>: Qworum applications must make sure that the user has installed and activated the Qworum extension. The
           demo linked above shows how this is done.
@@ -474,30 +492,38 @@
         <li>
           <a href="https://github.com/doga/qworum-demo" target="_blank">Demo project 1</a>:
           This GitHub repository contains the code base for the <a href="#demo">demonstration</a> shown above.
-          This project uses the JSON format for data that is received and returned by service end-points, and also for storing session data in the browser.
+          This project uses the JSON format for data that is received and returned by service end-points, and also for
+          storing session data in the browser.
         </li>
         <li>
           <a href="https://github.com/doga/qworum-demo-semantic" target="_blank">Demo project 2</a>:
           This GitHub repository contains the code base for the <a href="#demo">demonstration</a> shown above.
-          This project uses semantic data instead of JSON for data that is received and returned by service end-points, and also for storing session data in the browser.
+          This project uses semantic data instead of JSON for data that is received and returned by service end-points,
+          and also for storing session data in the browser.
         </li>
         <li>
-          <a href="https://gist.github.com/doga/f130bb6c678b109b16bbf2db25dbb853" target="_blank">Demo in pseudocode</a>:
-          This is a TypeScript pseudocode that describes the <a href="#demo">demonstration</a>. This is an easy way of seeing an overview of how the demo is structured.
+          <a href="https://gist.github.com/doga/f130bb6c678b109b16bbf2db25dbb853" target="_blank">Demo in
+            pseudocode</a>:
+          This is a TypeScript pseudocode that describes the <a href="#demo">demonstration</a>. This is an easy way of
+          seeing an overview of how the demo is structured.
         </li>
         <li>
           <a href="https://marketplace.visualstudio.com/items?itemName=qworum.qworum" target="_blank">
-          Visual Studio Code extension</a>: Provides XML snippets for writing static Qworum scripts. This
+            Visual Studio Code extension</a>: Provides XML snippets for writing static Qworum scripts. This
           VS Code extension is automatically activated for files that have the <code>.qrm.xml</code> extension.
         </li>
       </ul>
       <p>
-        Note that, although you need to <a href="#entitlement">contact us</a> in order to use Qworum on your Internet website, you can develop Qworum-enabled websites locally right now. The web origins that are enabled by default are:
+        Note that, although you need to <a href="#entitlement">contact us</a> in order to use Qworum on your Internet
+        website, you can develop Qworum-enabled websites locally right now. The web origins that are enabled by default
+        are:
       </p>
       <ul>
         <li><code>http://127.0.0.1:8080</code> (port often used in the Java world)</li>
         <li><code>http://127.0.0.1:3000</code> (port often used in the Node.js world)</li>
-        <li><code>http://127.0.0.1:5500</code> (default port for VS Code's <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a> extension)</li>
+        <li><code>http://127.0.0.1:5500</code> (default port for VS Code's <a
+            href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live
+            Server</a> extension)</li>
         <li><code>http://127.0.0.1:5501</code> (alternative port for Live Server)</li>
         <li><code>http://127.0.0.1:5502</code> (alternative port for Live Server)</li>
       </ul>
@@ -506,20 +532,21 @@
     <section id="privacy-policy">
       <h2>9. Privacy Policy</h2>
       </p>
-        Qworum respects the privacy of end-users. Qworum's browser extension only has access to data that websites send it, and this data is deleted when you close the website's tab. Your data does not leave your computer.
+      Qworum respects the privacy of end-users. Qworum's browser extension only has access to data that websites send
+      it, and this data is deleted when you close the website's tab. Your data does not leave your computer.
       </p>
     </section>
 
     <section id="contact">
       <h2>10. Contact</h2>
       </p>
-        General inquiries:
-        <a href="mailto:info@qworum.com">info@qworum.com</a>.
+      General inquiries:
+      <a href="mailto:info@qworum.com">info@qworum.com</a>.
       </p>
 
       </p>
       Support for developers and end-users:
-        <a href="mailto:support@qworum.com">support@qworum.com</a>.
+      <a href="mailto:support@qworum.com">support@qworum.com</a>.
       </p>
     </section>
   </main>

@@ -24,7 +24,7 @@
         <rect x="17.658" y="157.413" width="71.33" height="21.163" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
         <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="53.323" y="171.742">Database</text>
       </g>
-      <text style="fill: url(#color-2); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" x="127.681" y="19.288">With micro-frontends</text>
+      <text style="fill: url(#color-2); font-family: Arial, sans-serif; font-size: 11.3px; text-anchor: middle; white-space: pre;" x="127.681" y="19.288">With micro frontends</text>
       <g transform="matrix(1, 0, 0, 1, 72.904831, 0.275528)">
         <rect x="17.658" y="157.413" width="71.33" height="21.163" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
         <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="53.323" y="171.742">Database</text>
@@ -49,7 +49,7 @@
       </g>
       <g transform="matrix(1, 0, 0, 1, -3, -2)">
         <rect x="12.924" y="33.472" width="232.72" height="26.575" rx="3" ry="3" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
-        <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="129.284" y="51.507">Web application (container for micro-frontends)</text>
+        <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 10.8px; text-anchor: middle;" x="129.284" y="51.507">Web application (container for micro frontends)</text>
       </g>
       <path d="M 76.688 167.266 H 90.226 L 90.226 164.153 L 97.308 168.511 L 90.226 172.868 L 90.226 169.756 H 76.688 V 167.266 Z" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-0.007473, 0.999972, -1.000091, 0.008429, 213.741714, -20.462543)" bx:shape="arrow 76.688 164.153 20.62 8.715 2.49 7.082 0 1@b786adda"/>
       <g transform="matrix(1, 0, 0, 1, -7.719082, -40.909981)">
