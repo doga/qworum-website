@@ -105,6 +105,10 @@ body>footer {
   color: #999;
 }
 
+body>footer>a {
+  color: #999 !important;
+}
+
 /* general figure setup */
 figure {padding: 1em; margin:0;}
 figure>img {

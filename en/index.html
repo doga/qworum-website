@@ -23,6 +23,12 @@
       flex-wrap: wrap;
       font-size: 17px;
     }
+/* 
+    section#entitlement {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0 2em 0.5em 2em;
+    } */
 
     .usp {
       color: green;
@@ -83,6 +89,11 @@
         Follow us on Twitter:
         <a href="https://twitter.com/QworumNet" target="_blank">@QworumNet</a>.
       <p>
+      <p>
+        <a href="#entitlement">
+          Purchase a domain subscription.
+        </a>
+      </p>
     </section>
 
     <section id="downloads">
@@ -170,7 +181,7 @@
         <li><a href="#demo">Demonstration — application spanning several DNS domains</a></li>
         <li><a href="#security">A secure computing environment</a></li>
         <li><a href="#use-cases">Use cases</a></li>
-        <li><a href="#entitlement">How to enable Qworum for your website</a></li>
+        <li><a href="#entitlement">Enabling Qworum for your domain</a></li>
         <li><a href="#developer-resources">Developer resources</a></li>
         <li><a href="#privacy-policy">Privacy Policy</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -435,29 +446,56 @@
 
     <section id="use-cases">
       <h2>6. Use cases</h2>
-      <p>The main use cases for Qworum are:</p>
-      <ul>
-        <li><strong>Application integration</strong>: Different Web-based applications can provide Qworum services to
-          each other and provide a seamless user experience that combines both applications.</li>
-        <li><strong>Productivity gains when developing web applications</strong>: An interactive service needs to be
-          implemented and made available on the Web only once. All Web applications can then leverage that service and
-          spare countless development hours.</li>
-      </ul>
-      <p>
-        Qworum is widely applicable. If an online service is interactive, then it can benefit from using Qworum. Here is
-        a foretaste of the types of services that Qworum can enable:
-      </p>
-      <ul>
-        <li>User authentication</li>
-        <li>Payment processing</li>
-        <li>Collection management — shopping cart, addressbook/contacts, movies, files, customer information, supplier
-          information, …</li>
-      </ul>
-
+      <p>Qworum is broadly applicable for all web applications, whether it be an e-commerce application or an enterprise application.</p>
     </section>
 
     <section id="entitlement">
-      <h2>7. How to enable Qworum for your website</h2>
+      <h2>7. Enabling Qworum for your domain</h2>
+      <p>
+        Enabling Qworum for your internet or intranet domain requires a subscription. Qworum subscriptions are available for purchase to companies and individuals worldwide.
+      </p>
+      <p>
+        Pricing:
+      </p>
+      <ul>
+        <li>
+          400 USD per month or 4,000 USD per year. This covers up to 5 subdomains of the subscribed domain plus the subscribed domain itself.  (If your company's domain is <code>xyz.example</code> and a subscription is requested for <code>a.xyz.example</code>, then the subscription will cover websites hosted on domains such as <code>a.xyz.example</code>, <code>b.a.xyz.example</code> and <code>e.d.c.a.xyz.example</code>. Subscriptions cover the standard TCP ports for both the HTTPS and the HTTP protocols.)
+        </li>
+        <li>
+          The number of subscribed subdomains can be increased for 80 USD per month per additional subdomain or 800 USD per year per additional subdomain.
+        </li>
+      </ul>
+      <p>
+        Simply purchase your domain subscription by sending an email to <a href="mailto:info@qworum.net?subject=Domain+subscription">info@qworum.net</a>. Please make sure to include the following information:
+      </p>
+      <ul>
+        <li>
+          Company name.
+        </li>
+        <li>
+          Company address.
+        </li>
+        <li>
+          Company's email address.
+        </li>
+        <li>
+          Company's DNS domain or subdomain for which the domain subscription is being requested.
+        </li>
+        <li>
+          The subscription renewal frequency (monthly or yearly).
+        </li>
+        <li>
+          Optionally, the number of additional subdomains to be included in the subscription.
+        </li>
+      </ul>
+
+      <p>
+        You will receive an invoice by email. Your domain subscription will be activated within 7 workdays after payment (more precisely, 3 workdays + the time that Chrome Web Store takes for publishing the updated Qworum browser extension, which is generally less than 3 workdays). Your subscription period will start when the Qworum browser extension is enabled for your domain. You will get an email confirmation.
+      </p>
+      <p>
+        If you'd like to try Qworum first, Qworum is FREE to use on your local machine. Please refer to the developer resources section.
+      </p>
+      <!-- <h2>7. Enabling Qworum for your domain</h2>
       <p>
         In order to enable Qworum for your website, simply send us an email by using <a
           href="mailto:entitlement@qworum.net?subject=EnableQworumForWebsite:+https://site.example">this link</a>. Be
@@ -470,7 +508,7 @@
       </p>
       <p>
         Enabling Qworum for your website is FREE and always will be.
-      </p>
+      </p> -->
     </section>
 
     <section id="developer-resources">
@@ -514,7 +552,7 @@
         </li>
         <li>
           <a href="https://groups.google.com/g/qworumnet?hl=en" target="_blank">
-            Google group</a>: You are welcome to visit this group for feature requests, bug reports and general discussion.
+            Google group</a>: Visit this group for feature requests, bug reports and general discussion.
         </li>
       </ul>
       <p>
@@ -524,7 +562,7 @@
       </p>
       <ul>
         <li><code>http://localhost:8080</code>, <code>http://27.0.0.1:8080</code> (TCP port 8080 is often used in the Java world)</li>
-        <li><code>http://localhost:3000</code>, <code>http://27.0.0.1:3000</code> (port 3000 is often used with Node.js)</li>
+        <li><code>http://localhost:3000</code>, <code>http://27.0.0.1:3000</code> (port 3000 is often used in Deno or Node.js projects)</li>
         <li><code>http://localhost:5500</code>, <code>http://27.0.0.1:5500</code> (5500 is the default port for VS Code's <a
             href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live
             Server</a> extension)</li>
@@ -555,7 +593,7 @@
     </section>
   </main>
   <footer>
-    © 2022 Doğa Armangil
+    © 2022 Armangil Software, <a href="https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-268.664.734" target="_blank">Swiss Company Registration: CHE-268.664.734</a>
   </footer>
 </body>
 
