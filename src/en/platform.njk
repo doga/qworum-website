@@ -1,0 +1,109 @@
+---
+layout: layouts/base.njk
+title: Platform
+nav:
+  selection: platform
+---
+
+<h1>
+  World's first module system for web applications
+</h1>
+
+<section id="platform">
+  <h2>Qworum is the Service Web</h2>
+  <p>
+    There are currently two different Webs that exist on the World Wide Web:
+  </p>
+  <ul>
+    <li>
+      The <dfn>Document Web</dfn>:
+      This the Web that most Web developers will be familiar with.
+      The primary type of content is the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+        target="_blank">HTML page</a>, and the primary content consumers are human users rather than machines.
+    </li>
+    <li>
+      The <dfn>Semantic Web</dfn>:
+      This the Web that is intended for machine consumption rather than human consumption.
+      The primary type of content is <a href="https://www.w3.org/standards/semanticweb/data" target="_blank">RDF</a>
+      and its various encodings such as JSON-LD and Turtle.
+    </li>
+  </ul>
+  <p>
+    Qworum adds another type of Web to the mix: the <dfn>Service Web</dfn>. Qworum is used for providing software
+    rather than content. Qworum services are:
+  </p>
+  <ul>
+    <li><strong>Interactive</strong>: They can interact with end-users through HTML pages.</li>
+    <li><strong>Composable</strong>: They can call other Qworum services, and even themselves. And Qworum services
+      can return data to their callers. A <dfn>Qworum application</dfn>, on the other hand, is simply a Qworum
+      service that does not have a caller.</li>
+  </ul>
+  <figure>
+    <img src="/assets/images/platform/the-three-webs.svg" alt="The three Webs">
+    <figcaption>1: The three Webs</figcaption>
+  </figure>
+  <p>Note that although Qworum is distinct from the two previous Webs, it builds on them:</p>
+  <ul>
+    <li>User interaction occurs through HTML pages. End-users will barely notice that they are using Qworum rather
+      than the Document Web.</li>
+    <li>Qworum services can return semantic data to their callers, in addition to conventional data such as
+      XML-wrapped JSON or any other XML data.</li>
+  </ul>
+  <figure>
+    <img src="/assets/images/platform/user-flow.png" style="width: 400px; height: auto;" alt="User flow">
+    <figcaption>2: The user flow when a Qworum application or service calls another Qworum service</figcaption>
+  </figure>
+</section>
+
+<section id="demo">
+  <h2>Demonstration — application spanning several DNS domains</h2>
+  <p>
+    <a href="https://www.youtube.com/watch?v=sSb1mqlFM4Y" target="_blank">This video</a>
+    shows an online shop calling a remote shopping cart service.
+  </p>
+  <p>
+    See this demo live at <a href="https://shop.demo.qworum.net" target="_blank">shop.demo.qworum.net</a>.
+    Be sure to install the Qworum browser extension.
+  </p>
+  <p>
+    In this demonstration, the e-shop is a Qworum application and the shopping cart is a remote Qworum service.
+    Thanks to Qworum, the shopping cart service integrates with the e-shop seamlessly, despite being hosted on
+    another DNS domain. (The e-shop is hosted on <code>shop.demo.qworum.net</code> while the shopping cart is hosted
+    on <code>cart.demo.qworum.net</code>)
+  </p>
+  <figure>
+    <img src="/assets/images/platform/Qworum-demo-online-shop.png" alt="Video of demo">
+    <figcaption>3: A screenshot of an e-shop Qworum application</figcaption>
+  </figure>
+  <p>
+    Note that:
+  </p>
+  <ul>
+    <li>
+      with Qworum the user experience is similar to the current Web, with the exception that the browser's back
+      button will be disabled.
+    </li>
+    <li>
+      search engines can't peek inside Qworum services, so if search engine optimization (SEO) is important for you
+      then you might want to carefully consider which parts of your application will be implemented as Qworum
+      services. For enterprise and business applications SEO is generally not an issue, but consumer applications
+      such as an online shop might want to only use remote Qworum services and limit the use of internal Qworum
+      services to the parts that should remain out of reach for search engines.
+    </li>
+  </ul>
+  <figure>
+    <img src="/assets/images/platform/demo.svg" alt="Schematics of demo">
+    <figcaption>4: A Qworum application using Qworum services that are hosted on other DNS domains</figcaption>
+  </figure>
+</section>
+
+<section id="security">
+  <h2>A secure computing environment</h2>
+  <p>
+    The Qworum platform conforms to the <a
+      href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank">same-origin
+      policy</a> that is the prevalent security mechanism for browser standards. In particular
+    all phases of a given Qworum object are contained in the object's web origin. This ensures that data belonging
+    to one web origin is unable to accidentally leak to another origin.
+  </p>
+</section>

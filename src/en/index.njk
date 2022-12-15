@@ -1,0 +1,96 @@
+---
+layout: layouts/base.njk
+css: home.css
+title: Home
+nav:
+  selection: home
+
+mission: |
+  World's first platform for modular and distributed web applications
+subtext: |
+  Make your web frontends fully compatible with microservices architectures and multiple devops teams for operational excellence.
+
+downloads:
+- Qworum adds advanced features to web browsers. Websites that use Qworum will ask you to install the Qworum browser extension. You can also install it beforehand.
+- You can safely install this extension. Qworum is only activated for some websites, and it uses few computer resources even when activated.
+- Qworum respects your privacy. Your data does not leave your computer.
+
+---
+
+<ul class="home-marquee">
+  <li>
+    <h1>{{ mission }}</h1>
+    <p>{{ subtext }}</p>
+  </li>
+  <li>
+    <figure>
+      <img src="/assets/images/licensed/rohit-choudhari-puy-FW4fOJc-unsplash-modif-400.png" alt="">
+    </figure>
+  </li>
+</ul>
+
+<section id="downloads">
+  <h2>Downloads</h2>
+
+  <div id="downloads-list">
+    <!-- order browsers by market share: Browser Market Share Worldwide https://gs.statcounter.com/browser-market-share -->
+    <figure class="download" id="chrome">
+      <img src="/assets/images/logos/Google_Chrome_icon_(February_2022).svg" alt="Google Chrome icon">
+      <figcaption>
+        <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
+          target="_blank">
+          Qworum for <br> Google Chrome
+        </a>
+      </figcaption>
+    </figure>
+    <figure class="download" id="safari">
+      <img src="/assets/images/logos/Safari_browser_logo.svg" alt="Safari icon">
+      <figcaption>
+        Qworum for <br> Safari
+      </figcaption>
+    </figure>
+    <figure class="download" id="edge">
+      <!-- TODO use the [Microsoft Edge add-ons store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home) -->
+      <img src="/assets/images/logos/Microsoft_Edge_logo_(2019).svg" alt="Microsoft Edge icon">
+      <figcaption>
+        <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
+          target="_blank">
+          Qworum for <br> Microsoft Edge
+        </a>
+      </figcaption>
+    </figure>
+    <figure class="download" id="firefox">
+      <img src="/assets/images/logos/Firefox_logo_2019.svg" alt="Firefox icon">
+      <figcaption>
+        Qworum for <br> Firefox
+      </figcaption>
+    </figure>
+    <figure class="download" id="opera">
+      <!-- TODO use the [Opera addons store](https://addons.opera.com/en-gb/extensions/?ref=menu) -->
+      <img src="/assets/images/logos/Opera_2015_logo-cropped.svg" alt="Opera Browser icon">
+      <figcaption>
+        <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
+          target="_blank">
+          Qworum for <br> Opera Browser
+        </a>
+      </figcaption>
+    </figure>
+    <figure class="download" id="brave">
+      <img src="/assets/images/logos/Brave-logo-color-RGB_reversed-cropped.svg" alt="Brave Browser icon">
+      <figcaption>
+        <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
+          target="_blank">
+          Qworum for <br> Brave Browser
+        </a>
+      </figcaption>
+    </figure>
+  </div>
+
+  {% for paragraph in downloads %}
+  <p class="downloads-explanation">{{ paragraph }}</p>
+  {% endfor %}
+
+</section>
+
+<script type="module" src="/assets/js/homepage.js"></script>
+

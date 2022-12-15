@@ -1,0 +1,38 @@
+---
+layout: ./base.njk
+---
+
+<h1>{{ title }}</h1>
+<p class="pricing-description">{{ description | safe }}</p>
+
+<ul class="pricing-plans">
+  {% for plan in plans %}
+  <li>
+    <p class="pricing-plan-title">
+      {{ plan.title | upper }}
+    </p>
+    <p>
+      {{ plan.price }}
+    </p>
+    <p>
+      Features:
+    </p>
+    <ul>
+      {% for feature in plan.features %}
+      <li>
+        {{ feature }}
+      </li>
+      {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>
+
+<p>Notes:</p>
+<ul class="pricing-notes">
+  {% for note in notes %}
+  <li>
+    {{ note | safe }}
+  </li>
+  {% endfor %}
+</ul>

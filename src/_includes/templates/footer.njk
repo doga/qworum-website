@@ -1,0 +1,18 @@
+<footer>
+  © 
+
+  <time datetime="{% siteUpdateYear %}">
+    {% siteUpdateYear %}
+  </time>
+
+  {# file creation time, not site update time #}
+  {# <time datetime="{{ date | date('DATE') }}">
+    {{ date | date('YEAR') }}
+  </time> #}
+
+  {{ company.name }} 
+  —
+  <a href="{{company.registration.url}}" target="_blank">
+    {{ company.registration.id }}
+  </a>
+</footer>

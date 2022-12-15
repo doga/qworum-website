@@ -1,0 +1,61 @@
+#downloads-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 17px;
+}
+
+.download {
+  opacity: .3;
+}
+
+.download:hover {
+  opacity: 1;
+}
+
+.download.selected {
+  opacity: 1;
+}
+
+p.downloads-explanation {
+  font-size: small;
+}
+
+/* download figures */
+#downloads-list > figure > img {width: 50px;}
+#downloads-list > figure > figcaption {font-size: 15px;}
+#downloads-list > figure > figcaption::before {content: "";}
+#downloads-list > figure > figcaption::after {content: "";}
+
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #downloads-list > figure > img {width: 55px;}
+  #downloads-list > figure > figcaption {font-size: 15px;}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #downloads-list > figure > img {width: 60px;}
+  #downloads-list > figure > figcaption {font-size: 15px;}
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #downloads-list > figure > img {width: 65px;}
+  #downloads-list > figure > figcaption {font-size: 16px;}
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #downloads-list > figure > img {width: 70px;}
+  #downloads-list > figure > figcaption {font-size: 17px;}
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  #downloads-list > figure > img {width: 75px;}
+  #downloads-list > figure > figcaption {font-size: 18px;}
+}

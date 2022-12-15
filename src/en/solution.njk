@@ -1,0 +1,143 @@
+---
+layout: layouts/base.njk
+title: Solution
+nav:
+  selection: solution
+---
+
+<h1>
+  Web UI platform for microservices architectures
+</h1>
+
+<p>
+  Qworum helps enterprise devops teams modularize the UI layer of microservice-based software systems. 
+
+</p>
+
+<section id="ui-bottleneck">
+  <h2>Solving the UI-monolith bottleneck for microservices architectures</h2>
+
+  <section>
+    <h3>What are microservices architectures?</h3>
+    <p>
+      Microservices architectures enable rapid software delivery by allowing different parts of a software system to
+      be developed, deployed and updated in parallel by different teams within an organization and also across
+      organizations.
+    </p>
+    <p>
+      Microservices architectures organise developer teams around vertical slices of software systems rather than the
+      horizontal UI, business logic, and data layers. In order words, microservice teams are responsible for all of
+      these 3 layers within the boundaries of a particular slice.
+    </p>
+  </section>
+
+  <section>
+    <h3>What is wrong with monolithic user interfaces?</h3>
+    <!-- <p>
+      One problem that was unsolved until Qworum is the <em id="ui-monolith">UI monolith</em> issue for microservices architectures. 
+    </p>
+    <p>
+      Indeed, without Qworum current microservices architectures are unable to slice the UI layer into microservices completely. Web applications still must have a monolithic component at the UI layer. This monolithic component acts as a container for the different  <a href="https://martinfowler.com/articles/micro frontends.html"
+      target="_blank">micro frontends</a> which constitute parts of the monolith's web pages.
+    </p> -->
+    <p>
+      For microservices architectures,
+      having a monolithic component at the UI layer represents a bottleneck for the software development lifecycle,
+      because the team responsible for the UI monolith cannot scale with the number of microservices.
+    </p>
+
+    <h3>Are micro frontends the right solution?</h3>
+    <p>
+      Today, the only solution that software developers have at their disposal for breaking UI monoliths into
+      smaller parts involves micro frontends.
+    </p>
+    <p>
+      Micro frontends are UI components that are plugged into dashboard-style web pages for building web
+      applications. In this case web applications become simple containers for micro frontends.
+    </p>
+    <p>
+      Micro frontends are implemented using various technologies such as <a
+        href="https://reactjs.org/docs/components-and-props.html" target="_blank">React.js components</a>, <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">web components</a> or <a
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" target="_blank">iframes</a>, none of
+      which are specific to microservices architectures.
+    </p>
+    <p>
+      Besides being only suitable for dashboard-style applications, other limiting factors for micro frontends
+      include:
+    </p>
+    <ul>
+      <li>
+        <em>Bounding context —</em>
+        Micro-frontend solutions are typically only usable within a particular context rather than being universally
+        applicable. This limiting context can be
+        a particular organization (which precludes cross-organization applications),
+        a particular web application, or
+        a particular frontend framework such as React.js or Angular for example.
+      </li>
+      <li>
+        <em>Data exchange —</em>
+        The data exchange mechanism between a micro-frontend and its container is ad hoc at best.
+        For example, if a micro-frontend is implemented as a React.js component, then the micro-frontend can use
+        React.js's built-in mechanism for receiving data from its container.
+        On the other hand, how and if a React.js component can return a result to its container is an implementation
+        detail that needs to be resolved on a case by case basis.
+        This is because micro frontends are conceived as UI components rather than full-blown services.
+      </li>
+      <li id="nesting">
+        <em>Nesting —</em>
+        Micro frontends typically cannot be nested beyond 1 or 2 levels, because the allocated screen area becomes
+        significantly smaller with each nesting level.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Interactive microservices with Qworum</h3>
+    <p>
+      Qworum is a UI technology that was made specifically for microservices architectures.
+      In contrast to micro frontends, which are parts of web pages,
+      Qworum takes the web-API approach to user interaction.
+    </p>
+    <p id="interactive-service">
+      In effect, Qworum defines a new type of web API where each end-point can receive data, interact with the
+      end-user if needed, and then return a result. Note that Qworum services are not components embedded in web
+      pages. Rather, they offer full-page UIs to end-users.
+    </p>
+    <p>
+      Also, in contrast to micro-frontend solutions where there are two types of entities (micro frontends and
+      container applications), with Qworum everything is a Qworum service, including applications.
+    </p>
+    <figure>
+      <img src="/assets/images/solution/ui-bottleneck-issue.svg" alt="With Qworum everything is a Qworum service, including applications">
+      <figcaption>2.3.1: With Qworum everything is a Qworum service, including applications</figcaption>
+    </figure>
+    <p>
+      So, while Qworum complements micro frontends rather than making them obsolete, by the same token Qworum does
+      not have many of the limitations that micro frontends are burdened with:
+    </p>
+    <ul>
+      <li>
+        <em>Bounding context —</em>
+        Qworum is a web-scale microservices platform that is usable both within organizations and across
+        organizations. Qworum is also independent from any particular application or web framework.
+      </li>
+      <li>
+        <em>Data exchange —</em>
+        Qworum defines a standard mechanism for exchanging data between Qworum services and their callers. This
+        obviates the need for developing ad hoc data exchange solutions that are specific to a given application,
+        framework or organization.
+      </li>
+      <li>
+        <em>Nesting —</em>
+        Qworum allows for unbounded nesting levels.
+      </li>
+    </ul>
+
+    <figure>
+      <img src="/assets/images/solution/bounded-nesting-issue.svg" alt="Qworum allows for unbounded nesting levels">
+      <figcaption>2.3.2: Qworum allows for unbounded nesting levels</figcaption>
+    </figure>
+  </section>
+
+</section>
