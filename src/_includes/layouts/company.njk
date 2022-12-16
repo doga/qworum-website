@@ -24,10 +24,14 @@ layout: ./base.njk
   {{company.address}} <br>
   <a href="mailto:{{company.email}}" target="_blank">
     {{company.email}}
-  </a> —
+  </a> • 
+  <a href="{{company.twitter.url}}" target="_blank">
+    {{company.twitter.handle}}
+  </a>
+   {# •
   <a href="{{company.registration.url}}" target="_blank">
     {{ company.registration.id }}
-  </a> 
+  </a>  #}
 </p>
 
 {% for paragraph in description %}
