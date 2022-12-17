@@ -1,1 +1,14 @@
 lang: en
+
+# TODO infer the navigation menu from the directory structure
+menu:
+- title: Platform
+  path: platform
+- title: Solution
+  path: solution
+- title: Pricing
+  path: pricing
+- title: Developers
+  path: developers
+- title: Company
+  path: company
