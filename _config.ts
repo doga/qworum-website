@@ -8,7 +8,7 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import { dateToString } from "https://deno.land/x/date_format_deno@v1.1.0/mod.ts"; 
 
 // my plugins
-import mylog from './plugins/my/log.ts'
+import info from './plugins/my/log.ts';
 
 export default
 lume({
@@ -39,8 +39,8 @@ lume({
   { type: "tag" }
 )  // Example: {% siteUpdateYear %}
 
-// my plugins
-.use(mylog())
+// my plugins and processors
+// .use(info())
 // .process(['.yaml', '.njk'], (page) => {
 //   console.info(`page.src: ${JSON.stringify(page.src)}`)
 // })
