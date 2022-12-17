@@ -7,6 +7,9 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 // https://deno.land/x/date_format_deno@v1.1.0
 import { dateToString } from "https://deno.land/x/date_format_deno@v1.1.0/mod.ts"; 
 
+// my plugins
+import mylog from './plugins/my/log.ts'
+
 export default
 lume({
   location: new URL('https://qworum.net'),
@@ -35,6 +38,12 @@ lume({
   }, 
   { type: "tag" }
 )  // Example: {% siteUpdateYear %}
+
+// my plugins
+.use(mylog())
+// .process(['.yaml', '.njk'], (page) => {
+//   console.info(`page.src: ${JSON.stringify(page.src)}`)
+// })
 
 .use(resolveUrls())
 .use(sitemap())
