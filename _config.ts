@@ -10,6 +10,7 @@ import { dateToString } from "https://deno.land/x/date_format_deno@v1.1.0/mod.ts
 // my plugins
 import info from './plugins/my/log/mod.ts';
 import langdata from './plugins/my/langdata/mod.ts';
+import navbardata from './plugins/my/navbardata/mod.ts';
 
 export default
 lume({
@@ -43,6 +44,7 @@ lume({
 // my plugins and processors
 // .use(info())
 .use(langdata())
+.use(navbardata())
 // .process(['.yaml', '.njk'], (page) => {
 //   console.info(`page.src: ${JSON.stringify(page.src)}`)
 // })

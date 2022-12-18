@@ -2,6 +2,7 @@ layout: layouts/company.njk
 css: company.css
 title: Company
 nav:
+  order: 5
   selection: company
 
 description:

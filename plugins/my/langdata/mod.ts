@@ -1,5 +1,5 @@
 // Lume plugin https://lume.land/docs/advanced/plugins/
-// Shows info about the page being processed.
+// Generates language data for each localised version of the website.
 
 import * as path from "https://deno.land/std@0.167.0/path/mod.ts";
 import { Site } from "https://deno.land/x/lume@v1.13.2/core.ts";
@@ -11,15 +11,15 @@ import {Language} from './modules/language.ts';
 export default 
 function () {
   return (site: Site) => {
-    console.info(`ℹ️ langdata: site: ${JSON.stringify(site)}`);
+    // console.info(`ℹ️ langdata: site: ${JSON.stringify(site)}`);
 
     const
     currentWorkingDirectoryAbs: string = site.options.cwd,
     projectSourceDirectory    : string = site.options.src,
     projectSourceDirectoryAbs : string = path.resolve(currentWorkingDirectoryAbs, projectSourceDirectory);
 
-    console.info(`ℹ️ langdata: currentWorkingDirectoryAbs: ${currentWorkingDirectoryAbs}`);
-    console.info(`ℹ️ langdata: projectSourceDirectoryAbs: ${projectSourceDirectoryAbs}`);
+    // console.info(`ℹ️ langdata: currentWorkingDirectoryAbs: ${currentWorkingDirectoryAbs}`);
+    // console.info(`ℹ️ langdata: projectSourceDirectoryAbs: ${projectSourceDirectoryAbs}`);
 
     for (const dirEntry of Deno.readDirSync(projectSourceDirectoryAbs)) {
       if(!(dirEntry.isDirectory && Language.exists(dirEntry.name)))continue;
@@ -33,13 +33,13 @@ function () {
       let absLangDataDirInfo: Deno.FileInfo;
       try {
         absLangDataDirInfo = Deno.statSync(absLangDataDirname);
-      } catch (error) {
+      } catch (_error) {
         // _data does not exist
         Deno.mkdirSync(absLangDataDirname);
         absLangDataDirInfo = Deno.statSync(absLangDataDirname);
       }
       if(!absLangDataDirInfo.isDirectory)continue;
-      console.log(`  data dir: ${absLangDataDirname}`);
+      // console.log(`  data dir: ${absLangDataDirname}`);
 
       // ensure lang.yaml file does not exist
       const langYamlFilenameAbs = path.resolve(absLangDataDirname, 'lang.yaml');
