@@ -1,3 +1,4 @@
+// Log.
 // Lume plugin https://lume.land/docs/advanced/plugins/
 // Shows info about the page being processed.
 
