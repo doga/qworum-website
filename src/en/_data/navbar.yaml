@@ -1,10 +1,17 @@
+# This file was automatically generated at build time
+# on 2022-12-18 by the "navbardata" Lume plugin.
 - title: Platform
   path: platform
+  order: 1
 - title: Solution
   path: solution
+  order: 2
 - title: Pricing
   path: pricing
+  order: 3
 - title: Developers
   path: developers
+  order: 4
 - title: Company
   path: company
+  order: 5

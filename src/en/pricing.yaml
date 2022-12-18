@@ -1,6 +1,7 @@
 layout: layouts/pricing.njk
 css: pricing.css
 nav:
+  order: 3
   selection: pricing
 title: Plans
 description: |
