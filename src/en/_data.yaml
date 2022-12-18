@@ -1,6 +1,5 @@
 lang: en
 
-# TODO infer the navigation menu from the directory structure
 menu:
 - title: Platform
   path: platform
