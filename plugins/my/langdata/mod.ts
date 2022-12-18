@@ -2,7 +2,9 @@
 // Generates language data for website multilanguage websites.
 // Puts the generated data in <srcdir>/<langdir>/_data/lang.yaml.
 // Also generates a list of the site's languages in <srcdir>/languages.json.
-// This data can be used in layouts. For example a base.njk file can contain "<!DOCTYPE html><html lang='{{ lang.code }}'> ..."
+// How this plugin is useful:
+// ▶︎ This data can be used in layouts. For example a layout file can contain "<!DOCTYPE html><html lang='{{ lang.code }}'> ..."
+// ▶︎ /index.html can shunt the user to his/her preferred language with a JavaScript code such as fetch('/languages.json').then((response) => response.json()).then((siteLanguages) => { /*...*/ });
 
 import * as path from "https://deno.land/std@0.167.0/path/mod.ts";
 import { Site } from "https://deno.land/x/lume@v1.13.2/core.ts";
