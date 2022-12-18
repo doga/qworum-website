@@ -1,6 +1,7 @@
 // Lume plugin https://lume.land/docs/advanced/plugins/
-// Generates language data for each localised version of the website.
+// Generates language data for website multilanguage websites.
 // Puts the generated data in <srcdir>/<langdir>/_data/lang.yaml.
+// Also generates a list of the site's languages in <srcdir>/languages.json.
 // This data can be used in layouts. For example a base.njk file can contain "<!DOCTYPE html><html lang='{{ lang.code }}'> ..."
 
 import * as path from "https://deno.land/std@0.167.0/path/mod.ts";
@@ -16,15 +17,18 @@ function () {
     // console.info(`ℹ️ langdata: site: ${JSON.stringify(site)}`);
 
     const
-    currentWorkingDirectoryAbs: string = site.options.cwd,
-    projectSourceDirectory    : string = site.options.src,
-    projectSourceDirectoryAbs : string = path.resolve(currentWorkingDirectoryAbs, projectSourceDirectory);
+    languages                 : string[] = [],
+    currentWorkingDirectoryAbs: string   = site.options.cwd,
+    projectSourceDirectory     : string  = site.options.src,
+    projectSourceDirectoryAbs  : string  = path.resolve(currentWorkingDirectoryAbs, projectSourceDirectory);
 
     // console.info(`ℹ️ langdata: currentWorkingDirectoryAbs: ${currentWorkingDirectoryAbs}`);
     // console.info(`ℹ️ langdata: projectSourceDirectoryAbs: ${projectSourceDirectoryAbs}`);
 
     for (const dirEntry of Deno.readDirSync(projectSourceDirectoryAbs)) {
       if(!(dirEntry.isDirectory && Language.exists(dirEntry.name)))continue;
+
+      // directory serves the site in this language: dirEntry.name
 
       const
       langCode: string = dirEntry.name,
@@ -73,6 +77,23 @@ ${yaml}`);
         // should never happen
       }
 
+      languages.push(langCode);
+    }
+
+    // write <srcdir>/languages.json
+    const langsFilenameAbs : string = path.resolve(projectSourceDirectoryAbs, 'languages.json');
+    try {
+      const langsFilenameInfo: Deno.FileInfo = Deno.statSync(langsFilenameAbs);
+      // <srcdir>/languages.json exists
+      if(!langsFilenameInfo.isFile)return;
+      Deno.removeSync(langsFilenameAbs);
+    } catch (_error) {
+      // <srcdir>/languages.json does not exist
+    }
+    try {
+      Deno.writeTextFileSync(langsFilenameAbs, JSON.stringify(languages));
+    } catch (_error) {
+      console.error(`Error when writing languages file: ${langsFilenameAbs}`);
     }
 
   };
