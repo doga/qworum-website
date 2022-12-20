@@ -9,8 +9,8 @@ import { dateToString } from "https://deno.land/x/date_format_deno@v1.1.0/mod.ts
 
 // my plugins
 // import info from './plugins/my/log/mod.ts';
-import langdata from 'https://deno.land/x/lume_langdata@v1.0.5/mod.ts'; // my published lume plugin
-import navbardata from 'https://deno.land/x/lume_navbardata@v1.0.4/mod.ts'; // my published lume plugin
+import langdata from 'https://deno.land/x/lume_langdata@v1.0.6/mod.ts'; // my published lume plugin
+import navbardata from 'https://deno.land/x/lume_navbardata@v1.0.5/mod.ts'; // my published lume plugin
 
 export default
 lume({
