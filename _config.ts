@@ -35,10 +35,7 @@ lume({
 // New Nunjucks tags
 .helper(
   "siteUpdateYear", 
-  () => {
-    const now = new Date(); 
-    return dateToString('yyyy', now);
-  }, 
+  () => dateToString('yyyy', new Date()), 
   { type: "tag" }
 )  // Example: {% siteUpdateYear %}
 
