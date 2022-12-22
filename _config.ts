@@ -11,8 +11,8 @@ import { dateToString } from "https://deno.land/x/date_format_deno@v1.1.0/mod.ts
 // import info from './addons/my/log/mod.ts';
 import langdata from 'lume_langdata/mod.ts'; // my published lume plugin
 import navbardata from 'lume_navbardata/mod.ts'; // my published lume plugin
-import * as crossLanguageContent from './lume-addons/my/cross-language-content/mod.ts';
-
+// import * as crossLanguageContent from './lume-addons/my/cross-language-content/mod.ts';
+import * as lume_cross_language_content from 'lume_cross_language_content/mod.ts';
 const
 src  = './src',
 dest = './build';
@@ -54,8 +54,12 @@ lume({
 .use(resolveUrls())
 .use(sitemap())
 .use(minifyHTML())
+// .addEventListener(
+//   "afterBuild",
+//   crossLanguageContent.createAfterBuildListener(src, dest)
+// )
 .addEventListener(
   "afterBuild",
-  crossLanguageContent.createAfterBuildListener(src, dest)
+  lume_cross_language_content.createAfterBuildListener(src, dest)
 )
 ;

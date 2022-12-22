@@ -15,7 +15,7 @@ layout: ./base.njk
       {{ plan.price }}
     </p>
     <p>
-      Features:
+      {{ features_tag }}:
     </p>
     <ul>
       {% for feature in plan.features %}
@@ -28,7 +28,7 @@ layout: ./base.njk
   {% endfor %}
 </ul>
 
-<p>Notes:</p>
+<p>{{ notes_tag }}:</p>
 <ul class="pricing-notes">
   {% for note in notes %}
   <li>
