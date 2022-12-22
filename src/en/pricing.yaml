@@ -10,7 +10,7 @@ description: |
 plans: 
 
 - title   : Free  
-  price   : 0 USD
+  price   : 0 §§{currency}
   features: 
   - Develop Qworum applications and services on you local machine for free.
   - Free Visual Studio Code extension for developers.
@@ -18,20 +18,20 @@ plans:
   - Free browser extension for end-users.
 
 - title   : Basic
-  price   : 195 USD per month or 1,950 USD per year. 
+  price   : §§{plans.basic.monthly_fee} §§{currency} per month or §§{plans.basic.yearly_fee} §§{currency} per year. 
   features: 
-  - Enable Qworum for one DNS domain and 5 subdomains.
+  - Enable Qworum for one DNS domain and §§{plans.basic.subdomains} subdomains.
   - Subscribe an internet domain or an intranet domain.
-  - Enable additional subdomains for 39 USD per month per subdomain or 390 USD per year per subdomain.
+  - Enable additional subdomains for §§{plans.basic.additional_subdomains.monthly_fee} §§{currency} per month per subdomain or §§{plans.basic.additional_subdomains.yearly_fee} §§{currency} per year per subdomain.
   - Includes all features of the Free plan.
 
 # - title   : Enterprise
-#   price   : 500 USD per month or 5,000 USD per year. 
+#   price   : 500 §§{currency} per month or 5,000 §§{currency} per year. 
 #   features: 
 #   - Enables Qworum Observability Cloud.
 #   - Enables Qworum for one DNS domain plus up to 5 subdomains.
 #   - Subscribed domain may be an internet domain or an intranet domain.
-#   - Enable additional subdomains for 80 USD per month per subdomain or 800 USD per year per subdomain.
+#   - Enable additional subdomains for 80 §§{currency} per month per subdomain or 800 §§{currency} per year per subdomain.
 #   - Includes all features of free plan.
 
 notes:

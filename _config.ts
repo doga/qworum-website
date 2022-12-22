@@ -7,16 +7,20 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 // https://deno.land/x/date_format_deno@v1.1.0
 import { dateToString } from "https://deno.land/x/date_format_deno@v1.1.0/mod.ts"; 
 
-// my plugins
-// import info from './plugins/my/log/mod.ts';
+// my addons
+// import info from './addons/my/log/mod.ts';
 import langdata from 'lume_langdata/mod.ts'; // my published lume plugin
 import navbardata from 'lume_navbardata/mod.ts'; // my published lume plugin
+import * as crossLanguageContent from './lume-addons/my/cross-language-content/mod.ts';
+
+const
+src  = './src',
+dest = './build';
 
 export default
 lume({
+  src, dest,
   location: new URL('https://qworum.net'),
-  src     : './src',
-  dest    : './build',
   server  : {open: true}
 })
 
@@ -50,4 +54,8 @@ lume({
 .use(resolveUrls())
 .use(sitemap())
 .use(minifyHTML())
+.addEventListener(
+  "afterBuild",
+  crossLanguageContent.createAfterBuildListener(src, dest)
+)
 ;

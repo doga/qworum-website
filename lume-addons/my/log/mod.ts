@@ -2,7 +2,7 @@
 // Lume plugin https://lume.land/docs/advanced/plugins/
 // Shows info about the page being processed.
 
-import { Page, Site } from "https://deno.land/x/lume/core.ts";
+import { Page, Site } from "lume/core.ts";
 
 // interface Options {
 //   message: string;
