@@ -3,6 +3,8 @@
     "lume/"                       : "https://deno.land/x/lume@v1.14.2/",
     "lume_langdata/"              : "https://deno.land/x/lume_langdata@v1.0.9/",
     "lume_navbardata/"            : "https://deno.land/x/lume_navbardata@v1.0.10/",
-    "lume_cross_language_content/": "https://deno.land/x/lume_cross_language_content@v1.0.3/"
+    "lume_cross_language_content/": "https://deno.land/x/lume_cross_language_content@v1.0.5/",
+
+    "date_format/"                : "https://deno.land/x/date_format_deno@v1.1.0/"
   }
 }

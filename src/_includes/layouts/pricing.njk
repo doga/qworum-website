@@ -12,7 +12,7 @@ layout: ./base.njk
       {{ plan.title | upper }}
     </p>
     <p>
-      {{ plan.price }}
+      {{ plan.price | safe }}
     </p>
     <p>
       {{ features_tag }}:
@@ -20,7 +20,7 @@ layout: ./base.njk
     <ul>
       {% for feature in plan.features %}
       <li>
-        {{ feature }}
+        {{ feature | safe }}
       </li>
       {% endfor %}
     </ul>
@@ -36,3 +36,18 @@ layout: ./base.njk
   </li>
   {% endfor %}
 </ul>
+
+<script>
+  const lang = document.documentElement.lang;
+
+  document.querySelectorAll("span.price")
+  .forEach(priceElement => {
+    const
+    amount    = parseFloat(priceElement.dataset.amount),
+    currency  = priceElement.dataset.currency,
+    priceHtml = new Intl.NumberFormat(lang, { style: 'currency', currency }).format(amount);
+
+    priceElement.innerHTML = priceHtml;
+  });
+
+</script>

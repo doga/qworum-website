@@ -4,15 +4,15 @@ import sitemap from 'lume/plugins/sitemap.ts';
 // import date from "lume/plugins/date.ts"; // for displaying file creation time, but not site update time!
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 
-// https://deno.land/x/date_format_deno@v1.1.0
-import { dateToString } from "https://deno.land/x/date_format_deno@v1.1.0/mod.ts"; 
+import { dateToString } from "date_format/mod.ts"; 
 
 // my addons
 // import info from './addons/my/log/mod.ts';
 import langdata from 'lume_langdata/mod.ts'; // my published lume plugin
 import navbardata from 'lume_navbardata/mod.ts'; // my published lume plugin
-// import * as crossLanguageContent from './lume-addons/my/cross-language-content/mod.ts';
-import * as lume_cross_language_content from 'lume_cross_language_content/mod.ts';
+// import * as lume_cross_language_content from './lume-addons/my/lume_cross_language_content/mod.ts';
+import * as lume_cross_language_content from 'lume_cross_language_content/mod.ts'; // my published lume post-processor
+
 const
 src  = './src',
 dest = './build';
