@@ -17,7 +17,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2022.12.15 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2022.12.25 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>Qworum is:</p>
@@ -873,13 +873,18 @@ xmlns:data='https://qworum.net/ns/v1/data/'
 
       <h4>3.6.1. Fault types</h4>
 
+      <h5>
+        3.6.1.1. Service faults
+      </h5>
       <p>
         <code>service</code> faults are faults that are raised due to programming errors in Qworum applications and
         services, or they are faults whose handling is the responsibility of Qworum applications and services.
+      </p>
+      <p>
         This fault type has the following subtypes:
       </p>
       <ul>
-        <li><code>script</code> — The Qworum script has syntax errors.</li>
+        <li><code>script</code> — The Qworum script has syntax errors or it contains an <a href="#entitlement-fault">entitlement fault</a>.</li>
         <li><code>origin</code> — A phase of a Qworum object does not have the same origin <a
             href="#ref-origin">♦︎</a> as the Qworum object itself. (The origin of a Qworum object is the origin of
           the first call that is performed on the Qworum object.)</li>
@@ -889,7 +894,6 @@ xmlns:data='https://qworum.net/ns/v1/data/'
           of the strings (except the last one) in the path points to a non-existing Qworum object. This could
           indicate that a Qworum service that should have been called beforehand wasn't (remember that Qworum
           objects are only created when performing a service call).</li>
-        <li><code>entitlement</code> — The website has tried using a Qworum feature which it isn't entitled to. This is a runtime fault that can be raised by web browsers. Upgrading the subscribed Qworum plan for the website's domain or for a parent domain will usually prevent these faults. A financial transaction between the website owner and Qworum may be required. See Qworum's pricing page for details.</li>
         <li>
           <code>service-specific</code> — Used for faults which are specific to a particular Qworum service or
           application. Subtypes of this type are prefixed with <code>*</code>.
@@ -903,6 +907,9 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         <figcaption>3.6.1.1: A service-specific fault</figcaption>
       </figure>
 
+      <h5>
+        3.6.1.2. User-agent faults
+      </h5>
       <p><code>user-agent</code> faults are raised when an unexpected run-time error occurs in the user agent. This
         fault type has the following subtype:</p>
       <ul>
@@ -911,6 +918,19 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         </li>
       </ul>
 
+      <h5 id='entitlement-fault'>
+        3.6.1.3. Entitlement faults
+      </h5>
+
+      <p>
+        <code>entitlement</code> faults are raised when a website tries using a Qworum feature which it isn't entitled to. 
+      </p>
+      <p>
+        These faults are typically raised by the Qworum runtime when evaluating a <code>call</code> instruction. This usually indicates that an adequate Qworum subscription hasn't yet been purchased for the DNS domain of the service that is being called.
+      </p>
+      <p>
+        Only the Qworum runtime can generate and raise <code>entitlement</code> faults. Browsers will raise a <code>script</code> fault when the Qworum script they have received from a Qworum service or application contains this type of fault.
+      </p>
     </section>
 
     <section id="try">

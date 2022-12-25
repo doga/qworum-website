@@ -1,7 +1,7 @@
 import lume from 'lume/mod.ts';
 import minifyHTML from "lume/plugins/minify_html.ts";
 import sitemap from 'lume/plugins/sitemap.ts';
-// import date from "lume/plugins/date.ts"; // for displaying file creation time, but not site update time!
+import date from "lume/plugins/date.ts"; // for displaying file creation time, but not site update time!
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 
 import { dateToString } from "date_format/mod.ts"; 
@@ -31,9 +31,9 @@ lume({
 .copy('docs')
 
 // New Nunjucks filters
-// .use(date(
-//   {formats: {YEAR: 'yyyy'}}
-// )) // Example: {{ date | date('YEAR') }}
+.use(date(
+  {formats: {YEAR: 'yyyy'}}
+)) // Example: {{ date | date('YEAR') }}
 // .filter("encodeURIComponent", (uriComponent) => encodeURIComponent(uriComponent)) // Example: {{ encodeURIComponent('développeur') }}
 
 // New Nunjucks tags
