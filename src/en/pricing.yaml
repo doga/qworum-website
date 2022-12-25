@@ -3,7 +3,7 @@ css: pricing.css
 nav:
   order: 3
   selection: pricing
-title: Plans
+title: Qworum Platform Plans
 description: |
   Enable Qworum for your internet or intranet websites. 
 

@@ -923,13 +923,24 @@ xmlns:data='https://qworum.net/ns/v1/data/'
       </h5>
 
       <p>
-        <code>entitlement</code> faults are raised when a website tries using a Qworum feature which it isn't entitled to. 
+        <code>entitlement</code> faults are raised when a website tries using a Qworum feature which it isn't entitled to.
+        These faults are typically raised by the Qworum runtime when evaluating a <code>call</code> instruction.
       </p>
       <p>
-        These faults are typically raised by the Qworum runtime when evaluating a <code>call</code> instruction. This usually indicates that an adequate Qworum subscription hasn't yet been purchased for the DNS domain of the service that is being called.
+        This fault type has the following subtypes:
       </p>
+      <ul>
+        <li>
+          <code>platform subscription</code> — 
+          The service that is being called isn't subscribed to a Qworum platform plan, or the current subscription isn't sufficient and needs to be upgraded.
+        </li>
+        <li>
+          <code>service subscription</code> — 
+          The service that is being called is a paid service, and the caller's domain isn't subscribed to the called service.
+        </li>
+      </ul>
       <p>
-        Only the Qworum runtime can generate and raise <code>entitlement</code> faults. Browsers will raise a <code>script</code> fault when the Qworum script they have received from a Qworum service or application contains this type of fault.
+        Only the Qworum runtime can generate scripts containing <code>entitlement</code> faults. Browsers will raise a <code>script</code> fault when the Qworum script they have received from a Qworum service or application contains this type of fault.
       </p>
     </section>
 
