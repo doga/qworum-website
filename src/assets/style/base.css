@@ -111,13 +111,16 @@ figcaption {
   text-align: center;
 }
 
+/* 
+// css should not contain language specific content
 figcaption::before {
   content: "Figure ";
 }
 
 figcaption::after {
   content: ".";
-}
+} 
+*/
 
 
 /* // X-Small devices (portrait phones, less than 576px)

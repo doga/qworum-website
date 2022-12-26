@@ -17,7 +17,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2022.12.25 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2022.12.26 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>Qworum is:</p>
@@ -835,7 +835,7 @@ xmlns:data='https://qworum.net/ns/v1/data/'
     </section>
 
     <section id="fault">
-      <h3>3.6. <code>fault</code></h3> <!-- TODO human-readable i18'ed fault messages, the stack trace -->
+      <h3>3.6. <code>fault</code></h3> <!-- TODO human-readable i18'ed fault messages and stack trace -->
       <p>
         In computer programming, exceptions are used for disrupting the normal course of execution, because
         an exceptional event has occurred which prevents the program to proceed as intended.
@@ -860,13 +860,13 @@ xmlns:data='https://qworum.net/ns/v1/data/'
       <ul>
         <li>
           The <dfn><code>type</code></dfn> attribute specifies the type of the raised fault.
-          If this attribute is omitted, then the fault type will be <code>service</code>.
+          If this attribute is omitted, then the fault type will be <code>service-specific</code>.
         </li>
       </ul>
 
       <figure>
         <pre><code class="language-xml">
-&lt;fault type='origin' />
+&lt;fault type='* blocked valve' />
         </code></pre>
         <figcaption>3.6.1: A fault</figcaption>
       </figure>
@@ -884,7 +884,7 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         This fault type has the following subtypes:
       </p>
       <ul>
-        <li><code>script</code> — The Qworum script has syntax errors or it contains an <a href="#entitlement-fault">entitlement fault</a>.</li>
+        <li><code>script</code> — The Qworum script has syntax errors or it contains a <a href="#platform-faults">platform fault</a>.</li>
         <li><code>origin</code> — A phase of a Qworum object does not have the same origin <a
             href="#ref-origin">♦︎</a> as the Qworum object itself. (The origin of a Qworum object is the origin of
           the first call that is performed on the Qworum object.)</li>
@@ -897,15 +897,9 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         <li>
           <code>service-specific</code> — Used for faults which are specific to a particular Qworum service or
           application. Subtypes of this type are prefixed with <code>*</code>.
+          The use of subtypes is encouraged.
         </li>
       </ul>
-
-      <figure>
-        <pre><code class="language-xml">
-&lt;fault type='* blocked valve' />
-        </code></pre>
-        <figcaption>3.6.1.1.1: A service-specific fault</figcaption>
-      </figure>
 
       <h5>
         3.6.1.2. User-agent faults
@@ -918,13 +912,13 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         </li>
       </ul>
 
-      <h5 id='entitlement-fault'>
+      <h5>
         3.6.1.3. Entitlement faults
       </h5>
 
       <p>
         <code>entitlement</code> faults are raised when a website tries using a Qworum feature which it isn't entitled to.
-        These faults are typically raised by the Qworum runtime when evaluating a <code>call</code> instruction.
+        These faults are typically raised when evaluating a <code>call</code> instruction.
       </p>
       <p>
         This fault type has the following subtypes:
@@ -932,15 +926,52 @@ xmlns:data='https://qworum.net/ns/v1/data/'
       <ul>
         <li>
           <code>platform entitlement</code> — 
-          The service that is being called isn't subscribed to a Qworum platform plan, or the current subscription isn't sufficient and needs to be upgraded.
+          The service that is being called isn't part of the Qworum platform. This may be because the service is not subscribed to a Qworum platform plan, or the current subscription isn't sufficient and needs to be upgraded.
         </li>
         <li>
           <code>service entitlement</code> — 
-          The service that is being called is a paid service, and the caller's domain isn't subscribed to the called service.
+          The service that is being called is a paid service, and the caller isn't subscribed to the called service.
         </li>
       </ul>
+
+      <h4 id='platform-faults'>3.6.2. Platform faults vs service-specific faults</h4>
       <p>
-        Only the Qworum runtime can generate scripts containing <code>entitlement</code> faults. Browsers will raise a <code>script</code> fault when the Qworum script they have received from a Qworum service or application contains this type of fault.
+        Scripts are only allowed to contain faults whose type is <code>service-specific</code> or a subtype of <code>service-specific</code>.
+      </p>
+      <p>
+        All faults that are not service-specific are called <dfn>platform faults</dfn>, and
+        these are raised by the Qworum runtime itself when evaluating a script.
+      </p>
+      <p>
+        The evaluation of a script will raise a <code>script</code> fault at run-time if it explicitly contains:
+      </p>
+      <ul>
+        <li>
+          a platform fault, or
+        </li>
+        <li>
+          a fault that is neither a platform fault nor a service-specific fault.
+        </li>
+      </ul>
+      <figure>
+        <pre><code class="language-xml">
+&lt;sequence>
+  &lt;!-- BUG -->
+  &lt;fault type='origin' />
+
+  &lt;!-- BUG -->
+  &lt;fault type='unknown' />
+
+  &lt;!-- Correct -->
+  &lt;fault type='* payment cancelled' />
+&lt;/sequence>
+        </code></pre>
+        <figcaption>
+          3.6.2.1: This non-conforming script will raise a <code>script</code> fault
+        <figcaption>
+      </figure>
+      <p>
+        Although scripts can only contain service-specific faults, they can catch both platform faults and service-specific faults by using the <code>try</code> instruction.
       </p>
     </section>
 
@@ -948,7 +979,7 @@ xmlns:data='https://qworum.net/ns/v1/data/'
       <h3>3.7. <code>try</code></h3>
       <p>
         The <code>try</code> instruction is used for catching <a href="#fault">fault</a>s that are raised when
-        evaluating the instruction it contains (it can also contain a data element, which never raises a fault).
+        evaluating the instruction it contains (it can also contain a <a href="#data-values">data value</a>, which never raises a fault).
       </p>
 
       <p>
@@ -968,21 +999,23 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         <pre><code class="language-xml">
 &lt;!-- Yield the value of a data; initialise it if needed. -->
 &lt;try>
-&lt;data path='["shopping cart line items"]' />
+  &lt;data path='["shopping cart line items"]' />
 
-&lt;catch faults='["data"]'>
-&lt;!-- Initialise the data. -->
-&lt;data path='["shopping cart line items"]'>
-  &lt;data:json>[]&lt;/data:json>
-&lt;/data>
-&lt;/catch>
+  &lt;catch faults='["data"]'>
+    &lt;!-- Initialise the data. -->
+    &lt;data path='["shopping cart line items"]'>
+      &lt;data:json>[]&lt;/data:json>
+    &lt;/data>
+  &lt;/catch>
 &lt;/try>
         </code></pre>
-        <figcaption>3.7.1: A <code>try</code> instruction used to initialise a data</figcaption>
+        <figcaption>
+          3.7.1: A <code>try</code> instruction used to initialise a data
+        </figcaption>
       </figure>
 
       <p>
-        The <code>try</code> instruction will yield the result of the last instruction or data it evaluates.
+        The <code>try</code> instruction will yield the result of the last instruction or data value it evaluates.
       </p>
     </section>
 
@@ -1006,14 +1039,14 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
 &lt;data:json>
-{
-"productID": "2",
-"name"     : "XYZ Boots",
-"offers"   : {
-  "price"        : "75.95",
-  "priceCurrency": "EUR"
-}
-}
+  {
+    "productID": "2",
+    "name"     : "XYZ Boots",
+    "offers"   : {
+      "price"        : "75.95",
+      "priceCurrency": "EUR"
+    }
+  }
 &lt;/data:json>
         </code></pre>
         <figcaption>4.1.1: Example of <code>json</code> data</figcaption>
@@ -1063,20 +1096,20 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
 &lt;data:semantic>
-{
-"@context"       : {"@vocab":"https://schema.org/"},
-"@type"          : "ItemList",
-"itemListElement": {
-  "@type"    : "Product",
-  "productID": "2",
-  "name"     : "XYZ Boots",
-  "offers"   : {
-    "@type"        : "Offer",
-    "price"        : "75.95",
-    "priceCurrency": "EUR"
+  {
+    "@context"       : {"@vocab":"https://schema.org/"},
+    "@type"          : "ItemList",
+    "itemListElement": {
+      "@type"    : "Product",
+      "productID": "2",
+      "name"     : "XYZ Boots",
+      "offers"   : {
+        "@type"        : "Offer",
+        "price"        : "75.95",
+        "priceCurrency": "EUR"
+      }
+    }
   }
-}
-}
 &lt;/data:semantic>
 </code></pre>
         <figcaption>4.2.1: Example of semantic data written in JSON-LD</figcaption>
@@ -1086,25 +1119,25 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         <pre><code class="language-xml">
 &lt;!-- The end-user's shopping cart contents (2 items). -->
 &lt;data:semantic type='n-quads'>
-&lt;![CDATA[
-_:c14n0 &lt;https://schema.org/price> '75.95' .
-_:c14n0 &lt;https://schema.org/priceCurrency> 'EUR' .
-_:c14n0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
-_:c14n1 &lt;https://schema.org/itemListElement> _:c14n3 .
-_:c14n1 &lt;https://schema.org/itemListElement> _:c14n4 .
-_:c14n1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/ItemList> .
-_:c14n2 &lt;https://schema.org/price> '45.95' .
-_:c14n2 &lt;https://schema.org/priceCurrency> 'EUR' .
-_:c14n2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
-_:c14n3 &lt;https://schema.org/name> 'Alpha trainers' .
-_:c14n3 &lt;https://schema.org/offers> _:c14n2 .
-_:c14n3 &lt;https://schema.org/productID> '1' .
-_:c14n3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
-_:c14n4 &lt;https://schema.org/name> 'XYZ Boots' .
-_:c14n4 &lt;https://schema.org/offers> _:c14n0 .
-_:c14n4 &lt;https://schema.org/productID> '2' .
-_:c14n4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
-]]>
+  &lt;![CDATA[
+    _:c14n0 &lt;https://schema.org/price> '75.95' .
+    _:c14n0 &lt;https://schema.org/priceCurrency> 'EUR' .
+    _:c14n0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
+    _:c14n1 &lt;https://schema.org/itemListElement> _:c14n3 .
+    _:c14n1 &lt;https://schema.org/itemListElement> _:c14n4 .
+    _:c14n1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/ItemList> .
+    _:c14n2 &lt;https://schema.org/price> '45.95' .
+    _:c14n2 &lt;https://schema.org/priceCurrency> 'EUR' .
+    _:c14n2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
+    _:c14n3 &lt;https://schema.org/name> 'Alpha trainers' .
+    _:c14n3 &lt;https://schema.org/offers> _:c14n2 .
+    _:c14n3 &lt;https://schema.org/productID> '1' .
+    _:c14n3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
+    _:c14n4 &lt;https://schema.org/name> 'XYZ Boots' .
+    _:c14n4 &lt;https://schema.org/offers> _:c14n0 .
+    _:c14n4 &lt;https://schema.org/productID> '2' .
+    _:c14n4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
+  ]]>
 &lt;/data:semantic>
 </code></pre>
         <figcaption>4.2.1: Example of semantic data written in N-Quads</figcaption>
