@@ -1197,11 +1197,41 @@ xmlns:data='https://qworum.net/ns/v1/data/'
   <section id="browser-workarounds">
     <h2>5. Workarounds for browser limitations</h2>
     <p>
-      Qworum is currently implemented as a browser extension, and
-      Web browsers impose constraints on how extensions can change the behavior of browsers.
+      The developers of Qworum applications and services are required to observe some simple rules
+      for their software to work properly on browsers.
+      These rules are necessary because
+      Qworum is implemented as a browser extension, and
+      web browsers impose constraints on what extensions can do.
     </p>
     <p>
-      As a consequence, the developers of Qworum applications and services must observe the following rules.
+    </p>
+    <p>
+      One notable restriction currently imposed by browsers on extensions is that extensions are not allowed to prevent the end-user from going back in the tab history. 
+    </p>
+    <p>
+      While this browser behaviour is self-evident in a world where the web is used as a platform for interlinked documents and going back in the tab history is as natural as turning a page in a book, this becomes a significant problem when the web is used as a platform for applications, because in the latter case going back in the tab history implies going back in time in the application's UI.
+    </p>
+    <p>
+      Neeedless to say,
+      this can cause the application's UI to go out of sync with the application's internal state.
+    </p>
+    <p>
+      Currently one best practice for preventing this issue from occurring is to put the whole web application into a single web page and make the browser believe that an application is not an application but a web page. 
+      Other approaches exist that support multi-page applications, such as cache invalidation, but
+      what if the page in the tab's history concerns a resource that has since been deleted? 
+      In this case the page shouldn't be available to the end-user, but it is.
+    </p>
+    <p>
+      This line of reasoning leads to the conclusion that the web is still going through growing pains when it comes to
+      enabling applications rather than documents.
+    </p>
+    <p>
+      Qworum's position is that the tab history should be unavailable to applications,
+      and until browser extensions are allowed to disable the tab history,
+      the tab history must be prevented from growing when using applications.
+    </p>
+    <p>
+      So here are the rules to observe when developing Qworum applications and services.
     </p>
     <h3 id="hyperlinks">5.1. Hyperlinks</h3>
     <p>
@@ -1209,80 +1239,75 @@ xmlns:data='https://qworum.net/ns/v1/data/'
     </p>
     <figure>
       <pre><code class="language-html">
-&lt;button onclick="window.location.replace('new_url')">
-&nbsp;&nbsp;A hyperlink
-&lt;button />
-</code></pre>
-      <figcaption>5.1.1: Correct way of implementing hyperlinks in a Qworum session</figcaption>
-    </figure>
-    <figure>
-      <pre><code class="language-html">
+&lt;!-- BUG -->
 &lt;a href="new_url">
 &nbsp;&nbsp;A hyperlink
 &lt;a/>
 </code></pre>
-      <figcaption>5.1.2: Incorrect way of implementing hyperlinks in a Qworum session</figcaption>
+      <figcaption>5.1.1: Incorrect way of implementing hyperlinks in a Qworum session</figcaption>
     </figure>
-    <p>
-      This rule is due to the fact that Qworum only works correctly when only the last page in a tab's history is
-      accessible to the end-user during a Qworum session. Otherwise the web page in use will be out of sync with the
-      session state, and this will result in runtime errors.
-    </p>
-    <p>
-      But because browsers do not (yet) allow extensions to disable the back button, the only alternative is
-      preventing the tab history to grow. And that's exactly what <code>window.location.replace()</code> does.
-    </p>
+    <figure>
+      <pre><code class="language-html">
+&lt;!-- Correct -->
+&lt;button onclick="window.location.replace('new_url')">
+&nbsp;&nbsp;A hyperlink
+&lt;button />
+</code></pre>
+      <figcaption>5.1.2: Correct way of implementing hyperlinks in a Qworum session</figcaption>
+    </figure>
 
     <h3 id="using-only-get-requests">5.2. Forms</h3>
     <p>
-      Use AJAX for sending forms to the servers, because the normal way of sending forms grows the tab history.
+      Use AJAX rather than web forms for sending data to servers.
     </p>
     <figure>
       <pre><code class="language-html">
-&lt;ul>
-&lt;li>
-&lt;label for="name">Name:&lt;/label>
-&lt;input type="text" id="name" name="user_name" />
-&lt;/li>
-&lt;li>
-&lt;label for="mail">E-mail:&lt;/label>
-&lt;input type="email" id="mail" name="user_email" />
-&lt;/li>
-&lt;li>
-&lt;label for="msg">Message:&lt;/label>
-&lt;textarea id="msg" name="user_message">&lt;/textarea>
-&lt;/li>
-&lt;li class="button">
-&lt;button onclick="submit()">Send your message&lt;/button>
-&lt;/li>
-&lt;/ul></code></pre>
-      <figcaption>5.2.1: Correct way of sending forms during a Qworum session</figcaption>
-    </figure>
-    <figure>
-      <pre><code class="language-html">
+&lt;!-- BUG -->
 &lt;form action="/my-handling-form-page" method="post">
-&lt;ul>
-&lt;li>
-  &lt;label for="name">Name:&lt;/label>
-  &lt;input type="text" id="name" name="user_name" />
-&lt;/li>
-&lt;li>
-  &lt;label for="mail">E-mail:&lt;/label>
-  &lt;input type="email" id="mail" name="user_email" />
-&lt;/li>
-&lt;li>
-  &lt;label for="msg">Message:&lt;/label>
-  &lt;textarea id="msg" name="user_message">&lt;/textarea>
-&lt;/li>
-&lt;li class="button">
-  &lt;button type="submit">Send your message&lt;/button>
-&lt;/li>
-&lt;/ul>
+  &lt;ul>
+    &lt;li>
+      &lt;label for="name">Name:&lt;/label>
+      &lt;input type="text" id="name" name="user_name" />
+    &lt;/li>
+    &lt;li>
+      &lt;label for="mail">E-mail:&lt;/label>
+      &lt;input type="email" id="mail" name="user_email" />
+    &lt;/li>
+    &lt;li>
+      &lt;label for="msg">Message:&lt;/label>
+      &lt;textarea id="msg" name="user_message">&lt;/textarea>
+    &lt;/li>
+    &lt;li class="button">
+      &lt;button type="submit">Send your message&lt;/button>
+    &lt;/li>
+  &lt;/ul>
 &lt;/form>
 </code></pre>
-      <figcaption>5.2.2: Incorrect way of sending forms during a Qworum session</figcaption>
+      <figcaption>5.2.1: Incorrect way of sending forms during a Qworum session</figcaption>
     </figure>
 
+    <figure>
+      <pre><code class="language-html">
+&lt;!-- Correct -->
+&lt;ul>
+  &lt;li>
+    &lt;label for="name">Name:&lt;/label>
+    &lt;input type="text" id="name" name="user_name" />
+  &lt;/li>
+  &lt;li>
+    &lt;label for="mail">E-mail:&lt;/label>
+    &lt;input type="email" id="mail" name="user_email" />
+  &lt;/li>
+  &lt;li>
+    &lt;label for="msg">Message:&lt;/label>
+    &lt;textarea id="msg" name="user_message">&lt;/textarea>
+  &lt;/li>
+  &lt;li class="button">
+    &lt;button onclick="submit()">Send your message&lt;/button>
+  &lt;/li>
+&lt;/ul></code></pre>
+      <figcaption>5.2.2: Correct way of sending forms during a Qworum session</figcaption>
+    </figure>
   </section>
 
   <section id="references">
