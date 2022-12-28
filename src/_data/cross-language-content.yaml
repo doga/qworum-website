@@ -1,10 +1,15 @@
-currency: USD
 plans:
   basic:
     subdomains: 5
-    monthly_fee: 95
-    yearly_fee: 950
-    additional_subdomains:
-      monthly_fee: 19
-      yearly_fee: 190
+    fee:
+      three_month:
+        USD: 285
+      twelve_month:
+        USD: 950
+    additional_subdomain:
+      fee:
+        three_month:
+          USD: 57
+        twelve_month:
+          USD: 190
 

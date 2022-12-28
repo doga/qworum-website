@@ -21,7 +21,7 @@ export default
 lume({
   src, dest,
   location: new URL('https://qworum.net'),
-  server  : {open: true}
+  // server  : {open: true}
 })
 
 // Copy static files

@@ -28,9 +28,9 @@ layout: ./base.njk
   {% endfor %}
 </ul>
 
-<p>{{ notes_tag }}:</p>
+<p>{{ conditions_tag }}:</p>
 <ul class="pricing-notes">
-  {% for note in notes %}
+  {% for note in conditions %}
   <li>
     {{ note | safe }}
   </li>
