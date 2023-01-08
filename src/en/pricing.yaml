@@ -20,25 +20,25 @@ plans:
   - Client-side JavaScript library.
   - Browser extension for end-users.
 
-- title   : Basic
+- title   : Qworum Business
   price   : >
-    <span class='price' data-amount='§§{plans.basic.fee.three_month.USD}' data-currency='USD'>
-      §§{plans.basic.fee.three_month.USD} USD
+    <span class='price' data-amount='§§{plans.qworum_business.fee.three_month.USD}' data-currency='USD'>
+      §§{plans.qworum_business.fee.three_month.USD} USD
     </span> for 3 months or 
 
-    <span class='price' data-amount='§§{plans.basic.fee.twelve_month.USD}' data-currency='USD'>
-      §§{plans.basic.fee.twelve_month.USD} USD
+    <span class='price' data-amount='§§{plans.qworum_business.fee.twelve_month.USD}' data-currency='USD'>
+      §§{plans.qworum_business.fee.twelve_month.USD} USD
     </span> for 12 months, renewable.
   features: 
-  - Enable Qworum for one DNS domain and §§{plans.basic.subdomains} subdomains.
+  - Enable Qworum for one DNS domain and §§{plans.qworum_business.subdomains} subdomains.
   - >
     Enable additional subdomains for 
-    <span class='price' data-amount='§§{plans.basic.additional_subdomain.fee.three_month.USD}' data-currency='USD'>
-      §§{plans.basic.additional_subdomain.fee.three_month.USD} USD
+    <span class='price' data-amount='§§{plans.qworum_business.additional_subdomain.fee.three_month.USD}' data-currency='USD'>
+      §§{plans.qworum_business.additional_subdomain.fee.three_month.USD} USD
     </span> for 3 months or 
 
-    <span class='price' data-amount='§§{plans.basic.additional_subdomain.fee.twelve_month.USD}' data-currency='USD'>
-      §§{plans.basic.additional_subdomain.fee.twelve_month.USD} USD
+    <span class='price' data-amount='§§{plans.qworum_business.additional_subdomain.fee.twelve_month.USD}' data-currency='USD'>
+      §§{plans.qworum_business.additional_subdomain.fee.twelve_month.USD} USD
     </span> for 12 months.
   - Prioritized customer support.
   - Money back guarantee.
@@ -58,12 +58,12 @@ conditions_tag: How it works
 
 conditions:
 - >
-  To purchase a Basic plan, simply send your subscription request to <a href="mailto:sales@qworum.net?subject=Basic+plan&body=Dear%20Qworum%20team%2C%0AI%20would%20like%20to%20purchase%20a%20Basic%20subscription%20for%20my%20DNS%20%28sub%29domain.%0A%0AHere%20are%20my%20subscription%20details%3A%0A%2A%20Company%20name%3A%20%0A%2A%20Company%20address%3A%20%0A%2A%20Company%27s%20email%20address%3A%20%0A%2A%20DNS%20domain%20to%20subscribe%3A%20%0A%2A%20Subscription%20renewal%20frequency%20%283-month%20or%2012-month%29%3A%20%0A%2A%20Optionally%2C%20the%20number%20of%20additional%20subdomains%20to%20be%20included%20in%20the%20subscription%3A%20%0A%0AThanks%20in%20advance." target="_blank">sales@qworum.net</a>. Please make sure to include the following information: Company name, Company address, Company's email address, DNS domain or subdomain to subscribe, Subscription renewal frequency (3-month or 12-month), and optionally The number of additional subdomains to be included in the subscription.
+  To purchase a Qworum Business subscription, simply send your subscription request to <a href="mailto:sales@qworum.net?subject=Qworum+Business+subscription&body=Dear%20Qworum%20team%2C%0AI%20would%20like%20to%20purchase%20a%20Qworum%20Business%20subscription%20for%20my%20DNS%20%28sub%29domain.%0A%0AHere%20are%20my%20subscription%20details%3A%0A%2A%20Company%20name%3A%20%0A%2A%20Company%20address%3A%20%0A%2A%20Company%27s%20email%20address%3A%20%0A%2A%20DNS%20domain%20to%20subscribe%3A%20%0A%2A%20Subscription%20renewal%20frequency%20%283-month%20or%2012-month%29%3A%20%0A%2A%20[Optional]%20the%20number%20of%20additional%20subdomains%20to%20be%20included%20in%20the%20subscription%3A%20%0A%0AThanks%20in%20advance." target="_blank">sales@qworum.net</a>. Please make sure to include the following information: Company name, Company address, Company's email address, DNS domain or subdomain to subscribe, Subscription renewal frequency (3-month or 12-month), and optionally The number of additional subdomains to be included in the subscription.
 - >
   Subscriptions that haven't been renewed 15 days after the renewal date will be automatically terminated.
-  You can also actively terminate your subscription at renewal date by sending your termination request before that date to <a href="mailto:sales@qworum.net?subject=Basic+plan+termination&body=Dear%20Qworum%20team%2C%0AI%20would%20like%20to%20terminate%20my%20Basic%20subscription%20at%20the%20renewal%20date.%0A%0AHere%20are%20my%20subscription%20details%3A%0A%2A%20DNS%20domain%3A%20%0A%0AThanks%20in%20advance." target="_blank">sales@qworum.net</a>. In this case please make sure to include the following information: subscribed DNS domain.
+  You can also actively terminate your subscription at renewal date by sending your termination request before that date to <a href="mailto:sales@qworum.net?subject=Qworum+Business+subscription+termination&body=Dear%20Qworum%20team%2C%0AI%20would%20like%20to%20terminate%20my%20Qworum%20Business%20subscription%20at%20the%20renewal%20date.%0A%0AHere%20are%20my%20subscription%20details%3A%0A%2A%20DNS%20domain%3A%20%0A%0AThanks%20in%20advance." target="_blank">sales@qworum.net</a>. In this case please make sure to include the following information: subscribed DNS domain.
 - >
-  Money back guarantee: Subscriptions can be terminated with immediate effect if we receive the termination request by email at <a href="mailto:sales@qworum.net?subject=Basic+plan+termination+with+immediate+effect&body=Dear%20Qworum%20team%2C%0AI%20would%20like%20to%20terminate%20my%20Basic%20subscription%20with%20immediate%20effect.%0A%0AMy%20subscription%20details%3A%0A%2A%20DNS%20domain%3A%20%0A%0AMy%20bank%20account%20details%20for%20reimbursement%20of%20the%20unused%20subscription%20period%3A%0A%2A%20Bank%20account%20identifier%3A%20%0A%2A%20Name%3A%20%0A%2A%20Address%3A%20%0A%0AThanks%20in%20advance." target="_blank">sales@qworum.net</a> at least 30 days before the renewal date. In this case the unused subscription period will be paid back if this is requested and valid bank account details are provided.
+  Money back guarantee: Subscriptions can be terminated with immediate effect if we receive the termination request by email at <a href="mailto:sales@qworum.net?subject=Qworum+Business+subscription+termination+with+immediate+effect&body=Dear%20Qworum%20team%2C%0AI%20would%20like%20to%20terminate%20my%20Qworum%20Business%20subscription%20with%20immediate%20effect.%0A%0AMy%20subscription%20details%3A%0A%2A%20DNS%20domain%3A%20%0A%0AMy%20bank%20account%20details%20for%20reimbursement%20of%20the%20unused%20subscription%20period%3A%0A%2A%20Bank%20account%20identifier%3A%20%0A%2A%20Name%3A%20%0A%2A%20Address%3A%20%0A%0AThanks%20in%20advance." target="_blank">sales@qworum.net</a> at least 30 days before the renewal date. In this case the unused subscription period will be paid back if this is requested and valid bank account details are provided.
 - >
   Email support 
   and online forum 

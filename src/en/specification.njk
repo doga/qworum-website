@@ -17,7 +17,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2022.12.26 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2023.01.03 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>Qworum is:</p>
@@ -188,11 +188,12 @@ nav:
       <pre><code class="language-xml">
 &lt;!-- Qworum script received by the Web browser from an e-commerce site -->
 &lt;sequence xmlns="https://qworum.net/ns/v1/instruction/">
-&lt;!-- 1. Show the user's shopping cart-->
-&lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example/view/" />
 
-&lt;!-- 2. Go back to the e-commerce site -->
-&lt;goto href="/home/" />
+  &lt;!-- 1. Show the user's shopping cart-->
+  &lt;call object='["@", "shopping cart"]' href="https://shopping-cart.example/view/" />
+
+  &lt;!-- 2. Go back to the e-commerce site -->
+  &lt;goto href="/home/" />
 &lt;/sequence>
       </code></pre>
       <figcaption>1.1: Example of a Qworum script received by a Web browser</figcaption>
@@ -307,15 +308,15 @@ SemanticData = Qworum.SemanticData;
 
 // Example 1: Call the `home` end-point
 Qworum.eval(
-Script(Call('@', 'home/'))
+  Script(Call('@', 'home/'))
 );
 
 // Example 2: Return from the current call
 /* 
 Qworum.eval(
-Script(
-Return(Json(['a', 'b']))
-)
+  Script(
+    Return(Json(['a', 'b']))
+  )
 );
 */
         </code></pre>
@@ -540,7 +541,7 @@ Return(Json(['a', 'b']))
         <pre><code class="language-xml">
 &lt;!-- Clear the "shopping cart line items" data that is stored locally in the current call. -->
 &lt;data path='["shopping cart line items"]'>
-&lt;data:json>[]&lt;/data:json>
+  &lt;data:json>[]&lt;/data:json>
 &lt;/data>
         </code></pre>
         <figcaption>3.1.2.1: Writing data to a data container</figcaption>
@@ -553,7 +554,7 @@ Return(Json(['a', 'b']))
 &lt;!-- Write the line items received from the shopping cart service -->
 &lt;!-- to the "shopping cart line items" data that is stored in the current call. -->
 &lt;data path='["shopping cart line items"]'>
-&lt;call object='["@", "shopping cart"]' href='https://shopping-cart.example/view/' />
+  &lt;call object='["@", "shopping cart"]' href='https://shopping-cart.example/view/' />
 &lt;/data>
         </code></pre>
         <figcaption>3.1.2.2: Writing a call result to a data</figcaption>
@@ -590,7 +591,7 @@ Return(Json(['a', 'b']))
         <pre><code class="language-xml">
 &lt;call object='["@", "shopping cart"]' href='view/' />
         </code></pre>
-        <figcaption>3.2.1: A <code>call</code> instruction that issues a GET request</figcaption>
+        <figcaption>3.2.1: A <code>call</code> instruction</figcaption>
       </figure>
 
       <p>
@@ -599,10 +600,14 @@ Return(Json(['a', 'b']))
       </p>
 
       <p>
+        Service calls generate an HTTP(S) GET request when evaluated by the browser.
+      </p>
+
+      <p>
         Service calls can have data arguments and/or object arguments.
       </p>
 
-      <h4>3.2.1. The data arguments of service calls</h4>
+      <h4>3.2.1. Calls with data arguments</h4>
 
       <p>
         Service calls can have named data arguments, each argument containing one instruction or data.
@@ -611,7 +616,7 @@ Return(Json(['a', 'b']))
         call.
       </p>
       <p>
-        Data arguments will be will be made available to the new call on the client side as local datas with
+        Data arguments will be will be made available to the new call on the client side as local data with
         the same names as the data arguments.
       </p>
       <!-- <p>
@@ -625,23 +630,22 @@ Return(Json(['a', 'b']))
       <figure>
         <pre><code class="language-xml">
 &lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
-&lt;!-- Send the data to the server, in addition to making it available on the client. -->
-&lt;data-args>
-&lt;data-arg name='line items'> 
-  &lt;data:json>
-    [{
-      "title"   : "Classic ankle boots",
-      "price"   : {"EUR": 29.99},
-      "quantity": 1
-    }]
-  &lt;/data:json>
-&lt;/data-arg>
-&lt;/data-args>
+  &lt;data-args>
+    &lt;data-arg name='line items'> 
+      &lt;data:json>
+        [{
+          "title"   : "Classic ankle boots",
+          "price"   : {"EUR": 29.99},
+          "quantity": 1
+        }]
+      &lt;/data:json>
+    &lt;/data-arg>
+  &lt;/data-args>
 &lt;/call>
       </code></pre>
-        <figcaption>3.2.1.1: A <code>call</code> instruction that issues a POST request</figcaption>
+        <figcaption>3.2.1.1: A <code>call</code> instruction with arguments</figcaption>
       </figure>
-
+{# 
       <p id="phase-arguments">
         A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that
         contains an item named <code>qworum-arguments</code>:
@@ -656,18 +660,18 @@ Return(Json(['a', 'b']))
       <figure>
         <pre><code class="language-xml">
 &lt;data-args 
-xmlns='https://qworum.net/ns/v1/phase-arguments/'
-xmlns:data='https://qworum.net/ns/v1/data/'
+  xmlns='https://qworum.net/ns/v1/phase-arguments/'
+  xmlns:data='https://qworum.net/ns/v1/data/'
 >
-&lt;data-arg name='line items'> 
-&lt;data:json>
-  [{
-    "title"   : "Classic ankle boots",
-    "price"   : {"EUR": 29.99},
-    "quantity": 1
-  }]
-&lt;/data:json>
-&lt;/data-arg>
+  &lt;data-arg name='line items'> 
+    &lt;data:json>
+      [{
+        "title"   : "Classic ankle boots",
+        "price"   : {"EUR": 29.99},
+        "quantity": 1
+      }]
+    &lt;/data:json>
+  &lt;/data-arg>
 &lt;/data-args> <!-- TODO: add objects-paramaters element for passing Qworum objects (but first find a use case !!) -->
       </code></pre>
         <figcaption>3.2.1.2: Example of a phase arguments document that will be encoded in a POST request
@@ -678,24 +682,21 @@ xmlns:data='https://qworum.net/ns/v1/data/'
         Even if a service hasn't received its data arguments on the server side during its first phase, the service
         nevertheless has the option of sending any and all of its data to the server side during any of its later
         phases by using the <a href="#goto"> <code>goto</code></a> instruction.
-      </p>
+      </p> #}
 
-      <h4>3.2.2. The object arguments of service calls</h4>
+      <h4>3.2.2. Calls with object arguments</h4>
       <!-- <p class="note-to-editor">Use cases?</p> -->
       <p>
         Service calls can receive Qworum objects as arguments. These object arguments will be made available to
-        the new call on the client side as call-local objects that have the same names as the object arguments.
+        the new call on the client side as local objects that have the same names as the object arguments.
       </p>
       <figure>
         <pre><code class="language-xml">
 &lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
-&lt;data-args>
-…
-&lt;/data-args>
-&lt;object-args>
-&lt;!-- The caller is making its logger available to the service it is calling. -->
-&lt;object-arg name='logger' object='["@","logger"]' /> 
-&lt;/object-args>
+  &lt;object-args>
+    &lt;!-- The caller is making its logger available to the service it is calling. -->
+    &lt;object-arg name='logger' object='["@","logger"]' /> 
+  &lt;/object-args>
 &lt;/call>
       </code></pre>
         <figcaption>3.2.2.1: A <code>call</code> instruction that contains object arguments</figcaption>
@@ -713,7 +714,7 @@ xmlns:data='https://qworum.net/ns/v1/data/'
       <figure>
         <pre><code class="language-xml">
 &lt;return>
-&lt;data path='["@","line items"]' />
+  &lt;data path='["@","line items"]' />
 &lt;/return>
         </code></pre>
         <figcaption>3.3.1: Returning data as a result of the current call</figcaption>
@@ -792,30 +793,30 @@ xmlns:data='https://qworum.net/ns/v1/data/'
 &lt;!-- A shopping cart service directs the user to a remote payment processor. -->
 &lt;sequence>
 
-&lt;!-- 1. Call the payment processing service. -->
-&lt;!-- 2. Store the returned transaction details. -->
-&lt;data path='["@","latest transaction"]'>
-&lt;call object='["@","payment service"]' href="https://payment-processor.example/pay/">
-  &lt;data-args>
-    &lt;data-arg name="amount to pay">
-      &lt;data:json>
-        {
-          "amount"  : 98.99,
-          "currency": "EUR",
-        }
-      &lt;/data:json>
-    &lt;/data-arg>
-  &lt;/data-args>
-&lt;/call>
-&lt;/data>
+  &lt;!-- 1. Call the payment processing service. -->
+  &lt;!-- 2. Store the returned transaction details. -->
+  &lt;data path='["@","latest transaction"]'>
+    &lt;call object='["@","payment service"]' href="https://payment-processor.example/pay/">
+      &lt;data-args>
+        &lt;data-arg name="amount to pay">
+          &lt;data:json>
+            {
+              "amount"  : 98.99,
+              "currency": "EUR",
+            }
+          &lt;/data:json>
+        &lt;/data-arg>
+      &lt;/data-args>
+    &lt;/call>
+  &lt;/data>
 
-&lt;!-- 3. Empty the shopping cart, because payment has succeeded (otherwise a fault would have been raised). -->
-&lt;data path='["@","line items"]'>
-&lt;data:json>[]&lt;/data:json>
-&lt;/data>
+  &lt;!-- 3. Empty the shopping cart, because payment has succeeded (otherwise a fault would have been raised). -->
+  &lt;data path='["@","line items"]'>
+    &lt;data:json>[]&lt;/data:json>
+  &lt;/data>
 
-&lt;!-- 4. Go to the next phase of the current shopping cart method. -->
-&lt;goto href="paid.html" />
+  &lt;!-- 4. Go to the next phase of the current shopping cart method. -->
+  &lt;goto href="paid.html" />
 
 &lt;/sequence>
         </code></pre>
@@ -866,7 +867,7 @@ xmlns:data='https://qworum.net/ns/v1/data/'
 
       <figure>
         <pre><code class="language-xml">
-&lt;fault type='* blocked valve' />
+&lt;fault type='* payment cancelled' />
         </code></pre>
         <figcaption>3.6.1: A fault</figcaption>
       </figure>
@@ -882,6 +883,7 @@ xmlns:data='https://qworum.net/ns/v1/data/'
       </p>
       <p>
         This fault type has the following subtypes:
+        <!-- TODO "data type" fault (similar to JavaScript's TypeError) ? -->
       </p>
       <ul>
         <li><code>script</code> — The Qworum script has syntax errors or it contains a <a href="#platform-faults">platform fault</a>.</li>
@@ -895,10 +897,26 @@ xmlns:data='https://qworum.net/ns/v1/data/'
           indicate that a Qworum service that should have been called beforehand wasn't (remember that Qworum
           objects are only created when performing a service call).</li>
         <li>
+          <code>entitlement</code> — Raised when a website tries using a Qworum feature which it isn't entitled to. These faults are typically raised when evaluating a <code>call</code> instruction.
+
+        </li>
+        <li>
           <code>service-specific</code> — Used for faults which are specific to a particular Qworum service or
           application. Subtypes of this type are prefixed with <code>*</code>.
           The use of subtypes is encouraged. 
-          <!-- TODO "argument type" fault (similar to JavaScript's TypeError) -->
+        </li>
+      </ul>
+      <p>
+        The <code>entitlement</code> fault type has the following subtypes:
+      </p>
+      <ul>
+        <li>
+          <code>platform entitlement</code> — 
+          The service that is being called isn't part of Qworum's Service Web. This may be because the service is not subscribed to a Qworum platform plan, or the current subscription isn't sufficient and needs to be upgraded.
+        </li>
+        <li>
+          <code>service entitlement</code> — 
+          The service that is being called is a paid service, and the caller isn't subscribed to the called service.
         </li>
       </ul>
 
@@ -910,28 +928,6 @@ xmlns:data='https://qworum.net/ns/v1/data/'
       <ul>
         <li>
           <code>runtime</code> — Implementation error of the Qworum specification by the user agent.
-        </li>
-      </ul>
-
-      <h5>
-        3.6.1.3. Entitlement faults
-      </h5>
-
-      <p>
-        <code>entitlement</code> faults are raised when a website tries using a Qworum feature which it isn't entitled to.
-        These faults are typically raised when evaluating a <code>call</code> instruction.
-      </p>
-      <p>
-        This fault type has the following subtypes:
-      </p>
-      <ul>
-        <li>
-          <code>platform entitlement</code> — 
-          The service that is being called isn't part of Qworum's Service Web. This may be because the service is not subscribed to a Qworum platform plan, or the current subscription isn't sufficient and needs to be upgraded.
-        </li>
-        <li>
-          <code>service entitlement</code> — 
-          The service that is being called is a paid service, and the caller isn't subscribed to the called service.
         </li>
       </ul>
 

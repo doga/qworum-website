@@ -1,5 +1,5 @@
 plans:
-  basic:
+  qworum_business:
     subdomains: 5
     fee:
       three_month:

@@ -15,8 +15,8 @@ ul.pricing-plans>li {
   width: 15em;
   border: solid #ccc;
   border-radius: 15px;
-  margin: 0.5em 0.5em;
-  padding: 0.5em 0.5em;
+  margin: 0em 0.5em;
+  padding: 0em 1em 1em 1em;
   background-color: var(--accent-background-color);
 }
 
