@@ -1,0 +1,27 @@
+layout: layouts/demos.njk
+css: developers.css
+nav:
+  selection: developers
+title: Demos
+
+lead: >
+  Here are some non-interactive integration tests for the Qworum browser extension.
+  Note that these will only work on browsers that are Qworum-enabled.
+
+demos:
+- title: Endpoint call
+  description: Calls a Qworum service endpoint which immediately returns a JSON result.
+  link: /demos/call/1.qrm.xml
+- title: Platform entitlements
+  description: >
+    A "platform entitlement" fault will be raised when an attempt is made to call a Qworum service endpoint that is hosted on a DNS domain that is outside of Qworum's Service Web.
+  link: /demos/entitlements/1.qrm.xml
+- title: Platform faults
+  description: >
+    A "script" fault will be raised when the browser receives a Qworum script that contains a fault that is not service-specific.
+  link: /demos/fault-platform/1.qrm.xml
+- title: The goto instruction
+  description: >
+    A 2-phase service endpoint is called with a call argument in JSON format.
+    The first call phase uses a goto instruction for redirecting the end-user to a second call phase that returns the call argument to the caller.
+  link: /demos/goto/1.qrm.xml

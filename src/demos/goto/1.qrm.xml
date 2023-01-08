@@ -1,0 +1,11 @@
+<sequence xmlns='https://qworum.net/ns/v1/instruction/' xmlns:data='https://qworum.net/ns/v1/data/'>
+  <call object='["@"]' href='2.qrm.xml'>
+    <data-args>
+      <data-arg name='arg'>
+        <data:json>
+          {"year": 2023}
+        </data:json>
+      </data-arg>
+    </data-args>
+  </call>
+</sequence>

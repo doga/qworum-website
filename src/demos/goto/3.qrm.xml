@@ -1,0 +1,3 @@
+<sequence xmlns='https://qworum.net/ns/v1/instruction/' xmlns:data='https://qworum.net/ns/v1/data/'>
+  <data path='["arg"]' />
+</sequence>
