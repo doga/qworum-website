@@ -64,7 +64,7 @@
 
     
 
-    <h3>Classes</h3><ul><li id="Qworum-nav"><a href="Qworum.html">Qworum</a><ul class='methods'><li data-type="method" id="Qworum-ping-nav"><a href="Qworum.html#.ping">ping</a></li></ul></li><li id="QworumRuntimeModule-nav"><a href="QworumRuntimeModule.html">QworumRuntimeModule</a><ul class='methods'><li data-type="method" id="QworumRuntimeModule-Call-nav"><a href="QworumRuntimeModule.html#.Call">Call</a></li><li data-type="method" id="QworumRuntimeModule-Data-nav"><a href="QworumRuntimeModule.html#.Data">Data</a></li><li data-type="method" id="QworumRuntimeModule-eval-nav"><a href="QworumRuntimeModule.html#.eval">eval</a></li><li data-type="method" id="QworumRuntimeModule-Fault-nav"><a href="QworumRuntimeModule.html#.Fault">Fault</a></li><li data-type="method" id="QworumRuntimeModule-getData-nav"><a href="QworumRuntimeModule.html#.getData">getData</a></li><li data-type="method" id="QworumRuntimeModule-Goto-nav"><a href="QworumRuntimeModule.html#.Goto">Goto</a></li><li data-type="method" id="QworumRuntimeModule-Json-nav"><a href="QworumRuntimeModule.html#.Json">Json</a></li><li data-type="method" id="QworumRuntimeModule-Return-nav"><a href="QworumRuntimeModule.html#.Return">Return</a></li><li data-type="method" id="QworumRuntimeModule-Script-nav"><a href="QworumRuntimeModule.html#.Script">Script</a></li><li data-type="method" id="QworumRuntimeModule-SemanticData-nav"><a href="QworumRuntimeModule.html#.SemanticData">SemanticData</a></li><li data-type="method" id="QworumRuntimeModule-Sequence-nav"><a href="QworumRuntimeModule.html#.Sequence">Sequence</a></li><li data-type="method" id="QworumRuntimeModule-setData-nav"><a href="QworumRuntimeModule.html#.setData">setData</a></li><li data-type="method" id="QworumRuntimeModule-Try-nav"><a href="QworumRuntimeModule.html#.Try">Try</a></li></ul></li></ul>
+    <h3>Classes</h3><ul><li id="Qworum-nav"><a href="Qworum.html">Qworum</a><ul class='methods'><li data-type="method" id="Qworum-Call-nav"><a href="Qworum.html#.Call">Call</a></li><li data-type="method" id="Qworum-checkAvailability-nav"><a href="Qworum.html#.checkAvailability">checkAvailability</a></li><li data-type="method" id="Qworum-Data-nav"><a href="Qworum.html#.Data">Data</a></li><li data-type="method" id="Qworum-eval-nav"><a href="Qworum.html#.eval">eval</a></li><li data-type="method" id="Qworum-Fault-nav"><a href="Qworum.html#.Fault">Fault</a></li><li data-type="method" id="Qworum-getData-nav"><a href="Qworum.html#.getData">getData</a></li><li data-type="method" id="Qworum-Goto-nav"><a href="Qworum.html#.Goto">Goto</a></li><li data-type="method" id="Qworum-Json-nav"><a href="Qworum.html#.Json">Json</a></li><li data-type="method" id="Qworum-Return-nav"><a href="Qworum.html#.Return">Return</a></li><li data-type="method" id="Qworum-Script-nav"><a href="Qworum.html#.Script">Script</a></li><li data-type="method" id="Qworum-SemanticData-nav"><a href="Qworum.html#.SemanticData">SemanticData</a></li><li data-type="method" id="Qworum-Sequence-nav"><a href="Qworum.html#.Sequence">Sequence</a></li><li data-type="method" id="Qworum-setData-nav"><a href="Qworum.html#.setData">setData</a></li><li data-type="method" id="Qworum-Try-nav"><a href="Qworum.html#.Try">Try</a></li></ul></li></ul>
   </nav>
 
   <div id="main">
@@ -87,7 +87,25 @@
 
       
         <div class="class-description">
-          <p>The main Qworum class that allows web pages to use the Qworum browser extension.</p>
+          <p>Web applications can use the Qworum capabilities of web browsers through this class.</p>
+<h4 id="methods-for-manipulating-the-qworum-sessions-of-browser-tabs%3A">Methods for manipulating the Qworum sessions of browser tabs:</h4>
+<ul>
+<li>▶︎ <a href="#.eval">Qworum.eval()</a> evaluates a Qworum script.</li>
+<li>▶︎ <a href="#.setData">Qworum.setData()</a> sets the value of a data container.</li>
+<li>▶︎ <a href="#.getData">Qworum.getData()</a> reads the value of a data container.</li>
+</ul>
+<h4 id="methods-for-generating-qworum-scripts-that-are-passed-as-call-arguments-to-qworum.eval()%3A">Methods for generating Qworum scripts that are passed as call arguments to Qworum.eval():</h4>
+<ul>
+<li>▶︎ <a href="#.Script">Qworum.Script()</a> creates a Qworum script.</li>
+<li>▶︎ <a href="#.Call">Qworum.Call()</a>, <a href="#.Goto">Qworum.Goto()</a>, <a href="#.Return">Qworum.Return()</a>, <a href="#.Sequence">Qworum.Sequence()</a>, <a href="#.Fault">Qworum.Fault()</a>, <a href="#.Try">Qworum.Try()</a> and <a href="#.Data">Qworum.Data()</a> create instructions.</li>
+<li>▶︎ <a href="#.Json">Qworum.Json()</a> and <a href="#.SemanticData">Qworum.SemanticData()</a> create data values.</li>
+</ul>
+<h4 id="other-methods%3A">Other methods:</h4>
+<ul>
+<li>▶︎ <a href="#.checkAvailability">Qworum.checkAvailability()</a> verifies that a website can use the Qworum capabilities of browsers.</li>
+</ul>
+<p><em>Note:</em> The 📝 sign indicates a function that is used for generating Qworum scripts,
+and the 🚀 sign is for functions that call the Qworum browser extension.</p>
         </div>
       
     
@@ -164,7 +182,7 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2785">line 2785</a>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2422">line 2422</a>
         </li>
       </ul>
     </dd>
@@ -209,15 +227,15 @@
         
             
 
-<h4 class="name" id="runtime">
-  runtime
+<h4 class="name" id="message">
+  message
 </h4>
 
 
 
 
   <div class="description">
-    <p>Provides access to the Qworum runtime functionality (a pointer to the QworumRuntimeModule class).</p>
+    <p>A static array containing the Qworum instruction and data classes.</p>
   </div>
 
 
@@ -252,7 +270,7 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2804">line 2804</a>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2435">line 2435</a>
         </li>
       </ul>
     </dd>
@@ -282,7 +300,7 @@
 
 
   <div class="description">
-    <p>The implementation version (a string).</p>
+    <p>The version of this JavaScript library.</p>
   </div>
 
 
@@ -317,7 +335,7 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2797">line 2797</a>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2428">line 2428</a>
         </li>
       </ul>
     </dd>
@@ -349,13 +367,13 @@
   
 
   <span class='name-container'>
-    <a class="link-icon" href="#.ping">
+    <a class="link-icon" href="#.Call">
       <svg height="20" width="20" style="fill: black;">
         <use xlink:href="#linkIcon"></use>
       </svg>
     </a>
-    <h4 class="name" id=".ping">
-      <span class="type-signature">(async, static) </span>ping<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
+    <h4 class="name" id=".Call">
+      <span class="type-signature">(static) </span>Call<span class="signature">(object, href, arguments, objectArguments)</span><span class="type-signature"> &rarr; {Qworum.message.Call}</span>
     </h4>
   </span>
 
@@ -364,7 +382,7 @@
 
 
   <div class="description">
-    <p>🚀 Checks that the Qworum browser extension is installed and running.</p>
+    <p>📝 Builder for Call instructions.</p>
   </div>
 
 
@@ -373,6 +391,214 @@
 
 
  
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>object</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Array.&lt;string>
+    </span>
+
+    |
+
+    <span class="param-type">
+      string
+    </span>
+
+    |
+
+    <span class="param-type">
+      null
+    </span>
+
+    |
+
+    <span class="param-type">
+      undefined
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The path of the Qworum object to call.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>href</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    |
+
+    <span class="param-type">
+      null
+    </span>
+
+    |
+
+    <span class="param-type">
+      undefined
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The URL of the end-point to call. Can be a relative or absolute URL.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>arguments</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      object
+    </span>
+
+    |
+
+    <span class="param-type">
+      Array.&lt;object>
+    </span>
+
+    |
+
+    <span class="param-type">
+      null
+    </span>
+
+    |
+
+    <span class="param-type">
+      undefined
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>Named data value arguments.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>objectArguments</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      object
+    </span>
+
+    |
+
+    <span class="param-type">
+      Array.&lt;object>
+    </span>
+
+    |
+
+    <span class="param-type">
+      null
+    </span>
+
+    |
+
+    <span class="param-type">
+      undefined
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>Named Qworum object arguments.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
 
 
 
@@ -395,7 +621,7 @@
           
             
     <span class="param-type">
-      Promise.&lt;void>
+      Qworum.message.Call
     </span>
 
     
@@ -445,7 +671,7 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2832">line 2832</a>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2466">line 2466</a>
         </li>
       </ul>
     </dd>
@@ -453,6 +679,17 @@
 
   
 
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#call">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
   
 
   
@@ -490,20 +727,3059 @@
 
 
   <div class="example-container">
-    <a class="link-icon" href="#ping-examples">
+    <a class="link-icon" href="#Call-examples">
       <svg height="20" width="20" style="fill: black;">
         <use xlink:href="#linkIcon"></use>
       </svg>
     </a>
-    <h5 id="ping-examples">Example</h5>
+    <h5 id="Call-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>// Example 1
+const call1 = Qworum.Call('@', 'home/');
+// Example 2
+const call2 = Qworum.Call(
+  '@', 'home/', 
+  {name: 'current year', value: Qworum.Json(2022)}
+);
+// Example 3
+const call3 = Qworum.Call(
+  ['@'], 'home/',
+  [{name: 'current year', value: Qworum.Json(2022)}],
+  [{name: , object: ['@', 'a Qworum object']}]
+);</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.checkAvailability">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".checkAvailability">
+      <span class="type-signature">(async, static) </span>checkAvailability<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;null>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>🚀 Checks that:</p>
+<ul>
+<li>the Qworum browser extension is installed and running, and</li>
+<li>the website's <a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin">origin</a> is part of Qworum's Service Web.</li>
+</ul>
+  </div>
+
+
+
+
+
+
+ 
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Promise.&lt;null>
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          <p>Can throw an Error.</p>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2636">line 2636</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#checkAvailability-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="checkAvailability-examples">Example</h5>
     
 
   <pre class="prettyprint"><code>try{
-  await Qworum.ping();
-  console.info('The ping operation was successful.');
+  await Qworum.checkAvailability();
 }catch(error){
-  console.error('The ping operation was not successful.');
+  console.error('Qworum browser extension not installed or not enabled.');
 }     </code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.Data">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".Data">
+      <span class="type-signature">(static) </span>Data<span class="signature">(path, statement)</span><span class="type-signature"> &rarr; {Qworum.message.Data}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>📝 Builder for Data instructions.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>path</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    |
+
+    <span class="param-type">
+      Array.&lt;string>
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The path of the data container.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>statement</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.DataValue
+    </span>
+
+    |
+
+    <span class="param-type">
+      Qworum.message.Instruction
+    </span>
+
+    |
+
+    <span class="param-type">
+      undefined
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>An instruction or data value.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Data
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2569">line 2569</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#data">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <div class="param-desc">
+    
+      
+    <span class="param-type">
+      Error
+    </span>
+
+    
+
+
+    
+  </div>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#Data-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="Data-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const
+// Instruction for setting the value of a data container
+data1 = Qworum.Data('data1', Qworum.Json(2022)),
+// Instruction for reading the value of the data container
+data2 = Qworum.Data('data1');</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.eval">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".eval">
+      <span class="type-signature">(async, static) </span>eval<span class="signature">(script)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>🚀 Evaluates a Qworum script.</p>
+<p>The outcome is one of:</p>
+<ul>
+<li>Redirection to a new URL (the current Qworum session continues).</li>
+<li>Closing of the browser tab after displaying an alert window (the current Qworum session has terminated).</li>
+</ul>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>script</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Script
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Promise.&lt;void>
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          <p>Can throw a TypeError or Error.</p>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2674">line 2674</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#script">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#eval-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="eval-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const
+Script = Qworum.Script,
+Goto   = Qworum.Goto;
+
+await Qworum.eval(
+  Script(
+    Goto('next-phase/')
+  )
+);</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.Fault">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".Fault">
+      <span class="type-signature">(static) </span>Fault<span class="signature">(type)</span><span class="type-signature"> &rarr; {Qworum.message.Fault}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>📝 Builder for Fault instructions. Suitable for service-specific faults only.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>type</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    |
+
+    <span class="param-type">
+      undefined
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The type of the raised fault.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Fault
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2537">line 2537</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#fault">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <div class="param-desc">
+    
+      
+    <span class="param-type">
+      Qworum.message.FaultTypeError
+    </span>
+
+    
+
+
+    
+  </div>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#Fault-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="Fault-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const fault = Qworum.Fault('* payment cancelled');</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.getData">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".getData">
+      <span class="type-signature">(async, static) </span>getData<span class="signature">(path)</span><span class="type-signature"> &rarr; {Promise.&lt;(Qworum.message.Json|Qworum.message.SemanticData)>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>🚀 Reads a value contained in a data container.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>path</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Array.&lt;string>
+    </span>
+
+    |
+
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The path of the data container.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Promise.&lt;(Qworum.message.Json|Qworum.message.SemanticData)>
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          <ul>
+<li>The value in the data container. Can throw a TypeError or Error.</li>
+</ul>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2806">line 2806</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#data">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#getData-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="getData-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>try{
+  const result = await Qworum.getData(['a data']);
+  if (result instanceof Qworum.message.Json){
+    console.info(`The read operation was successful, the result is: ${JSON.stringify(result.value)}`);
+  }
+}catch(error){
+  console.error('The read operation was not successful.');
+}</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.Goto">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".Goto">
+      <span class="type-signature">(static) </span>Goto<span class="signature">(href)</span><span class="type-signature"> &rarr; {Qworum.message.Goto}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>📝 Builder for Goto instructions.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>href</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    |
+
+    <span class="param-type">
+      null
+    </span>
+
+    |
+
+    <span class="param-type">
+      undefined
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The URL of the end-point to call. Can be a relative or absolute URL.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Goto
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2496">line 2496</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#goto">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <div class="param-desc">
+    
+      
+    <span class="param-type">
+      Error
+    </span>
+
+    
+
+
+    
+  </div>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#Goto-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="Goto-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const goto = Qworum.Goto(
+  ['@'], 'home/'
+);</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.Json">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".Json">
+      <span class="type-signature">(static) </span>Json<span class="signature">(value)</span><span class="type-signature"> &rarr; {Qworum.message.Json}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>📝 Builder for Json data values.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>value</code></td>
+        
+
+        <td class="type">
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>A value that can be serialized to JSON.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Json
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2587">line 2587</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#json">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <div class="param-desc">
+    
+      
+    <span class="param-type">
+      Error
+    </span>
+
+    
+
+
+    
+  </div>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#Json-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="Json-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const json = Qworum.Json(2022);</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.Return">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".Return">
+      <span class="type-signature">(static) </span>Return<span class="signature">(statement)</span><span class="type-signature"> &rarr; {Qworum.message.Return}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>📝 Builder for Return instructions.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>statement</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.DataValue
+    </span>
+
+    |
+
+    <span class="param-type">
+      Qworum.message.Instruction
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The instruction or data value to evaluate.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Return
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2511">line 2511</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#return">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <div class="param-desc">
+    
+      
+    <span class="param-type">
+      Error
+    </span>
+
+    
+
+
+    
+  </div>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#Return-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="Return-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const return1 = Qworum.Return(Qworum.Json(2022));</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.Script">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".Script">
+      <span class="type-signature">(static) </span>Script<span class="signature">(instruction)</span><span class="type-signature"> &rarr; {Qworum.message.Script}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>📝 Builder for Qworum scripts.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>instruction</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Instruction
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The instruction to execute.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Script
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2445">line 2445</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#script">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#Script-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="Script-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const script = 
+Qworum.Script(
+  Qworum.Sequence(
+    // Show the user's shopping cart
+    Qworum.Call(["@", "shopping cart"], "https://shopping-cart.example/view/")
+
+    // Go back to the current e-shop
+    Qworum.Goto("/home/")
+  )
+);</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.SemanticData">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".SemanticData">
+      <span class="type-signature">(static) </span>SemanticData<span class="signature">(value, type)</span><span class="type-signature"> &rarr; {Qworum.message.SemanticData}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>📝 Builder for semantic data values.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>value</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The semantic data value.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>type</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    |
+
+    <span class="param-type">
+      undefined
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The type of the semantic data value. One of 'json-ld', 'n-quads'.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.SemanticData
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2600">line 2600</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#semantic">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <div class="param-desc">
+    
+      
+    <span class="param-type">
+      Error
+    </span>
+
+    
+
+
+    
+  </div>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#SemanticData-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="SemanticData-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const json = Qworum.SemanticData(`{
+  "@context"  : {"@vocab": "https://schema.org/"},
+  "@id"       : "https://www.wikidata.org/wiki/Q92760",
+  "@type"     : "Person",
+  "givenName" : "Claude",
+  "familyName": "Shannon",
+  "birthDate" : "1916-04-30"
+}`);</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.Sequence">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".Sequence">
+      <span class="type-signature">(static) </span>Sequence<span class="signature">(statements)</span><span class="type-signature"> &rarr; {Qworum.message.Sequence}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>📝 Builder for Sequence instructions.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>statements</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.DataValue
+    </span>
+
+    |
+
+    <span class="param-type">
+      Qworum.message.Instruction
+    </span>
+
+    |
+
+    <span class="param-type">
+      Array.&lt;(Qworum.message.DataValue|Qworum.message.Instruction)>
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>Statements.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Sequence
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2524">line 2524</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#sequence">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <div class="param-desc">
+    
+      
+    <span class="param-type">
+      Error
+    </span>
+
+    
+
+
+    
+  </div>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#Sequence-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="Sequence-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const sequence = Qworum.Sequence(Qworum.Json(2022));</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.setData">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".setData">
+      <span class="type-signature">(async, static) </span>setData<span class="signature">(path, value)</span><span class="type-signature"> &rarr; {Promise.&lt;null>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>🚀 Sets the value contained in a data container.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>path</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Array.&lt;string>
+    </span>
+
+    |
+
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The path of the data container.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>value</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Json
+    </span>
+
+    |
+
+    <span class="param-type">
+      Qworum.message.SemanticData
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Promise.&lt;null>
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          <p>Can throw a TypeError or Error.</p>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2759">line 2759</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#data">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#setData-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="setData-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>try{
+  await Qworum.setData('year', Qworum.Json(2022));
+  console.info('The write operation was successful.');
+}catch(error){
+  console.error('The write operation was not successful.');
+}     </code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.Try">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".Try">
+      <span class="type-signature">(static) </span>Try<span class="signature">(statement, catchClauses)</span><span class="type-signature"> &rarr; {Qworum.message.Try}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>📝 Builder function for Try instructions.</p>
+  </div>
+
+
+
+
+
+
+ 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>statement</code></td>
+        
+
+        <td class="type">
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>A statement (instruction or data value) or a non-empty array of statements.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>catchClauses</code></td>
+        
+
+        <td class="type">
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>One catch clause or an array of catch clauses.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+  <h5>Returns:</h5>
+  
+
+<table class="returns">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Qworum.message.Try
+    </span>
+
+    
+
+
+          
+        </td>
+
+        <td class="description">
+          
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="qworum-for-web-pages.mjs.html">qworum-for-web-pages.mjs</a>, <a href="qworum-for-web-pages.mjs.html#line2550">line 2550</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        
+          <li>
+            <p><a href="https://qworum.net/en/specification/v1/#try">Qworum specification</a></p>
+          </li>
+        
+      </ul>
+    </dd>
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <div class="param-desc">
+    
+      
+    <span class="param-type">
+      Error
+    </span>
+
+    
+
+
+    
+  </div>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#Try-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="Try-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const try1 = Qworum.Try(
+  Qworum.Call('@', 'checkout/'), 
+  [
+    {catch: ['* the cart is empty'], Json({})}
+  ]
+);</code></pre>
 
 
   </div>
