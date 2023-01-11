@@ -6,6 +6,7 @@ title: Demos
 
 lead: >
   Here are some non-interactive integration tests for the Qworum browser extension.
+  The source code is  <a href="https://github.com/doga/qworum-website/tree/master/src/demos" target="_blank">available on GitHub</a>.
   Note that these will only work on browsers that are Qworum-enabled.
 
 demos:
