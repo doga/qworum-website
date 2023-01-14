@@ -8,66 +8,15 @@ nav:
 mission: |
   World's first platform for modular and distributed web applications
 subtext: |
-  Make your web frontends fully compatible with microservices architectures and multiple devops teams for operational excellence.
+  Use interactive microservices for modularizing your web frontends.
+  Qworum fully supports microservices architectures and stream-aligned devops teams working in parallel for operational excellence.
 
 downloads:
-  title: Free web browser extension for end-users
+  title: Free browser extension
   description: >
     Websites that use Qworum will ask you to install the Qworum browser extension. You can also install it beforehand.
     You can safely install this extension, as Qworum is only activated for some websites, and it uses few computer resources even when activated.
     Qworum respects your privacy. Your data does not leave your computer.
-
-snippet:
-  title: Easy-to-use JavaScript library for developers
-  description: >
-    Use browser-side JavaScript for building web applications that combine local and remote interactive microservices.
-    For example, an e-commerce site might use a code snippet such as the following:
-  javascript: |
-    // Adds an article to a shopping cart on an e-commerce website.
-    // (The end-user is on an article details page.)
-
-    import { Qworum } from "https://cdn.skypack.dev/@qworum/qworum-for-web-pages@1.0.9";
-
-    const
-    // Sample article details.
-    article = {
-      "id"   : "8b1d5802",
-      "title": "Classic ankle boots",
-      "price": {"EUR": 29.99}
-    },
-
-    // Create a Qworum script.
-    addToCartScript = Qworum.Script(
-      Qworum.Sequence(
-        // Add the article to the shopping cart ...
-        // (Redirects the end-user to the remote shopping cart service.)
-        Qworum.Call(
-          ['@', 'shopping cart'], 'https://shopping-cart.example/add-article/',
-          {
-            name : 'article',
-            value: Qworum.Json({article})
-          }
-        ),
-
-        // ... then go back to the article details page on the e-commerce site.
-        Qworum.Goto('index.html')
-      )
-    ),
-
-    addToCartButton = document.getElementById('add-to-cart-button');
-
-    // Execute the Qworum script when the user clicks on the add-to-cart button.
-    addToCartButton.addEventListener('click', async () => {
-      // Add the article to the visitor's shopping cart.
-      await Qworum.eval(addToCartScript);
-    });
-
-demo:
-  title: Qworum applications behave similarly to regular web applications
-  description: >
-    The JavaScript code above might produce user experiences similar to the video shown below.
-    Note how the shopping cart's domain is different from that of the e-commerce site,
-    yet to the visitor the shopping cart feels like an integral part of the e-commerce application.
 
 ---
 
@@ -142,22 +91,6 @@ demo:
 
   <p class="downloads-explanation">{{ downloads.description }}</p>
 </section>
-
-<section id="home-snippet">
-  <h2>{{ snippet.title }}</h2>
-  <p>{{ snippet.description }}</p>
-
-  <pre><code class="language-javascript">{{ snippet.javascript }}</code></pre>
-</section>
-
-<section id="home-demo">
-  <h2>{{ demo.title }}</h2>
-  <p>{{ demo.description }}</p>
-</section>
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 
 <script type="module" src="/assets/js/homepage.js"></script>
 

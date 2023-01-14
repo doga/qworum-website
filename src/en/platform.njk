@@ -4,11 +4,31 @@ title: Platform
 nav:
   order: 1
   selection: platform
+
+demo:
+  title: Web-spanning applications that provide a familiar user experience
+  description: >
+    Qworum adds advanced capabilities to web browsers while ensuring that the end-user experience remains familiar
+    compared to the traditional web.
+    Consider the video below that shows an e-commerce site calling a remote shopping cart service.
+    Note that the cart service is interactive just like a regular website.
+    Note also how the shopping cart's domain name is different from that of the e-commerce site,
+    yet to the visitor the shopping cart feels like an integral part of the e-commerce application.
 ---
 
 <h1>
-  World's first module system for web applications
+  A module system for
+  distributed or single-site
+  web applications
 </h1>
+
+<section>
+  <h2>{{ demo.title }}</h2>
+  <p>{{ demo.description }}</p>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+
 
 <section id="platform">
   <h2>Qworum is the Service Web</h2>
@@ -56,7 +76,7 @@ nav:
   </figure>
 </section>
 
-<section id="demo">
+{# <section id="demo">
   <h2>Demonstration — application spanning several DNS domains</h2>
   <p>
     <a href="https://www.youtube.com/watch?v=sSb1mqlFM4Y" target="_blank">This video</a>
@@ -96,7 +116,7 @@ nav:
     <img src="/assets/images/platform/demo.svg" alt="Schematics of demo">
     <figcaption>4: A Qworum application using Qworum services that are hosted on other DNS domains</figcaption>
   </figure>
-</section>
+</section> #}
 
 <section id="security">
   <h2>A secure computing environment</h2>
