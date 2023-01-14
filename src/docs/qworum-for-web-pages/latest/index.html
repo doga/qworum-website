@@ -83,23 +83,19 @@
   <section class="readme">
     <article>
       <h1 id="qworum-for-web-pages">Qworum for web pages</h1>
-<p>Qworum JavaScript library for use inside web pages on web browsers.
-Qworum is the <em>Service Web</em> that enables distributed web applications. See the <a href="https://qworum.net">Qworum website</a>.</p>
-<p>With this library web pages can:</p>
-<ol>
-<li>verify that the Qworum extension is installed and enabled on the end-user's browser.</li>
-<li>use Qworum's capabilities by communicating with the Qworum browser extension.</li>
-</ol>
-<h2 id="usage">Usage</h2>
-<ol>
-<li>First, copy and paste <a href="https://github.com/doga/qworum-for-web-pages/blob/master/qworum-for-web-pages.mjs">qworum-for-web-pages.mjs</a> into your web frontend project directory.</li>
-<li>Then create a JavaScript file for your web frontend project and link it to your web page like this: <code>&lt;script type=&quot;module&quot; src=&quot;./path/to/your.js&quot;&gt;&lt;/script&gt;</code>. <a href="https://github.com/doga/qworum-demo/blob/master/src/websites/shop.demo.qworum.net/home/index.html">Example</a>.</li>
-<li>After that, import the Qworum library like this in <em>your.js</em>: <code>import { Qworum } from &quot;./path/to/qworum-for-web-pages.mjs&quot;;</code>. <a href="https://github.com/doga/qworum-demo/blob/master/src/websites/shop.demo.qworum.net/_assets/js/home.js">Example</a>.</li>
-</ol>
-<p>Sample frontend projects that show how this library is used:</p>
+<p>This is <a href="https://qworum.net">Qworum</a>'s official JavaScript library for web frontends.</p>
+<p>Using this library, web pages can communicate with the Qworum browser extension for:</p>
 <ul>
-<li><a href="https://github.com/doga/qworum-demo">Demo that uses JSON as its data format</a>.</li>
-<li><a href="https://github.com/doga/qworum-demo-semantic">Demo that uses RDF-based semantic data formats such as JSON-LD and N-Quads</a>.</li>
+<li>executing Qworum scripts,</li>
+<li>reading session data (such as reading the call arguments for the current service call),</li>
+<li>writing session data.</li>
+</ul>
+<h2 id="how-to-import-this-library-into-your-frontend-code">How to import this library into your frontend code</h2>
+<p>This library is an ECMAScript module that does not have any dependencies. It can be imported in three ways:</p>
+<ul>
+<li><em>(Recommended)</em> Import from the Skypack CDN. Example: <code>import { Qworum } from &quot;https://cdn.skypack.dev/@qworum/qworum-for-web-pages@1.0.9&quot;;</code>.</li>
+<li>Import by copying <a href="https://github.com/doga/qworum-for-web-pages/blob/master/esm/qworum-for-web-pages.js">the <code>qworum-for-web-pages.js</code> file on GitHub</a> into a local file. For example you can name your local copy <code>qworum-for-web-pages.mjs</code> and import it thusly: <code>import { Qworum } from &quot;path/to/qworum-for-web-pages.mjs&quot;;</code>.</li>
+<li>Use a bundler for importing from NPM. Search for <code>@qworum/qworum-for-web-pages</code> on NPM.</li>
 </ul>
 <h2 id="license">License</h2>
 <p><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a> ∎</p>
