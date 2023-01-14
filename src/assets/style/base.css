@@ -3,7 +3,9 @@
 @import "./downloads.css";
 
 :root {
-  --accent-color: #0D498B;
+  --color                  : black;
+  --background-color       : white;
+  --accent-color           : #0D498B;
   --accent-background-color: #eee;
 }
 
@@ -13,8 +15,8 @@ body {
   min-width       : 20em;
   max-width       : 800px;
   margin          : auto;
-  background-color: white;
-  color           : black;
+  background-color: var(--background-color);
+  color           : var(--color);
 }
 
 h1 {
@@ -68,13 +70,15 @@ nav#table-of-contents li {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent-color: lightskyblue;
+    --color                  : white;
+    --background-color       : #333;
+    --accent-color           : lightskyblue;
     --accent-background-color: #555;
   }
 
   body {
-    background-color: #333;
-    color: white;
+    background-color: var(--background-color);
+    color           : var(--color);
   }
 
   a {

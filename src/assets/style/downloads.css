@@ -17,9 +17,9 @@
   opacity: 1;
 }
 
-p.downloads-explanation {
+/* p.downloads-explanation {
   font-size: small;
-}
+} */
 
 /* download figures */
 #downloads-list > figure > img {width: 50px;}
@@ -44,18 +44,18 @@ p.downloads-explanation {
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  #downloads-list > figure > img {width: 65px;}
-  #downloads-list > figure > figcaption {font-size: 16px;}
+  /* #downloads-list > figure > img {width: 65px;}
+  #downloads-list > figure > figcaption {font-size: 16px;} */
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  #downloads-list > figure > img {width: 70px;}
-  #downloads-list > figure > figcaption {font-size: 17px;}
+  /* #downloads-list > figure > img {width: 70px;}
+  #downloads-list > figure > figcaption {font-size: 17px;} */
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-  #downloads-list > figure > img {width: 75px;}
-  #downloads-list > figure > figcaption {font-size: 18px;}
+  /* #downloads-list > figure > img {width: 75px;}
+  #downloads-list > figure > figcaption {font-size: 18px;} */
 }

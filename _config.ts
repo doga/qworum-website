@@ -4,6 +4,11 @@ import sitemap from 'lume/plugins/sitemap.ts';
 import date from "lume/plugins/date.ts"; // for displaying file creation time, but not site update time!
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 
+// code snippet highlighter (javascript not supported by default, so add it)
+// https://lume.land/plugins/code_highlight/
+import codeHighlight from "lume/plugins/code_highlight.ts";
+import lang_javascript from "https://unpkg.com/@highlightjs/cdn-assets@11.6.0/es/languages/javascript.min.js";
+
 import { dateToString } from "date_format/mod.ts"; 
 
 // my addons
@@ -30,6 +35,15 @@ lume({
 .copy('assets')
 .copy('docs')
 .copy('demos')
+
+.use(codeHighlight({
+  options: {
+    classPrefix: 'language-',
+  },
+  languages: {
+    javascript: lang_javascript,
+  }
+}))
 
 // New Nunjucks filters
 .use(date(

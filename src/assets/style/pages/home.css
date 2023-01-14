@@ -1,4 +1,7 @@
 
+@import url("../syntax-highlighting.css");
+
+
 ul.home-marquee {
   padding        : 0 0;
   list-style-type: none;
