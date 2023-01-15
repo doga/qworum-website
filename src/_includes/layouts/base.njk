@@ -11,10 +11,10 @@
   <title>{{ title + ' • Qworum' if title else 'Qworum' }}</title>
 </head>
 <body>
-  {% include "templates/header.njk" %}
+  {% include "page-parts/header.njk" %}
   <main>
     {{ content | safe }}
   </main>
-  {% include "templates/footer.njk" %}
+  {% include "page-parts/footer.njk" %}
 </body>
 </html>

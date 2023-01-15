@@ -5,7 +5,7 @@ nav:
   selection: pricing
 title: Qworum Platform Plans
 description: |
-  Enable Qworum for your internet or intranet websites. 
+  Enable Qworum for your internet and intranet websites. Read our <a href="/docs/legal/privacy-policy/" target="_blank">privacy policy</a> and <a href="/docs/legal/terms-of-service/" target="_blank">terms of service</a>.
 
 plans: 
 
@@ -58,7 +58,7 @@ conditions_tag: How it works
 
 conditions:
 - >
-  To purchase a Qworum Business subscription, simply send your subscription request to <a href="mailto:sales@qworum.net?subject=Qworum+Business+subscription&body=Dear%20Qworum%20team%2C%0AI%20would%20like%20to%20purchase%20a%20Qworum%20Business%20subscription%20for%20my%20DNS%20%28sub%29domain.%0A%0AHere%20are%20my%20subscription%20details%3A%0A%2A%20Company%20name%3A%20%0A%2A%20Company%20address%3A%20%0A%2A%20Company%27s%20email%20address%3A%20%0A%2A%20DNS%20domain%20to%20subscribe%3A%20%0A%2A%20Subscription%20renewal%20frequency%20%283-month%20or%2012-month%29%3A%20%0A%2A%20[Optional]%20the%20number%20of%20additional%20subdomains%20to%20be%20included%20in%20the%20subscription%3A%20%0A%0AThanks%20in%20advance." target="_blank">sales@qworum.net</a>. Please make sure to include the following information: Company name, Company address, Company's email address, DNS domain or subdomain to subscribe, Subscription renewal frequency (3-month or 12-month), and optionally The number of additional subdomains to be included in the subscription.
+  To purchase a Qworum Business subscription, simply send your subscription request to <a href="mailto:sales@qworum.net?subject=Qworum+Business+subscription&body=Dear%20Qworum%20team%2C%0AI%20would%20like%20to%20purchase%20a%20Qworum%20Business%20subscription%20for%20my%20DNS%20domain.%0A%0AHere%20are%20my%20subscription%20details%3A%0A%2A%20Company%20name%3A%20%0A%2A%20Company%20address%3A%20%0A%2A%20Company%27s%20email%20address%3A%20%0A%2A%20DNS%20domain%20to%20subscribe%3A%20%0A%2A%20Subscription%20renewal%20frequency%20%283-month%20or%2012-month%29%3A%20%0A%2A%20The%20number%20of%20additional%20subdomains%20to%20be%20included%20in%20the%20subscription%3A%20%0A%0AI%20have%20read%20and%20I%20accept%20Qworum%27s%20terms%20of%20service%20and%20privacy%20policy%20%28%3Chttps%3A%2F%2Fqworum.net%2Fdocs%2Flegal%2Fterms-of-service%2F%3E%2C%20%3Chttps%3A%2F%2Fqworum.net%2Fdocs%2Flegal%2Fprivacy-policy%2F%3E%29.%0A%0AThanks%20in%20advance." target="_blank">sales@qworum.net</a>. Please make sure to include the following information: Company name, Company address, Company's email address, DNS domain or subdomain to subscribe, Subscription renewal frequency (3-month or 12-month), and optionally The number of additional subdomains to be included in the subscription.
 - >
   Subscriptions that haven't been renewed 15 days after the renewal date will be automatically terminated.
   You can also actively terminate your subscription at renewal date by sending your termination request before that date to <a href="mailto:sales@qworum.net?subject=Qworum+Business+subscription+termination&body=Dear%20Qworum%20team%2C%0AI%20would%20like%20to%20terminate%20my%20Qworum%20Business%20subscription%20at%20the%20renewal%20date.%0A%0AHere%20are%20my%20subscription%20details%3A%0A%2A%20DNS%20domain%3A%20%0A%0AThanks%20in%20advance." target="_blank">sales@qworum.net</a>. In this case please make sure to include the following information: subscribed DNS domain.
@@ -71,3 +71,4 @@ conditions:
 - >
   Subscribed subdomains can have arbitrary depth.
   If your company's domain is <code>xyz.example</code> and you have requested a subscription for <code>a.xyz.example</code>, then the subscription will cover websites hosted on domains such as <code>a.xyz.example</code>, <code>b.a.xyz.example</code> and <code>e.d.c.a.xyz.example</code>. The standard TCP ports for HTTPS and HTTP protocols are both supported.
+
