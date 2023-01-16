@@ -1,5 +1,9 @@
 plans:
   qworum_business:
+    free_trial:
+      days: 14
+    money_back_notice_before_renewal:
+      days: 30
     subdomains: 5
     fee:
       three_month:
