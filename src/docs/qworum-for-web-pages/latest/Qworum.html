@@ -1805,7 +1805,7 @@ await Qworum.eval(
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2808">line 2808</a>
+          <a href="qworum-for-web-pages.js.html">qworum-for-web-pages.js</a>, <a href="qworum-for-web-pages.js.html#line2810">line 2810</a>
         </li>
       </ul>
     </dd>
@@ -1854,9 +1854,11 @@ await Qworum.eval(
   const result = await Qworum.getData(['a data']);
   if (result instanceof Qworum.message.Json){
     console.info(`The read operation was successful, the result is: ${JSON.stringify(result.value)}`);
+  } else {
+    console.info(`The data has not been set yet. Did you call Qworum.getData(['a data']) beforehand ?`);
   }
 }catch(error){
-  console.error('The read operation was not successful.');
+  console.error('An unexpected error has occurred during the read.');
 }</code></pre>
 
 
@@ -3777,7 +3779,7 @@ Qworum.Script(
   <pre class="prettyprint"><code>const try1 = Qworum.Try(
   Qworum.Call('@', 'checkout/'), 
   [
-    {catch: ['* the cart is empty'], Json({})}
+    {catch: ['* the cart is empty'], do: Json({})}
   ]
 );</code></pre>
 

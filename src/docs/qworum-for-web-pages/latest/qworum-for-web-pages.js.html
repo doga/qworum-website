@@ -2642,7 +2642,7 @@ class Qworum {
      * const try1 = Qworum.Try(
      *   Qworum.Call('@', 'checkout/'), 
      *   [
-     *     {catch: ['* the cart is empty'], Json({})}
+     *     {catch: ['* the cart is empty'], do: Json({})}
      *   ]
      * );
      * @see [Qworum specification](https://qworum.net/en/specification/v1/#try)
@@ -2882,9 +2882,11 @@ class Qworum {
      *   const result = await Qworum.getData(['a data']);
      *   if (result instanceof Qworum.message.Json){
      *     console.info(`The read operation was successful, the result is: ${JSON.stringify(result.value)}`);
+     *   } else {
+     *     console.info(`The data has not been set yet. Did you call Qworum.getData(['a data']) beforehand ?`);
      *   }
      * }catch(error){
-     *   console.error('The read operation was not successful.');
+     *   console.error('An unexpected error has occurred during the read.');
      * }
      * @see [Qworum specification](https://qworum.net/en/specification/v1/#data)
      */
