@@ -10,10 +10,13 @@
     </time> #}
 
     {{ company.name }} 
+
+    {% if company.registration %}
     —
     <a href="{{company.registration.url}}" target="_blank">
       {{ company.registration.id }}
     </a>.
+    {% endif %}
 
   </span>
   <br>

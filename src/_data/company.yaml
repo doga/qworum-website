@@ -1,9 +1,19 @@
-name: Armangil Software
+# name: Armangil Software
+name: Doğa Armangil
 address: Avenue de Vaudagne 31, 1217 Meyrin, Switzerland
 email: info@qworum.net
 twitter:
   handle: "@QworumNet"
   url: https://twitter.com/QworumNet
-registration:
-  id: CHE-268.664.734
-  url: https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-268.664.734
+# registration:
+#   id: CHE-268.664.734
+#   url: https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-268.664.734
+
+contributors:
+- name: Doğa Armangil
+  # role: Project author
+  # role: CEO
+  email: d.armangil@qworum.net
+  linkedin: https://www.linkedin.com/in/dogaarmangil/
+  image: D-Armangil-300x300.jpg
+

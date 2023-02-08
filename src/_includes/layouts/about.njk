@@ -1,0 +1,50 @@
+---
+layout: ./base.njk
+---
+
+<ul class="company-contributors">
+  {% for contributor in company.contributors %}
+  <li>
+      <figure>
+        <img src="/assets/images/portraits/{{ contributor.image }}" alt="">
+        <figcaption>
+            {{ contributor.name | safe }}, 
+
+            {% for person in contributors %}
+              {% if person.name == contributor.name %}
+                {{ person.role | safe }} 
+              {% endif %}
+            {% endfor %}
+
+            (<a href="{{ contributor.linkedin | safe }}" target="_blank">
+              LinkedIn
+              {# <img src="/assets/images/logos/LinkedIn_Logo.svg" alt=""> #}
+            </a>)
+        </figcaption>
+      </figure>
+  </li>
+  {% endfor %}
+</ul>
+
+{% for paragraph in description %}
+  <p class="company-description">{{ paragraph | safe }}</p>
+{% endfor %}
+
+<p class="company-info">
+  {# <strong>{{ company.name }}</strong> <br> #}
+  {# {{ company.address }} <br> #}
+
+  Email:
+  <a href="mailto:{{company.email}}" target="_blank">
+    {{company.email}}
+  </a> • 
+
+  Twitter:
+  <a href="{{company.twitter.url}}" target="_blank">
+    {{company.twitter.handle}}
+  </a>
+  {# •
+  <a href="{{company.registration.url}}" target="_blank">
+    {{ company.registration.id }}
+  </a>  #}
+</p>

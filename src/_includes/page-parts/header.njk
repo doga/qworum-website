@@ -9,17 +9,17 @@
       </li>
 
       {% for item in navbar %}
-      <li>
-        <a 
-          href="/{{ lang.code }}/{{ item.path }}/"
+        <li>
+          <a 
+            href="/{{ lang.code }}/{{ item.path }}/"
 
-          {% if nav.selection == item.path %}
-          class="selected"
-          {% endif %}
-        >
-          {{ item.title }}
-        </a>
-      </li>
+            {% if nav.selection == item.path %}
+              class="selected"
+            {% endif %}
+          >
+            {{ item.title }}
+          </a>
+        </li>
       {% endfor %}
 
     </ul>

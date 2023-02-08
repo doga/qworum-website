@@ -1,0 +1,15 @@
+layout: layouts/about.njk
+css: about.css
+title: About
+nav:
+  order: 5
+  selection: about
+
+description:
+- The Qworum project came to be, because no other software comes close to doing what Qworum does, and because devops teams need such software, particularly the teams who are developing and operating large-scale software.
+
+- Qworum is intended as a commercial project with a closed-source core. An associated open source software library rounds off the developer experience for Qworum developers.
+
+contributors:
+- name: Doğa Armangil
+  role: Project author
