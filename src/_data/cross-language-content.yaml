@@ -7,13 +7,13 @@ plans:
     subdomains: 5
     fee:
       three_month:
-        USD: 285
+        USD: 890
       twelve_month:
-        USD: 950
+        USD: 2950
     additional_subdomain:
       fee:
         three_month:
-          USD: 57
+          USD: 180
         twelve_month:
-          USD: 190
+          USD: 590
 
