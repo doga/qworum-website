@@ -1,21 +1,16 @@
 ---
-layout: layouts/base.njk
-css: home.css
-title: Home
-nav:
+layout   : layouts/base.njk
+css      : home.css
+title    : Home
+nav      : 
   selection: home
 
-mission: |
-  The world’s first EAI solution for interactive processes
-subtext: |
-  Enterprise application integration made easy. • Write much less UI-level code for integrating 3rd-party enterprise software. 
-  •  Provide best-of-breed enterprise software that can easily be combined with other software.
-  • Modularise your enterprise software suite for speedier improvement.
-
-pitch:
-  title: Video pitch
-  description: >
-    1-minute pitch for this seed-stage project:
+mission:
+  oneliner: |
+    The world's first distributed web application technology
+  usp:
+  - IMPROVE YOUR DEVELOPER PRODUCTIVITY. Make your enterprise application UI modular and fully compatible with microservices architectures.
+  - MAKE ENTERPRISE INTEGRATIONS EASY. Easily integrate interactive processes into your application or service through Qworum APIs that provide their own UI.
 
 downloads:
   title: Free browser extension
@@ -24,11 +19,28 @@ downloads:
     You can safely install this extension, as Qworum is only activated for some websites, and it uses few computer resources even when activated.
     Qworum respects your privacy. Your data does not leave your computer.
 
+pitch:
+  title: Investor pitch
+  description: >
+    1-minute pitch for this seed-stage project:
+
+demo:
+  title: Demo of a distributed application
+  description: >
+    30-second demo showing an e-shop that uses a remote shopping cart.
+    The e-shop and the shopping cart are hosted on different DNS domains.
+    <a target="_blank" href='https://www.infoq.com/articles/qworum-modular-ui-architecture/'>This InfoQ article</a> describes in detail how this works.
+
 ---
 
 <ul class="home-marquee">
   <li>
-    <h1>{{ mission }}</h1>
+    <h1>{{ mission.oneliner }}</h1>
+    <p>
+      {% for argument in mission.usp %}
+        • {{ argument }} <br>
+      {% endfor %}
+    </p>
     <p>{{ subtext }}</p>
   </li>
   <li>
@@ -38,10 +50,19 @@ downloads:
   </li>
 </ul>
 
+
 <section id="pitch">
   <h2>{{ pitch.title }}</h2>
   <p>{{ pitch.description }}</p>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/c1Ro_y9-EWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+
+<section id="demo">
+  <h2>{{ demo.title }}</h2>
+  <p>
+    {{ demo.description | safe }}
+  </p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 
 <section id="downloads">
@@ -103,6 +124,7 @@ downloads:
 
   <p class="downloads-explanation">{{ downloads.description }}</p>
 </section>
+
 
 <script type="module" src="/assets/js/homepage.js"></script>
 
