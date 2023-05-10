@@ -9,15 +9,13 @@ mission:
   oneliner: |
     The world's first distributed web application technology
   usp:
-  - IMPROVE YOUR DEVELOPER PRODUCTIVITY. Make your enterprise application UI modular and fully compatible with microservices architectures.
-  - MAKE ENTERPRISE INTEGRATIONS EASY. Easily integrate interactive processes into your application or service through Qworum APIs that provide their own UI.
+  - IMPROVE YOUR DEVELOPER PRODUCTIVITY. Make your application's UI modular and fully compatible with microservices architectures.
+  - MAKE INTEGRATIONS EASY. Easily integrate into your application or service any remote interactive process that is packaged as a remotely callable Qworum API.
 
 downloads:
   title: Free browser extension
   description: >
-    Websites that use Qworum will ask you to install the Qworum browser extension. You can also install it beforehand.
-    You can safely install this extension, as Qworum is only activated for some websites, and it uses few computer resources even when activated.
-    Qworum respects your privacy. Your data does not leave your computer.
+    See our <a target="_blank" href="/docs/legal/privacy-policy/">privacy policy</a>.
 
 pitch:
   title: Investor pitch
@@ -28,7 +26,7 @@ demo:
   title: Demo of a distributed application
   description: >
     30-second demo showing an e-shop that uses a remote shopping cart.
-    The e-shop and the shopping cart are hosted on different DNS domains.
+    The e-shop and the shopping cart are two different Qworum APIs hosted on different DNS domains.
     <a target="_blank" href='https://www.infoq.com/articles/qworum-modular-ui-architecture/'>This InfoQ article</a> describes in detail how this works.
 
 ---
@@ -50,19 +48,12 @@ demo:
 </ul>
 
 
-<section id="pitch">
+{# <section id="pitch">
   <h2>{{ pitch.title }}</h2>
   <p>{{ pitch.description }}</p>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/c1Ro_y9-EWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</section>
+</section> #}
 
-<section id="demo">
-  <h2>{{ demo.title }}</h2>
-  <p>
-    {{ demo.description | safe }}
-  </p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</section>
 
 <section id="downloads">
   <h2>{{ downloads.title }}</h2>
@@ -121,9 +112,16 @@ demo:
     </figure>
   </div>
 
-  <p class="downloads-explanation">{{ downloads.description }}</p>
+  <p class="downloads-explanation">{{ downloads.description | safe }}</p>
 </section>
 
+<section id="demo">
+  <h2>{{ demo.title }}</h2>
+  <p>
+    {{ demo.description | safe }}
+  </p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
 
 <script type="module" src="/assets/js/homepage.js"></script>
 
