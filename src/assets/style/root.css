@@ -1,0 +1,28 @@
+
+:root {
+  --color                  : black;
+  --background-color       : white;
+
+  /* accent colors, from dark to light */
+  --accent-color           : #6D1FB3;
+  /* --accent-color           : #9958D1; */
+  /* --accent-color           : #B982EA; */
+
+  /* blue */
+  /* --accent-color           : #0D498B; */
+
+  --accent-background-color: #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color                  : white;
+    --background-color       : #333;
+
+    --accent-color           : #9958D1;
+    --accent-color           : #B982EA;
+
+    /* --accent-color           : lightskyblue; */
+    --accent-background-color: #555;
+  }
+}

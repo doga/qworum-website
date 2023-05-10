@@ -1,3 +1,4 @@
+
 nav {
   font-size: 1.5em;
   margin: 0;
@@ -22,6 +23,22 @@ nav>ul>li:first-child {
   font-size  : 2em;
   font-weight: bold;
   text-align:left;
+}
+
+nav .logo {
+  height: 0.7em;
+}
+
+@media (prefers-color-scheme: light) {
+  nav .logo-dark {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  nav .logo-light {
+    display: none;
+  }
 }
 
 nav>ul>li:hover {

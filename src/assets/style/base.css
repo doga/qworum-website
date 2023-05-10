@@ -1,17 +1,11 @@
+@import "./root.css";
 @import "./fonts.css";
 @import "./nav.css";
 @import "./downloads.css";
 
-:root {
-  --color                  : black;
-  --background-color       : white;
-  --accent-color           : #0D498B;
-  --accent-background-color: #eee;
-}
-
 body {
   font-family     : "Avenir Next Regular", sans-serif;
-  padding          : 2em;
+  padding          : 2em; /*  */
   min-width       : 20em;
   max-width       : 800px;
   margin          : auto;
@@ -69,13 +63,6 @@ nav#table-of-contents li {
 
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color                  : white;
-    --background-color       : #333;
-    --accent-color           : lightskyblue;
-    --accent-background-color: #555;
-  }
-
   body {
     background-color: var(--background-color);
     color           : var(--color);
