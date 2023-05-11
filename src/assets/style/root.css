@@ -1,28 +1,36 @@
 
 :root {
   --color                  : black;
+  --accent-color           : black;
   --background-color       : white;
+  --accent-background-color: #eee;
 
-  /* accent colors, from dark to light */
-  --accent-color           : #6D1FB3;
+  /* purple accent colors, from dark to light */
+  /* --accent-color           : #6D1FB3; */
   /* --accent-color           : #9958D1; */
   /* --accent-color           : #B982EA; */
 
-  /* blue */
+  /* blue accent colors */
   /* --accent-color           : #0D498B; */
+  /* --accent-color           : rgb(13, 73, 139); */
 
-  --accent-background-color: #eee;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color                  : white;
+    --accent-color           : white;
     --background-color       : #333;
-
-    --accent-color           : #9958D1;
-    --accent-color           : #B982EA;
-
-    /* --accent-color           : lightskyblue; */
     --accent-background-color: #555;
+
+    /* purple accent colors, from dark to light */
+    /* --accent-color           : #9958D1; */
+    /* --accent-color           : #B982EA; */
+
+    /* blue accent colors */
+    /* --accent-color           : rgb(113, 130, 168); */
+    /* --accent-color           : rgb(83, 107, 155); */
+    /* --accent-color           : lightskyblue; */
+
   }
 }

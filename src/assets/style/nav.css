@@ -1,6 +1,7 @@
 
 nav {
   font-size: 1.5em;
+  font-weight: bold;
   margin: 0;
   padding: 0;
 }
@@ -10,17 +11,18 @@ nav>ul {
   padding: 0;
 }
 
-nav>ul>li>a {
-  text-decoration: none;
+nav a {
+  text-decoration: underline;
 }
 
-nav>ul>li>a.selected {
-  text-decoration: underline;
-  /* background-color: var(--accent-background-color); */
+nav a.selected {
+  /* text-decoration: underline; */
+  background-color: var(--accent-background-color);
+  padding: 0 0.2em;
 }
 
 nav>ul>li:first-child {
-  font-size  : 2em;
+  font-size  : 2.2em;
   font-weight: bold;
   text-align:left;
 }
@@ -30,12 +32,18 @@ nav .logo {
 }
 
 @media (prefers-color-scheme: light) {
+  nav a {
+    color: #555 !important;
+  }
   nav .logo-dark {
     display: none;
   }
 }
 
 @media (prefers-color-scheme: dark) {
+  nav a {
+    color: #ccc !important;
+  }
   nav .logo-light {
     display: none;
   }
