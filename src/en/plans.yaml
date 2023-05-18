@@ -1,0 +1,60 @@
+layout: layouts/plans.njk
+css: plans.css
+nav:
+  order: 3
+  selection: plans
+title: Qworum Platform Plans
+description: |
+  Enable Qworum for your internet and intranet websites. Read our <a href="/docs/legal/privacy-policy/" target="_blank">privacy policy</a> and <a href="/docs/legal/terms-of-service/" target="_blank">terms of service</a>.
+
+plans: 
+
+- title   : Free
+  price   : >
+    <span class='price' data-amount='0' data-currency='USD'>
+      0 USD
+    </span>.
+  features: 
+  - Develop Qworum applications and services on your local machine.
+  - >
+    Optionally activate Qworum for one DNS domain using <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>this web form</a>.
+
+- title   : Qworum Business
+  price   : >
+    <span class='price' data-amount='§§{plans.business.fee.twelve_month.USD}' data-currency='USD'>
+      §§{plans.business.fee.twelve_month.USD} USD
+    </span> per year, renewable.
+  features: 
+  - Includes all features of the free plan.
+  - >
+    Enable Qworum for one DNS domain and §§{plans.business.subdomains} or more subdomains using <a target="_blank" href='https://airtable.com/shrR6maghlx0u0MN8'>this web form</a>.
+  - >
+    By default, this plan includes §§{plans.business.subdomains} subdomains.
+    The subscription fee for each additional subdomain is 
+    <span class='price' data-amount='§§{plans.business.additional_subdomain.fee.twelve_month.USD}' data-currency='USD'>
+      §§{plans.business.additional_subdomain.fee.twelve_month.USD} USD
+    </span> per year.
+
+# - title   : Enterprise
+#   price   : 500 USD per month or 5,000 USD for 12 months. 
+#   features: 
+#   - Enables Qworum Observability Cloud.
+#   - Enables Qworum for one DNS domain plus up to 5 subdomains.
+#   - Subscribed domain may be an internet domain or an intranet domain.
+#   - Enable additional subdomains for 80 USD per month per subdomain or 800 USD for 12 months per subdomain.
+#   - Includes all features of free plan.
+
+features_tag: Features
+conditions_tag: How it works
+
+conditions:
+- >
+  The subdomains of a subscribed domain can have arbitrary depth. For example, a Business subscription for the <code>a.xyz.example</code> domain can cover subdomains such as <code>b.a.xyz.example</code> and <code>e.d.c.a.xyz.example</code>. Both HTTPS and HTTP will be enabled with their standard TCP ports for the subscribed domain and its subdomains.
+- >
+  Support: 
+  <a href="https://groups.google.com/g/qworumnet?hl=en" target="_blank">Google Group</a>,
+  <a href="mailto:support@qworum.net" target="_blank">support@qworum.net</a>.
+- >
+  <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>Subscription terminations</a>.
+
+

@@ -1,19 +1,19 @@
 plans:
-  qworum_business:
-    free_trial:
-      days: 14
-    money_back_notice_before_renewal:
-      days: 30
+  business:
+    # free_trial:
+    #   days: 14
+    # money_back_notice_before_renewal:
+    #   days: 30
     subdomains: 5
     fee:
-      three_month:
-        USD: 890
+      # three_month:
+      #   USD: 890
       twelve_month:
         USD: 2950
     additional_subdomain:
       fee:
-        three_month:
-          USD: 180
+        # three_month:
+        #   USD: 180
         twelve_month:
           USD: 590
 

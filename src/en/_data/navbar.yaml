@@ -1,13 +1,13 @@
 # This file was automatically generated at build time
-# on 2023-05-14 by the "lume_navbardata" Lume plugin.
+# on 2023-05-18 by the "lume_navbardata" Lume plugin.
 - title: Platform
   path: platform
   order: 1
 - title: Solution
   path: solution
   order: 2
-- title: Pricing
-  path: pricing
+- title: Plans
+  path: plans
   order: 3
 - title: Developers
   path: developers
