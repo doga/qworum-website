@@ -1,0 +1,18 @@
+{
+  "@context"             : "https://qworum.net/semantic/contexts/business.jsonld",
+  "@type"                : "PaaS",
+  "dnsDomainSubscription": [
+    {
+      "@type"          : "DnsDomainSubscription",
+      "dnsDomain"      : "qworum.net",
+      "subdomainsCount": 1000
+    },
+    {
+      "@type"          : "DnsDomainSubscription",
+      "dnsDomain"      : "domain.example",
+      "subdomainsCount": 0
+    }
+  ]
+
+}
+
