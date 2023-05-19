@@ -44,6 +44,8 @@ plans:
       §§{plans.business.additional_subdomain.fee.yearly.USD} USD
     </span> per year.
   - >
+    Subscriptions can be canceled at the end of the current billing period using this <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>web form</a>.
+  - >
     Purchasing more than one Business subscription is allowed.
 
 # - title   : Enterprise
