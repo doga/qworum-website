@@ -17,23 +17,34 @@ plans:
   features: 
   - Develop Qworum applications and services on your local machine.
   - >
-    Optionally activate Qworum for one DNS domain using <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>this web form</a>.
+    Optionally activate Qworum for one DNS domain using this <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>activation form</a>.
+    The activation is valid until you deactivate using this
+    <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
+    One free activation allowed per company or person.
 
 - title   : Qworum Business
   price   : >
-    <span class='price' data-amount='§§{plans.business.fee.twelve_month.USD}' data-currency='USD'>
-      §§{plans.business.fee.twelve_month.USD} USD
+    <span class='price' data-amount='§§{plans.business.fee.monthly.USD}' data-currency='USD'>
+      §§{plans.business.fee.monthly.USD} USD
+    </span> per month or
+    <span class='price' data-amount='§§{plans.business.fee.yearly.USD}' data-currency='USD'>
+      §§{plans.business.fee.yearly.USD} USD
     </span> per year, renewable.
   features: 
-  - Includes all features of the free plan.
+  - Develop Qworum applications and services on your local machine.
   - >
-    Enable Qworum for one DNS domain and §§{plans.business.subdomains} or more subdomains using <a target="_blank" href='https://airtable.com/shrR6maghlx0u0MN8'>this web form</a>.
+    Enable Qworum for one DNS domain and §§{plans.business.subdomains} or more subdomains using this <a target="_blank" href='https://airtable.com/shrR6maghlx0u0MN8'>subscription form</a>.
   - >
     By default, this plan includes §§{plans.business.subdomains} subdomains.
     The subscription fee for each additional subdomain is 
-    <span class='price' data-amount='§§{plans.business.additional_subdomain.fee.twelve_month.USD}' data-currency='USD'>
-      §§{plans.business.additional_subdomain.fee.twelve_month.USD} USD
+    <span class='price' data-amount='§§{plans.business.additional_subdomain.fee.monthly.USD}' data-currency='USD'>
+      §§{plans.business.additional_subdomain.fee.monthly.USD} USD
+    </span> per month or
+    <span class='price' data-amount='§§{plans.business.additional_subdomain.fee.yearly.USD}' data-currency='USD'>
+      §§{plans.business.additional_subdomain.fee.yearly.USD} USD
     </span> per year.
+  - >
+    Purchasing more than one Business subscription is allowed.
 
 # - title   : Enterprise
 #   price   : 500 USD per month or 5,000 USD for 12 months. 
@@ -54,7 +65,4 @@ conditions:
   Support: 
   <a href="https://groups.google.com/g/qworumnet?hl=en" target="_blank">Google Group</a>,
   <a href="mailto:support@qworum.net" target="_blank">support@qworum.net</a>.
-- >
-  <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>Subscription terminations</a>.
-
 
