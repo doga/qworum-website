@@ -1,0 +1,19 @@
+@base <https://qworum.net/semantic/domain-entitlements.ttl> .
+# @prefix s: <https://schema.org/> .
+@prefix : <https://ontology.qworum.net/> .
+
+<#qworum> 
+a :PaaS ;
+:domainEntitlement <#self> ;
+:domainEntitlement <#example> .
+
+<#self>
+a :DomainEntitlement ;
+:domain "qworum.net" ;
+:subdomainsCount 1000 .
+
+<#example>
+a :DomainEntitlement ;
+:domain "domain.example" .
+# :subdomainsCount 0 .
+

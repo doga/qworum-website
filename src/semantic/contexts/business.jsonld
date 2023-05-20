@@ -7,19 +7,19 @@
       "@type": "@id",
       "@id"  : "qworum:PaaS"
     },
-    "dnsDomainSubscription": {
-      "@type": "qworum:DnsDomainSubscription"
+    "domainEntitlement": {
+      "@type": "qworum:DomainEntitlement"
     },
 
-    "DnsDomainSubscription": {
+    "DomainEntitlement": {
       "@type": "@id",
-      "@id"  : "qworum:DnsDomainSubscription"
+      "@id"  : "qworum:DomainEntitlement"
     },
-    "dnsDomain": {
+    "domain": {
       "@type": "xsd:string"
     },
     "subdomainsCount": {
-      "@type": "xsd:integer"
+      "@type": "xsd:nonNegativeInteger"
     }
 
   }
