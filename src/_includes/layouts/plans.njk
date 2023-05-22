@@ -1,5 +1,6 @@
 ---
 layout: ./base.njk
+css: plans.css
 ---
 
 <h1>{{ title }}</h1>
@@ -9,11 +10,16 @@ layout: ./base.njk
   {% for plan in plans %}
   <li>
     <p class="pricing-plan-title">
-      {{ plan.title | upper }}
+      {{ plan.title }}
     </p>
     <p>
       {{ plan.price | safe }}
     </p>
+    {% if plan.call_to_action %}
+      <button class='call-to-action' onClick="window.location = '{{ plan.call_to_action }}'">
+        {{ subscribe_tag }}
+      </button>
+    {% endif %}
     <p>
       {{ features_tag }}:
     </p>

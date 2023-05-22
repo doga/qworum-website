@@ -23,7 +23,31 @@ ul.pricing-plans>li {
 p.pricing-plan-title {
   font-size: x-large;
   font-weight: bold;
-  /* color:red; */
+  text-transform: uppercase;
+}
+
+button.call-to-action {
+  font-size: 150%;
+  color: white;
+  background-color: #117FFF;
+  border-radius: 0.5em;
+  margin: 1em ;
+  padding: 0.5em 1em;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+span.monthly-price {
+  font-size: 150%;
+}
+
+span.price-addendum {
+  font-size: 80%;
+}
+
+span.price-notes {
+  font-size: 100%;
 }
 
 @media (min-width: 576px) {

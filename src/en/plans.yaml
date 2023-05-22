@@ -8,45 +8,46 @@ description: |
   Enable Qworum for your internet and intranet websites. Read our <a href="/docs/legal/privacy-policy/" target="_blank">privacy policy</a> and <a href="/docs/legal/terms-of-service/" target="_blank">terms of service</a>.
 
 plans: 
+  - title: §§{plans.ore.name}
+    price   : >
+      <span class='price monthly-price'>
+        FREE
+      </span>
+    features: 
+    - Develop Qworum applications and services on your local machine.❖
+    - Free VS Code extension.
+    - Online support.✪
+    - No subscription required.
+    # - >
+    #   Optionally activate Qworum for one DNS domain using this <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>activation form</a>.
+    #   The activation is valid until you deactivate using this
+    #   <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
+    #   One free activation allowed per company or person.
 
-- title   : Free
-  price   : >
-    <span class='price' data-amount='0' data-currency='USD'>
-      0 USD
-    </span>.
-  features: 
-  - Develop Qworum applications and services on your local machine.
-  - >
-    Optionally activate Qworum for one DNS domain using this <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>activation form</a>.
-    The activation is valid until you deactivate using this
-    <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
-    One free activation allowed per company or person.
+  - title: §§{plans.alloy.name}
+    price   : >
+      <span class='price monthly-price' data-amount='§§{plans.alloy.fee.monthly.USD}' data-currency='USD'>
+        $§§{plans.alloy.fee.monthly.USD}
+      </span> 
+      <span class='price-addendum'>
+        <br>
+        per domain/subdomain per month <br><br>
+      </span> 
 
-- title   : Qworum Business
-  price   : >
-    <span class='price' data-amount='§§{plans.business.fee.monthly.USD}' data-currency='USD'>
-      §§{plans.business.fee.monthly.USD} USD
-    </span> per month or
-    <span class='price' data-amount='§§{plans.business.fee.yearly.USD}' data-currency='USD'>
-      §§{plans.business.fee.yearly.USD} USD
-    </span> per year, renewable.
-  features: 
-  - Develop Qworum applications and services on your local machine.
-  - >
-    Enable Qworum for one DNS domain and §§{plans.business.subdomains} or more subdomains using this <a target="_blank" href='https://airtable.com/shrR6maghlx0u0MN8'>subscription form</a>.
-  - >
-    By default, this plan includes §§{plans.business.subdomains} subdomains.
-    The subscription fee for each additional subdomain is 
-    <span class='price' data-amount='§§{plans.business.additional_subdomain.fee.monthly.USD}' data-currency='USD'>
-      §§{plans.business.additional_subdomain.fee.monthly.USD} USD
-    </span> per month or
-    <span class='price' data-amount='§§{plans.business.additional_subdomain.fee.yearly.USD}' data-currency='USD'>
-      §§{plans.business.additional_subdomain.fee.yearly.USD} USD
-    </span> per year.
-  - >
-    Subscriptions can be canceled at the end of the current billing period using this <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>web form</a>.
-  - >
-    Purchasing more than one Business subscription is allowed.
+      <span class='price-notes'>
+        Spare §§{plans.alloy.fee.yearly.spare_percent}% with a
+        <span class='price yearly-price' data-amount='§§{plans.alloy.fee.yearly.USD}' data-currency='USD'>
+          $§§{plans.alloy.fee.yearly.USD}
+        </span> yearly subscription.
+      </span> 
+    features: 
+    - Use Qworum in production websites.
+    - >
+      Enable Qworum for one base DNS domain and any number of subdomains.
+    - Develop Qworum applications and services on your local machine.❖
+    - Free VS Code extension.
+    - Online support.✪
+    call_to_action: "https://airtable.com/shrR6maghlx0u0MN8"
 
 # - title   : Enterprise
 #   price   : 500 USD per month or 5,000 USD for 12 months. 
@@ -57,14 +58,23 @@ plans:
 #   - Enable additional subdomains for 80 USD per month per subdomain or 800 USD for 12 months per subdomain.
 #   - Includes all features of free plan.
 
+subscribe_tag: Start
 features_tag: Features
-conditions_tag: How it works
+conditions_tag: Notes
 
 conditions:
+- ❖ See <a href='../developers/#local-development'>the URLs that are enabled for local development</a>.
 - >
-  The subdomains of a subscribed domain can have arbitrary depth. For example, a Business subscription for the <code>a.xyz.example</code> domain can cover subdomains such as <code>b.a.xyz.example</code> and <code>e.d.c.a.xyz.example</code>. Both HTTPS and HTTP will be enabled with their standard TCP ports for the subscribed domain and its subdomains.
-- >
-  Support: 
+  ✪ Support available online: 
   <a href="https://groups.google.com/g/qworumnet?hl=en" target="_blank">Google Group</a>,
   <a href="mailto:support@qworum.net" target="_blank">support@qworum.net</a>.
-
+- >
+  The subdomains of a subscribed domain can have arbitrary depth. For example, a Business subscription for the <code>a.xyz.example</code> domain can cover subdomains such as <code>b.a.xyz.example</code> and <code>e.d.c.a.xyz.example</code>.
+- >
+  The URL of a Qworum-enabled website will look like this: <kdb>https://domain.example</kbd>.
+  Qworum enables HTTPS sites that are available through the standard HTTPS TCP port. 
+- >
+  Modify the number of subscribed subdomains with this <a target="_blank" href='https://airtable.com/shrlgbnVtVfdZHBQg'>subscription modification form</a> at any point in time.
+- >
+  Subscriptions can be canceled at the end of the current billing period using this <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>subscription termination form</a>.
+- In order to use Qworum on many domains, purchase one §§{plans.alloy.name} subscription per base domain.
