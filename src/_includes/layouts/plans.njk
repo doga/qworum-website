@@ -12,14 +12,14 @@ css: plans.css
     <p class="pricing-plan-title">
       {{ plan.title }}
     </p>
-    <p>
-      {{ plan.price | safe }}
-    </p>
     {% if plan.call_to_action %}
       <button class='call-to-action' onClick="window.location = '{{ plan.call_to_action }}'">
         {{ subscribe_tag }}
       </button>
     {% endif %}
+    <p>
+      {{ plan.price | safe }}
+    </p>
     <p>
       {{ features_tag }}:
     </p>

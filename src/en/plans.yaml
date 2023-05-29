@@ -14,15 +14,18 @@ plans:
         FREE
       </span>
     features: 
+    - Suitable for personal use and for evaluating Qworum.
+    - No subscription required.
+    - Optionally activate Qworum for your personal website by clicking on the button above.
     - Develop Qworum applications and services on your local machine.❖
     - Free VS Code extension.
     - Online support.✪
-    - No subscription required.
     # - >
     #   Optionally activate Qworum for one DNS domain using this <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>activation form</a>.
     #   The activation is valid until you deactivate using this
     #   <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
     #   One free activation allowed per company or person.
+    call_to_action: "https://airtable.com/shrGrvS4Fhi7oAnFh"
 
   - title: §§{plans.alloy.name}
     price   : >
@@ -41,7 +44,7 @@ plans:
         </span> yearly subscription.
       </span> 
     features: 
-    - Use Qworum in production websites.
+    - Suitable for business and enterprise use cases.
     - >
       Enable Qworum for one base DNS domain and any number of subdomains.
     - Develop Qworum applications and services on your local machine.❖
@@ -58,7 +61,7 @@ plans:
 #   - Enable additional subdomains for 80 USD per month per subdomain or 800 USD for 12 months per subdomain.
 #   - Includes all features of free plan.
 
-subscribe_tag: Start
+subscribe_tag: Get started
 features_tag: Features
 conditions_tag: Notes
 
