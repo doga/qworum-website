@@ -13,10 +13,10 @@ plans:
     # additional_subdomain:
     fee:
       monthly:
-        USD: 105
+        USD: 195
       yearly:
-        USD: 1095
-        spare_percent: 13
+        USD: 1870
+        spare_percent: 20
 
 
 
