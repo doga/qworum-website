@@ -14,9 +14,8 @@ plans:
         FREE
       </span>
     features: 
-    - Suitable for personal use and for evaluating Qworum.
-    - No subscription required.
-    - Optionally activate Qworum for your personal website by clicking on the button above.
+    - This offer is only available for education organisations (universities, schools, online education services).
+    - Activate Qworum for your DNS (sub)domain by clicking on the button above.
     - Develop Qworum applications and services on your local machine.❖
     - Free VS Code extension.
     - Online support.✪
@@ -34,7 +33,7 @@ plans:
       </span> 
       <span class='price-addendum'>
         <br>
-        per domain/subdomain per month <br><br>
+        per (sub)domain per month <br><br>
       </span> 
 
       <span class='price-notes'>
@@ -46,7 +45,7 @@ plans:
     features: 
     - Suitable for business and enterprise use cases.
     - >
-      Enable Qworum for one base DNS domain and any number of subdomains.
+      Enable Qworum for one base DNS (sub)domain and any number of subdomains.
     - Develop Qworum applications and services on your local machine.❖
     - Free VS Code extension.
     - Online support.✪
@@ -66,7 +65,9 @@ features_tag: Features
 conditions_tag: Notes
 
 conditions:
-- ❖ See <a href='../developers/#local-development'>the URLs that are enabled for local development</a>.
+- |
+  ❖ See <a href='../developers/#local-development'>the list of URLs that are allowed for local development</a>. 
+  Note that local development is allowed for all use cases (education, business, personal etc), you don't need to contact us.
 - >
   ✪ Support available online: 
   <a href="https://groups.google.com/g/qworumnet?hl=en" target="_blank">Google Group</a>,
