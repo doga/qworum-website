@@ -14,9 +14,8 @@ plans:
         FREE
       </span>
     features: 
-    - This offer is only available for education organisations (universities, schools, online education services).
-    - Activate Qworum for your DNS (sub)domain by clicking on the button above.
     - Develop Qworum applications and services on your local machine.❖
+    - Allows intranet and the internet deployments for education organisations (universities, schools, online education services). Activate Qworum for your DNS domain by clicking on the button above.
     - Free VS Code extension.
     - Online support.✪
     # - >
@@ -28,24 +27,21 @@ plans:
 
   - title: §§{plans.alloy.name}
     price   : >
-      <span class='price monthly-price' data-amount='§§{plans.alloy.fee.monthly.USD}' data-currency='USD'>
-        $§§{plans.alloy.fee.monthly.USD}
+      <span class='price monthly-price' data-amount='§§{plans.alloy.fee.single_domain.monthly.USD}' data-currency='USD'>
+        $§§{plans.alloy.fee.single_domain.monthly.USD}
       </span> 
       <span class='price-addendum'>
         <br>
-        per (sub)domain per month <br><br>
+        per domain per month <br><br>
       </span> 
 
       <span class='price-notes'>
-        Spare §§{plans.alloy.fee.yearly.spare_percent}% with a
-        <span class='price yearly-price' data-amount='§§{plans.alloy.fee.yearly.USD}' data-currency='USD'>
-          $§§{plans.alloy.fee.yearly.USD}
-        </span> yearly subscription.
+        Spare §§{plans.alloy.fee.single_domain.yearly.spare_percent}% with a yearly subscription.
+        Subscribe all subdomains for §§{plans.alloy.fee.with_subdomains.multiple}x the price.
       </span> 
+
     features: 
-    - Suitable for business and enterprise use cases.
-    - >
-      Enable Qworum for one base DNS (sub)domain and any number of subdomains.
+    - Suitable for enterprise use cases.
     - Develop Qworum applications and services on your local machine.❖
     - Free VS Code extension.
     - Online support.✪
@@ -67,7 +63,7 @@ conditions_tag: Notes
 conditions:
 - |
   ❖ See <a href='../developers/#local-development'>the list of URLs that are allowed for local development</a>. 
-  Note that local development is allowed for all use cases (education, business, personal etc), you don't need to contact us.
+  Note that local development is allowed for all use cases (personal, education, business etc), you don't need to contact us.
 - >
   ✪ Support available online: 
   <a href="https://groups.google.com/g/qworumnet?hl=en" target="_blank">Google Group</a>,
