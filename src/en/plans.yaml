@@ -14,8 +14,8 @@ plans:
         FREE
       </span>
     features: 
+    - Suitable for education organisations (universities, schools, online education services). Activate your internet/intranet DNS domain by clicking on the button above.
     - Develop Qworum applications and services on your local machine.❖
-    - Allows intranet and the internet deployments for education organisations (universities, schools, online education services). Activate Qworum for your DNS domain by clicking on the button above.
     - Free VS Code extension.
     - Online support.✪
     # - >
@@ -27,8 +27,8 @@ plans:
 
   - title: §§{plans.alloy.name}
     price   : >
-      <span class='price monthly-price' data-amount='§§{plans.alloy.fee.single_domain.monthly.USD}' data-currency='USD'>
-        $§§{plans.alloy.fee.single_domain.monthly.USD}
+      <span class='price monthly-price' data-amount='§§{plans.alloy.monthly.single_domain.USD}' data-currency='USD'>
+        $§§{plans.alloy.monthly.single_domain.USD}
       </span> 
       <span class='price-addendum'>
         <br>
@@ -36,8 +36,8 @@ plans:
       </span> 
 
       <span class='price-notes'>
-        Spare §§{plans.alloy.fee.single_domain.yearly.spare_percent}% with a yearly subscription.
-        Subscribe all subdomains for §§{plans.alloy.fee.with_subdomains.multiple}x the price.
+        Spare §§{plans.alloy.yearly.spare_percent}% with a yearly subscription.
+        Subscribe all subdomains for §§{plans.alloy.monthly.with_subdomains.multiple}x the price.
       </span> 
 
     features: 

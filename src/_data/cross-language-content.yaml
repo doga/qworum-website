@@ -4,21 +4,12 @@ plans:
     name: Qworum Ore
   alloy:
     name: Qworum Alloy
-    # subdomains: 5
-    # fee:
-    #   monthly:
-    #     USD: 265
-    #   yearly:
-    #     USD: 2945
-    # additional_subdomain:
-    fee:
+    monthly:
       single_domain:
-        monthly:
-          USD: 385
-        yearly:
-          USD: 3696
-          spare_percent: 20
+        USD: 95
       with_subdomains:
         multiple: 4
+    yearly:
+      spare_percent: 20
 
 

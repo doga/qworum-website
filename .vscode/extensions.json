@@ -2,6 +2,7 @@
   "recommendations": [
     "simonsiefke.svg-preview",
     "denoland.vscode-deno",
-    "ronnidc.nunjucks"
+    "ronnidc.nunjucks",
+    "smoore.yaml-path"
   ]
 }
