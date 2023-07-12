@@ -2,6 +2,10 @@ plans:
 # https://www.metaltek.com/resources/glossary/
   ore:
     name: Qworum Ore
+    forms:
+      subscribe: "https://airtable.com/shrGrvS4Fhi7oAnFh"
+      modify_subscription: "https://airtable.com/shrlgbnVtVfdZHBQg"
+      unsubscribe: "https://airtable.com/shr2qFMtpfD749aEP"
   alloy:
     name: Qworum Alloy
     monthly:
@@ -11,5 +15,9 @@ plans:
         multiple: 4
     yearly:
       spare_percent: 20
+    forms:
+      subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
+      modify_subscription: "https://airtable.com/shrlgbnVtVfdZHBQg"
+      unsubscribe: "https://airtable.com/shr2qFMtpfD749aEP"
 
 

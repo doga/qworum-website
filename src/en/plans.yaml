@@ -23,7 +23,7 @@ plans:
     #   The activation is valid until you deactivate using this
     #   <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
     #   One free activation allowed per company or person.
-    call_to_action: "https://airtable.com/shrGrvS4Fhi7oAnFh"
+    call_to_action: §§{plans.ore.forms.subscribe}
 
   - title: §§{plans.alloy.name}
     price   : >
@@ -45,7 +45,7 @@ plans:
     - Develop Qworum applications and services on your local machine.❖
     - Free VS Code extension.
     - Online support.✪
-    call_to_action: "https://airtable.com/shrR6maghlx0u0MN8"
+    call_to_action: §§{plans.alloy.forms.subscribe}
 
 # - title   : Enterprise
 #   price   : 500 USD per month or 5,000 USD for 12 months. 
@@ -69,12 +69,9 @@ conditions:
   <a href="https://groups.google.com/g/qworumnet?hl=en" target="_blank">Google Group</a>,
   <a href="mailto:support@qworum.net" target="_blank">support@qworum.net</a>.
 - >
-  The subdomains of a subscribed domain can have arbitrary depth. For example, a Business subscription for the <code>a.xyz.example</code> domain can cover subdomains such as <code>b.a.xyz.example</code> and <code>e.d.c.a.xyz.example</code>.
-- >
-  The URL of a Qworum-enabled website will look like this: <kdb>https://domain.example</kbd>.
   Qworum enables HTTPS sites that are available through the standard HTTPS TCP port. 
+  The URL of a Qworum-enabled website will look like this: <kdb>https://domain.example</kbd>.
 - >
-  Modify the number of subscribed subdomains with this <a target="_blank" href='https://airtable.com/shrlgbnVtVfdZHBQg'>subscription modification form</a> at any point in time.
+  <a target="_blank" href='§§{plans.ore.forms.modify_subscription}'>Subscription modification form</a>.
 - >
-  Subscriptions can be canceled at the end of the current billing period using this <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>subscription termination form</a>.
-- In order to use Qworum on many domains, purchase one §§{plans.alloy.name} subscription per base domain.
+  Subscriptions can be canceled at the end of the current billing period using this <a target="_blank" href='§§{plans.ore.forms.unsubscribe}'>subscription termination form</a>.
