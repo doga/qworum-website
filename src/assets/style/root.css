@@ -14,6 +14,8 @@
   /* --accent-color           : #0D498B; */
   /* --accent-color           : rgb(13, 73, 139); */
 
+  font-size: 15px;
+
 }
 
 @media (prefers-color-scheme: dark) {

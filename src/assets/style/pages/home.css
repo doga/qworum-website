@@ -14,7 +14,7 @@ ul.home-marquee>li {
   padding: 0 2em 0 0;
 }
 
-ul.home-marquee>li:first h1 {
+ul.home-marquee>li:first-child h1 {
   font-size: x-large;
   font-weight: bold;
   /* color:red; */

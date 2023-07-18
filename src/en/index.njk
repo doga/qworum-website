@@ -7,14 +7,11 @@ nav      :
 
 mission:
   oneliner: |
-    The frontend infrastructure for business and enterprise software
+    The groundbreaking frontend PaaS for business and enterprise software
   usp:
-  - Frontend PaaS that offers enhanced web browser capabilities.
+  - Enhanced web browser capabilities.
+  - Seamless UI-level integrations within your software suite and with 3rd-party applications.
   - Modular user interfaces for improved developer productivity. Full support for microservices architectures.
-  - Advanced integrations between the applications of your business/enterprise software suite.
-  - Advanced integrations between your business/enterprise software and 3rd-party applications.
-  - A new type of web API that supports interactive processes.
-  - The world's first distributed web application technology.
   - Suitable for both internal applications and SaaS.
 
 downloads:
@@ -34,7 +31,7 @@ demo:
     30-second demo showing an e-shop that uses a remote shopping cart.
     The e-shop and the shopping cart are two different Qworum APIs hosted on different DNS domains.
     <a target="_blank" href='https://www.infoq.com/articles/qworum-modular-ui-architecture/'>This InfoQ article</a> describes in detail how this works.
-
+    Note that consumer SaaS is currently not the main use case for Qworum.
 ---
 
 <ul class="home-marquee">
@@ -42,13 +39,11 @@ demo:
     <h1>{{ mission.oneliner }}</h1>
     <p>
       {% for argument in mission.usp %}
-        • {{ argument }} <br>
+        ❖ {{ argument }} <br> <br>
       {% endfor %}
     </p>
   </li>
-  <li>
-
-  </li>
+  <li></li>
 </ul>
 
 

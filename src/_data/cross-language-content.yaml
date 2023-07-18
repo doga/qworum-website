@@ -10,7 +10,7 @@ plans:
     name: Qworum Alloy
     monthly:
       single_domain:
-        USD: 95
+        USD: 190
       with_subdomains:
         multiple: 4
     yearly:
