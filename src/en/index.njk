@@ -37,11 +37,11 @@ demo:
 <ul class="home-marquee">
   <li>
     <h1>{{ mission.oneliner }}</h1>
-    <p>
+    <ul>
       {% for argument in mission.usp %}
-        ❖ {{ argument }} <br> <br>
+        <li>{{ argument }}</li>
       {% endfor %}
-    </p>
+    </ul>
   </li>
   <li></li>
 </ul>

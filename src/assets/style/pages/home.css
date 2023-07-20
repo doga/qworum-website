@@ -27,6 +27,16 @@ ul.home-marquee>li:nth-child(2) {
   display: none;
 }
 
+ul.home-marquee>li:first-child ul {
+  margin: 0;
+  padding: 0 0 0 1em;
+  list-style-type: "❖ ";
+}
+
+ul.home-marquee>li:first-child ul>li {
+  padding: 0.5em 0;
+}
+
 /* ul.home-marquee>li:nth-child(2) {
   display: none;
 } */
