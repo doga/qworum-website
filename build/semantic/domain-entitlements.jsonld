@@ -1,0 +1,17 @@
+{
+  "@context"         : "https://qworum.net/semantic/contexts/business.jsonld",
+  "@type"            : "PaaS",
+  "domainEntitlement": [
+    {
+      "@type"          : "DomainEntitlement",
+      "domain"         : "domain.example",
+      "subdomainsCount": 0
+    },
+    {
+      "@type"          : "DomainEntitlement",
+      "domain"         : "qworum.net",
+      "subdomainsCount": 1000
+    }
+  ]
+
+}

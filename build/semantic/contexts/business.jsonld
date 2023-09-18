@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "xsd"   : "http://www.w3.org/2001/XMLSchema#",
+    "qworum": "https://ontology.qworum.net/",
+
+    "PaaS": {
+      "@type": "@id",
+      "@id"  : "qworum:PaaS"
+    },
+    "domainEntitlement": {
+      "@type": "qworum:DomainEntitlement"
+    },
+
+    "DomainEntitlement": {
+      "@type": "@id",
+      "@id"  : "qworum:DomainEntitlement"
+    },
+    "domain": {
+      "@type": "xsd:string"
+    },
+    "subdomainsCount": {
+      "@type": "xsd:nonNegativeInteger"
+    }
+
+  }
+}

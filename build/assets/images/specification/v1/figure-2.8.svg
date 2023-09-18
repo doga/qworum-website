@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 600 400" lang="en" role="figure" id="figure-1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <desc>Figure for the Qworum specification v1.0</desc>
+  <title>Figure 2.2</title>
+  <defs>
+    <linearGradient id="color-0" bx:pinned="true">
+      <stop style="stop-color: #e4e3e3;"/>
+    </linearGradient>
+    <linearGradient id="color-1" bx:pinned="true">
+      <stop style="stop-color: #84a9ac;"/>
+    </linearGradient>
+    <linearGradient id="color-2" bx:pinned="true">
+      <stop style="stop-color: #3b6978;"/>
+    </linearGradient>
+    <linearGradient id="color-3" bx:pinned="true">
+      <stop style="stop-color: #204051;"/>
+    </linearGradient>
+  </defs>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="557.678 -73.154 572.481 -65.062 557.876 -58.668"/>
+  <rect x="48.317" y="27.192" width="531.454" height="320.673" style="stroke: url(#color-0); fill: url(#color-2);"/>
+  <rect x="117.295" y="101.253" width="157.114" height="235.305" style="stroke: url(#color-0); fill: url(#color-3);"/>
+  <g transform="matrix(1, 0, 0, 1, 0.809166, 13.263663)">
+    <rect x="127.834" y="271.308" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="170.131" y="294.774">Data DN</text>
+  </g>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" transform="matrix(0, -1, 1, 0, 242.748291, 294.94519)" x="37.539" y="-44.407">...</text>
+  <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="153.673" y="119.304" bx:origin="-5.593 -9.414">Contained data</text>
+  <g transform="matrix(1, 0, 0, 1, 0.375979, -86.359169)">
+    <rect x="127.834" y="271.308" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="170.131" y="294.774">Data D2</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 0.196738, -137.078079)">
+    <rect x="127.834" y="271.308" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="170.131" y="294.774">Data D1</text>
+  </g>
+  <rect x="354.504" y="100.406" width="157.114" height="235.305" style="stroke: url(#color-0); fill: url(#color-3);"/>
+  <g transform="matrix(1, 0, 0, 1, 238.018112, 12.416585)">
+    <rect x="127.834" y="271.308" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="170.131" y="294.774">Object OM</text>
+  </g>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" transform="matrix(0, -1, 1, 0, 479.957214, 294.098114)" x="37.539" y="-44.407">...</text>
+  <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="363.106" y="118.457" bx:origin="-5.593 -9.414">Contained Qworum objects</text>
+  <g transform="matrix(1, 0, 0, 1, 237.58493, -87.206245)">
+    <rect x="127.834" y="271.308" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="170.131" y="294.774">Object O2</text>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 237.405685, -137.925156)">
+    <rect x="127.834" y="271.308" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="170.131" y="294.774">Object O1</text>
+  </g>
+  <text style="fill: url(#color-0); font-family: Arial, sans-serif; white-space: pre; font-size: 15px;" x="65.5" y="71.028" bx:origin="-5.593 -9.414">Qworum object</text>
+  <rect x="198.907" y="44.288" width="199.683" height="48.147" style="stroke: url(#color-0); fill: url(#color-3);"/>
+  <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="209.117" y="70.032" bx:origin="-5.593 -9.414">Origin:</text>
+  <g transform="matrix(1, 0, 0, 1, 120.455666, -222.558884)">
+    <rect x="127.834" y="271.308" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="146.796" y="294.477">https://example.com</text>
+  </g>
+</svg>

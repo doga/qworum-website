@@ -1,0 +1,70 @@
+h1,p.pricing-description {
+  text-align: center;
+  padding: 0 20%;
+}
+
+ul.pricing-plans {
+  padding: 5em 10%;
+  list-style-type: none;
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: space-around;
+}
+
+ul.pricing-plans>li {
+  width: 15em;
+  border: solid #ccc;
+  border-radius: 15px;
+  margin: 0em 0.5em;
+  padding: 0em 1em 1em 1em;
+  background-color: var(--accent-background-color);
+}
+
+p.pricing-plan-title {
+  font-size: x-large;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button.call-to-action {
+  font-size: 150%;
+  color: white;
+  background-color: #117FFF;
+  border-radius: 0.5em;
+  margin: 0 1em ;
+  padding: 0.5em 1em;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+span.monthly-price {
+  font-size: 150%;
+}
+
+span.price-addendum {
+  font-size: 80%;
+}
+
+span.price-notes {
+  font-size: 100%;
+}
+
+@media (min-width: 576px) {
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}

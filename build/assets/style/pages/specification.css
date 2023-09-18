@@ -1,0 +1,62 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css';
+
+article>nav {font-size: 1em;}
+
+.note-to-editor {
+  /* display: none; */
+  background-color: red;
+  color: white;
+  padding: 0.2em;
+}
+
+h1>.status-notice {
+  text-transform: uppercase;
+  color: #999;
+}
+
+h1>.metadata {
+  color: #999;
+  white-space: pre;
+  font-size: small;
+}
+
+h1>.metadata::before {
+  content: "\ALast updated on ";
+}
+
+h1>.metadata::after {
+  content: ".";
+}
+
+/* h1, h2, h3, h4, h5, h6 { font-transform: capitalise;} */
+/* img {
+  height: 400px;
+  width: 600px;
+} */
+
+pre>code {
+  white-space: pre;
+}
+
+#references ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#references ul li {
+  padding-bottom: 1em;
+}
+
+#references ul li .reference {
+  font-weight: bold;
+  white-space: pre;
+}
+
+#references ul li .reference::before {
+  content: "[";
+}
+
+#references ul li .reference::after {
+  content: "] \A    ";
+}

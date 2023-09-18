@@ -1,0 +1,24 @@
+
+pre { 
+  /* width: 50em; */
+  white-space: pre-wrap;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #021627;
+  color: #7FDCCA;
+}
+.language-comment { 
+  color: #637777;
+}
+.language-keyword { 
+  color: #C792E9;
+}
+.language-title { 
+  color: #81AAFF;
+}
+.language-string { 
+  color: #ECC38D;
+}
+.language-number { 
+  color: #F78B6C;
+}

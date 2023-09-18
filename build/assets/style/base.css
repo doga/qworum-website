@@ -1,0 +1,146 @@
+@import "./root.css";
+@import "./fonts.css";
+@import "./nav.css";
+@import "./downloads.css";
+
+body {
+  font-family     : "Avenir Next Regular", sans-serif;
+  padding          : 2em; /*  */
+  min-width       : 20em;
+  max-width       : 800px;
+  margin          : auto;
+  background-color: var(--background-color);
+  color           : var(--color);
+}
+
+h1 {
+  text-transform: capitalize;
+}
+
+h2 {
+  padding-top: 1em;
+}
+
+h3 {
+  padding-top: 0.8em;
+}
+
+h4 {
+  padding-top: 0.6em;
+}
+
+h5 {
+  padding-top: 0.4em;
+}
+
+h6 {
+  padding-top: 0.2em;
+}
+
+a {
+  color: var(--accent-color);
+}
+
+a:visited {
+  color: var(--accent-color);
+}
+
+strong {
+  font-weight: bold;
+}
+
+aside.twitter-timeline  {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  display: none;
+}
+
+nav#table-of-contents li {
+  margin-top: 1em;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background-color);
+    color           : var(--color);
+  }
+
+  a {
+    color: var(--accent-color);
+  }
+
+  a:visited {
+    color: var(--accent-color);
+  }
+}
+
+body>footer {
+  padding: 3em 0;
+  text-align: center;
+  font-weight: bold;
+  color: #999;
+}
+
+body>footer a {
+  color: #999 !important;
+}
+
+/* general figure setup */
+figure {padding: 1em; margin:0;}
+figure>img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  /* height: 35em; */
+}
+
+figcaption {
+  text-align: center;
+}
+
+/* 
+// css should not contain language specific content
+figcaption::before {
+  content: "Figure ";
+}
+
+figcaption::after {
+  content: ".";
+} 
+*/
+
+
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  figure>img {width: 500px;}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  figure>img {width: 700px;}
+  /* aside.twitter-timeline  {
+    display: block;
+  } */
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  figure>img {width: 700px;}
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  figure>img {width: 700px;}
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  figure>img {width: 700px;}
+}

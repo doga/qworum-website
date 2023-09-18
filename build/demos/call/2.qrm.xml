@@ -1,0 +1,9 @@
+<sequence xmlns='https://qworum.net/ns/v1/instruction/' xmlns:data='https://qworum.net/ns/v1/data/'>
+  <return>
+    <data:json>
+      {
+        "name": "value"
+      }
+    </data:json>
+  </return>
+</sequence>

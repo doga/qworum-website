@@ -1,0 +1,20 @@
+@base <https://qworum.net/semantic/domain-entitlements.ttl> .
+# @prefix s: <https://schema.org/> .
+@prefix : <https://ontology.qworum.net/> .
+
+<#platformAsAService> 
+a :PaaS ;
+:domainEntitlement <#platformEntitlement> ;
+:domainEntitlement <#customerEntitlement> .
+
+<#platformEntitlement>
+a               :DomainEntitlement ;
+:domain         "qworum.net" ;
+:subdomainsCount 1000 .
+
+<#customerEntitlement>
+a               :DomainEntitlement ;
+:domain         "domain.example" ;
+:subdomainsCount 0 .
+
+# ∎ (this character signals EOF)
