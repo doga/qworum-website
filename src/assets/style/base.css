@@ -113,6 +113,11 @@ figcaption::after {
 } 
 */
 
+iframe {
+  width : 280px;
+  height: 157px;
+}
+
 
 /* // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap */
@@ -120,6 +125,10 @@ figcaption::after {
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   figure>img {width: 500px;}
+  iframe {
+    width : 392px;
+    height: 220px;
+  }
 }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -128,6 +137,10 @@ figcaption::after {
   /* aside.twitter-timeline  {
     display: block;
   } */
+  iframe {
+    width : 560px;
+    height: 315px;
+  }
 }
 
 /* // Large devices (desktops, 992px and up) */

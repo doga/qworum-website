@@ -29,10 +29,9 @@ pitch:
 demo:
   title: Demo of a distributed web application
   description: >
-    30-second demo showing an e-shop that uses a remote shopping cart.
-    The e-shop and the shopping cart are two different Qworum APIs hosted on different DNS domains.
+    30-second demo showing an e-shop that uses a remote shopping cart hosted on a different DNS domain.
     <a target="_blank" href='https://www.infoq.com/articles/qworum-modular-ui-architecture/'>This InfoQ article</a> describes in detail how this works.
-    Note that consumer SaaS would ideally require that Qworum come preinstalled on browsers, which is currently not the case.
+    Note that consumer SaaS would ideally require that Qworum come preinstalled on browsers.
 ---
 
 <ul class="home-marquee">
@@ -118,7 +117,7 @@ demo:
     {{ demo.description | safe }}
   </p>
   {# TODO fit iframe width into small screens #}
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 
 <script type="module" src="/assets/js/homepage.js"></script>
