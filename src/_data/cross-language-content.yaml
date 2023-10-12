@@ -12,9 +12,9 @@ plans:
       single_domain:
         USD: 395
       with_subdomains:
-        multiple: 4
+        multiple: 2
     yearly:
-      spare_percent: 20
+      spare_percent: 15
     forms:
       subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
       modify_subscription: "https://airtable.com/shrlgbnVtVfdZHBQg"
