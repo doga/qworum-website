@@ -7,12 +7,11 @@ nav      :
 
 mission:
   oneliner: |
-    The new category-defining frontend technology for application integration and more
+    The category-defining frontend technology for user-facing application integrations and more
   usp:
   - Qworum brings 𝗳𝘂𝗹𝗹-𝘀𝘁𝗮𝗰𝗸 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗶𝗻𝘁𝗲𝗴𝗿𝗮𝘁𝗶𝗼𝗻𝘀 to the web platform. Integrate your interactive user flows into other applications, and vice versa. Increase the 𝗯𝘂𝘀𝗶𝗻𝗲𝘀𝘀 𝘃𝗮𝗹𝘂𝗲 of your applications.
   - Increase your 𝗱𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 𝗽𝗿𝗼𝗱𝘂𝗰𝘁𝗶𝘃𝗶𝘁𝘆 through interactive, 𝗳𝘂𝗹𝗹-𝘀𝘁𝗮𝗰𝗸 𝘄𝗲𝗯 𝗔𝗣𝗜𝘀 (a world-first!).
   - Bring your frontends in line with 𝗺𝗶𝗰𝗿𝗼𝘀𝗲𝗿𝘃𝗶𝗰𝗲𝘀 𝗮𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲𝘀. Enable developer teams to work in parallel by spreading your application's frontend over several web origins.
-#  - With Qworum-based integrations, your end-users see 𝗹𝗶𝘃𝗲 𝗱𝗮𝘁𝗮, in contrast to data integrations which generally produce data that is stale to a greater or lesser extent.
 #  - Qworum defines 𝗮 𝗻𝗲𝘄 𝘁𝘆𝗽𝗲 𝗼𝗳 𝘄𝗲𝗯 𝗔𝗣𝗜 where each endpoint can interact with the end-user ("full-stack").
   - Advanced web browser capabilities — Qworum is a 𝗣𝗮𝗮𝗦 / 𝗶𝗣𝗮𝗮𝗦 combination that brings improved application support to the web platform.
 
@@ -26,6 +25,12 @@ pitch:
   title: Investor pitch
   description: >
     1-minute pitch for this seed-stage project:
+
+dataIntegrations:
+  title: Qworum integrations compared to data integrations
+  description:
+    - Qworum integrations are 𝗶𝗻𝘁𝗲𝗿𝗮𝗰𝘁𝗶𝘃𝗲, whereas the currently prevalent application integrations consist of automated data transfers.
+    - Also, with Qworum-based integrations your end-users see 𝗹𝗶𝘃𝗲 𝗱𝗮𝘁𝗮, because the user has access to the original data, not a copy. This is in contrast to data integrations where users generally see data that is stale to a greater or lesser extent, because it is a copy.
 
 demo:
   title: Demo of a distributed web application
@@ -112,12 +117,26 @@ demo:
   <p class="downloads-explanation">{{ downloads.description | safe }}</p>
 </section>
 
+<section id="data-integrations">
+  <h2>{{ dataIntegrations.title }}</h2>
+  {% for p in dataIntegrations.description %}
+    <p>{{ p | safe }}</p>
+  {% endfor %}
+  <p>
+  </p>
+  <figure id="chrome">
+    <img src="/assets/images/qworum-integrations-vs-data-integrations.svg" alt="Google Chrome icon">
+    {# <figcaption>
+      Qworum integrations are interactive
+    </figcaption> #}
+  </figure>
+</section>
+
 <section id="demo">
   <h2>{{ demo.title }}</h2>
   <p>
     {{ demo.description | safe }}
   </p>
-  {# TODO fit iframe width into small screens #}
   <iframe src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 
