@@ -74,6 +74,16 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "src/en/index.njk",
+			"bookmarks": [
+				{
+					"line": 34,
+					"column": 67,
+					"label": ""
+				}
+			]
 		}
 	]
 }
