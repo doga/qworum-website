@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://qworum.net/en/</loc>
+    <loc>http://localhost:3000/en/</loc>
     <lastmod>2022-12-14T08:30:23.740Z</lastmod>
   </url>
   <url>
-    <loc>https://qworum.net/en/about/</loc>
+    <loc>http://localhost:3000/en/about/</loc>
     <lastmod>2022-12-14T11:09:22.048Z</lastmod>
   </url>
   <url>
-    <loc>https://qworum.net/en/demos/</loc>
+    <loc>http://localhost:3000/en/demos/</loc>
     <lastmod>2023-01-08T21:44:11.569Z</lastmod>
   </url>
   <url>
-    <loc>https://qworum.net/en/developers/</loc>
+    <loc>http://localhost:3000/en/developers/</loc>
     <lastmod>2022-12-14T09:29:24.938Z</lastmod>
   </url>
   <url>
-    <loc>https://qworum.net/en/plans/</loc>
+    <loc>http://localhost:3000/en/plans/</loc>
     <lastmod>2022-12-14T09:28:09.560Z</lastmod>
   </url>
   <url>
-    <loc>https://qworum.net/en/platform/</loc>
+    <loc>http://localhost:3000/en/platform/</loc>
     <lastmod>2022-12-14T09:27:45.798Z</lastmod>
   </url>
   <url>
-    <loc>https://qworum.net/en/solution/</loc>
+    <loc>http://localhost:3000/en/solution/</loc>
     <lastmod>2022-12-14T09:27:56.542Z</lastmod>
   </url>
   <url>
-    <loc>https://qworum.net/en/specification/v1/</loc>
+    <loc>http://localhost:3000/en/specification/v1/</loc>
     <lastmod>2021-11-14T19:26:07.148Z</lastmod>
   </url>
 </urlset>
