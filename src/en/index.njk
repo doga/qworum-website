@@ -42,6 +42,12 @@ demo:
     Remote web APIs don't have to be tied to remote applications, in other words they can be standalone APIs. In this case we would be dealing with distributed applications rather than application integration. Here is a 30-second demo showing an e-shop that uses a remote shopping cart hosted on a different DNS domain.
     <a target="_blank" href='https://www.infoq.com/articles/qworum-modular-ui-architecture/'>This InfoQ article</a> describes in detail how this works.
     Note that consumer SaaS would ideally require that Qworum come preinstalled on browsers.
+
+fullstack:
+  title: What is a full-stack API protocol?
+  description:
+    - Full-stack API protocols cover all three application layers — data, business logic, and presentation. 𝗤𝘄𝗼𝗿𝘂𝗺 𝗶𝘀 𝗰𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆 𝘁𝗵𝗲 𝗼𝗻𝗹𝘆 𝗳𝘂𝗹𝗹-𝘀𝘁𝗮𝗰𝗸 𝗔𝗣𝗜 𝘁𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝘆 in existence.
+    - Qworum is very similar to the RPC protocols that operate at the business logic level, in that Qworum is also an RPC-type protocol, except that Qworum also fully supports interactive processes.
 ---
 
 <ul class="home-marquee">
@@ -140,6 +146,16 @@ demo:
     {{ demo.description | safe }}
   </p>
   <iframe src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+
+<section id="fullstack">
+  <h2>{{ fullstack.title }}</h2>
+  {% for p in fullstack.description %}
+    <p>{{ p | safe }}</p>
+  {% endfor %}
+  <figure>
+    <img src="/assets/images/qworum-vs-other-protocols.svg" alt="Google Chrome icon">
+  </figure>
 </section>
 
 <script type="module" src="/assets/js/homepage.js"></script>
