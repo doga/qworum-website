@@ -9,10 +9,7 @@ plans:
   alloy:
     name: Qworum Alloy
     monthly:
-      single_domain:
-        USD: 395
-      with_subdomains:
-        multiple: 2
+      USD: 395
     yearly:
       spare_percent: 15
     forms:
