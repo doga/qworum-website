@@ -14,7 +14,7 @@ plans:
         FREE
       </span>
     features: 
-    - Enable Qworum for one DNS domain without subdomains.
+    - Enable Qworum for one DNS domain without subdomains (free).
     # - Develop Qworum applications and services on your local machine.❖
     # - Free VS Code extension.
     # - Online support.✪
@@ -41,7 +41,7 @@ plans:
 
     features: 
     - Enable Qworum for one or more DNS domains including subdomains.
-    - Optionally enable Qworum for one DNS domain without subdomains (free).
+    - Plus all §§{plans.ore.name} features.
     # - Suitable for enterprise use cases.
     # - Develop Qworum applications and services on your local machine.❖
     # - Free VS Code extension.
