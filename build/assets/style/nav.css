@@ -21,6 +21,10 @@ nav a.selected {
   padding: 0 0.2em;
 }
 
+nav>ul>li {
+  padding: 0;
+}
+
 nav>ul>li:first-child {
   font-size  : 2.2em;
   font-weight: bold;

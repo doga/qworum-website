@@ -38,6 +38,10 @@ h6 {
   padding-top: 0.2em;
 }
 
+li {
+  padding: 0.5em 0;
+}
+
 a {
   color: var(--accent-color);
 }
