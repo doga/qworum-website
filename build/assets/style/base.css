@@ -5,7 +5,8 @@
 
 body {
   font-family     : "Avenir Next Regular", sans-serif;
-  padding          : 2em; /*  */
+  font-size       : 18px;
+  padding         : 2em;
   min-width       : 20em;
   max-width       : 800px;
   margin          : auto;
