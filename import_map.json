@@ -1,6 +1,6 @@
 {
   "imports": {
-    "lume/": "https://deno.land/x/lume@v1.19.2/",
+    "lume/": "https://deno.land/x/lume@v1.19.3/",
     "lume_langdata/": "https://deno.land/x/lume_langdata@v1.0.9/",
     "lume_navbardata/": "https://deno.land/x/lume_navbardata@v1.0.10/",
     "lume_cross_language_content/": "https://deno.land/x/lume_cross_language_content@v1.0.7/",
