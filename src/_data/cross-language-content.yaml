@@ -3,9 +3,10 @@ plans:
   ore:
     name: Qworum Ore
     forms:
-      subscribe: "https://airtable.com/shrGrvS4Fhi7oAnFh"
-      modify_subscription: "https://airtable.com/shrlgbnVtVfdZHBQg"
-      unsubscribe: "https://airtable.com/shr2qFMtpfD749aEP"
+      subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagYd8CUdzGzHb4fk/form"
+      # subscribe: "https://airtable.com/shrGrvS4Fhi7oAnFh"
+      modify_subscription: "https://airtable.com/appuJb8rwOU58lihn/pagYd8CUdzGzHb4fk/form"
+      unsubscribe: "https://airtable.com/appuJb8rwOU58lihn/pagTPN97228UqkNZr/form"
   alloy:
     name: Qworum Alloy
     monthly:
@@ -13,8 +14,9 @@ plans:
     yearly:
       spare_percent: 15
     forms:
-      subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
-      modify_subscription: "https://airtable.com/shrlgbnVtVfdZHBQg"
-      unsubscribe: "https://airtable.com/shr2qFMtpfD749aEP"
+      subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
+      # subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
+      modify_subscription: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
+      unsubscribe: "https://airtable.com/appuJb8rwOU58lihn/pagTPN97228UqkNZr/form"
 
 
