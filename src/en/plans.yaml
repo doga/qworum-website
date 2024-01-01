@@ -14,21 +14,21 @@ plans:
         FREE
       </span>
     features: 
-    - Enable Qworum for one DNS domain without subdomains (free).
-    # - Develop Qworum applications and services on your local machine.❖
-    # - Free VS Code extension.
+    # - Enable Qworum for one DNS domain without subdomains (free).
+    - Develop and run Qworum applications and services on your local machine.
+    - Free developer resources and tooling.
     # - Online support.✪
     # - >
     #   Optionally activate Qworum for one DNS domain using this <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>activation form</a>.
     #   The activation is valid until you deactivate using this
     #   <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
     #   One free activation allowed per company or person.
-    call_to_action: §§{plans.ore.forms.subscribe}
+    # call_to_action: §§{plans.ore.forms.subscribe}
 
   - title: §§{plans.alloy.name}
     price   : >
-      <span class='price monthly-price' data-amount='§§{plans.alloy.monthly.USD}' data-currency='USD'>
-        $§§{plans.alloy.monthly.USD}
+      <span class='price monthly-price' data-amount='§§{plans.alloy.price.monthly.USD}' data-currency='USD'>
+        $§§{plans.alloy.price.monthly.USD}
       </span> 
       <span class='price-addendum'>
         <br>
@@ -36,7 +36,7 @@ plans:
       </span> 
 
       <span class='price-notes'>
-        Spare §§{plans.alloy.yearly.spare_percent}% with a yearly subscription.
+        Spare §§{plans.alloy.price.yearly.spare_percent}% with a yearly subscription.
       </span> 
 
     features: 
@@ -62,11 +62,11 @@ features_tag: Features
 conditions_tag: Notes
 
 conditions:
-- Qworum Ore is available for businesses. It is yearly renewable, and will always remain free.
+# - Qworum Ore is available for businesses. It is yearly renewable, and will always remain free.
 - >
   Qworum is enabled for HTTPS sites on the standard HTTPS TCP port. The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
 # - >
 #   <a target="_blank" href='§§{plans.ore.forms.modify_subscription}'>Subscription modification form</a>.
-- The subscription links listed above can also be used for modifying an existing subscription.
+- Update your subscription using the same subscription button listed above.
 - >
-  <a target="_blank" href='§§{plans.ore.forms.unsubscribe}'>Subscription termination form</a>.
+  <a target="_blank" href='§§{plans.alloy.forms.unsubscribe}'>Subscription termination form</a>.
