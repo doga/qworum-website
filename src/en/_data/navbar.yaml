@@ -1,17 +1,18 @@
 # This file was automatically generated at build time
-# on 2024-01-02 by the "lume_navbardata" Lume plugin.
-- title: Platform
-  path: platform
-  order: 1
-- title: Solution
-  path: solution
-  order: 2
-- title: Plans
-  path: plans
-  order: 3
-- title: Developers
-  path: developers
-  order: 4
-- title: About
-  path: about
-  order: 5
+# on 2024-01-03 by the "lume_navbardata" Lume plugin.
+list:
+  - title: Platform
+    path: platform
+    order: 1
+  - title: Solution
+    path: solution
+    order: 2
+  - title: Plans
+    path: plans
+    order: 3
+  - title: Developers
+    path: developers
+    order: 4
+  - title: About
+    path: about
+    order: 5

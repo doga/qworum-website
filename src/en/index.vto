@@ -1,5 +1,5 @@
 ---
-layout   : layouts/base.njk
+layout   : layouts/base.vto
 css      : home.css
 title    : Home
 nav      : 
@@ -58,20 +58,20 @@ fullstack:
   <li>
     <h1>{{ mission.oneliner }}</h1>
     <ul>
-      {% for argument in mission.usp %}
+      {{ for argument of mission.usp }}
         <li>{{ argument }}</li>
-      {% endfor %}
+      {{ /for }}
     </ul>
   </li>
   <li></li>
 </ul>
 
 
-{# <section id="pitch">
+{{# <section id="pitch">
   <h2>{{ pitch.title }}</h2>
   <p>{{ pitch.description }}</p>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/c1Ro_y9-EWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</section> #}
+</section> #}}
 
 
 <section id="downloads">
@@ -98,9 +98,9 @@ fullstack:
       <!-- TODO use the [Microsoft Edge add-ons store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home) -->
       <img src="/assets/images/logos/Microsoft_Edge_logo_(2019).svg" alt="Microsoft Edge icon">
       <figcaption>
-        {# <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank"> #}
+        {{# <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank"> #}}
           Qworum for <br> Microsoft Edge
-        {# </a> #}
+        {{# </a> #}}
       </figcaption>
     </figure>
     <figure class="download" id="firefox">
@@ -113,50 +113,50 @@ fullstack:
       <!-- TODO use the [Opera addons store](https://addons.opera.com/en-gb/extensions/?ref=menu) -->
       <img src="/assets/images/logos/Opera_2015_logo-cropped.svg" alt="Opera Browser icon">
       <figcaption>
-        {# <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank"> #}
+        {{# <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank"> #}}
           Qworum for <br> Opera Browser
-        {# </a> #}
+        {{# </a> #}}
       </figcaption>
     </figure>
     <figure class="download" id="brave">
       <img src="/assets/images/logos/Brave-logo-color-RGB_reversed-cropped.svg" alt="Brave Browser icon">
       <figcaption>
-        {# <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank"> #}
+        {{# <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank"> #}}
           Qworum for <br> Brave Browser
-        {# </a> #}
+        {{# </a> #}}
       </figcaption>
     </figure>
   </div>
 
-  <p class="downloads-explanation">{{ downloads.description | safe }}</p>
+  <p class="downloads-explanation">{{ downloads.description }}</p>
 </section>
 
 <section id="integrations">
   <h2>{{ integrations.title }}</h2>
-  {% for p in integrations.description %}
-    <p>{{ p | safe }}</p>
-  {% endfor %}
+  {{ for p of integrations.description }}
+    <p>{{ p }}</p>
+  {{ /for }}
   <figure>
     <img src="/assets/images/qworum-integrations.png" alt="Google Chrome icon">
-    {# <figcaption>
+    {{# <figcaption>
       Qworum integrations are interactive
-    </figcaption> #}
+    </figcaption> #}}
   </figure>
 </section>
 
 <section id="demo">
   <h2>{{ demo.title }}</h2>
   <p>
-    {{ demo.description | safe }}
+    {{ demo.description }}
   </p>
   <iframe src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 
 <section id="fullstack">
   <h2>{{ fullstack.title }}</h2>
-  {% for p in fullstack.description %}
-    <p>{{ p | safe }}</p>
-  {% endfor %}
+  {{ for p of fullstack.description }}
+    <p>{{ p }}</p>
+  {{ /for }}
   <figure>
     <img src="/assets/images/qworum-vs-other-protocols.svg" alt="Google Chrome icon">
   </figure>
@@ -168,5 +168,5 @@ fullstack:
 <!-- highlight.js (code highlighting) -->
 <!-- https://highlightjs.org/download/ -->
 <!-- https://github.com/highlightjs/highlight.js -->
-{# <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>  #}
+{{# <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>  #}}

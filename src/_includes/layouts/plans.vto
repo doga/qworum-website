@@ -1,46 +1,46 @@
 ---
-layout: ./base.njk
+layout: ./base.vto
 css: plans.css
 ---
 
 <h1>{{ title }}</h1>
-<p class="pricing-description">{{ description | safe }}</p>
+<p class="pricing-description">{{ description }}</p>
 
 <ul class="pricing-plans">
-  {% for plan in plans %}
+  {{ for plan of plans }}
   <li>
     <p class="pricing-plan-title">
       {{ plan.title }}
     </p>
-    {% if plan.call_to_action %}
+    {{ if plan.call_to_action }}
       <button class='call-to-action' onClick="window.location = '{{ plan.call_to_action }}'">
         {{ subscribe_tag }}
       </button>
-    {% endif %}
+    {{ /if }}
     <p>
-      {{ plan.price | safe }}
+      {{ plan.price }}
     </p>
     <p>
       {{ features_tag }}:
     </p>
     <ul>
-      {% for feature in plan.features %}
+      {{ for feature of plan.features }}
       <li>
-        {{ feature | safe }}
+        {{ feature }}
       </li>
-      {% endfor %}
+      {{ /for }}
     </ul>
   </li>
-  {% endfor %}
+  {{ /for }}
 </ul>
 
 <p>{{ conditions_tag }}:</p>
 <ul class="pricing-notes">
-  {% for note in conditions %}
+  {{ for note of conditions }}
   <li>
-    {{ note | safe }}
+    {{ note }}
   </li>
-  {% endfor %}
+  {{ /for }}
 </ul>
 
 <script>

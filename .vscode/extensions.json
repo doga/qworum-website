@@ -2,7 +2,7 @@
   "recommendations": [
     "simonsiefke.svg-preview",
     "denoland.vscode-deno",
-    "ronnidc.nunjucks",
-    "smoore.yaml-path"
+    "smoore.yaml-path",
+    "oscarotero.vento-syntax"
   ]
 }

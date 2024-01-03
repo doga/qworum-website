@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.vto
 css: specification.css
 url: ./specification/v1/index.html
 title: The Qworum script, specification version 1
@@ -645,7 +645,7 @@ Qworum.eval(
       </code></pre>
         <figcaption>3.2.1.1: A <code>call</code> instruction with arguments</figcaption>
       </figure>
-{# 
+{{# 
       <p id="phase-arguments">
         A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that
         contains an item named <code>qworum-arguments</code>:
@@ -682,7 +682,7 @@ Qworum.eval(
         Even if a service hasn't received its data arguments on the server side during its first phase, the service
         nevertheless has the option of sending any and all of its data to the server side during any of its later
         phases by using the <a href="#goto"> <code>goto</code></a> instruction.
-      </p> #}
+      </p> #}}
 
       <h4>3.2.2. Calls with object arguments</h4>
       <!-- <p class="note-to-editor">Use cases?</p> -->

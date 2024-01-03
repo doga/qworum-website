@@ -1,0 +1,15 @@
+---
+layout: ./base.vto
+---
+
+<h1>{{ title }}</h1>
+<p>{{ lead }}</p>
+
+<ul>
+  {{ for demo of demos }}
+    <li>
+      <a href="{{ demo.link }}" target="_blank">{{ demo.title }}</a>: 
+      {{ demo.description}}
+    </li>
+  {{ /for }}
+</ul>
