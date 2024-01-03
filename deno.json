@@ -5,12 +5,11 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -"
   },
   "imports": {
-    "lume/"                       : "https://deno.land/x/lume@v2.0.2/",
-    "lume_langdata/"              : "https://deno.land/x/lume_langdata@v2.0.0/",
-    "lume_navbardata/"            : "https://deno.land/x/lume_navbardata@v2.0.1/",
-    "lume_cross_language_content/": "https://deno.land/x/lume_cross_language_content@v2.0.0/",
-    "datetime"                    : "https://deno.land/std@0.210.0/datetime/mod.ts",
-    "jsHighlighter"               : "https://unpkg.com/@highlightjs/cdn-assets@11.6.0/es/languages/javascript.min.js"
+    "lume/"          : "https://deno.land/x/lume@v2.0.2/",
+    "lume_langdata"  : "https://deno.land/x/lume_langdata@v2.0.0/mod.ts",
+    "lume_navbardata": "https://deno.land/x/lume_navbardata@v2.0.1/mod.ts",
+    "datetime"       : "https://deno.land/std@0.210.0/datetime/mod.ts",
+    "jsHighlighter"  : "https://unpkg.com/@highlightjs/cdn-assets@11.6.0/es/languages/javascript.min.js"
   },
   "compilerOptions": {
     "types": [

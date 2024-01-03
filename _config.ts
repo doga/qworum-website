@@ -11,10 +11,11 @@ import codeHighlight from "lume/plugins/code_highlight.ts";
 import jsHighlighter from "jsHighlighter";
 
 // my addons
-import langdata from 'lume_langdata/mod.ts'; // my published lume plugin
-import navbardata from 'lume_navbardata/mod.ts'; // my published lume plugin
-// import * as lume_cross_language_content from './lume-addons/my/lume_cross_language_content/mod.ts';
-import * as lume_cross_language_content from 'lume_cross_language_content/mod.ts'; // my published lume post-processor
+import langdata from 'lume_langdata'; // my published lume plugin
+import navbardata from 'lume_navbardata'; // my published lume plugin
+
+// import * as lume_cross_language_content from './lume-addons/my/lume_cross_language_content';
+// import {createAfterBuildListener as insertCrossLanguageContent} from 'lume_cross_language_content'; // my published lume post-processor
 
 const
 src  = './src',
@@ -73,8 +74,7 @@ lume({
 //   "afterBuild",
 //   crossLanguageContent.createAfterBuildListener(src, dest)
 // )
-.addEventListener(
-  "afterBuild",
-  lume_cross_language_content.createAfterBuildListener(src, dest)
-)
+// .addEventListener( 
+//   "afterBuild", insertCrossLanguageContent(src, dest)
+// )
 ;

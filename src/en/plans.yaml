@@ -4,69 +4,74 @@ nav:
   order: 3
   selection: plans
 title: Qworum Platform Plans
-description: |
-  Enable Qworum for your internet and intranet applications. Read our <a href="/docs/legal/privacy-policy/" target="_blank">privacy policy</a> and <a href="/docs/legal/terms-of-service/" target="_blank">terms of service</a>.
 
-plans: 
-  - title: §§{plans.ore.name}
-    price: >
-      <span class='price monthly-price'>
-        FREE
-      </span>
-    features: 
-    # - Enable Qworum for one DNS domain without subdomains (free).
-    - Develop and run Qworum applications and services on your local machine.
-    - Free developer resources and tooling.
-    # - Online support.✪
-    # - >
-    #   Optionally activate Qworum for one DNS domain using this <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>activation form</a>.
-    #   The activation is valid until you deactivate using this
-    #   <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
-    #   One free activation allowed per company or person.
-    # call_to_action: §§{plans.ore.forms.subscribe}
+content:
+  description: |
+    Enable Qworum for your internet and intranet applications. Read our <a href="/docs/legal/privacy-policy/" target="_blank">privacy policy</a> and <a href="/docs/legal/terms-of-service/" target="_blank">terms of service</a>.
+  plans: 
+    ore:
+      # price: >
+      #   <span class='price monthly-price'>
+      #     FREE
+      #   </span>
+      features: 
+      # - Enable Qworum for one DNS domain without subdomains (free).
+      - Develop and run Qworum applications and services on your local machine.
+      - Free developer resources and tooling.
+      # - Online support.✪
+      # - >
+      #   Optionally activate Qworum for one DNS domain using this <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>activation form</a>.
+      #   The activation is valid until you deactivate using this
+      #   <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
+      #   One free activation allowed per company or person.
+      # call_to_action: §§{plans.ore.forms.subscribe}
 
-  - title: §§{plans.alloy.name}
-    price   : >
-      <span class='price monthly-price' data-amount='§§{plans.alloy.price.monthly.USD}' data-currency='USD'>
-        $§§{plans.alloy.price.monthly.USD}
-      </span> 
-      <span class='price-addendum'>
-        <br>
-        per domain per month <br><br>
-      </span> 
+    alloy:
+      # price   : >
+      #   <span class='price monthly-price' data-amount='§§{plans.alloy.price.monthly.USD}' data-currency='USD'>
+      #     $§§{plans.alloy.price.monthly.USD}
+      #   </span> 
+      #   <span class='price-addendum'>
+      #     <br>
+      #     per domain per month <br><br>
+      #   </span> 
 
-      <span class='price-notes'>
-        Spare §§{plans.alloy.price.yearly.spare_percent}% with a yearly subscription.
-      </span> 
+      #   <span class='price-notes'>
+      #     Spare §§{plans.alloy.price.yearly.spare_percent}% with a yearly subscription.
+      #   </span> 
 
-    features: 
-    - Enable Qworum for one or more DNS domains including subdomains.
-    - Plus all §§{plans.ore.name} features.
-    # - Suitable for enterprise use cases.
-    # - Develop Qworum applications and services on your local machine.❖
-    # - Free VS Code extension.
-    # - Online support.✪
-    call_to_action: §§{plans.alloy.forms.subscribe}
+      features: 
+      - Enable Qworum for one or more DNS domains including subdomains.
+      - Plus all Qworum Ore features.
+      # - Suitable for enterprise use cases.
+      # - Develop Qworum applications and services on your local machine.❖
+      # - Free VS Code extension.
+      # - Online support.✪
+      # call_to_action: §§{plans.alloy.forms.subscribe}
 
-# - title   : Enterprise
-#   price   : 500 USD per month or 5,000 USD for 12 months. 
-#   features: 
-#   - Enables Qworum Observability Cloud.
-#   - Enables Qworum for one DNS domain plus up to 5 subdomains.
-#   - Subscribed domain may be an internet domain or an intranet domain.
-#   - Enable additional subdomains for 80 USD per month per subdomain or 800 USD for 12 months per subdomain.
-#   - Includes all features of free plan.
+  # - title   : Enterprise
+  #   price   : 500 USD per month or 5,000 USD for 12 months. 
+  #   features: 
+  #   - Enables Qworum Observability Cloud.
+  #   - Enables Qworum for one DNS domain plus up to 5 subdomains.
+  #   - Subscribed domain may be an internet domain or an intranet domain.
+  #   - Enable additional subdomains for 80 USD per month per subdomain or 800 USD for 12 months per subdomain.
+  #   - Includes all features of free plan.
 
-subscribe_tag: Get started
-features_tag: Features
-conditions_tag: Notes
+  forms:
+    unsubscribe: Subscription termination form
 
-conditions:
-# - Qworum Ore is available for businesses. It is yearly renewable, and will always remain free.
-- >
-  Qworum is enabled for HTTPS sites on the standard HTTPS TCP port. The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
-# - >
-#   <a target="_blank" href='§§{plans.ore.forms.modify_subscription}'>Subscription modification form</a>.
-- Update your subscription using the same subscription button listed above.
-- >
-  <a target="_blank" href='§§{plans.alloy.forms.unsubscribe}'>Subscription termination form</a>.
+
+  subscribe_tag: Get started
+  features_tag: Features
+  conditions_tag: Notes
+
+  conditions:
+  # - Qworum Ore is available for businesses. It is yearly renewable, and will always remain free.
+  - >
+    Qworum is enabled for HTTPS sites on the standard HTTPS TCP port. The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
+  # - >
+  #   <a target="_blank" href='§§{plans.ore.forms.modify_subscription}'>Subscription modification form</a>.
+  - Update your subscription using the same subscription button listed above.
+  # - >
+  #   <a target="_blank" href='§§{plans.alloy.forms.unsubscribe}'>Subscription termination form</a>.

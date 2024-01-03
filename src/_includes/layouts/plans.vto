@@ -4,27 +4,43 @@ css: plans.css
 ---
 
 <h1>{{ title }}</h1>
-<p class="pricing-description">{{ description }}</p>
+<p class="pricing-description">{{ content.description }}</p>
 
 <ul class="pricing-plans">
-  {{ for plan of plans }}
+  {{ for plan of plans.plans }}
   <li>
     <p class="pricing-plan-title">
-      {{ plan.title }}
+      {{ plan.name }}
     </p>
-    {{ if plan.call_to_action }}
-      <button class='call-to-action' onClick="window.location = '{{ plan.call_to_action }}'">
-        {{ subscribe_tag }}
+    {{ if plan.forms }}
+      <button class='call-to-action' onClick="window.location = '{{ plan.forms.subscribe }}'">
+        {{ content.subscribe_tag }}
       </button>
     {{ /if }}
     <p>
-      {{ plan.price }}
+      {{ if plan.price }}
+        <span class='price monthly-price' data-amount='{{plan.price.monthly.USD}}' data-currency='USD'>
+          {{ plan.price.monthly.USD }}
+        </span> 
+        <span class='price-addendum'>
+          <br>
+          per domain per month <br><br>
+        </span> 
+
+        <span class='price-notes'>
+          Spare {{ plan.price.yearly.spare_percent }}% with a yearly subscription.
+        </span> 
+      {{ else }}
+        <span class='price monthly-price'>
+          FREE
+        </span>
+      {{ /if }}
     </p>
     <p>
-      {{ features_tag }}:
+      {{ content.features_tag }}:
     </p>
     <ul>
-      {{ for feature of plan.features }}
+      {{ for feature of content.plans[plan.id].features }}
       <li>
         {{ feature }}
       </li>
@@ -34,13 +50,18 @@ css: plans.css
   {{ /for }}
 </ul>
 
-<p>{{ conditions_tag }}:</p>
+<p>{{ content.conditions_tag }}:</p>
 <ul class="pricing-notes">
-  {{ for note of conditions }}
+  {{ for note of content.conditions }}
   <li>
     {{ note }}
   </li>
   {{ /for }}
+  <li>
+    <a target="_blank" href='{{plans.forms.unsubscribe}}'>
+      {{content.forms.unsubscribe}}
+    </a>.
+  </li>
 </ul>
 
 <script>
