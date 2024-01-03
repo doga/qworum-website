@@ -1,14 +1,19 @@
 # Subscription plans
-plans:
-- name: Qworum Ore
+
+list:
+- &ore
+  name: Qworum Ore
   id: ore
+  order: 1
   # forms:
   #   subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagYd8CUdzGzHb4fk/form"
   #   # subscribe: "https://airtable.com/shrGrvS4Fhi7oAnFh"
   #   modify_subscription: "https://airtable.com/appuJb8rwOU58lihn/pagYd8CUdzGzHb4fk/form"
   #   unsubscribe: "https://airtable.com/appuJb8rwOU58lihn/pagTPN97228UqkNZr/form"
-- name: Qworum Alloy
+- &alloy
+  name: Qworum Alloy
   id: alloy
+  order: 2
   price:
     monthly:
       USD: 395
@@ -18,10 +23,11 @@ plans:
     subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
     # subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
     modify_subscription: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
-    # unsubscribe: "https://airtable.com/appuJb8rwOU58lihn/pagTPN97228UqkNZr/form"
+
+by_id:
+  ore: *ore
+  alloy: *alloy
 
 forms:
   unsubscribe: "https://airtable.com/appuJb8rwOU58lihn/pagTPN97228UqkNZr/form"
-
-
 

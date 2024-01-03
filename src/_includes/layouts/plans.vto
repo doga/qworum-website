@@ -4,23 +4,23 @@ css: plans.css
 ---
 
 <h1>{{ title }}</h1>
-<p class="pricing-description">{{ content.description }}</p>
+<p class="pricing-description">{{ text.description }}</p>
 
 <ul class="pricing-plans">
-  {{ for plan of plans.plans }}
+  {{ for plan of plans.list }}
   <li>
     <p class="pricing-plan-title">
       {{ plan.name }}
     </p>
     {{ if plan.forms }}
       <button class='call-to-action' onClick="window.location = '{{ plan.forms.subscribe }}'">
-        {{ content.subscribe_tag }}
+        {{ text.subscribe_tag }}
       </button>
     {{ /if }}
     <p>
       {{ if plan.price }}
         <span class='price monthly-price' data-amount='{{plan.price.monthly.USD}}' data-currency='USD'>
-          {{ plan.price.monthly.USD }}
+          {{ plan.price.monthly.USD }} USD
         </span> 
         <span class='price-addendum'>
           <br>
@@ -37,10 +37,10 @@ css: plans.css
       {{ /if }}
     </p>
     <p>
-      {{ content.features_tag }}:
+      {{ text.features_tag }}:
     </p>
     <ul>
-      {{ for feature of content.plans[plan.id].features }}
+      {{ for feature of text.plans[plan.id].features }}
       <li>
         {{ feature }}
       </li>
@@ -50,16 +50,16 @@ css: plans.css
   {{ /for }}
 </ul>
 
-<p>{{ content.conditions_tag }}:</p>
+<p>{{ text.conditions_tag }}:</p>
 <ul class="pricing-notes">
-  {{ for note of content.conditions }}
+  {{ for note of text.conditions }}
   <li>
     {{ note }}
   </li>
   {{ /for }}
   <li>
     <a target="_blank" href='{{plans.forms.unsubscribe}}'>
-      {{content.forms.unsubscribe}}
+      {{text.forms.unsubscribe}}
     </a>.
   </li>
 </ul>

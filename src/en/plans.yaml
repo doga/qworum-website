@@ -1,11 +1,10 @@
 layout: layouts/plans.vto
-css: plans.css
 nav:
   order: 3
   selection: plans
 title: Qworum Platform Plans
 
-content:
+text:
   description: |
     Enable Qworum for your internet and intranet applications. Read our <a href="/docs/legal/privacy-policy/" target="_blank">privacy policy</a> and <a href="/docs/legal/terms-of-service/" target="_blank">terms of service</a>.
   plans: 
