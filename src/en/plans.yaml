@@ -41,7 +41,7 @@ text:
 
       features: 
       - Enable Qworum for one or more DNS domains including subdomains.
-      - Plus all Qworum Ore features.
+      - Plus all {{plans.by_id.ore.name}} features.
       # - Suitable for enterprise use cases.
       # - Develop Qworum applications and services on your local machine.❖
       # - Free VS Code extension.
@@ -68,7 +68,8 @@ text:
   conditions:
   # - Qworum Ore is available for businesses. It is yearly renewable, and will always remain free.
   - >
-    Qworum is enabled for HTTPS sites on the standard HTTPS TCP port. The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
+    Qworum is enabled for HTTPS sites on the standard HTTPS TCP port.
+  #  The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
   # - >
   #   <a target="_blank" href='§§{plans.ore.forms.modify_subscription}'>Subscription modification form</a>.
   - Update your subscription using the same subscription button listed above.
