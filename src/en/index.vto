@@ -7,20 +7,24 @@ nav      :
 
 mission:
   oneliner: |
-    Category-defining iPaaS & PaaS. World-leading platform for interactive processes and distributed applications.
+    Best-in-class integrations are essential for today's leading business applications. Don't get left behind.
+#    Category-defining iPaaS & PaaS. World-leading platform for interactive processes and distributed applications.
   usp:
-  - Qworum brings new advanced features to the Web platform for radically improved application support.
-  - Provide interactive full-stack Web APIs for 𝟭𝟬𝘅 𝗲𝗮𝘀𝗶𝗲𝗿 𝗶𝗻𝘁𝗲𝗴𝗿𝗮𝘁𝗶𝗼𝗻𝘀 with 3rd-party applications as compared to REST & GraphQL.
+  - Extend your reach. Leverage Qworum's full-stack API technology for integrating your user flows into 3rd-party applications. 
+  - Qworum's category-defining API technology makes the impossible possible. Complex user-facing integrations that were unimaginable yesterday are now a breeze.
+  - Qworum is not only an integration platform, but also a platform for modular and distributed applications that are 100% compatible with microservices architectures and composable architectures.
+#  - Qworum brings new advanced features to the Web platform for radically improved application support.
+#  - Provide interactive full-stack Web APIs for 𝟭𝟬𝘅 𝗲𝗮𝘀𝗶𝗲𝗿 𝗶𝗻𝘁𝗲𝗴𝗿𝗮𝘁𝗶𝗼𝗻𝘀 with 3rd-party applications as compared to REST & GraphQL.
 #  - Qworum brings 𝗳𝘂𝗹𝗹-𝘀𝘁𝗮𝗰𝗸 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗶𝗻𝘁𝗲𝗴𝗿𝗮𝘁𝗶𝗼𝗻𝘀 to the web platform. Integrate your interactive user flows into other applications, and vice versa. Increase the 𝗯𝘂𝘀𝗶𝗻𝗲𝘀𝘀 𝘃𝗮𝗹𝘂𝗲 of your applications.
-  - Modularise the frontend of your web applications for improved developer productivity and full compatibility with microservices architectures.
+#  - Modularise the frontend of your web applications for improved developer productivity and full compatibility with microservices architectures.
 #  - Make your application frontends compatible with 𝗺𝗶𝗰𝗿𝗼𝘀𝗲𝗿𝘃𝗶𝗰𝗲𝘀 𝗮𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲𝘀. Enable developer teams to work in parallel by spreading frontends over several web origins.
 #  - Qworum defines 𝗮 𝗻𝗲𝘄 𝘁𝘆𝗽𝗲 𝗼𝗳 𝘄𝗲𝗯 𝗔𝗣𝗜 where each endpoint can interact with the end-user ("full-stack").
 
 downloads:
   title: Free web browser extension
   description: >
-    Currently supported: Google Chrome on desktop/laptop. We plan on enabling all mainstream browsers that support extensions, including on mobile platforms. 
-    User data stays in the browser; see our <a target="_blank" href="/docs/legal/privacy-policy/">privacy policy</a>.
+    Currently supported: Google Chrome on desktop/laptop. Adding support for all mainstream browsers is on our short-term roadmap. 
+    User data stays in the browser, see our <a target="_blank" href="/docs/legal/privacy-policy/">privacy policy</a>.
 
 pitch:
   title: Investor pitch
@@ -39,9 +43,9 @@ integrations:
 demo:
   title: See a Qworum-based web application in action
   description: >
-    Remote web APIs don't have to be tied to remote applications, in other words they can be standalone APIs. In this case we would be dealing with distributed applications rather than application integration. Here is a 30-second demo showing an e-shop that uses a remote shopping cart hosted on a different DNS domain.
+    Here is a 30-second demo showing an e-shop that uses a remote shopping cart hosted on a different DNS domain.
     <a target="_blank" href='https://www.infoq.com/articles/qworum-modular-ui-architecture/'>This InfoQ article</a> describes in detail how this works.
-    Note that consumer SaaS would ideally require that Qworum come preinstalled on browsers.
+    Note that consumer SaaS would ideally require that Qworum come preinstalled on browsers, which is currently not the case.
 
 fullstack:
   title: What is a full-stack API protocol?
@@ -65,6 +69,10 @@ fullstack:
   </li>
   <li></li>
 </ul>
+
+<figure class="home-poster">
+  <img src="/assets/images/homepage-artwork.svg" alt="Poster">
+</figure>
 
 
 {{# <section id="pitch">
@@ -131,19 +139,6 @@ fullstack:
   <p class="downloads-explanation">{{ downloads.description }}</p>
 </section>
 
-<section id="integrations">
-  <h2>{{ integrations.title }}</h2>
-  {{ for p of integrations.description }}
-    <p>{{ p }}</p>
-  {{ /for }}
-  <figure>
-    <img src="/assets/images/qworum-integrations.png" alt="Google Chrome icon">
-    {{# <figcaption>
-      Qworum integrations are interactive
-    </figcaption> #}}
-  </figure>
-</section>
-
 <section id="demo">
   <h2>{{ demo.title }}</h2>
   <p>
@@ -159,6 +154,19 @@ fullstack:
   {{ /for }}
   <figure>
     <img src="/assets/images/qworum-vs-other-protocols.svg" alt="Google Chrome icon">
+  </figure>
+</section>
+
+<section id="integrations">
+  <h2>{{ integrations.title }}</h2>
+  {{ for p of integrations.description }}
+    <p>{{ p }}</p>
+  {{ /for }}
+  <figure>
+    <img src="/assets/images/qworum-integrations.png" alt="Google Chrome icon">
+    {{# <figcaption>
+      Qworum integrations are interactive
+    </figcaption> #}}
   </figure>
 </section>
 
