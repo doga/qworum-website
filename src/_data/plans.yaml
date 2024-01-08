@@ -16,7 +16,7 @@ list:
   order: 2
   price:
     monthly:
-      USD: 395
+      USD: 195
     yearly:
       spare_percent: 15
   forms:
@@ -24,8 +24,8 @@ list:
     # subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
     modify_subscription: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
 
-by_id:
-  ore: *ore
+by_id: 
+  ore  : *ore
   alloy: *alloy
 
 forms:

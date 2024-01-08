@@ -1,26 +1,27 @@
 {
   "tasks": {
-    "build": "deno task lume",
-    "serve": "deno task lume -s",
-    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -"
+    "build"       : "deno task lume",
+    "serve"       : "deno task lume -s",
+    "lume"        : "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
+    "add_langdata": "mdrb https://deno.land/x/lume_langdata/add_to_lume_project.md"
   },
   "imports": {
     "lume/"          : "https://deno.land/x/lume@v2.0.2/",
-    "lume_langdata"  : "https://deno.land/x/lume_langdata@v2.0.0/mod.ts",
     "lume_navbardata": "https://deno.land/x/lume_navbardata@v2.0.3/mod.ts",
     "datetime"       : "https://deno.land/std@0.210.0/datetime/mod.ts",
-    "jsHighlighter"  : "https://unpkg.com/@highlightjs/cdn-assets@11.6.0/es/languages/javascript.min.js"
+    "jsHighlighter"  : "https://unpkg.com/@highlightjs/cdn-assets@11.6.0/es/languages/javascript.min.js",
+    "lume_langdata"  : "https://deno.land/x/lume_langdata@v2.0.6/mod.ts"
   },
   "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ],
     "lib": [
       "dom",
       "dom.iterable",
       "dom.asynciterable",
       "deno.ns",
       "deno.unstable"
+    ],
+    "types": [
+      "lume/types.ts"
     ]
   },
   "lint": {

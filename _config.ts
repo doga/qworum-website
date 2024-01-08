@@ -18,13 +18,13 @@ import navbardata from 'lume_navbardata'; // my published lume plugin
 // import {createAfterBuildListener as insertCrossLanguageContent} from 'lume_cross_language_content'; // my published lume post-processor
 
 const
-src  = './src',
-dest = './build';
+src      = './src',
+dest     = './build',
+location = new URL('https://qworum.net');
 
 export default
 lume({
-  src, dest,
-  location: new URL('https://qworum.net'),
+  src, dest, location
   // server  : {open: true}
 })
 // Copy static files
@@ -45,7 +45,7 @@ lume({
 }))
 
 // https://lume.land/docs/configuration/filters/
-.filter('copyrightDate', _content => formatDate(new Date(), 'yyyy') ) // this should be a helper, but helper calls don't return self.
+.filter('copyrightDate', _content => formatDate(new Date(), 'yyyy') ) // this should be a helper, but helper calls don't return self and so can't be chained.
 
 // // New Nunjucks filters
 // .use(date(
