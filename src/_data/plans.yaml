@@ -14,11 +14,10 @@ list:
   name: Qworum Alloy
   id: alloy
   order: 2
+  free_trial: true
   price:
     monthly:
       USD: 195
-    yearly:
-      spare_percent: 15
   forms:
     subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
     # subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
@@ -31,3 +30,8 @@ by_id:
 forms:
   unsubscribe: "https://airtable.com/appuJb8rwOU58lihn/pagTPN97228UqkNZr/form"
 
+free_trial:
+  months: 1
+rebate:
+  yearly:
+    percent: 15
