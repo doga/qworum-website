@@ -4,23 +4,114 @@ title: Solution
 nav:
   order: 2
   selection: solution
+
 ---
 
 <h1>
-  Platform for interactive microservices
+  Category-defining iPaaS and PaaS hybrid solution
 </h1>
 
 <p>
-  Qworum helps stream-aligned devops teams modularize the UI layer of microservices-based enterprise software systems. 
-  Applications can be built by combining interactive services that may be hosted anywhere on the web, both on the Internet and in company intranets.
+  Qworum offers a technology for modularizing the UI layer of web applications. This module system supports both single-origin and distributed multi-origin applications.
 </p>
-  <figure>
-    <img src="/assets/images/solution/qworum-ux.svg" alt="Qworum allows for unbounded nesting levels">
-    <figcaption>The user flow for Qworum applications that span several DNS domains.</figcaption>
-  </figure>
+<p>
+  In short, Qworum is a platform for composable architectures.
+</p>
+<p>
+  And as soon as a module system can support distributed scenarios, it can be used for application integration as well.
+  In other words, in distributed systems, integration and modularisation are two sides of the same coin.
+  And that's why Qworum is both a PaaS and an iPaaS.
+</p>
+<figure>
+  <img src="/assets/images/solution/qworum-ux.svg" alt="Qworum allows for unbounded nesting levels">
+  <figcaption>The user experience of using Qworum applications</figcaption>
+</figure>
+
+<section id="integrations">
+  <h2>Peerless iPaaS for integrating interactive processes</h2>
+  <p>
+    Qworum is the only platform able to support integrations involving complex dependency graphs. 
+    Plus, Qworum makes simpler architectures 10x easier to implement.
+  </p>
+  <section id="user-authentication">
+    <h3>
+      A user authentication solution fit for even complex integrations
+    </h3>
+    <p>
+      The simple fact of the matter is, without Qworum, the integration of interactive processes 
+      involving deep dependencies between applications and services is a technical impossibility.
+    </p>
+    <p>
+      For example, in the architecture outlined below, 
+      how does <code>Application 1</code> authenticate the end-user for 
+      <code>Service 2</code> and <code>Service 3</code>?
+    </p>
+    <figure>
+      <img src="/assets/images/solution/user-authentication.svg" alt="Qworum allows for unbounded nesting levels">
+      <figcaption>Qworum can handle user authentication in deep dependency graphs</figcaption>
+    </figure>
+    <p>
+      In real-world settings such multi-tier integration scenarios will appear more and more often as new specialised
+      SaaS offerings come online. Here is a plausible example:
+    </p>
+    <ul>
+      <li>
+        Application 1: A project management application such as Airtable, Monday.com, Zoho or Jira.
+      </li>
+      <li>
+        Service 2: A specalised asset production service such as Canva, Figma, Spline, Linearity Curve or Adobe Illustrator.
+      </li>
+      <li>
+        Service 3: An asset management service such Confluence, Basecamp or SharePoint.
+      </li>
+    </ul>
+    <p>
+      Let's see what would happen without Qworum:
+    </p>
+    <ul>
+      <li>
+        Authenticating the user for <code>Service 2</code> is possible (because <code>Application 1</code> knows that <code>Service 2</code> must be used), although authenticating the user for a 3rd-party service is an overhead that is best avoided. But even for <code>Service 2</code> there is already a security problem, because now <code>Application 1</code> can impersonate the end-user on <code>Service 2</code>!
+      </li>
+      <li>
+        It is fair to say that authenticating the user for <code>Service 3</code> is a technical impossibility.
+        Indeed, <code>Application 1</code> doesn't even know that <code>Service 2</code> is using <code>Service 3</code> behind the scenes, not to mention all the conversation-tunnelling that must happen between the authenticating service and the end-user.
+      </li>
+    </ul>
+    <p>
+      For these reasons, today's composable architectures such as the MACH architecture only support one-level deep dependency trees, and they put on the main client application the burden of building all the UIs for all involved services.
+    </p>
+    <p>With Qworum all these limitations are removed:</p>
+    <ul>
+      <li>Each applications/service has direct access to the end-user and so can take care of authenticating their own end-users.</li>
+      <li>
+        Qworum preserves the confidentiality of user authentication information for all involved services.
+      </li>
+      <li>
+        Qworum makes user-authentication a non-issue for all possible dependency-graph topologies.
+      </li>
+    </ul>
+  </section>
+  <section id="10x">
+    <h3>10x easier integrations</h3>
+    <p>
+      Note that even for simple one-level dependency graphs,
+      developing applications and services with Qworum is 10x easier than with other technologies, because:
+    </p>
+    <ul>
+      <li>There is no need to authenticate the end-user for the called service.</li>
+      <li>There is no need to obtain an API key for the called service.</li>
+      <li>Calling Qworum APIs are much simpler than calling REST etc.</li>
+    </ul>
+  </section>
+
+</section>
 
 <section id="ui-bottleneck">
-  <h2>Solving the performance bottleneck that monolithic frontends represent</h2>
+  <h2>Peerless PaaS for distributed applications</h2>
+
+  <p>
+    Qworum is the only platform that can support web applications that span multiple websites.
+  </p>
 
   <section>
     <h3>What are microservices architectures?</h3>
