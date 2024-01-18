@@ -21,7 +21,7 @@ ul.home-marquee>li:first-child h1 {
 }
 
 ul.home-marquee>li:nth-child(2) {
-  background-image: url("/assets/images/homepage-artwork.svg");
+  background-image: url("/assets/images/iPaaS.svg");
   /* background-image: url("/assets/images/licensed/homepage-artwork-400px.jpg"); */
   background-size: cover;
   width: 70%;
