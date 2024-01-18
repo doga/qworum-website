@@ -4,7 +4,7 @@
 <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="11.4097 55.6621 477.853 237.785" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <linearGradient gradientTransform="matrix(477.853 0 0 477.853 11.4097 174.555)" gradientUnits="userSpaceOnUse" id="LinearGradient" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0" stop-color="#9958d1"/>
+<stop offset="0" stop-color="#651da4"/>
 </linearGradient>
 <linearGradient gradientTransform="matrix(403.125 0 0 403.125 1361.38 1907.27)" gradientUnits="userSpaceOnUse" id="LinearGradient_2" x1="0" x2="1" y1="0" y2="0">
 <stop offset="0" stop-color="#ffffff"/>
@@ -29,7 +29,7 @@
 </linearGradient>
 </defs>
 <g id="Graphics" vectornator:layerName="Graphics">
-<path d="M14.4097 55.6621L486.263 55.6621C487.92 55.6621 489.263 57.0053 489.263 58.6621L489.263 290.447C489.263 292.104 487.92 293.447 486.263 293.447L14.4097 293.447C12.7528 293.447 11.4097 292.104 11.4097 290.447L11.4097 58.6621C11.4097 57.0053 12.7528 55.6621 14.4097 55.6621Z" fill="url(#LinearGradient)" fill-rule="nonzero" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0" vectornator:layerName="Background"/>
+<path d="M14.4097 55.6621L486.263 55.6621C487.92 55.6621 489.263 57.0053 489.263 58.6621L489.263 290.447C489.263 292.104 487.92 293.447 486.263 293.447L14.4097 293.447C12.7528 293.447 11.4097 292.104 11.4097 290.447L11.4097 58.6621C11.4097 57.0053 12.7528 55.6621 14.4097 55.6621Z" fill="url(#LinearGradient)" fill-rule="nonzero" opacity="0.651634" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0" vectornator:layerName="Background"/>
 <g opacity="1" vectornator:layerName="OIDC services">
 <g opacity="1" vectornator:layerName="OIDC service 3">
 <path d="M376.023 208.525L456.913 208.525C457.278 208.525 457.573 209.868 457.573 211.525L457.573 263C457.573 264.657 457.278 266 456.913 266L376.023 266C375.659 266 375.363 264.657 375.363 263L375.363 211.525C375.363 209.868 375.659 208.525 376.023 208.525Z" fill="#6d1fb3" fill-rule="nonzero" opacity="1" stroke="#ffffff" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="1" vectornator:layerName="rect"/>
