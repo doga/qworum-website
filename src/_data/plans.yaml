@@ -14,7 +14,7 @@ list:
   name: Qworum Alloy
   id: alloy
   order: 2
-  free_trial: true
+  # free_trial: true
   price:
     monthly:
       USD: 195

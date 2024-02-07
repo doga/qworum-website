@@ -66,7 +66,7 @@
 
     
 
-    <h3>Classes</h3><ul><li id="Qworum-nav"><a href="Qworum.html">Qworum</a><ul class='methods'><li data-type="method" id="Qworum-Call-nav"><a href="Qworum.html#.Call">Call</a></li><li data-type="method" id="Qworum-checkAvailability-nav"><a href="Qworum.html#.checkAvailability">checkAvailability</a></li><li data-type="method" id="Qworum-Data-nav"><a href="Qworum.html#.Data">Data</a></li><li data-type="method" id="Qworum-eval-nav"><a href="Qworum.html#.eval">eval</a></li><li data-type="method" id="Qworum-Fault-nav"><a href="Qworum.html#.Fault">Fault</a></li><li data-type="method" id="Qworum-getData-nav"><a href="Qworum.html#.getData">getData</a></li><li data-type="method" id="Qworum-Goto-nav"><a href="Qworum.html#.Goto">Goto</a></li><li data-type="method" id="Qworum-Json-nav"><a href="Qworum.html#.Json">Json</a></li><li data-type="method" id="Qworum-Return-nav"><a href="Qworum.html#.Return">Return</a></li><li data-type="method" id="Qworum-Script-nav"><a href="Qworum.html#.Script">Script</a></li><li data-type="method" id="Qworum-SemanticData-nav"><a href="Qworum.html#.SemanticData">SemanticData</a></li><li data-type="method" id="Qworum-Sequence-nav"><a href="Qworum.html#.Sequence">Sequence</a></li><li data-type="method" id="Qworum-setData-nav"><a href="Qworum.html#.setData">setData</a></li><li data-type="method" id="Qworum-Try-nav"><a href="Qworum.html#.Try">Try</a></li></ul></li></ul>
+    <h3>Classes</h3><ul><li id="Qworum-nav"><a href="Qworum.html">Qworum</a><ul class='methods'><li data-type="method" id="Qworum-Call-nav"><a href="Qworum.html#.Call">Call</a></li><li data-type="method" id="Qworum-Data-nav"><a href="Qworum.html#.Data">Data</a></li><li data-type="method" id="Qworum-Fault-nav"><a href="Qworum.html#.Fault">Fault</a></li><li data-type="method" id="Qworum-Goto-nav"><a href="Qworum.html#.Goto">Goto</a></li><li data-type="method" id="Qworum-Json-nav"><a href="Qworum.html#.Json">Json</a></li><li data-type="method" id="Qworum-Return-nav"><a href="Qworum.html#.Return">Return</a></li><li data-type="method" id="Qworum-Script-nav"><a href="Qworum.html#.Script">Script</a></li><li data-type="method" id="Qworum-SemanticData-nav"><a href="Qworum.html#.SemanticData">SemanticData</a></li><li data-type="method" id="Qworum-Sequence-nav"><a href="Qworum.html#.Sequence">Sequence</a></li><li data-type="method" id="Qworum-Try-nav"><a href="Qworum.html#.Try">Try</a></li><li data-type="method" id="Qworum-checkAvailability-nav"><a href="Qworum.html#.checkAvailability">checkAvailability</a></li><li data-type="method" id="Qworum-eval-nav"><a href="Qworum.html#.eval">eval</a></li><li data-type="method" id="Qworum-getData-nav"><a href="Qworum.html#.getData">getData</a></li><li data-type="method" id="Qworum-setData-nav"><a href="Qworum.html#.setData">setData</a></li></ul></li></ul>
   </nav>
 
   <div id="main">
@@ -105,7 +105,7 @@ class DataValue {
     }
     static fromXmlElement(element, namespaceStack) {
         let errorMessage = 'Not valid data';
-        for (const dataType of DataValue.registry){
+        for (const dataType of DataValue.registry) {
             try {
                 const data = dataType.fromXmlElement(element, namespaceStack);
                 return data;
@@ -120,11 +120,11 @@ class DataValue {
     }
     static fromIndexedDb(encodedData) {
         let errorMessage = 'Not valid data';
-        for (const dataType of DataValue.registry){
+        for (const dataType of DataValue.registry) {
             try {
                 const data = dataType.fromIndexedDb(encodedData);
                 return data;
-            } catch (error) {}
+            } catch (error) { }
         }
         throw new Error(errorMessage);
     }
@@ -139,11 +139,11 @@ class GenericData extends DataValue {
     }
     static fromXmlElement(element, namespaceStack) {
         let errorMessage = 'Not valid data';
-        for (const dataType of GenericData.registry){
+        for (const dataType of GenericData.registry) {
             try {
                 const data = dataType.fromXmlElement(element, namespaceStack);
                 return data;
-            } catch (error) {}
+            } catch (error) { }
         }
         throw new Error(errorMessage);
     }
@@ -152,11 +152,11 @@ class GenericData extends DataValue {
     }
     static fromIndexedDb(encodedData) {
         let errorMessage = 'Not valid data';
-        for (const dataType of GenericData.registry){
+        for (const dataType of GenericData.registry) {
             try {
                 const data = dataType.fromIndexedDb(encodedData);
                 return data;
-            } catch (error) {}
+            } catch (error) { }
         }
         throw new Error(errorMessage);
     }
@@ -210,7 +210,7 @@ function getCodePoint(__char) {
 }
 const emptyString = '';
 class StringScanner {
-    constructor(string){
+    constructor(string) {
         this.chars = [
             ...string
         ];
@@ -219,13 +219,13 @@ class StringScanner {
         this.charsToBytes = new Array(this.charCount);
         this.multiByteMode = false;
         this.string = string;
-        let { chars , charCount , charsToBytes  } = this;
+        let { chars, charCount, charsToBytes } = this;
         if (charCount === string.length) {
-            for(let i = 0; i &lt; charCount; ++i){
+            for (let i = 0; i &lt; charCount; ++i) {
                 charsToBytes[i] = i;
             }
         } else {
-            for(let byteIndex = 0, charIndex = 0; charIndex &lt; charCount; ++charIndex){
+            for (let byteIndex = 0, charIndex = 0; charIndex &lt; charCount; ++charIndex) {
                 charsToBytes[charIndex] = byteIndex;
                 byteIndex += chars[charIndex].length;
             }
@@ -236,7 +236,7 @@ class StringScanner {
         return this.charIndex >= this.charCount;
     }
     _charLength(string) {
-        let { length  } = string;
+        let { length } = string;
         if (length &lt; 2 || !this.multiByteMode) {
             return length;
         }
@@ -265,7 +265,7 @@ class StringScanner {
     }
     consumeMatchFn(fn) {
         let startIndex = this.charIndex;
-        while(!this.isEnd &amp;&amp; fn(this.peek())){
+        while (!this.isEnd &amp;&amp; fn(this.peek())) {
             this.advance();
         }
         return this.charIndex > startIndex ? this.string.slice(this.charsToBytes[startIndex], this.charsToBytes[this.charIndex]) : emptyString;
@@ -277,7 +277,7 @@ class StringScanner {
         if (!this.multiByteMode) {
             return emptyString;
         }
-        let { length  } = stringToConsume;
+        let { length } = stringToConsume;
         let charLengthToMatch = this._charLength(stringToConsume);
         if (charLengthToMatch !== length &amp;&amp; stringToConsume === this.peek(charLengthToMatch)) {
             this.advance(charLengthToMatch);
@@ -287,7 +287,7 @@ class StringScanner {
     }
     consumeStringFast(stringToConsume) {
         if (this.peek() === stringToConsume[0]) {
-            let { length  } = stringToConsume;
+            let { length } = stringToConsume;
             if (length === 1) {
                 this.advance();
                 return stringToConsume;
@@ -314,7 +314,7 @@ class StringScanner {
         return result;
     }
     consumeUntilString(searchString) {
-        let { charIndex , charsToBytes , string  } = this;
+        let { charIndex, charsToBytes, string } = this;
         let byteIndex = charsToBytes[charIndex];
         let matchByteIndex = string.indexOf(searchString, byteIndex);
         if (matchByteIndex &lt;= 0) {
@@ -331,7 +331,7 @@ class StringScanner {
         if (count === 1) {
             return this.chars[this.charIndex];
         }
-        let { charsToBytes , charIndex  } = this;
+        let { charsToBytes, charIndex } = this;
         return this.string.slice(charsToBytes[charIndex], charsToBytes[charIndex + count]);
     }
     reset(index = 0) {
@@ -339,7 +339,7 @@ class StringScanner {
     }
 }
 class XmlNode {
-    constructor(){
+    constructor() {
         this.parent = null;
     }
     get document() {
@@ -374,7 +374,7 @@ XmlNode.TYPE_ELEMENT = 'element';
 XmlNode.TYPE_PROCESSING_INSTRUCTION = 'pi';
 XmlNode.TYPE_TEXT = 'text';
 class XmlText extends XmlNode {
-    constructor(text = ''){
+    constructor(text = '') {
         super();
         this.text = text;
     }
@@ -388,7 +388,7 @@ class XmlText extends XmlNode {
     }
 }
 class XmlComment extends XmlNode {
-    constructor(content = ''){
+    constructor(content = '') {
         super();
         this.content = content;
     }
@@ -407,7 +407,7 @@ class XmlCdata extends XmlText {
     }
 }
 class XmlProcessingInstruction extends XmlNode {
-    constructor(name, content = ''){
+    constructor(name, content = '') {
         super();
         this.name = name;
         this.content = content;
@@ -423,7 +423,7 @@ class XmlProcessingInstruction extends XmlNode {
     }
 }
 class XmlElement extends XmlNode {
-    constructor(name, attributes = Object.create(null), children = []){
+    constructor(name, attributes = Object.create(null), children = []) {
         super();
         this.name = name;
         this.attributes = attributes;
@@ -434,7 +434,7 @@ class XmlElement extends XmlNode {
     }
     get preserveWhitespace() {
         let node = this;
-        while(node instanceof XmlElement){
+        while (node instanceof XmlElement) {
             if ('xml:space' in node.attributes) {
                 return node.attributes['xml:space'] === 'preserve';
             }
@@ -443,7 +443,7 @@ class XmlElement extends XmlNode {
         return false;
     }
     get text() {
-        return this.children.map((child)=>'text' in child ? child.text : '').join('');
+        return this.children.map((child) => 'text' in child ? child.text : '').join('');
     }
     get type() {
         return XmlNode.TYPE_ELEMENT;
@@ -452,12 +452,12 @@ class XmlElement extends XmlNode {
         return Object.assign(XmlNode.prototype.toJSON.call(this), {
             name: this.name,
             attributes: this.attributes,
-            children: this.children.map((child)=>child.toJSON())
+            children: this.children.map((child) => child.toJSON())
         });
     }
 }
 class XmlDocument extends XmlNode {
-    constructor(children = []){
+    constructor(children = []) {
         super();
         this.children = children;
     }
@@ -465,22 +465,22 @@ class XmlDocument extends XmlNode {
         return this;
     }
     get root() {
-        return this.children.find((child)=>child instanceof XmlElement) || null;
+        return this.children.find((child) => child instanceof XmlElement) || null;
     }
     get text() {
-        return this.children.map((child)=>'text' in child ? child.text : '').join('');
+        return this.children.map((child) => 'text' in child ? child.text : '').join('');
     }
     get type() {
         return XmlNode.TYPE_DOCUMENT;
     }
     toJSON() {
         return Object.assign(XmlNode.prototype.toJSON.call(this), {
-            children: this.children.map((child)=>child.toJSON())
+            children: this.children.map((child) => child.toJSON())
         });
     }
 }
 class Parser {
-    constructor(xml, options = Object.create(null)){
+    constructor(xml, options = Object.create(null)) {
         this.document = new XmlDocument();
         this.currentNode = this.document;
         this.options = options;
@@ -489,7 +489,7 @@ class Parser {
         if (!this.consumeElement()) {
             this.error('Root element is missing or invalid');
         }
-        while(this.consumeMisc()){}
+        while (this.consumeMisc()) { }
         if (!this.scanner.isEnd) {
             this.error('Extra content at the end of the document');
         }
@@ -499,7 +499,7 @@ class Parser {
         this.currentNode.children.push(node);
     }
     addText(text) {
-        let { children  } = this.currentNode;
+        let { children } = this.currentNode;
         if (children.length > 0) {
             let prevNode = children[children.length - 1];
             if (prevNode instanceof XmlText) {
@@ -510,7 +510,7 @@ class Parser {
         this.addNode(new XmlText(text));
     }
     consumeAttributeValue() {
-        let { scanner  } = this;
+        let { scanner } = this;
         let quote = scanner.peek();
         if (quote !== '"' &amp;&amp; quote !== "'") {
             return false;
@@ -520,14 +520,14 @@ class Parser {
         let isClosed = false;
         let value = emptyString;
         let regex = quote === '"' ? /[^"&amp;&lt;]+/y : /[^'&amp;&lt;]+/y;
-        matchLoop: while(!scanner.isEnd){
+        matchLoop: while (!scanner.isEnd) {
             chars = scanner.consumeMatch(regex);
             if (chars) {
                 this.validateChars(chars);
                 value += chars.replace(/[\t\r\n]/g, ' ');
             }
             let nextChar = scanner.peek();
-            switch(nextChar){
+            switch (nextChar) {
                 case quote:
                     isClosed = true;
                     break matchLoop;
@@ -549,7 +549,7 @@ class Parser {
         return value;
     }
     consumeCdataSection() {
-        let { scanner  } = this;
+        let { scanner } = this;
         if (!scanner.consumeStringFast('&lt;![CDATA[')) {
             return false;
         }
@@ -566,7 +566,7 @@ class Parser {
         return true;
     }
     consumeCharData() {
-        let { scanner  } = this;
+        let { scanner } = this;
         let charData = scanner.consumeUntilMatch(/&lt;|&amp;|]]>/g);
         if (!charData) {
             return false;
@@ -579,7 +579,7 @@ class Parser {
         return true;
     }
     consumeComment() {
-        let { scanner  } = this;
+        let { scanner } = this;
         if (!scanner.consumeStringFast('&lt;!--')) {
             return false;
         }
@@ -606,7 +606,7 @@ class Parser {
         return false;
     }
     consumeDoctypeDeclaration() {
-        let { scanner  } = this;
+        let { scanner } = this;
         if (!scanner.consumeStringFast('&lt;!DOCTYPE') || !this.consumeWhitespace()) {
             return false;
         }
@@ -620,7 +620,7 @@ class Parser {
         return true;
     }
     consumeElement() {
-        let { scanner  } = this;
+        let { scanner } = this;
         let mark = scanner.charIndex;
         if (scanner.peek() !== '&lt;') {
             return false;
@@ -632,7 +632,7 @@ class Parser {
             return false;
         }
         let attributes = Object.create(null);
-        while(this.consumeWhitespace()){
+        while (this.consumeWhitespace()) {
             let attrName = this.consumeName();
             if (!attrName) {
                 continue;
@@ -652,7 +652,7 @@ class Parser {
         if (this.options.sortAttributes) {
             let attrNames = Object.keys(attributes).sort();
             let sortedAttributes = Object.create(null);
-            for(let i = 0; i &lt; attrNames.length; ++i){
+            for (let i = 0; i &lt; attrNames.length; ++i) {
                 let attrName1 = attrNames[i];
                 sortedAttributes[attrName1] = attributes[attrName1];
             }
@@ -667,7 +667,7 @@ class Parser {
             }
             this.currentNode = element;
             this.consumeCharData();
-            while(this.consumeElement() || this.consumeContentReference() || this.consumeCdataSection() || this.consumeProcessingInstruction() || this.consumeComment()){
+            while (this.consumeElement() || this.consumeContentReference() || this.consumeCdataSection() || this.consumeProcessingInstruction() || this.consumeComment()) {
                 this.consumeCharData();
             }
             let endTagMark = scanner.charIndex;
@@ -700,7 +700,7 @@ class Parser {
         return syntax.isNameStartChar(this.scanner.peek()) ? this.scanner.consumeMatchFn(syntax.isNameChar) : emptyString;
     }
     consumeProcessingInstruction() {
-        let { scanner  } = this;
+        let { scanner } = this;
         let mark = scanner.charIndex;
         if (!scanner.consumeStringFast('&lt;?')) {
             return false;
@@ -730,17 +730,17 @@ class Parser {
         return true;
     }
     consumeProlog() {
-        let { scanner  } = this;
+        let { scanner } = this;
         let mark = scanner.charIndex;
         this.consumeXmlDeclaration();
-        while(this.consumeMisc()){}
+        while (this.consumeMisc()) { }
         if (this.consumeDoctypeDeclaration()) {
-            while(this.consumeMisc()){}
+            while (this.consumeMisc()) { }
         }
         return mark &lt; scanner.charIndex;
     }
     consumeReference() {
-        let { scanner  } = this;
+        let { scanner } = this;
         if (scanner.peek() !== '&amp;') {
             return false;
         }
@@ -762,7 +762,7 @@ class Parser {
         } else {
             parsedValue = syntax.predefinedEntities[ref];
             if (parsedValue === undefined) {
-                let { ignoreUndefinedEntities , resolveUndefinedEntity  } = this.options;
+                let { ignoreUndefinedEntities, resolveUndefinedEntity } = this.options;
                 let wrappedRef = `&amp;${ref};`;
                 if (resolveUndefinedEntity) {
                     let resolvedValue = resolveUndefinedEntity(wrappedRef);
@@ -784,7 +784,7 @@ class Parser {
         return parsedValue;
     }
     consumeSystemLiteral() {
-        let { scanner  } = this;
+        let { scanner } = this;
         let quote = scanner.consumeStringFast('"') || scanner.consumeStringFast("'");
         if (!quote) {
             return false;
@@ -800,7 +800,7 @@ class Parser {
         return Boolean(this.scanner.consumeMatchFn(syntax.isWhitespace));
     }
     consumeXmlDeclaration() {
-        let { scanner  } = this;
+        let { scanner } = this;
         if (!scanner.consumeStringFast('&lt;?xml')) {
             return false;
         }
@@ -832,11 +832,11 @@ class Parser {
         return true;
     }
     error(message) {
-        let { charIndex , string: xml  } = this.scanner;
+        let { charIndex, string: xml } = this.scanner;
         let column = 1;
         let excerpt = '';
         let line = 1;
-        for(let i = 0; i &lt; charIndex; ++i){
+        for (let i = 0; i &lt; charIndex; ++i) {
             let __char = xml[i];
             if (__char === '\n') {
                 column = 1;
@@ -869,7 +869,7 @@ class Parser {
     }
     validateChars(string) {
         let charIndex = 0;
-        for (let __char of string){
+        for (let __char of string) {
             if (syntax.isNotXmlChar(__char)) {
                 this.scanner.reset(-([
                     ...string
@@ -893,20 +893,20 @@ class XmlNamespaceStack {
         do {
             stack.push(element);
             element = element.parent;
-        }while (element instanceof XmlElement)
+        } while (element instanceof XmlElement)
         const tmp = [];
-        for (const e of stack.stack){
+        for (const e of stack.stack) {
             tmp.unshift(e);
         }
         stack.stack = tmp;
         return stack;
     }
-    constructor(){
+    constructor() {
         this.stack = [];
     }
     push(element) {
         const elementNamespaces = Object.create(null), attrNames = Object.keys(element.attributes);
-        attrNames.filter((attrName)=>attrName.match(/^xmlns/)).forEach(function(attrName) {
+        attrNames.filter((attrName) => attrName.match(/^xmlns/)).forEach(function (attrName) {
             if (attrName.indexOf(':') !== -1) {
                 elementNamespaces[attrName.split(':')[1]] = element.attributes[attrName];
             } else {
@@ -922,15 +922,15 @@ class XmlNamespaceStack {
         return this.stack[0];
     }
     prefixFor(namespace, preferredPrefixes) {
-        const isString = (e)=>typeof e === 'string', isArray = (e)=>e instanceof Array, prefixes = [];
-        for (const nsItem of this.stack){
+        const isString = (e) => typeof e === 'string', isArray = (e) => e instanceof Array, prefixes = [];
+        for (const nsItem of this.stack) {
             if (!Object.values(nsItem).includes(namespace)) continue;
-            Object.keys(nsItem).forEach(function(prefix) {
+            Object.keys(nsItem).forEach(function (prefix) {
                 if (nsItem[prefix] === namespace) prefixes.push(prefix);
             });
         }
         let prefix;
-        prefixes.forEach(function(p) {
+        prefixes.forEach(function (p) {
             if (!prefix || p.length &lt; prefix.length) {
                 prefix = p;
             }
@@ -944,14 +944,14 @@ class XmlNamespaceStack {
         }
         let n = 0;
         do {
-            for (const preferredPrefix of preferredPrefixes){
+            for (const preferredPrefix of preferredPrefixes) {
                 let pref = preferredPrefix;
                 if (!isString(pref) || !pref.match(/^[a-z]+$/)) {
                     pref = 'ns';
                 }
                 let p = `${pref}${n === 0 ? '' : n}`;
                 let isNsTaken = false;
-                for (const nsItem1 of this.stack){
+                for (const nsItem1 of this.stack) {
                     if (!Object.keys(nsItem1).includes(p)) continue;
                     isNsTaken = true;
                     break;
@@ -962,13 +962,13 @@ class XmlNamespaceStack {
                 }
             }
             n++;
-        }while (!prefix)
+        } while (!prefix)
         return prefix;
     }
     findNamespace(currentElementName) {
-        const isString = (e)=>typeof e === 'string', elementName = currentElementName.indexOf(':') === -1 ? `:${currentElementName}` : currentElementName, prefix = elementName.split(':')[0];
+        const isString = (e) => typeof e === 'string', elementName = currentElementName.indexOf(':') === -1 ? `:${currentElementName}` : currentElementName, prefix = elementName.split(':')[0];
         let result = null;
-        for (const nsItem of this.stack){
+        for (const nsItem of this.stack) {
             const ns = nsItem[prefix];
             if (isString(ns)) {
                 result = ns;
@@ -979,16 +979,16 @@ class XmlNamespaceStack {
     }
     makeCurrentElementSerializable(currentElement) {
         const elementNamespaces = Object.create(null);
-        for(let i = this.stack.length - 1; i >= 0; i--){
+        for (let i = this.stack.length - 1; i >= 0; i--) {
             const namespaces = this.stack[i];
-            for(const prefix in namespaces){
+            for (const prefix in namespaces) {
                 if (Object.hasOwnProperty.call(namespaces, prefix)) {
                     const namespace = namespaces[prefix];
                     elementNamespaces[prefix] = namespace;
                 }
             }
         }
-        for(const prefix1 in elementNamespaces){
+        for (const prefix1 in elementNamespaces) {
             if (Object.hasOwnProperty.call(elementNamespaces, prefix1)) {
                 const namespace1 = elementNamespaces[prefix1], xmlnsAttrName = XmlNamespaceStack.nsAttrName(prefix1);
                 currentElement.attributes[xmlnsAttrName] = namespace1;
@@ -996,7 +996,7 @@ class XmlNamespaceStack {
         }
     }
     toString() {
-        return this.stack.map((item)=>Object.entries(item)).map((item)=>`[${item}]`).join(', ');
+        return this.stack.map((item) => Object.entries(item)).map((item) => `[${item}]`).join(', ');
     }
     static verifyNamespace(namespace, element, nsStack) {
         nsStack.push(element);
@@ -1004,7 +1004,7 @@ class XmlNamespaceStack {
         if (ns !== namespace) return false;
         if (!Array.isArray(element.children)) return true;
         let childrenAreOk = true;
-        for(let i = 0; i &lt; element.children.length; i++){
+        for (let i = 0; i &lt; element.children.length; i++) {
             const child = element.children[i];
             if (!(child instanceof XmlElement)) continue;
             childrenAreOk = childrenAreOk &amp;&amp; this.verifyNamespace(namespace, child, nsStack);
@@ -1022,18 +1022,18 @@ class XmlNamespaceStack {
         nsStack.makeCurrentElementSerializable(element);
     }
     static nsAttrName(nsPrefix) {
-        const isString = (e)=>typeof e === 'string';
+        const isString = (e) => typeof e === 'string';
         if (!isString(nsPrefix)) nsPrefix = '';
         return nsPrefix === '' ? 'xmlns' : `xmlns:${nsPrefix}`;
     }
     static elementName(unqualifiedName, nsPrefix) {
-        const isString = (e)=>typeof e === 'string';
+        const isString = (e) => typeof e === 'string';
         if (!isString(unqualifiedName)) return null;
         if (!isString(nsPrefix)) nsPrefix = '';
         return nsPrefix === '' ? unqualifiedName : `${nsPrefix}:${unqualifiedName}`;
     }
     static encodeXmlTextString(text) {
-        const itemIsString = (i)=>typeof i === 'string', encodings = {
+        const itemIsString = (i) => typeof i === 'string', encodings = {
             '&lt;': '&amp;lt;',
             '>': '&amp;gt;',
             '&amp;': '&amp;amp;',
@@ -1042,7 +1042,7 @@ class XmlNamespaceStack {
         };
         if (!itemIsString(text)) return null;
         let result = '';
-        for(let i = 0; i &lt; text.length; i++){
+        for (let i = 0; i &lt; text.length; i++) {
             const __char = text.charAt(i);
             result += encodings[__char] || __char;
         }
@@ -1054,10 +1054,10 @@ class Writer {
         if (!(element instanceof XmlElement)) return '';
         const nsStack = new XmlNamespaceStack();
         let attributes = '', contents = '';
-        for (const [k, v] of Object.entries(element.attributes)){
+        for (const [k, v] of Object.entries(element.attributes)) {
             attributes += ` ${k}="${this._encodeXmlTextString(v)}"`;
         }
-        for (const n of element.children){
+        for (const n of element.children) {
             if (n instanceof XmlText) {
                 contents += this._encodeXmlTextString(n.text);
                 continue;
@@ -1070,7 +1070,7 @@ class Writer {
         return `&lt;${element.name}${attributes}>${contents}&lt;/${element.name}>`;
     }
     static _encodeXmlTextString(text) {
-        const itemIsString = (i)=>typeof i === 'string', encodings = {
+        const itemIsString = (i) => typeof i === 'string', encodings = {
             '&lt;': '&amp;lt;',
             '>': '&amp;gt;',
             '&amp;': '&amp;amp;',
@@ -1079,7 +1079,7 @@ class Writer {
         };
         if (!itemIsString(text)) return null;
         let result = '';
-        for(let i = 0; i &lt; text.length; i++){
+        for (let i = 0; i &lt; text.length; i++) {
             const __char = text.charAt(i);
             result += encodings[__char] || __char;
         }
@@ -1104,7 +1104,7 @@ class Json extends GenericData {
     static build(value) {
         return new Json(value);
     }
-    constructor(value){
+    constructor(value) {
         super();
         const json = JSON.stringify(value);
         if (!json) throw new Error(`Value cannot be converted to JSON: ${value}`);
@@ -1125,7 +1125,7 @@ class Json extends GenericData {
             if (!namespace) throw new Error(`namespace is not json's`);
             if (!(new URL(namespace).href === GenericData.namespace.href &amp;&amp; XmlNamespaceStack.getElementNameWithoutPrefix(element.name) === Json.tag)) throw 'not an int';
             let text = '';
-            for (const node of element.children){
+            for (const node of element.children) {
                 if (![
                     XmlNode.TYPE_TEXT,
                     XmlNode.TYPE_CDATA
@@ -1140,7 +1140,7 @@ class Json extends GenericData {
             }
         } catch (error1) {
             errorMessage = `${error1}`;
-        } finally{
+        } finally {
             nsStack.pop();
         }
         if (result instanceof Json) {
@@ -1173,7 +1173,7 @@ class Json extends GenericData {
 class SemanticData extends GenericData {
     static tag = 'semantic';
     static dataTypes = [
-        'json-ld',
+        'trig',
         'n-quads'
     ];
     _type;
@@ -1181,7 +1181,7 @@ class SemanticData extends GenericData {
     static build(value, type) {
         return new SemanticData(value, type);
     }
-    constructor(value, type){
+    constructor(value, type) {
         super();
         this._value = value;
         if (type == null || type == undefined || type.trim().length == 0) {
@@ -1209,7 +1209,7 @@ class SemanticData extends GenericData {
             if (!(new URL(namespace).href === GenericData.namespace.href)) throw 'bad data namespace';
             if (!(XmlNamespaceStack.getElementNameWithoutPrefix(element.name) === SemanticData.tag)) throw 'bad data element tag';
             let text = '';
-            for (const node of element.children){
+            for (const node of element.children) {
                 if (![
                     XmlNode.TYPE_TEXT,
                     XmlNode.TYPE_CDATA
@@ -1219,7 +1219,7 @@ class SemanticData extends GenericData {
             const type = element.attributes['type'];
             let detectedType = SemanticData.dataTypes[0];
             if (type) {
-                for (const dataType of SemanticData.dataTypes){
+                for (const dataType of SemanticData.dataTypes) {
                     if (`${dataType}` === type) {
                         detectedType = dataType;
                         break;
@@ -1229,7 +1229,7 @@ class SemanticData extends GenericData {
             result = new SemanticData(text, detectedType);
         } catch (error) {
             errorMessage = `${error}`;
-        } finally{
+        } finally {
             nsStack.pop();
         }
         if (result instanceof SemanticData) {
@@ -1252,7 +1252,7 @@ class SemanticData extends GenericData {
     static fromIndexedDb(encodedData) {
         if (!(encodedData &amp;&amp; typeof encodedData === 'object' &amp;&amp; !Array.isArray(encodedData) &amp;&amp; encodedData.type === `${SemanticData.namespace} ${SemanticData.tag}` &amp;&amp; typeof encodedData.value === 'object' &amp;&amp; typeof encodedData.value.type === 'string' &amp;&amp; typeof encodedData.value.text === 'string')) throw new Error('wrong IndexedDB object');
         let detectedType = SemanticData.dataTypes[0];
-        for (const dataType of SemanticData.dataTypes){
+        for (const dataType of SemanticData.dataTypes) {
             if (`${dataType}` === encodedData.value.type) {
                 detectedType = dataType;
                 break;
@@ -1282,11 +1282,11 @@ class Instruction {
     }
     static fromXmlElement(element, namespaceStack) {
         let errorMessage = 'Not valid instruction';
-        for (const instructionType of Instruction.registry){
+        for (const instructionType of Instruction.registry) {
             try {
                 const instruction = instructionType.fromXmlElement(element, namespaceStack);
                 return instruction;
-            } catch (error) {}
+            } catch (error) { }
         }
         throw new Error(errorMessage);
     }
@@ -1295,11 +1295,11 @@ class Instruction {
     }
     static fromIndexedDb(encoded) {
         let errorMessage = 'Not valid instruction';
-        for (const instructionType of Instruction.registry){
+        for (const instructionType of Instruction.registry) {
             try {
                 const instruction = instructionType.fromIndexedDb(encoded);
                 return instruction;
-            } catch (error) {}
+            } catch (error) { }
         }
         throw new Error(errorMessage);
     }
@@ -1310,26 +1310,26 @@ class Instruction {
         const nsStack = namespaceStack ? namespaceStack : XmlNamespaceStack.forElement(element);
         try {
             return Instruction.fromXmlElement(element, nsStack);
-        } catch (error) {}
+        } catch (error) { }
         try {
             return DataValue.fromXmlElement(element, nsStack);
-        } catch (error1) {}
+        } catch (error1) { }
         throw new Error('not a statement');
     }
     static statementFromIndexedDb(encodedStatement) {
         try {
             const instruction = Instruction.fromIndexedDb(encodedStatement);
             return instruction;
-        } catch (error) {}
+        } catch (error) { }
         try {
             const o = DataValue.fromIndexedDb(encodedStatement);
             return o;
-        } catch (error1) {}
+        } catch (error1) { }
         throw new Error('not a statement');
     }
 }
 class FaultTypeError extends Error {
-    constructor(message){
+    constructor(message) {
         super(message || 'Not a valid fault');
     }
 }
@@ -1366,7 +1366,7 @@ class Fault extends Instruction {
     static build(type) {
         return new Fault(type);
     }
-    constructor(type, types){
+    constructor(type, types) {
         super();
         if (!type) type = Fault.defaultType;
         const allowedFaultTypes = types || Fault.serviceSpecificTypes;
@@ -1374,7 +1374,7 @@ class Fault extends Instruction {
         this._type = type;
     }
     static _typeMatcher(type) {
-        return (typePattern)=>{
+        return (typePattern) => {
             if (typeof typePattern === 'string' &amp;&amp; typePattern === type || typePattern instanceof RegExp &amp;&amp; type?.match(typePattern)) return true;
             return false;
         };
@@ -1419,7 +1419,7 @@ class Fault extends Instruction {
             type = element.attributes.type || Fault.defaultType;
         } catch (error) {
             errorMessage = `${error}`;
-        } finally{
+        } finally {
             nsStack.pop();
         }
         if (errorMessage) throw new Error(errorMessage);
@@ -1453,13 +1453,13 @@ class Fault extends Instruction {
     }
 }
 class PlatformFaultTypeError extends Error {
-    constructor(message){
+    constructor(message) {
         super(message || 'Not a platform fault');
     }
 }
 class PlatformFault extends Fault {
-    static _platformFaultTypes = PlatformFault.types.filter((type)=>!PlatformFault.serviceSpecificTypes.includes(type));
-    constructor(type){
+    static _platformFaultTypes = PlatformFault.types.filter((type) => !PlatformFault.serviceSpecificTypes.includes(type));
+    constructor(type) {
         if (!(type &amp;&amp; PlatformFault._platformFaultTypes.includes(type))) throw new PlatformFaultTypeError();
         super(type, PlatformFault.types);
     }
@@ -1495,7 +1495,7 @@ class Return extends Instruction {
     static build(statement) {
         return new Return(statement);
     }
-    constructor(statement){
+    constructor(statement) {
         super();
         if (!statement) throw new Error('statement required');
         this.statement = statement;
@@ -1512,7 +1512,7 @@ class Return extends Instruction {
             if (!namespace) throw new Error(`not a namespace`);
             if (!(new URL(namespace).href === Return.namespace.href &amp;&amp; tag === Return.tag)) throw `not a ${Return.tag}`;
             let statement = null;
-            for (const statementElement of element.children){
+            for (const statementElement of element.children) {
                 if (!(statementElement.type === mod.Node.TYPE_ELEMENT)) continue;
                 statement = Instruction.statementFromXmlElement(statementElement, nsStack);
                 break;
@@ -1522,7 +1522,7 @@ class Return extends Instruction {
             }
         } catch (error) {
             errorMessage = `${error}`;
-        } finally{
+        } finally {
             nsStack.pop();
         }
         if (result instanceof Return) {
@@ -1561,7 +1561,7 @@ class Sequence extends Instruction {
     static build(...statements) {
         return new Sequence(...statements);
     }
-    constructor(...statements){
+    constructor(...statements) {
         super();
         if (!statements) throw new Error('sequence must contain one or more statements');
         let s = [];
@@ -1590,7 +1590,7 @@ class Sequence extends Instruction {
             if (!namespace) throw new Error(`not a namespace`);
             if (!(new URL(namespace).href === Sequence.namespace.href &amp;&amp; tag === Sequence.tag)) throw `not a ${Sequence.tag}`;
             const statements = [];
-            for (const statementElement of element.children){
+            for (const statementElement of element.children) {
                 if (!(statementElement.type === XmlNode.TYPE_ELEMENT)) continue;
                 statements.push(Instruction.statementFromXmlElement(statementElement, nsStack));
             }
@@ -1599,7 +1599,7 @@ class Sequence extends Instruction {
             }
         } catch (error) {
             errorMessage = `${error}`;
-        } finally{
+        } finally {
             nsStack.pop();
         }
         if (result instanceof Sequence) {
@@ -1615,7 +1615,7 @@ class Sequence extends Instruction {
             attributes[XmlNamespaceStack.nsAttrName(newPrefix)] = namespace;
         }
         nsStack.push(element);
-        for (const statement of this.statements){
+        for (const statement of this.statements) {
             children.push(statement.toXmlElement(nsStack));
         }
         nsStack.pop();
@@ -1623,14 +1623,14 @@ class Sequence extends Instruction {
     }
     static fromIndexedDb(encoded) {
         if (encoded.type !== Sequence.tag) throw new Error(`not a ${Sequence.tag}`);
-        const statements = encoded.value.statements.map((encodedStatement)=>Instruction.statementFromIndexedDb(encodedStatement));
+        const statements = encoded.value.statements.map((encodedStatement) => Instruction.statementFromIndexedDb(encodedStatement));
         return new Sequence(...statements);
     }
     toIndexedDb() {
         return {
             type: Sequence.tag,
             value: {
-                statements: this.statements.map((statement)=>statement.toIndexedDb())
+                statements: this.statements.map((statement) => statement.toIndexedDb())
             }
         };
     }
@@ -1642,13 +1642,13 @@ class Data extends Instruction {
     static build(path, statement) {
         return new Data(path, statement);
     }
-    constructor(path, statement){
+    constructor(path, statement) {
         super();
         const p = path instanceof Array ? path : [
             path
         ];
         if (p.length === 0) throw new Error('path must have at least one element');
-        for(let i = 0; i &lt; p.length; i++){
+        for (let i = 0; i &lt; p.length; i++) {
             const e = p[i];
             if (!(typeof e === "string")) throw new Error('path element must be a string');
             p[i] = e.trim();
@@ -1676,7 +1676,7 @@ class Data extends Instruction {
             try {
                 path = JSON.parse(maybePath);
                 if (!(path instanceof Array &amp;&amp; path.length > 0)) throw new Error('invalid data path');
-                for(let i = 0; i &lt; path.length; i++){
+                for (let i = 0; i &lt; path.length; i++) {
                     const pathElement = path[i];
                     if (!(typeof pathElement === "string")) {
                         throw new Error('invalid path element');
@@ -1686,7 +1686,7 @@ class Data extends Instruction {
                 throw new Error(`Not a valid data path: "${maybePath}"`);
             }
             let statement = null;
-            for (const statementElement of element.children){
+            for (const statementElement of element.children) {
                 if (!(statementElement.type === XmlNode.TYPE_ELEMENT)) continue;
                 statement = Instruction.statementFromXmlElement(statementElement, nsStack);
                 break;
@@ -1698,7 +1698,7 @@ class Data extends Instruction {
             }
         } catch (error1) {
             errorMessage = `${error1}`;
-        } finally{
+        } finally {
             nsStack.pop();
         }
         if (result instanceof Data) {
@@ -1747,7 +1747,7 @@ class Try extends Instruction {
     static build(statement, catchClauses) {
         return new Try(statement, catchClauses);
     }
-    constructor(statement, catchClauses){
+    constructor(statement, catchClauses) {
         super();
         if (!statement) throw new Error('try must contain one statement');
         let s;
@@ -1761,7 +1761,7 @@ class Try extends Instruction {
         if (!(catchClauses instanceof Array)) catchClauses = [
             catchClauses
         ];
-        for (const catchClauseArg of catchClauses){
+        for (const catchClauseArg of catchClauses) {
             const catchClause = Object.create(null);
             catchClause['catch'] = [];
             catchClause['do'] = [];
@@ -1772,7 +1772,7 @@ class Try extends Instruction {
             } else if (catchClauseArg['catch'] instanceof Array) {
                 catchClause['catch'] = catchClauseArg['catch'];
             }
-            for (const faultType of catchClause['catch'])try {
+            for (const faultType of catchClause['catch']) try {
                 new PlatformFault(faultType);
             } catch (_error1) {
                 try {
@@ -1800,20 +1800,20 @@ class Try extends Instruction {
     }
     toString() {
         let catchClauses = '';
-        for (const catchClause of this.catchClauses){
+        for (const catchClause of this.catchClauses) {
             if (catchClauses.length > 0) catchClauses += ', ';
             catchClauses += `{catch: "${catchClause.catch.join(', ')}", do: [`;
-            catchClauses += catchClause.do.map((instruction)=>`${instruction}`).join(', ');
+            catchClauses += catchClause.do.map((instruction) => `${instruction}`).join(', ');
             catchClauses += `]`;
             catchClauses += '}';
         }
         catchClauses = `[${catchClauses}]`;
-        this.catchClauses.map((cc)=>({
-                catch: cc.catch.length > 0 ? cc.catch.join(', ') : [],
-                do: [
-                    cc.do.map((d)=>d.toString()).join(', ')
-                ]
-            }));
+        this.catchClauses.map((cc) => ({
+            catch: cc.catch.length > 0 ? cc.catch.join(', ') : [],
+            do: [
+                cc.do.map((d) => d.toString()).join(', ')
+            ]
+        }));
         return `Try(${this.statement}, ${catchClauses})`;
     }
     static fromXmlElement(element, namespaceStack) {
@@ -1825,7 +1825,7 @@ class Try extends Instruction {
             if (!namespace) throw new Error(`not a namespace`);
             if (!(new URL(namespace).href === Try.namespace.href &amp;&amp; tag === Try.tag)) throw `not a ${Try.tag}`;
             let statement = null, catchClauses = [];
-            for (const e of element.children){
+            for (const e of element.children) {
                 if (!(e.type === XmlNode.TYPE_ELEMENT)) continue;
                 if (!statement) {
                     statement = Instruction.statementFromXmlElement(e, nsStack);
@@ -1838,8 +1838,8 @@ class Try extends Instruction {
                     if (!(new URL(catchNamespace).href === Try.namespace.href &amp;&amp; tag1 === 'catch')) throw `not a catch clause`;
                     let faultsToCatch = [], catchStatements = [];
                     if (typeof e.attributes.faults === 'string') {
-                        faultsToCatch = JSON.parse(e.attributes.faults).map((s)=>s.trim());
-                        for (const faultType of faultsToCatch)try {
+                        faultsToCatch = JSON.parse(e.attributes.faults).map((s) => s.trim());
+                        for (const faultType of faultsToCatch) try {
                             new PlatformFault(faultType);
                         } catch (_error1) {
                             try {
@@ -1849,7 +1849,7 @@ class Try extends Instruction {
                             }
                         }
                     }
-                    for (const catchStatementElement of e.children){
+                    for (const catchStatementElement of e.children) {
                         if (!(catchStatementElement.type === XmlNode.TYPE_ELEMENT)) continue;
                         const catchStatement = Instruction.statementFromXmlElement(catchStatementElement, nsStack);
                         catchStatements.push(catchStatement);
@@ -1861,7 +1861,7 @@ class Try extends Instruction {
                     });
                 } catch (error) {
                     errorMessage = `${error}`;
-                } finally{
+                } finally {
                     nsStack.pop();
                 }
             }
@@ -1870,7 +1870,7 @@ class Try extends Instruction {
             result = new Try(statement, catchClauses);
         } catch (error1) {
             errorMessage = `${error1}`;
-        } finally{
+        } finally {
             nsStack.pop();
         }
         if (result instanceof Try) {
@@ -1887,10 +1887,10 @@ class Try extends Instruction {
         }
         nsStack.push(element);
         children.push(this.statement.toXmlElement(nsStack));
-        for (const catchClause of this.catchClauses){
+        for (const catchClause of this.catchClauses) {
             const catchElement = new XmlElement(XmlNamespaceStack.elementName('catch', prefix), catchClause['catch'].length > 0 ? {
                 faults: JSON.stringify(catchClause['catch'])
-            } : {}, catchClause['do'].map((instruction)=>instruction.toXmlElement(nsStack)));
+            } : {}, catchClause['do'].map((instruction) => instruction.toXmlElement(nsStack)));
             children.push(catchElement);
         }
         nsStack.pop();
@@ -1898,10 +1898,10 @@ class Try extends Instruction {
     }
     static fromIndexedDb(encoded) {
         if (encoded.type !== Try.tag) throw new Error(`not a ${Try.tag}`);
-        const statement = Instruction.statementFromIndexedDb(encoded.value.statement), catchClauses = encoded.value.catch.map((c)=>({
-                'catch': c.catch,
-                'do': c.do.map((encodedStatement)=>Instruction.statementFromIndexedDb(encodedStatement))
-            }));
+        const statement = Instruction.statementFromIndexedDb(encoded.value.statement), catchClauses = encoded.value.catch.map((c) => ({
+            'catch': c.catch,
+            'do': c.do.map((encodedStatement) => Instruction.statementFromIndexedDb(encodedStatement))
+        }));
         return new Try(statement, catchClauses);
     }
     toIndexedDb() {
@@ -1909,10 +1909,10 @@ class Try extends Instruction {
             type: Try.tag,
             value: {
                 statement: this.statement.toIndexedDb(),
-                catch: this.catchClauses.map((c)=>({
-                        'catch': c.catch,
-                        'do': c.do.map((statement)=>statement.toIndexedDb())
-                    }))
+                catch: this.catchClauses.map((c) => ({
+                    'catch': c.catch,
+                    'do': c.do.map((statement) => statement.toIndexedDb())
+                }))
             }
         };
     }
@@ -1924,7 +1924,7 @@ class Goto extends Instruction {
     static build(href) {
         return new Goto(href);
     }
-    constructor(href){
+    constructor(href) {
         super();
         const parameters = [];
         if (typeof href === 'string') this._href = href;
@@ -1932,7 +1932,7 @@ class Goto extends Instruction {
         const params = parameters instanceof Array ? parameters : [
             parameters
         ];
-        for (const value of params.values()){
+        for (const value of params.values()) {
             this._parameters.push(value);
         }
     }
@@ -1943,13 +1943,13 @@ class Goto extends Instruction {
         return this._parameters;
     }
     parameter(name) {
-        const param = this._parameters.find((p)=>p.name === name);
+        const param = this._parameters.find((p) => p.name === name);
         if (typeof param === 'undefined') throw new Error(`parameter "${name}" not found`);
         return param.value;
     }
     toString() {
         let parameters = null, result = '';
-        for (const param of this.parameters){
+        for (const param of this.parameters) {
             if (parameters === null) {
                 parameters = '';
             } else {
@@ -1976,14 +1976,14 @@ class Goto extends Instruction {
             if (!(new URL(namespace).href === Goto.namespace.href &amp;&amp; tag === Goto.tag)) throw `not a ${Goto.tag}`;
             let href = null, parameters = [];
             if (typeof element.attributes.href === 'string') href = element.attributes.href;
-            for (const parametersElement of element.children){
+            for (const parametersElement of element.children) {
                 if (parametersElement.type !== XmlNode.TYPE_ELEMENT) continue;
                 try {
                     nsStack.push(parametersElement);
                     const parametersNamespace = nsStack.findNamespace(parametersElement.name), parametersTag = XmlNamespaceStack.getElementNameWithoutPrefix(parametersElement.name);
                     if (!parametersNamespace) throw new Error(`not a namespace`);
                     if (!(new URL(parametersNamespace).href === Goto.namespace.href &amp;&amp; parametersTag === 'data-args')) throw `not a parameters`;
-                    for (const parameterElement of parametersElement.children){
+                    for (const parameterElement of parametersElement.children) {
                         if (parameterElement.type !== XmlNode.TYPE_ELEMENT) continue;
                         try {
                             nsStack.push(parameterElement);
@@ -1992,7 +1992,7 @@ class Goto extends Instruction {
                             if (!(new URL(parameterNamespace).href === Goto.namespace.href &amp;&amp; parameterTag === 'data-arg')) throw `not a parameter`;
                             if (!(typeof parameterElement.attributes.name === 'string')) throw new Error('parameter without name');
                             const parameterName = parameterElement.attributes.name;
-                            for (const parameterValueElement of parameterElement.children){
+                            for (const parameterValueElement of parameterElement.children) {
                                 if (parameterValueElement.type !== XmlNode.TYPE_ELEMENT) continue;
                                 parameters.push({
                                     name: parameterName,
@@ -2001,20 +2001,20 @@ class Goto extends Instruction {
                             }
                         } catch (error) {
                             errorMessage = `${error}`;
-                        } finally{
+                        } finally {
                             nsStack.pop();
                         }
                     }
                 } catch (error1) {
                     errorMessage = `${error1}`;
-                } finally{
+                } finally {
                     nsStack.pop();
                 }
             }
             result = new Goto(href);
         } catch (error2) {
             errorMessage = `${error2}`;
-        } finally{
+        } finally {
             nsStack.pop();
         }
         if (result instanceof Goto) {
@@ -2034,7 +2034,7 @@ class Goto extends Instruction {
             nsStack.push(element);
             const parametersAttributes = Object.create(null), parametersChildren = [], parametersElement = new XmlElement(XmlNamespaceStack.elementName('data-args', prefix), parametersAttributes, parametersChildren);
             element.children.push(parametersElement);
-            for (const parameter of this.parameters){
+            for (const parameter of this.parameters) {
                 const parameterAttributes = Object.create(null), parameterChildren = [], parameterElement = new XmlElement(XmlNamespaceStack.elementName('data-arg', prefix), parameterAttributes, parameterChildren);
                 parameterAttributes['name'] = parameter.name;
                 parameterChildren.push(parameter.value.toXmlElement(nsStack));
@@ -2053,10 +2053,10 @@ class Goto extends Instruction {
             type: Goto.tag,
             value: {
                 href: this.href,
-                parameters: this.parameters.map((param)=>({
-                        name: param.name,
-                        value: param.value.toIndexedDb()
-                    }))
+                parameters: this.parameters.map((param) => ({
+                    name: param.name,
+                    value: param.value.toIndexedDb()
+                }))
             }
         };
     }
@@ -2071,7 +2071,7 @@ class Call extends Instruction {
     static build(object, href, parameters, objectParameters) {
         return new Call(object, href, parameters, objectParameters);
     }
-    constructor(object, href, parameters, objectParameters){
+    constructor(object, href, parameters, objectParameters) {
         super();
         const sendParameters = false;
         const o = object === null || typeof object === 'undefined' ? [
@@ -2080,7 +2080,7 @@ class Call extends Instruction {
             object
         ];
         if (o.length === 0) o.push('@');
-        for(let i = 0; i &lt; o.length; i++){
+        for (let i = 0; i &lt; o.length; i++) {
             const e = o[i];
             if (!(typeof e === "string")) throw new Error('object path element must be a string');
             o[i] = e.trim();
@@ -2091,7 +2091,7 @@ class Call extends Instruction {
             const objectParams = objectParameters instanceof Array ? objectParameters : [
                 objectParameters
             ];
-            for (const value of objectParams.values()){
+            for (const value of objectParams.values()) {
                 this._objectParameters.push(value);
             }
         }
@@ -2099,7 +2099,7 @@ class Call extends Instruction {
             const params = parameters instanceof Array ? parameters : [
                 parameters
             ];
-            for (const value1 of params.values()){
+            for (const value1 of params.values()) {
                 this._parameters.push(value1);
             }
         }
@@ -2123,18 +2123,18 @@ class Call extends Instruction {
         return this._sendParameters;
     }
     objectParameter(name) {
-        const objectParam = this._objectParameters.find((p)=>p.name === name);
+        const objectParam = this._objectParameters.find((p) => p.name === name);
         if (typeof objectParam === 'undefined') throw new Error(`object parameter "${name}" not found`);
         return objectParam.object;
     }
     parameter(name) {
-        const param = this._parameters.find((p)=>p.name === name);
+        const param = this._parameters.find((p) => p.name === name);
         if (typeof param === 'undefined') throw new Error(`parameter "${name}" not found`);
         return param.value;
     }
     toString() {
         let objectParameters = null, parameters = null, result = '';
-        for (const objectParam of this.objectParameters){
+        for (const objectParam of this.objectParameters) {
             if (objectParameters === null) {
                 objectParameters = '';
             } else {
@@ -2142,7 +2142,7 @@ class Call extends Instruction {
             }
             objectParameters += `{name: ${objectParam.name}, object: ${JSON.stringify(objectParam.object)}}`;
         }
-        for (const param of this.parameters){
+        for (const param of this.parameters) {
             if (parameters === null) {
                 parameters = '';
             } else {
@@ -2177,7 +2177,7 @@ class Call extends Instruction {
             try {
                 object = JSON.parse(maybeObject);
                 if (!(object instanceof Array &amp;&amp; object.length > 0)) throw new Error('invalid object path');
-                for(let i = 0; i &lt; object.length; i++){
+                for (let i = 0; i &lt; object.length; i++) {
                     const pathElement = object[i];
                     if (!(typeof pathElement === "string")) {
                         throw new Error('invalid path element');
@@ -2188,14 +2188,14 @@ class Call extends Instruction {
             }
             let href = null, objectParameters = [], parameters = [], sendParameters = false;
             if (typeof element.attributes.href === 'string') href = element.attributes.href;
-            for (const objectParametersElement of element.children){
+            for (const objectParametersElement of element.children) {
                 if (objectParametersElement.type !== XmlNode.TYPE_ELEMENT) continue;
                 try {
                     nsStack.push(objectParametersElement);
                     const objectParametersNamespace = nsStack.findNamespace(objectParametersElement.name), objectParametersTag = XmlNamespaceStack.getElementNameWithoutPrefix(objectParametersElement.name);
                     if (!objectParametersNamespace) throw new Error(`not a namespace`);
                     if (!(new URL(objectParametersNamespace).href === Call.namespace.href &amp;&amp; objectParametersTag === 'object-args')) throw `not an object parameters element`;
-                    for (const objectParameterElement of objectParametersElement.children){
+                    for (const objectParameterElement of objectParametersElement.children) {
                         if (objectParameterElement.type !== XmlNode.TYPE_ELEMENT) continue;
                         try {
                             nsStack.push(objectParameterElement);
@@ -2210,17 +2210,17 @@ class Call extends Instruction {
                             });
                         } catch (error1) {
                             errorMessage = `${error1}`;
-                        } finally{
+                        } finally {
                             nsStack.pop();
                         }
                     }
                 } catch (error2) {
                     errorMessage = `${error2}`;
-                } finally{
+                } finally {
                     nsStack.pop();
                 }
             }
-            for (const parametersElement of element.children){
+            for (const parametersElement of element.children) {
                 if (parametersElement.type !== XmlNode.TYPE_ELEMENT) continue;
                 try {
                     nsStack.push(parametersElement);
@@ -2228,7 +2228,7 @@ class Call extends Instruction {
                     if (!parametersNamespace) throw new Error(`not a namespace`);
                     if (!(new URL(parametersNamespace).href === Call.namespace.href &amp;&amp; parametersTag === 'data-args')) throw `not a parameters element`;
                     sendParameters = parametersElement.attributes.name === 'true';
-                    for (const parameterElement of parametersElement.children){
+                    for (const parameterElement of parametersElement.children) {
                         if (parameterElement.type !== XmlNode.TYPE_ELEMENT) continue;
                         try {
                             nsStack.push(parameterElement);
@@ -2237,7 +2237,7 @@ class Call extends Instruction {
                             if (!(new URL(parameterNamespace).href === Call.namespace.href &amp;&amp; parameterTag === 'data-arg')) throw `not a parameter`;
                             if (!(typeof parameterElement.attributes.name === 'string')) throw new Error('parameter without name');
                             const parameterName = parameterElement.attributes.name;
-                            for (const parameterValueElement of parameterElement.children){
+                            for (const parameterValueElement of parameterElement.children) {
                                 if (parameterValueElement.type !== XmlNode.TYPE_ELEMENT) continue;
                                 parameters.push({
                                     name: parameterName,
@@ -2246,20 +2246,20 @@ class Call extends Instruction {
                             }
                         } catch (error3) {
                             errorMessage = `${error3}`;
-                        } finally{
+                        } finally {
                             nsStack.pop();
                         }
                     }
                 } catch (error4) {
                     errorMessage = `${error4}`;
-                } finally{
+                } finally {
                     nsStack.pop();
                 }
             }
             result = new Call(object, href, parameters, objectParameters);
         } catch (error5) {
             errorMessage = `${error5}`;
-        } finally{
+        } finally {
             nsStack.pop();
         }
         if (result instanceof Call) {
@@ -2280,7 +2280,7 @@ class Call extends Instruction {
             nsStack.push(element);
             const objectParametersAttributes = Object.create(null), objectParametersChildren = [], objectParametersElement = new XmlElement(XmlNamespaceStack.elementName('object-args', prefix), objectParametersAttributes, objectParametersChildren);
             element.children.push(objectParametersElement);
-            for (const objectParameter of this.objectParameters){
+            for (const objectParameter of this.objectParameters) {
                 const objectParameterAttributes = Object.create(null), objectParameterChildren = [], objectParameterElement = new XmlElement(XmlNamespaceStack.elementName('object-arg', prefix), objectParameterAttributes, objectParameterChildren);
                 objectParameterAttributes['name'] = objectParameter.name;
                 objectParameterAttributes['object'] = JSON.stringify(objectParameter.object);
@@ -2293,7 +2293,7 @@ class Call extends Instruction {
             const parametersAttributes = Object.create(null), parametersChildren = [], parametersElement = new XmlElement(XmlNamespaceStack.elementName('data-args', prefix), parametersAttributes, parametersChildren);
             if (this.sendParameters) parametersAttributes['send'] = `${this.sendParameters}`;
             element.children.push(parametersElement);
-            for (const parameter of this.parameters){
+            for (const parameter of this.parameters) {
                 const parameterAttributes = Object.create(null), parameterChildren = [], parameterElement = new XmlElement(XmlNamespaceStack.elementName('data-arg', prefix), parameterAttributes, parameterChildren);
                 parameterAttributes['name'] = parameter.name;
                 parameterChildren.push(parameter.value.toXmlElement(nsStack));
@@ -2305,10 +2305,10 @@ class Call extends Instruction {
     }
     static fromIndexedDb(encoded) {
         if (encoded.type !== Call.tag) throw new Error(`not a ${Call.tag}`);
-        return new Call(encoded.value.object, encoded.value.href, encoded.value.parameters.map((parameter)=>({
-                name: parameter.name,
-                value: Instruction.statementFromIndexedDb(parameter.value)
-            })), encoded.value.objectParameters);
+        return new Call(encoded.value.object, encoded.value.href, encoded.value.parameters.map((parameter) => ({
+            name: parameter.name,
+            value: Instruction.statementFromIndexedDb(parameter.value)
+        })), encoded.value.objectParameters);
     }
     toIndexedDb() {
         return {
@@ -2316,10 +2316,10 @@ class Call extends Instruction {
             value: {
                 object: this.object,
                 href: this.href,
-                parameters: this.parameters.map((param)=>({
-                        name: param.name,
-                        value: param.value.toIndexedDb()
-                    })),
+                parameters: this.parameters.map((param) => ({
+                    name: param.name,
+                    value: param.value.toIndexedDb()
+                })),
                 sendParameters: this.sendParameters,
                 objectParameters: this.objectParameters
             }
@@ -2342,7 +2342,7 @@ class Script {
     static build(instruction) {
         return new Script(instruction);
     }
-    constructor(instruction){
+    constructor(instruction) {
         if (!(instruction instanceof Instruction)) throw new Error('one or more parameters required');
         this._instruction = instruction;
     }
@@ -2366,7 +2366,7 @@ class PhaseParameters {
     static build(params) {
         return new PhaseParameters(params);
     }
-    constructor(params){
+    constructor(params) {
         if (params.length === 0) throw new Error('one or more parameters required');
         this._params = params;
     }
@@ -2374,7 +2374,7 @@ class PhaseParameters {
         return this._params;
     }
     parameter(name) {
-        const param = this._params.find((p)=>p.name === name);
+        const param = this._params.find((p) => p.name === name);
         if (typeof param === 'undefined') throw new Error(`parameter "${name}" not found`);
         return param.value;
     }
@@ -2385,7 +2385,7 @@ class PhaseParameters {
             if (!nsStack) throw new Error('namespace stack was not initialized');
             let elementNs = nsStack.findNamespace(doc.root.name), elementNameParts = doc.root.name.split(':'), elementName = elementNameParts.length === 1 ? elementNameParts[0] : elementNameParts[1];
             if (!(elementNs === PhaseParameters.namespace.href &amp;&amp; elementName === 'data-args')) throw new Error('not a valid phase-parameters message');
-            for (const paramElement of doc.root.children){
+            for (const paramElement of doc.root.children) {
                 if (paramElement.type !== XmlNode.TYPE_ELEMENT) continue;
                 let paramElementNs = nsStack.findNamespace(paramElement.name), paramElementNameParts = paramElement.name.split(':'), paramElementName = paramElementNameParts.length === 1 ? paramElementNameParts[0] : paramElementNameParts[1];
                 if (!(paramElementNs === PhaseParameters.namespace.href &amp;&amp; paramElementName === 'data-arg')) throw new Error('not a param');
@@ -2393,11 +2393,11 @@ class PhaseParameters {
                 if (typeof paramName !== 'string') throw new Error('param name must be a string');
                 nsStack.push(paramElement);
                 let data;
-                for (const dataElement of paramElement.children){
+                for (const dataElement of paramElement.children) {
                     if (dataElement.type !== XmlNode.TYPE_ELEMENT) continue;
                     try {
                         data = DataValue.fromXmlElement(dataElement, nsStack);
-                    } catch (error) {}
+                    } catch (error) { }
                     break;
                 }
                 nsStack.pop();
@@ -2418,7 +2418,7 @@ class PhaseParameters {
             xmlns: PhaseParameters.namespace.href
         }, children = [], params = new XmlElement('data-args', attributes, children), nsStack = new XmlNamespaceStack();
         nsStack.push(params);
-        for (const param of this.parameters){
+        for (const param of this.parameters) {
             const data = param.value, paramElement = new XmlElement('data-arg', {
                 name: param.name
             }, [
@@ -2431,7 +2431,7 @@ class PhaseParameters {
     }
     toString() {
         let result;
-        for (const param of this.parameters){
+        for (const param of this.parameters) {
             result = result ? `${result}, ${param.name}: ${param.value}` : `${param.name}: ${param.value}`;
         }
         return `PhaseParameters(${result})`;
@@ -2441,9 +2441,8 @@ class PhaseParameters {
 // export { Instruction as Instruction, Fault as Fault, FaultTypeError as FaultTypeError, PlatformFault as PlatformFault, PlatformFaultTypeError as PlatformFaultTypeError, Return as Return, Sequence as Sequence, Data as Data, Try as Try, Goto as Goto, Call as Call };
 // export { Script as Script };
 // export { PhaseParameters as PhaseParameters };
-// export const MESSAGE_VERSION = '1.0.9';
 
-const MESSAGE_VERSION = '1.0.9';
+const MESSAGE_VERSION = '1.1.0';
 
 // end qworum-messages-*.mjs
 
@@ -2458,7 +2457,7 @@ class QworumRequest {
         if (!(url instanceof URL)) throw new Error('wrong phase parameters arguments');
         return new QworumRequest(url);
     }
-    constructor(url){
+    constructor(url) {
         this.url = url;
     }
     toString() {
@@ -2508,7 +2507,7 @@ class Qworum {
      * @static
      * @type {string}
      */
-    static version = '1.0.9';
+    static version = '1.1.0';
 
     /** 
      * A static array containing the Qworum instruction and data classes. 
@@ -2517,7 +2516,7 @@ class Qworum {
      */
     static message = {
         GenericData, DataValue, Json, SemanticData,
-        Instruction, Data, Return, Sequence, Goto, Call, 
+        Instruction, Data, Return, Sequence, Goto, Call,
         Fault, FaultTypeError,
         PlatformFault, PlatformFaultTypeError,
         Try,
@@ -2685,18 +2684,26 @@ class Qworum {
      * @function Qworum.SemanticData
      * @static
      * @param {string} value - The semantic data value.
-     * @param {(string | undefined)} type - The type of the semantic data value. One of 'json-ld', 'n-quads'.
+     * @param {(string | undefined)} type - The type of the semantic data value. One of 'trig', 'n-quads'.
      * @throws {Error}
      * @returns {Qworum.message.SemanticData}
      * @example
-     * const json = Qworum.SemanticData(`{
-     *   "@context"  : {"@vocab": "https://schema.org/"},
-     *   "@id"       : "https://www.wikidata.org/wiki/Q92760",
-     *   "@type"     : "Person",
-     *   "givenName" : "Claude",
-     *   "familyName": "Shannon",
-     *   "birthDate" : "1916-04-30"
-     * }`);
+     * const trig = Qworum.SemanticData(`
+     *   PREFIX : &lt;https://schema.org/>
+     *   
+     *   []
+     *   a :ItemList;
+     *   :itemListElement [
+     *     a :Product;
+     *     :productID "2";
+     *     :name "XYZ Boots";
+     *     :offers [
+     *       a :Offer;
+     *       :price "75.95";
+     *       :priceCurrency "EUR"
+     *     ]
+     *   ].
+     * `);
      * @see [Qworum specification](https://qworum.net/en/specification/v1/#semantic)
      */
     static SemanticData = Qworum.message.SemanticData.build;
@@ -2719,8 +2726,8 @@ class Qworum {
     static async checkAvailability() {
         try {
             const
-            request  = {apiVersion, endpoint: 'Check Qworum availability', body: {}},
-            response = await this._sendRequest(request);
+                request = { apiVersion, endpoint: 'Check Qworum availability', body: {} },
+                response = await this._sendRequest(request);
 
             if (response.status.code !== 200) {
                 return Promise.reject(new Error('Internal error'));
@@ -2755,13 +2762,14 @@ class Qworum {
      * @see [Qworum specification](https://qworum.net/en/specification/v1/#script)
      */
     static async eval(script) {
-        if(!(script instanceof Qworum.message.Script)) return Promise.reject(new TypeError('not a script'));
+        if (!(script instanceof Qworum.message.Script)) return Promise.reject(new TypeError('not a script'));
 
         try {
             // make the api request
-            const 
-            request  = {apiVersion, endpoint: 'Evaluate script', body: {xml: script.toXml()}},
-            response = await this._sendRequest(request);
+            const
+                request = { apiVersion, endpoint: 'Evaluate script', body: { xml: script.toXml() } },
+                response = await this._sendRequest(request);
+            // console.debug('[Qworum for web pages - eval] request:',request);
             if (response.status.code !== 200) {
                 return Promise.reject(new Error(`API response was: ${response.status.code} ${response.status.message}`));
             }
@@ -2788,7 +2796,7 @@ class Qworum {
                         // unparsable data
                     }
                 }
-            } 
+            }
             if (!action) return Promise.reject(new Error('unparsable action'));
 
             // act based on the api response
@@ -2850,14 +2858,14 @@ class Qworum {
 
         // call the endpoint
         try {
-            const 
-            body     = {path, value: value.toIndexedDb()},
-            request  = {apiVersion, endpoint: 'Set data', body},
-            response = await this._sendRequest(request);
+            const
+                body = { path, value: value.toIndexedDb() },
+                request = { apiVersion, endpoint: 'Set data', body },
+                response = await this._sendRequest(request);
 
             if (response.status.code !== 200) {
-                const errorMessage = 
-                `API error: ${response.status.code} ${response.status.message}${response.body.message ? `, ${response.body.message}` : ''}`;
+                const errorMessage =
+                    `API error: ${response.status.code} ${response.status.message}${response.body.message ? `, ${response.body.message}` : ''}`;
 
                 console.error(`[Qworum for web pages] error while setting data: ${errorMessage}`);
                 return Promise.reject(new Error(errorMessage));
@@ -2901,18 +2909,18 @@ class Qworum {
 
         // call the endpoint
         try {
-            const 
-            request  = {apiVersion, endpoint: 'Get data', body: {path}},
-            response = await this._sendRequest(request);
+            const
+                request = { apiVersion, endpoint: 'Get data', body: { path } },
+                response = await this._sendRequest(request);
 
             if (response.status.code !== 200) {
                 if (response.status.code === 404) {
                     // data not found
                     return Promise.resolve(null);
                 } else {
-                    const errorMessage = 
-                    `API error: ${response.status.code} ${response.status.message}${response.body.message ? `, ${response.body.message}` : ''}`;
-    
+                    const errorMessage =
+                        `API error: ${response.status.code} ${response.status.message}${response.body.message ? `, ${response.body.message}` : ''}`;
+
                     console.error(`[Qworum for web pages] error while getting data: ${errorMessage}`);
                     return Promise.reject(new Error(errorMessage));
                 }
@@ -2935,15 +2943,26 @@ class Qworum {
             try {
                 if (browserExtensionInfo.browserType === 'chrome') {
                     // TODO use async version of chrome.runtime.sendMessage by omitting the callback (https://developer.chrome.com/docs/extensions/reference/runtime/#method-sendMessage)
-                    chrome.runtime.sendMessage( 
-                        browserExtensionInfo.extensionId,
+                    chrome.runtime.sendMessage(
+                        browserExtensionInfo.extensionIds[0],
                         message,
-    
+
                         (response) => {
-                            if (!response) {
-                                reject(new Error('The Qworum extension is not installed or is disabled.')); return;
+                            if (response) {
+                                resolve(response); return;
                             }
-                            resolve(response);
+                            // official Qworum extension not available on browser; try the test version.
+                            chrome.runtime.sendMessage(
+                                browserExtensionInfo.extensionIds[1],
+                                message,
+
+                                (response) => {
+                                    if (response) {
+                                        resolve(response); return;
+                                    }
+                                    reject(new Error('The Qworum extension is not installed or is disabled.'));
+                                }
+                            );
                         }
                     );
                 } else {
@@ -2957,33 +2976,24 @@ class Qworum {
     }
 
     // Returns a non-null value if there is a Qworum extension for this browser.
-    // WARNING A non-null value does not mean that 1) the Qworum extension is installed on this browser, or that 2) the browser extension is enabled for this website !!!
+    // WARNING A non-null value does not mean that 1) the Qworum extension is installed on this browser, or that 2) the browser extension is enabled for this website in the extension manifest !!!
     static getBrowserExtensionInfo() {
-        // extension ids for all supported browsers
-        const 
-        isProductionMode = true,
-        // isProductionMode = false,
-        browserExtensionIds = {
-            // The following extension will be published on the Chrome Web Store (https://chrome.google.com/webstore/category/extensions).
-            // Browsers that support Chrome Web Store: Google Chrome, Microsoft Edge, Brave, Opera ...
-            chrome: isProductionMode ? (
-                // published version (available on Chrome Web Store)
-                'leaofcglebjeebmnmlapbnfbjgfiaokg'
-            ) : (
-                // local version
-                'iboekogiiknedkbpoohiaiejdjjbkaae'
-            ),
-        };
-
-        // extension info for this browser
-        let browserExtensionInfo = null, browserType = null;
+        let browserExtensionInfo = null;
         if (chrome &amp;&amp; chrome.runtime &amp;&amp; chrome.runtime.sendMessage) {
             // this browser is compatible with Chrome Web Store
-            browserType = 'chrome';
-            browserExtensionInfo = { browserType, extensionId: browserExtensionIds[browserType] };
+            browserExtensionInfo = {
+                browserType: 'chrome',
+                extensionIds: [
+                    // published version (available on Chrome Web Store)
+                    'leaofcglebjeebmnmlapbnfbjgfiaokg',
+
+                    // local version for testing
+                    'iboekogiiknedkbpoohiaiejdjjbkaae'
+                ]
+            };
         }
-        if (!browserExtensionInfo) throw new Error('[Qworum for web pages] Browser not supported by this.');
-        this._log(`extension id: ${JSON.stringify(browserExtensionInfo)}`);
+        if (!browserExtensionInfo) throw new Error('[Qworum for web pages] Browser not supported.');
+        this._log(`extension info: ${JSON.stringify(browserExtensionInfo)}`);
         return browserExtensionInfo;
     }
 
@@ -2992,7 +3002,7 @@ class Qworum {
     /**
      * Not used, as all methods and properties are static.
      */
-    constructor() { } 
+    constructor() { }
 
     // utility functions ///////////////////////////////////////////
 
@@ -3024,7 +3034,7 @@ export { Qworum };
   <br class="clear">
 
   <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a>
   </footer>
 
   <script src="scripts/linenumber.js"></script>
