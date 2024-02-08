@@ -17,7 +17,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2024.02.07 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2024.02.08 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>Qworum is:</p>
@@ -1053,54 +1053,61 @@ Qworum.eval(
     <section id="semantic">
       <h3>4.2. <code>semantic</code></h3>
       <p>
-        Represents semantic data. This data can be specified in one of the following equivalent formats:
+        Represents semantic data. This data can be specified in one of the following formats:
       </p>
       <ul>
         <li>
-          <dfn>TriG</dfn> <a href="#ref-trig">♦︎</a> is the default format. If this format is used, then the
-          <code>type</code> attribute must be omitted or have the value <code>trig</code>.
-          TriG is the recommended semantic format for call arguments and values returned from calls, because this
-          format is concise (which can reduce network traffic) and human-readable.
+          <dfn>TriG</dfn> <a href="#ref-trig">♦︎</a>. 
+          The <code>type</code> attribute has the value <code>trig</code> for this format. 
+          If this attribute is omitted then it is assumed to have the value <code>trig</code>.
         </li>
-        {{# <li>
-          <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a> is the default format. If this format is used, then the
-          <code>type</code> attribute must be omitted or have the value <code>json-ld</code>.
-          JSON-LD is the recommended semantic format for call arguments and values returned from calls, because this
-          format is concise (which can reduce network traffic) and human-readable.
-        </li> #}}
         <li>
-          <dfn>N-Quads</dfn> <a href="#ref-n-quads">♦︎</a>. If this format is used, then the
-          <code>type</code> attribute must have the value <code>n-quads</code>.
-          N-Quads is the recommended semantic format for storing session data, because this format allows
-          database-like queries to be performed on data.
+          <dfn>Turtle</dfn> <a href="#ref-turtle">♦︎</a>. 
+          The <code>type</code> attribute has the value <code>turtle</code> for this format. 
+        </li>
+        <li>
+          <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a>. 
+          The <code>type</code> attribute has the value <code>json-ld</code> for this format. 
+        </li>
+        <li>
+          <dfn>N-Quads</dfn> <a href="#ref-n-quads">♦︎</a>.
+          The <code>type</code> attribute has the value <code>n-quads</code> for this format. 
         </li>
       </ul>
-
-      <!-- <figure>
-        <pre><code class="language-xml">
-&lt;data:semantic>
-&lt;![CDATA[
-
-@prefix : &lt;https://schema.org/> .
-
-&lt;https://www.wikidata.org/wiki/Q92760>
-  a           :Person ;
-  :givenName  "Claude" ;
-  :familyName "Shannon" ;
-  :birthDate  "1916-04-30" .
-
-]]>
-&lt;/data:semantic>
-</code></pre>
-        <figcaption>4.2.1: Example of semantic data written in Turtle</figcaption>
-      </figure> -->
 
       <figure>
         <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
 &lt;data:semantic type='trig'>
   &lt;![CDATA[
-    PREFIX : &lt;https://schema.org/>
+    @prefix : &lt;https://schema.org/> .
+
+    {
+      []
+      a :ItemList;
+      :itemListElement [
+        a :Product;
+        :productID "2";
+        :name "XYZ Boots";
+        :offers [
+          a :Offer;
+          :price "75.95";
+          :priceCurrency "EUR"
+        ]
+      ].
+    }
+  ]]>
+&lt;/data:semantic>
+</code></pre>
+        <figcaption>4.2.1: Example of semantic data written in TriG</figcaption>
+      </figure>
+
+      <figure>
+        <pre><code class="language-xml">
+&lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
+&lt;data:semantic type='turtle'>
+  &lt;![CDATA[
+    @prefix : &lt;https://schema.org/> .
 
     []
     a :ItemList;
@@ -1117,10 +1124,13 @@ Qworum.eval(
   ]]>
 &lt;/data:semantic>
 </code></pre>
-        <figcaption>4.2.1: Example of semantic data written in JSON-LD</figcaption>
-        {{# <pre><code class="language-xml">
+        <figcaption>4.2.2: Example of semantic data written in Turtle</figcaption>
+      </figure>
+
+      <figure>
+        <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
-&lt;data:semantic>
+&lt;data:semantic type='json-ld'>
   {
     "@context"       : {"@vocab":"https://schema.org/"},
     "@type"          : "ItemList",
@@ -1137,7 +1147,7 @@ Qworum.eval(
   }
 &lt;/data:semantic>
 </code></pre>
-        <figcaption>4.2.1: Example of semantic data written in JSON-LD</figcaption> #}}
+        <figcaption>4.2.3: Example of semantic data written in JSON-LD</figcaption>
       </figure>
 
       <figure>
@@ -1165,7 +1175,7 @@ Qworum.eval(
   ]]>
 &lt;/data:semantic>
 </code></pre>
-        <figcaption>4.2.1: Example of semantic data written in N-Quads</figcaption>
+        <figcaption>4.2.4: Example of semantic data written in N-Quads</figcaption>
       </figure>
 
       <p>
@@ -1344,22 +1354,28 @@ Qworum.eval(
       </li>
       <li id="ref-trig">
         <span class="reference">TriG</span>
-        <a href="https://www.w3.org/TR/rdf12-trig/">
-          RDF 1.2 TriG, RDF Dataset Language,
-          W3C Working Draft, 04 November 2023
+        <a href="https://www.w3.org/TR/trig/">
+          RDF 1.1 TriG, RDF Dataset Language, W3C Recommendation, 25 February 2014
         </a>
       </li>
-      {{# <li id="ref-json-ld">
-        <span class="reference">JSON-LD</span>
-        <a href="https://www.w3.org/TR/json-ld/">
-          JSON-LD 1.1,
-          A JSON-based Serialization for Linked Data
+      <li id="ref-turtle">
+        <span class="reference">TriG</span>
+        <a href="https://www.w3.org/TR/turtle/">
+          RDF 1.1 Turtle, Terse RDF Triple Language, W3C Recommendation, 25 February 2014
         </a>
-      </li> #}}
+      </li>
+      <li id="ref-json-ld">
+        <span class="reference">JSON-LD</span>
+        <a href="https://www.w3.org/TR/json-ld11/">
+          JSON-LD 1.1,
+          A JSON-based Serialization for Linked Data,
+          W3C Recommendation, 16 July 2020
+        </a>
+      </li>
       <li id="ref-n-quads">
         <span class="reference">N-Quads</span>
-        <a href="https://www.w3.org/TR/json-ld/">
-          RDF 1.1 N-Quads, W3C Recommendation, 25 February 2014
+        <a href="https://www.w3.org/TR/n-quads/">
+          RDF 1.1 N-Quads, A line-based syntax for RDF datasets, W3C Recommendation, 25 February 2014
         </a>
       </li>
       <li id="ref-origin">
