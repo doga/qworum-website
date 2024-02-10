@@ -17,7 +17,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2024.02.08 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2024.02.10 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>Qworum is:</p>
@@ -1057,13 +1057,13 @@ Qworum.eval(
       </p>
       <ul>
         <li>
-          <dfn>TriG</dfn> <a href="#ref-trig">♦︎</a>. 
-          The <code>type</code> attribute has the value <code>trig</code> for this format. 
-          If this attribute is omitted then it is assumed to have the value <code>trig</code>.
-        </li>
-        <li>
           <dfn>Turtle</dfn> <a href="#ref-turtle">♦︎</a>. 
           The <code>type</code> attribute has the value <code>turtle</code> for this format. 
+          If this attribute is omitted then it is assumed to have the value <code>turtle</code>.
+        </li>
+        <li>
+          <dfn>TriG</dfn> <a href="#ref-trig">♦︎</a>. 
+          The <code>type</code> attribute has the value <code>trig</code> for this format. 
         </li>
         <li>
           <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a>. 
@@ -1078,40 +1078,16 @@ Qworum.eval(
       <figure>
         <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
-&lt;data:semantic type='trig'>
-  &lt;![CDATA[
-    @prefix : &lt;https://schema.org/> .
-
-    {
-      []
-      a :ItemList;
-      :itemListElement [
-        a :Product;
-        :productID "2";
-        :name "XYZ Boots";
-        :offers [
-          a :Offer;
-          :price "75.95";
-          :priceCurrency "EUR"
-        ]
-      ].
-    }
-  ]]>
-&lt;/data:semantic>
-</code></pre>
-        <figcaption>4.2.1: Example of semantic data written in TriG</figcaption>
-      </figure>
-
-      <figure>
-        <pre><code class="language-xml">
-&lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
 &lt;data:semantic type='turtle'>
   &lt;![CDATA[
+
     @prefix : &lt;https://schema.org/> .
 
-    []
-    a :ItemList;
-    :itemListElement [
+    _:lineItems
+      a :ItemList;
+      :itemListElement _:lineItem1 .
+
+    _:lineItem1
       a :Product;
       :productID "2";
       :name "XYZ Boots";
@@ -1119,12 +1095,42 @@ Qworum.eval(
         a :Offer;
         :price "75.95";
         :priceCurrency "EUR"
-      ]
-    ].
+      ] .
+
   ]]>
 &lt;/data:semantic>
 </code></pre>
-        <figcaption>4.2.2: Example of semantic data written in Turtle</figcaption>
+        <figcaption>4.2.1: Example of semantic data written in Turtle</figcaption>
+      </figure>
+
+      <figure>
+        <pre><code class="language-xml">
+&lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
+&lt;data:semantic type='trig'>
+  &lt;![CDATA[
+
+    @prefix : &lt;https://schema.org/> .
+
+    {
+      _:lineItems
+        a :ItemList;
+        :itemListElement _:lineItem1 .
+
+      _:lineItem1
+        a :Product;
+        :productID "2";
+        :name "XYZ Boots";
+        :offers [
+          a :Offer;
+          :price "75.95";
+          :priceCurrency "EUR"
+        ] .
+    }
+
+  ]]>
+&lt;/data:semantic>
+</code></pre>
+        <figcaption>4.2.2: Example of semantic data written in TriG</figcaption>
       </figure>
 
       <figure>
@@ -1155,23 +1161,33 @@ Qworum.eval(
 &lt;!-- The end-user's shopping cart contents (2 items). -->
 &lt;data:semantic type='n-quads'>
   &lt;![CDATA[
-    _:c14n0 &lt;https://schema.org/price> '75.95' .
-    _:c14n0 &lt;https://schema.org/priceCurrency> 'EUR' .
-    _:c14n0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
-    _:c14n1 &lt;https://schema.org/itemListElement> _:c14n3 .
-    _:c14n1 &lt;https://schema.org/itemListElement> _:c14n4 .
-    _:c14n1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/ItemList> .
-    _:c14n2 &lt;https://schema.org/price> '45.95' .
-    _:c14n2 &lt;https://schema.org/priceCurrency> 'EUR' .
-    _:c14n2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
-    _:c14n3 &lt;https://schema.org/name> 'Alpha trainers' .
-    _:c14n3 &lt;https://schema.org/offers> _:c14n2 .
-    _:c14n3 &lt;https://schema.org/productID> '1' .
-    _:c14n3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
-    _:c14n4 &lt;https://schema.org/name> 'XYZ Boots' .
-    _:c14n4 &lt;https://schema.org/offers> _:c14n0 .
-    _:c14n4 &lt;https://schema.org/productID> '2' .
-    _:c14n4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
+
+    # Line items
+    _:lineItems &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/ItemList> .
+    _:lineItems &lt;https://schema.org/itemListElement> _:lineItem1 .
+    _:lineItems &lt;https://schema.org/itemListElement> _:lineItem2 .
+
+    # Line item 1
+    _:lineItem1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
+    _:lineItem1 &lt;https://schema.org/name> 'Alpha trainers' .
+    _:lineItem1 &lt;https://schema.org/productID> "1" .
+    _:lineItem1 &lt;https://schema.org/offers> _:lineItemPrice1 .
+
+    # Line item 2
+    _:lineItem2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Product> .
+    _:lineItem2 &lt;https://schema.org/name> "XYZ Boots" .
+    _:lineItem2 &lt;https://schema.org/productID> "2" .
+    _:lineItem2 &lt;https://schema.org/offers> _:lineItemPrice2 .
+
+    # Prices
+    _:lineItemPrice1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
+    _:lineItemPrice1 &lt;https://schema.org/price> "45.95" .
+    _:lineItemPrice1 &lt;https://schema.org/priceCurrency> "EUR" .
+
+    _:lineItemPrice2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;https://schema.org/Offer> .
+    _:lineItemPrice2 &lt;https://schema.org/price> "75.95" .
+    _:lineItemPrice2 &lt;https://schema.org/priceCurrency> "EUR" .
+
   ]]>
 &lt;/data:semantic>
 </code></pre>

@@ -1,4 +1,4 @@
-<!doctype html><html lang=en><meta charset=UTF-8><meta content="IE=edge"http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1.0"name=viewport><link href=/assets/style/base.css rel=stylesheet><link href=/assets/images/logos/Qworum-favicon-16px.png rel=icon><link href=/assets/style/pages/specification.css rel=stylesheet><title>The Qworum script, specification version 1 • Qworum</title><body><header><nav><ul><li><a aria-label="Return home"href=/en/> <img alt="Qworum logo and name"class="logo logo-light"src=/assets/images/logos/Qworum-logo-and-name.svg> <img alt="Qworum logo and name"class="logo logo-dark"src=/assets/images/logos/Qworum-logo-and-name-dark.svg> </a><li><a href=/en/platform/> Platform </a><li><a href=/en/solution/> Solution </a><li><a href=/en/plans/> Plans </a><li><a class=selected href=/en/developers/> Developers </a><li><a href=/en/about/> About </a></ul></nav></header><main><article><header><h1>The Qworum script, specification version 1   <span class=metadata>2024.02.08 by Doğa Armangil &LTd.armangil@qworum.net></span></h1><h2>Summary</h2><p>Qworum is:<ul><li>a <strong>module system for Web applications</strong>, where modules may be located anywhere on the Web.<li>a distributed Web application technology.<li>a platform for interactive <a href=https://microservices.io target=_blank>microservices</a> which bring their own full-page UIs.<li>the <em>Service Web</em> that complements the HTML-based <em>Document Web</em> and the RDF-based <em>Semantic Web</em>.<li>an upgrade to the World Wide Web for improved application support.<li>an advanced Web browser feature that websites can use.</ul><p>Qworum defines:<ul><li>a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than content as HTML does. Web browsers can receive Qworum scripts from Web servers in an XML document. Web pages can also generate Qworum scripts using JavaScript.<li>an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or as a browser extension.<li>a new client-side storage for storing the execution state of each browser tab. This storage can use IndexedDB behind the scenes.</ul><p>Qworum is suitable for both:<ul><li>Jamstack <a href=#ref-jamstack>♦︎</a> frontends that are made up of static files, and<li>the more legacy Web frontends that are dynamically generated on the server for each user.</ul></header><nav id=table-of-contents><h2>Table of Contents</h2><ol><li><a href=#introduction>Introduction</a><li><a href=#terminology>Terminology</a> <ol><li><a href=#phase>Phase</a><li><a href=#single-phase-service-call>Single-Phase Service Call</a><li><a href=#multi-phase-service-call>Multi-Phase Service Call</a><li><a href=#script>The Qworum Script</a><li><a href=#service-composition>Service Composition</a><li><a href=#interactive-service>Interactive Service</a><li><a href=#execution-state>Execution State</a><li><a href=#object>Qworum Object</a><li><a href=#class>Qworum Class</a></ol><li><a href=#instructions>Instructions</a> <ol><li><a href=#data><code>data</code></a><li><a href=#call><code>call</code></a><li><a href=#return><code>return</code></a><li><a href=#goto><code>goto</code></a><li><a href=#sequence><code>sequence</code></a><li><a href=#fault><code>fault</code></a><li><a href=#try><code>try</code></a></ol><li><a href=#data-values>Data values</a> <ol><li><a href=#json><code>json</code></a><li><a href=#semantic><code>semantic</code></a></ol><li><a href=#browser-workarounds>Workarounds for browser limitations</a> <ol><li><a href=#hyperlinks>Hyperlinks</a><li><a href=#using-only-get-requests>Forms</a></ol><li><a href=#references>References</a></ol></nav><section id=introduction><h2>1. Introduction</h2><p>The World Wide Web <a href=#ref-www>♦︎</a> was initially conceived as a decentralised information system consisting of interlinked documents, yet its potential as a platform for applications soon became apparent. The ongoing effort that has been undertaken by the ICT community since the Web's early days in order to better support Web applications has sofar produced various client-side and server-side upgrades to the initial Web, such as JavaScript and application servers.<p>Yet there is room for improvement, particularly regarding the decentralisation of the front-ends of Web applications. In today's Web, an application is contained within a single Web <dfn>origin</dfn> (example: https://example.com) <a href=#ref-origin>♦︎</a>, and frequently even within a single Web page. This limits the amount of functionality that can be shared amongst application developer teams, and results in considerable duplication of effort. (One notable exception to this picture is OAuth-based services which can be called remotely by applications.)<p>Qworum enables new gains in productivity for the software community by making it possible to build Web applications that are composed of interactive services ("Qworum services") that are hosted anywhere on the Web and that are callable remotely.<p>It is worth noting that Qworum services are of practical use even if the caller of a service has the same Web origin as the called service. This is because Qworum services can be inserted in any user flow without disrupting it, similarly to functions in conventional programming. For example, with Qworum an application no longer needs to pass a return path to the login dialog when it requires the end-user to sign in before accessing a restricted page. Again, this is similar to conventional programming where a function does not know how the execution proceeds when its own execution finishes.<p>As a foretaste, here is how an e-commerce site might call a remote shopping cart service:<figure><pre><code class="language-xml hljs">
+<!doctype html><html lang=en><meta charset=UTF-8><meta content="IE=edge"http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1.0"name=viewport><link href=/assets/style/base.css rel=stylesheet><link href=/assets/images/logos/Qworum-favicon-16px.png rel=icon><link href=/assets/style/pages/specification.css rel=stylesheet><title>The Qworum script, specification version 1 • Qworum</title><body><header><nav><ul><li><a aria-label="Return home"href=/en/> <img alt="Qworum logo and name"class="logo logo-light"src=/assets/images/logos/Qworum-logo-and-name.svg> <img alt="Qworum logo and name"class="logo logo-dark"src=/assets/images/logos/Qworum-logo-and-name-dark.svg> </a><li><a href=/en/platform/> Platform </a><li><a href=/en/solution/> Solution </a><li><a href=/en/plans/> Plans </a><li><a class=selected href=/en/developers/> Developers </a><li><a href=/en/about/> About </a></ul></nav></header><main><article><header><h1>The Qworum script, specification version 1   <span class=metadata>2024.02.10 by Doğa Armangil &LTd.armangil@qworum.net></span></h1><h2>Summary</h2><p>Qworum is:<ul><li>a <strong>module system for Web applications</strong>, where modules may be located anywhere on the Web.<li>a distributed Web application technology.<li>a platform for interactive <a href=https://microservices.io target=_blank>microservices</a> which bring their own full-page UIs.<li>the <em>Service Web</em> that complements the HTML-based <em>Document Web</em> and the RDF-based <em>Semantic Web</em>.<li>an upgrade to the World Wide Web for improved application support.<li>an advanced Web browser feature that websites can use.</ul><p>Qworum defines:<ul><li>a new top-level Web format called <dfn>the Qworum script</dfn>. These contain executable code rather than content as HTML does. Web browsers can receive Qworum scripts from Web servers in an XML document. Web pages can also generate Qworum scripts using JavaScript.<li>an interpreter for Qworum scripts. This client-side software can be implemented by Web browsers natively or as a browser extension.<li>a new client-side storage for storing the execution state of each browser tab. This storage can use IndexedDB behind the scenes.</ul><p>Qworum is suitable for both:<ul><li>Jamstack <a href=#ref-jamstack>♦︎</a> frontends that are made up of static files, and<li>the more legacy Web frontends that are dynamically generated on the server for each user.</ul></header><nav id=table-of-contents><h2>Table of Contents</h2><ol><li><a href=#introduction>Introduction</a><li><a href=#terminology>Terminology</a> <ol><li><a href=#phase>Phase</a><li><a href=#single-phase-service-call>Single-Phase Service Call</a><li><a href=#multi-phase-service-call>Multi-Phase Service Call</a><li><a href=#script>The Qworum Script</a><li><a href=#service-composition>Service Composition</a><li><a href=#interactive-service>Interactive Service</a><li><a href=#execution-state>Execution State</a><li><a href=#object>Qworum Object</a><li><a href=#class>Qworum Class</a></ol><li><a href=#instructions>Instructions</a> <ol><li><a href=#data><code>data</code></a><li><a href=#call><code>call</code></a><li><a href=#return><code>return</code></a><li><a href=#goto><code>goto</code></a><li><a href=#sequence><code>sequence</code></a><li><a href=#fault><code>fault</code></a><li><a href=#try><code>try</code></a></ol><li><a href=#data-values>Data values</a> <ol><li><a href=#json><code>json</code></a><li><a href=#semantic><code>semantic</code></a></ol><li><a href=#browser-workarounds>Workarounds for browser limitations</a> <ol><li><a href=#hyperlinks>Hyperlinks</a><li><a href=#using-only-get-requests>Forms</a></ol><li><a href=#references>References</a></ol></nav><section id=introduction><h2>1. Introduction</h2><p>The World Wide Web <a href=#ref-www>♦︎</a> was initially conceived as a decentralised information system consisting of interlinked documents, yet its potential as a platform for applications soon became apparent. The ongoing effort that has been undertaken by the ICT community since the Web's early days in order to better support Web applications has sofar produced various client-side and server-side upgrades to the initial Web, such as JavaScript and application servers.<p>Yet there is room for improvement, particularly regarding the decentralisation of the front-ends of Web applications. In today's Web, an application is contained within a single Web <dfn>origin</dfn> (example: https://example.com) <a href=#ref-origin>♦︎</a>, and frequently even within a single Web page. This limits the amount of functionality that can be shared amongst application developer teams, and results in considerable duplication of effort. (One notable exception to this picture is OAuth-based services which can be called remotely by applications.)<p>Qworum enables new gains in productivity for the software community by making it possible to build Web applications that are composed of interactive services ("Qworum services") that are hosted anywhere on the Web and that are callable remotely.<p>It is worth noting that Qworum services are of practical use even if the caller of a service has the same Web origin as the called service. This is because Qworum services can be inserted in any user flow without disrupting it, similarly to functions in conventional programming. For example, with Qworum an application no longer needs to pass a return path to the login dialog when it requires the end-user to sign in before accessing a restricted page. Again, this is similar to conventional programming where a function does not know how the execution proceeds when its own execution finishes.<p>As a foretaste, here is how an e-commerce site might call a remote shopping cart service:<figure><pre><code class="language-xml hljs">
 <span class=language-comment>&LT!-- Qworum script received by the Web browser from an e-commerce site --></span>
 <span class=language-tag><<span class=language-name>sequence</span> <span class=language-attr>xmlns</span>=<span class=language-string>"https://qworum.net/ns/v1/instruction/"</span>></span>
 
@@ -166,37 +166,18 @@ Qworum.eval(
     }
   }
 <span class=language-tag>&LT/<span class=language-name>data:json</span>></span>
-        </code></pre><figcaption>4.1.1: Example of <code>json</code> data</figcaption></figure></section><section id=semantic><h3>4.2. <code>semantic</code></h3><p>Represents semantic data. This data can be specified in one of the following formats:<ul><li><dfn>TriG</dfn> <a href=#ref-trig>♦︎</a>. The <code>type</code> attribute has the value <code>trig</code> for this format. If this attribute is omitted then it is assumed to have the value <code>trig</code>.<li><dfn>Turtle</dfn> <a href=#ref-turtle>♦︎</a>. The <code>type</code> attribute has the value <code>turtle</code> for this format.<li><dfn>JSON-LD</dfn> <a href=#ref-json-ld>♦︎</a>. The <code>type</code> attribute has the value <code>json-ld</code> for this format.<li><dfn>N-Quads</dfn> <a href=#ref-n-quads>♦︎</a>. The <code>type</code> attribute has the value <code>n-quads</code> for this format.</ul><figure><pre><code class="language-xml hljs">
-<span class=language-comment>&LT!-- E-shop sends a new item to add to the end-user's shopping cart. --></span>
-<span class=language-tag><<span class=language-name>data:semantic</span> <span class=language-attr>type</span>=<span class=language-string>'trig'</span>></span>
-  &LT![CDATA[
-    @prefix : &LThttps://schema.org/> .
-
-    {
-      []
-      a :ItemList;
-      :itemListElement [
-        a :Product;
-        :productID "2";
-        :name "XYZ Boots";
-        :offers [
-          a :Offer;
-          :price "75.95";
-          :priceCurrency "EUR"
-        ]
-      ].
-    }
-  ]]>
-<span class=language-tag>&LT/<span class=language-name>data:semantic</span>></span>
-</code></pre><figcaption>4.2.1: Example of semantic data written in TriG</figcaption></figure><figure><pre><code class="language-xml hljs">
+        </code></pre><figcaption>4.1.1: Example of <code>json</code> data</figcaption></figure></section><section id=semantic><h3>4.2. <code>semantic</code></h3><p>Represents semantic data. This data can be specified in one of the following formats:<ul><li><dfn>Turtle</dfn> <a href=#ref-turtle>♦︎</a>. The <code>type</code> attribute has the value <code>turtle</code> for this format. If this attribute is omitted then it is assumed to have the value <code>turtle</code>.<li><dfn>TriG</dfn> <a href=#ref-trig>♦︎</a>. The <code>type</code> attribute has the value <code>trig</code> for this format.<li><dfn>JSON-LD</dfn> <a href=#ref-json-ld>♦︎</a>. The <code>type</code> attribute has the value <code>json-ld</code> for this format.<li><dfn>N-Quads</dfn> <a href=#ref-n-quads>♦︎</a>. The <code>type</code> attribute has the value <code>n-quads</code> for this format.</ul><figure><pre><code class="language-xml hljs">
 <span class=language-comment>&LT!-- E-shop sends a new item to add to the end-user's shopping cart. --></span>
 <span class=language-tag><<span class=language-name>data:semantic</span> <span class=language-attr>type</span>=<span class=language-string>'turtle'</span>></span>
   &LT![CDATA[
+
     @prefix : &LThttps://schema.org/> .
 
-    []
-    a :ItemList;
-    :itemListElement [
+    _:lineItems
+      a :ItemList;
+      :itemListElement _:lineItem1 .
+
+    _:lineItem1
       a :Product;
       :productID "2";
       :name "XYZ Boots";
@@ -204,11 +185,36 @@ Qworum.eval(
         a :Offer;
         :price "75.95";
         :priceCurrency "EUR"
-      ]
-    ].
+      ] .
+
   ]]>
 <span class=language-tag>&LT/<span class=language-name>data:semantic</span>></span>
-</code></pre><figcaption>4.2.2: Example of semantic data written in Turtle</figcaption></figure><figure><pre><code class="language-xml hljs">
+</code></pre><figcaption>4.2.1: Example of semantic data written in Turtle</figcaption></figure><figure><pre><code class="language-xml hljs">
+<span class=language-comment>&LT!-- E-shop sends a new item to add to the end-user's shopping cart. --></span>
+<span class=language-tag><<span class=language-name>data:semantic</span> <span class=language-attr>type</span>=<span class=language-string>'trig'</span>></span>
+  &LT![CDATA[
+
+    @prefix : &LThttps://schema.org/> .
+
+    {
+      _:lineItems
+        a :ItemList;
+        :itemListElement _:lineItem1 .
+
+      _:lineItem1
+        a :Product;
+        :productID "2";
+        :name "XYZ Boots";
+        :offers [
+          a :Offer;
+          :price "75.95";
+          :priceCurrency "EUR"
+        ] .
+    }
+
+  ]]>
+<span class=language-tag>&LT/<span class=language-name>data:semantic</span>></span>
+</code></pre><figcaption>4.2.2: Example of semantic data written in TriG</figcaption></figure><figure><pre><code class="language-xml hljs">
 <span class=language-comment>&LT!-- E-shop sends a new item to add to the end-user's shopping cart. --></span>
 <span class=language-tag><<span class=language-name>data:semantic</span> <span class=language-attr>type</span>=<span class=language-string>'json-ld'</span>></span>
   {
@@ -230,23 +236,33 @@ Qworum.eval(
 <span class=language-comment>&LT!-- The end-user's shopping cart contents (2 items). --></span>
 <span class=language-tag><<span class=language-name>data:semantic</span> <span class=language-attr>type</span>=<span class=language-string>'n-quads'</span>></span>
   &LT![CDATA[
-    _:c14n0 &LThttps://schema.org/price> '75.95' .
-    _:c14n0 &LThttps://schema.org/priceCurrency> 'EUR' .
-    _:c14n0 &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/Offer> .
-    _:c14n1 &LThttps://schema.org/itemListElement> _:c14n3 .
-    _:c14n1 &LThttps://schema.org/itemListElement> _:c14n4 .
-    _:c14n1 &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/ItemList> .
-    _:c14n2 &LThttps://schema.org/price> '45.95' .
-    _:c14n2 &LThttps://schema.org/priceCurrency> 'EUR' .
-    _:c14n2 &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/Offer> .
-    _:c14n3 &LThttps://schema.org/name> 'Alpha trainers' .
-    _:c14n3 &LThttps://schema.org/offers> _:c14n2 .
-    _:c14n3 &LThttps://schema.org/productID> '1' .
-    _:c14n3 &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/Product> .
-    _:c14n4 &LThttps://schema.org/name> 'XYZ Boots' .
-    _:c14n4 &LThttps://schema.org/offers> _:c14n0 .
-    _:c14n4 &LThttps://schema.org/productID> '2' .
-    _:c14n4 &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/Product> .
+
+    # Line items
+    _:lineItems &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/ItemList> .
+    _:lineItems &LThttps://schema.org/itemListElement> _:lineItem1 .
+    _:lineItems &LThttps://schema.org/itemListElement> _:lineItem2 .
+
+    # Line item 1
+    _:lineItem1 &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/Product> .
+    _:lineItem1 &LThttps://schema.org/name> 'Alpha trainers' .
+    _:lineItem1 &LThttps://schema.org/productID> "1" .
+    _:lineItem1 &LThttps://schema.org/offers> _:lineItemPrice1 .
+
+    # Line item 2
+    _:lineItem2 &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/Product> .
+    _:lineItem2 &LThttps://schema.org/name> "XYZ Boots" .
+    _:lineItem2 &LThttps://schema.org/productID> "2" .
+    _:lineItem2 &LThttps://schema.org/offers> _:lineItemPrice2 .
+
+    # Prices
+    _:lineItemPrice1 &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/Offer> .
+    _:lineItemPrice1 &LThttps://schema.org/price> "45.95" .
+    _:lineItemPrice1 &LThttps://schema.org/priceCurrency> "EUR" .
+
+    _:lineItemPrice2 &LThttp://www.w3.org/1999/02/22-rdf-syntax-ns#type> &LThttps://schema.org/Offer> .
+    _:lineItemPrice2 &LThttps://schema.org/price> "75.95" .
+    _:lineItemPrice2 &LThttps://schema.org/priceCurrency> "EUR" .
+
   ]]>
 <span class=language-tag>&LT/<span class=language-name>data:semantic</span>></span>
 </code></pre><figcaption>4.2.4: Example of semantic data written in N-Quads</figcaption></figure><p>Semantic data is data that uses the vocabularies that are defined by the <dfn>Semantic Web</dfn> <a href=#ref-semanticweb>♦︎</a>. In these vocabularies each term has a precise meaning that is understood by any software that understands those particular vocabularies.</section></section><section id=browser-workarounds><h2>5. Workarounds for browser limitations</h2><p>The developers of Qworum applications and services must observe some simple rules for their Qworum-based software to work properly on browsers. These rules are necessary because Qworum is implemented as a browser extension, and web browsers impose certain constraints on what extensions can do. One notable restriction is that extensions are not allowed to prevent the end-user from going back in the tab history.<p>The following programming constraints will prevent the application UI from going out of sync with the application's session state.<h3 id=hyperlinks>5.1. Hyperlinks</h3><p>In HTML pages, use <code>window.location.replace()</code> for hyperlinks.<figure><pre><code class="language-html hljs language-xml">
