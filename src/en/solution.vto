@@ -27,6 +27,7 @@ nav:
   <figcaption>The user experience of using Qworum applications</figcaption>
 </figure>
 
+
 <section id="integrations">
   <h2>The only platform for integrating interactive processes</h2>
   <p>
@@ -38,9 +39,21 @@ nav:
     <figcaption>Building Qworum APIs over REST APIs</figcaption>
   </figure>
 
+  <section id="10x">
+    <h3>10x easier integrations</h3>
+    <p>
+      Developing applications and services with Qworum is 10x easier than with other technologies such as REST, because:
+    </p>
+    <ul>
+      <li>The API caller does not need to authenticate the end-user; each API endpoint takes care of authenticating the user itself if needed.</li>
+      <li>The API caller does not need to obtain an API key, as Qworum API calls very similar to hyperlinks across websites, which are naturally permissionless.</li>
+      <li>Qworum APIs bring their own UIs, so the UI-related production costs are greatly reduced for the API caller.</li>
+    </ul>
+  </section>
+
   <section id="user-authentication">
     <h3>
-      A user authentication solution fit for even complex integrations
+      For complex integrations there is no alternative to Qworum 
     </h3>
     <p>
       The simple fact of the matter is, without Qworum, the integration of interactive processes 
@@ -75,7 +88,7 @@ nav:
     </p>
     <ul>
       <li>
-        Authenticating the user for <code>Service 2</code> is possible (because <code>Application 1</code> knows that <code>Service 2</code> must be used), although authenticating the user for a 3rd-party service is an overhead that is best avoided. But even for <code>Service 2</code> there is already a security problem, because now <code>Application 1</code> can impersonate the end-user on <code>Service 2</code>!
+        Authenticating the user for <code>Service 2</code> is possible (because <code>Application 1</code> knows that <code>Service 2</code> must be used), although authenticating the user for a 3rd-party service is an overhead that is best avoided. But even for <code>Service 2</code> there is already a security problem, because now <code>Application 1</code> can now impersonate the end-user on <code>Service 2</code>!
       </li>
       <li>
         It is fair to say that authenticating the user for <code>Service 3</code> is a technical impossibility.
@@ -94,18 +107,6 @@ nav:
       <li>
         Qworum makes user-authentication a non-issue for all possible dependency-graph topologies.
       </li>
-    </ul>
-  </section>
-  <section id="10x">
-    <h3>10x easier integrations</h3>
-    <p>
-      Note that even for simple one-level dependency graphs,
-      developing applications and services with Qworum is 10x easier than with other technologies, because:
-    </p>
-    <ul>
-      <li>There is no need to authenticate the end-user for the called service.</li>
-      <li>There is no need to obtain an API key for the called service.</li>
-      <li>Calling Qworum APIs are much simpler than calling REST etc.</li>
     </ul>
   </section>
 
