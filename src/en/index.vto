@@ -7,7 +7,8 @@ nav      :
 
 mission:
   oneliner: |
-    Advanced browser capabilities for web applications
+    <a href="{{ company.achievements.medal }}" target="_blank">Award-winning</a> and <a href="{{ company.achievements.patent }}" target="_blank">patent-based</a> API technology for interactive processes
+#     Advanced browser capabilities for web applications
 #    Best-in-class integrations are essential for today's leading business applications. Don't get left behind.
   usp:
   - Integrate interactive processes across applications by providing and consuming Qworum APIs.
@@ -45,7 +46,7 @@ demo:
 
 <ul class="home-marquee">
   <li>
-    <h1>{{ mission.oneliner }}</h1>
+    <h1>{{ mission.oneliner |> await vto(it) }}</h1>
     <ul>
       {{ for argument of mission.usp }}
         <li>{{ argument }}</li>
