@@ -39,10 +39,15 @@ layout: ./base.vto
     {{company.email}}
   </a> <br> 
 
-  𝕏 / Twitter:
+  𝕏:
   <a href="{{company.twitter.url}}" target="_blank">
     {{company.twitter.handle}}
-  </a>
+  </a> <br> <br>
+
+  <a href="{{company.rdf}}" target="_blank">
+    <img src="/assets/images/logos/turtle.svg" height='66px' alt="">
+  </a> <br>
+
   {{# •
   <a href="{{company.registration.url}}" target="_blank">
     {{ company.registration.id }}
