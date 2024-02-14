@@ -33,6 +33,7 @@ lume({
 .copy('assets')
 .copy('docs')
 .copy('demos')
+.copy('data')
 .copy('semantic')
 
 .use(codeHighlight({
