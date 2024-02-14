@@ -51,9 +51,37 @@ nav:
     </ul>
   </section>
 
+  <section id="service-orchestrations">
+    <h3>A built-in service orchestration engine</h3>
+    <p>
+      Without Qworum, even simple reusable user flows are difficult to implement for web applications, and the main reason for this the fact that the web was initially conceived as a platform for content, not applications.
+    </p>
+    <p>
+      Here is an example of how hard it is to implement a simple user dialog on the web without Qworum.
+    </p>
+    <p>
+      In a web application, if the user is trying to access his/her account page at <code>/account</code> but hasn't signed in yet, then the user is typically redirected to a path similar to <code>/login?returnTo=/account</code>. But even for a simple login dialog, there are several questions that the current web platform cannot address satisfactorily:
+    </p>
+    <ul>
+      <li>
+        What to do when the login does not succeed? Do we redirect to a fixed path such as <code>/</code> (this is the widely used option) or do we specify different paths for different error conditions, such as in <code>/login/?returnTo=/account&amp;returnToIfCancelled=/login-cancelled-by-user&amp;returnToIfTooManyBadPasswords=/suspected-account-hijack</code> ?  
+      </li>
+      <li>
+        If the dialog is made of several pages, then do we have to copy the dialog parameters from page to page, in addition to the current dialog state, such as in
+        <code>/login/page-2?username=xyz&amp;returnTo=/account&amp;returnToIfCancelled=/login-cancelled-by-user&amp;returnToIfTooManyBadPasswords=/suspected-account-hijack</code> ? This becomes very unwieldy very quickly.
+      </li>
+      <li>
+        What if the login dialog has to make use of another user dialog such as "Sign in with OpenID Connect" ? Does the login dialog have to send all its parameters to the OIDC dialog, such as in <code>/oidc/?returnTo=/login/oidc-result%3FreturnTo%3D%2Faccount%26amp%3BreturnToIfCancelled%3D%2Flogin-cancelled-by-user%26amp%3BreturnToIfTooManyBadPasswords%3D%2Fsuspected-account-hijack</code> ? (Hint: yes it does.)
+      </li>
+    </ul>
+    <p>
+      Qworum elegantly solves these issues by defining a domain-specific language called the <a href="/en/specification/v1/#script">Qworum script</a>, which is used for orchestrating calls to Qworum API endpoints, not only in single-origin web application scenarios, but also in multi-origin distributed web application scenarios.
+    </p>
+  </section>
+
   <section id="user-authentication">
     <h3>
-      For complex integrations there is no alternative to Qworum 
+      Support for complex service dependency graphs
     </h3>
     <p>
       The simple fact of the matter is, without Qworum, the integration of interactive processes 
@@ -113,7 +141,7 @@ nav:
 </section>
 
 <section id="ui-bottleneck">
-  <h2>The only platform for distributed web applications</h2>
+  <h2>A platform for distributed web applications</h2>
 
   <p>
     Qworum is the only platform that can support web applications that span multiple websites.
