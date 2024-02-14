@@ -1,0 +1,56 @@
+@base <https://qworum.net/data/org.ttl>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>. # https://www.w3.org/2009/08/skos-reference/skos.html 
+@prefix foaf: <http://xmlns.com/foaf/0.1/>. # https://en.wikipedia.org/wiki/FOAF 
+@prefix time: <http://www.w3.org/2006/time#>. 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix : <http://www.w3.org/ns/org#>. # https://www.w3.org/TR/vocab-org/ 
+
+<#id>
+  a :Organization;
+  skos:prefLabel "Qworum".
+
+# -- Roles -----------------------------------------------------------
+<#CEO>
+  a :Role;
+  skos:prefLabel "CEO"@en.
+
+<#CTO>
+  a :Role;
+  skos:prefLabel "CTO"@en.
+
+# -- Posts -----------------------------------------------------------
+<#post1>
+  a :Membership;
+  :role <#CEO>;
+  :organization <#id>;
+  :member <#DoğaArmangil>;
+  :memberDuring [
+    a time:Interval; 
+    time:hasBeginning [
+      # The time vocabulary now requires dates with timezones:
+      # https://www.data2type.de/xml-xslt-xslfo/xml-schema/datentypen-referenz/xs-date
+      time:inXSDDateTimeStamp "2022-01-22T00:00:00+01:00"^^xsd:dateTime
+    ]
+  ].
+
+<#post2>
+  a :Membership;
+  :role <#CTO>;
+  :organization <#id>;
+  :member <#DoğaArmangil>;
+  :memberDuring [
+    a time:Interval; 
+    time:hasBeginning [
+      time:inXSDDateTimeStamp "2022-01-22T00:00:00+01:00"^^xsd:dateTime
+    ]
+  ].
+
+# -- Persons -----------------------------------------------------------
+<#DoğaArmangil>
+  a foaf:Person;
+  foaf:name "Doğa Armangil";
+  foaf:mbox <mailto:d.armangil@qworum.net>;
+  foaf:homepage <https://www.linkedin.com/in/dogaarmangil/>;
+  foaf:depiction <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>.
+
+# ∎

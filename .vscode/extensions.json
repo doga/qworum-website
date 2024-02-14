@@ -3,6 +3,7 @@
     "simonsiefke.svg-preview",
     "denoland.vscode-deno",
     "smoore.yaml-path",
-    "oscarotero.vento-syntax"
+    "oscarotero.vento-syntax",
+    "stardog-union.vscode-langserver-turtle"
   ]
 }

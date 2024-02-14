@@ -54,7 +54,7 @@ nav:
   <section id="service-orchestrations">
     <h3>A built-in service orchestration engine</h3>
     <p>
-      Without Qworum, even simple reusable user flows are difficult to implement for web applications, and the main reason for this the fact that the web was initially conceived as a platform for content, not applications.
+      Without Qworum, even simple reusable user flows are difficult to implement for web applications, and the main reason for this is the fact that the web was initially conceived as a platform for content, not applications.
     </p>
     <p>
       Here is an example of how hard it is to implement a simple user dialog on the web without Qworum.
@@ -75,8 +75,17 @@ nav:
       </li>
     </ul>
     <p>
-      Qworum elegantly solves these issues by defining a domain-specific language called the <a href="/en/specification/v1/#script">Qworum script</a>, which is used for orchestrating calls to Qworum API endpoints, not only in single-origin web application scenarios, but also in multi-origin distributed web application scenarios.
+      Qworum elegantly solves these issues by defining a domain-specific language called the <a href="/en/specification/v1/#script">Qworum script</a>, which is used for orchestrating calls to Qworum API endpoints. 
+      In Qworum-based applications:
     </p>
+    <ul>
+      <li>
+        User dialogs (i.e. Qworum API endpoints) don't need to know how the application will continue once the dialog has finished running: this is the responsibility of the dialog's caller. And as a result, the dialog does not need to receive any parameters related to return paths. In that, Qworum is very similar to modern runtime environments where a function or an object's method is not concerned about what happens after it has finished executing.
+      </li>
+      <li>
+        URLs only need to contain paths (and possibly fragments), with the dialog parameters conveniently tucked away in the Qworum session states of browser tabs, and available for reading/writing from Qworum scripts as well as from in-page JavaScript.
+      </li>
+    </ul>
   </section>
 
   <section id="user-authentication">
