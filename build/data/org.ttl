@@ -12,23 +12,31 @@
 
 @base <https://qworum.net/data/org.ttl>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>. # https://www.w3.org/2009/08/skos-reference/skos.html 
-@prefix foaf: <http://xmlns.com/foaf/0.1/>. # https://en.wikipedia.org/wiki/FOAF 
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.           # https://en.wikipedia.org/wiki/FOAF 
 @prefix time: <http://www.w3.org/2006/time#>. 
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
-@prefix : <http://www.w3.org/ns/org#>. # https://www.w3.org/TR/vocab-org/ 
+@prefix : <http://www.w3.org/ns/org#>.                # https://www.w3.org/TR/vocab-org/ 
 
 <#id>
   a :Organization;
-  skos:prefLabel "Qworum".
+  skos:prefLabel "Qworum";
+  foaf:homepage <https://qworum.net>;
+  :purpose "Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications."@en.
 
 # -- Roles -----------------------------------------------------------
 <#CEO>
   a :Role;
-  skos:prefLabel "CEO"@en.
+  skos:prefLabel "CEO"@en;
+  skos:prefLabel "Vorstandsvorsitzende"@de;
+  skos:prefLabel "İcra kurulu başkanı"@tr;
+  skos:prefLabel "Directeur général"@fr.
 
 <#CTO>
   a :Role;
-  skos:prefLabel "CTO"@en.
+  skos:prefLabel "CTO"@en;
+  skos:prefLabel "Technischer Direktor"@de;
+  skos:prefLabel "Baş teknoloji sorumlusu"@tr;
+  skos:prefLabel "Directeur technique"@fr.
 
 # -- Posts -----------------------------------------------------------
 <#post1>

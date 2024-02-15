@@ -14,14 +14,14 @@ ul.home-marquee>li {
 }
 
 ul.home-marquee>li:first-child h1 {
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: bold;
   /* color:red; */
   text-transform: none;
 }
 
 ul.home-marquee>li:nth-child(2) {
-  background-image: url("/assets/images/iPaaS.svg");
+  background-image: url("/assets/images/Qworum-platform-with-logos.svg");
   /* background-image: url("/assets/images/licensed/homepage-artwork-400px.jpg"); */
   background-size: cover;
   width: 70%;
