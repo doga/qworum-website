@@ -8,69 +8,71 @@
 #  ░░░██████░██  ░░████░████   ░░██████  █████     ░░████████ █████░███ █████
 #    ░░░░░░ ░░    ░░░░ ░░░░     ░░░░░░  ░░░░░       ░░░░░░░░ ░░░░░ ░░░ ░░░░░
 
-# Org description in the Semantic Web's RDF/Turtle format.
+# Org description in the Semantic Web's RDF/Turtle format. https://www.w3.org/TR/turtle/
 
 @base <https://qworum.net/data/org.ttl>.
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>. # https://www.w3.org/2009/08/skos-reference/skos.html 
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.           # https://en.wikipedia.org/wiki/FOAF 
+
+@prefix     : <http://www.w3.org/ns/org#>.             # https://www.w3.org/TR/vocab-org/ 
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.            # https://en.wikipedia.org/wiki/FOAF 
 @prefix time: <http://www.w3.org/2006/time#>. 
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
-@prefix : <http://www.w3.org/ns/org#>.                # https://www.w3.org/TR/vocab-org/ 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.  # https://www.w3.org/TR/skos-reference/ 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>. # https://www.w3.org/TR/rdf-schema/
+@prefix  xsd: <http://www.w3.org/2001/XMLSchema#>. 
 
 <#id>
   a :Organization;
-  skos:prefLabel "Qworum";
-  foaf:homepage <https://qworum.net>;
-  :purpose "Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications."@en.
+  skos:prefLabel 'Qworum';
+  foaf:homepage  <https://qworum.net>;
+  foaf:mbox      <mailto:info@qworum.net>;
+  :purpose       '''
+    Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications.'''@en.
 
-# -- Roles -----------------------------------------------------------
+# -- Well-known roles -----------------------------------------------------------
 <#CEO>
   a :Role;
-  skos:prefLabel "CEO"@en;
-  skos:prefLabel "Vorstandsvorsitzende"@de;
-  skos:prefLabel "İcra kurulu başkanı"@tr;
-  skos:prefLabel "Directeur général"@fr.
+  skos:prefLabel 'CEO'@en;
+  skos:prefLabel 'Vorstandsvorsitzender'@de;
+  skos:prefLabel 'İcra kurulu başkanı'@tr;
+  skos:prefLabel 'Directeur général'@fr.
 
 <#CTO>
   a :Role;
-  skos:prefLabel "CTO"@en;
-  skos:prefLabel "Technischer Direktor"@de;
-  skos:prefLabel "Baş teknoloji sorumlusu"@tr;
-  skos:prefLabel "Directeur technique"@fr.
+  skos:prefLabel 'CTO'@en;
+  skos:prefLabel 'Technischer Direktor'@de;
+  skos:prefLabel 'Baş teknoloji sorumlusu'@tr;
+  skos:prefLabel 'Directeur technique'@fr.
 
 # -- Posts -----------------------------------------------------------
 <#post1>
   a :Membership;
-  :role <#CEO>;
+  :role         <#CEO>;
   :organization <#id>;
-  :member <#DoğaArmangil>;
-  :memberDuring [
-    a time:Interval; 
-    time:hasBeginning [
-      # The time vocabulary now requires dates with timezones:
-      # https://www.data2type.de/xml-xslt-xslfo/xml-schema/datentypen-referenz/xs-date
-      time:inXSDDateTimeStamp "2022-01-22T00:00:00+01:00"^^xsd:dateTime
-    ]
-  ].
+  :member       <#DoğaArmangil>;
+  :memberDuring <#postInterval1>.
 
 <#post2>
   a :Membership;
-  :role <#CTO>;
+  :role         <#CTO>;
   :organization <#id>;
-  :member <#DoğaArmangil>;
-  :memberDuring [
-    a time:Interval; 
-    time:hasBeginning [
-      time:inXSDDateTimeStamp "2022-01-22T00:00:00+01:00"^^xsd:dateTime
-    ]
+  :member       <#DoğaArmangil>;
+  :memberDuring <#postInterval1>.
+
+<#postInterval1>
+  a time:Interval; 
+  time:hasBeginning [
+    a time:Instant;
+    # The time vocabulary now requires dates with timezones:
+    # https://www.data2type.de/xml-xslt-xslfo/xml-schema/datentypen-referenz/xs-date
+    time:inXSDDateTimeStamp '2022-01-22T00:00:00+01:00'^^xsd:dateTime
   ].
+
 
 # -- Persons -----------------------------------------------------------
 <#DoğaArmangil>
   a foaf:Person;
-  foaf:name "Doğa Armangil";
-  foaf:mbox <mailto:d.armangil@qworum.net>;
-  foaf:homepage <https://www.linkedin.com/in/dogaarmangil/>;
-  foaf:depiction <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>.
+  foaf:name        'Doğa Armangil';
+  foaf:mbox        <mailto:d.armangil@qworum.net>;
+  rdfs:isDefinedBy <https://www.linkedin.com/in/dogaarmangil/>;
+  foaf:depiction   <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>.
 
 # ∎

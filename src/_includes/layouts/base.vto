@@ -6,11 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/style/base.css">
   <link rel="icon" href="/assets/images/logos/Qworum-favicon-16px.png">
-  <link rel="alternate" type="text/turtle" href="/data/org.ttl" />
+
+  <title>{{ it.title ? title + ' • Qworum' : 'Qworum' }}</title>
+
+  {{ if it.turtle }}
+    <link rel="alternate" type="text/turtle" href="/data/{{ turtle }}.ttl" />
+  {{ else }}
+    {{# <link rel="alternate" type="text/turtle" href="/data/org.ttl" /> #}}
+  {{ /if }}
+
   {{ if it.css }}
     <link rel="stylesheet" href="/assets/style/pages/{{ css }}">
   {{ /if }}
-  <title>{{ it.title ? title + ' • Qworum' : 'Qworum' }}</title>
+
 </head>
 <body>
   {{ include "page-parts/header.vto" }}
