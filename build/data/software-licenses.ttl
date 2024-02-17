@@ -24,7 +24,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # -- Document metadata --------------------------------------------------
 <>
   a foaf:Document;
-  dct:description 'Well-known software licenses.';
+  dct:description 'Well-known software licenses.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
   cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
   # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
