@@ -13,8 +13,8 @@
 @base <https://qworum.net/data/org.ttl>.
 
 @prefix    org: <http://www.w3.org/ns/org#>.             # https://www.w3.org/TR/vocab-org/ 
-@prefix     sd: <https://w3id.org/okn/o/sd>.             # Software Description Ontology
-@prefix schema: <https://schema.org>.
+@prefix     sd: <https://w3id.org/okn/o/sd#>.             # Software Description Ontology
+@prefix schema: <https://schema.org/>.
 @prefix   foaf: <http://xmlns.com/foaf/0.1/>.            # https://en.wikipedia.org/wiki/FOAF 
 @prefix   time: <http://www.w3.org/2006/time#>. 
 @prefix     cc: <http://creativecommons.org/ns#>.
