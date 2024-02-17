@@ -4,6 +4,7 @@
     "denoland.vscode-deno",
     "smoore.yaml-path",
     "oscarotero.vento-syntax",
-    "stardog-union.vscode-langserver-turtle"
+    "stardog-union.vscode-langserver-turtle",
+    "marklindeman.turtle-vocab-autocomplete"
   ]
 }

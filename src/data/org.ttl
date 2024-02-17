@@ -16,6 +16,7 @@
 @prefix     sd: <https://w3id.org/okn/o/sd#>.             # Software Description Ontology
 @prefix schema: <https://schema.org/>.
 @prefix   foaf: <http://xmlns.com/foaf/0.1/>.            # https://en.wikipedia.org/wiki/FOAF 
+@prefix   prov: <http://www.w3.org/ns/prov#>.            # https://www.w3.org/TR/prov-o/
 @prefix   time: <http://www.w3.org/2006/time#>. 
 @prefix     cc: <http://creativecommons.org/ns#>.
 @prefix   skos: <http://www.w3.org/2004/02/skos/core#>.  # https://www.w3.org/TR/skos-reference/ 
@@ -28,24 +29,32 @@
   skos:prefLabel 'Qworum';
   foaf:homepage  <https://qworum.net>;
   foaf:mbox      <mailto:info@qworum.net>;
+  schema:logo    <#logo>;
   org:purpose    '''
     Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications.'''@en.
 
+<#logo>
+  a schema:ImageObject, foaf:Image;
+  schema:contentUrl <https://qworum.net/assets/images/Qworum-logo.svg>;
+  schema:encodingFormat 'image/svg+xml';
+  prov:wasAttributedTo <#id>.
 
 # -- Well-known roles -----------------------------------------------------------
 <#CEO>
   a org:Role;
-  skos:prefLabel 'CEO'@en;
-  skos:prefLabel 'Vorstandsvorsitzender'@de;
-  skos:prefLabel 'İcra kurulu başkanı'@tr;
-  skos:prefLabel 'Directeur général'@fr.
+  skos:prefLabel
+    'CEO'@en,
+    'Vorstandsvorsitzender'@de,
+    'İcra kurulu başkanı'@tr,
+    'Directeur général'@fr.
 
 <#CTO>
   a org:Role;
-  skos:prefLabel 'CTO'@en;
-  skos:prefLabel 'Technischer Direktor'@de;
-  skos:prefLabel 'Baş teknoloji sorumlusu'@tr;
-  skos:prefLabel 'Directeur technique'@fr.
+  skos:prefLabel
+    'CTO'@en,
+    'Technischer Direktor'@de,
+    'Baş teknoloji sorumlusu'@tr,
+    'Directeur technique'@fr.
 
 
 # -- Posts -----------------------------------------------------------
@@ -72,7 +81,6 @@
     time:inXSDDateTimeStamp '2022-01-22T00:00:00+01:00'^^xsd:dateTime
   ].
 
-
 # -- Persons -----------------------------------------------------------
 <#DoğaArmangil>
   a foaf:Person, schema:Person, sd:Person;
@@ -93,7 +101,7 @@
   a sd:Software;
   sd:copyrightHolder <#id>;
   sd:author <#DoğaArmangil>;
-  sd:license <licenses.ttl#apache-2.0>;
+  sd:license <software-licenses.ttl#apache-2.0>;
   sd:programmingLanguage 'JavaScript';
   sd:softwareRequirements 'Runs in any modern browser that has the Qworum browser extension activated.'@en;
   sd:hasDocumentation <https://qworum.net/docs/qworum-for-web-pages/latest/>;
@@ -110,7 +118,7 @@
   a sd:Software;
   sd:copyrightHolder <#id>;
   sd:author <#DoğaArmangil>;
-  sd:license <licenses.ttl#apache-2.0>;
+  sd:license <software-licenses.ttl#apache-2.0>;
   sd:programmingLanguage 'JavaScript';
   sd:softwareRequirements 'This is a Visual Studio Code extension.'@en;
   sd:readme <https://github.com/doga/vscode-qworum/blob/master/README.md>;

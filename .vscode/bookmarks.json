@@ -79,6 +79,26 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "src/data/org.ttl",
+			"bookmarks": [
+				{
+					"line": 26,
+					"column": 5,
+					"label": "Org"
+				}
+			]
+		},
+		{
+			"path": "src/data/DoğaArmangil.ttl",
+			"bookmarks": [
+				{
+					"line": 54,
+					"column": 5,
+					"label": "Me"
+				}
+			]
 		}
 	]
 }
