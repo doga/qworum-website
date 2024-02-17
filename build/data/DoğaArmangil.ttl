@@ -14,7 +14,7 @@
 #                      @@@@@@@##**+-:...                       ..:-+*==                       
 #                      %@@@@@%#***+++++*#%%%*+=-... ...-+*#*===--:-++=-                       
 #                    ##%%@@@@%#*####***#%#%%*+**+:. .:=+*#%#*+===+==+=                        
-#                     %@@@@@%#****++*#**%#+-=*-+*.   foaf:-=**#%@%%%*=--==                        
+#                     %@@@@@%#****++*#**%#+-=*-+*.   :-=**#%@%%%*=--==                        
 #                     **#%@@@#*+=-:...::.     .::.   .    ..::::::---=                        
 #                     ==+%@#%##*+-...        foaf::--.   ...       ...:--                         
 #                     #*+*##%%##*+-:..     ..----:   ....    ...:--:-                         
@@ -36,11 +36,16 @@
 @base <https://qworum.net/data/DoğaArmangil.ttl>.
 
 @prefix   foaf: <http://xmlns.com/foaf/0.1/>.            # https://en.wikipedia.org/wiki/FOAF 
+# @prefix     cv: <http://rdfs.org/resume-rdf/cv.rdfs#>. 
 # @prefix    org: <http://www.w3.org/ns/org#>.             # https://www.w3.org/TR/vocab-org/ 
+# @prefix    roh: <http://w3id.org/roh#>.      # https://herculescrue.github.io/ROH/roh/
+# @prefix   rohb: <http://w3id.org/roh/mirror/bibo#>.      # BIBO mirror
+# @prefix   rohf: <http://w3id.org/roh/mirror/foaf#>.      # FOAF mirror 
+@prefix   bibo: <http://purl.org/ontology/bibo/>.        # Bibliographic Ontology
 @prefix schema: <https://schema.org/>.
 # @prefix   time: <http://www.w3.org/2006/time#>. 
 # @prefix   skos: <http://www.w3.org/2004/02/skos/core#>.  # https://www.w3.org/TR/skos-reference/ 
-# @prefix    dct: <http://purl.org/dc/terms/>.             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+@prefix    dct: <http://purl.org/dc/terms/>.             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 @prefix     cc: <http://creativecommons.org/ns#>.
 @prefix   prov: <http://www.w3.org/ns/prov#>.            # https://www.w3.org/TR/prov-o/
 @prefix   rdfs: <http://www.w3.org/2000/01/rdf-schema#>. # https://www.w3.org/TR/rdf-schema/
@@ -52,10 +57,17 @@
   foaf:givenname 'Doğa';
   foaf:family_name 'Armangil';
   foaf:mbox <mailto:d.armangil@qworum.net>;
+  dct:language 'en', 'tr', 'fr', 'de'; # suitable property for a person?
   foaf:img <#portrait>, <#ascii-art>;
   rdfs:isDefinedBy 
     <https://www.linkedin.com/in/dogaarmangil/>, 
     <https://twitter.com/DogaArmangil>.
+
+<#patent>
+  a bibo:Patent;
+  dct:creator <#id>;
+  dct:title 'Method and a system for the composition of services';
+  bibo:uri <https://patents.google.com/patent/US8266632>.
 
 <#portrait>
   a schema:ImageObject, foaf:Image;
