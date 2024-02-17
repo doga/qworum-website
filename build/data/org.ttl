@@ -29,7 +29,7 @@
   skos:prefLabel 'Qworum';
   foaf:homepage  <https://qworum.net>;
   foaf:mbox      <mailto:info@qworum.net>;
-  schema:logo    <#logo>;
+  schema:logo    <#logo>, <#logo-ascii-art>;
   org:purpose    '''
     Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications.'''@en.
 
@@ -38,6 +38,24 @@
   schema:contentUrl <https://qworum.net/assets/images/Qworum-logo.svg>;
   schema:encodingFormat 'image/svg+xml';
   prov:wasAttributedTo <#id>.
+
+<#logo-ascii-art>
+  a schema:ImageObject, foaf:Image;
+  schema:contentUrl <https://qworum.net/assets/images/Qworum-logo.ascii>;
+  schema:encodingFormat 
+    'text/vnd.ascii-art', 
+    <https://www.iana.org/assignments/media-types/text/vnd.ascii-art>;
+  prov:wasGeneratedBy [
+    a prov:Activity;
+    prov:used <#portrait>;
+    prov:wasAssociatedWith <#DoğaArmangil>, <#ascii-art-archive>
+  ];
+  prov:wasDerivedFrom <#portrait>;
+  prov:wasAttributedTo <#id>.
+
+<#ascii-art-archive>
+  a prov:Agent, schema:Organization;
+  rdfs:isDefinedBy <https://www.asciiart.eu/image-to-ascii>.
 
 # -- Well-known roles -----------------------------------------------------------
 <#CEO>

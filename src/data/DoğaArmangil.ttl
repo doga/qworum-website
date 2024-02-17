@@ -124,14 +124,10 @@
   prov:wasGeneratedBy [
     a prov:Activity;
     prov:used <#portrait>;
-    prov:wasAssociatedWith <#id>, <#ascii-art-archive>
+    prov:wasAssociatedWith <#id>, <org.ttl#ascii-art-archive>
   ];
   prov:wasDerivedFrom <#portrait>;
   prov:wasAttributedTo <#id>.
-
-<#ascii-art-archive>
-  a prov:Agent, schema:Organization;
-  rdfs:isDefinedBy <https://www.asciiart.eu/image-to-ascii>.
 
 
 # Document metadata
