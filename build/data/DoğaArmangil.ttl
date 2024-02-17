@@ -16,7 +16,7 @@
 #                    ##%%@@@@%#*####***#%#%%*+**+:. .:=+*#%#*+===+==+=                        
 #                     %@@@@@%#****++*#**%#+-=*-+*.   :-=**#%@%%%*=--==                        
 #                     **#%@@@#*+=-:...::.     .::.   .    ..::::::---=                        
-#                     ==+%@#%##*+-...        foaf::--.   ...       ...:--                         
+#                     ==+%@#%##*+-...        ::--.   ...       ...:--                         
 #                     #*+*##%%##*+-:..     ..----:   ....    ...:--:-                         
 #                      ****%@%##**+=-:..   .-+==-:.   .::.....::-----                         
 #                       +++*%%##*+===-:....:-#+++-:..:--.::..::--===                          
@@ -36,7 +36,8 @@
 @base <https://qworum.net/data/DoğaArmangil.ttl>.
 
 @prefix   foaf: <http://xmlns.com/foaf/0.1/>.            # https://en.wikipedia.org/wiki/FOAF 
-# @prefix     cv: <http://rdfs.org/resume-rdf/cv.rdfs#>. 
+@prefix     cv: <http://rdfs.org/resume-rdf/cv.rdfs#>. 
+@prefix country: <http://www.daml.org/2001/09/countries/countries.daml#>. 
 # @prefix    org: <http://www.w3.org/ns/org#>.             # https://www.w3.org/TR/vocab-org/ 
 # @prefix    roh: <http://w3id.org/roh#>.      # https://herculescrue.github.io/ROH/roh/
 # @prefix   rohb: <http://w3id.org/roh/mirror/bibo#>.      # BIBO mirror
@@ -52,21 +53,60 @@
 # @prefix    xsd: <http://www.w3.org/2001/XMLSchema#>. 
 
 <#id>
-  a foaf:Person, schema:Person, prov:Agent;
+  a foaf:Person, schema:Person, prov:Agent, cv:Person;
   foaf:name 'Doğa Armangil';
   foaf:givenname 'Doğa';
   foaf:family_name 'Armangil';
   foaf:mbox <mailto:d.armangil@qworum.net>;
-  dct:language 'en', 'tr', 'fr', 'de'; # suitable property for a person?
   foaf:img <#portrait>, <#ascii-art>;
+  cv:gender 'Male';
+  cv:hasCitizenship country:TR, country:GB;
+  cv:hasNationality 'Turkish'@en, 'British'@en;
   rdfs:isDefinedBy 
     <https://www.linkedin.com/in/dogaarmangil/>, 
     <https://twitter.com/DogaArmangil>.
 
+<#cv>
+  a cv:CV;
+  cv:aboutPerson <#id>;
+  cv:hasSkill <#english>, <#french>, <#turkish>, <#german>;
+  cv:hasEducation <#master>.
+
+<#master>
+  a cv:Education;
+  cv:studiedIn <#epfl>;
+  cv:degreeType "Master's degree";
+  cv:eduMajor 'Software engineer'@en;
+  cv:eduMinor 'Software applications'@en.
+
+<#epfl>
+  a cv:EducationalOrg;
+  rdfs:isDefinedBy <https://epfl.ch>.
+
+<#english>
+  a cv:LanguageSkill;
+  cv:skillName 'English'@en;
+  cv:skillLevel 5.
+
+<#french>
+  a cv:LanguageSkill;
+  cv:skillName 'French'@en, 'Français'@fr;
+  cv:skillLevel 5.
+
+<#turkish>
+  a cv:LanguageSkill;
+  cv:skillName 'Turkish'@en, 'Türkçe'@tr;
+  cv:skillLevel 5.
+
+<#german>
+  a cv:LanguageSkill;
+  cv:skillName 'German'@en, 'Deutsch'@de;
+  cv:skillLevel 5.
+
 <#patent>
   a bibo:Patent;
   dct:creator <#id>;
-  dct:title 'Method and a system for the composition of services';
+  dct:title 'Method and a system for the composition of services'@en;
   bibo:uri <https://patents.google.com/patent/US8266632>.
 
 <#portrait>
