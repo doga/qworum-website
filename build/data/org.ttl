@@ -51,7 +51,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     <https://www.iana.org/assignments/media-types/text/vnd.ascii-art>;
   prov:wasGeneratedBy [
     a prov:Activity;
-    dct:description 'The ASCII Art Archive provides an online image conversion service, which was used here.';
+    dct:description 'The ASCII Art Archive provides an online image conversion service, which was used here.'@en;
     prov:used <#portrait>;
     prov:wasAssociatedWith <#DoğaArmangil>, <#ascii-art-archive>
   ];

@@ -123,7 +123,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
     <https://www.iana.org/assignments/media-types/text/vnd.ascii-art>;
   prov:wasGeneratedBy [
     a prov:Activity;
-    dct:description 'The ASCII Art Archive provides an online image conversion service, which was used here.';
+    dct:description 'The ASCII Art Archive provides an online image conversion service, which was used here.'@en;
     prov:used <#portrait>;
     prov:wasAssociatedWith <#id>, <org.ttl#ascii-art-archive>
   ];
