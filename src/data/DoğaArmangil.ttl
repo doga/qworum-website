@@ -134,6 +134,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 # Document metadata
 <>
   a foaf:PersonalProfileDocument;
+  dct:description "A person's profile";
   foaf:maker <#id>;
   foaf:primaryTopic <#id>;
   cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
