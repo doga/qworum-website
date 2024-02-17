@@ -17,16 +17,10 @@
 #                                  .....                                                                                
 #                                                                                                                       
 
-# Physical map locations in the Semantic Web's RDF/Turtle format. https://www.w3.org/TR/turtle/
-
 PREFIX cc: <http://creativecommons.org/ns#> 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
 PREFIX dct: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
-
-<#geneva>
-  rdfs:isDefinedBy <https://sws.geonames.org/2660646/about.rdf>.
-
 
 # -- Document metadata --------------------------------------------------
 <>
@@ -35,5 +29,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   foaf:maker <DoğaArmangil.ttl#id>;
   cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
   # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
+
+
+# -- Locations --------------------------------------------------
+<#geneva>
+  rdfs:isDefinedBy <https://sws.geonames.org/2660646/about.rdf>.
 
 # ∎

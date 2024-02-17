@@ -52,6 +52,17 @@ PREFIX prov: <http://www.w3.org/ns/prov#>            # https://www.w3.org/TR/pro
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
 # PREFIX    xsd: <http://www.w3.org/2001/XMLSchema#> 
 
+# -- Document metadata --------------------------------------------------
+<>
+  a foaf:PersonalProfileDocument;
+  dct:description "A person's profile"@en;
+  foaf:maker <#id>;
+  foaf:primaryTopic <#id>;
+  cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
+  # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
+
+
+# -- Person --------------------------------------------------
 <#id>
   a foaf:Person, schema:Person, prov:Agent, cv:Person;
   foaf:name 'Doğa Armangil';
@@ -129,16 +140,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   ];
   prov:wasDerivedFrom <#portrait>;
   prov:wasAttributedTo <#id>.
-
-
-# Document metadata
-<>
-  a foaf:PersonalProfileDocument;
-  dct:description "A person's profile"@en;
-  foaf:maker <#id>;
-  foaf:primaryTopic <#id>;
-  cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
-  # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
 
 # ∎
 
