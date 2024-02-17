@@ -10,24 +10,28 @@
 
 # Org description in the Semantic Web's RDF/Turtle format. https://www.w3.org/TR/turtle/
 
-@base <https://qworum.net/data/org.ttl>.
+BASE <https://qworum.net/data/org.ttl>
 
-@prefix    org: <http://www.w3.org/ns/org#>.             # https://www.w3.org/TR/vocab-org/ 
-@prefix     sd: <https://w3id.org/okn/o/sd#>.             # Software Description Ontology
-@prefix schema: <https://schema.org/>.
-@prefix   foaf: <http://xmlns.com/foaf/0.1/>.            # https://en.wikipedia.org/wiki/FOAF 
-@prefix   prov: <http://www.w3.org/ns/prov#>.            # https://www.w3.org/TR/prov-o/
-@prefix   time: <http://www.w3.org/2006/time#>. 
-@prefix     cc: <http://creativecommons.org/ns#>.
-@prefix   skos: <http://www.w3.org/2004/02/skos/core#>.  # https://www.w3.org/TR/skos-reference/ 
-@prefix   rdfs: <http://www.w3.org/2000/01/rdf-schema#>. # https://www.w3.org/TR/rdf-schema/
-@prefix    xsd: <http://www.w3.org/2001/XMLSchema#>. 
+PREFIX org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
+PREFIX time: <http://www.w3.org/2006/time#> 
+PREFIX sd: <https://w3id.org/okn/o/sd#>             # Software Description Ontology
+PREFIX cocoon: <https://w3id.org/cocoon/v1.0#> # Vocabulary in Cloud Computing Services
+
+PREFIX schema: <https://schema.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
+PREFIX prov: <http://www.w3.org/ns/prov#>            # https://www.w3.org/TR/prov-o/
+PREFIX dct: <http://purl.org/dc/terms/>             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  # https://www.w3.org/TR/skos-reference/ 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 
 <#id>
   a org:Organization, sd:Organization, schema:Organization;
   skos:prefLabel 'Qworum';
   foaf:homepage  <https://qworum.net>;
+  org:Site       <locations.ttl#geneva>;
   foaf:mbox      <mailto:info@qworum.net>;
   schema:logo    <#logo>, <#logo-ascii-art>;
   org:purpose    '''
@@ -47,6 +51,7 @@
     <https://www.iana.org/assignments/media-types/text/vnd.ascii-art>;
   prov:wasGeneratedBy [
     a prov:Activity;
+    dct:description 'The ASCII Art Archive provides an online image conversion service, which was used here.';
     prov:used <#portrait>;
     prov:wasAssociatedWith <#DoğaArmangil>, <#ascii-art-archive>
   ];
@@ -56,6 +61,7 @@
 <#ascii-art-archive>
   a prov:Agent, schema:Organization;
   rdfs:isDefinedBy <https://www.asciiart.eu/image-to-ascii>.
+
 
 # -- Well-known roles -----------------------------------------------------------
 <#CEO>
@@ -99,10 +105,20 @@
     time:inXSDDateTimeStamp '2022-01-22T00:00:00+01:00'^^xsd:dateTime
   ].
 
+
 # -- Persons -----------------------------------------------------------
 <#DoğaArmangil>
   a foaf:Person, schema:Person, sd:Person;
-  rdfs:isDefinedBy <https://qworum.net/data/DoğaArmangil.ttl#id>.
+  rdfs:isDefinedBy <DoğaArmangil.ttl#id>.
+
+
+# -- PaaS -----------------------------------------------------------
+<#paas>
+  a cocoon:PaaS;
+  cocoon:hasProvider <#id>;
+  cocoon:hasServiceLevelAgreement [rdfs:isDefinedBy <https://qworum.net/docs/legal/terms-of-service/>];
+  cocoon:inJurisdiction <locations.ttl#geneva>;
+  rdfs:seeAlso <https://qworum.net/en/plans/>.
 
 
 # -- Software -----------------------------------------------------------

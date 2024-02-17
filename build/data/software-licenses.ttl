@@ -5,11 +5,11 @@
 #     █   █ █   █   █ █   █ █     █
 #     ███ █ ███ ███ █ █ ███ ███ ███
 
-@base <https://qworum.net/data/licenses.ttl>.
-@prefix spdx: <http://spdx.org/rdf/terms#>.     # https://spdx.org/licenses/
-@prefix   cc: <http://creativecommons.org/ns#>. 
-@prefix foaf: <http://xmlns.com/foaf/0.1/>. 
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>. 
+BASE <https://qworum.net/data/licenses.ttl>
+PREFIX spdx: <http://spdx.org/rdf/terms#>     # https://spdx.org/licenses/
+PREFIX cc: <http://creativecommons.org/ns#> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
 <#apache-2.0>
   a spdx:ListedLicense;
