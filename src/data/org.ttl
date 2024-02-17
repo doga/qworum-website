@@ -12,15 +12,16 @@
 
 @base <https://qworum.net/data/org.ttl>.
 
-@prefix     : <http://www.w3.org/ns/org#>.             # https://www.w3.org/TR/vocab-org/ 
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.            # https://en.wikipedia.org/wiki/FOAF 
-@prefix time: <http://www.w3.org/2006/time#>. 
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>.  # https://www.w3.org/TR/skos-reference/ 
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>. # https://www.w3.org/TR/rdf-schema/
-@prefix  xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix       : <http://www.w3.org/ns/org#>.             # https://www.w3.org/TR/vocab-org/ 
+@prefix schema: <https://schema.org>.
+@prefix   foaf: <http://xmlns.com/foaf/0.1/>.            # https://en.wikipedia.org/wiki/FOAF 
+@prefix   time: <http://www.w3.org/2006/time#>. 
+@prefix   skos: <http://www.w3.org/2004/02/skos/core#>.  # https://www.w3.org/TR/skos-reference/ 
+@prefix   rdfs: <http://www.w3.org/2000/01/rdf-schema#>. # https://www.w3.org/TR/rdf-schema/
+@prefix    xsd: <http://www.w3.org/2001/XMLSchema#>. 
 
 <#id>
-  a :Organization;
+  a :Organization, schema:Organization;
   skos:prefLabel 'Qworum';
   foaf:homepage  <https://qworum.net>;
   foaf:mbox      <mailto:info@qworum.net>;
@@ -44,14 +45,14 @@
 
 # -- Posts -----------------------------------------------------------
 <#post1>
-  a :Membership;
+  a :Membership, schema:EmployeeRole;
   :role         <#CEO>;
   :organization <#id>;
   :member       <#DoğaArmangil>;
   :memberDuring <#postInterval1>.
 
 <#post2>
-  a :Membership;
+  a :Membership, schema:EmployeeRole;
   :role         <#CTO>;
   :organization <#id>;
   :member       <#DoğaArmangil>;
@@ -69,10 +70,7 @@
 
 # -- Persons -----------------------------------------------------------
 <#DoğaArmangil>
-  a foaf:Person;
-  foaf:name        'Doğa Armangil';
-  foaf:mbox        <mailto:d.armangil@qworum.net>;
-  rdfs:isDefinedBy <https://www.linkedin.com/in/dogaarmangil/>;
-  foaf:depiction   <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>.
+  a foaf:Person, schema:Person;
+  rdfs:isDefinedBy <https://qworum.net/data/DoğaArmangil.ttl#id>.
 
 # ∎
