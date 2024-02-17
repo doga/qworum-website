@@ -12,51 +12,56 @@
 
 @base <https://qworum.net/data/org.ttl>.
 
-@prefix       : <http://www.w3.org/ns/org#>.             # https://www.w3.org/TR/vocab-org/ 
+@prefix    org: <http://www.w3.org/ns/org#>.             # https://www.w3.org/TR/vocab-org/ 
+@prefix     sd: <https://w3id.org/okn/o/sd>.             # Software Description Ontology
 @prefix schema: <https://schema.org>.
 @prefix   foaf: <http://xmlns.com/foaf/0.1/>.            # https://en.wikipedia.org/wiki/FOAF 
 @prefix   time: <http://www.w3.org/2006/time#>. 
+@prefix     cc: <http://creativecommons.org/ns#>.
 @prefix   skos: <http://www.w3.org/2004/02/skos/core#>.  # https://www.w3.org/TR/skos-reference/ 
 @prefix   rdfs: <http://www.w3.org/2000/01/rdf-schema#>. # https://www.w3.org/TR/rdf-schema/
 @prefix    xsd: <http://www.w3.org/2001/XMLSchema#>. 
 
+
 <#id>
-  a :Organization, schema:Organization;
+  a org:Organization, sd:Organization, schema:Organization;
   skos:prefLabel 'Qworum';
   foaf:homepage  <https://qworum.net>;
   foaf:mbox      <mailto:info@qworum.net>;
-  :purpose       '''
+  org:purpose    '''
     Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications.'''@en.
+
 
 # -- Well-known roles -----------------------------------------------------------
 <#CEO>
-  a :Role;
+  a org:Role;
   skos:prefLabel 'CEO'@en;
   skos:prefLabel 'Vorstandsvorsitzender'@de;
   skos:prefLabel 'İcra kurulu başkanı'@tr;
   skos:prefLabel 'Directeur général'@fr.
 
 <#CTO>
-  a :Role;
+  a org:Role;
   skos:prefLabel 'CTO'@en;
   skos:prefLabel 'Technischer Direktor'@de;
   skos:prefLabel 'Baş teknoloji sorumlusu'@tr;
   skos:prefLabel 'Directeur technique'@fr.
 
+
 # -- Posts -----------------------------------------------------------
 <#post1>
-  a :Membership, schema:EmployeeRole;
-  :role         <#CEO>;
-  :organization <#id>;
-  :member       <#DoğaArmangil>;
-  :memberDuring <#postInterval1>.
+  a org:Membership, schema:EmployeeRole;
+  org:role         <#CEO>;
+  org:organization <#id>;
+  org:member       <#DoğaArmangil>;
+  org:memberDuring <#postInterval1>.
 
 <#post2>
-  a :Membership, schema:EmployeeRole;
-  :role         <#CTO>;
-  :organization <#id>;
-  :member       <#DoğaArmangil>;
-  :memberDuring <#postInterval1>.
+  a org:Membership, schema:EmployeeRole;
+  org:role         <#CTO>;
+  org:organization <#id>;
+  org:member       <#DoğaArmangil>;
+  org:memberDuring <#postInterval1>.
 
 <#postInterval1>
   a time:Interval; 
@@ -72,5 +77,54 @@
 <#DoğaArmangil>
   a foaf:Person, schema:Person;
   rdfs:isDefinedBy <https://qworum.net/data/DoğaArmangil.ttl#id>.
+
+
+# -- Software -----------------------------------------------------------
+
+<#browser-extension>
+  a sd:Software;
+  sd:copyrightHolder <#id>;
+  sd:author <#DoğaArmangil>;
+  sd:programmingLanguage 'JavaScript';
+  sd:hasAssumption 'This browser extension conforms to the "Manifest 3" extension specification.'@en;
+  sd:hasDownloadURL 
+    <https://chromewebstore.google.com/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg?hl=en>.
+
+<#javascript-module-for-web-pages>
+  a sd:Software;
+  sd:copyrightHolder <#id>;
+  sd:author <#DoğaArmangil>;
+  sd:license <licenses.ttl#apache-2.0>;
+  sd:programmingLanguage 'JavaScript';
+  sd:softwareRequirements 'Runs in any modern browser that has the Qworum browser extension activated.'@en;
+  sd:hasDocumentation <https://qworum.net/docs/qworum-for-web-pages/latest/>;
+  sd:readme <https://github.com/doga/qworum-for-web-pages/blob/master/README.md>;
+  sd:hasSourceCode <https://github.com/doga/qworum-for-web-pages/>;
+  sd:hasExample
+    <https://github.com/doga/qworum-demo>,
+    <https://github.com/doga/qworum-netlify-template>;
+  sd:hasDownloadURL 
+    <https://esm.sh/@qworum/qworum-for-web-pages>,
+    <https://github.com/doga/qworum-for-web-pages/>.
+
+<#vs-code-extension>
+  a sd:Software;
+  sd:copyrightHolder <#id>;
+  sd:author <#DoğaArmangil>;
+  sd:license <licenses.ttl#apache-2.0>;
+  sd:programmingLanguage 'JavaScript';
+  sd:softwareRequirements 'This is a Visual Studio Code extension.'@en;
+  sd:readme <https://github.com/doga/vscode-qworum/blob/master/README.md>;
+  sd:hasSourceCode <https://github.com/doga/vscode-qworum>;
+  sd:hasDownloadURL <https://marketplace.visualstudio.com/items?itemName=qworum.qworum>.
+
+
+# -- Document metadata --------------------------------------------------
+<>
+  a foaf:Document;
+  foaf:maker <#id>;
+  foaf:primaryTopic <#id>;
+  cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
+  # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
 
 # ∎

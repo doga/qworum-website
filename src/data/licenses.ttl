@@ -1,0 +1,30 @@
+#         █
+#     █
+#     █   █ ███ ███ ███ ███ ███ ███
+#     █   █ █   ███ █ █ █   ███ █
+#     █   █ █   █   █ █   █ █     █
+#     ███ █ ███ ███ █ █ ███ ███ ███
+
+@base <https://qworum.net/data/licenses.ttl>.
+@prefix spdx: <http://spdx.org/rdf/terms#>.     # https://spdx.org/licenses/
+@prefix   cc: <http://creativecommons.org/ns#>. 
+@prefix foaf: <http://xmlns.com/foaf/0.1/>. 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>. 
+
+<#apache-2.0>
+  a spdx:ListedLicense;
+  spdx:licenseId 'Apache-2.0';
+  rdfs:isDefinedBy 
+    <https://spdx.org/licenses/Apache-2.0.html>,
+    <https://www.apache.org/licenses/LICENSE-2.0>,
+    <https://opensource.org/licenses/Apache-2.0>.
+
+
+# -- Document metadata --------------------------------------------------
+<>
+  a foaf:Document;
+  foaf:maker <DoğaArmangil.ttl#id>;
+  cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
+  # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
+
+# ∎
