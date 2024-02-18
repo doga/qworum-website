@@ -31,13 +31,11 @@
 #                   @@@@@@@@*        .:====++#%######****+  -@@@@@@                           
 #                 @@@@@@@@@@@@:         .-=+++++*#**++**=    *@@@@@@@@@@@@@@@@@               
 
-# Description of a person in the Semantic Web's RDF/Turtle format. https://www.w3.org/TR/turtle/
-
 BASE <https://qworum.net/data/DoğaArmangil.ttl>
 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
-PREFIX cv: <http://rdfs.org/resume-rdf/cv.rdfs#> 
-PREFIX country: <http://www.daml.org/2001/09/countries/countries.daml#> 
+# PREFIX cv: <http://rdfs.org/resume-rdf/cv.rdfs#> 
+# PREFIX country: <http://www.daml.org/2001/09/countries/countries.daml#> 
 # PREFIX    org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
 # PREFIX    roh: <http://w3id.org/roh#>      # https://herculescrue.github.io/ROH/roh/
 # PREFIX   rohb: <http://w3id.org/roh/mirror/bibo#>      # BIBO mirror
@@ -70,49 +68,49 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   foaf:family_name 'Armangil';
   foaf:mbox <mailto:d.armangil@qworum.net>;
   foaf:img <#portrait>, <#ascii-art>;
-  cv:gender 'Male';
-  cv:hasCitizenship country:TR, country:GB;
-  cv:hasNationality 'Turkish'@en, 'British'@en;
+  # cv:gender 'Male';
+  # cv:hasCitizenship country:TR, country:GB;
+  # cv:hasNationality 'Turkish'@en, 'British'@en;
   rdfs:isDefinedBy 
     <https://www.linkedin.com/in/dogaarmangil/>, 
     <https://twitter.com/DogaArmangil>.
 
-<#cv>
-  a cv:CV;
-  cv:aboutPerson <#id>;
-  cv:hasSkill <#english>, <#french>, <#turkish>, <#german>;
-  cv:hasEducation <#master>.
+# <#cv>
+#   a cv:CV;
+#   cv:aboutPerson <#id>;
+#   cv:hasSkill <#english>, <#french>, <#turkish>, <#german>;
+#   cv:hasEducation <#master>.
 
-<#master>
-  a cv:Education;
-  cv:studiedIn <#epfl>;
-  cv:degreeType "Master's degree";
-  cv:eduMajor 'Software engineer'@en;
-  cv:eduMinor 'Software applications'@en.
+# <#master>
+#   a cv:Education;
+#   cv:studiedIn <#epfl>;
+#   cv:degreeType "Master's degree";
+#   cv:eduMajor 'Software engineer'@en;
+#   cv:eduMinor 'Software applications'@en.
 
-<#epfl>
-  a cv:EducationalOrg;
-  rdfs:isDefinedBy <https://epfl.ch>.
+# <#epfl>
+#   a cv:EducationalOrg;
+#   rdfs:isDefinedBy <https://epfl.ch>.
 
-<#english>
-  a cv:LanguageSkill;
-  cv:skillName 'English'@en;
-  cv:skillLevel 5.
+# <#english>
+#   a cv:LanguageSkill;
+#   cv:skillName 'English'@en;
+#   cv:skillLevel 5.
 
-<#french>
-  a cv:LanguageSkill;
-  cv:skillName 'French'@en, 'Français'@fr;
-  cv:skillLevel 5.
+# <#french>
+#   a cv:LanguageSkill;
+#   cv:skillName 'French'@en, 'Français'@fr;
+#   cv:skillLevel 5.
 
-<#turkish>
-  a cv:LanguageSkill;
-  cv:skillName 'Turkish'@en, 'Türkçe'@tr;
-  cv:skillLevel 5.
+# <#turkish>
+#   a cv:LanguageSkill;
+#   cv:skillName 'Turkish'@en, 'Türkçe'@tr;
+#   cv:skillLevel 5.
 
-<#german>
-  a cv:LanguageSkill;
-  cv:skillName 'German'@en, 'Deutsch'@de;
-  cv:skillLevel 5.
+# <#german>
+#   a cv:LanguageSkill;
+#   cv:skillName 'German'@en, 'Deutsch'@de;
+#   cv:skillLevel 5.
 
 <#patent>
   a bibo:Patent;

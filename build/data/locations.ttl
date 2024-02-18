@@ -25,7 +25,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 # -- Document metadata --------------------------------------------------
 <>
   a foaf:Document;
-  dct:description 'Physical map locations.'@en;
+  dct:description 'Some physical map locations.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
   cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
   # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
