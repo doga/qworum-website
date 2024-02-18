@@ -29,6 +29,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 <#non-commercial>
   a cc:License;
   dct:description 'Attribution required. For non-commercial use only.'@en;
-  rdfs:isDefinedBy <https://creativecommons.org/publicdomain/zero/1.0/>.
+  rdfs:isDefinedBy <https://creativecommons.org/licenses/by-nc/4.0/>.
 
 # ∎
