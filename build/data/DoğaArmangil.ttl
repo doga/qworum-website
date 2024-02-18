@@ -36,7 +36,7 @@ BASE <https://qworum.net/data/DoğaArmangil.ttl>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
 # PREFIX cv: <http://rdfs.org/resume-rdf/cv.rdfs#> 
 # PREFIX country: <http://www.daml.org/2001/09/countries/countries.daml#> 
-# PREFIX    org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
+PREFIX    org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
 # PREFIX    roh: <http://w3id.org/roh#>      # https://herculescrue.github.io/ROH/roh/
 # PREFIX   rohb: <http://w3id.org/roh/mirror/bibo#>      # BIBO mirror
 # PREFIX   rohf: <http://w3id.org/roh/mirror/foaf#>      # FOAF mirror 
@@ -69,12 +69,19 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   foaf:family_name 'Armangil';
   foaf:mbox <mailto:d.armangil@qworum.net>;
   foaf:img <#portrait>, <#ascii-art>;
+  schema:alumniOf <#epfl>;
   # cv:gender 'Male';
   # cv:hasCitizenship country:TR, country:GB;
   # cv:hasNationality 'Turkish'@en, 'British'@en;
   rdfs:isDefinedBy 
     <https://www.linkedin.com/in/dogaarmangil/>, 
     <https://twitter.com/DogaArmangil>.
+
+<#epfl>
+  a org:Organization, schema:EducationalOrganization;
+  org:Site <locations.ttl#lausanne>;
+  rdfs:isDefinedBy <https://epfl.ch>.
+
 
 # <#cv>
 #   a cv:CV;
@@ -121,19 +128,21 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 
 <#portrait>
   a schema:ImageObject, foaf:Image;
+  dct:description 'Portrait photo.';
   schema:contentUrl <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>;
   schema:encodingFormat 'image/jpeg';
   prov:wasAttributedTo <#id>.
 
 <#ascii-art>
   a schema:ImageObject, foaf:Image;
+  dct:description 'ASCII art based on the portrait photo.';
   schema:contentUrl <https://qworum.net/assets/images/portraits/DoğaArmangil.ascii>;
   schema:encodingFormat 
     'text/vnd.ascii-art', 
     <https://www.iana.org/assignments/media-types/text/vnd.ascii-art>;
   prov:wasGeneratedBy [
+    # The ASCII Art Archive provides an online image conversion service, which was used here.
     a prov:Activity;
-    dct:description 'The ASCII Art Archive provides an online image conversion service, which was used here.'@en;
     prov:used <#portrait>;
     prov:wasAssociatedWith <#id>, <org.ttl#ascii-art-archive>
   ];

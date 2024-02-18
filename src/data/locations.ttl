@@ -35,4 +35,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 <#geneva>
   rdfs:isDefinedBy <https://sws.geonames.org/2660646/about.rdf>.
 
+<#lausanne>
+  rdfs:isDefinedBy <https://sws.geonames.org/2659994/about.rdf>.
+
 # ∎

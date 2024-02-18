@@ -60,8 +60,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     'text/vnd.ascii-art', 
     <https://www.iana.org/assignments/media-types/text/vnd.ascii-art>;
   prov:wasGeneratedBy [
+    # The ASCII Art Archive provides an online image conversion service, which was used here.
     a prov:Activity;
-    dct:description 'The ASCII Art Archive provides an online image conversion service, which was used here.'@en;
     prov:used <#portrait>;
     prov:wasAssociatedWith <#DoğaArmangil>, <#ascii-art-archive>
   ];
