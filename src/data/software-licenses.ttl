@@ -17,11 +17,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   a foaf:Document;
   dct:description 'Well-known software licenses.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
-  cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
-  # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
+  cc:license <artifact-licenses.ttl#non-commercial>.
 
 
-# -- Softwere licences --------------------------------------------------
+# -- Licences --------------------------------------------------
 <#apache-2.0>
   a spdx:ListedLicense;
   spdx:licenseId 'Apache-2.0';

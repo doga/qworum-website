@@ -36,7 +36,7 @@ BASE <https://qworum.net/data/DoğaArmangil.ttl>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
 # PREFIX cv: <http://rdfs.org/resume-rdf/cv.rdfs#> 
 # PREFIX country: <http://www.daml.org/2001/09/countries/countries.daml#> 
-PREFIX    org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
+PREFIX org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
 # PREFIX    roh: <http://w3id.org/roh#>      # https://herculescrue.github.io/ROH/roh/
 # PREFIX   rohb: <http://w3id.org/roh/mirror/bibo#>      # BIBO mirror
 # PREFIX   rohf: <http://w3id.org/roh/mirror/foaf#>      # FOAF mirror 
@@ -56,8 +56,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   dct:description "A person's profile"@en;
   foaf:maker <#id>;
   foaf:primaryTopic <#id>;
-  cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
-  # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
+  cc:license <artifact-licenses.ttl#non-commercial>.
 
 
 # -- Person --------------------------------------------------

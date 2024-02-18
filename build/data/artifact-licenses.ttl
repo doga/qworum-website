@@ -15,18 +15,20 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # -- Document metadata --------------------------------------------------
 <>
   a foaf:Document;
-  dct:description 'Well-known software licenses.'@en;
+  dct:description 'Well-known licenses for creative work.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
-  cc:license <artifact-licenses.ttl#non-commercial>.
+  cc:license <#non-commercial>.
 
 
 # -- Licences --------------------------------------------------
-<#apache-2.0>
-  a spdx:ListedLicense;
-  spdx:licenseId 'Apache-2.0';
-  rdfs:isDefinedBy 
-    <https://spdx.org/licenses/Apache-2.0.html>,
-    <https://www.apache.org/licenses/LICENSE-2.0>,
-    <https://opensource.org/licenses/Apache-2.0>.
+<#zero>
+  a cc:License;
+  dct:description 'Completely free.'@en;
+  rdfs:isDefinedBy <https://creativecommons.org/publicdomain/zero/1.0/>.
+
+<#non-commercial>
+  a cc:License;
+  dct:description 'Attribution required. For non-commercial use only.'@en;
+  rdfs:isDefinedBy <https://creativecommons.org/publicdomain/zero/1.0/>.
 
 # ∎

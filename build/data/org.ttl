@@ -30,8 +30,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   dct:description 'Organisation description.'@en;
   foaf:maker <#DoğaArmangil>;
   foaf:primaryTopic <#id>;
-  cc:license <https://creativecommons.org/licenses/by-nc/4.0/>.
-  # cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
+  cc:license <artifact-licenses.ttl#non-commercial>.
 
 
 # -- Organisation --------------------------------------------------
