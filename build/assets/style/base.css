@@ -54,6 +54,16 @@ strong {
   font-weight: bold;
 }
 
+span.latestStableImplementation {
+  background-color: green;
+  color: white;
+}
+
+span.notYetImplemented {
+  background-color: yellow;
+  color: black;
+}
+
 aside.twitter-timeline  {
   float: right;
   margin-left: 1em;
