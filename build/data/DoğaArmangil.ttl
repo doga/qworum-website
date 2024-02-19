@@ -33,6 +33,8 @@
 
 BASE <https://qworum.net/data/DoğaArmangil.ttl>
 
+PREFIX hu: <https://raw.githubusercontent.com/doga/human/main/human.ttl>
+
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
 # PREFIX cv: <http://rdfs.org/resume-rdf/cv.rdfs#> 
 # PREFIX country: <http://www.daml.org/2001/09/countries/countries.daml#> 
@@ -69,7 +71,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   foaf:mbox <mailto:d.armangil@qworum.net>;
   foaf:img <#portrait>, <#ascii-art>;
   schema:alumniOf <#epfl>;
-  # cv:gender 'Male';
+  hu:language 
+    hu:EnglishLanguage, hu:FrenchLanguage, hu:GermanLanguage, hu:TurkishLanguage;
+  hu:gender 'Male';
   # cv:hasCitizenship country:TR, country:GB;
   # cv:hasNationality 'Turkish'@en, 'British'@en;
   rdfs:isDefinedBy 
@@ -80,44 +84,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   a org:Organization, schema:EducationalOrganization;
   org:Site <locations.ttl#lausanne>;
   rdfs:isDefinedBy <https://epfl.ch>.
-
-
-# <#cv>
-#   a cv:CV;
-#   cv:aboutPerson <#id>;
-#   cv:hasSkill <#english>, <#french>, <#turkish>, <#german>;
-#   cv:hasEducation <#master>.
-
-# <#master>
-#   a cv:Education;
-#   cv:studiedIn <#epfl>;
-#   cv:degreeType "Master's degree";
-#   cv:eduMajor 'Software engineer'@en;
-#   cv:eduMinor 'Software applications'@en.
-
-# <#epfl>
-#   a cv:EducationalOrg;
-#   rdfs:isDefinedBy <https://epfl.ch>.
-
-# <#english>
-#   a cv:LanguageSkill;
-#   cv:skillName 'English'@en;
-#   cv:skillLevel 5.
-
-# <#french>
-#   a cv:LanguageSkill;
-#   cv:skillName 'French'@en, 'Français'@fr;
-#   cv:skillLevel 5.
-
-# <#turkish>
-#   a cv:LanguageSkill;
-#   cv:skillName 'Turkish'@en, 'Türkçe'@tr;
-#   cv:skillLevel 5.
-
-# <#german>
-#   a cv:LanguageSkill;
-#   cv:skillName 'German'@en, 'Deutsch'@de;
-#   cv:skillLevel 5.
 
 <#patent>
   a bibo:Patent;
