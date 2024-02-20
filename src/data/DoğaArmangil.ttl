@@ -71,9 +71,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   foaf:mbox <mailto:d.armangil@qworum.net>;
   foaf:img <#portrait>, <#ascii-art>;
   schema:alumniOf <#epfl>;
-  hu:language 
-    hu:EnglishLanguage, hu:FrenchLanguage, hu:GermanLanguage, hu:TurkishLanguage;
-  hu:gender 'Male';
+  hu:language hu:EnglishLanguage, hu:FrenchLanguage, hu:GermanLanguage, hu:TurkishLanguage;
+  hu:gender hu:Male;
   # cv:hasCitizenship country:TR, country:GB;
   # cv:hasNationality 'Turkish'@en, 'British'@en;
   rdfs:isDefinedBy 
