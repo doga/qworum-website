@@ -65,7 +65,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 
 # -- Person --------------------------------------------------
 :id
-  a foaf:Person, schema:Person, prov:Agent;
+  a foaf:Person, schema:Person, prov:Agent, hu:Human;
   # a foaf:Person, schema:Person, prov:Agent, cv:Person;
   foaf:name 'Doğa Armangil';
   foaf:givenname 'Doğa';
