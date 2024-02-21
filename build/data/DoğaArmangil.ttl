@@ -33,6 +33,8 @@
 
 BASE <https://qworum.net/data/DoğaArmangil.ttl>
 
+PREFIX : <#>
+
 PREFIX hu: <https://raw.githubusercontent.com/doga/human/main/human.ttl#>
 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
@@ -56,21 +58,21 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 <>
   a foaf:PersonalProfileDocument;
   dct:description "A person's profile"@en;
-  foaf:maker <#id>;
-  foaf:primaryTopic <#id>;
+  foaf:maker :id;
+  foaf:primaryTopic :id;
   cc:license <artifact-licenses.ttl#non-commercial>.
 
 
 # -- Person --------------------------------------------------
-<#id>
+:id
   a foaf:Person, schema:Person, prov:Agent;
   # a foaf:Person, schema:Person, prov:Agent, cv:Person;
   foaf:name 'Doğa Armangil';
   foaf:givenname 'Doğa';
   foaf:family_name 'Armangil';
   foaf:mbox <mailto:d.armangil@qworum.net>;
-  foaf:img <#portrait>, <#ascii-art>;
-  schema:alumniOf <#epfl>;
+  foaf:img :portrait, :ascii-art;
+  schema:alumniOf :epfl;
   hu:language hu:EnglishLanguage, hu:FrenchLanguage, hu:GermanLanguage, hu:TurkishLanguage;
   hu:gender hu:Male;
   # cv:hasCitizenship country:TR, country:GB;
@@ -79,25 +81,36 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
     <https://www.linkedin.com/in/dogaarmangil/>, 
     <https://twitter.com/DogaArmangil>.
 
-<#epfl>
+:epfl
   a org:Organization, schema:EducationalOrganization;
   org:Site <locations.ttl#lausanne>;
   rdfs:isDefinedBy <https://epfl.ch>.
 
-<#patent>
+:patent
   a bibo:Patent;
-  dct:creator <#id>;
-  dct:title 'Method and a system for the composition of services'@en;
+  bibo:shortTitle 'Method and a system for the composition of services'@en;
+  bibo:authorList (:id);
   bibo:uri <https://patents.google.com/patent/US8266632>.
 
-<#portrait>
+:infoq-article
+  a bibo:Article;
+  bibo:shortTitle 'Interactive Microservices as an Alternative to Micro Front-Ends for Modularizing the UI Layer'@en;
+  bibo:authorList (:id);
+  bibo:uri <https://www.infoq.com/articles/qworum-modular-ui-architecture/>;
+
+  a schema:TechArticle;
+  schema:name 'Interactive Microservices as an Alternative to Micro Front-Ends for Modularizing the UI Layer'@en;
+  schema:author :id;
+  schema:url <https://www.infoq.com/articles/qworum-modular-ui-architecture/>.
+
+:portrait
   a schema:ImageObject, foaf:Image;
   dct:description 'Portrait photo.';
   schema:contentUrl <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>;
   schema:encodingFormat 'image/jpeg';
-  prov:wasAttributedTo <#id>.
+  prov:wasAttributedTo :id.
 
-<#ascii-art>
+:ascii-art
   a schema:ImageObject, foaf:Image;
   dct:description 'ASCII art based on the portrait photo.';
   schema:contentUrl <https://qworum.net/assets/images/portraits/DoğaArmangil.ascii>;
@@ -107,11 +120,11 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   prov:wasGeneratedBy [
     # The ASCII Art Archive provides an online image conversion service, which was used here.
     a prov:Activity;
-    prov:used <#portrait>;
-    prov:wasAssociatedWith <#id>, <org.ttl#ascii-art-archive>
+    prov:used :portrait;
+    prov:wasAssociatedWith :id, <org.ttl#ascii-art-archive>
   ];
-  prov:wasDerivedFrom <#portrait>;
-  prov:wasAttributedTo <#id>.
+  prov:wasDerivedFrom :portrait;
+  prov:wasAttributedTo :id.
 
 # ∎
 
