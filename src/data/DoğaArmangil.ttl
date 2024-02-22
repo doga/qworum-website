@@ -35,9 +35,10 @@ BASE <https://qworum.net/data/DoğaArmangil.ttl>
 
 PREFIX : <#>
 
-PREFIX hu: <https://raw.githubusercontent.com/doga/human/main/human.ttl#>
+PREFIX hmn: <https://raw.githubusercontent.com/doga/human/main/human.ttl#>
 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
+PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#> # the ontology of the Canadian Writing Research Collaboratory
 # PREFIX cv: <http://rdfs.org/resume-rdf/cv.rdfs#> 
 # PREFIX country: <http://www.daml.org/2001/09/countries/countries.daml#> 
 PREFIX org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
@@ -65,16 +66,19 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 
 # -- Person --------------------------------------------------
 :id
-  a foaf:Person, schema:Person, prov:Agent, hu:Human;
+  a foaf:Person, schema:Person, prov:Agent, hmn:Human, cwrc:NaturalPerson;
   # a foaf:Person, schema:Person, prov:Agent, cv:Person;
   foaf:name 'Doğa Armangil';
   foaf:givenname 'Doğa';
   foaf:family_name 'Armangil';
   foaf:mbox <mailto:d.armangil@qworum.net>;
   foaf:img :portrait, :ascii-art;
+  hmn:language hmn:EnglishLanguage, hmn:FrenchLanguage, hmn:GermanLanguage, hmn:TurkishLanguage;
+  hmn:gender hmn:Male;
+  cwrc:gender cwrc:man;
+  cwrc:credential cwrc:mastersDegree, cwrc:postgraduateDegree;
+  # cwrc:occupation cwrc:engineering;
   schema:alumniOf :epfl;
-  hu:language hu:EnglishLanguage, hu:FrenchLanguage, hu:GermanLanguage, hu:TurkishLanguage;
-  hu:gender hu:Male;
   # cv:hasCitizenship country:TR, country:GB;
   # cv:hasNationality 'Turkish'@en, 'British'@en;
   rdfs:isDefinedBy 
@@ -105,14 +109,14 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 
 :portrait
   a schema:ImageObject, foaf:Image;
-  dct:description 'Portrait photo.';
+  dct:description 'Portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>;
   schema:encodingFormat 'image/jpeg';
   prov:wasAttributedTo :id.
 
 :ascii-art
   a schema:ImageObject, foaf:Image;
-  dct:description 'ASCII art based on the portrait photo.';
+  dct:description 'ASCII art based on the portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/DoğaArmangil.ascii>;
   schema:encodingFormat 
     'text/vnd.ascii-art', 

@@ -54,7 +54,8 @@ strong {
   font-weight: bold;
 }
 
-span.latestStableImplementation {
+span.latestStableImplementation,
+span.latestStableImplementation * {
   background-color: green;
   color: white;
 }
