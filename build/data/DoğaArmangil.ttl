@@ -32,14 +32,16 @@
 #                 @@@@@@@@@@@@:         .-=+++++*#**++**=    *@@@@@@@@@@@@@@@@@               
 
 BASE <https://qworum.net/data/DoğaArmangil.ttl>
+# BASE <DoğaArmangil.ttl>
 
 PREFIX : <#>
 
 PREFIX hmn: <https://raw.githubusercontent.com/doga/human/main/human.ttl#>
 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
-PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#> # the ontology of the Canadian Writing Research Collaboratory
+PREFIX bio: <http://purl.org/vocab/bio/0.1/>          # vocabulary for describing biographical information about people
 # PREFIX cv: <http://rdfs.org/resume-rdf/cv.rdfs#> 
+PREFIX cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#> # the ontology of the Canadian Writing Research Collaboratory
 # PREFIX country: <http://www.daml.org/2001/09/countries/countries.daml#> 
 PREFIX org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
 # PREFIX    roh: <http://w3id.org/roh#>      # https://herculescrue.github.io/ROH/roh/
@@ -53,7 +55,7 @@ PREFIX dct: <http://purl.org/dc/terms/>             # https://www.dublincore.org
 PREFIX cc: <http://creativecommons.org/ns#>
 PREFIX prov: <http://www.w3.org/ns/prov#>            # https://www.w3.org/TR/prov-o/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
-# PREFIX    xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 # -- Document metadata --------------------------------------------------
 <>
@@ -66,35 +68,83 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 
 # -- Person --------------------------------------------------
 :id
-  a foaf:Person, schema:Person, prov:Agent, hmn:Human, cwrc:NaturalPerson;
-  # a foaf:Person, schema:Person, prov:Agent, cv:Person;
+  a foaf:Person;
   foaf:name 'Doğa Armangil';
   foaf:givenname 'Doğa';
   foaf:family_name 'Armangil';
   foaf:mbox <mailto:d.armangil@qworum.net>;
   foaf:img :portrait, :ascii-art;
+
+  bio:olb 'EPFL software engineer living in Switzerland. Patent author. Business owner in software.'@en;
+
+  a hmn:Human;
   hmn:language hmn:EnglishLanguage, hmn:FrenchLanguage, hmn:GermanLanguage, hmn:TurkishLanguage;
   hmn:gender hmn:Male;
+
+  a cwrc:NaturalPerson;
   cwrc:gender cwrc:man;
   cwrc:credential cwrc:mastersDegree, cwrc:postgraduateDegree;
   # cwrc:occupation cwrc:engineering;
+
+  a schema:Person;
   schema:alumniOf :epfl;
+
+  a prov:Agent;
+
+  # a cv:Person;
   # cv:hasCitizenship country:TR, country:GB;
   # cv:hasNationality 'Turkish'@en, 'British'@en;
+
   rdfs:isDefinedBy 
     <https://www.linkedin.com/in/dogaarmangil/>, 
     <https://twitter.com/DogaArmangil>.
 
+
 :epfl
   a org:Organization, schema:EducationalOrganization;
+  rdfs:label 'EPFL', 'École Polytechnique Fédérale de Lausanne'@fr;
   org:Site <locations.ttl#lausanne>;
   rdfs:isDefinedBy <https://epfl.ch>.
+
+
+:epfl-postgraduate-degree-internet-applications
+  a bio:Graduation;
+  rdfs:comment 'EPFL postgraduate degree in Internet applications'@en;
+  dct:date '2000'^^xsd:gYear;
+  bio:place :epfl;
+  bio:principal :id.
+
+
+:epfl-postgraduate-degree-distributed-systems
+  a bio:Graduation;
+  rdfs:comment 'EPFL postgraduate degree in distributed systems'@en;
+  dct:date '1999'^^xsd:gYear;
+  bio:place :epfl;
+  bio:principal :id.
+
+
+:epfl-postgraduate-degree-communication-systems
+  a bio:Graduation;
+  rdfs:comment 'EPFL postgraduate degree in communication systems'@en;
+  dct:date '1998'^^xsd:gYear;
+  bio:place :epfl;
+  bio:principal :id.
+
+
+:epfl-masters-diploma
+  a bio:Graduation;
+  rdfs:comment "EPFL master's degree in software engineering (minor in application software)"@en;
+  dct:date '1990'^^xsd:gYear;
+  bio:place :epfl;
+  bio:principal :id.
+
 
 :patent
   a bibo:Patent;
   bibo:shortTitle 'Method and a system for the composition of services'@en;
   bibo:authorList (:id);
   bibo:uri <https://patents.google.com/patent/US8266632>.
+
 
 :infoq-article
   a bibo:Article;
@@ -107,12 +157,14 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   schema:author :id;
   schema:url <https://www.infoq.com/articles/qworum-modular-ui-architecture/>.
 
+
 :portrait
   a schema:ImageObject, foaf:Image;
   dct:description 'Portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>;
   schema:encodingFormat 'image/jpeg';
   prov:wasAttributedTo :id.
+
 
 :ascii-art
   a schema:ImageObject, foaf:Image;
