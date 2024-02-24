@@ -35,7 +35,6 @@ BASE <https://qworum.net/data/DoğaArmangil.ttl>
 # BASE <DoğaArmangil.ttl>
 
 PREFIX : <#>
-
 PREFIX hmn: <https://raw.githubusercontent.com/doga/human/main/human.ttl#>
 
 
@@ -70,18 +69,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # -- Person --------------------------------------------------
 :id
+  a prov:Agent;
+
   a foaf:Person;
-  foaf:name 'Doğa Armangil';
-  foaf:givenname 'Doğa';
-  foaf:family_name 'Armangil';
+  foaf:name 'Doğa Armangil'^^xsd:string;
+  foaf:givenname 'Doğa'^^xsd:string;
+  foaf:family_name 'Armangil'^^xsd:string;
   foaf:mbox 
     <mailto:d.armangil@qworum.net>,
     <mailto:doga.armangil@a3.epfl.ch>;
+  foaf:account :linkedin-account, :x-account;
   foaf:img :portrait, :ascii-art;
 
   bio:olb 'EPFL software engineer living in Switzerland. Patent author. Business owner in software.'@en;
-
-  cert:key :rsa-public-key;
 
   a hmn:Human;
   hmn:language hmn:EnglishLanguage, hmn:FrenchLanguage, hmn:GermanLanguage, hmn:TurkishLanguage;
@@ -95,15 +95,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a schema:Person;
   schema:alumniOf :epfl;
 
-  a prov:Agent;
-
   # a cv:Person;
   # cv:hasCitizenship country:TR, country:GB;
   # cv:hasNationality 'Turkish'@en, 'British'@en;
 
-  rdfs:isDefinedBy 
-    <https://www.linkedin.com/in/dogaarmangil/>, 
-    <https://twitter.com/DogaArmangil>.
+  cert:key :rsa-public-key.
+
+
+:linkedin-account
+  a foaf:account;
+  rdfs:label 'LinkedIn account'@en;
+  foaf:accountName 'dogaarmangil'^^xsd:string;
+  foaf:accountServiceHomepage <https://www.linkedin.com>;
+  rdfs:isDefinedBy <https://www.linkedin.com/in/dogaarmangil/>.
+
+
+:x-account
+  a foaf:account;
+  rdfs:label '𝕏 account'@en;
+  foaf:accountName 'DogaArmangil'^^xsd:string;
+  foaf:accountServiceHomepage <https://twitter.com>;
+  rdfs:isDefinedBy <https://twitter.com/DogaArmangil>.
 
 
 :patent
@@ -168,7 +180,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a schema:ImageObject, foaf:Image;
   dct:description 'Portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>;
-  schema:encodingFormat 'image/jpeg';
+  schema:encodingFormat 'image/jpeg'^^xsd:string;
   prov:wasAttributedTo :id.
 
 
@@ -177,7 +189,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   dct:description 'ASCII art based on the portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/DoğaArmangil.ascii>;
   schema:encodingFormat 
-    'text/vnd.ascii-art', 
+    'text/vnd.ascii-art'^^xsd:string, 
     <https://www.iana.org/assignments/media-types/text/vnd.ascii-art>;
   prov:wasGeneratedBy [
     # The ASCII Art Archive provides an online image conversion service, which was used here.
