@@ -38,6 +38,8 @@ PREFIX : <#>
 
 PREFIX hmn: <https://raw.githubusercontent.com/doga/human/main/human.ttl#>
 
+
+PREFIX cert: <http://www.w3.org/ns/auth/cert#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
 PREFIX bio: <http://purl.org/vocab/bio/0.1/>          # vocabulary for describing biographical information about people
 # PREFIX cv: <http://rdfs.org/resume-rdf/cv.rdfs#> 
@@ -72,10 +74,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   foaf:name 'Doğa Armangil';
   foaf:givenname 'Doğa';
   foaf:family_name 'Armangil';
-  foaf:mbox <mailto:d.armangil@qworum.net>;
+  foaf:mbox 
+    <mailto:d.armangil@qworum.net>,
+    <mailto:doga.armangil@a3.epfl.ch>;
   foaf:img :portrait, :ascii-art;
 
   bio:olb 'EPFL software engineer living in Switzerland. Patent author. Business owner in software.'@en;
+
+  cert:key :rsa-public-key;
 
   a hmn:Human;
   hmn:language hmn:EnglishLanguage, hmn:FrenchLanguage, hmn:GermanLanguage, hmn:TurkishLanguage;
@@ -100,45 +106,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     <https://twitter.com/DogaArmangil>.
 
 
-:epfl
-  a org:Organization, schema:EducationalOrganization;
-  rdfs:label 'EPFL', 'École Polytechnique Fédérale de Lausanne'@fr;
-  org:Site <locations.ttl#lausanne>;
-  rdfs:isDefinedBy <https://epfl.ch>.
-
-
-:epfl-postgraduate-degree-internet-applications
-  a bio:Graduation;
-  rdfs:comment 'EPFL postgraduate degree in Internet applications'@en;
-  dct:date '2000'^^xsd:gYear;
-  bio:place :epfl;
-  bio:principal :id.
-
-
-:epfl-postgraduate-degree-distributed-systems
-  a bio:Graduation;
-  rdfs:comment 'EPFL postgraduate degree in distributed systems'@en;
-  dct:date '1999'^^xsd:gYear;
-  bio:place :epfl;
-  bio:principal :id.
-
-
-:epfl-postgraduate-degree-communication-systems
-  a bio:Graduation;
-  rdfs:comment 'EPFL postgraduate degree in communication systems'@en;
-  dct:date '1998'^^xsd:gYear;
-  bio:place :epfl;
-  bio:principal :id.
-
-
-:epfl-masters-diploma
-  a bio:Graduation;
-  rdfs:comment "EPFL master's degree in software engineering (minor in application software)"@en;
-  dct:date '1990'^^xsd:gYear;
-  bio:place :epfl;
-  bio:principal :id.
-
-
 :patent
   a bibo:Patent;
   bibo:shortTitle 'Method and a system for the composition of services'@en;
@@ -156,6 +123,45 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   schema:name 'Interactive Microservices as an Alternative to Micro Front-Ends for Modularizing the UI Layer'@en;
   schema:author :id;
   schema:url <https://www.infoq.com/articles/qworum-modular-ui-architecture/>.
+
+
+:epfl-postgraduate-internet-applications
+  a bio:Graduation;
+  rdfs:comment 'EPFL postgraduate degree in Internet applications'@en;
+  dct:date '2000'^^xsd:gYear;
+  bio:place :epfl;
+  bio:principal :id.
+
+
+:epfl-postgraduate-distributed-systems
+  a bio:Graduation;
+  rdfs:comment 'EPFL postgraduate degree in distributed systems'@en;
+  dct:date '1999'^^xsd:gYear;
+  bio:place :epfl;
+  bio:principal :id.
+
+
+:epfl-postgraduate-communication-systems
+  a bio:Graduation;
+  rdfs:comment 'EPFL postgraduate degree in communication systems'@en;
+  dct:date '1998'^^xsd:gYear;
+  bio:place :epfl;
+  bio:principal :id.
+
+
+:epfl-masters
+  a bio:Graduation;
+  rdfs:comment "EPFL master's degree in software engineering (minor in application software)"@en;
+  dct:date '1990'^^xsd:gYear;
+  bio:place :epfl;
+  bio:principal :id.
+
+
+:epfl
+  a org:Organization, schema:EducationalOrganization;
+  rdfs:label 'EPFL', 'École Polytechnique Fédérale de Lausanne'@fr;
+  org:Site <locations.ttl#lausanne>;
+  rdfs:isDefinedBy <https://epfl.ch>.
 
 
 :portrait
@@ -181,6 +187,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ];
   prov:wasDerivedFrom :portrait;
   prov:wasAttributedTo :id.
+
+
+:rsa-public-key
+  a cert:RSAPublicKey;
+  rdfs:comment 'RSA public key'@en; # for doga.armangil@a3.epfl.ch
+  cert:modulus 'AAAAB3NzaC1yc2EAAAABIwAAAIEAqcmRIy/K1htnj8yT9plBnNNJXwSPZ3k7BN/r6HjLvNGHkVjF2yyoBXhRbdMb+MjyjRQepFUd/v5IMqO/1UU6qgrPiiYrk4+ehWOFC8joWrw9DbHYGoL1Nz9o6GjUfGac/qY9k3q2dWk+zLA87j+81GPkwPJUKf5oQKO6q2lNmA8='^^xsd:base64Binary; # The middle part in ~/.ssh/id_rsa.pub
+  cert:exponent '65537'^^xsd:nonNegativeInteger. # Nearly everyone universally uses 65,537 as their prime exponent https://crypto.stackexchange.com/questions/18031/how-to-find-modulus-from-a-rsa-public-key
 
 # ∎
 
