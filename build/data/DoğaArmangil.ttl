@@ -72,9 +72,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a prov:Agent;
 
   a foaf:Person;
-  foaf:name 'Doğa Armangil'^^xsd:string;
-  foaf:givenname 'Doğa'^^xsd:string;
-  foaf:family_name 'Armangil'^^xsd:string;
+  foaf:name 'Doğa Armangil';
+  foaf:givenname 'Doğa';
+  foaf:family_name 'Armangil';
   foaf:mbox 
     <mailto:d.armangil@qworum.net>,
     <mailto:doga.armangil@a3.epfl.ch>;
@@ -105,7 +105,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :linkedin-account
   a foaf:account;
   rdfs:label 'LinkedIn account'@en;
-  foaf:accountName 'dogaarmangil'^^xsd:string;
+  foaf:accountName 'dogaarmangil';
   foaf:accountServiceHomepage <https://www.linkedin.com>;
   rdfs:isDefinedBy <https://www.linkedin.com/in/dogaarmangil/>.
 
@@ -113,7 +113,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :x-account
   a foaf:account;
   rdfs:label '𝕏 account'@en;
-  foaf:accountName 'DogaArmangil'^^xsd:string;
+  foaf:accountName 'DogaArmangil';
   foaf:accountServiceHomepage <https://twitter.com>;
   rdfs:isDefinedBy <https://twitter.com/DogaArmangil>.
 
@@ -180,7 +180,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a schema:ImageObject, foaf:Image;
   dct:description 'Portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>;
-  schema:encodingFormat 'image/jpeg'^^xsd:string;
+  schema:encodingFormat 'image/jpeg';
   prov:wasAttributedTo :id.
 
 
@@ -189,7 +189,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   dct:description 'ASCII art based on the portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/DoğaArmangil.ascii>;
   schema:encodingFormat 
-    'text/vnd.ascii-art'^^xsd:string, 
+    'text/vnd.ascii-art', 
     <https://www.iana.org/assignments/media-types/text/vnd.ascii-art>;
   prov:wasGeneratedBy [
     # The ASCII Art Archive provides an online image conversion service, which was used here.
