@@ -15,7 +15,7 @@ PREFIX dc: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specif
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
 # -- Document metadata --------------------------------------------------
-<>
+<software.ttl>
   a foaf:Document;
   dc:description 'Well-known software licenses.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;

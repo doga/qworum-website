@@ -58,7 +58,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 # -- Document metadata --------------------------------------------------
-<>
+<DoğaArmangil.ttl>
   a foaf:PersonalProfileDocument;
   dc:description "A person's profile"@en;
   foaf:maker :id;

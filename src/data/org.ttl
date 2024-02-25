@@ -27,7 +27,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 # -- Document metadata --------------------------------------------------
-<>
+<org.ttl>
   a foaf:Document;
   dct:description 'Organisation description.'@en;
   foaf:maker :DoğaArmangil;
