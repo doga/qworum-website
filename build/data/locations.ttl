@@ -17,6 +17,9 @@
 #                                  .....                                                                                
 #                                                                                                                       
 
+BASE <https://qworum.net/data/locations.ttl>
+PREFIX : <#>
+
 PREFIX cc: <http://creativecommons.org/ns#> 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
 PREFIX dct: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
@@ -27,14 +30,14 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   a foaf:Document;
   dct:description 'Some physical map locations.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
-  cc:license <artifact-licenses.ttl#non-commercial>.
+  cc:license <license/content.ttl#non-commercial>.
 
 
 # -- Locations --------------------------------------------------
-<#geneva>
+:geneva
   rdfs:isDefinedBy <https://sws.geonames.org/2660646/about.rdf>.
 
-<#lausanne>
+:lausanne
   rdfs:isDefinedBy <https://sws.geonames.org/2659994/about.rdf>.
 
 # ∎

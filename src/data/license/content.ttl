@@ -5,28 +5,32 @@
 #     █   █ █   █   █ █   █ █     █
 #     ███ █ ███ ███ █ █ ███ ███ ███
 
-BASE <https://qworum.net/data/licenses.ttl>
+BASE <https://qworum.net/data/license/content.ttl>
+PREFIX : <#>
+
 PREFIX spdx: <http://spdx.org/rdf/terms#>     # https://spdx.org/licenses/
 PREFIX cc: <http://creativecommons.org/ns#> 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
-PREFIX dct: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+PREFIX dc: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
 # -- Document metadata --------------------------------------------------
 <>
   a foaf:Document;
-  dct:description 'Well-known software licenses.'@en;
+  dc:description 'Well-known content licenses.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
-  cc:license <artifact-licenses.ttl#non-commercial>.
+  cc:license :non-commercial.
 
 
 # -- Licences --------------------------------------------------
-<#apache-2.0>
-  a spdx:ListedLicense;
-  spdx:licenseId 'Apache-2.0';
-  rdfs:isDefinedBy 
-    <https://spdx.org/licenses/Apache-2.0.html>,
-    <https://www.apache.org/licenses/LICENSE-2.0>,
-    <https://opensource.org/licenses/Apache-2.0>.
+:zero
+  a cc:License;
+  dc:description 'Completely free.'@en;
+  rdfs:isDefinedBy <https://creativecommons.org/publicdomain/zero/1.0/>.
+
+:non-commercial
+  a cc:License;
+  dc:description 'Attribution required. For non-commercial use only.'@en;
+  rdfs:isDefinedBy <https://creativecommons.org/licenses/by-nc/4.0/>.
 
 # ∎

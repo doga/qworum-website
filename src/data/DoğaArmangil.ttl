@@ -33,10 +33,9 @@
 
 BASE <https://qworum.net/data/DoğaArmangil.ttl>
 # BASE <DoğaArmangil.ttl>
-
 PREFIX : <#>
-PREFIX hmn: <https://raw.githubusercontent.com/doga/human/main/human.ttl#>
 
+PREFIX hmn: <https://raw.githubusercontent.com/doga/human/main/human.ttl#>
 
 PREFIX cert: <http://www.w3.org/ns/auth/cert#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
@@ -52,7 +51,7 @@ PREFIX bibo: <http://purl.org/ontology/bibo/>        # Bibliographic Ontology
 PREFIX schema: <https://schema.org/>
 # PREFIX   time: <http://www.w3.org/2006/time#> 
 # PREFIX   skos: <http://www.w3.org/2004/02/skos/core#>  # https://www.w3.org/TR/skos-reference/ 
-PREFIX dct: <http://purl.org/dc/terms/>             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+PREFIX dc: <http://purl.org/dc/terms/>             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 PREFIX cc: <http://creativecommons.org/ns#>
 PREFIX prov: <http://www.w3.org/ns/prov#>            # https://www.w3.org/TR/prov-o/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
@@ -61,10 +60,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # -- Document metadata --------------------------------------------------
 <>
   a foaf:PersonalProfileDocument;
-  dct:description "A person's profile"@en;
+  dc:description "A person's profile"@en;
   foaf:maker :id;
   foaf:primaryTopic :id;
-  cc:license <artifact-licenses.ttl#non-commercial>.
+  cc:license <license/content.ttl#non-commercial>.
 
 
 # -- Person --------------------------------------------------
@@ -77,11 +76,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   foaf:family_name 'Armangil';
   foaf:mbox 
     <mailto:d.armangil@qworum.net>,
-    <mailto:doga.armangil@a3.epfl.ch>;
+    <mailto:doga.armangil@alumni.epfl.ch>;
   foaf:account :linkedin-account, :x-account;
   foaf:img :portrait, :ascii-art;
-
   bio:olb 'EPFL software engineer living in Switzerland. Patent author. Business owner in software.'@en;
+  cert:key :rsa-public-key;
 
   a hmn:Human;
   hmn:language hmn:EnglishLanguage, hmn:FrenchLanguage, hmn:GermanLanguage, hmn:TurkishLanguage;
@@ -92,14 +91,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   cwrc:credential cwrc:mastersDegree, cwrc:postgraduateDegree;
   # cwrc:occupation cwrc:engineering;
 
-  a schema:Person;
-  schema:alumniOf :epfl;
-
   # a cv:Person;
   # cv:hasCitizenship country:TR, country:GB;
   # cv:hasNationality 'Turkish'@en, 'British'@en;
 
-  cert:key :rsa-public-key.
+  a schema:Person;
+  schema:alumniOf :epfl.
 
 
 :linkedin-account
@@ -140,7 +137,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :epfl-postgraduate-internet-applications
   a bio:Graduation;
   rdfs:comment 'EPFL postgraduate degree in Internet applications'@en;
-  dct:date '2000'^^xsd:gYear;
+  dc:date '2000'^^xsd:gYear;
   bio:place :epfl;
   bio:principal :id.
 
@@ -148,7 +145,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :epfl-postgraduate-distributed-systems
   a bio:Graduation;
   rdfs:comment 'EPFL postgraduate degree in distributed systems'@en;
-  dct:date '1999'^^xsd:gYear;
+  dc:date '1999'^^xsd:gYear;
   bio:place :epfl;
   bio:principal :id.
 
@@ -156,7 +153,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :epfl-postgraduate-communication-systems
   a bio:Graduation;
   rdfs:comment 'EPFL postgraduate degree in communication systems'@en;
-  dct:date '1998'^^xsd:gYear;
+  dc:date '1998'^^xsd:gYear;
   bio:place :epfl;
   bio:principal :id.
 
@@ -164,7 +161,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :epfl-masters
   a bio:Graduation;
   rdfs:comment "EPFL master's degree in software engineering (minor in application software)"@en;
-  dct:date '1990'^^xsd:gYear;
+  dc:date '1990'^^xsd:gYear;
   bio:place :epfl;
   bio:principal :id.
 
@@ -178,7 +175,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :portrait
   a schema:ImageObject, foaf:Image;
-  dct:description 'Portrait photo.'@en;
+  dc:description 'Portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>;
   schema:encodingFormat 'image/jpeg';
   prov:wasAttributedTo :id.
@@ -186,7 +183,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :ascii-art
   a schema:ImageObject, foaf:Image;
-  dct:description 'ASCII art based on the portrait photo.'@en;
+  dc:description 'ASCII art based on the portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/DoğaArmangil.ascii>;
   schema:encodingFormat 
     'text/vnd.ascii-art', 

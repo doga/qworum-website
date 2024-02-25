@@ -10,6 +10,7 @@
 
 BASE <https://qworum.net/data/org.ttl>
 # BASE <org.ttl>
+PREFIX : <#>
 
 PREFIX org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
 PREFIX time: <http://www.w3.org/2006/time#> 
@@ -29,31 +30,31 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 <>
   a foaf:Document;
   dct:description 'Organisation description.'@en;
-  foaf:maker <#DoğaArmangil>;
-  foaf:primaryTopic <#id>;
-  cc:license <artifact-licenses.ttl#non-commercial>.
+  foaf:maker :DoğaArmangil;
+  foaf:primaryTopic :id;
+  cc:license <license/content.ttl#non-commercial>.
 
 
 # -- Organisation --------------------------------------------------
-<#id>
+:id
   a org:Organization, sd:Organization, schema:Organization;
   skos:prefLabel 'Qworum';
   foaf:homepage  <https://qworum.net>;
   org:Site       <locations.ttl#geneva>;
   foaf:mbox      <mailto:info@qworum.net>;
-  schema:logo    <#logo>, <#logo-ascii-art>;
+  schema:logo    :logo, :logo-ascii-art;
   org:purpose    '''
     Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications.'''@en.
 
 
 # -- Media --------------------------------------------------
-<#logo>
+:logo
   a schema:ImageObject, foaf:Image;
   schema:contentUrl <https://qworum.net/assets/images/Qworum-logo.svg>;
   schema:encodingFormat 'image/svg+xml';
-  prov:wasAttributedTo <#id>.
+  prov:wasAttributedTo :id.
 
-<#logo-ascii-art>
+:logo-ascii-art
   a schema:ImageObject, foaf:Image;
   schema:contentUrl <https://qworum.net/assets/images/Qworum-logo.ascii>;
   schema:encodingFormat 
@@ -62,19 +63,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   prov:wasGeneratedBy [
     # The ASCII Art Archive provides an online image conversion service, which was used here.
     a prov:Activity;
-    prov:used <#portrait>;
-    prov:wasAssociatedWith <#DoğaArmangil>, <#ascii-art-archive>
+    prov:used :portrait;
+    prov:wasAssociatedWith :DoğaArmangil, :ascii-art-archive
   ];
-  prov:wasDerivedFrom <#portrait>;
-  prov:wasAttributedTo <#id>.
+  prov:wasDerivedFrom :portrait;
+  prov:wasAttributedTo :id.
 
-<#ascii-art-archive>
+:ascii-art-archive
   a prov:Agent, schema:Organization;
   rdfs:isDefinedBy <https://www.asciiart.eu/image-to-ascii>.
 
 
 # -- Well-known roles -----------------------------------------------------------
-<#CEO>
+:CEO
   a org:Role;
   skos:prefLabel
     'CEO'@en,
@@ -82,7 +83,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     'İcra kurulu başkanı'@tr,
     'Directeur général'@fr.
 
-<#CTO>
+:CTO
   a org:Role;
   skos:prefLabel
     'CTO'@en,
@@ -92,21 +93,21 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
 # -- Posts -----------------------------------------------------------
-<#post1>
+:post1
   a org:Membership, schema:EmployeeRole;
-  org:role         <#CEO>;
-  org:organization <#id>;
-  org:member       <#DoğaArmangil>;
-  org:memberDuring <#postInterval1>.
+  org:role         :CEO;
+  org:organization :id;
+  org:member       :DoğaArmangil;
+  org:memberDuring :postInterval1.
 
-<#post2>
+:post2
   a org:Membership, schema:EmployeeRole;
-  org:role         <#CTO>;
-  org:organization <#id>;
-  org:member       <#DoğaArmangil>;
-  org:memberDuring <#postInterval1>.
+  org:role         :CTO;
+  org:organization :id;
+  org:member       :DoğaArmangil;
+  org:memberDuring :postInterval1.
 
-<#postInterval1>
+:postInterval1
   a time:Interval; 
   time:hasBeginning [
     a time:Instant;
@@ -117,35 +118,35 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
 # -- Persons -----------------------------------------------------------
-<#DoğaArmangil>
+:DoğaArmangil
   a foaf:Person, schema:Person, sd:Person;
   rdfs:isDefinedBy <DoğaArmangil.ttl#id>.
 
 
 # -- PaaS -----------------------------------------------------------
-<#paas>
+:paas
   a cocoon:PaaS;
-  cocoon:hasProvider <#id>;
+  cocoon:hasProvider :id;
   cocoon:hasServiceLevelAgreement [rdfs:isDefinedBy <https://qworum.net/docs/legal/terms-of-service/>];
   cocoon:inJurisdiction <locations.ttl#geneva>;
   rdfs:seeAlso <https://qworum.net/en/plans/>.
 
 
 # -- Software -----------------------------------------------------------
-<#browser-extension>
+:browser-extension
   a sd:Software;
-  sd:copyrightHolder <#id>;
-  sd:author <#DoğaArmangil>;
+  sd:copyrightHolder :id;
+  sd:author :DoğaArmangil;
   sd:programmingLanguage 'JavaScript';
   sd:hasAssumption 'This browser extension conforms to the "Manifest 3" extension specification.'@en;
   sd:hasDownloadURL 
     <https://chromewebstore.google.com/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg?hl=en>.
 
-<#javascript-module-for-web-pages>
+:javascript-module-for-web-pages
   a sd:Software;
-  sd:copyrightHolder <#id>;
-  sd:author <#DoğaArmangil>;
-  sd:license <software-licenses.ttl#apache-2.0>;
+  sd:copyrightHolder :id;
+  sd:author :DoğaArmangil;
+  sd:license <license/software.ttl#apache2>;
   sd:programmingLanguage 'JavaScript';
   sd:softwareRequirements 'Runs in any modern browser that has the Qworum browser extension activated.'@en;
   sd:hasDocumentation <https://qworum.net/docs/qworum-for-web-pages/latest/>;
@@ -158,11 +159,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     <https://esm.sh/@qworum/qworum-for-web-pages>,
     <https://github.com/doga/qworum-for-web-pages/>.
 
-<#vs-code-extension>
+:vs-code-extension
   a sd:Software;
-  sd:copyrightHolder <#id>;
-  sd:author <#DoğaArmangil>;
-  sd:license <software-licenses.ttl#apache-2.0>;
+  sd:copyrightHolder :id;
+  sd:author :DoğaArmangil;
+  sd:license <license/software.ttl#apache2>;
   sd:programmingLanguage 'JavaScript';
   sd:softwareRequirements 'This is a Visual Studio Code extension.'@en;
   sd:readme <https://github.com/doga/vscode-qworum/blob/master/README.md>;
