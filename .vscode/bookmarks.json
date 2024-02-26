@@ -99,6 +99,16 @@
 					"label": "Me"
 				}
 			]
+		},
+		{
+			"path": "src/data/locations.ttl",
+			"bookmarks": [
+				{
+					"line": 37,
+					"column": 7,
+					"label": "Geneva"
+				}
+			]
 		}
 	]
 }

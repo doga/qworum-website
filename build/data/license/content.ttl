@@ -19,7 +19,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   a foaf:Document;
   dcterms:description 'Well-known content licenses.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
-  cc:license :non-commercial.
+  cc:license :zero.
 
 
 # -- Licences --------------------------------------------------

@@ -31,7 +31,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   a foaf:Document;
   dcterms:description 'Some physical map locations.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
-  cc:license <license/content.ttl#non-commercial>.
+  cc:license <license/content.ttl#zero>.
 
 
 # -- Locations --------------------------------------------------
