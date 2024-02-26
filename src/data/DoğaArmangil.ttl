@@ -60,7 +60,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # -- Document metadata --------------------------------------------------
 <DoğaArmangil.ttl>
   a foaf:PersonalProfileDocument;
-  dcterms:description "A person's profile"@en;
+  dcterms:description "Doğa Armangil's professional profile"@en;
   foaf:maker :id;
   foaf:primaryTopic :id;
   cc:license <license/content.ttl#non-commercial>.
