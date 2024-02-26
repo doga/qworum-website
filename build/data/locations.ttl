@@ -36,9 +36,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 
 # -- Locations --------------------------------------------------
 :geneva
-  rdfs:isDefinedBy <https://sws.geonames.org/2660646/about.rdf>.
+  rdfs:isDefinedBy <https://sws.geonames.org/2660646/about.rdf>;
 
-:geneva-coordinates
   a geo:Point;
   geo:lat '46.20222';
   geo:long '6.14569'.
