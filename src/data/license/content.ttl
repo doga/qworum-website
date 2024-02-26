@@ -11,13 +11,13 @@ PREFIX : <#>
 PREFIX spdx: <http://spdx.org/rdf/terms#>     # https://spdx.org/licenses/
 PREFIX cc: <http://creativecommons.org/ns#> 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
-PREFIX dc: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+PREFIX dcterms: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
 # -- Document metadata --------------------------------------------------
 <content.ttl>
   a foaf:Document;
-  dc:description 'Well-known content licenses.'@en;
+  dcterms:description 'Well-known content licenses.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
   cc:license :non-commercial.
 
@@ -25,12 +25,12 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # -- Licences --------------------------------------------------
 :zero
   a cc:License;
-  dc:description 'Completely free.'@en;
+  dcterms:description 'Completely free.'@en;
   rdfs:isDefinedBy <https://creativecommons.org/publicdomain/zero/1.0/>.
 
 :non-commercial
   a cc:License;
-  dc:description 'Attribution required. For non-commercial use only.'@en;
+  dcterms:description 'Attribution required. For non-commercial use only.'@en;
   rdfs:isDefinedBy <https://creativecommons.org/licenses/by-nc/4.0/>.
 
 # ∎

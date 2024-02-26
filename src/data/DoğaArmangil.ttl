@@ -51,7 +51,7 @@ PREFIX bibo: <http://purl.org/ontology/bibo/>        # Bibliographic Ontology
 PREFIX schema: <https://schema.org/>
 # PREFIX   time: <http://www.w3.org/2006/time#> 
 # PREFIX   skos: <http://www.w3.org/2004/02/skos/core#>  # https://www.w3.org/TR/skos-reference/ 
-PREFIX dc: <http://purl.org/dc/terms/>             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+PREFIX dcterms: <http://purl.org/dc/terms/>             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 PREFIX cc: <http://creativecommons.org/ns#>
 PREFIX prov: <http://www.w3.org/ns/prov#>            # https://www.w3.org/TR/prov-o/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
@@ -60,7 +60,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # -- Document metadata --------------------------------------------------
 <DoğaArmangil.ttl>
   a foaf:PersonalProfileDocument;
-  dc:description "A person's profile"@en;
+  dcterms:description "A person's profile"@en;
   foaf:maker :id;
   foaf:primaryTopic :id;
   cc:license <license/content.ttl#non-commercial>.
@@ -119,7 +119,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a bibo:Patent;
   bibo:shortTitle 'Method and a system for the composition of services'@en;
   bibo:authorList (:id);
-  bibo:uri <https://patents.google.com/patent/US8266632>.
+  bibo:uri <https://patents.google.com/patent/US8266632>;
+  dcterms:isReferencedBy <concept.ttl#id>.
 
 
 :infoq-article
@@ -137,7 +138,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :epfl-postgraduate-internet-applications
   a bio:Graduation;
   rdfs:comment 'EPFL postgraduate degree in Internet applications'@en;
-  dc:date '2000'^^xsd:gYear;
+  dcterms:date '2000'^^xsd:gYear;
   bio:place :epfl;
   bio:principal :id.
 
@@ -145,7 +146,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :epfl-postgraduate-distributed-systems
   a bio:Graduation;
   rdfs:comment 'EPFL postgraduate degree in distributed systems'@en;
-  dc:date '1999'^^xsd:gYear;
+  dcterms:date '1999'^^xsd:gYear;
   bio:place :epfl;
   bio:principal :id.
 
@@ -153,7 +154,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :epfl-postgraduate-communication-systems
   a bio:Graduation;
   rdfs:comment 'EPFL postgraduate degree in communication systems'@en;
-  dc:date '1998'^^xsd:gYear;
+  dcterms:date '1998'^^xsd:gYear;
   bio:place :epfl;
   bio:principal :id.
 
@@ -161,7 +162,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :epfl-masters
   a bio:Graduation;
   rdfs:comment "EPFL master's degree in software engineering (minor in application software)"@en;
-  dc:date '1990'^^xsd:gYear;
+  dcterms:date '1990'^^xsd:gYear;
   bio:place :epfl;
   bio:principal :id.
 
@@ -175,7 +176,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :portrait
   a schema:ImageObject, foaf:Image;
-  dc:description 'Portrait photo.'@en;
+  dcterms:description 'Portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/D-Armangil-300x300.jpg>;
   schema:encodingFormat 'image/jpeg';
   prov:wasAttributedTo :id.
@@ -183,7 +184,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :ascii-art
   a schema:ImageObject, foaf:Image;
-  dc:description 'ASCII art based on the portrait photo.'@en;
+  dcterms:description 'ASCII art based on the portrait photo.'@en;
   schema:contentUrl <https://qworum.net/assets/images/portraits/DoğaArmangil.ascii>;
   schema:encodingFormat 
     'text/vnd.ascii-art', 

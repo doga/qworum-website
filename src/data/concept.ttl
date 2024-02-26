@@ -1,0 +1,56 @@
+BASE <https://qworum.net/data/concept.ttl>
+PREFIX : <#>
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+PREFIX cc: <http://creativecommons.org/ns#> 
+PREFIX dcterms: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
+
+# -- Document metadata --------------------------------------------------
+<concept.ttl>
+  a foaf:Document;
+  dct:description "Qworum's Service Web and how it relates to the rest of the Web platform."@en;
+  foaf:maker <DoğaArmangil.ttl#id>;
+  cc:license <license/content.ttl#zero>.
+
+
+# -- Concept --------------------------------------------------
+:id
+  a skos:Concept;
+  skos:prefLabel 'Qworum';
+  skos:altLabel 'Service Web'@en;
+  dcterms:description 'The Web of applications and services that is characterised by the "Qworum script" domain-specific language.'@en;
+  skos:broader :world-wide-web;
+  skos:related :document-web, :semantic-web;
+  dcterms:creator <DoğaArmangil.ttl#id>;
+  rdfs:isDefinedBy
+    <https://qworum.net/en/specification/v1/>,
+    <https://qworum.net/en/platform/>,
+    <DoğaArmangil.ttl#patent>.
+
+:document-web
+  a skos:Concept;
+  skos:prefLabel 'Document Web';
+  skos:broader :world-wide-web;
+  dcterms:description 'The human-readable content Web that is specified by the HTML content format.'@en;
+  dcterms:creator <https://www.w3.org/People/Berners-Lee/>;
+  rdfs:isDefinedBy <https://www.w3.org/TR/html/>.
+
+:semantic-web
+  a skos:Concept;
+  skos:prefLabel 'Semantic Web';
+  skos:broader :world-wide-web;
+  dcterms:creator <https://en.wikipedia.org/wiki/Ora_Lassila>;
+  dcterms:description 'The machine-readable Web that is specified by the RDF content format.'@en;
+  rdfs:isDefinedBy <https://www.w3.org/TR/rdf-schema/>.
+
+:world-wide-web
+  a skos:Concept;
+  skos:prefLabel 'World Wide Web';
+  skos:narrower :service-web, :document-web, :semantic-web;
+  dcterms:creator <https://www.w3.org/People/Berners-Lee/>;
+  dcterms:description 'The distributed system that is specified by the HTTP protocol.'@en;
+  rdfs:isDefinedBy <https://www.w3.org/Protocols/rfc2616/rfc2616.html>.
+
+# ∎
