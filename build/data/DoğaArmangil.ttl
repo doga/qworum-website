@@ -75,6 +75,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   foaf:name 'Doğa Armangil';
   foaf:givenname 'Doğa';
   foaf:family_name 'Armangil';
+  foaf:based_near <locations.ttl#geneva-coordinates>;
   foaf:mbox 
     <mailto:d.armangil@qworum.net>,
     <mailto:doga.armangil@alumni.epfl.ch>;

@@ -20,6 +20,7 @@
 BASE <https://qworum.net/data/locations.ttl>
 PREFIX : <#>
 
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX cc: <http://creativecommons.org/ns#> 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
 PREFIX dcterms: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
@@ -36,6 +37,11 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 # -- Locations --------------------------------------------------
 :geneva
   rdfs:isDefinedBy <https://sws.geonames.org/2660646/about.rdf>.
+
+:geneva-coordinates
+  a geo:Point;
+  geo:lat '46.20222';
+  geo:long '6.14569'.
 
 :lausanne
   rdfs:isDefinedBy <https://sws.geonames.org/2659994/about.rdf>.
