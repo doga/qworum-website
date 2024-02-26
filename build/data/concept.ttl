@@ -12,6 +12,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
   a foaf:Document;
   dct:description "Qworum's Service Web and how it relates to the rest of the Web platform."@en;
   foaf:maker <DoğaArmangil.ttl#id>;
+  foaf:primaryTopic :id;
   cc:license <license/content.ttl#zero>.
 
 
