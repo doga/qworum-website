@@ -84,7 +84,7 @@
 			"path": "src/data/org.ttl",
 			"bookmarks": [
 				{
-					"line": 38,
+					"line": 37,
 					"column": 5,
 					"label": "Org"
 				}
@@ -104,7 +104,7 @@
 			"path": "src/data/locations.ttl",
 			"bookmarks": [
 				{
-					"line": 37,
+					"line": 38,
 					"column": 7,
 					"label": "Geneva"
 				}

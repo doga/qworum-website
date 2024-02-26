@@ -20,16 +20,15 @@ PREFIX cocoon: <https://w3id.org/cocoon/v1.0#> # Vocabulary in Cloud Computing S
 PREFIX schema: <https://schema.org/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
 PREFIX prov: <http://www.w3.org/ns/prov#>            # https://www.w3.org/TR/prov-o/
-PREFIX dct: <http://purl.org/dc/terms/>             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+PREFIX dcterms: <http://purl.org/dc/terms/>             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 PREFIX cc: <http://creativecommons.org/ns#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  # https://www.w3.org/TR/skos-reference/ 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 # -- Document metadata --------------------------------------------------
 <org.ttl>
   a foaf:Document;
-  dct:description 'Organisation description.'@en;
+  dcterms:description 'Organisation description.'@en;
   foaf:maker :DoğaArmangil;
   foaf:primaryTopic :id;
   cc:license <license/content.ttl#non-commercial>.
@@ -37,29 +36,34 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # -- Organisation --------------------------------------------------
 :id
-  a org:Organization, sd:Organization, schema:Organization;
-  skos:prefLabel 'Qworum';
-  foaf:homepage  <https://qworum.net>;
-  org:Site       <locations.ttl#geneva>;
-  foaf:mbox      <mailto:info@qworum.net>;
-  schema:logo    :logo, :logo-ascii-art;
-  org:purpose    '''
-    Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications.'''@en.
+  a org:Organization;
+  org:purpose    
+    '''Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications.'''@en;
+  org:Site <locations.ttl#geneva>;
+
+  a sd:Organization; # sd:Organization rdfs:subClassOf schema:Organization 
+  schema:url <https://qworum.net>;
+  schema:email 'info@qworum.net';
+  schema:logo :logo, :logo-ascii-art.
 
 
 # -- Media --------------------------------------------------
 :logo
-  a schema:ImageObject, foaf:Image;
+  a schema:ImageObject;
   schema:contentUrl <https://qworum.net/assets/images/Qworum-logo.svg>;
   schema:encodingFormat 'image/svg+xml';
+
+  a prov:Entity;
   prov:wasAttributedTo :id.
 
 :logo-ascii-art
-  a schema:ImageObject, foaf:Image;
+  a schema:ImageObject;
   schema:contentUrl <https://qworum.net/assets/images/Qworum-logo.ascii>;
   schema:encodingFormat 
     'text/vnd.ascii-art', 
     <https://www.iana.org/assignments/media-types/text/vnd.ascii-art>;
+
+  a prov:Entity;
   prov:wasGeneratedBy [
     # The ASCII Art Archive provides an online image conversion service, which was used here.
     a prov:Activity;
@@ -77,7 +81,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # -- Well-known roles -----------------------------------------------------------
 :CEO
   a org:Role;
-  skos:prefLabel
+  rdfs:label
     'CEO'@en,
     'Vorstandsvorsitzender'@de,
     'İcra kurulu başkanı'@tr,
@@ -85,7 +89,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :CTO
   a org:Role;
-  skos:prefLabel
+  rdfs:label
     'CTO'@en,
     'Technischer Direktor'@de,
     'Baş teknoloji sorumlusu'@tr,
