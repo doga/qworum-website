@@ -63,7 +63,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   prov:wasGeneratedBy [
     # The ASCII Art Archive provides an online image conversion service, which was used here.
     a prov:Activity;
-    prov:used :portrait;
+    prov:used :logo;
     prov:wasAssociatedWith :DoğaArmangil, :ascii-art-archive
   ];
   prov:wasDerivedFrom :portrait;
