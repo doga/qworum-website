@@ -68,7 +68,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # -- Person --------------------------------------------------
 :id
-  a prov:Agent;
+  a schema:Person;
+  schema:alumniOf :epfl;
 
   a foaf:Person;
   foaf:name 'Doğa Armangil';
@@ -95,8 +96,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   # cv:hasCitizenship country:TR, country:GB;
   # cv:hasNationality 'Turkish'@en, 'British'@en;
 
-  a schema:Person;
-  schema:alumniOf :epfl.
+  a prov:Agent.
 
 
 :linkedin-account
