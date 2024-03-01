@@ -26,18 +26,6 @@ p.pricing-plan-title {
   text-transform: uppercase;
 }
 
-button.call-to-action {
-  font-size: 150%;
-  color: white;
-  background-color: #117FFF;
-  border-radius: 0.5em;
-  margin: 0 1em ;
-  padding: 0.5em 1em;
-  text-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-
 span.monthly-price {
   font-size: 150%;
 }

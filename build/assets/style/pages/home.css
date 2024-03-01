@@ -38,6 +38,13 @@ ul.home-marquee>li:first-child ul>li {
   padding: 0.5em 0;
 }
 
+section#call-to-action {
+  margin: 3em auto 0 auto;
+  /* padding: 1em; */
+  width: 40%;
+  /* background-color: salmon; */
+}
+
 /* ul.home-marquee>li:nth-child(2) {
   display: none;
 } */

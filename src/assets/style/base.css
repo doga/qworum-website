@@ -76,7 +76,20 @@ nav#table-of-contents li {
   margin-top: 1em;
 }
 
-
+button.call-to-action {
+  font-size: 130%;
+  color: white;
+  background-color: #117FFF;
+  border-radius: 0.5em;
+  margin: 0 1em ;
+  padding: 0.5em 1em;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+button.call-to-action a {
+  text-decoration: none;
+}
 
 @media (prefers-color-scheme: dark) {
   body {
