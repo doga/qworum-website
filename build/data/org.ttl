@@ -14,15 +14,15 @@ BASE <https://qworum.net/data/org.ttl>
 
 PREFIX : <#>
 
-PREFIX org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
+PREFIX org: <http://www.w3.org/ns/org#>              # https://www.w3.org/TR/vocab-org/ 
 PREFIX time: <http://www.w3.org/2006/time#> 
-PREFIX sd: <https://w3id.org/okn/o/sd#>             # Software Description Ontology
-PREFIX cocoon: <https://w3id.org/cocoon/v1.0#> # Vocabulary in Cloud Computing Services
+PREFIX sd: <https://w3id.org/okn/o/sd#>              # Software Description Ontology
+PREFIX cocoon: <https://w3id.org/cocoon/v1.0#>       # Vocabulary in Cloud Computing Services
 
 PREFIX schema: <https://schema.org/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>            # https://en.wikipedia.org/wiki/FOAF 
 PREFIX prov: <http://www.w3.org/ns/prov#>            # https://www.w3.org/TR/prov-o/
-PREFIX dcterms: <http://purl.org/dc/terms/>             # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+PREFIX dcterms: <http://purl.org/dc/terms/>          # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 PREFIX cc: <http://creativecommons.org/ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
