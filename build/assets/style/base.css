@@ -87,9 +87,6 @@ button.call-to-action {
   align-items: center;
   cursor: pointer;
 }
-button.call-to-action a {
-  text-decoration: none;
-}
 
 @media (prefers-color-scheme: dark) {
   body {
