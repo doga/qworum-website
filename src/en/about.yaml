@@ -10,11 +10,11 @@ text:
   description:
   # - The Qworum project came to be, because no other software comes close to doing what Qworum does, and because devops teams need such software, particularly the teams who are developing and operating large-scale software.
   - Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a full-fledged platform for applications.
-  - In this age where businesses are using an ever-growing number of specialised SaaS products and tailor-made applications, application integration between and across all these applications is becoming an ever-thornier issues for businesses and SaaS vendors of all sizes.
+  - In this age where businesses are using an ever-growing number of specialised SaaS products and tailor-made applications, application integration between and across all these applications is becoming an ever-thornier issue for businesses and SaaS vendors of all sizes.
   - In this new landscape, Qworum is providing an essential new integration technology for business applications.
 
   semantic: >
-    Semantic organisation description:
+    Semantic description of Qworum:
 
   contributors:
   - name: Doğa Armangil
