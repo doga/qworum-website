@@ -84,7 +84,7 @@
 			"path": "src/data/org.ttl",
 			"bookmarks": [
 				{
-					"line": 39,
+					"line": 44,
 					"column": 5,
 					"label": "Org"
 				}
@@ -94,7 +94,7 @@
 			"path": "src/data/DoğaArmangil.ttl",
 			"bookmarks": [
 				{
-					"line": 69,
+					"line": 74,
 					"column": 5,
 					"label": "Me"
 				}
@@ -104,7 +104,7 @@
 			"path": "src/data/locations.ttl",
 			"bookmarks": [
 				{
-					"line": 38,
+					"line": 43,
 					"column": 7,
 					"label": "Geneva"
 				}

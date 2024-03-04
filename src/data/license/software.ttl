@@ -19,7 +19,12 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   a foaf:Document;
   dcterms:description 'Well-known software licenses.'@en;
   foaf:maker <DoğaArmangil.ttl#id>;
-  cc:license <content.ttl#zero>.
+  cc:license <content.ttl#zero>;
+  
+  a schema:CreativeWork;
+  schema:encodingFormat
+    'text/turtle',
+    <https://www.iana.org/assignments/media-types/text/turtle>.
 
 
 # -- Licences --------------------------------------------------

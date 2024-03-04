@@ -33,7 +33,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   dcterms:description 'Organisation description.'@en;
   foaf:maker :DoğaArmangil;
   foaf:primaryTopic :id;
-  cc:license <license/content.ttl#non-commercial>.
+  cc:license <license/content.ttl#non-commercial>;
+  
+  a schema:CreativeWork;
+  schema:encodingFormat
+    'text/turtle',
+    <https://www.iana.org/assignments/media-types/text/turtle>.
 
 
 # -- Organisation --------------------------------------------------
