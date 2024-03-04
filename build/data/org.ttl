@@ -11,7 +11,7 @@
 # Semantic description of Qworum as an organisation.
 
 BASE <https://qworum.net/data/org.ttl>
-# BASE <org.ttl>
+
 PREFIX : <#>
 
 PREFIX org: <http://www.w3.org/ns/org#>             # https://www.w3.org/TR/vocab-org/ 
