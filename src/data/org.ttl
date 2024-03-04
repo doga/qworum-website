@@ -8,7 +8,7 @@
 #  ░░░██████░██  ░░████░████   ░░██████  █████     ░░████████ █████░███ █████
 #    ░░░░░░ ░░    ░░░░ ░░░░     ░░░░░░  ░░░░░       ░░░░░░░░ ░░░░░ ░░░ ░░░░░
 
-# Semantic description of Qworum as an organisation.
+# Semantic description of Qworum as an organisation, in RDF/Turtle format.
 
 BASE <https://qworum.net/data/org.ttl>
 
