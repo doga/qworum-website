@@ -10,7 +10,7 @@ layout: ./base.vto
         <figcaption>
             {{ contributor.name }}, 
 
-            {{ for person of contributors }}
+            {{ for person of text.contributors }}
               {{ if person.name == contributor.name }}
                 {{ person.role }} 
               {{ /if }}
@@ -26,7 +26,7 @@ layout: ./base.vto
   {{ /for }}
 </ul>
 
-{{ for paragraph of description }}
+{{ for paragraph of text.description }}
   <p class="company-description">{{ paragraph }}</p>
 {{ /for }}
 
@@ -44,6 +44,7 @@ layout: ./base.vto
     {{company.twitter.handle}}
   </a> <br> <br>
 
+  {{ text.company.semantic.title }} <br>
   <a href="{{company.rdf}}" target="_blank">
     <img src="/assets/images/logos/turtle.svg" height='66px' alt="">
   </a> <br>

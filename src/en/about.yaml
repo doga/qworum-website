@@ -6,11 +6,16 @@ nav:
   order: 5
   selection: about
 
-description:
-# - The Qworum project came to be, because no other software comes close to doing what Qworum does, and because devops teams need such software, particularly the teams who are developing and operating large-scale software.
+text:
+  description:
+  # - The Qworum project came to be, because no other software comes close to doing what Qworum does, and because devops teams need such software, particularly the teams who are developing and operating large-scale software.
+  - Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a full-fledged platform for applications.
 
-- Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a full-fledged platform for applications.
+  company:
+    semantic:
+      title: >
+        Semantic description:
 
-contributors:
-- name: Doğa Armangil
-  role: Project author
+  contributors:
+  - name: Doğa Armangil
+    role: Project author
