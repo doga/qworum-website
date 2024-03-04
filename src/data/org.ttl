@@ -8,6 +8,8 @@
 #  ░░░██████░██  ░░████░████   ░░██████  █████     ░░████████ █████░███ █████
 #    ░░░░░░ ░░    ░░░░ ░░░░     ░░░░░░  ░░░░░       ░░░░░░░░ ░░░░░ ░░░ ░░░░░
 
+# Semantic description of Qworum as an organisation.
+
 BASE <https://qworum.net/data/org.ttl>
 # BASE <org.ttl>
 PREFIX : <#>

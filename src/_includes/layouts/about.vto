@@ -34,17 +34,17 @@ layout: ./base.vto
   {{# <strong>{{ company.name }}</strong> <br> #}}
   {{# {{ company.address }} <br> #}}
 
-  Email:
+  📧
   <a href="mailto:{{company.email}}" target="_blank">
     {{company.email}}
   </a> <br> 
 
-  𝕏:
+  𝕏
   <a href="{{company.twitter.url}}" target="_blank">
     {{company.twitter.handle}}
   </a> <br> <br>
 
-  {{ text.semantic }} <br>
+  {{# {{ text.semantic }} <br> #}}
   <a href="{{company.rdf}}" target="_blank">
     <img src="/assets/images/logos/turtle.svg" height='66px' alt="">
   </a> <br>

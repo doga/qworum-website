@@ -13,8 +13,8 @@ text:
   - In this age where businesses are using an ever-growing number of specialised SaaS products and tailor-made applications, application integration between and across all these applications is becoming an ever-thornier issue for businesses and SaaS vendors of all sizes.
   - In this new landscape, Qworum is providing an essential new integration technology for business applications.
 
-  semantic: >
-    Semantic description of Qworum:
+  # semantic: >
+  #   Semantic description of Qworum:
 
   contributors:
   - name: Doğa Armangil
