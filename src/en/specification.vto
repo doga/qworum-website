@@ -17,7 +17,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2024.02.19 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2024.03.07 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>Qworum is:</p>
@@ -1084,21 +1084,20 @@ Qworum.eval(
 &lt;data:semantic type='turtle'>
   &lt;![CDATA[
 
-    @prefix : &lt;https://schema.org/> .
+    PREFIX : &lt;https://schema.org/>
 
-    _:lineItems
+    []
       a :ItemList;
-      :itemListElement _:lineItem1 .
-
-    _:lineItem1
-      a :Product;
-      :productID "2";
-      :name "XYZ Boots";
-      :offers [
-        a :Offer;
-        :price "75.95";
-        :priceCurrency "EUR"
-      ] .
+      :itemListElement [
+        a :Product;
+        :productID "2";
+        :name "XYZ Boots";
+        :offers [
+          a :Offer;
+          :price "75.95";
+          :priceCurrency "EUR"
+        ]
+      ].
 
   ]]>
 &lt;/data:semantic>
@@ -1112,7 +1111,7 @@ Qworum.eval(
 &lt;data:semantic type='trig'>
   &lt;![CDATA[
 
-    @prefix : &lt;https://schema.org/> .
+    PREFIX : &lt;https://schema.org/>
 
     {
       _:lineItems
