@@ -69,7 +69,7 @@ text:
   conditions:
   # - Qworum Ore is available for businesses. It is yearly renewable, and will always remain free.
   - >
-    Qworum is enabled for HTTPS sites on the standard HTTPS TCP port.
+    A Qworum subscription will activate Qworum for both the HTTP and HTTPS protocols on your domain for the standard TCP ports.
   #  The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
   # - >
   #   <a target="_blank" href='§§{plans.ore.forms.modify_subscription}'>Subscription modification form</a>.
