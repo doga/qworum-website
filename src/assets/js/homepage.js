@@ -3,7 +3,7 @@ import {
   // Browser,
   ChromiumDesktop, EdgeDesktop, OperaDesktop, FirefoxDesktop, SafariDesktop,
   FirefoxAndroid, SafariMobile
-} from 'https://esm.sh/gh/doga/browser-detector@0.2.1/mod.mjs';
+} from 'https://esm.sh/gh/doga/browser-detector@0.2.2/mod.mjs';
 
 highlightUsersBrowserForDownload();
 
@@ -50,10 +50,15 @@ function highlightUsersBrowserForDownload() {
     return;
   }
 
-  if (browser instanceof FirefoxAndroid) {
-    document.querySelector(`.download#firefox-a`).classList.add('selected');
+  if (browser instanceof KiwiAndroid) {
+    document.querySelector(`.download#kiwi-a`).classList.add('selected');
     return;
   }
+
+  // if (browser instanceof FirefoxAndroid) {
+  //   document.querySelector(`.download#firefox-a`).classList.add('selected');
+  //   return;
+  // }
 
 }
 

@@ -45,6 +45,7 @@ text:
 #      Note that Qworum is currently mainly targeting business applications, as consumer applications would ideally require that Qworum come preinstalled on browsers.
 
 ---
+
 {{# <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.30/build/spline-viewer.js"></script> #}}
 {{# <spline-viewer url="https://prod.spline.design/wqbLrQ215eI12wh3/scene.splinecode"></spline-viewer> #}}
 {{# <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.30/build/spline-viewer.js"></script> #}}
@@ -110,12 +111,13 @@ text:
         {{# </a> #}}
       </figcaption>
     </figure>
-    <figure class="download" id="firefox">
+    {{# <figure class="download" id="firefox">
+      <!-- Does not fully support Manifest v3 -->
       <img src="/assets/images/logos/Firefox_logo_2019.svg" alt="Firefox icon">
       <figcaption>
         Firefox
       </figcaption>
-    </figure>
+    </figure> #}}
     <figure class="download" id="opera">
       <!-- TODO use the [Opera addons store](https://addons.opera.com/en-gb/extensions/?ref=menu) -->
       <img src="/assets/images/logos/Opera_2015_logo-cropped.svg" alt="Opera Browser icon">
@@ -160,12 +162,21 @@ text:
         Safari for iPhone/iPad
       </figcaption>
     </figure>
-    <figure class="download" id="firefox-a">
+    <figure class="download" id="kiwi-a">
+      <img src="/assets/images/logos/kiwi_logo_circle.svg" alt="Kiwi icon">
+      <figcaption>
+        <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
+          Kiwi for Android
+        </a>
+      </figcaption>
+    </figure>
+    {{# <figure class="download" id="firefox-a">
+      <!-- Does not fully support Manifest v3 -->
       <img src="/assets/images/logos/Firefox_logo_2019.svg" alt="Firefox icon">
       <figcaption>
         Firefox for Android
       </figcaption>
-    </figure>
+    </figure> #}}
   </div>
 
   <p class="downloads-explanation">{{ text.downloads.description }}</p>
