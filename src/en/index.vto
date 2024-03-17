@@ -13,7 +13,7 @@ text:
   #    Best-in-class integrations are essential for today's leading business applications. Don't get left behind.
     usp:
     - >
-      Qworum makes integrations 10x easier, and complex service dependencies possible.
+      Qworum makes integrations 10x easier, and deep service dependencies possible.
       <a href="solution/#integrations">Learn how.</a>
     - Modularise your application UI for easy user dialog orchestrations.
     - Distribute the UI of your large-scale application across several websites.
@@ -24,9 +24,11 @@ text:
 
   downloads:
     title: Free web browser extension
+    desktop: 'Qworum on desktop:'
+    mobile: 'Qworum on mobile:'
     description: >
-      Currently supported: Google Chrome on desktop/laptop. Adding support for all mainstream browsers is on our short-term roadmap. 
-      User data stays in the browser, see our <a target="_blank" href="/docs/legal/privacy-policy/">privacy policy</a>.
+      User data stays in the browser. See our <a target="_blank" href="/docs/legal/privacy-policy/">privacy policy</a>.
+#      Currently supported: Google Chrome on desktop/laptop. Adding support for all mainstream browsers is on our short-term roadmap. 
 
   pitch:
     title: Investor pitch
@@ -80,21 +82,23 @@ text:
 <section id="downloads">
   <h2>{{ text.downloads.title }}</h2>
 
-  <div id="downloads-list">
+  <p>{{ text.downloads.desktop }}</p>
+
+  <div class="downloads-list">
     <!-- order browsers by market share: Browser Market Share Worldwide https://gs.statcounter.com/browser-market-share -->
     <figure class="download" id="chrome">
       <img src="/assets/images/logos/Google_Chrome_icon_(February_2022).svg" alt="Google Chrome icon">
       <figcaption>
         <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg"
           target="_blank">
-          Qworum for <br> Google Chrome
+          Chrome
         </a>
       </figcaption>
     </figure>
     <figure class="download" id="safari">
       <img src="/assets/images/logos/Safari_browser_logo.svg" alt="Safari icon">
       <figcaption>
-        Qworum for <br> Safari
+        Safari
       </figcaption>
     </figure>
     <figure class="download" id="edge">
@@ -102,14 +106,14 @@ text:
       <img src="/assets/images/logos/Microsoft_Edge_logo_(2019).svg" alt="Microsoft Edge icon">
       <figcaption>
         {{# <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank"> #}}
-          Qworum for <br> Microsoft Edge
+          Edge
         {{# </a> #}}
       </figcaption>
     </figure>
     <figure class="download" id="firefox">
       <img src="/assets/images/logos/Firefox_logo_2019.svg" alt="Firefox icon">
       <figcaption>
-        Qworum for <br> Firefox
+        Firefox
       </figcaption>
     </figure>
     <figure class="download" id="opera">
@@ -117,16 +121,49 @@ text:
       <img src="/assets/images/logos/Opera_2015_logo-cropped.svg" alt="Opera Browser icon">
       <figcaption>
         {{# <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank"> #}}
-          Qworum for <br> Opera Browser
+          Opera
         {{# </a> #}}
       </figcaption>
     </figure>
     <figure class="download" id="brave">
       <img src="/assets/images/logos/Brave-logo-color-RGB_reversed-cropped.svg" alt="Brave Browser icon">
       <figcaption>
-        {{# <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank"> #}}
-          Qworum for <br> Brave Browser
-        {{# </a> #}}
+        <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
+          Brave
+        </a>
+      </figcaption>
+    </figure>
+    <figure class="download" id="vivaldi">
+      <img src="/assets/images/logos/Vivaldi_web_browser_logo.svg" alt="Vivaldi Browser icon">
+      <figcaption>
+        <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
+          Vivaldi
+        </a>
+      </figcaption>
+    </figure>
+    <figure class="download" id="arc">
+      <img src="/assets/images/logos/Arc_(browser)_logo.svg" alt="Arc Browser icon">
+      <figcaption>
+        <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
+          Arc
+        </a>
+      </figcaption>
+    </figure>
+  </div>
+
+  <p>{{ text.downloads.mobile }}</p>
+
+  <div class="downloads-list">
+    <figure class="download" id="safari-m">
+      <img src="/assets/images/logos/Safari_browser_logo.svg" alt="Safari icon">
+      <figcaption>
+        Safari for iPhone/iPad
+      </figcaption>
+    </figure>
+    <figure class="download" id="firefox-a">
+      <img src="/assets/images/logos/Firefox_logo_2019.svg" alt="Firefox icon">
+      <figcaption>
+        Firefox for Android
       </figcaption>
     </figure>
   </div>
