@@ -2,63 +2,50 @@ import {
   detectBrowser,
   // Browser,
   ChromiumDesktop, EdgeDesktop, OperaDesktop, FirefoxDesktop, SafariDesktop,
-  FirefoxAndroid, SafariMobile
+  // FirefoxAndroid, 
+  KiwiAndroid,
+  SafariMobile
 } from 'https://esm.sh/gh/doga/browser-detector@0.2.2/mod.mjs';
 
 highlightUsersBrowserForDownload();
 
 function highlightUsersBrowserForDownload() {
   const
-  ua      = window.navigator.userAgent,
-  browser = detectBrowser(ua);
+  ua         = window.navigator.userAgent,
+  browser    = detectBrowser(ua),
+  browserIds = [],
+  browserClasses   = {
+    edge      : EdgeDesktop,
+    opera     : OperaDesktop,
+    firefox   : FirefoxDesktop,
+    safari    : SafariDesktop,
+    "safari-m": SafariMobile,
+    "kiwi-a"  : KiwiAndroid,
+  };
 
-  // Desktop
+  // Find the browsers to highlight
   if (browser instanceof ChromiumDesktop) {
     if (navigator.brave) {
-      document.querySelector('.download#brave').classList.add('selected');
+      browserIds.push('brave');
     } else {
-      ['chrome', 'vivaldi', 'arc'].forEach(
-        brand => document.querySelector(`.download#${brand}`).classList.add('selected')
-      );
+      ['chrome', 'vivaldi', 'arc'].forEach(brand => browserIds.push(brand));
     }
-    return;
   }
 
-  if (browser instanceof EdgeDesktop) {
-    document.querySelector(`.download#edge`).classList.add('selected');
-    return;
+  for (const browserId in browserClasses) {
+    if (Object.hasOwnProperty.call(browserClasses, browserId)) {
+      const browserClass = browserClasses[browserId];
+      console.debug(`browserId: ${browserId}`);
+      if(browser instanceof browserClass){
+        browserIds.push(browserId)
+      }
+    }
   }
 
-  if (browser instanceof OperaDesktop) {
-    document.querySelector(`.download#opera`).classList.add('selected');
-    return;
+  // Highlight the browsers on the web page
+  for (const browserId of browserIds) {
+    document.querySelector(`.download#${browserId}`).classList.add('selected');
   }
-
-  if (browser instanceof FirefoxDesktop) {
-    document.querySelector(`.download#firefox`).classList.add('selected');
-    return;
-  }
-
-  if (browser instanceof SafariDesktop) {
-    document.querySelector(`.download#safari`).classList.add('selected');
-    return;
-  }
-  
-  // Mobile
-  if (browser instanceof SafariMobile) {
-    document.querySelector(`.download#safari-m`).classList.add('selected');
-    return;
-  }
-
-  if (browser instanceof KiwiAndroid) {
-    document.querySelector(`.download#kiwi-a`).classList.add('selected');
-    return;
-  }
-
-  // if (browser instanceof FirefoxAndroid) {
-  //   document.querySelector(`.download#firefox-a`).classList.add('selected');
-  //   return;
-  // }
 
 }
 
