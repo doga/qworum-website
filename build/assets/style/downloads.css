@@ -17,9 +17,9 @@
   opacity: 1;
 }
 
-p.downloads-explanation {
-  /* font-size: small; */
-}
+/* p.downloads-explanation {
+  font-size: small; 
+} */
 
 /* download figures */
 .downloads-list > figure img {width: 40px;}
