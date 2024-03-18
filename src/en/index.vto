@@ -155,12 +155,16 @@ text:
   <p>{{ text.downloads.mobile }}</p>
 
   <div class="downloads-list">
-    <figure class="download" id="safari-m">
+    {{# <figure class="download" id="safari-m">
+      <!-- 
+        Does not fully support Manifest v3 
+        https://developer.apple.com/documentation/safariservices/safari_web_extensions/assessing_your_safari_web_extension_s_browser_compatibility#:~:text=settings%20on%20websites.-,webRequest,Not%20supported%20in%20iOS.,-BlockingResponse%20not
+      -->
       <img src="/assets/images/logos/Safari_browser_logo.svg" alt="Safari icon">
       <figcaption>
         Safari for iPhone/iPad
       </figcaption>
-    </figure>
+    </figure> #}}
     <figure class="download" id="kiwi-a">
       <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
         <img src="/assets/images/logos/kiwi_logo_circle.svg" alt="Kiwi icon">

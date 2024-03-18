@@ -4,7 +4,7 @@ import {
   ChromiumDesktop, EdgeDesktop, OperaDesktop, FirefoxDesktop, SafariDesktop,
   // FirefoxAndroid, 
   KiwiAndroid,
-  SafariMobile
+  // SafariMobile
 } from 'https://esm.sh/gh/doga/browser-detector@0.2.2/mod.mjs';
 
 highlightUsersBrowserForDownload();
@@ -19,7 +19,7 @@ function highlightUsersBrowserForDownload() {
     opera     : OperaDesktop,
     firefox   : FirefoxDesktop,
     safari    : SafariDesktop,
-    "safari-m": SafariMobile,
+    // "safari-m": SafariMobile,
     "kiwi-a"  : KiwiAndroid,
   };
 
