@@ -132,7 +132,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # -- Persons -----------------------------------------------------------
 :DoğaArmangil
   a foaf:Person, schema:Person, sd:Person;
-  rdfs:isDefinedBy <DoğaArmangil.ttl#id>.
+  schema:sameAs <DoğaArmangil.ttl#id>.
 
 
 # -- PaaS -----------------------------------------------------------
