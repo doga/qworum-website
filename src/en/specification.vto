@@ -17,7 +17,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2024.03.19 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2024.03.23 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>Qworum is:</p>
@@ -1060,13 +1060,13 @@ Qworum.eval(
         <li>
           {{# <span class="notYetImplemented">Not yet implemented</span> #}}
           <dfn>Turtle</dfn> <a href="#ref-turtle">♦︎</a>. 
-          The <code>type</code> attribute has the value <code>turtle</code> for this format. 
-          If this attribute is omitted then it is assumed to have the value <code>turtle</code>.
+          {{# The <code>type</code> attribute has the value <code>turtle</code> for this format. 
+          If this attribute is omitted then it is assumed to have the value <code>turtle</code>. #}}
         </li>
         <li>
           {{# <span class="notYetImplemented">Not yet implemented</span> #}}
           <dfn>TriG</dfn> <a href="#ref-trig">♦︎</a>. 
-          The <code>type</code> attribute has the value <code>trig</code> for this format. 
+          {{# The <code>type</code> attribute has the value <code>trig</code> for this format.  #}}
         </li>
         {{# <li>
           <dfn>JSON-LD</dfn> <a href="#ref-json-ld">♦︎</a>. 
@@ -1074,18 +1074,18 @@ Qworum.eval(
         </li> #}}
         <li>
           <dfn>N-Triples</dfn> <a href="#ref-n-triples">♦︎</a>.
-          The <code>type</code> attribute has the value <code>n-triples</code> for this format. 
+          {{# The <code>type</code> attribute has the value <code>n-triples</code> for this format.  #}}
         </li>
         <li>
           <dfn>N-Quads</dfn> <a href="#ref-n-quads">♦︎</a>.
-          The <code>type</code> attribute has the value <code>n-quads</code> for this format. 
+          {{# The <code>type</code> attribute has the value <code>n-quads</code> for this format.  #}}
         </li>
       </ul>
 
       <figure>
         <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
-&lt;data:semantic type='turtle'>
+&lt;data:semantic>
   &lt;![CDATA[
 
     PREFIX : &lt;https://schema.org/>
@@ -1106,13 +1106,13 @@ Qworum.eval(
   ]]>
 &lt;/data:semantic>
 </code></pre>
-        <figcaption>4.2.1: Example of semantic data written in Turtle</figcaption>
+        <figcaption>4.2.1: Example of semantic data written in Turtle/TriG</figcaption>
       </figure>
 
-      <figure>
+      {{# <figure>
         <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
-&lt;data:semantic type='trig'>
+&lt;data:semantic>
   &lt;![CDATA[
 
     PREFIX : &lt;https://schema.org/>
@@ -1137,9 +1137,9 @@ Qworum.eval(
 &lt;/data:semantic>
 </code></pre>
         <figcaption>4.2.2: Example of semantic data written in TriG</figcaption>
-      </figure>
+      </figure> #}}
 
-      <figure>
+      {{# <figure>
         <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
 &lt;data:semantic type='json-ld'>
@@ -1160,12 +1160,12 @@ Qworum.eval(
 &lt;/data:semantic>
 </code></pre>
         <figcaption>4.2.3: Example of semantic data written in JSON-LD</figcaption>
-      </figure>
+      </figure> #}}
 
       <figure>
         <pre><code class="language-xml">
 &lt;!-- The end-user's shopping cart contents (2 items). -->
-&lt;data:semantic type='n-quads'>
+&lt;data:semantic>
   &lt;![CDATA[
 
     # Line items
@@ -1197,7 +1197,7 @@ Qworum.eval(
   ]]>
 &lt;/data:semantic>
 </code></pre>
-        <figcaption>4.2.4: Example of semantic data written in N-Quads</figcaption>
+        <figcaption>4.2.2: Example of semantic data written in N-Triples/N-Quads</figcaption>
       </figure>
 
       <p>
