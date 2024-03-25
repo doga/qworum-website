@@ -110,7 +110,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   rdfs:label 'LinkedIn account'@en;
   foaf:accountName 'dogaarmangil';
   foaf:accountServiceHomepage <https://www.linkedin.com>;
-  rdfs:isDefinedBy <https://www.linkedin.com/in/dogaarmangil/>.
+  schema:sameAs <https://www.linkedin.com/in/dogaarmangil/>.
 
 
 :x-account
@@ -118,7 +118,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   rdfs:label '𝕏 account'@en;
   foaf:accountName 'DogaArmangil';
   foaf:accountServiceHomepage <https://twitter.com>;
-  rdfs:isDefinedBy <https://twitter.com/DogaArmangil>.
+  schema:sameAs <https://twitter.com/DogaArmangil>.
 
 
 :patent
@@ -177,7 +177,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   a org:Organization, schema:EducationalOrganization;
   rdfs:label 'EPFL', 'École Polytechnique Fédérale de Lausanne'@fr;
   org:Site <locations.ttl#lausanne>;
-  rdfs:isDefinedBy <https://epfl.ch>.
+  schema:sameAs <https://epfl.ch>.
 
 
 :portrait

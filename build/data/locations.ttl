@@ -24,6 +24,7 @@ PREFIX gn: <http://www.geonames.org/ontology#>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX cc: <http://creativecommons.org/ns#> 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+PREFIX schema: <https://schema.org/>
 PREFIX dcterms: <http://purl.org/dc/terms/>       # https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
 
@@ -43,7 +44,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 # -- Locations --------------------------------------------------
 :geneva
   a gn:Feature;
-  rdfs:isDefinedBy <https://sws.geonames.org/2660646/about.rdf>;
+  schema:sameAs <https://sws.geonames.org/2660646/about.rdf>;
 
   a geo:Point;
   geo:lat '46.20222';
@@ -51,6 +52,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf
 
 :lausanne
   a gn:Feature;
-  rdfs:isDefinedBy <https://sws.geonames.org/2659994/about.rdf>.
+  schema:sameAs <https://sws.geonames.org/2659994/about.rdf>.
 
 # ∎

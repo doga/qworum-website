@@ -83,7 +83,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :ascii-art-archive
   a prov:Agent, schema:Organization;
-  rdfs:isDefinedBy <https://www.asciiart.eu/image-to-ascii>.
+  schema:sameAs <https://www.asciiart.eu/image-to-ascii>.
 
 
 # -- Well-known roles -----------------------------------------------------------
@@ -139,7 +139,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :paas
   a cocoon:PaaS;
   cocoon:hasProvider :id;
-  cocoon:hasServiceLevelAgreement [rdfs:isDefinedBy <https://qworum.net/docs/legal/terms-of-service/>];
+  cocoon:hasServiceLevelAgreement [schema:sameAs <https://qworum.net/docs/legal/terms-of-service/>];
   cocoon:inJurisdiction <locations.ttl#geneva>;
   rdfs:seeAlso <https://qworum.net/en/plans/>.
 
