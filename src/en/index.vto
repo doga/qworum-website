@@ -8,7 +8,9 @@ nav      :
 text:
   mission:
     oneliner: |
-      <a href="{{ company.achievements.medal }}" target="_blank">Award-winning</a> and <a href="{{ company.achievements.patent }}" target="_blank">patent-based</a> API technology for interactive processes
+      Qworum is the Service Web.
+      <a href="{{ company.achievements.patent }}" target="_blank">Patent-based</a> API & integration technology for interactive processes.
+#      <a href="{{ company.achievements.medal }}" target="_blank">Award-winning</a> and <a href="{{ company.achievements.patent }}" target="_blank">patent-based</a> API technology for interactive processes
   #     Advanced browser capabilities for web applications
   #    Best-in-class integrations are essential for today's leading business applications. Don't get left behind.
     usp:
@@ -152,10 +154,10 @@ text:
     </figure>
   </div>
 
-  <p>{{ text.downloads.mobile }}</p>
+  {{# <p>{{ text.downloads.mobile }}</p>
 
   <div class="downloads-list">
-    {{# <figure class="download" id="safari-m">
+    <figure class="download" id="safari-m">
       <!-- 
         Does not fully support Manifest v3 
         https://developer.apple.com/documentation/safariservices/safari_web_extensions/assessing_your_safari_web_extension_s_browser_compatibility#:~:text=settings%20on%20websites.-,webRequest,Not%20supported%20in%20iOS.,-BlockingResponse%20not
@@ -164,7 +166,7 @@ text:
       <figcaption>
         Safari for iPhone/iPad
       </figcaption>
-    </figure> #}}
+    </figure>
     <figure class="download" id="kiwi-a">
       <a href="https://chrome.google.com/webstore/detail/qworum-the-service-web/leaofcglebjeebmnmlapbnfbjgfiaokg" target="_blank">
         <img src="/assets/images/logos/kiwi_logo_circle.svg" alt="Kiwi icon">
@@ -173,14 +175,14 @@ text:
         </figcaption>
       </a>
     </figure>
-    {{# <figure class="download" id="firefox-a">
+    <figure class="download" id="firefox-a">
       <!-- Does not fully support Manifest v3 -->
       <img src="/assets/images/logos/Firefox_logo_2019.svg" alt="Firefox icon">
       <figcaption>
         Firefox for Android
       </figcaption>
-    </figure> #}}
-  </div>
+    </figure>
+  </div> #}}
 
   <p class="downloads-explanation">{{ text.downloads.description }}</p>
 </section>

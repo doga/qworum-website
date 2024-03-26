@@ -13,34 +13,35 @@ text:
     - >
       <a href="specification.vto">Qworum specification</a>: The target audience for this specification are the developers of Qworum applications and services.
     - >
-      <a href="/docs/qworum-for-web-pages/latest/Qworum.html" target="_blank">
-      JavaScript module for Web Pages (API documentation)</a>: 
-      With this JavaScript ES module, websites can use the advanced browser functionality that is provided by Qworum's browser extension.
-#      <span class='latestStableImplementation'><a href="{{software.jsLibrary.latestStableImplementation.npm.url}}" target="_blank"> Latest stable version: {{software.jsLibrary.latestStableImplementation.tag}} </a></span>
+      <a href="https://github.com/doga/qworum-application-template" target="_blank">Application template (GitHub)</a>. A simple versioned multi-language template for Qworum-based web applications/APIs.
     - >
-      <a href="https://github.com/doga/object-semantic-mapping" target="_blank">Object-Semantic Mapping template (GitHub repository)</a>. A JavaScript library template for reading and generating RDF-based semantic data.
+      <a href="https://github.com/doga/qworum-for-web-pages" target="_blank">
+      JavaScript library for web pages (GitHub)</a>: 
+      ES6 module for using the advanced Qworum capabilities of web browsers.
     - >
-      <a href="" target="_blank">Application template (GitHub repository)</a>. A simple multi-language template for Qworum-based web applications.
+      <a href="https://github.com/doga/qworum-application-template-with-semantic-data" target="_blank">Application template #2 (GitHub)</a>. In this project, the Qworum API/application uses semantic data instead of JSON. A great starting point for projects wishing to leverage Semantic Web technologies.
     - >
-      <a href="https://github.com/doga/qworum-demo" target="_blank">Demo project (GitHub repository)</a>:
+      <a href="https://github.com/doga/object-semantic-mapping" target="_blank">Some Object-Semantic Mapping models (GitHub)</a>. OSM is similar to ORM, except that it is for semantic data. This project contains a couple of OSM models for Qworum applications.
+    - >
+      <a href="https://github.com/doga/qworum-demo" target="_blank">Demo project (GitHub)</a>:
       Contains the code base for a Qworum-based distributed web application.
     - >
       <a href="../demos/">Other demos</a>:
       Here are some integration tests for the Qworum browser extension.
     - >
       <a href="https://marketplace.visualstudio.com/items?itemName=qworum.qworum" target="_blank">
-      Visual Studio Code extension</a>: Provides XML snippets for writing static Qworum scripts.
+      Visual Studio Code extension on Visual Studio Marketplace</a>: Provides XML code snippets for writing static Qworum scripts.
+    - >
+      <a href="mailto:support@qworum.net">Email address for support</a>.
     - >
       <a href="https://groups.google.com/g/qworumnet?hl=en" target="_blank">
       Google group</a>: Visit this group for feature requests, bug reports and general discussion.
-    - >
-      <a href="mailto:support@qworum.net">Email for support</a>.
 
   getting_started:
     title: Developing with Qworum 
     p:
-    - One constraint to be observed when developing Qworum services is that they must not add new entries to the histories of the browser tabs they are running in.
-    - This constraint is needed because Qworum is currently implemented as a browser extension, and browser extensions are not (yet) allowed to deactivate the browsers' tab history. (Why is deactivating the tab history needed? Because otherwise Qworum's session state could go out of sync with the application UI.)
+    - Qworum services must not add new entries to browser tab histories. To ensure this, Qworum applications must be launched by clicking on a link in another tab, such as <a href="http://basic.template.qworum.net" target="_blank">this one</a>. 
+    - This constraint is needed because being able to use the browser's forward/backward buttons can cause the Qworum session state to go out of sync with the UI that the end-user sees.
 
   transforming_webapps:
     title: Transforming web applications into Qworum services
@@ -80,7 +81,7 @@ text:
       // Adds an article to a shopping cart on an e-commerce website.
       // (The end-user is on an article details page.)
 
-      import { Qworum } from "https://esm.sh/gh/doga/qworum-for-web-pages@1.5.2/mod.mjs";
+      import { Qworum } from "https://esm.sh/gh/doga/qworum-for-web-pages@1.5.7/mod.mjs";
 
       const
       // Sample article details.
