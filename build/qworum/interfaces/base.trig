@@ -6,7 +6,7 @@ PREFIX cc:      <http://creativecommons.org/ns#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 
 # interface
-PREFIX : <http://ontology.qworum.net/i#>
+PREFIX : <http://ontology.qworum.net/i/>
 PREFIX interface: <#> 
 
 :metadata {
