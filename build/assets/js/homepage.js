@@ -3,7 +3,7 @@ import {
   // Browser,
   ChromiumDesktop, EdgeDesktop, OperaDesktop, FirefoxDesktop, SafariDesktop,
   // FirefoxAndroid, 
-  KiwiAndroid,
+  // KiwiAndroid,
   // SafariMobile
 } from 'https://esm.sh/gh/doga/browser-detector@0.2.2/mod.mjs';
 
@@ -20,7 +20,7 @@ function highlightUsersBrowserForDownload() {
     firefox   : FirefoxDesktop,
     safari    : SafariDesktop,
     // "safari-m": SafariMobile,
-    "kiwi-a"  : KiwiAndroid,
+    // "kiwi-a"  : KiwiAndroid,
   };
 
   // Find the browsers to highlight
@@ -35,7 +35,7 @@ function highlightUsersBrowserForDownload() {
   for (const browserId in browserClasses) {
     if (Object.hasOwnProperty.call(browserClasses, browserId)) {
       const browserClass = browserClasses[browserId];
-      console.debug(`browserId: ${browserId}`);
+      // console.debug(`browserId: ${browserId}`);
       if(browser instanceof browserClass){
         browserIds.push(browserId)
       }

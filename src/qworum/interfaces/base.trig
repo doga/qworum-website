@@ -1,0 +1,29 @@
+# Experimental. Not used in production.
+
+BASE <https://qworum.net/qworum/interfaces/base.trig>
+
+# metadata
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/> 
+PREFIX cc:      <http://creativecommons.org/ns#> 
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+# interface
+PREFIX :    <https://ontology.qworum.net/#>
+PREFIX interface: <#> 
+
+:metadata {
+  <base.trig>
+    a foaf:Document;
+    dcterms:description 'A Qworum interface description.'@en;
+    foaf:maker <https://qworum.net/data/DoğaArmangil.ttl#id>;
+    cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
+}
+
+interface:v1
+  a :Interface;
+  :comment 'The interface of a minimalist Qworum application.'@en;
+  :method [
+    :path 'home/'^^:methodPath
+  ].
+
+

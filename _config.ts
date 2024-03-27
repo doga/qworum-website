@@ -35,6 +35,7 @@ lume({
 .copy('demos')
 .copy('data')
 .copy('semantic')
+.copy('qworum')
 
 .use(codeHighlight({
   options: {
