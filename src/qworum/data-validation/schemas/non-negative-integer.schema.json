@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id"    : "https://qworum.net/qworum/data-validation/schemas/non-negative-integer.schema.json",
+  "type"   : "integer",
+  "minimum": 0
+}
