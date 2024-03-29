@@ -71,6 +71,8 @@ text:
   - >
     A Qworum subscription will activate Qworum for both the HTTP and HTTPS protocols on your domain for the standard TCP ports.
   - >
+    Qworum Alloy subscriptions are transferrable and sellable.
+  - >
     The purchased subscription applies to the subscriber only.
     The subscriber must not sell or rent out subdomains of the subscribed domain, nor host applications belonging to third parties on the subscribed domains and subdomains.
   #  The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
