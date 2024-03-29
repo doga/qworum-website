@@ -70,9 +70,12 @@ text:
   # - Qworum Ore is available for businesses. It is yearly renewable, and will always remain free.
   - >
     A Qworum subscription will activate Qworum for both the HTTP and HTTPS protocols on your domain for the standard TCP ports.
+  - >
+    The purchased subscription applies to the subscriber only.
+    The subscriber must not sell or rent out subdomains of the subscribed domain, nor host applications belonging to third parties on the subscribed domains and subdomains.
   #  The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
   # - >
   #   <a target="_blank" href='§§{plans.ore.forms.modify_subscription}'>Subscription modification form</a>.
-  - Update your subscription using the same subscription button listed above.
+  - Update your subscription using the same subscription form above.
   # - >
   #   <a target="_blank" href='§§{plans.alloy.forms.unsubscribe}'>Subscription termination form</a>.
