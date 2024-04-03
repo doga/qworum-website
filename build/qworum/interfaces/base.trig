@@ -6,7 +6,8 @@ PREFIX cc:      <http://creativecommons.org/ns#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 
 # interface
-PREFIX : <http://ontology.qworum.net/i/>
+PREFIX :          <http://ontology.qworum.net/i/>
+PREFIX qrmv:      <http://ontology.qworum.net/v/>
 PREFIX interface: <#> 
 
 :metadata {
@@ -19,9 +20,10 @@ PREFIX interface: <#>
 
 interface:v1
   a :Interface;
-  :comment 'The interface of a minimalist Qworum application.'@en;
+  qrmv:comment 'The interface of a minimalist Qworum application.'@en;
   :method [
     :path 'home/'^^:methodPath
   ].
 
-
+[] qrmv:end [].
+ 
