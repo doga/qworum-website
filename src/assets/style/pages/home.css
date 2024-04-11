@@ -16,8 +16,22 @@ ul.home-marquee>li {
 ul.home-marquee>li:first-child h1 {
   font-size: xx-large;
   font-weight:500;
-  color: #444;
+  /* color: #444; */
   text-transform: none;
+}
+
+@media (prefers-color-scheme: light) {
+  ul.home-marquee>li:first-child h1,
+  h2 {
+    color: #555 !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  ul.home-marquee>li:first-child h1,
+  h2 {
+    color: #ccc !important;
+  }
 }
 
 ul.home-marquee>li:nth-child(2) {
