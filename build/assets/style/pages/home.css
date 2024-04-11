@@ -14,7 +14,7 @@ ul.home-marquee>li {
 }
 
 ul.home-marquee>li:first-child h1 {
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: bold;
   /* color:red; */
   text-transform: none;
