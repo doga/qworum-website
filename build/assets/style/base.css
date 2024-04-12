@@ -54,6 +54,15 @@ strong {
   font-weight: bold;
 }
 
+span.technologyPreview,
+span.technologyPreview * {
+  background-color: yellow;
+  color: green;
+  font-variant: small-caps;
+  font-weight: 900;
+  padding: 0 0.5em;
+}
+
 span.latestStableImplementation,
 span.latestStableImplementation * {
   background-color: green;
