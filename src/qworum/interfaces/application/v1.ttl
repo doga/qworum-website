@@ -1,0 +1,26 @@
+# BASE <https://qworum.net/qworum/interfaces/application/v1.ttl>
+
+# metadata
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/> 
+PREFIX cc:      <http://creativecommons.org/ns#> 
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+# interface
+PREFIX qrmi: <http://ontology.qworum.net/i/>
+PREFIX qrmv: <http://ontology.qworum.net/v/>
+PREFIX : <#> 
+
+<v1.ttl>
+  a foaf:Document;
+  dcterms:description 'A Qworum interface description.'@en;
+  foaf:maker <https://qworum.net/data/DoğaArmangil.ttl#id>;
+  cc:license <https://creativecommons.org/publicdomain/zero/1.0/>.
+
+:id
+  a qrmi:Interface;
+  qrmv:comment 'The interface of a minimalist Qworum application.'@en;
+  qrmi:method [
+    qrmi:path 'home/'^^qrmi:methodPath
+  ].
+
+[] qrmv:end [].
