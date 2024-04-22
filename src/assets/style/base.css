@@ -57,7 +57,7 @@ strong {
 span.technologyPreview,
 span.technologyPreview * {
   background-color: yellow;
-  color: green;
+  color: black;
   font-variant: small-caps;
   font-weight: 900;
   padding: 0 0.5em;
