@@ -17,7 +17,7 @@ ul.home-marquee>li:first-child h1 {
   font-size: xx-large;
   font-weight:500;
   /* color: #444; */
-  text-transform: none;
+  text-transform: capitalize;
 }
 
 @media (prefers-color-scheme: light) {
