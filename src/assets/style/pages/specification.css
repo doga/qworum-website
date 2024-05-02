@@ -34,6 +34,11 @@ h1>.metadata::after {
   width: 600px;
 } */
 
+code {
+  color: var(--accent-color);
+  background-color: var(--accent-background-color);
+}
+
 pre>code {
   white-space: pre;
 }
