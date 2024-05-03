@@ -39,9 +39,6 @@ code {
   background-color: var(--accent-background-color);
 }
 
-pre>code {
-  white-space: pre;
-}
 
 #references ul {
   list-style-type: none;

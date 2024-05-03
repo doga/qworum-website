@@ -137,6 +137,11 @@ figcaption {
   text-align: center;
 }
 
+pre>code {
+  white-space: pre;
+  font-size: 0.7em;
+}
+
 /* 
 // css should not contain language specific content
 figcaption::before {

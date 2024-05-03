@@ -17,7 +17,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2024.03.23 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2024.05.03 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>Qworum is:</p>
@@ -275,7 +275,7 @@ nav:
       </figure>
 
       <h4>
-        2.4.2 Generating Qworum scripts on the client
+        2.4.2 Generating Qworum scripts on the client 
       </h4>
       <p>
         Web pages can also use JavaScript for generating and executing Qworum scripts.
@@ -289,36 +289,34 @@ nav:
 
       <figure>
         <pre><code class="language-js">
-// Use Qworum
-import { Qworum } from "path/to/qworum-for-web-pages.mjs";
+// Add an article to a shopping cart.
+import { QworumScript, Qworum } from 'https://esm.sh/gh/doga/qworum-for-web-pages@1.7.0/mod.mjs';
+
 const
-// Qworum script
-Script       = Qworum.Script,
-// Qworum instructions
-Call         = Qworum.Call,
-Goto         = Qworum.Goto,
-Return       = Qworum.Return,
-Sequence     = Qworum.Sequence,
-Fault        = Qworum.Fault,
-Try          = Qworum.Try,
-Data         = Qworum.Data,
-// Qworum data value types
-Json         = Qworum.Json,
-SemanticData = Qworum.SemanticData;
-
-// Example 1: Call the `home` end-point
-Qworum.eval(
-  Script(Call('@', 'home/'))
-);
-
-// Example 2: Return from the current call
-/* 
-Qworum.eval(
-  Script(
-    Return(Json(['a', 'b']))
+Script   = QworumScript.Script.build,
+Sequence = QworumScript.Sequence.build,
+Call     = QworumScript.Call.build,
+Goto     = QworumScript.Goto.build,
+Json     = QworumScript.Json.build,
+article  = {
+  "id"   : "8b1d5802",
+  "title": "Classic ankle boots",
+  "price": {"EUR": 29.99}
+},
+script = Script(
+  Sequence(
+    Call(
+      ['@', 'shopping cart'], 'https://shopping-cart.example/add-article/',
+      {name : 'article', value: Json({article})}
+    ),
+    Goto('index.html')
   )
-);
-*/
+),
+button = document.getElementById('add-to-cart-button');
+
+button.addEventListener('click', async () => {
+  await Qworum.eval(script);
+});
         </code></pre>
         <figcaption>Figure 2.4.2.1: Using JavaScript for generating a Qworum script in a Web page.</figcaption>
       </figure>
@@ -872,7 +870,9 @@ Qworum.eval(
       </p>
       <ul>
         <li> <dfn id='platform-faults'>Platform faults</dfn> are faults whose <code>type</code> value starts with <code>*</code>. These can only be raised by the Qworum runtime itself. This means that a Qworum script must not contain a <code>fault</code> instruction whose type is explicitly specified as being a platform fault.</li>
-        <li> <dfn id='service-specific-faults'>Service-specific faults</dfn> can be raised by websites; their <code>type</code> value does not start with <code>*</code>. This means that a Qworum script can contain and explicitly raise a service-specific fault.</li>
+
+        <li> <dfn id='service-specific-faults'>Service-specific faults</dfn> are faults that are defined by the Qworum services themselves for their specific use-cases (Example: <code>login aborted</code> ). Qworum scripts are allowed to contain and explicitly raise such faults. The <code>type</code> value of such faults must not start with <code>*</code>. 
+        </li>
       </ul>
 
       <section>
@@ -903,15 +903,16 @@ Qworum.eval(
           <li><code>* reference</code> — Raised when the path of a data container or Qworum object can't be resolved.</li>
           <li><code>* runtime</code> — Raised when an unexpected error occurs in Qworum's browser runtime.</li>
           <li><code>* script</code> —  Raised when a Qworum script is non-conformant.</li>
-          <li><code>* service</code> — Parent type of all "user space" faults that are caused by a Qworum service in a Qworum session.</li>
+          <li><code>* service</code> — Parent type of all "user space"<a href="#ref-user-space">♦︎</a> faults that are caused by a Qworum service in a Qworum session.</li>
           <li>
             <code>* service entitlement</code> — 
             The service that is being called is a paid service, and the caller isn't subscribed to the called service.
           </li>
           <li><code>* service-specific</code> — The parent type of all service-specific faults.</li>
           <li><code>* syntax</code> — Raised when a Qworum script has syntax errors.</li>
-          <li><code>* user agent</code> — Parent type of all "kernel space" faults that occur in the user agent.</li>
+          <li><code>* user agent</code> — Parent type of all "kernel space"<a href="#ref-user-space">♦︎</a> faults that occur in the user agent.</li>
         </ul>
+        <p>Note that any whitespace after <code>*</code> is ignored.</p>
       </section>
     </section>
 
@@ -1331,7 +1332,7 @@ Qworum.eval(
       <li id="ref-user-space">
         <span class="reference">User space and kernel space</span>
         <a href="https://en.wikipedia.org/wiki/User_space_and_kernel_space">
-          User space and kernel space
+          Wikipedia article
         </a>
       </li>
       <li id="ref-rest">

@@ -13,9 +13,12 @@ text:
     - >
       <a href="specification.vto">Qworum specification</a>: The target audience for this specification are the developers of Qworum applications and services.
     - >
+      <a href="/docs/qworum-for-web-pages/latest/~/Qworum.html" target="_blank">
+      JavaScript library documentation</a>: Web pages use this
+      ES6 module for accessing the advanced Qworum capabilities of web browsers.
+    - >
       <a href="https://github.com/doga/qworum-for-web-pages" target="_blank">
-      JavaScript library for web pages (GitHub)</a>: 
-      ES6 module for using the advanced Qworum capabilities of web browsers.
+      JavaScript library source code (GitHub)</a>.
     - >
       <a href="https://github.com/doga/qworum-application-template" target="_blank">Application template (GitHub)</a>. A simple versioned multi-language template for Qworum-based web applications/APIs.
     - >
@@ -83,43 +86,33 @@ text:
     description: >
       In order to use Qworum, web pages need a special JavaScript library that gives access to the Qworum capabilities of browsers. This library is freely available on a JavaScript CDN. Here is how this works:
     javascript: |
-      // Adds an article to a shopping cart on an e-commerce website.
-      // (The end-user is on an article details page.)
-
-      import { Qworum } from "https://esm.sh/gh/doga/qworum-for-web-pages@1.5.7/mod.mjs";
+      // Add an article to a shopping cart.
+      import { QworumScript, Qworum } from 'https://esm.sh/gh/doga/qworum-for-web-pages@1.7.0/mod.mjs';
 
       const
-      // Sample article details.
-      article = {
+      Script   = QworumScript.Script.build,
+      Sequence = QworumScript.Sequence.build,
+      Call     = QworumScript.Call.build,
+      Goto     = QworumScript.Goto.build,
+      Json     = QworumScript.Json.build,
+      article  = {
         "id"   : "8b1d5802",
         "title": "Classic ankle boots",
         "price": {"EUR": 29.99}
       },
-
-      // Create a Qworum script.
-      addToCartScript = Qworum.Script(
-        Qworum.Sequence(
-          // Add the article to the shopping cart ...
-          // (Redirects the end-user to the remote shopping cart service.)
-          Qworum.Call(
+      script = Script(
+        Sequence(
+          Call(
             ['@', 'shopping cart'], 'https://shopping-cart.example/add-article/',
-            {
-              name : 'article',
-              value: Qworum.Json({article})
-            }
+            {name : 'article', value: Json({article})}
           ),
-
-          // ... then go back to the article details page on the e-commerce site.
-          Qworum.Goto('index.html')
+          Goto('index.html')
         )
       ),
+      button = document.getElementById('add-to-cart-button');
 
-      addToCartButton = document.getElementById('add-to-cart-button');
-
-      // Execute the Qworum script when the user clicks on the add-to-cart button.
-      addToCartButton.addEventListener('click', async () => {
-        // Add the article to the visitor's shopping cart.
-        await Qworum.eval(addToCartScript);
+      button.addEventListener('click', async () => {
+        await Qworum.eval(script);
       });
 ---
 
@@ -177,6 +170,7 @@ text:
 <section id='snippet'>
   <h2>{{ text.snippet.title }}</h2>
   <p>{{ text.snippet.description }}</p>
+  {{# TODO update the code #}}
   <pre><code class="javascript">{{ text.snippet.javascript }}</code></pre>
 </section>
 
