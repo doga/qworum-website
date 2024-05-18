@@ -47,7 +47,7 @@ css: plans.css
     <ul>
       {{ for feature of text.plans[plan.id].features }}
       <li>
-        {{ feature |> await vto(it) }}
+        {{ feature |> await vto(plans.by_id) }}
       </li>
       {{ /for }}
     </ul>

@@ -41,7 +41,7 @@ text:
 
       features: 
       - Enable Qworum for one or more DNS domains including subdomains.
-      - Plus all {{plans.by_id.ore.name}} features.
+      - Plus all {{ore.name}} features.
       # - Suitable for enterprise use cases.
       # - Develop Qworum applications and services on your local machine.❖
       # - Free VS Code extension.
