@@ -29,9 +29,11 @@ css: plans.css
 
         <span class='price-notes'>
           {{ if plan.free_trial }}
-            {{ text.free_trial |> await vto(it) }}
+            {{ text.free_trial |> await vto(plans.free_trial) }}
           {{ /if}}
-          Spare {{ plans.rebate.yearly.percent }}% with a yearly subscription.
+          {{ if plans.rebate.yearly }}
+            {{ text.rebate.yearly |> await vto(plans.rebate.yearly) }}
+          {{ /if }}
         </span> 
       {{ else }}
         <span class='price monthly-price'>

@@ -57,11 +57,15 @@ text:
   #   - Enable additional subdomains for 80 USD per month per subdomain or 800 USD for 12 months per subdomain.
   #   - Includes all features of free plan.
 
+  rebate:
+    yearly: |
+      Spare {{ percent }}% with a yearly subscription.
+
   forms:
     unsubscribe: Subscription termination form
 
 
-  free_trial: Free {{plans.free_trial.months}}-month trial.
+  free_trial: Free {{months}}-month trial.
   subscribe_tag: Get started
   features_tag: Features
   conditions_tag: Notes
