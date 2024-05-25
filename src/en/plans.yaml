@@ -29,7 +29,7 @@ text:
     iolite:
       features:
       - User authentication service.✪
-      - Ideal for single-site web applications. 
+      - Ideal for single-site (non-Qworum) web applications.
       - Activation for one or more DNS domains including subdomains.
       - Plus all {{ore.name}} features.
 
@@ -96,6 +96,7 @@ text:
   - Update your subscription using the same subscription form above.
   # - >
   #   <a target="_blank" href='§§{plans.alloy.forms.unsubscribe}'>Subscription termination form</a>.
+  - Qworum's user authentication system was conceived to support distributed applications, as well as single-site applications.
   - ✤ For the user authentication service that is used for local testing, user data storage is guaranteed for 24 hours.
   - ✪ For the user authentication service that is used in production, user data storage is guaranteed for users who have logged in within the past 24 months.
   - Globally, there is one authentication service for use in production and one authentication service for local testing. Both are shared amongst all web applications.
