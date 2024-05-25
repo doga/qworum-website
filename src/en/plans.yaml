@@ -16,6 +16,7 @@ text:
       features: 
       # - Enable Qworum for one DNS domain without subdomains (free).
       - Develop and run Qworum applications and services on your local machine.
+      - User authentication service for local testing.✤
       - Free developer resources and tooling.
       # - Online support.✪
       # - >
@@ -24,6 +25,13 @@ text:
       #   <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
       #   One free activation allowed per company or person.
       # call_to_action: §§{plans.ore.forms.subscribe}
+
+    iolite:
+      features:
+      - User authentication service.✪
+      - Ideal for single-site web applications. 
+      - Activation for one or more DNS domains including subdomains.
+      - Plus all {{ore.name}} features.
 
     alloy:
       # price   : >
@@ -40,8 +48,11 @@ text:
       #   </span> 
 
       features: 
-      - Enable Qworum for one or more DNS domains including subdomains.
-      - Plus all {{ore.name}} features.
+      - Distributed web applications.
+      - Full-stack application integrations.
+      - Application modularisation through composable user dialogs.
+      - Activation for one or more DNS domains including subdomains.
+      - Plus all {{iolite.name}} features.
       # - Suitable for enterprise use cases.
       # - Develop Qworum applications and services on your local machine.❖
       # - Free VS Code extension.
@@ -85,3 +96,6 @@ text:
   - Update your subscription using the same subscription form above.
   # - >
   #   <a target="_blank" href='§§{plans.alloy.forms.unsubscribe}'>Subscription termination form</a>.
+  - ✤ For the user authentication service that is used for local testing, user data storage is guaranteed for 24 hours.
+  - ✪ For the user authentication service that is used in production, user data storage is guaranteed for users who have logged in within the past 24 months.
+  - Globally, there is one authentication service for use in production and one authentication service for local testing. Both are shared amongst all web applications.

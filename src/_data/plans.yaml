@@ -10,10 +10,23 @@ list:
   #   # subscribe: "https://airtable.com/shrGrvS4Fhi7oAnFh"
   #   modify_subscription: "https://airtable.com/appuJb8rwOU58lihn/pagYd8CUdzGzHb4fk/form"
   #   unsubscribe: "https://airtable.com/appuJb8rwOU58lihn/pagTPN97228UqkNZr/form"
+- &iolite
+  name: Qworum Iolite
+  id: iolite
+  order: 2
+  # free_trial: true
+  price:
+    monthly:
+      USD: 30
+  forms:
+    subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagOwc8WDhgAH6CJA/form"
+    # subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
+    modify_subscription: "https://airtable.com/appuJb8rwOU58lihn/pagOwc8WDhgAH6CJA/form"
+
 - &alloy
   name: Qworum Alloy
   id: alloy
-  order: 2
+  order: 3
   free_trial: true
   price:
     monthly:
@@ -25,6 +38,7 @@ list:
 
 by_id: 
   ore  : *ore
+  iolite: *iolite
   alloy: *alloy
 
 forms:
