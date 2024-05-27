@@ -9,22 +9,11 @@ text:
     Enable Qworum for your internet and intranet applications. Read our <a href="/docs/legal/privacy-policy/" target="_blank">privacy policy</a> and <a href="/docs/legal/terms-of-service/" target="_blank">terms of service</a>.
   plans: 
     ore:
-      # price: >
-      #   <span class='price monthly-price'>
-      #     FREE
-      #   </span>
       features: 
       # - Enable Qworum for one DNS domain without subdomains (free).
       - Develop and run Qworum applications and services on your local machine.
       - User authentication service for local testing.✤
       - Free developer resources and tooling.
-      # - Online support.✪
-      # - >
-      #   Optionally activate Qworum for one DNS domain using this <a target="_blank" href='https://airtable.com/shrGrvS4Fhi7oAnFh'>activation form</a>.
-      #   The activation is valid until you deactivate using this
-      #   <a target="_blank" href='https://airtable.com/shr2qFMtpfD749aEP'>deactivation form</a>.
-      #   One free activation allowed per company or person.
-      # call_to_action: §§{plans.ore.forms.subscribe}
 
     iolite:
       features:
@@ -34,30 +23,13 @@ text:
       - Plus all {{ore.name}} features.
 
     alloy:
-      # price   : >
-      #   <span class='price monthly-price' data-amount='§§{plans.alloy.price.monthly.USD}' data-currency='USD'>
-      #     $§§{plans.alloy.price.monthly.USD}
-      #   </span> 
-      #   <span class='price-addendum'>
-      #     <br>
-      #     per domain per month <br><br>
-      #   </span> 
-
-      #   <span class='price-notes'>
-      #     Spare §§{plans.alloy.price.yearly.spare_percent}% with a yearly subscription.
-      #   </span> 
-
       features: 
       - Distributed web applications.
       - Full-stack application integrations.
       - Application modularisation through composable user dialogs.
       - Activation for one or more DNS domains including subdomains.
-      - Plus all {{iolite.name}} features.
-      # - Suitable for enterprise use cases.
-      # - Develop Qworum applications and services on your local machine.❖
-      # - Free VS Code extension.
-      # - Online support.✪
-      # call_to_action: §§{plans.alloy.forms.subscribe}
+      - Plus all {{ore.name}} features.
+      # - Plus all {{iolite.name}} features.
 
   # - title   : Enterprise
   #   price   : 500 USD per month or 5,000 USD for 12 months. 
@@ -88,15 +60,14 @@ text:
 #  - >
 #    Qworum Alloy subscriptions are transferrable and sellable.
   - >
-    The purchased subscription applies to the subscriber only.
-    The subscriber must not sell or rent out subdomains of the subscribed domain, nor host applications belonging to third parties on the subscribed domains and subdomains.
+    The purchased subscription is for the subscriber's own use only.
   #  The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
   # - >
   #   <a target="_blank" href='§§{plans.ore.forms.modify_subscription}'>Subscription modification form</a>.
   - Update your subscription using the same subscription form above.
   # - >
   #   <a target="_blank" href='§§{plans.alloy.forms.unsubscribe}'>Subscription termination form</a>.
-  - Qworum's user authentication system was conceived to support distributed applications, as well as single-site applications.
-  - ✤ For the user authentication service that is used for local testing, user data storage is guaranteed for 24 hours.
-  - ✪ For the user authentication service that is used in production, user data storage is guaranteed for users who have logged in within the past 24 months.
-  - Globally, there is one authentication service for use in production and one authentication service for local testing. Both are shared amongst all web applications.
+  # - Qworum's user authentication system was conceived to support distributed Qworum applications, as well as regular single-site applications.
+  # - ✤ For the user authentication service that is used for local testing, user data storage is guaranteed for 24 hours.
+  # - ✪ For the user authentication service that is used in production, user data storage is guaranteed for users who have logged in within the past 24 months.
+  # - Globally, there is one authentication service for use in production and one authentication service for local testing. Both are shared amongst all web applications.
