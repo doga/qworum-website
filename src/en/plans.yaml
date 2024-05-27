@@ -12,7 +12,7 @@ text:
       features: 
       # - Enable Qworum for one DNS domain without subdomains (free).
       - Develop and run Qworum applications and services on your local machine.
-      - User authentication service for local testing.✤
+      # - User authentication service for local testing.✤
       - Free developer resources and tooling.
 
     iolite:
