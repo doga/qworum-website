@@ -46,7 +46,7 @@ text:
     - >
       This is a 30-second demo showing how a Qworum API provided by a shopping cart service seamlessly integrates into a remote e-commerce application. Note that the application is a Qworum API as well.
     - >
-      <a target="_blank" href='https://www.infoq.com/articles/qworum-modular-ui-architecture/'>This InfoQ article</a> describes in detail how this works.
+      <a target="_blank" href='{{company.articles.infoq}}'>This InfoQ article</a> describes in detail how this works.
 ---
 
 <ul class="home-marquee">
@@ -188,13 +188,13 @@ text:
   <h2>{{ text.demo.title }}</h2>
   <iframe src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   {{ for p of text.demo.description }}
-    <p>{{ p }}</p>
+    <p>{{ p |> await vto(it) }}</p>
   {{ /for }}
 </section>
 
 <section id="tweets">
   <h2>Tweets</h2>
-  <a class="twitter-timeline" href="https://twitter.com/QworumNet?ref_src=twsrc%5Etfw">Tweets by QworumNet</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a class="twitter-timeline" href="{{company.twitter.timeline}}">Tweets by QworumNet</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </section>
 
 <script type="module" src="/assets/js/homepage.js"></script>

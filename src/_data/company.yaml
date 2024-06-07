@@ -5,6 +5,7 @@ email: info@qworum.net
 twitter:
   handle: "@QworumNet"
   url: https://twitter.com/QworumNet
+  timeline: https://twitter.com/QworumNet?ref_src=twsrc%5Etfw
 bluesky:
   handle: "@qworum.bsky.social"
   url: https://bsky.app/profile/qworum.bsky.social
@@ -13,6 +14,9 @@ bluesky:
 #   url: https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-268.664.734
 
 meet: https://cal.com/qworum
+
+articles:
+  infoq: https://www.infoq.com/articles/qworum-modular-ui-architecture/
 
 achievements:
   medal: https://drive.proton.me/urls/3GN92VRR8G#vjh69BrPpfiK
