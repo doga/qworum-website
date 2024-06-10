@@ -13,7 +13,7 @@ function highlightUsersBrowserForDownload() {
   const
   ua             = window.navigator.userAgent,
   browsers       = detectBrowser(ua),
-  cssClassToBrowserClass = new Map([
+  cssIdToBrowserClass = new Map([
     ['chrome' , ChromeDesktop],
     ['safari' , SafariDesktop],
     ['edge'   , EdgeDesktop],
@@ -33,7 +33,7 @@ function highlightUsersBrowserForDownload() {
     return;
   }
 
-  for (const [id, browserClass] of cssClassToBrowserClass) {
+  for (const [id, browserClass] of cssIdToBrowserClass) {
     if(!browsers.find(browser => browser instanceof browserClass))continue;
     document.querySelector(`.download#${id}`).classList.add('selected');
   }
