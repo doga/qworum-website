@@ -42,9 +42,12 @@ text:
     title: Demo
     description:
     - >
-      This is a 30-second demo showing how Qworum APIs can advantageously replace REST and GraphQL APIs. Here an e-commerce application calls the Qworum API of a remote shopping cart service. Note that this e-commerce application is implemented as a Qworum API as well. Although this demo does not show it, non-Qworum web applications are also allowed to call Qworum APIs.
-    - >
+      This is a 30-second demo showing how Qworum APIs can advantageously replace REST and GraphQL APIs. Here an e-commerce application calls the Qworum API of a remote shopping cart service.
       <a target="_blank" href='{{company.articles.infoq}}'>This InfoQ article</a> describes in detail how this works.
+    - >
+      Note that here the e-commerce application is implemented as a Qworum API as well.
+      Non-Qworum web applications can also call Qworum APIs, although this demo does not show it.
+    - Also note how the end-user interacts with the shopping cart service directly, without going through the e-commerce application. This feature sets Qworum apart from REST, GraphQL and all other API types. Notably, this makes Qworum APIs the only ones able to support secure user authentication across all services, even for those involved in deep service dependency graphs.
 ---
 
 <ul class="home-marquee">
