@@ -31,7 +31,7 @@ list:
   free_trial: true
   price:
     monthly:
-      USD: 290
+      USD: 490
   forms:
     subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
     # subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
