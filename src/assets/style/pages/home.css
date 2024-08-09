@@ -1,4 +1,5 @@
 
+/* Marquee --------------------------- */
 
 ul.home-marquee {
   padding        : 0 0;
@@ -54,6 +55,39 @@ ul.home-marquee>li:first-child ul>li {
   padding: 0.5em 0;
 }
 
+
+/* Value proposition --------------------------- */
+
+ul.vp {
+  /* padding: 1em 10%; */
+  /* font-size: smaller; */
+  list-style-type: none;
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: space-around;
+}
+
+ul.vp>li {
+  width: 10em;
+  border: solid #ccc;
+  border-radius: 15px;
+  margin: 0.5em 0.5em;
+  padding: 0em 1em 0 1em;
+  background-color: var(--accent-background-color);
+}
+
+ul.vp>li>p:first-child {
+  /* color: red; */
+  /* font-size: x-large; */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+
+/* Call to action --------------------------- */
+
 section#call-to-action {
   margin: 3em auto 0 auto;
   /* padding: 1em; */
@@ -64,6 +98,10 @@ section#call-to-action {
 /* ul.home-marquee>li:nth-child(2) {
   display: none;
 } */
+
+
+
+/* Responsiveness --------------------------- */
 
 @media (min-width: 576px) {
 }

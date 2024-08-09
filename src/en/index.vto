@@ -8,15 +8,19 @@ nav      :
 text:
   mission:
     oneliner: |
-      The web-based platform for the composable enterprise
+      The new essential API technology for business applications 
+#      The web-based platform for the composable enterprise
 #      The essential frontend platform for business applications, APIs and SaaS
     usp:
     - >
-      Qworum provides advanced browser capabilities to business applications and APIs.
-      <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a> and <a target='_blank' href='{{company.achievements.medal}}'>award-winning</a>.
-    - Offer Qworum APIs that are 10x easier to call than REST or GraphQL.
-    - Build sellable Qworum APIs on top of third-party web APIs.
-    - Create business applications that are composed of internal and external services such as SaaS.
+      <a target='_blank' href='{{company.achievements.medal}}'>Award-winning</a>
+      and 
+      <a target='_blank' href='{{company.achievements.patent}}'>patent-based</a>. 
+    - The only web API technology for providing interactive user dialogs and visual information such as dashboards and charts that reach the end-users.
+    - >
+      10x easier integrations with customers and partners — 
+      Calls to Qworum APIs require no API keys, no user auth, and much less UI code.
+    - Create business applications that are composed of both internal services and external services such as SaaS.
 #    - >
 #      Application platform — 
 #      Advanced browser capabilities for applications.
@@ -28,12 +32,22 @@ text:
 #    - >
 #      10x easier integrations for customers and partners — 
 #      Calls to Qworum APIs need much less UI code, no API keys, no user authentication.
-#    - >
-#      *The* UI layer for microservices architectures — 
-#      Qworum solves the "UI-monolith" bottleneck.
-#    - >
-#      Native RDF support — 
-#      Enables knowledge graph applications.
+
+
+    valueProposition:
+    - title: The Composable Enterprise
+      description: >
+        Qworum APIs are the only ones to fully support Gartner's "Composable Enterprise" concept.
+        User authentication is unsolved for other web APIs (REST can't call other REST).
+    - title: API-first applications
+      description: Qworum supports Gartner's "API-first SaaS" vision. In fact SaaS applications can be Qworum APIs themselves, no separate web application needed.
+    - title: The UI layer for microservices
+      description: Qworum removes the "UI-monolith" bottleneck for microservices architectures through distributed UIs. Qworum is more generally applicable than microfrontends and complements them.
+    - title: Native support for knowledge graph applications
+      description: Qworum has native support for RDF as a data format, in addition to JSON.
+    - title: New business opportunity in the B2B space
+      description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
+    
 
   callToAction: Request a demo
 
@@ -67,6 +81,20 @@ text:
   <li>
   </li>
 </ul>
+
+<ul class="vp">
+  {{ for vp of text.mission.valueProposition }}
+  <li>
+    <p>
+      {{ vp.title }}
+    </p>
+    <p>
+      {{ vp.description }}
+    </p>
+  </li>
+  {{ /for }}
+</ul>
+
 
 <figure class="home-poster">
   {{# <img src="/assets/images/The Role of AI in Social Media Management - Friend or Foe - lowres.png" alt="Poster"> #}}
