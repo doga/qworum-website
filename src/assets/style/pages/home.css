@@ -59,7 +59,7 @@ ul.home-marquee>li:first-child ul>li {
 /* Value proposition --------------------------- */
 
 ul.vp {
-  /* padding: 1em 10%; */
+  padding: 1em 0;
   /* font-size: smaller; */
   list-style-type: none;
   display        : flex;
