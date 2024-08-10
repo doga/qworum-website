@@ -16,7 +16,7 @@ text:
       <a target='_blank' href='{{company.achievements.medal}}'>Award-winning</a>
       and 
       <a target='_blank' href='{{company.achievements.patent}}'>patent-based</a>. 
-    - The only web API technology for providing interactive user dialogs and visual information such as dashboards and charts that reach the end-users.
+    - The only web API technology for interactive user dialogs and visual information such as dashboards and charts that reach end-users.
     - >
       10x easier integrations with customers and partners — 
       Calls to Qworum APIs require no API keys, no user auth, and much less UI code.
@@ -37,7 +37,7 @@ text:
     valueProposition:
     - title: The Composable Enterprise
       description: >
-        Qworum APIs are the only ones to fully support the "Composable Enterprise", as defined by Gartner.
+        Qworum APIs are the only ones to fully support Gartner's "Composable Enterprise" vision.
         User authentication is unsolved for other web APIs (REST can't call other REST).
     - title: API-first applications
       description: Qworum enables "API-first SaaS", as defined by Gartner. In fact SaaS applications can be Qworum APIs themselves, no separate web application needed.
@@ -82,6 +82,8 @@ text:
   </li>
 </ul>
 
+
+{{# Value proposition #}}
 <ul class="vp">
   {{ for vp of text.mission.valueProposition }}
   <li>
@@ -96,10 +98,10 @@ text:
 </ul>
 
 
-<figure class="home-poster">
-  {{# <img src="/assets/images/The Role of AI in Social Media Management - Friend or Foe - lowres.png" alt="Poster"> #}}
-  {{# <img src="/assets/images/Qworum-platform-with-logos.svg" alt="Poster"> #}}
-</figure>
+{{# <figure class="home-poster">
+  <img src="/assets/images/The Role of AI in Social Media Management - Friend or Foe - lowres.png" alt="Poster">
+  <img src="/assets/images/Qworum-platform-with-logos.svg" alt="Poster">
+</figure> #}}
 
 {{# <section id="pitch">
   <h2>{{ pitch.title }}</h2>
@@ -107,11 +109,11 @@ text:
   <iframe width="560" height="315" src="https://www.youtube.com/embed/c1Ro_y9-EWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section> #}}
 
-<section id="call-to-action">
+{{# <section id="call-to-action">
   <button class='call-to-action' onClick="window.location = '{{ company.meet }}'">
     {{ text.callToAction }}
   </button>
-</section>
+</section> #}}
 
 <section id="downloads">
   <h2>{{ text.downloads.title }}</h2>
