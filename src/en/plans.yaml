@@ -46,7 +46,7 @@ text:
 
   forms:
     unsubscribe: Subscription termination form
-
+  support_email: Email-based support
 
   free_trial: Free {{months}}-month trial.
   subscribe_tag: Get started
@@ -54,20 +54,6 @@ text:
   conditions_tag: Notes
 
   conditions:
-  # - Qworum Ore is available for businesses. It is yearly renewable, and will always remain free.
-  - >
-    A Qworum subscription will activate Qworum for both the HTTP and HTTPS protocols on your domain for the standard TCP ports.
-#  - >
-#    Qworum Alloy subscriptions are transferrable and sellable.
-  - >
-    The purchased subscription is for the subscriber's own use only.
-  #  The URL of your web application will look like this: <kdb>https://domain.example</kbd>, or  <kdb>https://*.domain.example</kbd> if subdomains are enabled as well.
-  # - >
-  #   <a target="_blank" href='§§{plans.ore.forms.modify_subscription}'>Subscription modification form</a>.
+  - Qworum subscriptions activate Qworum for both HTTP and HTTPS on the standard TCP ports.
+  - The purchased subscription is for the subscriber's own use only.
   - Update your subscription using the same subscription form above.
-  # - >
-  #   <a target="_blank" href='§§{plans.alloy.forms.unsubscribe}'>Subscription termination form</a>.
-  # - Qworum's user authentication system was conceived to support distributed Qworum applications, as well as regular single-site applications.
-  # - ✤ For the user authentication service that is used for local testing, user data storage is guaranteed for 24 hours.
-  # - ✪ For the user authentication service that is used in production, user data storage is guaranteed for users who have logged in within the past 24 months.
-  # - Globally, there is one authentication service for use in production and one authentication service for local testing. Both are shared amongst all web applications.

@@ -37,14 +37,9 @@ layout: ./base.vto
   {{# <strong>{{ company.name }}</strong> <br> #}}
   {{# {{ company.address }} <br> #}}
 
-  {{# {{ text.semantic }} <br> #}}
-  <a href="{{company.rdf}}" target="_blank">
-    <img src="/assets/images/logos/Rdf_logo.svg" height='55px' alt="">
-  </a> <br> <br> 
-
   📧
-  <a href="mailto:{{company.email}}" target="_blank">
-    {{company.email}}
+  <a href="mailto:{{company.email.info}}" target="_blank">
+    {{company.email.info}}
   </a> <br> <br>
 
   𝕏
@@ -52,10 +47,15 @@ layout: ./base.vto
     {{company.twitter.handle}}
   </a> <br> <br>
 
-  🦋
+  {{# {{ text.semantic }} <br> #}}
+  <a href="{{company.rdf}}" target="_blank">
+    <img src="/assets/images/logos/Rdf_logo.svg" height='55px' alt="">
+  </a> 
+
+  {{# 🦋
   <a href="{{company.bluesky.url}}" target="_blank">
     {{company.bluesky.handle}}
-  </a> <br> <br>
+  </a> <br> <br> #}}
 
   {{# •
   <a href="{{company.registration.url}}" target="_blank">
