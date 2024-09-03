@@ -28,10 +28,10 @@ list:
   name: Qworum Alloy
   id: alloy
   order: 3
-  free_trial: true
+  # free_trial: true
   price:
     monthly:
-      USD: 490
+      USD: 290
   forms:
     subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
     # subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"

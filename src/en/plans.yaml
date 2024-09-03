@@ -15,19 +15,19 @@ text:
       # - User authentication service for local testing.✤
       - Free developer resources and tooling.
 
-    iolite:
-      features:
-      - User authentication service.✪
-      - Ideal for single-site (non-Qworum) web applications.
-      - Activation for one or more DNS domains including subdomains.
-      - Plus all {{ore.name}} features.
+    # iolite:
+    #   features:
+    #   - User authentication service.✪
+    #   - Ideal for single-site (non-Qworum) web applications.
+    #   - Activation for one or more DNS domains including subdomains.
+    #   - Plus all {{ore.name}} features.
 
     alloy:
       features: 
+      - Activation for one or more DNS (sub)domains.
       - Distributed web applications.
-      - Full-stack application integrations.
-      - Application modularisation through composable user dialogs.
-      - Activation for one or more DNS domains including subdomains.
+      - Integrations for interactive processes.
+      # - Application modularisation through composable user dialogs.
       - Plus all {{ore.name}} features.
       # - Plus all {{iolite.name}} features.
 
@@ -54,6 +54,8 @@ text:
   conditions_tag: Notes
 
   conditions:
-  - Qworum subscriptions activate Qworum for both HTTP and HTTPS on the standard TCP ports.
-  - The purchased subscription is for the subscriber's own use only.
-  - Update your subscription using the same subscription form above.
+  - Subscriptions activate Qworum for both HTTP and HTTPS protocols on the standard TCP ports.
+  - Websites in private networks can be subscribed as well.
+  - Qworum isn't automatically activated for the subdomains of a subscribed (sub)domain.
+  # - The purchased subscription is for the subscriber's own use only.
+  - Update your subscription using the same subscription button above.
