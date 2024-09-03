@@ -24,9 +24,9 @@ text:
 
     alloy:
       features: 
-      - Activation for one or more DNS (sub)domains.
-      - Distributed web applications.
-      - Integrations for interactive processes.
+      - Activate Qworum on one or more DNS (sub)domains.
+      - Distribute the UIs of your web applications across several (sub)domains.
+      - Integrate applications at the UI level. Provide and consume Qworum APIs.
       # - Application modularisation through composable user dialogs.
       - Plus all {{ore.name}} features.
       # - Plus all {{iolite.name}} features.
@@ -41,8 +41,7 @@ text:
   #   - Includes all features of free plan.
 
   rebate:
-    yearly: |
-      Spare {{ percent }}% with a yearly subscription.
+    yearly: Spare {{ percent }}% with a yearly subscription.
 
   forms:
     unsubscribe: Subscription termination form
