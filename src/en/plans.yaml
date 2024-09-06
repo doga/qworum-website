@@ -40,6 +40,8 @@ text:
   #   - Enable additional subdomains for 80 USD per month per subdomain or 800 USD for 12 months per subdomain.
   #   - Includes all features of free plan.
 
+  monthly_fee:
+    per_domain_plus_subdomains: Include subdomains for {{ multiple }}x the price.
   rebate:
     yearly: Spare {{ percent }}% with a yearly subscription.
 
@@ -55,6 +57,5 @@ text:
   conditions:
   - Subscriptions activate Qworum for both HTTP and HTTPS protocols on the standard TCP ports.
   - Websites in private networks can be subscribed as well.
-  - Qworum isn't automatically activated for the subdomains of a subscribed (sub)domain.
-  # - The purchased subscription is for the subscriber's own use only.
+  - The purchased subscription is for the subscriber's own use only. Subscribed domains cannot be rented.
   - Update your subscription using the same subscription button above.

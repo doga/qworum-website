@@ -29,9 +29,11 @@ list:
   id: alloy
   order: 3
   # free_trial: true
-  price:
-    monthly:
-      USD: 290
+  monthly_fee:
+    per_domain:
+      USD: 190
+    per_domain_plus_subdomains:
+      multiple: 3
   forms:
     subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
     # subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"

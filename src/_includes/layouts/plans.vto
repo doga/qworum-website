@@ -18,9 +18,9 @@ css: plans.css
       </button>
     {{ /if }}
     <p>
-      {{ if plan.price }}
-        <span class='price monthly-price' data-amount='{{plan.price.monthly.USD}}' data-currency='USD'>
-          {{ plan.price.monthly.USD }} USD
+      {{ if plan.monthly_fee }}
+        <span class='price monthly-price' data-amount='{{plan.monthly_fee.per_domain.USD}}' data-currency='USD'>
+          {{ plan.monthly_fee.per_domain.USD }} USD
         </span> 
         <span class='price-addendum'>
           <br>
@@ -28,12 +28,15 @@ css: plans.css
         </span> 
 
         <span class='price-notes'>
-          {{ if plan.free_trial }}
-            {{ text.free_trial |> await vto(plans.free_trial) }}
-          {{ /if}}
+          {{ if plan.monthly_fee.per_domain_plus_subdomains }}
+            {{ text.monthly_fee.per_domain_plus_subdomains |> await vto(plan.monthly_fee.per_domain_plus_subdomains) }}
+          {{ /if }}
           {{ if plans.rebate.yearly }}
             {{ text.rebate.yearly |> await vto(plans.rebate.yearly) }}
           {{ /if }}
+          {{ if plan.free_trial }}
+            {{ text.free_trial |> await vto(plans.free_trial) }}
+          {{ /if}}
         </span> 
       {{ else }}
         <span class='price monthly-price'>
