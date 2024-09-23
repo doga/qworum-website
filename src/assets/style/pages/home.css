@@ -36,6 +36,7 @@ ul.home-marquee>li:first-child h1 {
 }
 
 ul.home-marquee>li:nth-child(2) {
+  /* background-image: url("/assets/images/Qworum-platform-with-logos.svg"); */
   background-image: url("/assets/images/an application integration middleware that connects three business applications.jpeg");
   /* background-image: url("/assets/images/The Role of AI in Social Media Management - Friend or Foe - lowres.png"); */
   /* background-image: url("/assets/images/Qworum-platform-with-logos.svg"); */
