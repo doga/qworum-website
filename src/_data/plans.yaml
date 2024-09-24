@@ -33,7 +33,7 @@ list:
     per_domain:
       USD: 190
     per_domain_plus_subdomains:
-      multiple: 3
+      multiple: 4
   forms:
     subscribe: "https://airtable.com/appuJb8rwOU58lihn/pagdY4fIIcyBWre0S/form"
     # subscribe: "https://airtable.com/shrszfMIg7ISJdUDm"
