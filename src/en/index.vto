@@ -62,12 +62,13 @@ text:
   demo:
     title: Demo
     description:
-    - >
-      This is a 30-second demo showing how Qworum APIs can advantageously replace REST and GraphQL APIs. Here an e-commerce application calls the Qworum API of a remote shopping cart service.
-    - >
-      Note that the e-commerce application is implemented as a Qworum API as well.
-      Non-Qworum web applications can also call Qworum APIs, although this demo does not show it.
-    - Also note how the end-user interacts with the shopping cart service directly, without going through the e-commerce application. This feature sets Qworum apart from REST, GraphQL and all other API types. Notably, this makes Qworum APIs the only ones able to support secure user authentication across all services, even for those involved in deep service dependency graphs.
+    - 𝟶:𝟶𝟶 A distributed application example (e-shop  calls a remote shopping cart).
+    - 𝟷:𝟸𝟺 How the transition from the Document Web to Qworum's Service Web works.
+    - Closed captions available.
+#    - This is a 30-second demo showing how Qworum APIs can advantageously replace REST and GraphQL APIs. Here an e-commerce application calls the Qworum API of a remote shopping cart service.
+#    - Note that the e-commerce application is implemented as a Qworum API as well. Non-Qworum web applications can also call Qworum APIs, although this demo does not show it.
+#    - Also note how the end-user interacts with the shopping cart service directly, without going through the e-commerce application. This feature sets Qworum apart from REST, GraphQL and all other API types. Notably, this makes Qworum APIs the only ones able to support secure user authentication across all services, even for those involved in deep service dependency graphs.
+
 ---
 
 <ul class="home-marquee">
@@ -231,7 +232,13 @@ text:
 
 <section id="demo">
   <h2>{{ text.demo.title }}</h2>
+
+  {{# E-shop demo + Application template demo #}}
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HAV9eTupzxc?si=KNHKgzsnPebQn85h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  
+  {{# 30-second E-shop demo
   <iframe src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  #}}
   {{ for p of text.demo.description }}
     <p>{{ p |> await vto(it) }}</p>
   {{ /for }}
