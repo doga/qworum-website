@@ -121,7 +121,7 @@ function renderResults(results) {
     }).join("");
 
     html += `<li class="block">
-<a href="${pathToRoot}${result.file}/~/${result.name}.html" class="flex rounded-lg gap-4 items-center justify-between py-2 px-3 hover:bg-stone-100">
+<a href="${pathToRoot}${result.file}/symbols/${result.name}.html" class="flex rounded-lg gap-4 items-center justify-between py-2 px-3 hover:bg-stone-100">
     <div class="flex items-center gap-2.5">
       <div class="docNodeKindIcon">
         ${kind}
