@@ -62,9 +62,12 @@ text:
   demo:
     title: Demo
     description:
-    - 𝟶:𝟶𝟶 A distributed application example (E-shop calls a remote shopping cart; for an enterprise example mentally replace the former with a project management application, and the latter with an HR/HCM application).
-    - 𝟶:𝟺𝟻 Transitioning from the Document Web to Qworum's Service Web.
-    - Closed captions available.
+    - Application integration demo for the Qworum.net platform. A project management application (PMA) calls an HCM application (HCMA) for picking project members. Both applications use the same user authentication service (UAS). Each application/service is hosted on a different website.
+    - 𝟶:𝟶𝟶 Browsing the code repository
+    - 𝟶:𝟸𝟷 Launching the PMA
+    - 𝟶:𝟸𝟽 PMA calls the UAS for user authentication purposes
+    - 𝟶:𝟻𝟸 PMA calls the HCMA for picking project members
+    - 𝟶:𝟻𝟻 HCMA calls the UAS for user authentication purposes
 #    - This is a 30-second demo showing how Qworum APIs can advantageously replace REST and GraphQL APIs. Here an e-commerce application calls the Qworum API of a remote shopping cart service.
 #    - Note that the e-commerce application is implemented as a Qworum API as well. Non-Qworum web applications can also call Qworum APIs, although this demo does not show it.
 #    - Also note how the end-user interacts with the shopping cart service directly, without going through the e-commerce application. This feature sets Qworum apart from REST, GraphQL and all other API types. Notably, this makes Qworum APIs the only ones able to support secure user authentication across all services, even for those involved in deep service dependency graphs.
@@ -234,7 +237,8 @@ text:
   <h2>{{ text.demo.title }}</h2>
 
   {{# E-shop demo + Application template demo #}}
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/HAV9eTupzxc?si=KNHKgzsnPebQn85h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3G_ZbjRnKaE?si=7TMiI1PQw_3QNIDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  {{# <iframe width="560" height="315" src="https://www.youtube.com/embed/HAV9eTupzxc?si=KNHKgzsnPebQn85h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> #}}
   
   {{# 30-second E-shop demo
   <iframe src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
