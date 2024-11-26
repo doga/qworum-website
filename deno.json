@@ -1,20 +1,31 @@
 {
-  "imports": {
-    "lume/"          : "https://deno.land/x/lume@v2.2.4/",
-    "lume_navbardata": "https://deno.land/x/lume_navbardata@v2.0.3/mod.ts",
-    "datetime"       : "https://deno.land/std@0.210.0/datetime/mod.ts",
-    "jsHighlighter"  : "https://unpkg.com/@highlightjs/cdn-assets@11.6.0/es/languages/javascript.min.js",
-    "lume_langdata"  : "https://deno.land/x/lume_langdata@v2.0.6/mod.ts"
-  },
-  "tasks": {
-    "lume"        : "echo \"import 'lume/cli.ts'\" | deno run -A -",
-    "build"       : "deno task lume",
-    "serve"       : "deno task lume -s",
-    "add_langdata": "mdrb https://deno.land/x/lume_langdata/add_to_lume_project.md"
-  },
-  "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ]
-  }
+    "imports": {
+        "lume/"          : "https://deno.land/x/lume@v2.2.4/",
+        "lume_navbardata": "https://deno.land/x/lume_navbardata@v2.0.3/mod.ts",
+        "datetime"       : "https://deno.land/std@0.210.0/datetime/mod.ts",
+        "jsHighlighter"  : "https://unpkg.com/@highlightjs/cdn-assets@11.6.0/es/languages/javascript.min.js",
+        "lume_langdata"  : "https://deno.land/x/lume_langdata@v2.0.6/mod.ts"
+    },
+    "tasks": {
+        "serve": {
+            "description": "Start the development server.",
+            "command"    : "deno task lume --serve --port 3000"
+        },
+        "build": {
+            "description" : "Build the static website.",
+            "command"     : "deno task lume",
+            "dependencies": []
+        },
+        "lume": {
+            "description": "Base task for `serve` and `build`. Call `serve` or `build` instead.",
+            "command"    : "echo \"import 'lume/cli.ts'\" | deno run -A -"
+        },
+        "add_langdata": {
+            "description": "For configuring this Lume project. Imports the `lume_langdata` Lume plugin. Idempotent.",
+            "command"    : "mdrb https://deno.land/x/lume_langdata/add_to_lume_project.md"
+        }
+    },
+    "compilerOptions": {
+        "types": ["lume/types.ts"]
+    }
 }
