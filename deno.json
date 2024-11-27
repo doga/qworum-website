@@ -17,11 +17,11 @@
             "dependencies": []
         },
         "lume": {
-            "description": "Base task for `serve` and `build`. Call `serve` or `build` instead.",
+            "description": "[Internal] Base task for `serve` and `build`.",
             "command"    : "echo \"import 'lume/cli.ts'\" | deno run -A -"
         },
         "add_langdata": {
-            "description": "For configuring this Lume project. Imports the `lume_langdata` Lume plugin. Idempotent.",
+            "description": "[Idempotent configuration] Imports the `lume_langdata` Lume plugin.",
             "command"    : "mdrb https://deno.land/x/lume_langdata/add_to_lume_project.md"
         }
     },
