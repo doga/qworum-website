@@ -61,15 +61,14 @@ text:
     description: >
       Your data is safe: the Qworum extension never sends data to the network. See our <a target="_blank" href="/docs/legal/privacy-policy/">privacy policy</a>. Note that Qworum-based applications have their own distinct privacy policies.
 
-  demo:
-    title: Demo
+  video:
+    title: 3-minute presentation
     description:
-    - Application integration demo for the Qworum.net platform. A project management application (PMA) calls an HCM application (HCMA) for picking project members. Both applications use the same user authentication service (UAS). Each application/service is hosted on a different website.
-    - 𝟶:𝟶𝟶 Browsing the code repository
-    - 𝟶:𝟸𝟷 Launching the PMA
-    - 𝟶:𝟸𝟽 PMA calls the UAS for user authentication purposes
-    - 𝟶:𝟻𝟸 PMA calls the HCMA for picking project members
-    - 𝟶:𝟻𝟻 HCMA calls the UAS for user authentication purposes
+    - "Timeline:"
+    - 0:00 Business use case.
+    - 0:18 Technology.
+    - 0:38 Demo — Application integration across 3 websites (project management application calls HCM application for adding members to a project).
+    - 2:31 The 3 Webs.
 #    - This is a 30-second demo showing how Qworum APIs can advantageously replace REST and GraphQL APIs. Here an e-commerce application calls the Qworum API of a remote shopping cart service.
 #    - Note that the e-commerce application is implemented as a Qworum API as well. Non-Qworum web applications can also call Qworum APIs, although this demo does not show it.
 #    - Also note how the end-user interacts with the shopping cart service directly, without going through the e-commerce application. This feature sets Qworum apart from REST, GraphQL and all other API types. Notably, this makes Qworum APIs the only ones able to support secure user authentication across all services, even for those involved in deep service dependency graphs.
@@ -235,17 +234,19 @@ text:
   <p class="downloads-explanation">{{ text.downloads.description }}</p>
 </section>
 
-<section id="demo">
-  <h2>{{ text.demo.title }}</h2>
+<section>
+  <h2>{{ text.video.title }}</h2>
 
   {{# E-shop demo + Application template demo #}}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3G_ZbjRnKaE?si=7TMiI1PQw_3QNIDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  {{# <iframe width="560" height="315" src="https://www.youtube.com/embed/HAV9eTupzxc?si=KNHKgzsnPebQn85h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> #}}
-  
+
+  <!-- 3-minute Qworum.net presentation -->
+  <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1026976774?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="3-minute Qworum.net presentation"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+
   {{# 30-second E-shop demo
   <iframe src="https://www.youtube.com/embed/sSb1mqlFM4Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   #}}
-  {{ for p of text.demo.description }}
+  {{ for p of text.video.description }}
     <p>{{ p |> await vto(it) }}</p>
   {{ /for }}
 </section>
