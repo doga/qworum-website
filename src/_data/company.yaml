@@ -10,6 +10,9 @@ twitter:
   url: https://twitter.com/QworumNet
   timeline: https://twitter.com/QworumNet?ref_src=twsrc%5Etfw
 
+linkedin:
+  url: https://www.linkedin.com/company/qworum/
+
 # bluesky:
 #   handle: "@qworum.bsky.social"
 #   url: https://bsky.app/profile/qworum.bsky.social
@@ -19,6 +22,11 @@ twitter:
 #   url: https://www.uid.admin.ch/Detail.aspx?uid_id=CHE-268.664.734
 
 meet: https://cal.com/qworum
+
+demo:
+  pm:
+    url: https://github.com/doga/qworum-demo-project-manager
+    live: true
 
 articles:
   infoq: https://www.infoq.com/articles/qworum-modular-ui-architecture/
