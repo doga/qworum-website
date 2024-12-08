@@ -28,7 +28,7 @@ list:
   name: Qworum Alloy
   id: alloy
   order: 3
-  # free_trial: true
+  free_trial: true
   monthly_fee:
     per_domain:
       USD: 190
@@ -48,7 +48,7 @@ forms:
   unsubscribe: "https://airtable.com/appuJb8rwOU58lihn/pagTPN97228UqkNZr/form"
 
 free_trial:
-  months: 1
+  months: 2
 
 rebate:
   yearly:
