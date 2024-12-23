@@ -13,6 +13,9 @@ twitter:
 linkedin:
   url: https://www.linkedin.com/company/qworum/
 
+github:
+  url: https://github.com/doga
+
 # bluesky:
 #   handle: "@qworum.bsky.social"
 #   url: https://bsky.app/profile/qworum.bsky.social
@@ -32,7 +35,8 @@ articles:
   infoq: https://www.infoq.com/articles/qworum-modular-ui-architecture/
 
 achievements:
-  medal: https://drive.proton.me/urls/3GN92VRR8G#vjh69BrPpfiK
+  medal: https://drive.google.com/file/d/1CAa_0jI2mSiW2xXGvGeCfp_wlHFtnlw6/view?usp=drive_link # Google Drive for d.armangil@qworum.net
+#  medal: https://drive.google.com/file/d/1AOfR6eckym_n0gzzmoUbRUF36u9nYN2f/view?usp=drive_link # Google Drive for doga.armangil@gmail.com
   patent: https://patents.google.com/patent/US8266632
 
 contributors:

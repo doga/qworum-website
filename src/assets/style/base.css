@@ -117,11 +117,15 @@ body>footer {
   text-align: center;
   /* font-weight: bold; */
   color: #999;
+
+  a {
+    color: #999 !important;
+  }
+  img.logo {
+    height: 1.5em;
+  }
 }
 
-body>footer a {
-  color: #999 !important;
-}
 
 
 
