@@ -1,0 +1,12 @@
+layout: layouts/specification-v1.vto
+#css: specification.css
+#url: ./specification/v1/index.html
+#basename: spec-v1
+title: The Qworum script, specification version 1
+#nav:
+#  selection: developers
+
+#text:
+#  no_localisation: Nur auf Englisch verfügbar.
+#  no_localisation: Seulement disponible en anglais.
+#  no_localisation: Sadece ingilizce metin mevcuttur.

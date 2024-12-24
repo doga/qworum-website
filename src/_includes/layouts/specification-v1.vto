@@ -1,11 +1,18 @@
 ---
 layout: layouts/base.vto
 css: specification.css
-url: ./specification/v1/index.html
-title: The Qworum script, specification version 1
+#basename: developers/spec-v1
+#url: ./specification/v1/index.html
+#title: The Qworum script, specification version 1
 nav:
   selection: developers
 ---
+
+{{ if text }}
+  {{ if text.no_localisation }}
+    <p>{{text.no_localisation}}</p>
+  {{ /if }}
+{{ /if }}
 
 <article>
   <header>

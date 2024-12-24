@@ -1,7 +1,7 @@
 layout   : layouts/homepage.vto
 title    : Home
-nav      : 
-  selection: home
+#nav      : 
+#  selection: home
 
 text:
   mission:
