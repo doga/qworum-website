@@ -1,0 +1,78 @@
+layout   : layouts/homepage.vto
+title    : Home
+nav      : 
+  selection: home
+
+text:
+  mission:
+    oneliner: Web-scale application and integration platform
+#      Frontend-PaaS for the composable enterprise
+#      Frontend-PaaS for state-of-the-art web applications
+#      The new essential API technology for business applications 
+#      The web-based platform for the composable enterprise
+#      The essential frontend platform for business applications, APIs and SaaS
+    usp:
+#    - The missing piece for transforming the Web into a full-featured application platform.
+    - "𝗤𝘄𝗼𝗿𝘂𝗺 𝘀𝗼𝗹𝘃𝗲𝘀 𝗼𝗻𝗲 𝗼𝗳 𝘁𝗵𝗲 𝗯𝗶𝗴𝗴𝗲𝘀𝘁 𝗽𝗿𝗼𝗯𝗹𝗲𝗺𝘀 𝗶𝗻 𝘁𝗼𝗱𝗮𝘆'𝘀 𝗳𝗿𝗮𝗴𝗺𝗲𝗻𝘁𝗲𝗱 𝗜𝗧 𝗹𝗮𝗻𝗱𝘀𝗰𝗮𝗽𝗲: how to build integrated employee experiences and IT systems across internal and partner applications, SaaS and micro-SaaS."
+    - Qworum enables distributed applications that span teams, business units and organisations.
+#    - Our mission is to turn the Web into a full-featured application platform.
+#    - >
+#      <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a>. 
+    - >
+      <a target='_blank' href='{{company.achievements.medal}}'>Award-winning</a>
+      and 
+      <a target='_blank' href='{{company.achievements.patent}}'>patent-based</a>. 
+#    - >
+#      Application platform — 
+#      Advanced browser capabilities for applications.
+#      Enables distributed applications and composable dialogs.
+#      <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a> and <a target='_blank' href='{{company.achievements.medal}}'>award-winning</a>.
+#    - >
+#      API platform —
+#      Groundbreaking new API technology for interactive processes.
+#    - >
+#      10x easier integrations for customers and partners — 
+#      Calls to Qworum APIs need much less UI code, no API keys, no user authentication.
+
+
+    valueProposition:
+    - title: The Composable Enterprise
+      description: >
+        Qworum is the only API technology for enabling application-to-application calls when 
+        user authentication is required. Secure authentication and network timeouts are unsolved
+        issues for the other API protocols such as REST or GraphQL.
+    - title: API-first applications
+      description: Qworum allows web applications to be structured as Qworum APIs. This obviates the need for a separate web API in many cases, although REST and GraphQL remain useful, particularly for connecting with native application frontends.
+    - title: The UI layer for microservices
+      description: Qworum removes the "UI-monolith" bottleneck for microservices architectures through distributed application frontends. Qworum is more generally applicable than microfrontends and complements them.
+    - title: Native RDF support for knowledge graph applications
+      description: Qworum enables end-to-end RDF and innovates through an OSM layer (Object-Semantic Mapping). OSM brings the convenience of ORM (Object-Relational Mapping) to RDF data.
+    - title: New business opportunity in the B2B space
+      description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
+    
+
+  callToAction: Request a demo
+
+  downloads:
+    title: Free web browser extension
+    desktop: 'Qworum on desktop:'
+    mobile: 'Qworum on mobile:'
+    description: >
+      Your data is safe: the Qworum extension never sends data to the network. See our <a target="_blank" href="/docs/legal/privacy-policy/">privacy policy</a>. Note that Qworum-based applications have their own distinct privacy policies.
+
+  video:
+    title: 3-minute presentation
+    description:
+    - "Timeline:"
+    - 0:00 Business use case.
+    - 0:18 Technology.
+    - 0:38 Demo — Application integration across 3 websites (project management application calls HCM application for adding members to a project).
+    - 2:31 The 3 Webs.
+#    - This is a 30-second demo showing how Qworum APIs can advantageously replace REST and GraphQL APIs. Here an e-commerce application calls the Qworum API of a remote shopping cart service.
+#    - Note that the e-commerce application is implemented as a Qworum API as well. Non-Qworum web applications can also call Qworum APIs, although this demo does not show it.
+#    - Also note how the end-user interacts with the shopping cart service directly, without going through the e-commerce application. This feature sets Qworum apart from REST, GraphQL and all other API types. Notably, this makes Qworum APIs the only ones able to support secure user authentication across all services, even for those involved in deep service dependency graphs.
+
+  liveDemo:
+    title: Live demo
+    description: |
+      <a target="_blank" href="{{company.demo.pm.url}}">Launch the live demo here</a>.
