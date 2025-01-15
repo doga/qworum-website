@@ -45,8 +45,11 @@ text:
       description: Qworum allows web applications to be structured as Qworum APIs. This obviates the need for a separate web API in many cases, although REST and GraphQL remain useful, particularly for connecting with native application frontends.
     - title: The UI layer for microservices
       description: Qworum removes the "UI-monolith" bottleneck for microservices architectures through distributed application frontends. Qworum is more generally applicable than microfrontends and complements them.
-    - title: Native RDF support for knowledge graph applications
-      description: Qworum enables end-to-end RDF and innovates through an OSM layer (Object-Semantic Mapping). OSM brings the convenience of ORM (Object-Relational Mapping) to RDF data.
+    - title: Native support for knowledge graph applications
+      description: >
+        RDF is natively supported as an alternative to JSON for representing data. 
+        RDF brings semantic capabilities and is widely used in many data-intensive industries
+        such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector.
     - title: New business opportunity in the B2B space
       description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
     
