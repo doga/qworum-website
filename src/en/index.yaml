@@ -42,15 +42,20 @@ text:
         shows that application integration is <em>key</em> or <em>very important</em>
         for 84% of SaaS customers</a>. 
         Yet the REST protocol used by most SaaS is 25 years old at this point.
-        Qworum is bringing the most significant technological breakthrough in application integration
+        Qworum's full-stack APIs are the most significant technological breakthrough in application integration
         in a ¼ of a century.
+    - title: The most secure web API technology
+      description: >
+        Qworum is a breakthrough in web API security.
+        <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-web-activity-7287639516608098306-YyMF?utm_source=share&utm_medium=member_desktop'>
+        Qworum is more secure than OAuth+REST</a>.
+        In contrast to REST, the end-user stays in the loop during API calls, 
+        and as a result applications cannot make API calls with the user's consent.
     - title: The Composable Enterprise
       description: >
         Qworum is the only API technology for enabling application-to-application calls when 
         user authentication is required. Secure authentication and network timeouts are unsolved
         issues for the other API protocols such as REST or GraphQL.
-    - title: API-first applications
-      description: Qworum allows web applications to be structured as Qworum APIs. This obviates the need for a separate web API in many cases, although REST and GraphQL remain useful, particularly for connecting with native application frontends.
     - title: The UI layer for microservices
       description: Qworum removes the "UI-monolith" bottleneck for microservices architectures through distributed application frontends. Qworum is more generally applicable than microfrontends and complements them.
     - title: Native support for knowledge graph applications
