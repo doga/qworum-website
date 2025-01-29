@@ -38,7 +38,7 @@ text:
     valueProposition:
     - title: Qworum is the new essential enterprise infrastructure
       description: >
-        <a href='https://www.linkedin.com/posts/dogaarmangil_report-state-of-saas-integrations-2024-activity-7273076432229044224-i2wr'>A recent survey
+        <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_report-state-of-saas-integrations-2024-activity-7273076432229044224-i2wr'>A recent survey
         shows that application integration is <em>key</em> or <em>very important</em>
         for 84% of SaaS customers</a>. 
         Yet the REST protocol used by most SaaS is 25 years old at this point.
