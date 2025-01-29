@@ -51,17 +51,12 @@ text:
         Qworum is more secure than OAuth+REST</a>.
         In contrast to REST, the end-user stays in the loop during API calls, 
         and as a result applications cannot make API calls without the user's consent.
-    - title: The Composable Enterprise
-      description: >
-        Qworum is the only API technology for enabling application-to-application calls when 
-        user authentication is required. Secure authentication and network timeouts are unsolved
-        issues for the other API protocols such as REST or GraphQL.
     - title: The UI layer for microservices
       description: Qworum removes the "UI-monolith" bottleneck for microservices architectures through distributed application frontends. Qworum is more generally applicable than microfrontends and complements them.
     - title: Native support for knowledge graph applications
       description: >
         RDF is natively supported as an alternative to JSON for representing data. 
-        RDF brings semantic capabilities and is widely used in many data-intensive industries
+        RDF brings semantic capabilities and is widely used in many knowledge-based industries
         such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector.
     - title: New business opportunity in the B2B space
       description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
