@@ -50,7 +50,7 @@ text:
         <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-web-activity-7287639516608098306-YyMF?utm_source=share&utm_medium=member_desktop'>
         Qworum is more secure than OAuth+REST</a>.
         In contrast to REST, the end-user stays in the loop during API calls, 
-        and as a result applications cannot make API calls with the user's consent.
+        and as a result applications cannot make API calls without the user's consent.
     - title: The Composable Enterprise
       description: >
         Qworum is the only API technology for enabling application-to-application calls when 
