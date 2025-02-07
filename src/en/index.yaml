@@ -36,6 +36,10 @@ text:
 
 
     valueProposition:
+    - title: Qworum upgrades the Web platform for application use cases
+      description: >
+        Today's Web is still fundamentally a content platform, despite JavaScript. 
+        Qworum provides new browser features such as a script-based linking mechanism and a new in-browser session storage to enable advanced web applications that go much beyond what today's webapps and web APIs can.
     - title: The new essential enterprise infrastructure
       description: >
         <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_report-state-of-saas-integrations-2024-activity-7273076432229044224-i2wr'>A recent survey
