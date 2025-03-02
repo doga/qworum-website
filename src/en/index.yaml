@@ -43,12 +43,12 @@ text:
         for 84% of SaaS customers</a>. 
         Yet the REST protocol used by most SaaS is 25 years old at this point.
         Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
-    - title: The most secure web API technology
+    - title: A secure web API technology
       description: >
-        Qworum is a breakthrough in web API security.
+        Qworum is a breakthrough in web API security. Qworum APIs are
         <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-web-activity-7287639516608098306-YyMF?utm_source=share&utm_medium=member_desktop'>
-        Qworum is more secure than OAuth+REST</a>.
-        In contrast to REST, the end-user stays in the loop during API calls, 
+        a more secure alternative to OAuth+REST for many use cases</a>. Indeed,
+        in contrast to REST, the end-user stays in the loop during API calls, 
         and as a result applications cannot make API calls without the user's consent.
     - title: The UI layer for microservices
       description: Qworum removes the "UI-monolith" bottleneck for microservices architectures through distributed application frontends. Qworum is more generally applicable than microfrontends and complements them.
@@ -80,8 +80,8 @@ text:
     - "Timeline:"
     - 0:00 Business use case.
     - 0:18 Technology.
-    - 0:38 Demo — Application integration across 3 websites (project management application calls HCM application for adding members to a project).
-    - 2:31 The 3 Webs.
+    - 0:38 Demo — Application integration across 3 websites (project management application calls HCM application for adding members to a project, and both services use the same user authentication service) .
+    - 2:31 The 3 Webs — Qworum as the 3rd Web variant.
 #    - This is a 30-second demo showing how Qworum APIs can advantageously replace REST and GraphQL APIs. Here an e-commerce application calls the Qworum API of a remote shopping cart service.
 #    - Note that the e-commerce application is implemented as a Qworum API as well. Non-Qworum web applications can also call Qworum APIs, although this demo does not show it.
 #    - Also note how the end-user interacts with the shopping cart service directly, without going through the e-commerce application. This feature sets Qworum apart from REST, GraphQL and all other API types. Notably, this makes Qworum APIs the only ones able to support secure user authentication across all services, even for those involved in deep service dependency graphs.
