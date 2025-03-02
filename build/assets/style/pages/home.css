@@ -69,7 +69,7 @@ ul.vp {
 }
 
 ul.vp>li {
-  width: 10em;
+  width: 40%;
   border: solid #ccc;
   border-radius: 15px;
   margin: 0.5em 0.5em;
