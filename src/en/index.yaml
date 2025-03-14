@@ -5,7 +5,8 @@ title    : Home
 
 text:
   mission:
-    oneliner: Web-scale application and integration platform
+    oneliner: The frontend platform for business applications
+#    oneliner: Web-scale application and integration platform
 #      Frontend-PaaS for the composable enterprise
 #      Frontend-PaaS for state-of-the-art web applications
 #      The new essential API technology for business applications 
