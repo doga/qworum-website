@@ -24,7 +24,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2024.05.03 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2025.05.01 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>
@@ -827,8 +827,10 @@ button.addEventListener('click', async () => {
         </figure>
 
         <p><a href="#service-specific-faults">Service-specific faults</a>:</p>
+        <p>Qworum services can define their own service-specific faults, and they can use the following predefined faults:</p>
         <ul>
-          <li><code>argument</code> is the only predefined service-specific fault. A service call can raise this fault if a call argument is non-conformant or absent.</li>
+          <li><code>call argument</code> faults indicate that a call argument was non-conformant or absent.</li> 
+          <li><code>unexpected</code> faults indicate that an error has bubbled up to the caller without having been remediated.</li> 
         </ul>
 
         <p><a href="#platform-faults">Platform faults</a>:</p>
