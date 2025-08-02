@@ -9,72 +9,27 @@
 					"label": "Specification"
 				},
 				{
-					"line": 31,
-					"column": 34,
-					"label": "Table of contents"
-				},
-				{
-					"line": 139,
-					"column": 32,
-					"label": "terminology"
-				},
-				{
-					"line": 373,
-					"column": 18,
-					"label": "instructions"
-				},
-				{
-					"line": 392,
-					"column": 23,
+					"line": 821,
+					"column": 35,
 					"label": ""
 				},
 				{
-					"line": 505,
-					"column": 23,
-					"label": ""
-				},
-				{
-					"line": 641,
-					"column": 25,
-					"label": ""
-				},
-				{
-					"line": 661,
-					"column": 23,
-					"label": ""
-				},
-				{
-					"line": 717,
-					"column": 27,
-					"label": ""
-				},
-				{
-					"line": 772,
-					"column": 24,
-					"label": ""
-				},
-				{
-					"line": 859,
-					"column": 22,
-					"label": ""
-				},
-				{
-					"line": 904,
+					"line": 905,
 					"column": 18,
 					"label": "data values"
 				},
 				{
-					"line": 914,
+					"line": 915,
 					"column": 23,
 					"label": ""
 				},
 				{
-					"line": 937,
+					"line": 938,
 					"column": 27,
 					"label": "Semantic data"
 				},
 				{
-					"line": 1189,
+					"line": 1190,
 					"column": 15,
 					"label": ""
 				}

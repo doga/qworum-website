@@ -24,7 +24,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2025.06.14 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2025.08.02 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>
@@ -831,8 +831,9 @@ button.addEventListener('click', async () => {
 
         <p>In addition, this specification defines the following service-specific fault subtypes, which can be raised by any service call:</p>
         <ul>
-          <li><code>cancelled</code> faults indicate that the end-user has terminated the call before it could yield a value.</li> 
           <li><code>arg</code> faults indicate that a call argument was non-conformant or absent.</li> 
+          <li><code>cancelled</code> faults indicate that the end-user has terminated the call before it could yield a value.</li> 
+          <li><code>internal</code> faults indicate an internal error that occurred in a Qworum service during a service call. These faults do not imply any malfunction on the part of the Qworum platform itself.</li> 
         </ul>
 
         <p><a href="#platform-faults">Platform faults</a>:</p>
