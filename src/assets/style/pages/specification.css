@@ -4,9 +4,17 @@ article>nav {font-size: 1em;}
 
 .note-to-editor {
   /* display: none; */
+  background-color: aquamarine;
+  color: white;
+  padding: 0.2em;
+}
+
+span.warning {
+  /* display: none; */
   background-color: red;
   color: white;
   padding: 0.2em;
+  &::before {content: '⚠️ '}
 }
 
 h1>.status-notice {

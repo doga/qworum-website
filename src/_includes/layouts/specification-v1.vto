@@ -860,7 +860,14 @@ button.addEventListener('click', async () => {
           <li><code>* syntax</code> — Raised when a Qworum script has syntax errors.</li>
           <li><code>* user agent</code> — Parent type of all "kernel space"<a href="#ref-user-space">♦︎</a> faults that occur in the user agent.</li>
         </ul>
-        <p>Note there must be whitespace after <code>*</code>.</p>
+        <p>
+          Note there must be whitespace after <code>*</code>. 
+        </p>
+        <p>
+          <span class='warning'>The browser extension that is currently available on Chrome Web Store isn't fully compliant, as it assumes that the platform fault identifiers do not start with a <code>*</code>.
+          The upcoming extension release will fix this.
+          </span>
+        </p>
       </section>
     </section>
 
@@ -904,6 +911,13 @@ button.addEventListener('click', async () => {
 
       <p>
         The <code>try</code> instruction will yield the result of the last instruction or data value it evaluates.
+      </p>
+
+      <p>
+        <span class='warning'>
+          The <code>try</code> implementation is buggy in the browser extension that is currently available on Chrome Web Store.
+          The upcoming extension release will fix this.
+        </span>
       </p>
     </section>
 
