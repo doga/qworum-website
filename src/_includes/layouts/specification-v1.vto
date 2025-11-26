@@ -17,20 +17,23 @@ nav:
 <article>
   <header>
     <h1>
-      The Qworum script, specification version 1
+      The Qworum platform, version 1.0
       <!-- 
         All non-breaking changes can be added without changing the version number. 
         Browsers are supposed to be always up to date.
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2025.10.18 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2025.11.26 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>
       Qworum is a variant of the World Wide Web that is especially suitable for applications.
     </p>
-    <p>This specification is intended for the developers of Qworum applications and services.</p>
+    <p>
+      This specification defines the new Web browser capabilities that the Qworum platform is providing
+      to Web-based applications.
+    </p>
 
   </header>
 
@@ -58,21 +61,21 @@ nav:
       <li>
         <a href="#instructions">Instructions</a>
         <ol>
-          <li><a href="#data"><code>data</code></a></li>
-          <li><a href="#call"><code>call</code></a></li>
-          <li><a href="#return"><code>return</code></a></li>
-          <li><a href="#goto"><code>goto</code></a></li>
-          <li><a href="#sequence"><code>sequence</code></a></li>
-          <li><a href="#fault"><code>fault</code></a></li>
-          <li><a href="#try"><code>try</code></a></li>
+          <li><a href="#data"><code>Data</code></a></li>
+          <li><a href="#call"><code>Call</code></a></li>
+          <li><a href="#return"><code>Return</code></a></li>
+          <li><a href="#goto"><code>Goto</code></a></li>
+          <li><a href="#sequence"><code>Sequence</code></a></li>
+          <li><a href="#fault"><code>Fault</code></a></li>
+          <li><a href="#try"><code>Try</code></a></li>
         </ol>
       </li>
 
       <li>
         <a href="#data-values">Data values</a>
         <ol>
-          <li><a href="#json"><code>json</code></a></li>
-          <li><a href="#semantic"><code>semantic</code></a></li>
+          <li><a href="#json"><code>Json</code></a></li>
+          <li><a href="#semantic"><code>SemanticData</code></a></li>
         </ol>
       </li>
 
@@ -127,7 +130,7 @@ nav:
     <p>
       As a foretaste, here is how an e-commerce site might call a remote shopping cart service:
     </p>
-    <figure>
+    {{# <figure>
       <pre><code class="language-xml">
 &lt;!-- Qworum script received by the Web browser from an e-commerce site -->
 &lt;sequence xmlns="https://qworum.net/ns/v1/instruction/">
@@ -140,6 +143,40 @@ nav:
 &lt;/sequence>
       </code></pre>
       <figcaption>Figure 1.1: Example of a Qworum script received by a Web browser.</figcaption>
+    </figure> #}}
+    <figure>
+      <pre><code class="language-js">
+      // Step 1: Import the Qworum library
+      { QworumScript as qs, Qworum } from “https://esm.sh/gh/doga/qworum-for-web-pages@1.7.1/mod.mjs";
+
+      const
+      // Data values
+      Json         = qs.Json.build,
+      SemanticData = qs.SemanticData.build,
+
+      // Instructions
+      Data     = qs.Data.build,
+      Return   = qs.Return.build,
+      Sequence = qs.Sequence.build,
+      Goto     = qs.Goto.build,
+      Call     = qs.Call.build,
+      Fault    = qs.Fault.build,
+      Try      = qs.Try.build,
+
+      // Script
+      Script = qs.Script.build;
+
+      // Step 2: create and run a Qworum script
+      await Qworum.eval(
+        Script(
+          Sequence(
+            Call(["@", "shopping cart"], "https://shopping-cart.example/view/"),
+            Goto('/home/')
+          )
+        )
+      );
+      </code></pre>
+      <figcaption>Figure 1.1: Example of a Qworum script that is run by a Web page in a Web browser.</figcaption>
     </figure>
   </section>
 
@@ -176,7 +213,7 @@ nav:
         <li>allows the user agent to initiate a second phase for the current call.</li>
       </ul>
       <p>In this manner, each phase of a multi-phase call can choose to return a result or continue the current call
-        with another phase.</p>
+        with another phase. Note that Qworum does not define a content format for ending a call. Rather, each phase normally sends an HTML file to the client (except in case of in-page navigation), and the JavaScript that runs in the client determines whether the phase ends the current call or not.</p>
       <figure>
         <img src="/assets/images/specification/v1/figure-2.3.svg" alt="">
         <figcaption>Figure 2.3.1: Example of a Multi-Phase Service Call.</figcaption>
@@ -189,16 +226,16 @@ nav:
     <section id='script'>
       <h3>2.4. <dfn>The Qworum Script</dfn></h3>
       <p>
-        Qworum scripts contain instructions that are to be executed by user agents such as Web browsers.
+        Qworum scripts contain instructions that are to be executed by Web browsers.
         The root element of Qworum scripts must be an <a href="#instructions">instruction</a>.
         Qworum scripts can also contain <a href="#data-values">data values</a>.
       </p>
 
-      <h4>
+      {{# <h4>
         2.4.1 XML scripts
       </h4>
       <p>
-        Users agents can receive Qworum scripts from Web servers in XML documents <a href="#ref-xml">♦︎</a> that
+        Web browsers receive Qworum scripts from Web servers in XML documents <a href="#ref-xml">♦︎</a> that
         have the content type <code>application/xml</code> or <code>text/xml</code>.
       </p>
 
@@ -215,10 +252,10 @@ nav:
 &lt;/sequence>
         </code></pre>
         <figcaption>Figure 2.4.1.1: Example of a Qworum script.</figcaption>
-      </figure>
+      </figure> #}}
 
-      <h4>
-        2.4.2 Generating Qworum scripts on the client 
+      {{# <h4>
+        2.4.2 Generating and running Qworum scripts on the client 
       </h4>
       <p>
         Web pages can also use JavaScript for generating and executing Qworum scripts.
@@ -228,19 +265,12 @@ nav:
       <p>
         Generating and executing Qworum scripts on the client in this way is equivalent to the user agent receiving
         an XML Qworum script from the URL of the HTML page.
-      </p>
+      </p> #}}
 
       <figure>
         <pre><code class="language-js">
 // Add an article to a shopping cart.
-import { QworumScript, Qworum } from 'https://esm.sh/gh/doga/qworum-for-web-pages@1.7.0/mod.mjs';
-
 const
-Script   = QworumScript.Script.build,
-Sequence = QworumScript.Sequence.build,
-Call     = QworumScript.Call.build,
-Goto     = QworumScript.Goto.build,
-Json     = QworumScript.Json.build,
 article  = {
   "id"   : "8b1d5802",
   "title": "Classic ankle boots",
@@ -261,7 +291,7 @@ button.addEventListener('click', async () => {
   await Qworum.eval(script);
 });
         </code></pre>
-        <figcaption>Figure 2.4.2.1: Using JavaScript for generating a Qworum script in a Web page.</figcaption>
+        <figcaption>Figure 2.4.1: Using JavaScript for generating and running a Qworum script in a Web page.</figcaption>
       </figure>
 
     </section>
@@ -270,9 +300,8 @@ button.addEventListener('click', async () => {
       <h3>2.5. <dfn>Service Composition</dfn></h3>
       <p>The mechanism by which multi-phase calls perform other nested multi-phase calls during their execution.
         Nested calls are performed between two consecutive phases of the call that initiated the nested call.</p>
-      <p>When a call is to perform a nested call, one of its phases returns a <a href="#script">script</a> that
-        contains a <a href="#call">call</a> instruction. These nested calls are then performed by the user agent
-        between two consecutive phases of the call that initiated the nested call.</p>
+      <p>When a call must perform a nested call, one of its phases runs a <a href="#script">script</a> that
+        contains a <a href="#call">call</a> instruction.</p>
       <figure>
         <img src="/assets/images/specification/v1/figure-2.5.svg" alt="">
         <figcaption>Figure 2.5.1: Example of a nested service call.</figcaption>
@@ -282,8 +311,8 @@ button.addEventListener('click', async () => {
     <section id='interactive-service'>
       <h3>2.6. Interactive Service</h3>
       <p>
-        A multi-phase service that can interact with the end-user through HTML <a href="#ref-html">♦︎</a> pages
-        during its execution.
+        Each phase of a multi-phase service returns an HTML page <a href="#ref-html">♦︎</a> to the browser.
+        Services can, but aren't obliged to, use these pages to interact directly with the end-user.
         <!-- When an interactive service send an HTML page as a response, it is effectively using the end-user as a resource that that helps it continue its execution by starting a new phase. We are naming this pattern an <dfn id='end-user-invocation'>end-user invocation</dfn>. -->
       </p>
       <figure>
@@ -297,24 +326,20 @@ button.addEventListener('click', async () => {
     <section id='execution-state'>
       <h3>2.7. <dfn>Execution State</dfn></h3>
       <p>
-        In Qworum, each Web browser tab has its own execution state, which consists of:
+        In Qworum, each browser tab has its own execution state, which consists of a
+        <dfn id='call-stack'>call stack</dfn> that contains one or more <dfn>call frame</dfn>s. 
       </p>
-      <ul>
-        <li>A <dfn id='call-stack'>call stack</dfn> that contains one or more <dfn>call frame</dfn>s. The topmost
-          call frame pertains to the call currently being executed; the remaining call frames contain the states of
-          calls whose executions are currently suspended. Call frames are used for storing call states in the form
-          of <a href="#data">data</a>s (which point to data) and <a href="#object">object</a>s.</li>
-        <li>A <dfn id='main-object'>main <a href="#object">object</a></dfn> that is attached to the browser tab. The
-          main object is the owner of the first call frame in the call stack.</li>
-      </ul>
-      <p>A regular browsing session on the World Wide Web can be thought of as a multi-phase service call that
-        doesn't use the Qworum-related functionality that the user agent provides (except that browsing different
-        Web origins within the same browser tab does not raise an <code>* origin</code> <a href="#fault">fault</a>).
-        In particular: </p>
-      <ul>
-        <li>regular Web browsing happens within the bounds of the first call frame in the call stack, and</li>
-        <li>the main object remains unused during a regular Web browsing session.</li>
-      </ul>
+      <p>
+        The topmost
+          call frame pertains to the call currently being executed, and the remaining call frames contain the states of
+          calls whose executions are currently suspended. 
+      </p>
+      <p>
+        Each call frame belongs to a Qworum <a href="#object">object</a>, and contains the state of the call.
+      </p>
+      <p>
+        Call frames and Qworum objects have an internal state that is stored in zero or more data containers and/or Qworum objects.
+      </p>
       <figure>
         <img src="/assets/images/specification/v1/figure-2.7.svg" alt="">
         <figcaption>Figure 2.7.1: The execution state of a browser tab.</figcaption>
@@ -383,23 +408,23 @@ button.addEventListener('click', async () => {
     <p>
       This section lists the instructions that are available to <a href="#script">Qworum script</a>s.
       When evaluated by the user agent, all instructions will yield a value (which is <a
-        href="#data"><code>data</code></a>), except for the <a href="#goto"><code>goto</code></a> and <a
-        href="#fault"><code>fault</code></a> instructions.
+        href="#data"><code>Data</code></a>), except for the <a href="#goto"><code>Goto</code></a> and <a
+        href="#fault"><code>Fault</code></a> instructions.
     </p>
-    <p>Qworum instructions that conform to this specification must have the XML namespace <a
+    {{# <p>Qworum instructions that conform to this specification must have the XML namespace <a
         href="#ref-xmlns">♦︎</a>
       <code>https://qworum.net/ns/v1/instruction/</code>.
     </p>
     <p>
       Unless otherwise stated, in the XML code examples below all elements whose tags don't have a prefix have the
       namespace <code>https://qworum.net/ns/v1/instruction/</code>, and all elements whose tags have the prefix
-      <code>data</code> have the namespace <code>https://qworum.net/ns/v1/data/</code>.
-    </p>
+      <code>Data</code> have the namespace <code>https://qworum.net/ns/v1/data/</code>.
+    </p> #}}
 
     <section id='data'>
-      <h3>3.1. <code>data</code></h3>
+      <h3>3.1. <code>Data</code></h3>
       <p>
-        The <code>data</code> instruction allows writing to, and reading from, a data container that is stored in an
+        The <code>Data</code> instruction allows writing to, and reading from, a data container that is stored in an
         <a href="#execution-state">execution state</a>. The current call has read/write access to data in the
         following locations:
       </p>
@@ -410,13 +435,10 @@ button.addEventListener('click', async () => {
       </ul>
 
       <p>
-        The location of the data container that is being accessed is determined by <code>data</code>'s mandatory
-        <code>path</code> attribute.
-        This attribute's value is a JSON-encoded array of strings. In these strings, the leading and trailing
-        whitespace characters are ignored.
+        The location of the data container that is being accessed is determined by its precise path, which is an array of strings:
       </p>
       <p id='reserved-path-prefixes'>
-        Within this array, some strings are treated differently by the user agent:</p>
+        Within this array, some strings are treated differently:</p>
       <ul>
         <li>any string that starts with <code>@</code> denotes the current call's owner object, and</li>
         <li>strings starting with <code>$</code>, <code>#</code> or <code>🤖</code> are reserved and should not be used at this time.
@@ -425,47 +447,64 @@ button.addEventListener('click', async () => {
 
       <h4>3.1.1. Reading from a data container</h4>
 
-      <p>Here is an example of reading data from a data container:</p>
+      <p>Data stored in Qworum sessions can be read directly by JavaScript scripts that run in Web pages:</p>
 
-      <figure>
+      {{# <figure>
         <pre><code class="language-xml">
 &lt;!-- Read the "shopping cart line items" data that is stored locally in the current call. -->
 &lt;data path='["shopping cart line items"]' />
         </code></pre>
         <figcaption>Figure 3.1.1.1: Reading data that is stored in the current call.</figcaption>
-      </figure>
-
-      <p>Another example:</p>
+      </figure> #}}
 
       <figure>
-        <pre><code class="language-xml">
-&lt;!-- Read the "shopping cart line items" data that is stored in the current call's owner object. -->
-&lt;data path='["@", "shopping cart line items"]' />
+        <pre><code class="language-js">
+const 
+// Read the line items (a ) from the shopping cart Qworum object that is
+// a property of the current Qworum object.
+lineItemsData = await Qworum.getData(['@', 'shopping cart', 'line items']), // qs.Json instance
+lineItems     = lineItemsData?.value, // parsed JSON (one of JavaScript object, array, null, undefined, string, number, boolean)
+
+// Read data that is stored locally in the current call.
+localData  = await Qworum.getData('local data'),
+localData2 = await Qworum.getData(['local data']); // same data as localData
         </code></pre>
-        <figcaption>Figure 3.1.1.2: Reading data that is stored in the current call's owner object.</figcaption>
+        <figcaption>Figure 3.1.1.1: Reading session data directly from a JavaScript script.</figcaption>
       </figure>
 
-      <p>And another:</p>
+      <p>The data can also be read from within Qworum scripts:</p>
 
       <figure>
-        <pre><code class="language-xml">
-&lt;!-- Read the "line items" data that is stored in the "shopping cart" object -->
-&lt;!-- that is in turn stored in the current call's owner object. -->
-&lt;data path='["@", "shopping cart", "line items"]' />
+        <pre><code class="language-js">
+await Qworum.eval(
+  Script(
+    Sequence(
+      // Read the line items data, and copy it to a container that is local
+      // to the current call.
+      Data('copy of line items', Data(['@', 'shopping cart', 'line items'])),
+
+      // Continue the current call.
+      Goto('phase-2.html')
+    )
+  )
+);
         </code></pre>
-        <figcaption>Figure 3.1.1.3: Reading data that is stored in the current call's owner object.</figcaption>
+        <figcaption>Figure 3.1.1.2: Reading and writing session data from a Qworum script.</figcaption>
       </figure>
 
       <p>
-        When trying to read from a data container that is located inside a Qworum object,
-        if the Qworum object does not exist then a
-        <code>* reference</code> <a href="#fault">fault</a> will be raised at run-time.
+        If the data container or one of the Qworum objects in the container's path does not exist,
+        then: 
       </p>
-
-      <p>
-        If a data container does not contain a data value (that is, the container has not yet been initialised),
-        then trying to read from it will raise a <code>* reference</code> <a href="#fault">fault</a>.
-      </p>
+      <ul>
+        <li>
+          trying to read the data from a JavaScript script will return <code>null</code>.
+        </li>
+        <li>
+          trying to read the data from a Qworum script will raise a 
+          <code>* reference</code> <a href="#fault">fault</a> at run-time.
+        </li>
+      </ul>
 
       <!-- <p>Data that is stored has two types of provenances:</p>
       <ul>
@@ -474,11 +513,25 @@ button.addEventListener('click', async () => {
       </ul> -->
 
       <h4>3.1.2. Writing to a data container</h4>
-
-      <p>When writing to a data container, the <code>data</code> instruction must contain one instruction or data
-        value. Here is an example:</p>
+      <p>Session data can be written by JavaScript scripts that run in Web pages:</p>
+{{# 
+      <p>When writing to a data container, the <code>Data</code> instruction must contain one instruction or data
+        value. Here is an example:</p> #}}
 
       <figure>
+        <pre><code class="language-js">
+// A method of the shopping cart service is initialising the state of
+// a shopping cart Qworum object.
+await Qworum.setData( ['@', 'line items'], Json([]) );
+
+// This throws a TypeError exception if there is no Qworum object with path
+// ['path','to','non-existent object'].
+await Qworum.setData( ['path','to','non-existent object','data'], Json({}) );
+        </code></pre>
+        <figcaption>Figure 3.1.2.1: Writing data to a data container.</figcaption>
+      </figure>
+
+      {{# <figure>
         <pre><code class="language-xml">
 &lt;!-- Clear the "shopping cart line items" data that is stored locally in the current call. -->
 &lt;data path='["shopping cart line items"]'>
@@ -499,44 +552,68 @@ button.addEventListener('click', async () => {
 &lt;/data>
         </code></pre>
         <figcaption>Figure 3.1.2.2: Writing a call result to a data.</figcaption>
+      </figure> #}}
+
+      <p>
+        Session data can also be written from within Qworum scripts, as shown in figure 3.1.1.2.
+        Note that if the container's path refers to a Qworum object that does not exist,
+        then the write attempt will raise a 
+        <code>* reference</code> <a href="#fault">fault</a> at run-time.
+      </p>
+
+      {{# <figure>
+        <pre><code class="language-js">
+await Qworum.eval(
+  Script(
+    Sequence(
+      // Read the line items data, and copy it to a container that is local
+      // to the current call.
+      Data('copy of line items', Data(['@', 'shopping cart', 'line items'])),
+
+      // Continue the current call.
+      Goto('phase-2.html')
+    )
+  )
+);
+        </code></pre>
+        <figcaption>Figure 3.1.2.1: Writing data to a data container.</figcaption>
       </figure>
 
       <p>
         When trying to write to a data container that is located in a Qworum object,
         if the Qworum object does not exist then a
         <code>* reference</code> <a href="#fault">fault</a> will be raised at run-time.
-      </p>
+      </p> #}}
 
     </section>
 
     <section id="call">
-      <h3>3.2. <code>call</code></h3>
+      <h3>3.2. <code>Call</code></h3>
       <p>
-        The <code>call</code> instruction initiates a <a href="#multi-phase-service-call">multi-phase service
-          call</a>. It has two optional attributes:</p>
+        The <code>Call</code> instruction initiates a <a href="#multi-phase-service-call">multi-phase service
+          call</a>. These calls are method calls in the OOP sense:</p>
       <ul>
         <li>
-          The <dfn><code>object</code></dfn> attribute specifies the path of the <a href="#object">object</a> that
+          The first call argument is the path of the <a href="#object">object</a> that
           owns the call within the <a href="#execution-state">execution state</a>.
-          The value of the <code>object</code> attribute is a JSON-encoded array of strings (some string values are
-          <a href="#reserved-path-prefixes">reserved</a>). If this attribute is omitted, then the new call's owner
-          will be the owner of the current call.
+          An object path is an array of strings (some string values are
+          <a href="#reserved-path-prefixes">reserved</a>).
         </li>
         <li>
-          The <dfn><code>href</code></dfn> attribute specifies the URL of the call's first phase.
-          If this attribute is omitted, then this URL will be the browser tab's current URL.
+          The second call argument is the URL of the call's first phase. The default value is the current URL.
+          {{# If this attribute is omitted, then this URL will be the browser tab's current URL. #}}
         </li>
       </ul>
 
       <figure>
-        <pre><code class="language-xml">
-&lt;call object='["@", "shopping cart"]' href='view/' />
+        <pre><code class="language-js">
+const aCall = Call( ['@', 'shopping cart'], 'view/' );
         </code></pre>
-        <figcaption>Figure 3.2.1: A <code>call</code> instruction.</figcaption>
+        <figcaption>Figure 3.2.1: A <code>Call</code> instruction.</figcaption>
       </figure>
 
       <p>
-        Some of the <a href="#fault"><code>fault</code></a>s that service calls can raise are <code>* origin</code>
+        Some of the <a href="#fault"><code>Fault</code></a>s that service calls can raise are <code>* origin</code>
         and <code>* reference</code>.
       </p>
 
@@ -557,7 +634,7 @@ button.addEventListener('click', async () => {
         call.
       </p>
       <p>
-        Data arguments will be will be made available to the new call on the client side as local data with
+        Data arguments will be made available to the new call on the client side as local data with
         the same names as the data arguments.
       </p>
       <!-- <p>
@@ -569,26 +646,26 @@ button.addEventListener('click', async () => {
       </p> -->
 
       <figure>
-        <pre><code class="language-xml">
-&lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
-  &lt;data-args>
-    &lt;data-arg name='line items'> 
-      &lt;data:json>
-        [{
-          "title"   : "Classic ankle boots",
-          "price"   : {"EUR": 29.99},
-          "quantity": 1
-        }]
-      &lt;/data:json>
-    &lt;/data-arg>
-  &lt;/data-args>
-&lt;/call>
+        <pre><code class="language-js">
+const 
+lineItems = [{
+  'title'   : 'Classic ankle boots',
+  'price'   : {'EUR': 29.99},
+  'quantity': 1
+}],
+
+aCall = Call(
+  ['@','shopping cart'], '/add-line-items/',
+  [
+    {name: 'line items', value: Json(lineItems)}
+  ]
+);
       </code></pre>
-        <figcaption>Figure 3.2.1.1: A <code>call</code> instruction with arguments.</figcaption>
+        <figcaption>Figure 3.2.1.1: A <code>Call</code> instruction with a data argument.</figcaption>
       </figure>
 {{# 
       <p id="phase-arguments">
-        A <code>call</code> instruction that generates a POST request behaves similarly to an HTML form that
+        A <code>Call</code> instruction that generates a POST request behaves similarly to an HTML form that
         contains an item named <code>qworum-arguments</code>:
       </p>
       <ul>
@@ -622,7 +699,7 @@ button.addEventListener('click', async () => {
       <p>
         Even if a service hasn't received its data arguments on the server side during its first phase, the service
         nevertheless has the option of sending any and all of its data to the server side during any of its later
-        phases by using the <a href="#goto"> <code>goto</code></a> instruction.
+        phases by using the <a href="#goto"> <code>Goto</code></a> instruction.
       </p> #}}
 
       <h4>3.2.2. Calls with object arguments</h4>
@@ -631,34 +708,50 @@ button.addEventListener('click', async () => {
         Service calls can receive Qworum objects as arguments. These object arguments will be made available to
         the new call on the client side as local objects that have the same names as the object arguments.
       </p>
+      <p>
+        This mechanism allows calls to have access to objects that would have been out of scope otherwise.
+      </p>
       <figure>
-        <pre><code class="language-xml">
-&lt;call object='["@","shopping cart"]' href='/add-line-items/index.xml'>
-  &lt;object-args>
-    &lt;!-- The caller is making its logger available to the service it is calling. -->
-    &lt;object-arg name='logger' object='["@","logger"]' /> 
-  &lt;/object-args>
-&lt;/call>
+        <pre><code class="language-js">
+const 
+lineItems = [{
+  'title'   : 'Classic ankle boots',
+  'price'   : {'EUR': 29.99},
+  'quantity': 1
+}],
+
+aCall = Call(
+  ['@','shopping cart'], '/add-line-items/',
+
+  [ // data arguments
+    {name: 'line items', value: Json(lineItems)}
+  ],
+
+  [ // object arguments
+    {name: 'logger', object: ['@','logger']}
+  ]
+);
       </code></pre>
-        <figcaption>Figure 3.2.2.1: A <code>call</code> instruction that contains object arguments.</figcaption>
+        <figcaption>Figure 3.2.2.1: A <code>Call</code> instruction that contains an object argument.</figcaption>
       </figure>
 
     </section>
 
     <section id="return">
-      <h3>3.3. <code>return</code></h3>
+      <h3>3.3. <code>Return</code></h3>
       <p>
-        The <code>return</code> instruction returns the current <a href="#multi-phase-service-call">multi-phase
-          service call</a>. This instruction must contain one instruction or data element.
+        The <code>Return</code> instruction ends the current <a href="#multi-phase-service-call">multi-phase
+          service call</a> by returning data. This instruction has one argument, which is an instruction or a data container.
       </p>
 
       <figure>
-        <pre><code class="language-xml">
-&lt;return>
-  &lt;data path='["@","line items"]' />
-&lt;/return>
+        <pre><code class="language-js">
+const
+aReturn = Return(
+  Data(['@','line items'])
+);
         </code></pre>
-        <figcaption>Figure 3.3.1: Returning data as a result of the current call.</figcaption>
+        <figcaption>Figure 3.3.1: Returning data from the current call.</figcaption>
       </figure>
 
       <p>If the current call is the main call of the current browser tab, then this instruction will terminate the
@@ -666,34 +759,42 @@ button.addEventListener('click', async () => {
     </section>
 
     <section id="goto">
-      <h3>3.4. <code>goto</code></h3>
+      <h3>3.4. <code>Goto</code></h3>
       <p>
-        The <code>goto</code> instruction starts a new phase for the current <a
-          href="#multi-phase-service-call">multi-phase service call</a>. It has one optional attribute:
+        The <code>Goto</code> instruction starts a new phase for the current <a
+          href="#multi-phase-service-call">multi-phase service call</a>. It takes the URL of the next phase as argument.
       </p>
-      <ul>
+      {{# <ul>
         <li>
           The <dfn><code>href</code></dfn> attribute specifies the URL of the new phase.
           If this attribute is omitted, then this URL will be the browser tab's current URL.
         </li>
-      </ul>
+      </ul> #}}
 
       <figure>
+        <pre><code class="language-js">
+const 
+goto1 = Goto('phase-2.html'),
+goto2 = Goto(); // go to the current URL
+        </code></pre>
+        <figcaption>Figure 3.4.1: <code>Goto</code> instructions.</figcaption>
+      </figure>
+      {{# <figure>
         <pre><code class="language-xml">
 &lt;goto href='return.xml' />
         </code></pre>
-        <figcaption>Figure 3.4.1: A <code>goto</code> instruction that issues a GET request.</figcaption>
-      </figure>
+        <figcaption>Figure 3.4.1: A <code>Goto</code> instruction that issues a GET request.</figcaption>
+      </figure> #}}
 
       <!-- <p>
-        Similarly to <a href="#call"><code>call</code></a> instructions, <code>goto</code> instructions can also
+        Similarly to <a href="#call"><code>Call</code></a> instructions, <code>Goto</code> instructions can also
         have named data arguments, each argument containing one instruction or data. If a data argument contains
         an instruction, then the instruction will be evaluated before executing the call.
-        The behavior of <code>goto</code> differs from <code>call</code> in that <code>goto</code>'s data arguments
+        The behavior of <code>Goto</code> differs from <code>Call</code> in that <code>Goto</code>'s data arguments
         are always sent to the server side.
       </p>
 
-      <p>One situation where <code>goto</code> needs to have data arguments is when the internal state of a Qworum
+      <p>One situation where <code>Goto</code> needs to have data arguments is when the internal state of a Qworum
         object is updated from the server side using new data, as is shown in the next figure.</p>
 
       <figure>
@@ -710,26 +811,59 @@ button.addEventListener('click', async () => {
 &lt;/data-args>
 &lt;/goto>
         </code></pre>
-        <figcaption>Figure 3.4.2: A <code>goto</code> instruction that issues a POST request.</figcaption>
+        <figcaption>Figure 3.4.2: A <code>Goto</code> instruction that issues a POST request.</figcaption>
       </figure> -->
 
       <p>
-        The <code>goto</code> instruction will raise an <code>* origin</code> <a href="#fault"><code>fault</code></a>
+        The <code>Goto</code> instruction will raise an <code>* origin</code> <a href="#fault"><code>Fault</code></a>
         if the <a href="#object">object</a> that the current call belongs to
-        has a different origin <a href="#ref-origin">♦︎</a> than this <code>goto</code> phase's origin.
+        has a different origin <a href="#ref-origin">♦︎</a> than this <code>Goto</code> phase's origin.
         This is because all phases of all service calls belonging to an object must have the same origin URL.
       </p>
     </section>
 
     <section id="sequence">
-      <h3>3.5. <code>sequence</code></h3>
+      <h3>3.5. <code>Sequence</code></h3>
       <p>
-        The <code>sequence</code> instruction contains one or more instructions or data elements, each of which is
+        The <code>Sequence</code> instruction contains one or more instructions or data elements, each of which is
         evaluated in turn. This instruction will yield the evaluation result of the last instruction/data in the
         sequence.
       </p>
 
       <figure>
+        <pre><code class="language-js">
+// A shopping cart service directs the user to a remote payment processor.
+const seq = Sequence(
+  // 1. Call the payment processing service
+  // 2. Store the returned transaction details.
+  Data(
+    ['@','latest transaction'],
+
+    Call(
+      ['@','payment service'], 'https://payment-processor.example/pay/',
+      [{
+        name: 'amount to pay',
+        value: Json(
+          {
+            "amount"  : 98.99,
+            "currency": "EUR",
+          }
+        )
+      }]
+    )
+  ),
+
+  // 3. Empty the shopping cart, because payment has succeeded (otherwise a fault would have been raised).
+  Data( ['@','line items'], Json([]) ),
+
+  // 4. Go to the next phase of the current shopping cart method.
+  Goto('paid.html')
+);
+        </code></pre>
+        <figcaption>Figure 3.5.1: A <code>Sequence</code> example.</figcaption>
+      </figure>
+
+      {{# <figure>
         <pre><code class="language-xml">
 &lt;!-- A shopping cart service directs the user to a remote payment processor. -->
 &lt;sequence>
@@ -761,45 +895,52 @@ button.addEventListener('click', async () => {
 
 &lt;/sequence>
         </code></pre>
-        <figcaption>Figure 3.5.1: A <code>sequence</code> example.</figcaption>
-      </figure>
+        <figcaption>Figure 3.5.1: A <code>Sequence</code> example.</figcaption>
+      </figure> #}}
 
       <p>
-        The sequence will not yield a result in the following cases:
+        The sequence instruction will not yield a result in the following cases:
       </p>
       <ul>
-        <li>the sequence contains a <a href="#goto"><code>goto</code></a>, or</li>
-        <li>a <a href="#fault"><code>fault</code></a> is raised when evaluating one of the sequence's instructions,
+        <li>the sequence contains a <a href="#goto"><code>Goto</code></a> (which ends the evaluation of the Qworum script), or</li>
+        <li>a <a href="#fault"><code>Fault</code></a> is raised when evaluating one of the sequence's instructions,
           or</li>
-        <li>the sequence contains a <a href="#fault"><code>fault</code></a> instruction.</li>
+        <li>the sequence contains a <a href="#fault"><code>Fault</code></a> instruction.</li>
       </ul>
 
     </section>
 
     <section id="fault">
-      <h3>3.6. <code>fault</code></h3> <!-- TODO human-readable i18'ed fault messages and stack trace -->
+      <h3>3.6. <code>Fault</code></h3> <!-- TODO human-readable i18'ed fault messages and stack trace -->
       <p>
         In computer programming, exceptions are used for disrupting the normal course of execution, because
         an exceptional event has occurred which prevents the program to proceed as intended.
         Exceptions are called "faults" in Qworum parlance.
       </p>
       <p>
-        The <code>fault</code> instruction has one optional attribute:
+        The <code>Fault</code> instruction has a fault-type argument which defaults to <code>* service-specific</code>.
+        The specified value must not be a <a href="#platform-faults">platform fault</a>.
       </p>
-      <ul>
+      {{# <ul>
         <li>
           The <dfn><code>type</code></dfn> attribute specifies the type of the raised fault.
-          If this attribute is omitted, then the fault type will be <code>* service-specific</code>.
+          If this attribute is omitted, then the fault type will be.
           If specified, the <code>type</code> value must not start with <code>*</code>.
         </li>
-      </ul>
+      </ul> #}}
 
       <figure>
+        <pre><code class="language-js">
+const aFault = Fault('payment cancelled');
+        </code></pre>
+        <figcaption>Figure 3.6.1: A fault.</figcaption>
+      </figure>
+      {{# <figure>
         <pre><code class="language-xml">
 &lt;fault type='payment cancelled' />
         </code></pre>
         <figcaption>Figure 3.6.1: A fault.</figcaption>
-      </figure>
+      </figure> #}}
 
       <p>The <code>type</code> attribute's value has the following equivalent forms:</p>
       <ul>
@@ -812,7 +953,7 @@ button.addEventListener('click', async () => {
         Faults are split into two categories:
       </p>
       <ul>
-        <li> <dfn id='platform-faults'>Platform faults</dfn> are faults whose <code>type</code> value starts with <code>*</code>. These can only be raised by the Qworum runtime itself. This means that a Qworum script must not contain a <code>fault</code> instruction whose type is explicitly specified as being a platform fault.</li>
+        <li> <dfn id='platform-faults'>Platform faults</dfn> are faults whose <code>type</code> value starts with <code>*</code>. These can only be raised by the Qworum runtime itself. This means that a Qworum script must not contain a <code>Fault</code> instruction whose type is explicitly specified as being a platform fault.</li>
 
         <li> <dfn id='service-specific-faults'>Service-specific faults</dfn> are faults that are defined by the Qworum services themselves for their specific use-cases (Example: <code>login aborted</code> ). Qworum scripts are allowed to contain and explicitly raise such faults. The <code>type</code> value of such faults must not start with <code>*</code>. 
         </li>
@@ -839,7 +980,7 @@ button.addEventListener('click', async () => {
         <p><a href="#platform-faults">Platform faults</a>:</p>
         <ul>
           <li>
-            <code>* entitlement</code> — Raised when a Qworum service tries to use a Qworum feature that it isn't entitled to. These faults are typically raised when evaluating a <code>call</code> instruction.
+            <code>* entitlement</code> — Raised when a Qworum service tries to use a Qworum feature that it isn't entitled to. These faults are typically raised when evaluating a <code>Call</code> instruction.
           </li>
           <li><code>* origin</code> — Raised when a phase of a Qworum object does not have the same origin <a
               href="#ref-origin">♦︎</a> as the Qworum object itself.</li>
@@ -861,7 +1002,7 @@ button.addEventListener('click', async () => {
           <li><code>* user agent</code> — Parent type of all "kernel space"<a href="#ref-user-space">♦︎</a> faults that occur in the user agent.</li>
         </ul>
         <p>
-          Note there must be whitespace after <code>*</code>. 
+          Note that there must be whitespace after <code>*</code>. 
         </p>
         <p>
           <span class='warning'>The browser extension that is currently available on Chrome Web Store isn't fully compliant, as it assumes that the platform fault identifiers do not start with a <code>*</code>.
@@ -872,13 +1013,20 @@ button.addEventListener('click', async () => {
     </section>
 
     <section id="try">
-      <h3>3.7. <code>try</code></h3>
+      <h3>3.7. <code>Try</code></h3>
       <p>
-        When an instruction in a Qworum script raises a <a href="#fault"><code>fault</code></a>, then the current call will terminate unless the fault is caught by a <code>try</code> instruction.
+        When an instruction in a Qworum script raises a <a href="#fault"><code>Fault</code></a>, then the current call will terminate by bubbling up the fault to the caller instead of returning data, unless the fault is caught by a <code>Try</code> instruction.
       </p>
 
-      <p>
-        The <code>try</code> instruction contains one or more <dfn id="catch">catch</dfn> clauses, each of which
+      <p>The <code>Try</code> instruction has two arguments:</p>
+      <ol>
+        <li>The first argument is the instruction or data value to evaluate.</li>
+        <li>The second argument is an array of <dfn id="catch">catch</dfn> clauses. Each clause specifies which faults to catch (an empty array means "all faults") and one instruction or data value to evaluate.</li>
+      </ol>
+      <p>This instruction will yield the data value that was yielded by the evalution of the first argument or of a catch clause. Any uncaught fault will bubble up.</p>
+
+      {{# <p>
+        The <code>Try</code> instruction contains one or more <dfn id="catch">catch</dfn> clauses, each of which
         contains exactly one instruction or data element. Catch clauses have one optional attribute:
       </p>
       <ul>
@@ -905,17 +1053,35 @@ button.addEventListener('click', async () => {
 &lt;/try>
         </code></pre>
         <figcaption>Figure 
-          3.7.1: A <code>try</code> instruction used to initialise a data
+          3.7.1: A <code>Try</code> instruction used to initialise a data
         .</figcaption>
+      </figure> #}}
+
+      <figure>
+        <pre><code class="language-js">
+const
+// Yield the value of a data container; initialise it if needed.
+aTry = Try(
+  Data(['shopping cart line items']),
+  [
+    {
+      catch: ['* reference'], 
+      do:    Data( ['shopping cart line items'], Json([]) )
+    }
+  ]
+);
+        </code></pre>
+        <figcaption>Figure 
+          3.7.1: A <code>Try</code> instruction that initialises a data container.</figcaption>
       </figure>
 
-      <p>
-        The <code>try</code> instruction will yield the result of the last instruction or data value it evaluates.
-      </p>
+      {{# <p>
+        The <code>Try</code> instruction will yield the result of the last instruction or data value it evaluates.
+      </p> #}}
 
       <p>
         <span class='warning'>
-          The <code>try</code> implementation is buggy in the browser extension that is currently available on Chrome Web Store.
+          The <code>Try</code> implementation is buggy in the browser extension that is currently available on Chrome Web Store.
           The upcoming extension release will fix this.
         </span>
       </p>
@@ -925,20 +1091,38 @@ button.addEventListener('click', async () => {
 
   <section id="data-values">
     <h2>4. Data values</h2>
-    <!-- WARNING do not allow XML with non-Qworum namespaces as data values, because we want Qworum scripts that have non-XML encodings.  -->
+    <p>
+      JSON and RDF are both natively supported.
+    </p>
+    {{# <!-- WARNING do not allow XML with non-Qworum namespaces as data values, because we want Qworum scripts that have non-XML encodings.  -->
     <p>An XML element represents a data value if:</p>
     <ul>
       <!-- <li>it has no namespace or its namespace is a URL that has a different origin than <code>https://qworum.com</code>, or</li> -->
       <li>its namespace is <code>https://qworum.net/ns/v1/data/</code>, and the XML element conforms to this
         specification.</li> <!-- TODO: Non-Qworum data namespaces. Also the null namespace? -->
-    </ul>
+    </ul> #}}
 
     <section id="json"> 
     {{# TODO add YAML support? #}}
-      <h3>4.1. <code>json</code></h3>
-      <p>Represents JSON-encoded data <a href="#ref-turtle">♦︎</a>.</p>
+      <h3>4.1. <code>Json</code></h3>
+      <p>Represents a JSON-encoded data value <a href="#ref-json">♦︎</a>.</p>
 
       <figure>
+        <pre><code class="language-js">
+const aJson = Json(
+  {
+    "productID": "2",
+    "name"     : "XYZ Boots",
+    "offers"   : {
+      "price"        : "75.95",
+      "priceCurrency": "EUR"
+    }
+  }
+);
+        </code></pre>
+        <figcaption>Figure 4.1.1: Example of a <code>Json</code> data value.</figcaption>
+      </figure>
+      {{# <figure>
         <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
 &lt;data:json>
@@ -952,14 +1136,14 @@ button.addEventListener('click', async () => {
   }
 &lt;/data:json>
         </code></pre>
-        <figcaption>Figure 4.1.1: Example of <code>json</code> data.</figcaption>
-      </figure>
+        <figcaption>Figure 4.1.1: Example of <code>Json</code> data.</figcaption>
+      </figure> #}}
     </section>
 
     <section id="semantic">
-      <h3>4.2. <code>semantic</code></h3>
+      <h3>4.2. <code>SemanticData</code></h3>
       <p>
-        Represents semantic RDF<a href="#ref-rdf">♦︎</a> data. This data can be specified in one of the following formats:
+        Represents an RDF data value<a href="#ref-rdf">♦︎</a>. This data can be specified in one of the following formats:
       </p>
       <ul>
         <li>
@@ -988,6 +1172,34 @@ button.addEventListener('click', async () => {
       </ul>
 
       <figure>
+        <pre><code class="language-js">
+const 
+// Create an empty data value.
+dataValue = SemanticData(),
+
+// Add RDF statements to the data value.
+baseIRI       = new URL('https://site.example/turtle-file.ttl'),
+turtleContent = `
+PREFIX : &lt;https://schema.org/>
+
+[]
+  a :ItemList ;
+  :itemListElement [
+    a :Product ;
+    :productID "2";
+    :name "XYZ Boots";
+    :offers [
+      a :Offer ;
+      :price "75.95";
+      :priceCurrency "EUR"
+    ]
+  ].
+`;
+await dataValue.readFromText(turtleContent, baseIRI);
+</code></pre>
+        <figcaption>Figure 4.2.1: Creating a semantic data value from an RDF/Turtle file.</figcaption>
+      </figure>
+      {{# <figure>
         <pre><code class="language-xml">
 &lt;!-- E-shop sends a new item to add to the end-user's shopping cart. -->
 &lt;data:semantic>
@@ -1012,7 +1224,7 @@ button.addEventListener('click', async () => {
 &lt;/data:semantic>
 </code></pre>
         <figcaption>Figure 4.2.1: Example of semantic data written in Turtle/TriG.</figcaption>
-      </figure>
+      </figure> #}}
 
       {{# <figure>
         <pre><code class="language-xml">
@@ -1322,7 +1534,7 @@ button.addEventListener('click', async () => {
           World Wide Web (Wikipedia)
         </a>
       </li>
-      <li id="ref-xml">
+      {{# <li id="ref-xml">
         <span class="reference">XML</span>
         <a href="https://www.w3.org/TR/2006/REC-xml11-20060816/">
           Extensible Markup Language (XML) 1.1 (Second Edition)
@@ -1333,7 +1545,7 @@ button.addEventListener('click', async () => {
         <a href="https://www.w3.org/TR/xml-names/">
           Namespaces in XML 1.0 (Third Edition)
         </a>
-      </li>
+      </li> #}}
       <li id="ref-xml-rpc">
         <span class="reference">XML-RPC</span>
         <a href="https://en.wikipedia.org/wiki/XML-RPC">

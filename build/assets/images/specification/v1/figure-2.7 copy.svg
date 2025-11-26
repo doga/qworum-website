@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 600 400" lang="en" role="figure" id="figure-1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <desc>Figure for the Qworum specification v1.0</desc>
+  <title>Figure 2.2</title>
+  <defs>
+    <linearGradient id="color-0" bx:pinned="true">
+      <stop style="stop-color: #e4e3e3;"/>
+    </linearGradient>
+    <linearGradient id="color-1" bx:pinned="true">
+      <stop style="stop-color: #84a9ac;"/>
+    </linearGradient>
+    <linearGradient id="color-2" bx:pinned="true">
+      <stop style="stop-color: #3b6978;"/>
+    </linearGradient>
+    <linearGradient id="color-3" bx:pinned="true">
+      <stop style="stop-color: #204051;"/>
+    </linearGradient>
+    <linearGradient id="comment-color-0">
+      <title>Comment 0</title>
+      <stop style="stop-color: #fdffbc;"/>
+    </linearGradient>
+  </defs>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="557.678 -73.154 572.481 -65.062 557.876 -58.668"/>
+  <rect x="-120.031" y="127.428" width="76.845" height="42.815" rx="15" ry="15" style="stroke: rgb(0, 0, 0); fill: url(#comment-color-0); stroke-opacity: 0.5;" transform="matrix(-1, 0, 0, 1, 0, 0)"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="117.475 150.343 179.887 172.76 117.229 165.114" transform="matrix(0.997982, 0.0635, -0.0635, 0.997982, 10.558331, -9.107393)"/>
+  <g transform="matrix(1, 0, 0, 1, 25.85195, -11.077546)">
+    <rect x="152.877" y="37.574" width="157.114" height="233.892" style="stroke: url(#color-0); fill: url(#color-3);"/>
+    <g transform="matrix(1, 0, 0, 1, 84.401398, 15.07548)">
+      <rect x="80.569" y="34.062" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="115.707" y="57.528">Call frame N</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 85.282883, 182.308517)">
+      <rect x="80.569" y="34.062" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="115.707" y="57.528">Call frame 1</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 84.401398, 15.07548)">
+      <rect x="81.533" y="153.673" width="134.733" height="38.882" style="stroke: rgb(0, 0, 0); fill: url(#color-1);"/>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="116.671" y="177.139">Call frame 2</text>
+    </g>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" transform="matrix(0, -1, 1, 0, 277.983917, 166.066895)" x="37.539" y="-44.407">...</text>
+    <rect x="152.956" y="303.195" width="157.114" height="59.231" style="stroke: url(#color-0); fill: url(#color-2);"/>
+    <text style="fill: url(#color-0); font-family: Arial, sans-serif; font-size: 11.6px; white-space: pre;" x="201.853" y="336.836" bx:origin="-5.593 -9.414">Main object</text>
+    <g transform="matrix(1, 0, 0, 0.836915, -301.972076, 46.927261)" style="">
+      <line style="fill: rgb(216, 216, 216); stroke-width: 2.18173px; stroke: rgb(150, 150, 150);" x1="492.781" y1="266.219" x2="539.525" y2="283.419" transform="matrix(0.34661, 0.938009, -0.938009, 0.34661, 595.03193, -304.592369)"/>
+      <polyline style="fill: rgb(216, 216, 216); fill-opacity: 0; stroke-width: 2.17929px; stroke: rgb(150, 150, 150);" points="508.797 287.609 523.636 295.715 509.107 302.121" transform="matrix(0.211033, 0.977479, -0.977479, 0.211033, 695.502128, -271.951983)"/>
+    </g>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="224.061" y="291.197" bx:origin="-5.593 -9.414">Call frame owner</text>
+  </g>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="56.468" y="152.86">Call stack</text>
+  <rect x="404.352" y="261.305" width="164.846" height="31.167" rx="15" ry="15" style="stroke: rgb(0, 0, 0); fill: url(#comment-color-0); stroke-opacity: 0.5;"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="316.336 251.709 419.154 235.35 315.111 240.93" transform="matrix(-0.874304, -0.485379, 0.485379, -0.874304, 569.913782, 634.646664)"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="428.773" y="200.364" transform="matrix(1, 0, 0, 1, 1.757964, 80.232941)" bx:origin="-5.593 -9.414">The World Wide Web<tspan x="428.77301025390625" dy="1em">​</tspan></text>
+  <rect x="399.568" y="62.839" width="170.853" height="111.29" rx="15" ry="15" style="stroke: rgb(0, 0, 0); fill: url(#comment-color-0); stroke-opacity: 0.5;"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="322.268 162.049 404.884 139.632 321.943 147.278" transform="matrix(-0.966009, 0.258507, -0.258507, -0.966009, 753.467675, 202.608886)"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 11.6px;" x="428.773" y="200.364" transform="matrix(1, 0, 0, 1, 34.307785, -77.855225)" bx:origin="-5.593 -9.414">Qworum<tspan x="428.77301025390625" dy="1em">​</tspan></text>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="317.511 198.949 408.374 176.532 317.154 184.178" transform="matrix(-0.906986, 0.421161, -0.421161, -0.906986, 770.854792, 205.236473)"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="297.179 252.594 485.905 230.177 296.439 237.823" transform="matrix(-0.687506, 0.726178, -0.726178, -0.687506, 835.394163, 123.278949)"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="323.379 74.113 402.913 51.696 323.066 59.342" transform="matrix(-0.921694, -0.387918, 0.387918, -0.921694, 673.152926, 261.693343)"/>
+  <polyline style="stroke: rgb(0, 0, 0); stroke-opacity: 0.5; fill: url(#comment-color-0);" points="332.826 115.313 400.618 99.146 332.559 104.66" transform="matrix(-0.993337, -0.115243, 0.115243, -0.993337, 718.377085, 255.991352)"/>
+</svg>
