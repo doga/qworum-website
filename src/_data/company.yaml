@@ -16,9 +16,9 @@ linkedin:
 github:
   url: https://github.com/doga
 
-# bluesky:
-#   handle: "@qworum.bsky.social"
-#   url: https://bsky.app/profile/qworum.bsky.social
+bluesky:
+  handle: "@qworum.bsky.social"
+  url: https://bsky.app/profile/qworum.bsky.social
 
 # registration:
 #   id: CHE-268.664.734
