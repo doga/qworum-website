@@ -1,14 +1,28 @@
 <footer>
   <div class="social">
-    <a href="{{company.linkedin.url}}" target='_blank'><img class='logo' src="/assets/images/logos/LinkedIn_icon.svg" alt="LinkedIn logo"></a>
+    <a href="{{company.linkedin.url}}" target='_blank'>
+      <span class="hide">Qworum's LinkedIn page</span>
+      <img class='logo' src="/assets/images/logos/LinkedIn_icon.svg" alt="LinkedIn logo">
+    </a>
     ・
-    <a href="{{company.twitter.url}}" target='_blank'><img class='logo' src="/assets/images/logos/X-logo-white.svg" alt="𝕏 logo"></a>
+    <a href="{{company.twitter.url}}" target='_blank'>
+      <span class="hide">Qworum's Twitter/X feed</span>
+      <img class='logo' src="/assets/images/logos/X-logo-white.svg" alt="𝕏 logo">
+    </a>
     ・
-    <a href="{{company.bluesky.url}}" target='_blank'><img class='logo' src="/assets/images/logos/Bluesky_Logo.svg" alt="Bluesky logo"></a>
+    <a href="{{company.bluesky.url}}" target='_blank'>
+      <span class="hide">Qworum's Bluesky feed</span>
+      <img class='logo' src="/assets/images/logos/Bluesky_Logo.svg" alt="Bluesky logo">
+    </a>
     ・
-    <a href="{{company.github.url}}" target='_blank'><img class='logo' src="/assets/images/logos/github-mark-white.svg" alt="GitHub logo"></a>
+    <a href="{{company.github.url}}" target='_blank'>
+      <span class="hide">Qworum's open-source repositories on GitHub (plus some other repositories that are not related to LinkedIn)</span>
+      <img class='logo' src="/assets/images/logos/github-mark-white.svg" alt="GitHub logo">
+    </a>
   </div>
+
   {{# <br> <br> #}}
+
   <span class="footer-company">
     ©
     <time datetime="{{ '' |> copyrightDate }}">
