@@ -5,7 +5,8 @@ title    : Home
 
 text:
   mission:
-    oneliner: The new essential frontend platform for web applications
+    oneliner: The new gold standard for secure application integrations
+#    The new essential frontend platform for web applications
 #    oneliner: Web-scale application and integration platform
 #      Frontend-PaaS for the composable enterprise
 #      Frontend-PaaS for state-of-the-art web applications
@@ -15,8 +16,9 @@ text:
     usp:
 #    - The missing piece for transforming the Web into a full-featured application platform.
     - Groundbreaking new web API technology for interactive processes.
-    - Zero-trust application integration — greatly improves on the gold-standard OAuth which has many known security issues.
-    - Distributed applications — the simpler and more versatile alternative to micro-frontends for bringing frontend modularity to large-scale applications.
+    - >
+      Fully secure integrations — Qworum surpasses OAuth+REST, which is widely used today for integrating applications, yet has <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-cybersecurity-ipaas-activity-7447671635412967425-cW2f/'>many known security issues</a>.
+    - Distributed applications — allows application frontends to span multiple websites.
 #    - Our mission is to turn the Web into a full-featured application platform.
 #    - >
 #      <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a>. 
