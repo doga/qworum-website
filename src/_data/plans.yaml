@@ -28,7 +28,7 @@ list:
   name: Qworum Alloy
   id: alloy
   order: 3
-  free_trial: true
+  free_trial: false
   monthly_fee:
     per_domain:
       USD: 190
@@ -52,4 +52,4 @@ free_trial:
 
 rebate:
   yearly:
-    percent: 10
+    percent: 15

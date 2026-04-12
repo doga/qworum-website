@@ -24,12 +24,12 @@ text:
 
     alloy:
       features: 
-      - Activate Qworum on one or more DNS (sub)domains.
-      - Distribute the UIs of your web applications across several (sub)domains.
-      - Integrate applications at the UI level. Provide and consume Qworum APIs.
-      # - Application modularisation through composable user dialogs.
+      - Your website(s) become part of Qworum's Service Web.
+      - Your website(s) can use the Qworum features of Web browsers.
+      - Your website(s) can host Qworum APIs.
+      - Your website(s) can call Qworum APIs hosted on other websites.
+      - Other websites can call your Qworum APIs.
       - Plus all {{ore.name}} features.
-      # - Plus all {{iolite.name}} features.
 
   # - title   : Enterprise
   #   price   : 500 USD per month or 5,000 USD for 12 months. 
