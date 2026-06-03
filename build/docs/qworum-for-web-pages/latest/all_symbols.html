@@ -1,45 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>All Symbols - Qworum for web pages documentation</title>
+  <title>All Symbols - Qworum for Web pages v1.8.3 documentation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="doc-current-file" content="">
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./page.css">
-  <link id="ddocResetStylesheet" rel="stylesheet" href="./reset.css">
-
-    <script src="./search_index.js" defer></script>
-    <script src="./script.js" defer></script>
-    <script src="./fuse.js" defer></script>
-    <script src="./search.js" defer></script>
-</head>
+  <link rel="stylesheet" href=".&#x2F;styles.css">
+  <link rel="stylesheet" href=".&#x2F;page.css">
+  <link id="ddocResetStylesheet" rel="stylesheet" href=".&#x2F;reset.css"><link href="./comrak.css" rel="stylesheet" /><link href="./prism.css" rel="stylesheet" /><script src="./prism.js"></script><script src=".&#x2F;script.js" defer></script>
+  <script src=".&#x2F;darkmode_toggle.js"></script><script src=".&#x2F;search_index.js" defer></script>
+    <script src=".&#x2F;fuse.js" defer></script>
+    <script src=".&#x2F;search.js" defer></script></head>
 <body>
 <div class="ddoc">
-<div><nav class="top-0 sticky bg-white z-50 py-3 h-14" id="topnav">
+<div><nav id="topnav">
   <div class="h-full">
-    <div><ul class="breadcrumbs"><li><a href="./" class="contextLink">Qworum for web pages</a></li><span class="text-[#0F172A]"><svg
-	width="16"
-	height="16"
-	viewBox="0 0 16 16"
-	fill="none"
-	xmlns="http://www.w3.org/2000/svg">
-	<path fill-rule="evenodd" clip-rule="evenodd" d="M5.76748 11.8159C5.5378 11.577 5.54525 11.1972 5.78411 10.9675L8.93431 8L5.78411 5.0325C5.54525 4.80282 5.5378 4.423 5.76748 4.18413C5.99715 3.94527 6.37698 3.93782 6.61584 4.1675L10.2158 7.5675C10.3335 7.68062 10.4 7.83679 10.4 8C10.4 8.16321 10.3335 8.31938 10.2158 8.4325L6.61584 11.8325C6.37698 12.0622 5.99715 12.0547 5.76748 11.8159Z" fill="currentColor" />
+    <div class="flex items-center"><ul class="breadcrumbs">
+  <li>
+    <a href=".&#x2F;" class="contextLink">Qworum for Web pages v1.8.3</a>
+  </li><span class="text-black dark:text-white"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 16 16"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M5.76748 11.8159C5.5378 11.577 5.54525 11.1972 5.78411 10.9675L8.93431 8L5.78411 5.0325C5.54525 4.80282 5.5378 4.423 5.76748 4.18413C5.99715 3.94527 6.37698 3.93782 6.61584 4.1675L10.2158 7.5675C10.3335 7.68062 10.4 7.83679 10.4 8C10.4 8.16321 10.3335 8.31938 10.2158 8.4325L6.61584 11.8325C6.37698 12.0622 5.99715 12.0547 5.76748 11.8159Z"
+    fill="currentColor"
+  />
 </svg>
-</span><li>all symbols</li></ul>
+</span>all symbols</ul>
 </div>
 
-      <input
-        type="text"
-        id="searchbar"
-        style="display: none;"
-        class="py-2 px-2.5 rounded text-sm border border-gray-300 bg-transparent" />
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode" style="display: none;"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="14"
+  height="14"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path
+    d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z"
+  />
+</svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="14"
+  height="14"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  class="hidden"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path
+    d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z"
+  />
+  <path
+    d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z"
+  />
+  <path
+    d="M7.007 16.993a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z"
+  />
+  <path
+    d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z"
+  />
+  <path
+    d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z"
+  />
+  <path
+    d="M6.213 4.81l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.217 -1.567l.102 .07z"
+  />
+  <path
+    d="M19.107 4.893a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z"
+  />
+  <path
+    d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z"
+  />
+  <path
+    d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"
+  />
+</svg>
+</button>
+
+        <input
+          type="text"
+          id="searchbar"
+          style="display: none;"
+          class="py-2 px-2.5 mx-1 rounded text-sm border border-gray-300 bg-transparent dark:bg-gray-800 dark:border-gray-700"
+          />
+    </div>
   </div>
 </nav>
 <div id="searchResults"></div><div id="content">
-    <main><div class="space-y-7" id=""><section class="section" id="default">
-  <div>
-	  <h2 class="anchorable mb-1"><a href="#default" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+    <main><div class="space-y-6 max-w-prose">
+    <div>
+      <a href=".&#x2F;" class="link text-xl font-bold">default</a>
+
+      <div class="ml-4 mt-2"><section>
+  <div class="space-y-2 flex-1"><div class="space-y-7" id="module_doc"><div class="markdown_summary"><p>A JavaScript library that web pages should import in order to use the Qworum features of web browsers.</p>
+</div><section class="section"  id="examples"><div>
+      <h2 class="anchorable mb-1"><a href="#examples" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -61,64 +126,744 @@
   </defs>
 </svg>
 </a>
-<a href="./" class="contextLink">default</a></h2></div><div class="namespaceSection"><div id="namespace_call" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Call.html" title="Call">Call</a>
+Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#example_0" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 14 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clip-path="url(#clip0_1081_1237)">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.80328 2.8656C6.68736 2.99 6.62425 3.15454 6.62725 3.32456C6.63025 3.49457 6.69913 3.65678 6.81936 3.77702C6.9396 3.89725 7.10181 3.96613 7.27182 3.96913C7.44184 3.97213 7.60638 3.90902 7.73078 3.7931L8.82453 2.69935C8.98712 2.53676 9.18015 2.40778 9.39259 2.31978C9.60503 2.23179 9.83272 2.1865 10.0627 2.1865C10.2926 2.1865 10.5203 2.23179 10.7327 2.31978C10.9452 2.40778 11.1382 2.53676 11.3008 2.69935C11.4634 2.86194 11.5923 3.05497 11.6803 3.2674C11.7683 3.47984 11.8136 3.70753 11.8136 3.93747C11.8136 4.16741 11.7683 4.3951 11.6803 4.60754C11.5923 4.81998 11.4634 5.013 11.3008 5.1756L9.11328 7.3631C8.95075 7.52581 8.75775 7.65488 8.5453 7.74295C8.33285 7.83102 8.10513 7.87635 7.87516 7.87635C7.64518 7.87635 7.41746 7.83102 7.20501 7.74295C6.99256 7.65488 6.79956 7.52581 6.63703 7.3631C6.51263 7.24718 6.34809 7.18407 6.17807 7.18707C6.00806 7.19007 5.84585 7.25894 5.72561 7.37918C5.60538 7.49942 5.5365 7.66163 5.5335 7.83164C5.5305 8.00165 5.59361 8.1662 5.70953 8.2906C5.99391 8.57501 6.33154 8.80062 6.70312 8.95455C7.0747 9.10847 7.47296 9.18769 7.87516 9.18769C8.27736 9.18769 8.67562 9.10847 9.0472 8.95455C9.41878 8.80062 9.7564 8.57501 10.0408 8.2906L12.2283 6.1031C12.8026 5.52874 13.1253 4.74974 13.1253 3.93747C13.1253 3.12521 12.8026 2.34621 12.2283 1.77185C11.6539 1.19749 10.8749 0.874817 10.0627 0.874817C9.25039 0.874817 8.47139 1.19749 7.89703 1.77185L6.80328 2.8656ZM2.69953 11.3006C2.53682 11.1381 2.40774 10.9451 2.31968 10.7326C2.23161 10.5202 2.18628 10.2924 2.18628 10.0625C2.18628 9.8325 2.23161 9.60477 2.31968 9.39233C2.40774 9.17988 2.53682 8.98688 2.69953 8.82435L4.88703 6.63685C5.04956 6.47414 5.24256 6.34506 5.45501 6.25699C5.66746 6.16893 5.89518 6.1236 6.12516 6.1236C6.35513 6.1236 6.58285 6.16893 6.7953 6.25699C7.00775 6.34506 7.20075 6.47414 7.36328 6.63685C7.48768 6.75277 7.65223 6.81588 7.82224 6.81288C7.99225 6.80988 8.15446 6.741 8.2747 6.62077C8.39494 6.50053 8.46381 6.33832 8.46681 6.1683C8.46981 5.99829 8.4067 5.83375 8.29078 5.70935C8.0064 5.42494 7.66878 5.19933 7.2972 5.0454C6.92562 4.89148 6.52736 4.81225 6.12516 4.81225C5.72296 4.81225 5.3247 4.89148 4.95312 5.0454C4.58154 5.19933 4.24391 5.42494 3.95953 5.70935L1.77203 7.89685C1.19767 8.47121 0.875 9.25021 0.875 10.0625C0.875 10.8747 1.19767 11.6537 1.77203 12.2281C2.34639 12.8025 3.12539 13.1251 3.93766 13.1251C4.74992 13.1251 5.52892 12.8025 6.10328 12.2281L7.19703 11.1343C7.31295 11.0099 7.37606 10.8454 7.37306 10.6754C7.37006 10.5054 7.30119 10.3432 7.18095 10.2229C7.06071 10.1027 6.8985 10.0338 6.72849 10.0308C6.55848 10.0278 6.39393 10.0909 6.26953 10.2068L5.17578 11.3006C5.01325 11.4633 4.82025 11.5924 4.6078 11.6805C4.39535 11.7685 4.16763 11.8138 3.93766 11.8138C3.70768 11.8138 3.47996 11.7685 3.26751 11.6805C3.05506 11.5924 2.86206 11.4633 2.69953 11.3006Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_1081_1237">
+      <rect width="14" height="14" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a>
+<h3 class="example-header"><div class="markdown"><p>Importing this library into a web page:</p>
+</div></h3>
+  <div><div class="markdown"><pre class="highlight"><code class="language-javascript">import {
+  // For using the browsers' Qworum features
+  Qworum,
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Call.html#method_build_0">build</a></li><li><a href="./symbols/Call.html#accessor_href">href</a></li><li><a href="./symbols/Call.html#accessor_object">object</a></li><li><a href="./symbols/Call.html#accessor_objectparameters">objectParameters</a></li><li><a href="./symbols/Call.html#accessor_parameters">parameters</a></li><li><a href="./symbols/Call.html#method_tostring_0">toString</a></li></ul></div>
-    </div><div id="namespace_data" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Data.html" title="Data">Data</a>
+  // For creating Qworum scripts and session data
+  QworumScript as qs,
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Data.html#method_build_0">build</a></li><li><a href="./symbols/Data.html#accessor_path">path</a></li><li><a href="./symbols/Data.html#method_tostring_0">toString</a></li></ul></div>
-    </div><div id="namespace_fault" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Fault.html" title="Fault">Fault</a>
+  // For manipulating semantic RDF data in scripts and session data
+  iri, irl, url, urn, IRI, IRL, URN,
+  rdfTermFactory
+} from 'https://esm.sh/gh/doga/qworum-for-web-pages@1.8.4/mod.mjs';
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Fault.html#method_build_0">build</a></li><li><a href="./symbols/Fault.html#method_tostring_0">toString</a></li><li><a href="./symbols/Fault.html#accessor_type">type</a></li></ul></div>
-    </div><div id="namespace_goto" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Goto.html" title="Goto">Goto</a>
+const
+// Shortcuts for building Qworum scripts and session data
+Json         = qs.Json.build,
+SemanticData = qs.SemanticData.build,
+Return       = qs.Return.build,
+Sequence     = qs.Sequence.build,
+Data         = qs.Data.build,
+Try          = qs.Try.build,
+Goto         = qs.Goto.build,
+Call         = qs.Call.build,
+Fault        = qs.Fault.build,
+Script       = qs.Script.build;
+</code><button class="copyButton" data-copy="import {
+  // For using the browsers' Qworum features
+  Qworum,
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Goto.html#method_build_0">build</a></li><li><a href="./symbols/Goto.html#accessor_href">href</a></li><li><a href="./symbols/Goto.html#method_tostring_0">toString</a></li></ul></div>
-    </div><div id="namespace_json" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Json.html" title="Json">Json</a>
+  // For creating Qworum scripts and session data
+  QworumScript as qs,
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Json.html#method_build_0">build</a></li><li><a href="./symbols/Json.html#method_tostring_0">toString</a></li><li><a href="./symbols/Json.html#accessor_value">value</a></li></ul></div>
-    </div><div id="namespace_qworum" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Qworum.html" title="Qworum">Qworum</a>
+  // For manipulating semantic RDF data in scripts and session data
+  iri, irl, url, urn, IRI, IRL, URN,
+  rdfTermFactory
+} from 'https://esm.sh/gh/doga/qworum-for-web-pages@1.8.4/mod.mjs';
 
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Web pages can use the Qworum capabilities of web browsers through this JavaScript class.</p>
-</div></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Qworum.html#method_checkavailability_0">checkAvailability</a></li><li><a href="./symbols/Qworum.html#method_eval_0">eval</a></li><li><a href="./symbols/Qworum.html#method_getdata_0">getData</a></li><li><a href="./symbols/Qworum.html#method_setdata_0">setData</a></li></ul></div>
-    </div><div id="namespace_return" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Return.html" title="Return">Return</a>
+const
+// Shortcuts for building Qworum scripts and session data
+Json         = qs.Json.build,
+SemanticData = qs.SemanticData.build,
+Return       = qs.Return.build,
+Sequence     = qs.Sequence.build,
+Data         = qs.Data.build,
+Try          = qs.Try.build,
+Goto         = qs.Goto.build,
+Call         = qs.Call.build,
+Fault        = qs.Fault.build,
+Script       = qs.Script.build;
+"><svg
+  class="copy"
+  width="15"
+  height="15"
+  viewBox="0 0 15 15"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect x="2" y="2" width="7" height="7" fill="none" />
+  <rect x="6" y="6" width="7" height="7" fill="none" />
+  <path
+    d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z"
+    fill="currentColor"
+  />
+</svg>
+<svg
+  class="check"
+  width="15"
+  height="15"
+  viewBox="0 0 24 24"
+  stroke-width="2"
+  stroke="currentColor"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+</button><code></code></pre>
+</div></div>
+</div>
+<div class="border-b border-gray-300 dark:border-gray-700"></div><div class="anchorable"><a href="#example_1" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 14 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clip-path="url(#clip0_1081_1237)">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.80328 2.8656C6.68736 2.99 6.62425 3.15454 6.62725 3.32456C6.63025 3.49457 6.69913 3.65678 6.81936 3.77702C6.9396 3.89725 7.10181 3.96613 7.27182 3.96913C7.44184 3.97213 7.60638 3.90902 7.73078 3.7931L8.82453 2.69935C8.98712 2.53676 9.18015 2.40778 9.39259 2.31978C9.60503 2.23179 9.83272 2.1865 10.0627 2.1865C10.2926 2.1865 10.5203 2.23179 10.7327 2.31978C10.9452 2.40778 11.1382 2.53676 11.3008 2.69935C11.4634 2.86194 11.5923 3.05497 11.6803 3.2674C11.7683 3.47984 11.8136 3.70753 11.8136 3.93747C11.8136 4.16741 11.7683 4.3951 11.6803 4.60754C11.5923 4.81998 11.4634 5.013 11.3008 5.1756L9.11328 7.3631C8.95075 7.52581 8.75775 7.65488 8.5453 7.74295C8.33285 7.83102 8.10513 7.87635 7.87516 7.87635C7.64518 7.87635 7.41746 7.83102 7.20501 7.74295C6.99256 7.65488 6.79956 7.52581 6.63703 7.3631C6.51263 7.24718 6.34809 7.18407 6.17807 7.18707C6.00806 7.19007 5.84585 7.25894 5.72561 7.37918C5.60538 7.49942 5.5365 7.66163 5.5335 7.83164C5.5305 8.00165 5.59361 8.1662 5.70953 8.2906C5.99391 8.57501 6.33154 8.80062 6.70312 8.95455C7.0747 9.10847 7.47296 9.18769 7.87516 9.18769C8.27736 9.18769 8.67562 9.10847 9.0472 8.95455C9.41878 8.80062 9.7564 8.57501 10.0408 8.2906L12.2283 6.1031C12.8026 5.52874 13.1253 4.74974 13.1253 3.93747C13.1253 3.12521 12.8026 2.34621 12.2283 1.77185C11.6539 1.19749 10.8749 0.874817 10.0627 0.874817C9.25039 0.874817 8.47139 1.19749 7.89703 1.77185L6.80328 2.8656ZM2.69953 11.3006C2.53682 11.1381 2.40774 10.9451 2.31968 10.7326C2.23161 10.5202 2.18628 10.2924 2.18628 10.0625C2.18628 9.8325 2.23161 9.60477 2.31968 9.39233C2.40774 9.17988 2.53682 8.98688 2.69953 8.82435L4.88703 6.63685C5.04956 6.47414 5.24256 6.34506 5.45501 6.25699C5.66746 6.16893 5.89518 6.1236 6.12516 6.1236C6.35513 6.1236 6.58285 6.16893 6.7953 6.25699C7.00775 6.34506 7.20075 6.47414 7.36328 6.63685C7.48768 6.75277 7.65223 6.81588 7.82224 6.81288C7.99225 6.80988 8.15446 6.741 8.2747 6.62077C8.39494 6.50053 8.46381 6.33832 8.46681 6.1683C8.46981 5.99829 8.4067 5.83375 8.29078 5.70935C8.0064 5.42494 7.66878 5.19933 7.2972 5.0454C6.92562 4.89148 6.52736 4.81225 6.12516 4.81225C5.72296 4.81225 5.3247 4.89148 4.95312 5.0454C4.58154 5.19933 4.24391 5.42494 3.95953 5.70935L1.77203 7.89685C1.19767 8.47121 0.875 9.25021 0.875 10.0625C0.875 10.8747 1.19767 11.6537 1.77203 12.2281C2.34639 12.8025 3.12539 13.1251 3.93766 13.1251C4.74992 13.1251 5.52892 12.8025 6.10328 12.2281L7.19703 11.1343C7.31295 11.0099 7.37606 10.8454 7.37306 10.6754C7.37006 10.5054 7.30119 10.3432 7.18095 10.2229C7.06071 10.1027 6.8985 10.0338 6.72849 10.0308C6.55848 10.0278 6.39393 10.0909 6.26953 10.2068L5.17578 11.3006C5.01325 11.4633 4.82025 11.5924 4.6078 11.6805C4.39535 11.7685 4.16763 11.8138 3.93766 11.8138C3.70768 11.8138 3.47996 11.7685 3.26751 11.6805C3.05506 11.5924 2.86206 11.4633 2.69953 11.3006Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_1081_1237">
+      <rect width="14" height="14" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a>
+<h3 class="example-header"><div class="markdown"><p>Checking that Qworum is enabled in the Web browser:</p>
+</div></h3>
+  <div><div class="markdown"><pre class="highlight"><code class="language-javascript">try{
+  await Qworum.checkAvailability();
+}catch(error){
+  console.error('Install the Qworum browser extension or enable it.');
+}
+</code><button class="copyButton" data-copy="try{
+  await Qworum.checkAvailability();
+}catch(error){
+  console.error('Install the Qworum browser extension or enable it.');
+}
+"><svg
+  class="copy"
+  width="15"
+  height="15"
+  viewBox="0 0 15 15"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect x="2" y="2" width="7" height="7" fill="none" />
+  <rect x="6" y="6" width="7" height="7" fill="none" />
+  <path
+    d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z"
+    fill="currentColor"
+  />
+</svg>
+<svg
+  class="check"
+  width="15"
+  height="15"
+  viewBox="0 0 24 24"
+  stroke-width="2"
+  stroke="currentColor"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+</button><code></code></pre>
+</div></div>
+</div>
+<div class="border-b border-gray-300 dark:border-gray-700"></div><div class="anchorable"><a href="#example_2" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 14 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clip-path="url(#clip0_1081_1237)">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.80328 2.8656C6.68736 2.99 6.62425 3.15454 6.62725 3.32456C6.63025 3.49457 6.69913 3.65678 6.81936 3.77702C6.9396 3.89725 7.10181 3.96613 7.27182 3.96913C7.44184 3.97213 7.60638 3.90902 7.73078 3.7931L8.82453 2.69935C8.98712 2.53676 9.18015 2.40778 9.39259 2.31978C9.60503 2.23179 9.83272 2.1865 10.0627 2.1865C10.2926 2.1865 10.5203 2.23179 10.7327 2.31978C10.9452 2.40778 11.1382 2.53676 11.3008 2.69935C11.4634 2.86194 11.5923 3.05497 11.6803 3.2674C11.7683 3.47984 11.8136 3.70753 11.8136 3.93747C11.8136 4.16741 11.7683 4.3951 11.6803 4.60754C11.5923 4.81998 11.4634 5.013 11.3008 5.1756L9.11328 7.3631C8.95075 7.52581 8.75775 7.65488 8.5453 7.74295C8.33285 7.83102 8.10513 7.87635 7.87516 7.87635C7.64518 7.87635 7.41746 7.83102 7.20501 7.74295C6.99256 7.65488 6.79956 7.52581 6.63703 7.3631C6.51263 7.24718 6.34809 7.18407 6.17807 7.18707C6.00806 7.19007 5.84585 7.25894 5.72561 7.37918C5.60538 7.49942 5.5365 7.66163 5.5335 7.83164C5.5305 8.00165 5.59361 8.1662 5.70953 8.2906C5.99391 8.57501 6.33154 8.80062 6.70312 8.95455C7.0747 9.10847 7.47296 9.18769 7.87516 9.18769C8.27736 9.18769 8.67562 9.10847 9.0472 8.95455C9.41878 8.80062 9.7564 8.57501 10.0408 8.2906L12.2283 6.1031C12.8026 5.52874 13.1253 4.74974 13.1253 3.93747C13.1253 3.12521 12.8026 2.34621 12.2283 1.77185C11.6539 1.19749 10.8749 0.874817 10.0627 0.874817C9.25039 0.874817 8.47139 1.19749 7.89703 1.77185L6.80328 2.8656ZM2.69953 11.3006C2.53682 11.1381 2.40774 10.9451 2.31968 10.7326C2.23161 10.5202 2.18628 10.2924 2.18628 10.0625C2.18628 9.8325 2.23161 9.60477 2.31968 9.39233C2.40774 9.17988 2.53682 8.98688 2.69953 8.82435L4.88703 6.63685C5.04956 6.47414 5.24256 6.34506 5.45501 6.25699C5.66746 6.16893 5.89518 6.1236 6.12516 6.1236C6.35513 6.1236 6.58285 6.16893 6.7953 6.25699C7.00775 6.34506 7.20075 6.47414 7.36328 6.63685C7.48768 6.75277 7.65223 6.81588 7.82224 6.81288C7.99225 6.80988 8.15446 6.741 8.2747 6.62077C8.39494 6.50053 8.46381 6.33832 8.46681 6.1683C8.46981 5.99829 8.4067 5.83375 8.29078 5.70935C8.0064 5.42494 7.66878 5.19933 7.2972 5.0454C6.92562 4.89148 6.52736 4.81225 6.12516 4.81225C5.72296 4.81225 5.3247 4.89148 4.95312 5.0454C4.58154 5.19933 4.24391 5.42494 3.95953 5.70935L1.77203 7.89685C1.19767 8.47121 0.875 9.25021 0.875 10.0625C0.875 10.8747 1.19767 11.6537 1.77203 12.2281C2.34639 12.8025 3.12539 13.1251 3.93766 13.1251C4.74992 13.1251 5.52892 12.8025 6.10328 12.2281L7.19703 11.1343C7.31295 11.0099 7.37606 10.8454 7.37306 10.6754C7.37006 10.5054 7.30119 10.3432 7.18095 10.2229C7.06071 10.1027 6.8985 10.0338 6.72849 10.0308C6.55848 10.0278 6.39393 10.0909 6.26953 10.2068L5.17578 11.3006C5.01325 11.4633 4.82025 11.5924 4.6078 11.6805C4.39535 11.7685 4.16763 11.8138 3.93766 11.8138C3.70768 11.8138 3.47996 11.7685 3.26751 11.6805C3.05506 11.5924 2.86206 11.4633 2.69953 11.3006Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_1081_1237">
+      <rect width="14" height="14" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a>
+<h3 class="example-header"><div class="markdown"><p>Running a simple Qworum script:</p>
+</div></h3>
+  <div><div class="markdown"><pre class="highlight"><code class="language-javascript">await Qworum.eval(
+  Script(
+      Sequence(
+        // Call a method of the current Qworum object
+        Call('@', `../view-item`, { name: 'item id', value: Json(1) }),
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Return.html#method_build_0">build</a></li><li><a href="./symbols/Return.html#method_tostring_0">toString</a></li></ul></div>
-    </div><div id="namespace_script" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Script.html" title="Script">Script</a>
+        // Return to the current page in the current call
+        Goto()
+      ),
+    )
+  )
+);
+</code><button class="copyButton" data-copy="await Qworum.eval(
+  Script(
+      Sequence(
+        // Call a method of the current Qworum object
+        Call('@', `../view-item`, { name: 'item id', value: Json(1) }),
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Script.html#method_build_0">build</a></li><li><a href="./symbols/Script.html#accessor_instruction">instruction</a></li><li><a href="./symbols/Script.html#method_tostring_0">toString</a></li></ul></div>
-    </div><div id="namespace_semanticdata" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/SemanticData.html" title="SemanticData">SemanticData</a>
+        // Return to the current page in the current call
+        Goto()
+      ),
+    )
+  )
+);
+"><svg
+  class="copy"
+  width="15"
+  height="15"
+  viewBox="0 0 15 15"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect x="2" y="2" width="7" height="7" fill="none" />
+  <rect x="6" y="6" width="7" height="7" fill="none" />
+  <path
+    d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z"
+    fill="currentColor"
+  />
+</svg>
+<svg
+  class="check"
+  width="15"
+  height="15"
+  viewBox="0 0 24 24"
+  stroke-width="2"
+  stroke="currentColor"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+</button><code></code></pre>
+</div></div>
+</div>
+<div class="border-b border-gray-300 dark:border-gray-700"></div><div class="anchorable"><a href="#example_3" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 14 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clip-path="url(#clip0_1081_1237)">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.80328 2.8656C6.68736 2.99 6.62425 3.15454 6.62725 3.32456C6.63025 3.49457 6.69913 3.65678 6.81936 3.77702C6.9396 3.89725 7.10181 3.96613 7.27182 3.96913C7.44184 3.97213 7.60638 3.90902 7.73078 3.7931L8.82453 2.69935C8.98712 2.53676 9.18015 2.40778 9.39259 2.31978C9.60503 2.23179 9.83272 2.1865 10.0627 2.1865C10.2926 2.1865 10.5203 2.23179 10.7327 2.31978C10.9452 2.40778 11.1382 2.53676 11.3008 2.69935C11.4634 2.86194 11.5923 3.05497 11.6803 3.2674C11.7683 3.47984 11.8136 3.70753 11.8136 3.93747C11.8136 4.16741 11.7683 4.3951 11.6803 4.60754C11.5923 4.81998 11.4634 5.013 11.3008 5.1756L9.11328 7.3631C8.95075 7.52581 8.75775 7.65488 8.5453 7.74295C8.33285 7.83102 8.10513 7.87635 7.87516 7.87635C7.64518 7.87635 7.41746 7.83102 7.20501 7.74295C6.99256 7.65488 6.79956 7.52581 6.63703 7.3631C6.51263 7.24718 6.34809 7.18407 6.17807 7.18707C6.00806 7.19007 5.84585 7.25894 5.72561 7.37918C5.60538 7.49942 5.5365 7.66163 5.5335 7.83164C5.5305 8.00165 5.59361 8.1662 5.70953 8.2906C5.99391 8.57501 6.33154 8.80062 6.70312 8.95455C7.0747 9.10847 7.47296 9.18769 7.87516 9.18769C8.27736 9.18769 8.67562 9.10847 9.0472 8.95455C9.41878 8.80062 9.7564 8.57501 10.0408 8.2906L12.2283 6.1031C12.8026 5.52874 13.1253 4.74974 13.1253 3.93747C13.1253 3.12521 12.8026 2.34621 12.2283 1.77185C11.6539 1.19749 10.8749 0.874817 10.0627 0.874817C9.25039 0.874817 8.47139 1.19749 7.89703 1.77185L6.80328 2.8656ZM2.69953 11.3006C2.53682 11.1381 2.40774 10.9451 2.31968 10.7326C2.23161 10.5202 2.18628 10.2924 2.18628 10.0625C2.18628 9.8325 2.23161 9.60477 2.31968 9.39233C2.40774 9.17988 2.53682 8.98688 2.69953 8.82435L4.88703 6.63685C5.04956 6.47414 5.24256 6.34506 5.45501 6.25699C5.66746 6.16893 5.89518 6.1236 6.12516 6.1236C6.35513 6.1236 6.58285 6.16893 6.7953 6.25699C7.00775 6.34506 7.20075 6.47414 7.36328 6.63685C7.48768 6.75277 7.65223 6.81588 7.82224 6.81288C7.99225 6.80988 8.15446 6.741 8.2747 6.62077C8.39494 6.50053 8.46381 6.33832 8.46681 6.1683C8.46981 5.99829 8.4067 5.83375 8.29078 5.70935C8.0064 5.42494 7.66878 5.19933 7.2972 5.0454C6.92562 4.89148 6.52736 4.81225 6.12516 4.81225C5.72296 4.81225 5.3247 4.89148 4.95312 5.0454C4.58154 5.19933 4.24391 5.42494 3.95953 5.70935L1.77203 7.89685C1.19767 8.47121 0.875 9.25021 0.875 10.0625C0.875 10.8747 1.19767 11.6537 1.77203 12.2281C2.34639 12.8025 3.12539 13.1251 3.93766 13.1251C4.74992 13.1251 5.52892 12.8025 6.10328 12.2281L7.19703 11.1343C7.31295 11.0099 7.37606 10.8454 7.37306 10.6754C7.37006 10.5054 7.30119 10.3432 7.18095 10.2229C7.06071 10.1027 6.8985 10.0338 6.72849 10.0308C6.55848 10.0278 6.39393 10.0909 6.26953 10.2068L5.17578 11.3006C5.01325 11.4633 4.82025 11.5924 4.6078 11.6805C4.39535 11.7685 4.16763 11.8138 3.93766 11.8138C3.70768 11.8138 3.47996 11.7685 3.26751 11.6805C3.05506 11.5924 2.86206 11.4633 2.69953 11.3006Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_1081_1237">
+      <rect width="14" height="14" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a>
+<h3 class="example-header"><div class="markdown"><p>Running a more complex Qworum script:</p>
+</div></h3>
+  <div><div class="markdown"><pre class="highlight"><code class="language-javascript">const
+pathOfQworumObject = ['@', 'a qworum object'],
+script = Script(
+  Try(
+    Sequence(
+      // Initialise the Qworum object ? (May be required for Qworum classes that have instance properties)
+      Try(
+        // If the state of the Qworum object is readable, then the object exists.
+        Data([...pathOfQworumObject, 'version']),
+        {
+          catch: '* reference',
+          do: // the Qworum object does not exist; initialise it
+          Call(
+            pathOfQworumObject, 'https://a-qworum-service.example/a-qworum-class/new/',
+            { name: 'initial state', value: Json({state: {xyz: '…'}}) }
+          )
+        }
+      ),
+      // Call the `edit` method of the Qworum object.
+      Call(pathOfQworumObject, 'https://a-qworum-service.example/a-qworum-class/edit/'),
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/SemanticData.html#method_build_0">build</a></li><li><a href="./symbols/SemanticData.html#method_readfromtext_0">readFromText</a></li><li><a href="./symbols/SemanticData.html#method_readfromurl_0">readFromUrl</a></li><li><a href="./symbols/SemanticData.html#method_torawstring_0">toRawString</a></li><li><a href="./symbols/SemanticData.html#method_tostring_0">toString</a></li><li><a href="./symbols/SemanticData.html#accessor_value">value</a></li></ul></div>
-    </div><div id="namespace_sequence" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Sequence.html" title="Sequence">Sequence</a>
+      // If the call to `edit` hasn't raised a fault, then the caller resumes its execution here.
+      Goto('group-updated.html')
+    ),
+    { do:
+      // If the call to `edit` has raised a fault, then go back to the current web page.
+      Goto()
+    }
+  )
+);
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Sequence.html#method_build_0">build</a></li><li><a href="./symbols/Sequence.html#accessor_statements">statements</a></li><li><a href="./symbols/Sequence.html#method_tostring_0">toString</a></li></ul></div>
-    </div><div id="namespace_try" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href="./symbols/Try.html" title="Try">Try</a>
+// Run the Qworum script in the web page. The end-user will experience this as a redirection.
+await Qworum.eval(script);
+</code><button class="copyButton" data-copy="const
+pathOfQworumObject = ['@', 'a qworum object'],
+script = Script(
+  Try(
+    Sequence(
+      // Initialise the Qworum object ? (May be required for Qworum classes that have instance properties)
+      Try(
+        // If the state of the Qworum object is readable, then the object exists.
+        Data([...pathOfQworumObject, 'version']),
+        {
+          catch: '* reference',
+          do: // the Qworum object does not exist; initialise it
+          Call(
+            pathOfQworumObject, 'https://a-qworum-service.example/a-qworum-class/new/',
+            { name: 'initial state', value: Json({state: {xyz: '…'}}) }
+          )
+        }
+      ),
+      // Call the `edit` method of the Qworum object.
+      Call(pathOfQworumObject, 'https://a-qworum-service.example/a-qworum-class/edit/'),
 
-	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="./symbols/Try.html#method_build_0">build</a></li><li><a href="./symbols/Try.html#method_tostring_0">toString</a></li></ul></div>
+      // If the call to `edit` hasn't raised a fault, then the caller resumes its execution here.
+      Goto('group-updated.html')
+    ),
+    { do:
+      // If the call to `edit` has raised a fault, then go back to the current web page.
+      Goto()
+    }
+  )
+);
+
+// Run the Qworum script in the web page. The end-user will experience this as a redirection.
+await Qworum.eval(script);
+"><svg
+  class="copy"
+  width="15"
+  height="15"
+  viewBox="0 0 15 15"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect x="2" y="2" width="7" height="7" fill="none" />
+  <rect x="6" y="6" width="7" height="7" fill="none" />
+  <path
+    d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z"
+    fill="currentColor"
+  />
+</svg>
+<svg
+  class="check"
+  width="15"
+  height="15"
+  viewBox="0 0 24 24"
+  stroke-width="2"
+  stroke="currentColor"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+</button><code></code></pre>
+</div></div>
+</div>
+<div class="border-b border-gray-300 dark:border-gray-700"></div><div class="anchorable"><a href="#example_4" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 14 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clip-path="url(#clip0_1081_1237)">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.80328 2.8656C6.68736 2.99 6.62425 3.15454 6.62725 3.32456C6.63025 3.49457 6.69913 3.65678 6.81936 3.77702C6.9396 3.89725 7.10181 3.96613 7.27182 3.96913C7.44184 3.97213 7.60638 3.90902 7.73078 3.7931L8.82453 2.69935C8.98712 2.53676 9.18015 2.40778 9.39259 2.31978C9.60503 2.23179 9.83272 2.1865 10.0627 2.1865C10.2926 2.1865 10.5203 2.23179 10.7327 2.31978C10.9452 2.40778 11.1382 2.53676 11.3008 2.69935C11.4634 2.86194 11.5923 3.05497 11.6803 3.2674C11.7683 3.47984 11.8136 3.70753 11.8136 3.93747C11.8136 4.16741 11.7683 4.3951 11.6803 4.60754C11.5923 4.81998 11.4634 5.013 11.3008 5.1756L9.11328 7.3631C8.95075 7.52581 8.75775 7.65488 8.5453 7.74295C8.33285 7.83102 8.10513 7.87635 7.87516 7.87635C7.64518 7.87635 7.41746 7.83102 7.20501 7.74295C6.99256 7.65488 6.79956 7.52581 6.63703 7.3631C6.51263 7.24718 6.34809 7.18407 6.17807 7.18707C6.00806 7.19007 5.84585 7.25894 5.72561 7.37918C5.60538 7.49942 5.5365 7.66163 5.5335 7.83164C5.5305 8.00165 5.59361 8.1662 5.70953 8.2906C5.99391 8.57501 6.33154 8.80062 6.70312 8.95455C7.0747 9.10847 7.47296 9.18769 7.87516 9.18769C8.27736 9.18769 8.67562 9.10847 9.0472 8.95455C9.41878 8.80062 9.7564 8.57501 10.0408 8.2906L12.2283 6.1031C12.8026 5.52874 13.1253 4.74974 13.1253 3.93747C13.1253 3.12521 12.8026 2.34621 12.2283 1.77185C11.6539 1.19749 10.8749 0.874817 10.0627 0.874817C9.25039 0.874817 8.47139 1.19749 7.89703 1.77185L6.80328 2.8656ZM2.69953 11.3006C2.53682 11.1381 2.40774 10.9451 2.31968 10.7326C2.23161 10.5202 2.18628 10.2924 2.18628 10.0625C2.18628 9.8325 2.23161 9.60477 2.31968 9.39233C2.40774 9.17988 2.53682 8.98688 2.69953 8.82435L4.88703 6.63685C5.04956 6.47414 5.24256 6.34506 5.45501 6.25699C5.66746 6.16893 5.89518 6.1236 6.12516 6.1236C6.35513 6.1236 6.58285 6.16893 6.7953 6.25699C7.00775 6.34506 7.20075 6.47414 7.36328 6.63685C7.48768 6.75277 7.65223 6.81588 7.82224 6.81288C7.99225 6.80988 8.15446 6.741 8.2747 6.62077C8.39494 6.50053 8.46381 6.33832 8.46681 6.1683C8.46981 5.99829 8.4067 5.83375 8.29078 5.70935C8.0064 5.42494 7.66878 5.19933 7.2972 5.0454C6.92562 4.89148 6.52736 4.81225 6.12516 4.81225C5.72296 4.81225 5.3247 4.89148 4.95312 5.0454C4.58154 5.19933 4.24391 5.42494 3.95953 5.70935L1.77203 7.89685C1.19767 8.47121 0.875 9.25021 0.875 10.0625C0.875 10.8747 1.19767 11.6537 1.77203 12.2281C2.34639 12.8025 3.12539 13.1251 3.93766 13.1251C4.74992 13.1251 5.52892 12.8025 6.10328 12.2281L7.19703 11.1343C7.31295 11.0099 7.37606 10.8454 7.37306 10.6754C7.37006 10.5054 7.30119 10.3432 7.18095 10.2229C7.06071 10.1027 6.8985 10.0338 6.72849 10.0308C6.55848 10.0278 6.39393 10.0909 6.26953 10.2068L5.17578 11.3006C5.01325 11.4633 4.82025 11.5924 4.6078 11.6805C4.39535 11.7685 4.16763 11.8138 3.93766 11.8138C3.70768 11.8138 3.47996 11.7685 3.26751 11.6805C3.05506 11.5924 2.86206 11.4633 2.69953 11.3006Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_1081_1237">
+      <rect width="14" height="14" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a>
+<h3 class="example-header"><div class="markdown"><p>Reading/writing data from within web pages:</p>
+</div></h3>
+  <div><div class="markdown"><pre class="highlight"><code class="language-javascript">let data = await Qworum.getData(['path', 'to', 'data']);
+
+if(!data) {
+  data = Json('some data');
+  await Qworum.setData(['path', 'to', 'data'], data);
+}
+
+data.value === &quot;some data&quot;; // true
+</code><button class="copyButton" data-copy="let data = await Qworum.getData(['path', 'to', 'data']);
+
+if(!data) {
+  data = Json('some data');
+  await Qworum.setData(['path', 'to', 'data'], data);
+}
+
+data.value === &quot;some data&quot;; // true
+"><svg
+  class="copy"
+  width="15"
+  height="15"
+  viewBox="0 0 15 15"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect x="2" y="2" width="7" height="7" fill="none" />
+  <rect x="6" y="6" width="7" height="7" fill="none" />
+  <path
+    d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z"
+    fill="currentColor"
+  />
+</svg>
+<svg
+  class="check"
+  width="15"
+  height="15"
+  viewBox="0 0 24 24"
+  stroke-width="2"
+  stroke="currentColor"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+</button><code></code></pre>
+</div></div>
+</div>
+</div></section>
+<section class="section"  id="default_classes"><div>
+      <h2 class="anchorable mb-1"><a href="#default_classes" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 14 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clip-path="url(#clip0_1081_1237)">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.80328 2.8656C6.68736 2.99 6.62425 3.15454 6.62725 3.32456C6.63025 3.49457 6.69913 3.65678 6.81936 3.77702C6.9396 3.89725 7.10181 3.96613 7.27182 3.96913C7.44184 3.97213 7.60638 3.90902 7.73078 3.7931L8.82453 2.69935C8.98712 2.53676 9.18015 2.40778 9.39259 2.31978C9.60503 2.23179 9.83272 2.1865 10.0627 2.1865C10.2926 2.1865 10.5203 2.23179 10.7327 2.31978C10.9452 2.40778 11.1382 2.53676 11.3008 2.69935C11.4634 2.86194 11.5923 3.05497 11.6803 3.2674C11.7683 3.47984 11.8136 3.70753 11.8136 3.93747C11.8136 4.16741 11.7683 4.3951 11.6803 4.60754C11.5923 4.81998 11.4634 5.013 11.3008 5.1756L9.11328 7.3631C8.95075 7.52581 8.75775 7.65488 8.5453 7.74295C8.33285 7.83102 8.10513 7.87635 7.87516 7.87635C7.64518 7.87635 7.41746 7.83102 7.20501 7.74295C6.99256 7.65488 6.79956 7.52581 6.63703 7.3631C6.51263 7.24718 6.34809 7.18407 6.17807 7.18707C6.00806 7.19007 5.84585 7.25894 5.72561 7.37918C5.60538 7.49942 5.5365 7.66163 5.5335 7.83164C5.5305 8.00165 5.59361 8.1662 5.70953 8.2906C5.99391 8.57501 6.33154 8.80062 6.70312 8.95455C7.0747 9.10847 7.47296 9.18769 7.87516 9.18769C8.27736 9.18769 8.67562 9.10847 9.0472 8.95455C9.41878 8.80062 9.7564 8.57501 10.0408 8.2906L12.2283 6.1031C12.8026 5.52874 13.1253 4.74974 13.1253 3.93747C13.1253 3.12521 12.8026 2.34621 12.2283 1.77185C11.6539 1.19749 10.8749 0.874817 10.0627 0.874817C9.25039 0.874817 8.47139 1.19749 7.89703 1.77185L6.80328 2.8656ZM2.69953 11.3006C2.53682 11.1381 2.40774 10.9451 2.31968 10.7326C2.23161 10.5202 2.18628 10.2924 2.18628 10.0625C2.18628 9.8325 2.23161 9.60477 2.31968 9.39233C2.40774 9.17988 2.53682 8.98688 2.69953 8.82435L4.88703 6.63685C5.04956 6.47414 5.24256 6.34506 5.45501 6.25699C5.66746 6.16893 5.89518 6.1236 6.12516 6.1236C6.35513 6.1236 6.58285 6.16893 6.7953 6.25699C7.00775 6.34506 7.20075 6.47414 7.36328 6.63685C7.48768 6.75277 7.65223 6.81588 7.82224 6.81288C7.99225 6.80988 8.15446 6.741 8.2747 6.62077C8.39494 6.50053 8.46381 6.33832 8.46681 6.1683C8.46981 5.99829 8.4067 5.83375 8.29078 5.70935C8.0064 5.42494 7.66878 5.19933 7.2972 5.0454C6.92562 4.89148 6.52736 4.81225 6.12516 4.81225C5.72296 4.81225 5.3247 4.89148 4.95312 5.0454C4.58154 5.19933 4.24391 5.42494 3.95953 5.70935L1.77203 7.89685C1.19767 8.47121 0.875 9.25021 0.875 10.0625C0.875 10.8747 1.19767 11.6537 1.77203 12.2281C2.34639 12.8025 3.12539 13.1251 3.93766 13.1251C4.74992 13.1251 5.52892 12.8025 6.10328 12.2281L7.19703 11.1343C7.31295 11.0099 7.37606 10.8454 7.37306 10.6754C7.37006 10.5054 7.30119 10.3432 7.18095 10.2229C7.06071 10.1027 6.8985 10.0338 6.72849 10.0308C6.55848 10.0278 6.39393 10.0909 6.26953 10.2068L5.17578 11.3006C5.01325 11.4633 4.82025 11.5924 4.6078 11.6805C4.39535 11.7685 4.16763 11.8138 3.93766 11.8138C3.70768 11.8138 3.47996 11.7685 3.26751 11.6805C3.05506 11.5924 2.86206 11.4633 2.69953 11.3006Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_1081_1237">
+      <rect width="14" height="14" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a>
+Classes</h2></div><div class="namespaceSection"><div id="namespace_call" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Call.html" title="Call">
+			    <span>Call</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p><code>Call</code> instructions in a Qworum script starts a new Qworum method call when evaluated by the Qworum interpreter in a web browser.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Call.html#method_build_0">
+                  <span>build</span><span>(<div class="ml-4"><div><span>object</span>,</div><div><span>href</span>,</div><div><span>parameters</span>,</div><div><span>objectParameters</span></div></div>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder for Call instructions.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Call.html#accessor_href">
+                  <span>href</span><span>()</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Call.html#accessor_object">
+                  <span>object</span><span>()</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Call.html#accessor_objectparameters">
+                  <span>objectParameters</span><span>()</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Call.html#accessor_parameters">
+                  <span>parameters</span><span>()</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Call.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li></ul></div>
+    </div><div id="namespace_data" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Data.html" title="Data">
+			    <span>Data</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A container for data (Json or SemanticData).</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Data.html#method_build_0">
+                  <span>build</span><span>(<div class="ml-4"><div><span>path</span>,</div><div><span>statement</span></div></div>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder for Data instructions.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Data.html#accessor_path">
+                  <span>path</span><span>()</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Data.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li></ul></div>
+    </div><div id="namespace_fault" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Fault.html" title="Fault">
+			    <span>Fault</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Exceptions that disrupt the execution flow are called faults on Qworum. They are used in Qworum scripts.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Fault.html#method_build_0">
+                  <span>build</span><span>(<span><span>type</span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder for Fault instructions. Suitable for service-specific faults only.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Fault.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Fault.html#accessor_type">
+                  <span>type</span><span>()</span></a></li></ul></div>
+    </div><div id="namespace_goto" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Goto.html" title="Goto">
+			    <span>Goto</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p><code>Goto</code> instructions are used in Qworum scripts for starting a new phase in the current Qworum method call.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Goto.html#method_build_0">
+                  <span>build</span><span>(<span><span>href</span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder for Goto instructions.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Goto.html#method_fromjsonable_0">
+                  <span>fromJsonable</span><span>(<span><span>encoded</span></span>)</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Goto.html#accessor_href">
+                  <span>href</span><span>()</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Goto.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li></ul></div>
+    </div><div id="namespace_json" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Json.html" title="Json">
+			    <span>Json</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>In-memory JSON data. Can be stored in <code>Data</code> containers.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Json.html#method_build_0">
+                  <span>build</span><span>(<span><span>value</span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder for Json data values.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Json.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Json.html#accessor_value">
+                  <span>value</span><span>()</span></a></li></ul></div>
+    </div><div id="namespace_qworum" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Qworum.html" title="Qworum">
+			    <span>Qworum</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Web pages can use the Qworum capabilities of web browsers through this JavaScript class.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Qworum.html#method_checkavailability_0">
+                  <span>checkAvailability</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks that:</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Qworum.html#method_eval_0">
+                  <span>eval</span><span>(<span><span>script</span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Evaluates a Qworum script.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Qworum.html#method_getdata_0">
+                  <span>getData</span><span>(<span><span>path</span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Reads a value contained in a data container.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Qworum.html#method_setdata_0">
+                  <span>setData</span><span>(<div class="ml-4"><div><span>path</span>,</div><div><span>value</span></div></div>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Sets the value contained in a data container.</p>
+</div></div></li></ul></div>
+    </div><div id="namespace_return" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Return.html" title="Return">
+			    <span>Return</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p><code>Return</code> instructions end the current Qworum method call in a Qworum script.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Return.html#method_build_0">
+                  <span>build</span><span>(<span><span>statement</span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder for Return instructions.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Return.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li></ul></div>
+    </div><div id="namespace_script" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Script.html" title="Script">
+			    <span>Script</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>The Qworum platform uses scripts as its linking mechanism. This is much more suitable for application use cases than simple URLs. Websites ask web browsers to execute Qworum scripts for navigation.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Script.html#method_build_0">
+                  <span>build</span><span>(<span><span>instruction</span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder for Qworum scripts.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Script.html#accessor_instruction">
+                  <span>instruction</span><span>()</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Script.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li></ul></div>
+    </div><div id="namespace_semanticdata" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;SemanticData.html" title="SemanticData">
+			    <span>SemanticData</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>In-memory RDF dataset. Conformant with <a href="https://www.w3.org/TR/turtle/">RDF 1.1</a>, <a href="https://www.ontotext.com/knowledgehub/fundamentals/what-is-rdf-star/">RDF-Star</a> and the <a href="https://rdf.js.org/dataset-spec/#dataset-interface">RDF/JS Dataset interface</a>. Can be stored in <code>Data</code> containers.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;SemanticData.html#method_build_0">
+                  <span>build</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder for semantic data values.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;SemanticData.html#method_readfromtext_0">
+                  <span>readFromText</span><span>(<div class="ml-4"><div><span>text</span>,</div><div><span>baseIRI</span></div></div>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Async RDF dataset reader.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;SemanticData.html#method_readfromurl_0">
+                  <span>readFromUrl</span><span>(<span><span>url</span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Async RDF dataset reader.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;SemanticData.html#method_torawstring_0">
+                  <span>toRawString</span><span>(<span><span>type</span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>RDF dataset serialiser.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;SemanticData.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;SemanticData.html#accessor_value">
+                  <span>value</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>An in-memory RDF dataset that is conformant with the Dataset specification.</p>
+</div></div></li></ul></div>
+    </div><div id="namespace_sequence" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Sequence.html" title="Sequence">
+			    <span>Sequence</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A sequence of instructions and/or data values (Json or SemanticData) in a Qworum script.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Sequence.html#method_build_0">
+                  <span>build</span><span>(<span><span><span>...statements</span></span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder for Sequence instructions.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Sequence.html#accessor_statements">
+                  <span>statements</span><span>()</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Sequence.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li></ul></div>
+    </div><div id="namespace_try" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Try.html" title="Try">
+			    <span>Try</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Try instructions are used for catching faults that may be raised when the browser's Qworum interpreter executes a Qworum script.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Try.html#method_build_0">
+                  <span>build</span><span>(<div class="ml-4"><div><span>statement</span>,</div><div><span>catchClauses</span></div></div>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Builder function for Try instructions.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Try.html#method_tostring_0">
+                  <span>toString</span><span>()</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Serialises the object to string for informational purposes.</p>
+</div></div></li></ul></div>
     </div></div>
 </section>
+<section class="section"  id="default_variables"><div>
+      <h2 class="anchorable mb-1"><a href="#default_variables" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 14 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clip-path="url(#clip0_1081_1237)">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.80328 2.8656C6.68736 2.99 6.62425 3.15454 6.62725 3.32456C6.63025 3.49457 6.69913 3.65678 6.81936 3.77702C6.9396 3.89725 7.10181 3.96613 7.27182 3.96913C7.44184 3.97213 7.60638 3.90902 7.73078 3.7931L8.82453 2.69935C8.98712 2.53676 9.18015 2.40778 9.39259 2.31978C9.60503 2.23179 9.83272 2.1865 10.0627 2.1865C10.2926 2.1865 10.5203 2.23179 10.7327 2.31978C10.9452 2.40778 11.1382 2.53676 11.3008 2.69935C11.4634 2.86194 11.5923 3.05497 11.6803 3.2674C11.7683 3.47984 11.8136 3.70753 11.8136 3.93747C11.8136 4.16741 11.7683 4.3951 11.6803 4.60754C11.5923 4.81998 11.4634 5.013 11.3008 5.1756L9.11328 7.3631C8.95075 7.52581 8.75775 7.65488 8.5453 7.74295C8.33285 7.83102 8.10513 7.87635 7.87516 7.87635C7.64518 7.87635 7.41746 7.83102 7.20501 7.74295C6.99256 7.65488 6.79956 7.52581 6.63703 7.3631C6.51263 7.24718 6.34809 7.18407 6.17807 7.18707C6.00806 7.19007 5.84585 7.25894 5.72561 7.37918C5.60538 7.49942 5.5365 7.66163 5.5335 7.83164C5.5305 8.00165 5.59361 8.1662 5.70953 8.2906C5.99391 8.57501 6.33154 8.80062 6.70312 8.95455C7.0747 9.10847 7.47296 9.18769 7.87516 9.18769C8.27736 9.18769 8.67562 9.10847 9.0472 8.95455C9.41878 8.80062 9.7564 8.57501 10.0408 8.2906L12.2283 6.1031C12.8026 5.52874 13.1253 4.74974 13.1253 3.93747C13.1253 3.12521 12.8026 2.34621 12.2283 1.77185C11.6539 1.19749 10.8749 0.874817 10.0627 0.874817C9.25039 0.874817 8.47139 1.19749 7.89703 1.77185L6.80328 2.8656ZM2.69953 11.3006C2.53682 11.1381 2.40774 10.9451 2.31968 10.7326C2.23161 10.5202 2.18628 10.2924 2.18628 10.0625C2.18628 9.8325 2.23161 9.60477 2.31968 9.39233C2.40774 9.17988 2.53682 8.98688 2.69953 8.82435L4.88703 6.63685C5.04956 6.47414 5.24256 6.34506 5.45501 6.25699C5.66746 6.16893 5.89518 6.1236 6.12516 6.1236C6.35513 6.1236 6.58285 6.16893 6.7953 6.25699C7.00775 6.34506 7.20075 6.47414 7.36328 6.63685C7.48768 6.75277 7.65223 6.81588 7.82224 6.81288C7.99225 6.80988 8.15446 6.741 8.2747 6.62077C8.39494 6.50053 8.46381 6.33832 8.46681 6.1683C8.46981 5.99829 8.4067 5.83375 8.29078 5.70935C8.0064 5.42494 7.66878 5.19933 7.2972 5.0454C6.92562 4.89148 6.52736 4.81225 6.12516 4.81225C5.72296 4.81225 5.3247 4.89148 4.95312 5.0454C4.58154 5.19933 4.24391 5.42494 3.95953 5.70935L1.77203 7.89685C1.19767 8.47121 0.875 9.25021 0.875 10.0625C0.875 10.8747 1.19767 11.6537 1.77203 12.2281C2.34639 12.8025 3.12539 13.1251 3.93766 13.1251C4.74992 13.1251 5.52892 12.8025 6.10328 12.2281L7.19703 11.1343C7.31295 11.0099 7.37606 10.8454 7.37306 10.6754C7.37006 10.5054 7.30119 10.3432 7.18095 10.2229C7.06071 10.1027 6.8985 10.0338 6.72849 10.0308C6.55848 10.0278 6.39393 10.0909 6.26953 10.2068L5.17578 11.3006C5.01325 11.4633 4.82025 11.5924 4.6078 11.6805C4.39535 11.7685 4.16763 11.8138 3.93766 11.8138C3.70768 11.8138 3.47996 11.7685 3.26751 11.6805C3.05506 11.5924 2.86206 11.4633 2.69953 11.3006Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_1081_1237">
+      <rect width="14" height="14" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a>
+Variables</h2></div><div class="namespaceSection"><div id="namespace_iri" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Variable bg-Variable/15 dark:text-VariableDark dark:bg-VariableDark/15" title="Variable">v</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;IRI.html" title="IRI">
+			    <span>IRI</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A class that represents an IRI. <code>IRL</code> and <code>URN</code> have this class as their parent class.</p>
+</div></div></div>
+    </div><div id="namespace_iri-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Variable bg-Variable/15 dark:text-VariableDark dark:bg-VariableDark/15" title="Variable">v</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;iri.html" title="iri">
+			    <span>iri</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A string-to-IRI converter. Returns null if the string is not an IRI.</p>
+</div></div></div>
+    </div><div id="namespace_irl" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Variable bg-Variable/15 dark:text-VariableDark dark:bg-VariableDark/15" title="Variable">v</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;IRL.html" title="IRL">
+			    <span>IRL</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A class that represents a IRL. An IRL is a non-standard yet useful way of representing URLs in Unicode. <code>IRI</code> is <code>IRL</code>'s parent class.</p>
+</div></div></div>
+    </div><div id="namespace_irl-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Variable bg-Variable/15 dark:text-VariableDark dark:bg-VariableDark/15" title="Variable">v</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;irl.html" title="irl">
+			    <span>irl</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A string-to-IRL converter. Returns null if the string is not a IRL.
+An IRL is a non-standard yet useful way of representing URLs in Unicode.</p>
+</div></div></div>
+    </div><div id="namespace_qworumscript" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Variable bg-Variable/15 dark:text-VariableDark dark:bg-VariableDark/15" title="Variable">v</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html" title="QworumScript">
+			    <span>QworumScript</span><span>: { Json; SemanticData; DataValue; GenericData; Instruction; Return; Sequence; Data; Try; Goto; Call; Script; Fault;  }</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A JavaScript object for easily importing all script-related classes in one go. Note that those classes can also be imported individually.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_call">
+                  <span>Call</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_data">
+                  <span>Data</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_datavalue">
+                  <span>DataValue</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_fault">
+                  <span>Fault</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_genericdata">
+                  <span>GenericData</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_goto">
+                  <span>Goto</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_instruction">
+                  <span>Instruction</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_json">
+                  <span>Json</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_return">
+                  <span>Return</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_script">
+                  <span>Script</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_semanticdata">
+                  <span>SemanticData</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_sequence">
+                  <span>Sequence</span></a></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;QworumScript.html#property_try">
+                  <span>Try</span></a></li></ul></div>
+    </div><div id="namespace_rdftermfactory" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Variable bg-Variable/15 dark:text-VariableDark dark:bg-VariableDark/15" title="Variable">v</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;rdfTermFactory.html" title="rdfTermFactory">
+			    <span>rdfTermFactory</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A JavaScript object that contains factory functions for different types of RDF terms, such as <code>namedNode</code> and <code>literal</code></p>
+</div></div></div>
+    </div><div id="namespace_url" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Variable bg-Variable/15 dark:text-VariableDark dark:bg-VariableDark/15" title="Variable">v</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;url.html" title="url">
+			    <span>url</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A string-to-URL converter. Returns null if the string is not a URL.</p>
+</div></div></div>
+    </div><div id="namespace_urn" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Variable bg-Variable/15 dark:text-VariableDark dark:bg-VariableDark/15" title="Variable">v</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;URN.html" title="URN">
+			    <span>URN</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A class that represents a URN.</p>
+</div></div></div>
+    </div><div id="namespace_urn-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Variable bg-Variable/15 dark:text-VariableDark dark:bg-VariableDark/15" title="Variable">v</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;urn.html" title="urn">
+			    <span>urn</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A string-to-URN converter. Returns null if the string is not a URN.</p>
+</div></div></div>
+    </div></div>
+</section>
+</div>
+</div>
+</section>
+</div>
+    </div>
 </div>
 </main>
   </div>
