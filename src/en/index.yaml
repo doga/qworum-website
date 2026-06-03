@@ -5,39 +5,17 @@ title    : Home
 
 text:
   mission:
-    oneliner: The new gold standard for secure application integrations
-#    The new essential frontend platform for web applications
-#    oneliner: Web-scale application and integration platform
-#      Frontend-PaaS for the composable enterprise
-#      Frontend-PaaS for state-of-the-art web applications
-#      The new essential API technology for business applications 
-#      The web-based platform for the composable enterprise
-#      The essential frontend platform for business applications, APIs and SaaS
+    oneliner: Qworum is the Web for applications
     usp:
-#    - The missing piece for transforming the Web into a full-featured application platform.
-    - Groundbreaking new web API protocol for interactive processes.
-    - >
-      Fully secure integrations — Qworum surpasses OAuth+REST, which is widely used today for integrating applications, yet has <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-cybersecurity-ipaas-activity-7447671635412967425-cW2f/'>many known security issues</a>.
-    - Distributed applications — allows application frontends to span multiple websites.
-#    - Our mission is to turn the Web into a full-featured application platform.
-#    - >
-#      <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a>. 
+    - Suitable for both B2B and B2C applications.
+    - <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-cybersecurity-ipaas-activity-7447671635412967425-cW2f?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADK4nUBYoFztNSBgrl2-Rc5wjjYssZ-iWQ'>A step up in integration security</a> as compared to the current Web.
+    - Supports applications with distributed frontends. For large applications involving multiple dev teams, and ones spanning multiple organisations.
+    - A new way of modularising applications, based on well-known OOP concepts.
     - >
       <a target='_blank' href='{{company.achievements.medal}}'>Award-winning</a>
       and 
       <a target='_blank' href='{{company.achievements.patent}}'>patent-based</a>. 
-#    - >
-#      Application platform — 
-#      Advanced browser capabilities for applications.
-#      Enables distributed applications and composable dialogs.
-#      <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a> and <a target='_blank' href='{{company.achievements.medal}}'>award-winning</a>.
-#    - >
-#      API platform —
-#      Groundbreaking new API technology for interactive processes.
-#    - >
-#      10x easier integrations for customers and partners — 
-#      Calls to Qworum APIs need much less UI code, no API keys, no user authentication.
-
+    - What is the current Web? <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7464968807682363393/'>A content platform with limited support for applications</a>!
 
     valueProposition:
     - title: The new essential enterprise infrastructure
@@ -61,8 +39,8 @@ text:
         RDF is natively supported as an alternative to JSON for representing data. 
         RDF brings semantic capabilities and is widely used in many knowledge-based industries
         such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector.
-    - title: New business opportunity in the B2B space
-      description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
+    # - title: New business opportunity in the B2B space
+    #   description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
     - title: An upgrade to the Web platform for application use cases
       description: >
         Today's Web is still fundamentally a content platform, despite JavaScript. 
