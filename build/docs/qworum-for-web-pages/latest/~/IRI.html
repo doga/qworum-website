@@ -196,16 +196,26 @@ aUrn  = iri`urn:ietf:rfc:2648`;
 
 anIrl instanceOf IRL; // true
 anIrl instanceOf IRI; // true
+anIrl.href === 'https://çağlayan.info/user/çağlayan/'; // true
+anIrl.url.href === 'https://xn--alayan-vua36b.info/user/%C3%A7a%C4%9Flayan/'; // true
+
 aUrn instanceOf URN; // true
 aUrn instanceOf IRI; // true
+aUrn.namespace === 'ietf'; // true
+aUrn.namespaceSpecific === 'rfc:2648'; // true
 </code><button class="copyButton" data-copy="const
 anIrl = iri`https://çağlayan.info/user/çağlayan/`,
 aUrn  = iri`urn:ietf:rfc:2648`;
 
 anIrl instanceOf IRL; // true
 anIrl instanceOf IRI; // true
+anIrl.href === 'https://çağlayan.info/user/çağlayan/'; // true
+anIrl.url.href === 'https://xn--alayan-vua36b.info/user/%C3%A7a%C4%9Flayan/'; // true
+
 aUrn instanceOf URN; // true
 aUrn instanceOf IRI; // true
+aUrn.namespace === 'ietf'; // true
+aUrn.namespaceSpecific === 'rfc:2648'; // true
 "><svg
   class="copy"
   width="15"

@@ -192,8 +192,8 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
 </a>
 <h3 class="example-header"><div class="markdown"><p>A call without arguments:</p>
 </div></h3>
-  <div><div class="markdown"><pre class="highlight"><code class="language-javascript">const call1 = Call.build('@', 'home/');
-</code><button class="copyButton" data-copy="const call1 = Call.build('@', 'home/');
+  <div><div class="markdown"><pre class="highlight"><code class="language-javascript">const call1 = Call.build('@', 'home/'); // resolve the URL with the URL of the web page that issued the Qworum.eval() command as the base URL.
+</code><button class="copyButton" data-copy="const call1 = Call.build('@', 'home/'); // resolve the URL with the URL of the web page that issued the Qworum.eval() command as the base URL.
 "><svg
   class="copy"
   width="15"
@@ -317,12 +317,12 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
 <h3 class="example-header"><div class="markdown"><p>A call with data and Qworum-object arguments:</p>
 </div></h3>
   <div><div class="markdown"><pre class="highlight"><code class="language-javascript">const call3 = Call.build(
-  ['@'], 'home/',
+  ['@', 'service xyz'], 'https://qworum-service.example/aClass/aMethod/',
   [{name: 'current year', value: Json.build(2022)}],
   [{name: 'object', object: ['@', 'a Qworum object']}]
 );
 </code><button class="copyButton" data-copy="const call3 = Call.build(
-  ['@'], 'home/',
+  ['@', 'service xyz'], 'https://qworum-service.example/aClass/aMethod/',
   [{name: 'current year', value: Json.build(2022)}],
   [{name: 'object', object: ['@', 'a Qworum object']}]
 );

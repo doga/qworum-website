@@ -192,8 +192,12 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
 </a>
 <h3 class="example-header"><div class="markdown"><p>Example 1</p>
 </div></h3>
-  <div><div class="markdown"><pre class="highlight"><code class="language-javascript">const goto = Goto.build('home/');
-</code><button class="copyButton" data-copy="const goto = Goto.build('home/');
+  <div><div class="markdown"><pre class="highlight"><code class="language-javascript">const
+goto1 = Goto.build('home/'), // resolve the URL with the URL of the web page that issued the Qworum.eval() command as the base URL.
+goto2 = Goto.build(); // go to the URL of the web page that issued the Qworum.eval() command.
+</code><button class="copyButton" data-copy="const
+goto1 = Goto.build('home/'), // resolve the URL with the URL of the web page that issued the Qworum.eval() command as the base URL.
+goto2 = Goto.build(); // go to the URL of the web page that issued the Qworum.eval() command.
 "><svg
   class="copy"
   width="15"

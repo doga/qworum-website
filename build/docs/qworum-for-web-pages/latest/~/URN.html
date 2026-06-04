@@ -194,10 +194,14 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
 
 aUrn instanceOf URN; // true
 aUrn instanceOf IRI; // true
+aUrn.namespace === 'ietf'; // true
+aUrn.namespaceSpecific === 'rfc:2648'; // true
 </code><button class="copyButton" data-copy="const aUrn = urn`urn:ietf:rfc:2648`;
 
 aUrn instanceOf URN; // true
 aUrn instanceOf IRI; // true
+aUrn.namespace === 'ietf'; // true
+aUrn.namespaceSpecific === 'rfc:2648'; // true
 "><svg
   class="copy"
   width="15"

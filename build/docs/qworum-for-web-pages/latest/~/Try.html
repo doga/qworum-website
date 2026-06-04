@@ -195,13 +195,13 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
   <div><div class="markdown"><pre class="highlight"><code class="language-javascript">const try1 = Try.build(
   Call.build('@', 'checkout/'),
   [
-    {catch: ['the cart is empty'], do: Json({})}
+    {catch: ['the cart is empty'], do: Json.build({})}
   ]
 );
 </code><button class="copyButton" data-copy="const try1 = Try.build(
   Call.build('@', 'checkout/'),
   [
-    {catch: ['the cart is empty'], do: Json({})}
+    {catch: ['the cart is empty'], do: Json.build({})}
   ]
 );
 "><svg
