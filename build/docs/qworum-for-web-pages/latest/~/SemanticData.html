@@ -203,7 +203,7 @@ await semanticData.readFromText(
   `PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
    &lt;#person1&gt; a foaf:Person ;
      foaf:name &quot;Jim Bo&quot; .`,
-  url`https://site.example/rdf-dataset.ttl` // base IRI to resolve IRIs
+  irl`https://site.example/rdf-dataset.ttl` // base IRI to resolve IRIs
 );
 
 await semanticData.readFromText(
@@ -240,7 +240,7 @@ await semanticData.readFromText(
   `PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
    &lt;#person1&gt; a foaf:Person ;
      foaf:name &quot;Jim Bo&quot; .`,
-  url`https://site.example/rdf-dataset.ttl` // base IRI to resolve IRIs
+  irl`https://site.example/rdf-dataset.ttl` // base IRI to resolve IRIs
 );
 
 await semanticData.readFromText(
