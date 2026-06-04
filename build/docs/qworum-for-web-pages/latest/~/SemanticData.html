@@ -223,10 +223,15 @@ semanticData.value.add(
   rdfTermFactory.quad(subject, isNamed, JamBa)
 );
 
-// derive a new dataset from semanticData
-const dataset = semanticData.value.match(null, isNamed, JamBa );
-for (const quad of dataset) {
-  console.info(`&lt;${quad.subject.value}&gt;'s name is ${JamBa.value}`);
+// read a derived dataset
+const peopleNamedJamBa = semanticData.value.filter(
+  statement =&gt; (
+    iri`${statement.predicate.value}`.equals(iri`http://xmlns.com/foaf/0.1/name`) &amp;&amp;
+    statement.object.value === JamBa.value &amp;&amp;
+  )
+);
+for (const statement of peopleNamedJamBa) {
+  console.info(`&lt;${statement.subject.value}&gt;'s name is ${statement.object.value}`);
 }
 
 </code><button class="copyButton" data-copy="// create an empty RDF dataset in memory
@@ -260,10 +265,15 @@ semanticData.value.add(
   rdfTermFactory.quad(subject, isNamed, JamBa)
 );
 
-// derive a new dataset from semanticData
-const dataset = semanticData.value.match(null, isNamed, JamBa );
-for (const quad of dataset) {
-  console.info(`&lt;${quad.subject.value}&gt;'s name is ${JamBa.value}`);
+// read a derived dataset
+const peopleNamedJamBa = semanticData.value.filter(
+  statement =&gt; (
+    iri`${statement.predicate.value}`.equals(iri`http://xmlns.com/foaf/0.1/name`) &amp;&amp;
+    statement.object.value === JamBa.value &amp;&amp;
+  )
+);
+for (const statement of peopleNamedJamBa) {
+  console.info(`&lt;${statement.subject.value}&gt;'s name is ${statement.object.value}`);
 }
 
 "><svg

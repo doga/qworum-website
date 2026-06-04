@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IRI - default - Qworum for Web pages v1.8.4 documentation</title>
+  <title>iri - default - Qworum for Web pages v1.8.4 documentation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="doc-current-file" content=".">
@@ -48,7 +48,7 @@
 </svg>
 </span>
 
-    <ul><li>IRI</li></ul></ul>
+    <ul><li>iri</li></ul></ul>
 </div>
 
     <div class="flex items-center gap-2">
@@ -112,11 +112,11 @@
     </div>
   </div>
 </nav>
-<div id="searchResults"></div><div id="content"><main class="symbolGroup" id="symbol_IRI"><article>
+<div id="searchResults"></div><div id="content"><main class="symbolGroup" id="symbol_iri"><article>
       <div class="symbolTitle">
         <div>
           <div class="text-2xl leading-none break-all">
-            <span class="text-Variable">variable</span>&nbsp;<span class="font-bold">IRI</span>
+            <span class="text-Variable">variable</span>&nbsp;<span class="font-bold">iri</span>
           </div></div><a
   class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;Users&#x2F;da&#x2F;home&#x2F;work&#x2F;ArmangilSoftware2&#x2F;code&#x2F;qworum&#x2F;qworum-for-web-pages&#x2F;mod.mjs"><svg
@@ -142,7 +142,7 @@
   />
 </svg>
 </a>
-</div><div><div class="space-y-7" id=""><div class="markdown"><p>A class that represents an IRI. <code>IRL</code> and <code>URN</code> have this class as their parent class.</p>
+</div><div><div class="space-y-7" id=""><div class="markdown"><p>A string-to-IRI converter. Returns null if the string is not an IRI.</p>
 </div><section class="section"  id="examples"><div>
       <h2 class="anchorable mb-1"><a href="#examples" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
@@ -199,8 +199,8 @@ anIrl instanceOf IRI; // true
 anIrl.href === 'https://çağlayan.info/user/çağlayan/'; // true
 anIrl.url.href === 'https://xn--alayan-vua36b.info/user/%C3%A7a%C4%9Flayan/'; // true
 
-aUrn instanceOf URN;  // true
-aUrn instanceOf IRI;  // true
+aUrn instanceOf URN; // true
+aUrn instanceOf IRI; // true
 aUrn.namespace === 'ietf'; // true
 aUrn.namespaceSpecific === 'rfc:2648'; // true
 </code><button class="copyButton" data-copy="const
@@ -212,8 +212,8 @@ anIrl instanceOf IRI; // true
 anIrl.href === 'https://çağlayan.info/user/çağlayan/'; // true
 anIrl.url.href === 'https://xn--alayan-vua36b.info/user/%C3%A7a%C4%9Flayan/'; // true
 
-aUrn instanceOf URN;  // true
-aUrn instanceOf IRI;  // true
+aUrn instanceOf URN; // true
+aUrn instanceOf IRI; // true
 aUrn.namespace === 'ietf'; // true
 aUrn.namespaceSpecific === 'rfc:2648'; // true
 "><svg
@@ -281,8 +281,8 @@ See</h2></div><ul class="see"><li><div class="markdown"><p><a href="https://gith
     </article></main>
 <div class="toc">
     <div><div class="usageContent">
-    <h3>Usage</h3><div class="markdown"><pre class="highlight"><code class="language-typescript">import { IRI } from &quot;.&quot;;
-</code><button class="copyButton" data-copy="import { IRI } from &quot;.&quot;;
+    <h3>Usage</h3><div class="markdown"><pre class="highlight"><code class="language-typescript">import { iri } from &quot;.&quot;;
+</code><button class="copyButton" data-copy="import { iri } from &quot;.&quot;;
 "><svg
   class="copy"
   width="15"
