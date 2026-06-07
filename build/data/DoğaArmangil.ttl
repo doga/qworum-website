@@ -56,6 +56,9 @@ PREFIX cc: <http://creativecommons.org/ns#>
 PREFIX prov: <http://www.w3.org/ns/prov#>            # https://www.w3.org/TR/prov-o/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX qrmm: <https://vocab.qworum.net/multi.ttl#>
+
+[] qrmm:begin [].
 
 # -- Document metadata --------------------------------------------------
 <DoğaArmangil.ttl>
@@ -211,5 +214,5 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   cert:modulus 'AAAAB3NzaC1yc2EAAAABIwAAAIEAqcmRIy/K1htnj8yT9plBnNNJXwSPZ3k7BN/r6HjLvNGHkVjF2yyoBXhRbdMb+MjyjRQepFUd/v5IMqO/1UU6qgrPiiYrk4+ehWOFC8joWrw9DbHYGoL1Nz9o6GjUfGac/qY9k3q2dWk+zLA87j+81GPkwPJUKf5oQKO6q2lNmA8='^^xsd:base64Binary; # The middle part in ~/.ssh/id_rsa.pub
   cert:exponent '65537'^^xsd:nonNegativeInteger. # Nearly everyone universally uses 65,537 as their prime exponent https://crypto.stackexchange.com/questions/18031/how-to-find-modulus-from-a-rsa-public-key
 
-# ∎
+[] qrmm:end [].
 

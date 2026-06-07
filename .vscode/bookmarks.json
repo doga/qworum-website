@@ -14,22 +14,12 @@
 					"label": ""
 				},
 				{
-					"line": 1078,
-					"column": 18,
-					"label": "data values"
-				},
-				{
-					"line": 1098,
-					"column": 23,
-					"label": ""
-				},
-				{
-					"line": 1136,
+					"line": 1121,
 					"column": 27,
 					"label": "Semantic data"
 				},
 				{
-					"line": 1416,
+					"line": 1401,
 					"column": 15,
 					"label": ""
 				}
@@ -39,7 +29,7 @@
 			"path": "src/data/org.ttl",
 			"bookmarks": [
 				{
-					"line": 45,
+					"line": 48,
 					"column": 5,
 					"label": "Org"
 				}
@@ -49,7 +39,7 @@
 			"path": "src/data/DoğaArmangil.ttl",
 			"bookmarks": [
 				{
-					"line": 74,
+					"line": 77,
 					"column": 5,
 					"label": "Me"
 				}
@@ -59,7 +49,7 @@
 			"path": "src/data/locations.ttl",
 			"bookmarks": [
 				{
-					"line": 44,
+					"line": 47,
 					"column": 7,
 					"label": "Geneva"
 				}

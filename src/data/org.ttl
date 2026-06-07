@@ -27,6 +27,9 @@ PREFIX dcterms: <http://purl.org/dc/terms/>          # https://www.dublincore.or
 PREFIX cc: <http://creativecommons.org/ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX qrmm: <https://vocab.qworum.net/multi.ttl#>
+
+[] qrmm:begin [].
 
 # -- Document metadata --------------------------------------------------
 <org.ttl>
@@ -171,15 +174,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     <https://esm.sh/@qworum/qworum-for-web-pages>,
     <https://github.com/doga/qworum-for-web-pages/>.
 
-:vs-code-extension
-  a sd:Software;
-  sd:copyrightHolder :id;
-  sd:author :DoğaArmangil;
-  sd:license <license/software.ttl#apache2>;
-  sd:programmingLanguage 'JavaScript';
-  sd:softwareRequirements 'This is a Visual Studio Code extension.'@en;
-  sd:readme <https://github.com/doga/vscode-qworum/blob/master/README.md>;
-  sd:hasSourceCode <https://github.com/doga/vscode-qworum>;
-  sd:hasDownloadURL <https://marketplace.visualstudio.com/items?itemName=qworum.qworum>.
+#:vs-code-extension
+#  a sd:Software;
+#  sd:copyrightHolder :id;
+#  sd:author :DoğaArmangil;
+#  sd:license <license/software.ttl#apache2>;
+#  sd:programmingLanguage 'JavaScript';
+#  sd:softwareRequirements 'This is a Visual Studio Code extension.'@en;
+#  sd:readme <https://github.com/doga/vscode-qworum/blob/master/README.md>;
+#  sd:hasSourceCode <https://github.com/doga/vscode-qworum>;
+#  sd:hasDownloadURL <https://marketplace.visualstudio.com/items?itemName=qworum.qworum>.
 
-# ∎
+[] qrmm:end [].
