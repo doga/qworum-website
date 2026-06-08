@@ -33,7 +33,7 @@ text:
         a more secure alternative to OAuth+REST</a>. We recommend that SaaS vendors and other companies put in place a Qworum-first integration strategy in order to safeguard user data. Qworum is also the only Web API technology that is composable; a Qworum API can call another Qworum API without the user authentication and network timeout problems that plague the other Web API protocols.
     - title: AI-ready and fit for knowledge applications
       description: >
-        AI has made RDF an essential data technology to use in production, and many knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector have been using RDF intensively for decades already. Qworum supports RDF natively, and JSON is also supported.
+        AI has made RDF an essential data technology to use in production, and many knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector have been using RDF intensively for decades already. Qworum supports RDF natively, in addition to JSON.
     # - title: New business opportunity in the B2B space
     #   description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
     - title: An upgrade to the Web platform for application use cases
