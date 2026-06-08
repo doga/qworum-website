@@ -17,8 +17,8 @@ text:
     - What is the current Web? <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7464968807682363393/'>A content platform with limited application support</a>.
 
     valueProposition:
-    - title: Start by providing a Qworum API
-      description: For existing Web applications, we recommend providing a separate Qworum API just for integration use cases. You can decide to replace your existing application with a Qworum application at your own pace later on, or not. For greenfield projects, we recommend providing a Qworum application from the start; this will obviate the need for a separate Qworum API just for integrations.
+    - title: Don't limit yourself by what the current Web can do
+      description: Qworum enables distributed applications and secure integrations, with much more to come. Add a Qworum API to existing applications just for integrations. Then transition your applications to Qworum at your own pace, or not. For greenfield projects, start by providing a Qworum application from the start; this will obviate the need for a separate Qworum API.
     # - title: The new essential enterprise infrastructure
     #   description: >
     #     <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_report-state-of-saas-integrations-2024-activity-7273076432229044224-i2wr'>A recent survey
@@ -26,11 +26,11 @@ text:
     #     for 84% of SaaS customers</a>. 
     #     Yet the REST protocol used by most SaaS is 25 years old at this point.
     #     Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
-    - title: Secure integrations
+    - title: Secure and composable integrations
       description: >
         Qworum is a breakthrough in integration security. Qworum APIs are
         <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-web-activity-7287639516608098306-YyMF?utm_source=share&utm_medium=member_desktop'>
-        a more secure alternative to OAuth+REST</a>. We recommend that SaaS vendors and other companies put in place a Qworum-first integration strategy in order to safeguard user data.
+        a more secure alternative to OAuth+REST</a>. We recommend that SaaS vendors and other companies put in place a Qworum-first integration strategy in order to safeguard user data. Qworum is also the only Web API technology that is composable; a Qworum API can call another Qworum API without the user authentication and network timeout problems that plague the other Web API protocols.
     - title: AI-ready and fit for knowledge applications
       description: >
         AI has made RDF an essential data technology to use in production, and many knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector have been using RDF intensively for decades already. Qworum supports RDF natively, and JSON is also supported.
