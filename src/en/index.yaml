@@ -38,7 +38,7 @@ text:
     #   description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
     - title: 🧑‍💻 An upgrade to the Web platform for application use cases
       description: >
-        Today's Web is still fundamentally a content platform, despite JavaScript and the ability to sign into websites. Qworum transform the Web from a platform for personalisable and dynamic content into a proper application platform. To do that, Qworum defines groundbreaking new platform features such as a new browser runtime that complements JavaScript, and a new script-based linking mechanism that addresses application use cases.
+        Today's Web is still fundamentally a content platform, despite JavaScript and the ability to sign into websites. Qworum transforms the Web from a platform for personalisable and dynamic content into a proper application platform. To do that, Qworum defines groundbreaking new platform features such as a new browser runtime that complements JavaScript, and a new script-based linking mechanism that addresses application use cases.
 
   callToAction: Request a demo
 
