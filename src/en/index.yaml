@@ -17,7 +17,7 @@ text:
     - What is the current Web? <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7464968807682363393/'>A content platform with limited application support</a>.
 
     valueProposition:
-    - title: Don't limit yourself by what the baseline Web can do
+    - title: 🏞 Don't limit yourself by what the baseline Web can do
       description: Qworum enables distributed applications and secure integrations, with much more to come. Add a Qworum API to existing applications just for integrations. Then transition your applications to Qworum at your own pace, or not. For greenfield projects, start by providing a Qworum application from the start; this will obviate the need for a separate Qworum API.
     # - title: The new essential enterprise infrastructure
     #   description: >
@@ -26,21 +26,19 @@ text:
     #     for 84% of SaaS customers</a>. 
     #     Yet the REST protocol used by most SaaS is 25 years old at this point.
     #     Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
-    - title: Secure and composable integrations
+    - title: 🛡 Secure and composable integrations
       description: >
         Qworum is a breakthrough in integration security. Qworum APIs are
         <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-web-activity-7287639516608098306-YyMF?utm_source=share&utm_medium=member_desktop'>
-        a more secure alternative to OAuth+REST</a>. We recommend that SaaS vendors and other companies put in place a Qworum-first integration strategy in order to safeguard user data. Qworum is also the only Web API technology that is composable; a Qworum API can call another Qworum API without the user authentication and network timeout problems that plague the other Web API protocols.
-    - title: AI-ready and fit for knowledge applications
+        a more secure alternative to OAuth+REST</a>. We recommend that SaaS vendors and other companies put in place a Qworum-first integration strategy in order to safeguard user data. Qworum is also the only Web API technology that is composable; a Qworum API can call another Qworum API without the user authentication and network timeout problems that are unsolved for the other Web API protocols.
+    - title: 🤖 AI-ready and fit for knowledge applications
       description: >
-        AI has made RDF an essential data technology to use in production, and many knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector have been using RDF intensively for decades already. Qworum supports RDF natively, in addition to JSON.
+        AI has made RDF an essential data technology to use in production, and many knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector have been using RDF intensively for decades already. Qworum supports RDF natively in addition to JSON, and provides a technology enabling RDF-to-text translation for AI/LLM and human consumption.
     # - title: New business opportunity in the B2B space
     #   description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
-    - title: An upgrade to the Web platform for application use cases
+    - title: 🧑‍💻 An upgrade to the Web platform for application use cases
       description: >
-        Today's Web is still fundamentally a content platform, despite JavaScript. 
-        Qworum provides new browser features such as a script-based linking mechanism and a new in-browser session storage to enable advanced web applications that go much beyond what today's webapps and web APIs can do.
-    
+        Today's Web is still fundamentally a content platform, despite JavaScript and the ability to sign into websites. Qworum transform the Web from a platform for personalisable and dynamic content into a proper application platform. To do that, Qworum defines groundbreaking new platform features such as a new browser runtime that complements JavaScript, and a new script-based linking mechanism that addresses application use cases.
 
   callToAction: Request a demo
 
