@@ -17,7 +17,7 @@ text:
     - What is the current Web? <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7464968807682363393/'>A content platform with limited application support</a>.
 
     valueProposition:
-    - title: 🏞 Don't limit yourself by what the baseline Web can do
+    - title: 🏞 The baseline Web is not enough
       description: Qworum improves on the baseline Web by enabling distributed applications and secure integrations, with much more to come. Add a Qworum API to existing applications just for integrations. Then transition your applications to Qworum at your own pace. For greenfield projects, provide a Qworum application from the start; this will obviate the need for a separate Qworum API.
     # - title: The new essential enterprise infrastructure
     #   description: >
