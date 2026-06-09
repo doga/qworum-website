@@ -18,7 +18,7 @@ text:
 
     valueProposition:
     - title: 🏞 Don't limit yourself by what the baseline Web can do
-      description: Qworum enables distributed applications and secure integrations, with much more to come. Add a Qworum API to existing applications just for integrations. Then transition your applications to Qworum at your own pace, or not. For greenfield projects, start by providing a Qworum application from the start; this will obviate the need for a separate Qworum API.
+      description: Qworum improves on the baseline Web by enabling distributed applications and secure integrations, with much more to come. Add a Qworum API to existing applications just for integrations. Then transition your applications to Qworum at your own pace, or not. For greenfield projects, provide a Qworum application from the start; this will obviate the need for a separate Qworum API.
     # - title: The new essential enterprise infrastructure
     #   description: >
     #     <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_report-state-of-saas-integrations-2024-activity-7273076432229044224-i2wr'>A recent survey
@@ -31,9 +31,12 @@ text:
         Qworum is a breakthrough in integration security. Qworum APIs are
         <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-web-activity-7287639516608098306-YyMF?utm_source=share&utm_medium=member_desktop'>
         a more secure alternative to OAuth+REST</a>. We recommend that SaaS vendors and other companies put in place a Qworum-first integration strategy in order to safeguard user data. Qworum is also the only Web API technology that is composable; a Qworum API can call another Qworum API without the user authentication and network timeout problems that are unsolved for the other Web API protocols.
-    - title: 🤖 AI-ready and fit for knowledge applications
+    - title: 💭 Fit for knowledge applications
       description: >
-        AI has made RDF an essential data technology to use in production, and many knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector have been using RDF intensively for decades already. Qworum supports RDF natively in addition to JSON, and provides a technology enabling RDF-to-text translation for AI/LLM and human consumption.
+        Qworum supports RDF natively, in addition to JSON. RDF has found wide use within knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector.
+    - title: 🤖 AI-ready
+      description: >
+        AI has made RDF an essential data technology to use in production, as RDF is key for making structured data consumable by LLMs. Standards exist to support structured-data-to-RDF transformations, and Qworum provides the missing "last-mile" annotation solution to translate RDF into human prose which is consumable by LLMs as well as by humans.
     # - title: New business opportunity in the B2B space
     #   description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
     - title: 🧑‍💻 An upgrade to the Web platform for application use cases
