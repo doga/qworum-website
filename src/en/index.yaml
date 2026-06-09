@@ -36,7 +36,7 @@ text:
         Qworum supports RDF natively, in addition to JSON. RDF has found wide use within knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector.
     - title: 🤖 AI-ready
       description: >
-        AI has made RDF an essential data technology to use in production, as RDF is key for making structured data consumable by LLMs. Standards exist to support structured-data-to-RDF transformations, and Qworum provides the missing "last-mile" annotation solution to translate RDF into human prose which is consumable by LLMs as well as by humans.
+        AI has made RDF an essential data technology to use in production, as RDF is key for making structured data consumable by LLMs. Standards exist to support structured-data-to-RDF transformations, and <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7468995273898299392/'>Qworum provides the missing "last-mile" annotation solution to translate RDF into human prose which is consumable by LLMs</a> as well as by humans.
     # - title: New business opportunity in the B2B space
     #   description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
     - title: 🧑‍💻 An upgrade to the Web platform for application use cases
