@@ -26,11 +26,17 @@ text:
     #     for 84% of SaaS customers</a>. 
     #     Yet the REST protocol used by most SaaS is 25 years old at this point.
     #     Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
-    - title: 🛡 Secure and composable integrations
+    - title: 🛡 Secure integrations
       description: >
         Qworum is a breakthrough in integration security. Qworum APIs are
         <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-web-activity-7287639516608098306-YyMF?utm_source=share&utm_medium=member_desktop'>
-        a more secure alternative to OAuth+REST</a>. We recommend that SaaS vendors and other companies put in place a Qworum-first integration strategy in order to safeguard user data. Qworum is also the only Web API technology that is composable; a Qworum API can call another Qworum API without the user authentication and network timeout problems that are unsolved for the other Web API protocols.
+        a more secure alternative to OAuth+REST</a>. We recommend that SaaS vendors and other companies put in place a Qworum-first integration strategy in order to safeguard user data. With Qworum, end-users can be sure that each and every API call is happening with their full consent.
+    - title: 📦 Composable integrations
+      description: >
+        Qworum is the only Web API technology that is composable. A Qworum API can call another Qworum API without the user authentication and network timeout problems that are unsolved for the other Web API protocols.
+    - title: 🤙 Easy integrations
+      description: >
+        Qworum-based integrations are simple to program. Applications can call the Qworum APIs of other applications without any setup phase whatsoever. No need to obtain API keys. No need to implement an OAuth dance to link up the end-user's accounts on both applications. Integrations are about as easy as adding a hyperlink to a website. Except that the link is actually a script.
     - title: 💭 Fit for knowledge applications
       description: >
         Qworum supports RDF natively, in addition to JSON. RDF has found wide use within knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector.
