@@ -24,13 +24,13 @@ text:
     #     for 84% of SaaS customers</a>. 
     #     Yet the REST protocol used by most SaaS is 25 years old at this point.
     #     Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
+    - title: 🧑‍💻 Modular and distributed application frontends
+      description: Qworum APIs are a new way of structuring Web application frontends that goes much beyond what frontend frameworks such as ReactJS can do, and complements them.
     - title: 🛡 Secure integrations
       description: >
         Qworum is a breakthrough in integration security. Qworum APIs are
         <a target='_blank' href='https://www.linkedin.com/posts/dogaarmangil_api-web-activity-7287639516608098306-YyMF?utm_source=share&utm_medium=member_desktop'>
         a more secure alternative to OAuth+REST</a>. In order to safeguard user data, we recommend that SaaS vendors and other companies put in place a Qworum-first integration strategy for their internet applications and internal applications. With Qworum, end-users can be sure that each and every API call is happening with their full consent.
-    - title: 🧑‍💻 Modular and distributed application frontends
-      description: Qworum APIs are a new way of structuring Web application frontends that goes much beyond what frontend frameworks such as ReactJS can do, and complements them.
     - title: 🧑‍💻 Interactive Web APIs
       description: >
         Qworum APIs break new ground with their support for interactivity. Qworum API endpoints can interact with end-users through regular Web pages during a call. Qworum APIs are ideal for user-facing processes, which become much easier to program, because the API brings much of the application user interface with it, enabling UI reuse across applications, across the Web.
