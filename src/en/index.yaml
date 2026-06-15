@@ -26,7 +26,7 @@ text:
     #     Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
     - title: 🤖 AI-ready
       description: >
-        Qworum enables structured data (relational, spreadsheets etc) to text translations to make such data consumable by LLMs. This translation happens in 2 steps. Step 1 is data to RDF, which is a well-known standards-based process. Step 2 is <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7468995273898299392/'>RDF to text, and Qworum is bringing the first practical solution here, and it does not involve LLMs nor their high context costs</a>.
+        Qworum has native support for RDF, an essential data technology for AI. And Qworum is bringing to market <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7468995273898299392/'>the first practical solution to translate structured data (relational, spreadsheets etc) to text</a>, making structured data understandable for LLMs.
     - title: Easy to get started
       description: Use Qworum in production on a piecemeal basis. Add a Qworum API to existing applications just for integrations. Then you can transition your applications to Qworum at your own pace. For greenfield projects, make your application a Qworum application from the start; this will obviate the need for a separate Qworum API.
     - title: 🧑‍💻 Modular and distributed application frontends
