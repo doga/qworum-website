@@ -196,14 +196,14 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
 const semanticData = SemanticData.build();  // `semanticData.value` conforms to the `Dataset` interface
 
 // add another dataset from an RDF/Turtle file
-await semanticData.readFromUrl(irl`https://site.example/rdf-dataset.ttl`);
+await semanticData.readFromUrl(url`https://site.example/rdf-dataset.ttl`);
 
 // add another dataset from RDF/Turtle content
 await semanticData.readFromText(
   `PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
    &lt;#person1&gt; a foaf:Person ;
      foaf:name &quot;Jim Bo&quot; .`,
-  irl`https://site.example/rdf-dataset.ttl` // base IRI to resolve IRIs
+  iri`https://site.example/rdf-dataset.ttl` // base IRI to resolve IRIs
 );
 
 await semanticData.readFromText(
@@ -215,7 +215,7 @@ await semanticData.readFromText(
 
 // programmatically add RDF statements to semanticData
 const
-subject = rdfTermFactory.namedNode(irl`https://site.example/#id1234`.href),
+subject = rdfTermFactory.namedNode(iri`https://site.example/#id1234`.toString()),
 isNamed = rdfTermFactory.namedNode('http://xmlns.com/foaf/0.1/name'),
 JamBa   = rdfTermFactory.literal('Jam Ba');
 
@@ -227,7 +227,7 @@ semanticData.value.add(
 const peopleNamedJamBa = semanticData.value.filter(
   statement =&gt; (
     iri`${statement.predicate.value}`.equals(iri`http://xmlns.com/foaf/0.1/name`) &amp;&amp;
-    statement.object.value === JamBa.value &amp;&amp;
+    statement.object.value === JamBa.value
   )
 );
 for (const statement of peopleNamedJamBa) {
@@ -237,14 +237,14 @@ for (const statement of peopleNamedJamBa) {
 const semanticData = SemanticData.build();  // `semanticData.value` conforms to the `Dataset` interface
 
 // add another dataset from an RDF/Turtle file
-await semanticData.readFromUrl(irl`https://site.example/rdf-dataset.ttl`);
+await semanticData.readFromUrl(url`https://site.example/rdf-dataset.ttl`);
 
 // add another dataset from RDF/Turtle content
 await semanticData.readFromText(
   `PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
    &lt;#person1&gt; a foaf:Person ;
      foaf:name &quot;Jim Bo&quot; .`,
-  irl`https://site.example/rdf-dataset.ttl` // base IRI to resolve IRIs
+  iri`https://site.example/rdf-dataset.ttl` // base IRI to resolve IRIs
 );
 
 await semanticData.readFromText(
@@ -256,7 +256,7 @@ await semanticData.readFromText(
 
 // programmatically add RDF statements to semanticData
 const
-subject = rdfTermFactory.namedNode(irl`https://site.example/#id1234`.href),
+subject = rdfTermFactory.namedNode(iri`https://site.example/#id1234`.toString()),
 isNamed = rdfTermFactory.namedNode('http://xmlns.com/foaf/0.1/name'),
 JamBa   = rdfTermFactory.literal('Jam Ba');
 
@@ -268,7 +268,7 @@ semanticData.value.add(
 const peopleNamedJamBa = semanticData.value.filter(
   statement =&gt; (
     iri`${statement.predicate.value}`.equals(iri`http://xmlns.com/foaf/0.1/name`) &amp;&amp;
-    statement.object.value === JamBa.value &amp;&amp;
+    statement.object.value === JamBa.value
   )
 );
 for (const statement of peopleNamedJamBa) {
