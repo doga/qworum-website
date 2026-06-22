@@ -24,7 +24,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2025.11.26 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2026.06.22 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>
@@ -621,9 +621,9 @@ const aCall = Call( ['@', 'shopping cart'], 'view/' );
         Service calls generate an HTTP(S) GET request when evaluated by the browser.
       </p>
 
-      <p>
+      {{# <p>
         Service calls can have data arguments and/or object arguments.
-      </p>
+      </p> #}}
 
       <h4>3.2.1. Calls with data arguments</h4>
 
@@ -702,7 +702,7 @@ aCall = Call(
         phases by using the <a href="#goto"> <code>Goto</code></a> instruction.
       </p> #}}
 
-      <h4>3.2.2. Calls with object arguments</h4>
+      {{# <h4>3.2.2. Calls with object arguments</h4>
       <!-- <p class="note-to-editor">Use cases?</p> -->
       <p>
         Service calls can receive Qworum objects as arguments. These object arguments will be made available to
@@ -733,7 +733,7 @@ aCall = Call(
 );
       </code></pre>
         <figcaption>Figure 3.2.2.1: A <code>Call</code> instruction that contains an object argument.</figcaption>
-      </figure>
+      </figure> #}}
 
     </section>
 
