@@ -24,12 +24,7 @@ text:
     #     for 84% of SaaS customers</a>. 
     #     Yet the REST protocol used by most SaaS is 25 years old at this point.
     #     Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
-    - title: 🤖 AI-ready
-      description: >
-        Qworum has native support for RDF, an essential data technology for AI. And Qworum is bringing to market <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7468995273898299392/'>the first practical solution to translate structured data (relational, spreadsheets etc) to text</a>, making structured data understandable for LLMs.
-    - title: Easy to get started
-      description: Use Qworum in production on a piecemeal basis. Add a Qworum API to existing applications just for integrations. Then you can transition your applications to Qworum at your own pace. For greenfield projects, make your application a Qworum application from the start; this will obviate the need for a separate Qworum API.
-    - title: 🧑‍💻 Modular and distributed application frontends
+    - title: Modular and distributed applications
       description: Qworum APIs are a new way of structuring Web application frontends that goes much beyond what frontend frameworks such as ReactJS can do, and complements them.
     - title: 🛡 Secure integrations
       description: >
@@ -39,15 +34,23 @@ text:
     - title: Easy integrations
       description: >
         Qworum-based integrations are simple to program. Applications can call the Qworum APIs of other applications without any setup phase whatsoever. No need to obtain API keys. No need to implement an OAuth dance to link up the end-user's accounts on both applications. Integrations are about as easy as adding a hyperlink to a website. Except that the link is actually a script.
-    - title: 🧑‍💻 Interactive Web APIs
+    - title: 🛡 Selective disclosure of data
+      description: >
+        Qworum APIs can return filtered data, based on who the end-user is and which website is calling the API endpoint. Endpoints can also produce derived data, such as whether a person is of legal age. Best of all: doing these on Qworum does not require any heavy-handed cryptographic complexity. Things are easy.
+    - title: Interactive Web APIs
       description: >
         Qworum APIs break new ground with their support for interactivity. Qworum API endpoints can interact with end-users through regular Web pages during a call. Qworum APIs are ideal for user-facing processes, which become much easier to program, because the API brings much of the application user interface with it, enabling UI reuse across applications, across the Web.
     - title: Composable Web APIs
       description: >
         Qworum has defined the only Web API technology that is composable. A Qworum API can call another Qworum API without the user authentication and network timeout problems that are unsolved for the other Web API protocols.
-    - title: 💭 Fit for knowledge applications
+    - title: Fit for knowledge applications
       description: >
         Qworum supports RDF natively, in addition to JSON. RDF has found widespread use within knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector.
+    - title: 🤖 AI-ready
+      description: >
+        Qworum has native support for RDF, an essential data technology for AI. And Qworum is bringing to market <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7468995273898299392/'>the first practical solution to translate structured data (relational, spreadsheets etc) to text</a>, making structured data understandable for LLMs.
+    - title: Easy to get started
+      description: Use Qworum in production on a piecemeal basis. Add a Qworum API to existing applications just for integrations. Then you can transition your applications to Qworum at your own pace. For greenfield projects, make your application a Qworum application from the start; this will obviate the need for a separate Qworum API.
     # - title: New business opportunity in the B2B space
     #   description: Qworum APIs can be built by third parties on top of public SaaS APIs, and API subscriptions can be sold to SaaS customers and partners.
 #    - title: ⎔ An upgrade to the Web platform for application use cases
