@@ -24,8 +24,9 @@ text:
     #     for 84% of SaaS customers</a>. 
     #     Yet the REST protocol used by most SaaS is 25 years old at this point.
     #     Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
-    - title: Modular and distributed applications
-      description: Qworum APIs are a new way of structuring Web application frontends that goes much beyond what frontend frameworks such as ReactJS can do, and complements them.
+    - title: 🏆 Best-of-breed vs enterprise suites
+      description: >
+        Qworum serves as the glue for integrated user experiences across multiple org-specific and SaaS applications. With Qworum, users can enjoy both the convenience of enterprise suites and the privilege of using cherry-picked applications in every category, while having the luxury of adding bespoke applications to the software mix.
     - title: 🛡 Secure integrations
       description: >
         Qworum is a breakthrough in integration security. Qworum APIs are
@@ -37,6 +38,8 @@ text:
     - title: 🛡 Selective disclosure of data
       description: >
         Qworum APIs can return filtered data, based on who the end-user is and which website is calling the API endpoint. Endpoints can also produce derived data, such as whether a person is of legal age. Best of all: doing these on Qworum does not require any heavy-handed cryptographic complexity. Things are easy.
+    - title: Modular and distributed applications
+      description: Qworum APIs are a new way of structuring Web application frontends that goes much beyond what frontend frameworks such as ReactJS can do, and complements them.
     - title: Interactive Web APIs
       description: >
         Qworum APIs break new ground with their support for interactivity. Qworum API endpoints can interact with end-users through regular Web pages during a call. Qworum APIs are ideal for user-facing processes, which become much easier to program, because the API brings much of the application user interface with it, enabling UI reuse across applications, across the Web.
