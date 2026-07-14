@@ -29,7 +29,7 @@ text:
         The cost of a data breach is $4M for organisations; that's the world average. In the US it's $10M. Our value proposition is clear: Qworum is the most secure application integration solution on the market. Adopt a Qworum-first integration strategy and gain peace of mind. <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7480597447745032192/'>Qworum is much more secure than OAuth+REST</a>.
     - title: 🏆 Best-of-breed vs enterprise suites
       description: >
-        With Qworum, organisations can cherry-pick best-of-breed SaaS and internal applications that seamlessly integrate with each other. This approach is to be contrasted with buying application suites where each application can be of variable quality, and adding third-party SaaS to the mix can be hit-or-miss. Suite vendors can also fix this by building on Qworum.
+        Qworum helps unlock SaaS innovation by fixing integration. With Qworum, organisations can cherry-pick best-of-breed SaaS and internal applications that seamlessly integrate with each other. This approach is to be contrasted with buying application suites where each application can be of variable quality, and adding third-party SaaS to the mix can be hit-or-miss. Suite vendors can also build on Qworum.
     - title: Easy integrations
       description: >
         Qworum-based integrations are simple to program. Applications can call the Qworum APIs of other applications without any setup phase whatsoever. No need to obtain API keys. No need to implement an OAuth dance to link up the end-user's accounts on both applications. Integrations are about as easy as adding a hyperlink to a website. Except that the link is actually a script.
