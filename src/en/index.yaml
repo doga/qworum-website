@@ -8,8 +8,9 @@ text:
     oneliner: Qworum is the Web for applications
     usp:
     - The baseline Web is not enough to cover applications' requirements. Qworum provides advanced browser capabilities to webapps.
-    - Distributed Web applications — Integrated UXes across multiple internal/external webapps.
-    - Most secure integration protocol. Much more secure than OAuth+REST/GraphQL.
+    - Integrated UXes across multiple internal/external webapps.
+    - Webapps spanning multiple websites, involving multiple dev teams.
+    - Most secure integration protocol.
     - >
       <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a> technological breakthrough. 
 
