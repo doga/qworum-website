@@ -7,7 +7,7 @@ text:
   mission:
     oneliner: Qworum is the Web for applications
     usp:
-    - The baseline Web is not enough to cover applications' requirements. Qworum provides advanced browser capabilities to webapps.
+    - The baseline Web is not enough for meeting applications' requirements. Qworum provides advanced browser capabilities to webapps.
     - Integrated UXes across multiple internal/external webapps.
     - Webapps spanning multiple websites, involving multiple dev teams.
     - Most secure integration protocol.
