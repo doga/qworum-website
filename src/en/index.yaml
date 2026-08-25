@@ -34,7 +34,7 @@ text:
     - title: With Qworum, the Web is surpassing the mobile and desktop platforms for the first time
       description: >
         Qworum is the only platform to support applications that have distributed frontends. The mobile and desktop platforms, and the baseline "Document Web" itself only support single-node applications.
-        <a target='_blank' href='https://drive.google.com/file/d/13xy5Yx8dMVqGiJqqWFhh9DOi_7akl_rW/view'>Qworum had to invent a new Web variant to overcome the many limitations of today's Document Web, which is fundamentally a content platform</a>. 
+        <a target='_blank' href='https://drive.google.com/file/d/13xy5Yx8dMVqGiJqqWFhh9DOi_7akl_rW/view'>to overcome the limitations of today's Document Web, Qworum had to invent a new Web variant, including a new linking mechanism and a new browser runtime</a>. 
     - title: Interactive Web APIs
       description: >
         Qworum APIs break new ground with their support for interactivity. Qworum API endpoints can interact with end-users through regular Web pages during a call. Qworum APIs are ideal for user-facing processes, which become much easier to program, because the API brings much of the application user interface with it, enabling UI reuse across applications, across the Web.
