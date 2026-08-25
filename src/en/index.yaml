@@ -33,7 +33,7 @@ text:
         Qworum apps are AI-ready, in the sense that they are structured the right way for being piloted by AI. This cannot be said for non-Qworum webapps. Platform-wide AI capability is on our roadmap. Also, Qworum has native support for RDF, an essential data technology for AI.
     - title: With Qworum, the Web is surpassing the mobile and desktop platforms for the first time
       description: >
-        Qworum is the only platform to support applications that have distributed frontends. The mobile and desktop platforms, and the Web itself, only support single-node applications.
+        Qworum is the only platform to support applications that have distributed frontends. The mobile and desktop platforms, and the baseline "Document Web" itself only support single-node applications.
         <a target='_blank' href='https://drive.google.com/file/d/13xy5Yx8dMVqGiJqqWFhh9DOi_7akl_rW/view'>Qworum had to invent a new Web variant to overcome the many limitations of today's Document Web, which is fundamentally a content platform</a>. 
     - title: Easy integrations
       description: >
