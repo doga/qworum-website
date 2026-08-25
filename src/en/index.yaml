@@ -74,8 +74,10 @@ text:
     - "Timeline:"
     - 0:00 Business use case.
     - 0:18 Technology.
-    - 0:38 Demo — Application integration across 3 websites (project management application calls HCM application for adding members to a project, and both services use the same user authentication service) .
+    - 0:38 Demo — Application integration across 3 websites. One Qworum app calls another Qworum app. Both use a user authentication service that has a Qworum API.
     - 2:31 The 3 Webs — Qworum as the 3rd Web variant.
+    - "Note that all webapps are Qworum apps in this demo, but existing webapps can also stay as they are and provide separate Qworum APIs just for integrations. In this case, no need for an authentication Qworum API if the user is already logged in through other means."
+    - If you are starting from scratch, then we recommend structuring webapps as Qworum APIs from the start, because Qworum allows outstanding levels of code reuse at the user interface level, even for standalone applications.
 #    - This is a 30-second demo showing how Qworum APIs can advantageously replace REST and GraphQL APIs. Here an e-commerce application calls the Qworum API of a remote shopping cart service.
 #    - Note that the e-commerce application is implemented as a Qworum API as well. Non-Qworum web applications can also call Qworum APIs, although this demo does not show it.
 #    - Also note how the end-user interacts with the shopping cart service directly, without going through the e-commerce application. This feature sets Qworum apart from REST, GraphQL and all other API types. Notably, this makes Qworum APIs the only ones able to support secure user authentication across all services, even for those involved in deep service dependency graphs.
