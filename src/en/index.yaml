@@ -7,12 +7,12 @@ text:
   mission:
     oneliner: Qworum is the Web for applications
     usp:
-    - Qworum provides advanced browser capabilities to webapps.
+    - Advanced browser capabilities for applications.
+    - Secure integrations between webapps and/or native apps.
     - Integrated user experiences across multiple internal/external webapps.
-    - Most secure integration protocol.
-    - Supports large-scale webapps involving multiple developer teams. Qworum apps can span multiple websites, one for each team.
+    - Large-scale webapps involving multiple websites and dev teams.
     - >
-      <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a> technological breakthrough. 
+      <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a> technology.
 
     valueProposition:
     # - title: The new essential enterprise infrastructure
@@ -25,6 +25,9 @@ text:
     - title: 🛡 The new mission-critical software infrastructure
       description: >
         The cost of a data breach is $4M for organisations; that's the world average. In the US it's $10M. Our value proposition is clear: Qworum is the most secure application integration solution on the planet. Today's OAuth-based integrations are security breaches waiting to happen. <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7480597447745032192/'>Adopt a Qworum-first integration strategy and gain peace of mind</a>.
+    - title: 🛡 Essential for SaaS
+      description: >
+        SaaS vendors are legally obligated to safeguard customer data, yet the OAuth-based integrations that many of them have put in place prevent them from fulfilling that obligation. That's because OAuth comes with security vulnerabilities built-in, which hackers are thankful for. By switching to Qworum for integrations, SaaS vendors become empowered once again to protect customer data.
     - title: 🌐 Integrated user experiences
       description: >
         Employees today have to juggle with 11 applications on average. End-users often have to manually integrate applications through cut-and-paste and download-and-upload operations. Qworum is the only technology on the planet that enables seamlessly integrated UXes across webapps, supporting dependency graphs of arbitrary complexity between webapps.
