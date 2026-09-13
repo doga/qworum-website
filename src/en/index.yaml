@@ -28,7 +28,7 @@ text:
         <a target='_blank' href='https://lnkd.in/p/ef8QnmqJ'>OAuth is uncompliant with just about every data protection law and regulation that exists worldwide</a>. That's because OAuth comes with security vulnerabilities built-in, which hackers are thankful for. Using Qworum instead for integrations ensures security and compliance. 
     - title: 🛡 Essential for SaaS
       description: >
-        SaaS vendors are legally obligated to safeguard customer data, yet the OAuth-based integration APIs that many of them are providing prevent them from fulfilling that obligation. Needless to say, this exposes vendors to legal problems and customer churn. By switching to Qworum for integrations, SaaS vendors become empowered once again to protect customer data.
+        SaaS vendors are legally obligated to safeguard customer data, yet the OAuth-based integration APIs that many of them are providing prevent them from fulfilling that obligation. Needless to say, this exposes vendors to legal problems and customer churn, and also to many breaches that go undetected. By switching to Qworum for integrations, SaaS vendors become empowered once again to protect customer data.
     - title: 🌐 Integrated user experiences
       description: >
         Employees today have to juggle with 11 applications on average. End-users often have to manually integrate applications through cut-and-paste and download-and-upload operations. Qworum is the only technology on the planet that enables seamlessly integrated UXes across webapps, supporting dependency graphs of arbitrary complexity between webapps.
