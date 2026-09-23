@@ -31,7 +31,7 @@ list:
   free_trial: false
   monthly_fee:
     per_domain:
-      USD: 190
+      USD: 290
     per_domain_plus_subdomains:
       multiple: 4
   forms:
