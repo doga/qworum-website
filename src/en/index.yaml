@@ -25,7 +25,7 @@ text:
     - title: 🛡 Qworum is the only compliant application integration solution worldwide
       description: >
         The cost of a data breach is $4M for organisations; that's the world average. In the US it's $10M. 
-        <a target='_blank' href='https://lnkd.in/p/ef8QnmqJ'>OAuth is widely used for integrations, yet it is insecure and so uncompliant with just about every data protection law and regulation that exists worldwide</a>. In the EU in particular, the Cyber Resilience Act should forbid vendors from offering OAuth-based APIs from Dec 2027.
+        <a target='_blank' href='https://lnkd.in/p/ef8QnmqJ'>OAuth is widely used for integrations, yet it is insecure and so uncompliant with just about every data protection law and regulation that exists worldwide</a>. To remain compliant with the Cyber Resilience Act in the EU, software vendors should have transitioned from offering OAuth-based APIs to offering Qworum APIs on Dec 11, 2027.
     - title: 🛡 Essential for SaaS
       description: >
         SaaS vendors are legally obligated to safeguard customer data, yet the OAuth-based integration APIs that many of them are providing prevent them from fulfilling that obligation. Needless to say, this exposes vendors to legal problems and customer churn, and also to many breaches that go undetected. By switching to Qworum for integrations, SaaS vendors become empowered once again to protect customer data.
