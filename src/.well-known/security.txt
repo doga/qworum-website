@@ -2,4 +2,4 @@ Contact:             mailto:d.armangil@qworum.net
 Encryption:          https://keys.mailvelope.com/pks/lookup?op=get&search=d.armangil@qworum.net
 Preferred-Languages: en, fr, de, tr
 Canonical:           https://qworum.net/.well-known/security.txt
-Expires:             2027-12-01T23:59:59.000Z
+Expires:             2027-09-01T23:59:59.000Z
