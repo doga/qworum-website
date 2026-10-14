@@ -22,13 +22,12 @@ text:
     #     for 84% of SaaS customers</a>. 
     #     Yet the REST protocol used by most SaaS is 25 years old at this point.
     #     Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
-    - title: 🛡 Qworum is the only compliant application integration solution worldwide
+    - title: 🛡 Integration security through interactivity
       description: >
-        The cost of a data breach is $4M for organisations; that's the world average. In the US it's $10M. 
-        <a target='_blank' href='https://lnkd.in/p/ef8QnmqJ'>OAuth is widely used for integrations, yet it is insecure and so uncompliant with just about every data protection law and regulation that exists worldwide</a>. To remain compliant with the Cyber Resilience Act in the EU, software vendors should have transitioned from offering OAuth-based APIs to offering Qworum APIs on Dec 11, 2027.
+        Non-Qworum application integrations have security problems: access tokens can be stolen and/or misused, and API calls can be made without user consent. <a target='_blank' href='https://lnkd.in/p/ef8QnmqJ'>OAuth is widely used for integrations, yet it is insecure</a>. Interactivity makes integrations secure, by giving control to end-users and API providers over the API calls. Qworum is the only application integration solution that is compliant with data protection regulations worldwide.
     - title: 🛡 Essential for SaaS
       description: >
-        SaaS vendors are legally obligated to safeguard customer data, yet the OAuth-based integration APIs that many of them are providing prevent them from fulfilling that obligation. Needless to say, this exposes vendors to legal problems and customer churn, and also to many breaches that go undetected. By switching to Qworum for integrations, SaaS vendors become empowered once again to protect customer data.
+        Integration APIs today are backdoors that facilitate data breaches. These integrations use access tokens (OAuth-based or not) and non-interactive protocols (REST, GraphQL, JSON-RPC…). So when a SaaS vendor provides such an API, they are no longer in control of who is making the calls, and whether the calls have the user's consent. This makes SaaS vendors unable to safeguard customer data, which they are legally obligated to do. Qworum gives back control to end-users and the API providers and makes integrations secure.
     - title: 🌐 Integrated user experiences
       description: >
         Employees today have to juggle with 11 applications on average. End-users often have to manually integrate applications through cut-and-paste and download-and-upload operations. Qworum is the only technology on the planet that enables seamlessly integrated UXes across webapps, supporting dependency graphs of arbitrary complexity between webapps.
