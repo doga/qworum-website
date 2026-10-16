@@ -36,7 +36,7 @@ text:
         Qworum supports RDF natively, in addition to JSON. RDF has found widespread use within knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector.
     - title: 🤖 AI-ready
       description: >
-        Qworum apps are AI-ready, in the sense that they are structured the right way for being piloted by AI. This cannot be said for non-Qworum webapps. Platform-wide AI capability is on our roadmap. Also, Qworum has native support for RDF, an essential data technology for AI.
+        Qworum aims to become the world's first application platform where AI can use the same applications as humans, and they can replace humans. Right now AI is a tool, which puts limits on AI's potential. Qworum aims to remove them. Today, Qworum is already the world's first AI-ready application platform: the right application structure for AI pilots, and native support for RDF, an essential data technology for AI.
     - title: Interactive Web APIs
       description: >
         Qworum APIs break new ground with their support for interactivity. Qworum API endpoints can interact with end-users through regular Web pages during a call. Qworum APIs are ideal for user-facing processes, which become much easier to program, because the API brings much of the application user interface with it, enabling UI reuse across applications, across the Web.
