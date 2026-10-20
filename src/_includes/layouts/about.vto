@@ -31,7 +31,7 @@ layout: ./base.vto
                 {{ contributor.email.address }}
               </a>
               {{ if contributor.email.pgp }}
-                <a href="{{ contributor.email.pgp.publicKey.url }}" target="_blank" rel="noopener noreferrer">
+                <a href="{{ contributor.email.pgp.publicKey.dataUrl }}" target="_blank" rel="noopener noreferrer">
                   {{text.pgpPublicKey}}
                 </a>
               {{ /if }}
