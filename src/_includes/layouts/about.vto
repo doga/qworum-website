@@ -24,7 +24,7 @@ layout: ./base.vto
               </a>
             {{ /if }}
 
-            {{# {{ if contributor.email }}
+            {{ if contributor.email }}
               <br>
               📧
               <a href="mailto:{{ contributor.email.address }}" target="_blank">
@@ -32,10 +32,10 @@ layout: ./base.vto
               </a>
               {{ if contributor.email.pgp }}
                 <a href="{{ contributor.email.pgp.publicKey.url }}" target="_blank" rel="noopener noreferrer">
-                  🛡 PGP key
+                  {{text.pgpPublicKey}}
                 </a>
               {{ /if }}
-            {{ /if }} #}}
+            {{ /if }}
         </figcaption>
       </figure>
   </li>
@@ -53,12 +53,12 @@ layout: ./base.vto
   📧
   <a href="mailto:{{company.email.info}}" target="_blank">
     {{company.email.info}}
-  </a> <br> <br>
+  </a> <br> 
 
   𝕏
   <a href="{{company.twitter.url}}" target="_blank">
     {{company.twitter.handle}}
-  </a> <br> <br>
+  </a> <br> 
 
   {{# {{ text.semantic }} <br> #}}
   <a href="{{company.rdf}}" target="_blank">
