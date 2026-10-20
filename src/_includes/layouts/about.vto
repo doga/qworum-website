@@ -23,6 +23,19 @@ layout: ./base.vto
                 <img src="/assets/images/logos/LinkedIn_icon.svg" height='66px' alt="">
               </a>
             {{ /if }}
+
+            {{# {{ if contributor.email }}
+              <br>
+              📧
+              <a href="mailto:{{ contributor.email.address }}" target="_blank">
+                {{ contributor.email.address }}
+              </a>
+              {{ if contributor.email.pgp }}
+                <a href="{{ contributor.email.pgp.publicKey.url }}" target="_blank" rel="noopener noreferrer">
+                  🛡 PGP key
+                </a>
+              {{ /if }}
+            {{ /if }} #}}
         </figcaption>
       </figure>
   </li>

@@ -49,7 +49,7 @@ PREFIX qrmm: <https://vocab.qworum.net/multi.ttl#>
 :id
   a org:Organization;
   org:purpose    
-    'Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully fledged platform for applications.'@en;
+    'Qworum is a provider of enterprise infrastructure software, with the overarching goal of making the web a fully featured platform for applications.'@en;
   org:Site <locations.ttl#geneva>;
 
   a sd:Organization; # sd:Organization rdfs:subClassOf schema:Organization 
