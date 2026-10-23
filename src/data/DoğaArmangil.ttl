@@ -56,7 +56,7 @@ PREFIX cc: <http://creativecommons.org/ns#>
 PREFIX prov: <http://www.w3.org/ns/prov#>            # https://www.w3.org/TR/prov-o/
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
-PREFIX qrmm: <https://vocab.qworum.net/multi.ttl#>
+PREFIX qrmm: <https://vocab.qworum.net/qrmm.ttl#>
 
 [] qrmm:begin [].
 

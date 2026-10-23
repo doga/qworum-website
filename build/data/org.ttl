@@ -27,7 +27,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>          # https://www.dublincore.or
 PREFIX cc: <http://creativecommons.org/ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> # https://www.w3.org/TR/rdf-schema/
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
-PREFIX qrmm: <https://vocab.qworum.net/multi.ttl#>
+PREFIX qrmm: <https://vocab.qworum.net/qrmm.ttl#>
 
 [] qrmm:begin [].
 

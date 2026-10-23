@@ -9,7 +9,7 @@ nav:
 text:
   description:
   - Qworum is a provider of enterprise infrastructure software. Our overarching goal is to transform the web into a full-featured application platform that is fit for the AI era.
-  pgpPublicKey: 🛡 PGP public key
+  pgpPublicKey: PGP public key
 
   contributors:
   - name: Doğa Armangil
