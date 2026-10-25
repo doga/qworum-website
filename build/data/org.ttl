@@ -171,7 +171,6 @@ PREFIX qrmm: <https://vocab.qworum.net/qrmm.ttl#>
     <https://github.com/doga/qworum-demo>,
     <https://github.com/doga/qworum-netlify-template>;
   sd:hasDownloadURL 
-    <https://esm.sh/@qworum/qworum-for-web-pages>,
     <https://github.com/doga/qworum-for-web-pages/>.
 
 #:vs-code-extension

@@ -5,7 +5,7 @@ import {
   VivaldiDesktop, WaveboxDesktop, ArcDesktop, BraveDesktop,
   FirefoxAndroid, KiwiAndroid,
   SafariMobile
-} from 'https://esm.sh/gh/doga/browser-detector@0.3.0/mod.mjs';
+} from 'https://cdn.jsdelivr.net/gh/doga/browser-detector@0.3.0/mod.mjs';
 
 highlightUsersBrowserForDownload();
 
