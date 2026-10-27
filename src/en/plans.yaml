@@ -25,11 +25,12 @@ text:
 
     alloy:
       features: 
-      - Your website(s) become part of Qworum's Service Web.
-      - Your website(s) can use the Qworum features of Web browsers.
-      - Your website(s) can host Qworum APIs.
-      - Your website(s) can call Qworum APIs hosted on other websites.
-      - Other websites can call your Qworum APIs.
+      - Subscribed websites become part of Qworum's Service Web.
+      - Subscribed websites have access to the advanced Qworum features of Web browsers.
+      - <strong>Provide any number of Qworum APIs</strong> from subscribed websites. These APIs are callable both by third-party websites and by the subscribed websites themselves. APIs can control access depending on the caller's URL.
+      - <strong>Call third-party Qworum APIs</strong> from subscribed websites.
+      - <strong>Build distributed webapps</strong> that span two or more of the subscribed websites.
+      - <strong>Build modular webapps</strong>. Structure webapps as a set of Qworum APIs for improved maintainability and troubleshooting, parallel development, reusability and replaceability, and scalability.
       - Plus all {{ore.name}} features.
 
   # - title   : Enterprise
@@ -42,7 +43,7 @@ text:
   #   - Includes all features of free plan.
 
   monthly_fee:
-    per_domain_plus_subdomains: Include subdomains for {{ multiple }}x the price.
+    per_domain_plus_subdomains: The price of a subscription with subdomains is {{ multiple }}x.
   rebate:
     yearly: Spare {{ percent }}% with a yearly subscription.
 

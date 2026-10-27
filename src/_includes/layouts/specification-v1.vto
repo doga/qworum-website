@@ -24,7 +24,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2026.06.22 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2026.10.27 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>
@@ -995,7 +995,7 @@ const aFault = Fault('payment cancelled');
           <li><code>* service</code> — Parent type of all "user space"<a href="#ref-user-space">♦︎</a> faults that are caused by a Qworum service in a Qworum session.</li>
           <li>
             <code>* service entitlement</code> — 
-            The service that is being called is a paid service, and the caller isn't subscribed to the called service.
+            The caller isn't entitled to call the service. One reason might be that the service is a paid service, and the caller isn't subscribed to the called service.
           </li>
           <li><code>* service-specific</code> — The parent type of all service-specific faults.</li>
           <li><code>* syntax</code> — Raised when a Qworum script has syntax errors.</li>
