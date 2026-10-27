@@ -7,10 +7,10 @@ text:
   mission:
     oneliner: Qworum is the Web for applications
     usp:
-    - Advanced browser capabilities for applications.
     - Secure application integration.
     - Integrated user experiences across multiple internal/external apps.
     - Large-scale webapps involving multiple websites and dev teams.
+    - Advanced browser capabilities for applications.
     - <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a> technology.
 
     valueProposition:
@@ -24,12 +24,12 @@ text:
     - title: 🛡 Essential for SaaS
       description: >
         <strong>SaaS vendors cannot guarantee integration security</strong> without Qworum. Salesforce incurred a data breach in June 2026 through their OAuth-based integration API, and the same can happen to any SaaS vendor any time. SaaS vendors are unable to determine who is making the API calls, and whether the calls have the user's consent. With Qworum SaaS vendors gain back control.
-    - title: 🌐 Integrated user experiences
-      description: >
-        Employees today have to juggle with 11 applications on average. End-users often have to manually integrate applications through cut-and-paste and download-and-upload operations. Qworum enables seamlessly integrated user experiences across webapps, supporting dependency graphs of arbitrary complexity between webapps.
     - title: 🛡 Integration security through interactivity
       description: >
         Non-Qworum application integrations have security problems: access tokens can be stolen and/or misused, and API calls can be made without user consent. <a target='_blank' href='https://lnkd.in/p/ef8QnmqJ'>OAuth is widely used for integrations, yet it is insecure</a>. Interactivity makes integrations secure, by giving control to end-users and API providers over the API calls. <!-- Qworum is the only application integration solution that is compliant with data protection regulations worldwide. -->
+    - title: 🌐 Integrated user experiences
+      description: >
+        Employees today have to juggle with 11 applications on average. End-users often have to manually integrate applications through cut-and-paste and download-and-upload operations. Qworum enables seamlessly integrated user experiences across webapps, supporting dependency graphs of arbitrary complexity between webapps.
     - title: Fit for knowledge applications
       description: >
         Qworum supports RDF natively, in addition to JSON. RDF has found widespread use within knowledge-based industries such as pharma, health and biology, cosmetics, food, e-commerce, finance and banking, and the public sector.
