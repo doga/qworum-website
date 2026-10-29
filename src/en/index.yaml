@@ -5,14 +5,14 @@ title    : Home
 
 text:
   mission:
-    oneliner: Secure and compliant application integration
+    oneliner: Secure, compliant application integration
     # oneliner: Qworum is the Web for applications
     usp:
     # - Secure application integration.
-    - Highest level of integration security through a new interactive Web API protocol.
+    - Highest level of integration security through new interactive API protocol.
     - Distributed applications enabling integrated user experiences spanning multiple applications.
-    - Qworum is both an integration platform and an application platform.
-    - New advanced browser capabilities for applications.
+    - Web-based integration platform and application platform.
+    - New advanced browser capabilities.
     - <a target='_blank' href='{{company.achievements.patent}}'>Patent-based</a> Web API protocol.
 
     valueProposition:
@@ -25,7 +25,7 @@ text:
     #     Qworum's interactive and composable APIs are a significant technological breakthrough in application integration.
     - title: OAuth is insecure and non-compliant
       description: >
-        The OAuth protocol is widely used by SaaS applications for integrations, yet it is non-compliant with data protection regulations such as EU's GDPR and Cyber Resilience Act, and other regulations throughout the world. <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7514588215765327873/'>OAuth facilitates cybersecurity attacks and data breaches</a> by circumventing conventional identity and access management (IAM) procedures. Qworum secures integrations by giving back control to end-users and API providers over integrations.
+        The OAuth protocol is non-compliant with data protection regulations such as EU's GDPR and Cyber Resilience Act, and other regulations throughout the world. <a target='_blank' href='https://www.linkedin.com/feed/update/urn:li:activity:7514588215765327873/'>OAuth facilitates cybersecurity attacks and data breaches</a> by circumventing conventional identity and access management (IAM) procedures. Qworum's tokenless integrations secures integrations and gives back control to end-users and API providers over integrations.
     - title: 🛡 Essential for SaaS
       description: >
         <strong>SaaS vendors cannot guarantee integration security</strong> without Qworum. Salesforce incurred a data breach in June 2026 through their OAuth-based integration API, and the same can happen to any SaaS vendor any time. SaaS vendors are unable to determine who is making the API calls, and whether the calls have the user's consent. With Qworum SaaS vendors gain back control.
