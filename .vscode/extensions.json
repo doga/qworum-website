@@ -3,8 +3,6 @@
     "simonsiefke.svg-preview",
     "denoland.vscode-deno",
     "smoore.yaml-path",
-    "oscarotero.vento-syntax",
-    "stardog-union.vscode-langserver-turtle",
-    "marklindeman.turtle-vocab-autocomplete"
+    "oscarotero.vento-syntax"
   ]
 }
