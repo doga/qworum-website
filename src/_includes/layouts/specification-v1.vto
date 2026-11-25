@@ -24,7 +24,7 @@ nav:
         Opaque runtimes that aren't up to date will raise faults on newly introduced instructions.
       -->
       <!-- <span class="status-notice">Draft</span> -->
-      <span class="metadata">2026.11.25 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
+      <span class="metadata">2026.11.26 by Doğa Armangil &lt;d.armangil@qworum.net&gt;</span>
     </h1>
     <h2>Summary</h2>
     <p>
@@ -968,7 +968,7 @@ const aFault = Fault('payment cancelled');
         </figure>
 
         <p><a href="#service-specific-faults">Service-specific faults</a>:</p>
-        <p>Qworum services can define their own service-specific fault types, which will be subtypes of <code>* service-specific</code>. The names of these custom faults should be URLs that have the same origin as the service.</p>
+        <p>Qworum services can define their own service-specific fault types, which will be subtypes of <code>* service-specific</code>. The names of these custom faults should be URLs whose host name is a DNS name that is owned by publisher of the fault.</p>
 
         <p>In addition, this specification defines the following service-specific fault subtypes, which can be raised by any service call:</p>
         <ul>
