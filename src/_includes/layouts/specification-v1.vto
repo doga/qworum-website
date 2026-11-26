@@ -931,23 +931,10 @@ const seq = Sequence(
 
       <figure>
         <pre><code class="language-js">
-const aFault = Fault('payment cancelled');
+const aFault = Fault('cancelled');
         </code></pre>
         <figcaption>Figure 3.6.1: A fault.</figcaption>
       </figure>
-      {{# <figure>
-        <pre><code class="language-xml">
-&lt;fault type='payment cancelled' />
-        </code></pre>
-        <figcaption>Figure 3.6.1: A fault.</figcaption>
-      </figure> #}}
-
-      <p>The <code>type</code> attribute's value has the following equivalent forms:</p>
-      <ul>
-        <li>Case-insensitive — <code>payment cancelled</code> and <code>Payment Cancelled</code> are equivalent.</li>
-        <li>Separator whitespace is collapsed into one space character — <code>payment cancelled</code> and <code>payment&nbsp;&nbsp;&nbsp;cancelled</code> are equivalent.</li>
-        <li>Whitespace at the beginning and the end are ignored — <code>payment cancelled</code> and <code>&nbsp;&nbsp;&nbsp;&nbsp;payment cancelled&nbsp;&nbsp;&nbsp;</code> are equivalent.</li>
-      </ul>
 
       <p>
         Faults are split into two categories:
