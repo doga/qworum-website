@@ -955,7 +955,7 @@ const aFault = Fault('cancelled');
         </figure>
 
         <p><a href="#service-specific-faults">Service-specific faults</a>:</p>
-        <p>Qworum services can define their own service-specific fault types, which will be subtypes of <code>* service-specific</code>. The type strings of these custom faults should be HTTPS URLs whose host name is a DNS name that is owned by publisher of the fault. And that URL should point to the definition of the fault in an RDF/Turtle file (preferred), a TriG file, an N-Triples file or an N-Quads file. For example, <code>https://site.example/faults.ttl#a-fault</code> would point to the definition of <code>a-fault</code>. Stay tuned for more on fault definitions.</p>
+        <p>Qworum services can define their own service-specific fault types, which will be subtypes of <code>* service-specific</code>. The type strings of these custom faults should be HTTPS URLs whose host name is a DNS name that is owned by publisher of the fault. And that URL should point to the definition of the fault in an RDF/Turtle file. For example, <code>https://site.example/faults.ttl#a-fault</code> would point to the definition of <code>a-fault</code>. Stay tuned for more on fault definitions.</p>
 
         <p>In addition, this specification defines the following service-specific fault subtypes, which can be raised by any service call:</p>
         <ul>
